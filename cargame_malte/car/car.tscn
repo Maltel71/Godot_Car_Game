@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://dqai0u6p38b8"]
+
+[ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://car/car.gd" id="1_bkrhx"]
+[ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://car/CarMain02.fbx" id="2_xhmyn"]
+[ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://car/SteeringWheel.fbx" id="3_vl2bd"]
+[ext_resource type="PackedScene" uid="uid://buy6xykwfd21t" path="res://car/CarWheelCylinders.fbx" id="4_72ido"]
+[ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://car/CarWindows02.fbx" id="5_coc8s"]
+[ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://car/Wheel02.fbx" id="6_wdy7j"]
+[ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://car/cam.gd" id="7_xhmyn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
+size = Vector3(2.29102, 0.669922, 6.8826)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhmyn"]
+radius = 0.978364
+height = 6.10681
+
+[node name="VehicleBody3D" type="VehicleBody3D"]
+mass = 240.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, 0, 0.2)
+script = ExtResource("1_bkrhx")
+
+[node name="CarMain02" parent="." instance=ExtResource("2_xhmyn")]
+
+[node name="SteeringWheel" parent="CarMain02" instance=ExtResource("3_vl2bd")]
+
+[node name="CarWheelCylinders" parent="." instance=ExtResource("4_72ido")]
+visible = false
+
+[node name="CarWindows02" parent="." instance=ExtResource("5_coc8s")]
+
+[node name="wheel_front_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel03" parent="wheel_front_left" instance=ExtResource("6_wdy7j")]
+
+[node name="wheel_front_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, 1.75)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel02" parent="wheel_front_right" instance=ExtResource("6_wdy7j")]
+
+[node name="wheel_back_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, -1.913)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel05" parent="wheel_back_right" instance=ExtResource("6_wdy7j")]
+
+[node name="wheel_back_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, -1.913)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel04" parent="wheel_back_left" instance=ExtResource("6_wdy7j")]
+
+[node name="CamArm" type="SpringArm3D" parent="."]
+transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384248, 0.0711465)
+spring_length = 5.0
+script = ExtResource("7_xhmyn")
+
+[node name="Camera3D" type="Camera3D" parent="CamArm"]
+transform = Transform3D(0.441584, 0, 0, 0, 1, 0, 0, 0, 0.180584, 0, 0.887635, 0.19532)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, 0.151534, 0.0198936)
+shape = SubResource("BoxShape3D_xhmyn")
+debug_color = Color(0.607608, 0.363727, 1, 0.42)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.918173, 0, 0, 0, -4.01346e-08, -0.918173, 0, 0.918173, -4.01346e-08, 0, 0.14752, 0.0198936)
+shape = SubResource("CapsuleShape3D_xhmyn")
+debug_color = Color(0, 0.643137, 0.290196, 1)

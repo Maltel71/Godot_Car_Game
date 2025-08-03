@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0tcfpapx3m2f"]
+
+[ext_resource type="ArrayMesh" uid="uid://b352840tp3yld" path="res://lowpoly_models/prop_flask1_mesh_01_v1.glb.obj" id="1_k70a2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_psxy2"]
+height = 2.15234
+radius = 0.362305
+
+[node name="flask1" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.585582, 0)
+mesh = ExtResource("1_k70a2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09047, 0)
+shape = SubResource("CylinderShape3D_psxy2")

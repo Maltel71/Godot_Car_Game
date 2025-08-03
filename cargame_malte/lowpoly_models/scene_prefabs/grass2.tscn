@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv3pvux6mm38t"]
+
+[ext_resource type="ArrayMesh" uid="uid://cd2f6kfoxybs1" path="res://lowpoly_models/env_grass2_mesh_01_v1.glb.mtl.obj" id="1_3eygf"]
+
+[node name="Grass2" type="Node3D"]
+
+[node name="EnvGrass2Mesh01V1_glb_mtl" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3eygf")

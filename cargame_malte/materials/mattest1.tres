@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bx1hc0dhidmnp"]
+
+[ext_resource type="Texture2D" uid="uid://67wrvwo3xanj" path="res://textures/env_gridtexture_malte_height_sprite_01_v1.png" id="1_jbwyd"]
+
+[resource]
+albedo_texture = ExtResource("1_jbwyd")

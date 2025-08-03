@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl1mgv7h1thox"]
+
+[ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://lowpoly_models/env_tree1_mesh_01_v1.glb" id="1_gknex"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gknex"]
+height = 10.9021
+radius = 1.35547
+
+[node name="Tree1" type="Node3D"]
+
+[node name="env_tree1_mesh_01_v1" parent="." instance=ExtResource("1_gknex")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="env_tree1_mesh_01_v1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.77014, 0)
+shape = SubResource("CylinderShape3D_gknex")
