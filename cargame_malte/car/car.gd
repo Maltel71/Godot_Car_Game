@@ -1,12 +1,10 @@
 extends VehicleBody3D
-
 var max_RPM = 900
 var max_torque = 600
 var turn_speed = 3
 var turn_amount = 0.3
-
 # Air control variables
-var air_control_strength = 900.0  # How strong the air control is
+var air_control_strength = 2000.0  # How strong the air control is
 var air_control_damping = 0.98  # Damping to prevent excessive spinning
 
 func _physics_process(delta):
@@ -42,10 +40,11 @@ func apply_air_control(delta):
 	var air_input = Vector3.ZERO
 	
 	# Get input for air control using the same actions as your car controls
-	if Input.is_action_pressed("Gas"):  # W key - tilt forward (pitch)
-		air_input.x += 1.0
-	if Input.is_action_pressed("Brake"):  # S key - tilt backward (pitch) 
+	# INVERTED: W now tilts backward, S tilts forward
+	if Input.is_action_pressed("Gas"):  # W key - tilt backward (inverted)
 		air_input.x -= 1.0
+	if Input.is_action_pressed("Brake"):  # S key - tilt forward (inverted)
+		air_input.x += 1.0
 	if Input.is_action_pressed("Left"):  # A key - rotate left (yaw)
 		air_input.y += 1.0
 	if Input.is_action_pressed("Right"):  # D key - rotate right (yaw)
