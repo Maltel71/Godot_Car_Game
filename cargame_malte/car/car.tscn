@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://car/cam.gd" id="7_xhmyn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
-size = Vector3(2.29102, 0.669922, 6.8826)
+size = Vector3(2.29102, 1.40625, 6.8826)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhmyn"]
 radius = 0.978364
@@ -89,7 +89,7 @@ script = ExtResource("7_xhmyn")
 transform = Transform3D(0.441584, 0, 0, 0, 1, 0, 0, 0, 0.180584, 0, 0.887635, 0.19532)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, 0.151534, 0.0198936)
+transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.186504, 0.0198936)
 shape = SubResource("BoxShape3D_xhmyn")
 debug_color = Color(0.607608, 0.363727, 1, 0.42)
 
