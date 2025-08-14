@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dd1tnndif68qn"
+path="res://.godot/imported/prop_radio1_mesh_01_v1.glb.obj-1bb7f3f466c25a927899e1e97f64e46d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/prop_radio1_mesh_01_v1.glb.obj-1bb7f3f466c25a927899e1e97f64e46d.mesh"]
+
+source_file="res://models/prop_radio1_mesh_01_v1.glb.obj"
+dest_files=["res://.godot/imported/prop_radio1_mesh_01_v1.glb.obj-1bb7f3f466c25a927899e1e97f64e46d.mesh", "res://.godot/imported/prop_radio1_mesh_01_v1.glb.obj-1bb7f3f466c25a927899e1e97f64e46d.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
