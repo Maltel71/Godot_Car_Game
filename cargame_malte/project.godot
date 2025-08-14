@@ -23,6 +23,12 @@ window/size/mode=3
 
 enabled=PackedStringArray("res://addons/road-generator/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://models/_scene_prefabs/": "red"
+}
+
 [input]
 
 Left={

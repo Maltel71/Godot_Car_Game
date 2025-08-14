@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3mb7riugpilv"
-path="res://.godot/imported/env_house2_mesh_01_v1.glb-3dcabb65fc0b8953cfb6c48f6a6d69ed.scn"
+uid="uid://cvcmd6ab2rwr1"
+path="res://.godot/imported/env_bush1_mesh_01_v1.glb-6c50cf35f7f719ebc157b7b26ff52eee.scn"
 
 [deps]
 
-source_file="res://models/env_house2_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_house2_mesh_01_v1.glb-3dcabb65fc0b8953cfb6c48f6a6d69ed.scn"]
+source_file="res://models/enviroment/env_bush1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_bush1_mesh_01_v1.glb-6c50cf35f7f719ebc157b7b26ff52eee.scn"]
 
 [params]
 

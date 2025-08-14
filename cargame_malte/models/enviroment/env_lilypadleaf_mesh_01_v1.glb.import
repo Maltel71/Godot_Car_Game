@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ckxl2n7snw84c"
-path="res://.godot/imported/env_lilypadleaf_mesh_01_v1.glb-21f2ab2b236c409313dcc319854e62dd.scn"
+path="res://.godot/imported/env_lilypadleaf_mesh_01_v1.glb-c763ace408940cd5612702d579d38078.scn"
 
 [deps]
 
-source_file="res://models/env_lilypadleaf_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_lilypadleaf_mesh_01_v1.glb-21f2ab2b236c409313dcc319854e62dd.scn"]
+source_file="res://models/enviroment/env_lilypadleaf_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_lilypadleaf_mesh_01_v1.glb-c763ace408940cd5612702d579d38078.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7d4mo3gqbwvw"
-path="res://.godot/imported/env_house1_mesh_01_v1.glb-2013a9796e368d5ecdc51397657596f8.scn"
+uid="uid://rbyjlfgq05u3"
+path="res://.godot/imported/env_grass1_mesh_01_v1.glb-39c5956feaf2f4961d98c7e59f672485.scn"
 
 [deps]
 
-source_file="res://models/env_house1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_house1_mesh_01_v1.glb-2013a9796e368d5ecdc51397657596f8.scn"]
+source_file="res://models/enviroment/env_grass1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_grass1_mesh_01_v1.glb-39c5956feaf2f4961d98c7e59f672485.scn"]
 
 [params]
 

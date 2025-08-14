@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bg7hn83n8r56c"
-path="res://.godot/imported/env_prop_streetcone1_mesh_01_v1.glb-6b3cfe2eeb8c43ce1519f4323156f4a0.scn"
+uid="uid://do5b1k7ecq5d5"
+path="res://.godot/imported/prop_window1_mesh_01_v1.glb-846904eda56188c4e09de820512206d4.scn"
 
 [deps]
 
-source_file="res://models/env_prop_streetcone1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_prop_streetcone1_mesh_01_v1.glb-6b3cfe2eeb8c43ce1519f4323156f4a0.scn"]
+source_file="res://models/buildings/prop_window1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/prop_window1_mesh_01_v1.glb-846904eda56188c4e09de820512206d4.scn"]
 
 [params]
 

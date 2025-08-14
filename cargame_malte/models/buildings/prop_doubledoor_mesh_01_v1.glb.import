@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://do5b1k7ecq5d5"
-path="res://.godot/imported/prop_window1_mesh_01_v1.glb-8407015cc6157589b58faa9d62a6c587.scn"
+uid="uid://dtmv7p6kv8w4j"
+path="res://.godot/imported/prop_doubledoor_mesh_01_v1.glb-0c6a8dfe15bd143b9731c510f769723c.scn"
 
 [deps]
 
-source_file="res://models/prop_window1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/prop_window1_mesh_01_v1.glb-8407015cc6157589b58faa9d62a6c587.scn"]
+source_file="res://models/buildings/prop_doubledoor_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/prop_doubledoor_mesh_01_v1.glb-0c6a8dfe15bd143b9731c510f769723c.scn"]
 
 [params]
 

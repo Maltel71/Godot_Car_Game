@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d02oqxj585g0c"
-path="res://.godot/imported/prop_factorybase1_mesh_01_v1.glb-624ecccf96b4983f909ab948064e2491.scn"
+uid="uid://l3gbej1wsryb"
+path="res://.godot/imported/env_streetsignarmature1_mesh_01_v1.glb-5ad0be85d2999818c56140e3ea4b0e12.scn"
 
 [deps]
 
-source_file="res://models/prop_factorybase1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/prop_factorybase1_mesh_01_v1.glb-624ecccf96b4983f909ab948064e2491.scn"]
+source_file="res://models/street_misc/env_streetsignarmature1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_streetsignarmature1_mesh_01_v1.glb-5ad0be85d2999818c56140e3ea4b0e12.scn"]
 
 [params]
 

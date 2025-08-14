@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cvcmd6ab2rwr1"
-path="res://.godot/imported/env_bush1_mesh_01_v1.glb-ed813560470713a3486800f2a72befa1.scn"
+uid="uid://duuynm83wyd4v"
+path="res://.godot/imported/env_treestump1_mesh_01_v1.glb-f17296864368735f5c8f38cae5d4fb37.scn"
 
 [deps]
 
-source_file="res://models/env_bush1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_bush1_mesh_01_v1.glb-ed813560470713a3486800f2a72befa1.scn"]
+source_file="res://models/enviroment/env_treestump1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_treestump1_mesh_01_v1.glb-f17296864368735f5c8f38cae5d4fb37.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://rbyjlfgq05u3"
-path="res://.godot/imported/env_grass1_mesh_01_v1.glb-d28d2f8b7cbb30593c299134ba1b17df.scn"
+uid="uid://b0txvyiwrky2t"
+path="res://.godot/imported/env_handrail1_mesh_01_v1.glb-184a5f307e5b0639b6635e686e7a70eb.scn"
 
 [deps]
 
-source_file="res://models/env_grass1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_grass1_mesh_01_v1.glb-d28d2f8b7cbb30593c299134ba1b17df.scn"]
+source_file="res://models/street_misc/env_handrail1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_handrail1_mesh_01_v1.glb-184a5f307e5b0639b6635e686e7a70eb.scn"]
 
 [params]
 

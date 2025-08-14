@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cfy2vnipcouy1"
-path="res://.godot/imported/env_treedead1_mesh_01_v1.glb-717596ed81ef59291ef83ce0bed64332.scn"
+uid="uid://cnytve32g6tc3"
+path="res://.godot/imported/env_tree1_mesh_01_v1.glb-a5e4b2eebd8fc3fa44e73a0eba869e33.scn"
 
 [deps]
 
-source_file="res://models/env_treedead1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_treedead1_mesh_01_v1.glb-717596ed81ef59291ef83ce0bed64332.scn"]
+source_file="res://models/enviroment/env_tree1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_tree1_mesh_01_v1.glb-a5e4b2eebd8fc3fa44e73a0eba869e33.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="StaticBody3D"
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
