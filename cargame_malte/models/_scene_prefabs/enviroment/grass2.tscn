@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv3pvux6mm38t"]
+
+[ext_resource type="PackedScene" uid="uid://coo5041coem14" path="res://models/enviroment/env_grass2_mesh_01_v1.glb" id="1_0jdg4"]
+
+[node name="Grass2" type="Node3D"]
+
+[node name="env_grass2_mesh_01_v1" parent="." instance=ExtResource("1_0jdg4")]

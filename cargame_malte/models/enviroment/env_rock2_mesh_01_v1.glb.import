@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://be3kqy3jonqes"
-path="res://.godot/imported/env_rock2_mesh_01_v1.glb-1600ebf020ac4bfb26649c5b5ea078b0.scn"
+path="res://.godot/imported/env_rock2_mesh_01_v1.glb-b37269e4df501cd471867626c5924f89.scn"
 
 [deps]
 
-source_file="res://models/env_rock2_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_rock2_mesh_01_v1.glb-1600ebf020ac4bfb26649c5b5ea078b0.scn"]
+source_file="res://models/enviroment/env_rock2_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_rock2_mesh_01_v1.glb-b37269e4df501cd471867626c5924f89.scn"]
 
 [params]
 

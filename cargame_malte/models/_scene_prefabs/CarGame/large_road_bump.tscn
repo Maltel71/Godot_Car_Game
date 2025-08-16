@@ -19,4 +19,10 @@ material_override = ExtResource("2_bf37o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="largeroadbump2/Plane_001/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_bf37o")
 
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="largeroadbump2/Plane_001/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bf37o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="largeroadbump2/Plane_001/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bf37o")
+
 [editable path="largeroadbump2"]

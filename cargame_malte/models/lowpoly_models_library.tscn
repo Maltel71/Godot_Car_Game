@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkrhd7g3sjny0"]
+
+[ext_resource type="PackedScene" uid="uid://b0tcfpapx3m2f" path="res://models/_scene_prefabs/Misc_props/flask_1.tscn" id="1_ishkb"]
+[ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/_scene_prefabs/box1.tscn" id="2_cayux"]
+[ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/_scene_prefabs/enviroment/grass2.tscn" id="3_kb2rw"]
+[ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/_scene_prefabs/ramp_1.tscn" id="4_dyo83"]
+[ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="5_ml01p"]
+[ext_resource type="PackedScene" uid="uid://bs01qvui6utub" path="res://models/_scene_prefabs/roadstuff/streetlamp.tscn" id="6_rmh3u"]
+[ext_resource type="PackedScene" uid="uid://dl1mgv7h1thox" path="res://models/_scene_prefabs/enviroment/tree1.tscn" id="7_hqulm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p4wo8"]
+size = Vector3(200, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_161u5"]
+size = Vector3(200, 1, 10)
+
+[node name="LowpolyModelsLibrary" type="Node3D"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48946, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_p4wo8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_161u5")
+debug_fill = false
+
+[node name="flask1" parent="Ground" instance=ExtResource("1_ishkb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.0636, 0.5, -0.776343)
+
+[node name="StaticBody3D" parent="Ground" instance=ExtResource("2_cayux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.48904, 0.5, -0.773335)
+
+[node name="ramp1" parent="." instance=ExtResource("4_dyo83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2887, 0.0412866, 0.428955)
+
+[node name="Rock1" parent="." instance=ExtResource("5_ml01p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2661, 0.131392, -0.169554)
+
+[node name="Streetlamp" parent="." instance=ExtResource("6_rmh3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.24926, 0.0780811, -2.07188)
+
+[node name="Tree1" parent="." instance=ExtResource("7_hqulm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6349, 0.431192, -0.389331)
+
+[node name="Grass2" parent="." instance=ExtResource("3_kb2rw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.103, 0.201624, -0.863317)

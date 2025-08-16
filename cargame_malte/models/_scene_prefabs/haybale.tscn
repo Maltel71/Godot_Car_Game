@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3i8yqhi5vcwg"]
+
+[ext_resource type="PackedScene" uid="uid://b5lrhagkwxh5n" path="res://models/prop_haybale_mesh_01_v1.glb" id="1_1qlcm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j8dhb"]
+size = Vector3(1.65332, 1.63892, 2.4744)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="prop_haybale_mesh_01_v1" parent="." instance=ExtResource("1_1qlcm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00341797, 0.863797, 0.000656128)
+shape = SubResource("BoxShape3D_j8dhb")
