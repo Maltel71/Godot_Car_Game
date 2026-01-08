@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://1tgo7xcytvyx"]
+
+[ext_resource type="Script" uid="uid://do5pf17hawno6" path="res://scripts/start_menu.gd" id="1_3kg5v"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_1t8nw"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_3kg5v")
+game_scene_path = "res://levels/Level2.tscn"
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 10
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme = ExtResource("2_1t8nw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -356.5
+offset_top = 181.0
+offset_right = 356.5
+offset_bottom = 758.0
+grow_horizontal = 2
+
+[node name="Header" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "MyCarGame"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+z_index = 1
+layout_mode = 2
+text = "Quit"
+
+[node name="Credits" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "MadeBy____"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="Panel"]
+position = Vector2(960, 540)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
