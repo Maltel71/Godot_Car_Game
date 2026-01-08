@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pginap100olj"
+path="res://.godot/imported/blipSelect (2).wav-142867451e9a6f73a73171860b16e939.sample"
+
+[deps]
+
+source_file="res://audio/sfx/blip_select/blipSelect (2).wav"
+dest_files=["res://.godot/imported/blipSelect (2).wav-142867451e9a6f73a73171860b16e939.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

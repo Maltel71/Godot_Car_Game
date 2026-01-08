@@ -49,10 +49,7 @@ text = "Quit"
 
 [node name="Credits" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-text = "MadeBy____"
+text = "MadeBy-LM"
 horizontal_alignment = 1
-
-[node name="Camera2D" type="Camera2D" parent="Panel"]
-position = Vector2(960, 540)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

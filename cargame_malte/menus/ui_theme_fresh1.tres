@@ -1,7 +1,26 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://r7gicy3xlnrx"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://r7gicy3xlnrx"]
+
+[ext_resource type="Texture2D" uid="uid://d0skrludyx0o2" path="res://textures/grabber_v1.png" id="1_yxdqa"]
+[ext_resource type="Texture2D" uid="uid://b2aovgtvxjeq6" path="res://textures/grabber_v2.png" id="2_56wxn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxdqa"]
 bg_color = Color(0.47397536, 0.4739759, 0.4739753, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56wxn"]
+bg_color = Color(0.7792872, 0.47022468, 3.85046e-07, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28g1r"]
+bg_color = Color(0.40332836, 0.415784, 0.29007235, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83ydn"]
 bg_color = Color(0.7294118, 0.7294118, 0.7294118, 0)
@@ -13,6 +32,11 @@ bg_color = Color(0.83, 0.83, 0.83, 1)
 [resource]
 Button/font_sizes/font_size = 50
 Button/styles/normal = SubResource("StyleBoxFlat_yxdqa")
+HSlider/icons/grabber = ExtResource("1_yxdqa")
+HSlider/icons/grabber_highlight = ExtResource("2_56wxn")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_56wxn")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_56wxn")
+HSlider/styles/slider = SubResource("StyleBoxFlat_28g1r")
 Label/colors/font_outline_color = Color(0.4745098, 0.4745098, 0.4745098, 1)
 Label/constants/outline_size = 25
 Label/font_sizes/font_size = 120
