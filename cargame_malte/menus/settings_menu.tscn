@@ -15,6 +15,8 @@ grow_vertical = 2
 script = ExtResource("1_83qjl")
 hover_sound = ExtResource("2_7h2wy")
 slider_drag_sound = ExtResource("3_7h2wy")
+hover_volume = -10.0
+slider_drag_volume = -10.0
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -37,6 +39,7 @@ theme = ExtResource("2_v0bl3")
 layout_mode = 2
 theme = ExtResource("2_v0bl3")
 text = "Settings"
+horizontal_alignment = 1
 
 [node name="MasterLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2

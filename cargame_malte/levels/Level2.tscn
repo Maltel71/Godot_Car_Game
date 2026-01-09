@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=27 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="1_g6u6r"]
+[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_pb71r"]
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/car/car.tscn" id="6_aa0ii"]
 [ext_resource type="PackedScene" uid="uid://dxe446hy46qh2" path="res://models/WiggleTest.glb" id="7_vcbjw"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="8_jscuo"]
@@ -425,6 +426,8 @@ _data = {
 point_count = 3
 
 [node name="Level2" type="Node3D"]
+
+[node name="EscMenu" parent="." instance=ExtResource("1_pb71r")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
