@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=28 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="2_k2aru"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/_scene_prefabs/box1.tscn" id="15_m4706"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/_scene_prefabs/ramp_1.tscn" id="16_4xp61"]
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
+[ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="18_k2aru"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -764,6 +765,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -326.6
 
 [node name="Rock1" parent="===ENVIROMENT===" instance=ExtResource("17_4yoxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
+
+[node name="GoalTrigger" parent="." instance=ExtResource("18_k2aru")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.6077538)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://1tgo7xcytvyx"]
+[gd_scene load_steps=4 format=3 uid="uid://1tgo7xcytvyx"]
 
 [ext_resource type="Script" uid="uid://do5pf17hawno6" path="res://scripts/start_menu.gd" id="1_3kg5v"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_1t8nw"]
+[ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_w3tic"]
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3kg5v")
-game_scene_path = "res://levels/Level2.tscn"
+game_scene_path = "res://levels/level_2.tscn"
+hover_sound = ExtResource("2_w3tic")
+hover_volume = -10.0
 
 [node name="Panel" type="Panel" parent="."]
 z_index = 10

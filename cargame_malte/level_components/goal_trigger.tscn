@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://doayyi07lbsx4"]
+
+[ext_resource type="Script" uid="uid://bbl1e3xk1vqnh" path="res://scripts/goal_trigger.gd" id="1_6kx45"]
+[ext_resource type="PackedScene" uid="uid://2qtvy28ooeek" path="res://menus/win_menu.tscn" id="2_qr0kk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qr0kk"]
+size = Vector3(10, 3, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lsx2h"]
+size = Vector3(10, 3, 1)
+
+[node name="GoalTrigger" type="Area3D"]
+script = ExtResource("1_6kx45")
+win_menu_scene = ExtResource("2_qr0kk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_qr0kk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_lsx2h")

@@ -1,0 +1,16 @@
+extends Area3D
+
+@export var win_menu_scene: PackedScene
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+
+func _on_body_entered(body):
+	if body is VehicleBody3D:
+		show_win_menu()
+
+func show_win_menu():
+	var win_menu = win_menu_scene.instantiate()
+	get_tree().current_scene.add_child(win_menu)
+	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
