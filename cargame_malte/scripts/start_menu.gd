@@ -25,9 +25,8 @@ func _ready():
 		settings_button.mouse_entered.connect(_on_button_hover)
 		quit_button.mouse_entered.connect(_on_button_hover)
 
-func _on_play_pressed():  # Renamed
-	if game_scene_path != "":
-		get_tree().change_scene_to_file(game_scene_path)
+func _on_play_pressed():
+	get_tree().change_scene_to_file("res://menus/levelselect_menu.tscn")
 
 func _on_settings_pressed():
 	get_tree().change_scene_to_file("res://menus/settings_menu.tscn")
