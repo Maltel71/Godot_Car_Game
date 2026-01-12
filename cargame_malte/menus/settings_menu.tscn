@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk8h5n3o2ip86"]
+[gd_scene load_steps=6 format=3 uid="uid://dk8h5n3o2ip86"]
 
 [ext_resource type="Script" uid="uid://djof21p20hh2g" path="res://scripts/settings_menu.gd" id="1_83qjl"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_7h2wy"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_v0bl3"]
 [ext_resource type="AudioStream" uid="uid://cdv86a6rostyn" path="res://audio/sfx/click/looping/click (2)_looping.wav" id="3_7h2wy"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="5_f368g"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -29,9 +30,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 736.0
+offset_left = -232.0
+offset_top = 153.0
+offset_right = 232.0
+offset_bottom = 889.0
 grow_horizontal = 2
 theme = ExtResource("2_v0bl3")
 
@@ -43,7 +45,7 @@ horizontal_alignment = 1
 
 [node name="MasterLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_v0bl3")
+theme = ExtResource("5_f368g")
 text = "Master Volume"
 
 [node name="MasterVolume" type="HSlider" parent="Panel/VBoxContainer"]
@@ -52,7 +54,7 @@ theme = ExtResource("2_v0bl3")
 
 [node name="MusicLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_v0bl3")
+theme = ExtResource("5_f368g")
 text = "Music Volume"
 
 [node name="MusicVolume" type="HSlider" parent="Panel/VBoxContainer"]
@@ -61,7 +63,7 @@ theme = ExtResource("2_v0bl3")
 
 [node name="SFXLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_v0bl3")
+theme = ExtResource("5_f368g")
 text = "SFX Volume"
 
 [node name="SFXVolume" type="HSlider" parent="Panel/VBoxContainer"]

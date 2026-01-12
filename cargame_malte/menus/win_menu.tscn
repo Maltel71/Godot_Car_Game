@@ -24,10 +24,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -356.5
-offset_top = 181.0
-offset_right = 356.5
-offset_bottom = 758.0
+offset_left = -337.0
+offset_top = 114.0
+offset_right = 376.0
+offset_bottom = 932.0
 grow_horizontal = 2
 
 [node name="Header" type="Label" parent="Panel/VBoxContainer"]
@@ -50,10 +50,21 @@ z_index = 1
 layout_mode = 2
 text = "Quit"
 
+[node name="Time" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dlju8")
+text = "Time:"
+
+[node name="Score" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_dlju8")
+text = "Score:"
+
 [node name="Credits" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_dlju8")
-text = "MadeBy: Name"
+text = "
+MadeBy: Name"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

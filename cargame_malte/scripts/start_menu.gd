@@ -10,6 +10,8 @@ extends Control
 @onready var quit_button = $Panel/VBoxContainer/QuitButton
 @onready var audio_player = $AudioStreamPlayer
 
+@export var menu_music: AudioStream
+
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
@@ -39,3 +41,8 @@ func _on_button_hover():
 		audio_player.stream = hover_sound
 		audio_player.volume_db = hover_volume
 		audio_player.play()
+		
+	if menu_music:
+		MusicManager.play_menu_music(menu_music)
+		
+		

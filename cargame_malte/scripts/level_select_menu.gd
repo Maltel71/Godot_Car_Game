@@ -38,6 +38,7 @@ func _ready():
 
 func _on_level_pressed(index: int):
 	if index < level_scenes.size() and level_scenes[index] != "":
+		MusicManager.stop_music()
 		get_tree().change_scene_to_file(level_scenes[index])
 
 func _on_main_menu_pressed():

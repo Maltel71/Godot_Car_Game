@@ -21,18 +21,6 @@ func _ready():
 	if audio_player:
 		audio_player.bus = "sfx"
 	
-	# Initialize audio buses to 50% if at default (0 dB)
-	var master_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
-	var music_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("music"))
-	var sfx_db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("sfx"))
-	
-	if master_db == 0.0:
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(0.5))
-	if music_db == 0.0:
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("music"), linear_to_db(0.5))
-	if sfx_db == 0.0:
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), linear_to_db(0.5))
-	
 	# Load current volumes into sliders (convert to 0-100 range)
 	master_volume.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))) * 100.0
 	music_volume.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("music"))) * 100.0

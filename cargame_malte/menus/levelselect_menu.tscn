@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3qwun56sgiys"]
+[gd_scene load_steps=5 format=3 uid="uid://b3qwun56sgiys"]
 
 [ext_resource type="Script" uid="uid://bb87ohfxofi36" path="res://scripts/level_select_menu.gd" id="1_fu0dp"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_e0ag4"]
+[ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_medlx"]
 
 [sub_resource type="Theme" id="Theme_1egug"]
 
@@ -10,6 +11,8 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fu0dp")
 level_scenes = Array[String](["res://levels/level_1.tscn", "res://levels/level_2.tscn", "", ""])
+hover_sound = ExtResource("2_medlx")
+hover_volume = -10.0
 
 [node name="Panel" type="Panel" parent="."]
 z_index = 10
@@ -44,10 +47,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -314.0
-offset_top = 507.0
-offset_right = 311.0
-offset_bottom = 772.0
+offset_left = -240.0
+offset_top = 545.0
+offset_right = 235.0
+offset_bottom = 871.0
 grow_horizontal = 2
 theme = ExtResource("2_e0ag4")
 columns = 3
@@ -55,27 +58,33 @@ columns = 3
 [node name="Level_1" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
 theme = SubResource("Theme_1egug")
-text = "Level 1
+text = "Level
+1
 "
 
 [node name="Level_2" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
-text = "Level 2"
+text = "Level 
+2"
 
 [node name="Level_3" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
-text = "Level 2"
+text = "Level
+3"
 
 [node name="Level_4" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
-text = "Level 2"
+text = "Level
+4"
 
 [node name="Level_5" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
-text = "Level 2"
+text = "Level
+5"
 
 [node name="Level_6" type="Button" parent="Panel/GridContainer"]
 layout_mode = 2
-text = "Level 2"
+text = "Level
+6"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
