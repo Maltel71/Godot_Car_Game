@@ -64,6 +64,8 @@ text = "Score:"
 layout_mode = 2
 theme = ExtResource("3_dlju8")
 text = "
+
+
 MadeBy: Name"
 horizontal_alignment = 1
 

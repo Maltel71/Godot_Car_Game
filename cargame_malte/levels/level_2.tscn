@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=30 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="2_k2aru"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/_scene_prefabs/ramp_1.tscn" id="16_4xp61"]
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="18_k2aru"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="19_ndgrd"]
+[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -768,6 +770,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
 
 [node name="GoalTrigger" parent="." instance=ExtResource("18_k2aru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.6077538)
+
+[node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("20_h351q")]
+
+[node name="Pickup01" parent="." instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -14.23181)
+
+[node name="Pickup02" parent="." instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -11.976393)
+
+[node name="Pickup03" parent="." instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -8.074182)
+
+[node name="Pickup04" parent="." instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -3.9880133)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

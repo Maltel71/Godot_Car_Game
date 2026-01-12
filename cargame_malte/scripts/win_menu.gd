@@ -13,6 +13,10 @@ var current_level_path: String = ""
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
+	var manager = get_node("/root/ScoreAndTimeManager")
+	$Panel/VBoxContainer/Time.text = "Time: %.2f" % manager.get_time()
+	$Panel/VBoxContainer/Score.text = "Score: %d" % manager.get_score()
+	
 	if audio_player:
 		audio_player.bus = "sfx"
 	
