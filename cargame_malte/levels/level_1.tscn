@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpp7ixfm514m6"]
+[gd_scene load_steps=9 format=3 uid="uid://bpp7ixfm514m6"]
 
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/car/car.tscn" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_bt44k"]
 [ext_resource type="Material" uid="uid://0jt656wxaltq" path="res://materials/new_standard_material_3d.tres" id="3_ihfcg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3hls8"]
@@ -23,6 +24,7 @@ size = Vector2(29.95, 30.015)
 size = Vector3(30, 0.1, 30)
 
 [node name="Level1" type="Node3D"]
+script = ExtResource("1_bt44k")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hn12h")

@@ -1,5 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=31 format=3 uid="uid://dj445fvglwlav"]
 
+[ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="2_k2aru"]
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/car/car.tscn" id="3_ndgrd"]
@@ -429,6 +430,7 @@ _data = {
 point_count = 3
 
 [node name="Level2" type="Node3D"]
+script = ExtResource("1_dpc8t")
 
 [node name="EscMenu" parent="." instance=ExtResource("1_uo0vl")]
 

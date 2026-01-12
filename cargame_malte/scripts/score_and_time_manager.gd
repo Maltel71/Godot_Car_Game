@@ -5,7 +5,7 @@ var level_score: int = 0
 var is_timing: bool = false
 
 func _ready():
-	start_timer()
+	pass  # Don't auto-start anymore
 
 func _process(delta):
 	if is_timing:
@@ -27,3 +27,8 @@ func get_time() -> float:
 
 func get_score() -> int:
 	return level_score
+
+func reset():
+	level_time = 0.0
+	level_score = 0
+	is_timing = false

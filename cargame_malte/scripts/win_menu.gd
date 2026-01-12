@@ -35,10 +35,15 @@ func _ready():
 
 func _on_play_again_pressed():
 	get_tree().paused = false
+	var manager = get_node("/root/ScoreAndTimeManager")
+	manager.reset()
+	manager.start_timer()
 	get_tree().reload_current_scene()
 
 func _on_main_menu_pressed():
 	get_tree().paused = false
+	var manager = get_node("/root/ScoreAndTimeManager")
+	manager.reset()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene_to_file("res://menus/start_menu.tscn")
 
