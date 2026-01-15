@@ -10,6 +10,7 @@ var air_control_roll_strength = 2000.0
 var air_control_damping = 0.98
 var air_control_fade_time = 2.0
 var air_time = 0.0
+@export var spring_bone_simulator: SpringBoneSimulator3D
 
 func _physics_process(delta):
 	$CamArm.position = position

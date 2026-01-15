@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=12 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/car/CarMain02.fbx" id="2_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/car/SteeringWheel.fbx" id="3_vl2bd"]
-[ext_resource type="PackedScene" uid="uid://buy6xykwfd21t" path="res://models/car/CarWheelCylinders.fbx" id="4_72ido"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/car/CarWindows02.fbx" id="5_coc8s"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
+[ext_resource type="PackedScene" uid="uid://cmm8k73e7pso0" path="res://level_components/gubbe_1_ph.tscn" id="9_7wcxq"]
+[ext_resource type="PackedScene" uid="uid://b1sh8qwhvh665" path="res://particlesyst/vfx_stylizedmoke2_partsyst.tscn" id="9_ifv5b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.40625, 6.8826)
@@ -16,18 +17,16 @@ size = Vector3(2.29102, 1.40625, 6.8826)
 radius = 0.978364
 height = 6.10681
 
-[node name="VehicleBody3D" type="VehicleBody3D"]
+[node name="VehicleBody3D" type="VehicleBody3D" node_paths=PackedStringArray("spring_bone_simulator")]
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_bkrhx")
+spring_bone_simulator = NodePath("Gubbe1_PH/char_gubbe1_m,_ph/Armature/Skeleton3D/SpringBoneSimulator3D")
 
 [node name="CarMain02" parent="." instance=ExtResource("2_xhmyn")]
 
 [node name="SteeringWheel" parent="CarMain02" instance=ExtResource("3_vl2bd")]
-
-[node name="CarWheelCylinders" parent="." instance=ExtResource("4_72ido")]
-visible = false
 
 [node name="CarWindows02" parent="." instance=ExtResource("5_coc8s")]
 
@@ -99,5 +98,19 @@ transform = Transform3D(0.918173, 0, 0, 0, -4.01346e-08, -0.918173, 0, 0.918173,
 shape = SubResource("CapsuleShape3D_xhmyn")
 debug_color = Color(0, 0.643137, 0.290196, 1)
 
+[node name="Extras" type="Node3D" parent="."]
+
+[node name="VFXStylizedSmoke2" parent="Extras" instance=ExtResource("9_ifv5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54766685, -1.0248309, -3.1214743)
+
 [node name="Thruster" parent="." instance=ExtResource("8_45u5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15337408, 0.8624389, 2.9415634)
+transform = Transform3D(-4.371139e-08, 0, -1, -0.9659258, 0.25881907, 3.7252903e-08, 0.25881907, 0.9659258, -1.4901161e-08, 1.3862259, -0.21461034, -2.1589038)
+
+[node name="Thruster2" parent="." instance=ExtResource("8_45u5b")]
+transform = Transform3D(-3.5326156e-08, -3.1294107e-08, 1, 0.96592575, 0.2588191, 4.2221956e-08, -0.2588191, 0.96592575, 2.1084706e-08, -1.386, -0.215, -2.159)
+
+[node name="Gubbe1_PH" parent="." instance=ExtResource("9_7wcxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5375964, 1.2878923, 0.0601807)
+
+[editable path="Gubbe1_PH"]
+[editable path="Gubbe1_PH/char_gubbe1_m,_ph"]

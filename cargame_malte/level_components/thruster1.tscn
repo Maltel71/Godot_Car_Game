@@ -1,10 +1,67 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbnpkv87eeaia"]
+[gd_scene load_steps=14 format=3 uid="uid://bbnpkv87eeaia"]
 
 [ext_resource type="Script" uid="uid://h4sfcanfcl1c" path="res://scripts/thruster.gd" id="1_2xtem"]
 [ext_resource type="PackedScene" uid="uid://dvstrfj7fo66e" path="res://models/uppgrade_thruster1_v1.glb" id="2_1cgkj"]
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="3_15ce3"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="4_grga3"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="5_kpw17"]
 
-[node name="Thruster" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cylb8"]
+render_priority = 0
+shader = ExtResource("3_15ce3")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("4_grga3")
+
+[sub_resource type="Curve" id="Curve_idasr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wnk4v"]
+texture_mode = 1
+curve = SubResource("Curve_idasr")
+
+[sub_resource type="Gradient" id="Gradient_urs1q"]
+offsets = PackedFloat32Array(0.13207547, 0.3773585, 0.988391)
+colors = PackedColorArray(0.99999994, 0.7726111, 0.12258693, 1, 0.7442253, 0.06303743, 1.92523e-07, 1, 0.8091658, 0.6744181, 0.6291941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ovmv7"]
+gradient = SubResource("Gradient_urs1q")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_wexnx"]
+_data = [Vector2(0, 0), 0.0, 0.328478, 0, 0, Vector2(1, 0.355802), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mffl1"]
+curve = SubResource("Curve_wexnx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7rde"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 1, 0)
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_mffl1")
+color_ramp = SubResource("GradientTexture1D_ovmv7")
+alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[node name="Thruster" type="Node3D" node_paths=PackedStringArray("particle_effect")]
 script = ExtResource("1_2xtem")
 thrust_force = 1000.0
+particle_effect = NodePath("vfx_stylized_fire1")
 
 [node name="Mesh" parent="." instance=ExtResource("2_1cgkj")]
+
+[node name="vfx_stylized_fire1" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, -0.5601196, 0)
+material_override = SubResource("ShaderMaterial_cylb8")
+amount = 20
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_p7rde")
+draw_pass_1 = ExtResource("5_kpw17")

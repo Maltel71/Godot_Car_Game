@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=33 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="18_k2aru"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
+[ext_resource type="PackedScene" uid="uid://qklhex8wy3ip" path="res://particlesyst/vfx_stylizedmoke1_partsyst.tscn" id="22_ngvhw"]
+[ext_resource type="PackedScene" uid="uid://b1sh8qwhvh665" path="res://particlesyst/vfx_stylizedmoke2_partsyst.tscn" id="23_itbe0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -761,6 +763,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.756, 26.4191, 251.402)
 [node name="ramp7" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -342.939, 19.4101, 40.313)
 
+[node name="ramp9" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
+transform = Transform3D(-1.6744175, 0, -0.044167757, 0, 1.675, 0, 0.044167757, 0, -1.6744175, -333.198, 19.4101, 12.222883)
+
 [node name="ramp6" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -332.045, 10.14, 158.863)
 
@@ -786,6 +791,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -8.07418
 
 [node name="Pickup04" parent="." instance=ExtResource("19_ndgrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -3.9880133)
+
+[node name="VFXStylizedSmoke1" parent="." instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.8409, 20.016693, -27.585741)
+
+[node name="VFXStylizedSmoke2" parent="." instance=ExtResource("23_itbe0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.39697, 22.15579, -23.268795)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
