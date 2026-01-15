@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbnpkv87eeaia"]
+
+[ext_resource type="Script" uid="uid://h4sfcanfcl1c" path="res://scripts/thruster.gd" id="1_2xtem"]
+[ext_resource type="PackedScene" uid="uid://dvstrfj7fo66e" path="res://models/uppgrade_thruster1_v1.glb" id="2_1cgkj"]
+
+[node name="Thruster" type="Node3D"]
+script = ExtResource("1_2xtem")
+thrust_force = 1000.0
+
+[node name="Mesh" parent="." instance=ExtResource("2_1cgkj")]

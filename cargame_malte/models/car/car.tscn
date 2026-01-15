@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=11 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/car/CarMain02.fbx" id="2_xhmyn"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/car/CarWindows02.fbx" id="5_coc8s"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
+[ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.40625, 6.8826)
@@ -97,3 +98,6 @@ debug_color = Color(0.607608, 0.363727, 1, 0.42)
 transform = Transform3D(0.918173, 0, 0, 0, -4.01346e-08, -0.918173, 0, 0.918173, -4.01346e-08, 0, 0.14752, 0.0198936)
 shape = SubResource("CapsuleShape3D_xhmyn")
 debug_color = Color(0, 0.643137, 0.290196, 1)
+
+[node name="Thruster" parent="." instance=ExtResource("8_45u5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15337408, 0.8624389, 2.9415634)
