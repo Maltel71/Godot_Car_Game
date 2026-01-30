@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dh3if1v1pfxhv"]
+[gd_scene load_steps=8 format=3 uid="uid://dh3if1v1pfxhv"]
 
-[ext_resource type="Script" uid="uid://c0020ckp6b6fo" path="res://scripts/time_pickup.gd" id="1_bp266"]
+[ext_resource type="Script" uid="uid://c0020ckp6b6fo" path="res://scripts/pickup_time.gd" id="1_bp266"]
 [ext_resource type="AudioStream" uid="uid://dxfbytf514wws" path="res://audio/sfx/pickup/pickupCoin (1).wav" id="2_iyx04"]
-[ext_resource type="PackedScene" uid="uid://ci3ehn0kakhxm" path="res://models/env_prop_coin1_mesh_01_v1.glb" id="3_iyx04"]
-[ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="4_vf1b3"]
+[ext_resource type="PackedScene" uid="uid://8lalpcvqiogq" path="res://models/pickup_time_mesh_v1.glb" id="3_glg4w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1f2t"]
 
@@ -12,7 +11,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("env_prop_coin1_mesh_01_v1:rotation")
+tracks/0/path = NodePath("pickup_time_mesh_v1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,7 +28,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("env_prop_coin1_mesh_01_v1:rotation")
+tracks/0/path = NodePath("pickup_time_mesh_v1:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,11 +49,6 @@ script = ExtResource("1_bp266")
 pickup_sound = ExtResource("2_iyx04")
 pickup_volume = -5.0
 
-[node name="env_prop_coin1_mesh_01_v1" parent="." instance=ExtResource("3_iyx04")]
-
-[node name="Wheel02" parent="env_prop_coin1_mesh_01_v1" instance=ExtResource("4_vf1b3")]
-transform = Transform3D(-6.4692856e-08, 0, -1.48, 0, 1.48, 0, 1.48, 0, -6.4692856e-08, 0, 0, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_b1f2t")
 
@@ -63,3 +57,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_d11ea")
 }
 autoplay = "pickup_rotate"
+
+[node name="pickup_time_mesh_v1" parent="." instance=ExtResource("3_glg4w")]

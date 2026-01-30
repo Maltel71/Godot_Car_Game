@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=33 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/time_pickup.tscn" id="22_ngvhw"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickup_thrusters.tscn" id="23_itbe0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -816,6 +817,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.2364, 21.954525, -10.998
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.6077538)
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("20_h351q")]
+
+[node name="Pickup01" parent="." instance=ExtResource("23_itbe0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.7059, 21.885225, -10.000926)
+thruster_duration = 20.0
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=27 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/car/CarMain02.fbx" id="2_xhmyn"]
@@ -7,8 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="9_3jha3"]
 [ext_resource type="PackedScene" uid="uid://cmm8k73e7pso0" path="res://level_components/gubbe_1_ph.tscn" id="9_7wcxq"]
-[ext_resource type="PackedScene" uid="uid://b1sh8qwhvh665" path="res://particlesyst/vfx_stylizedmoke2_partsyst.tscn" id="9_ifv5b"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="10_b751l"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="11_i00a5"]
+[ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="12_i00a5"]
+[ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="13_utifk"]
+[ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.40625, 6.8826)
@@ -17,12 +22,93 @@ size = Vector3(2.29102, 1.40625, 6.8826)
 radius = 0.978364
 height = 6.10681
 
-[node name="VehicleBody3D" type="VehicleBody3D" node_paths=PackedStringArray("spring_bone_simulator")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_utifk"]
+render_priority = 0
+shader = ExtResource("9_3jha3")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("10_b751l")
+
+[sub_resource type="Curve" id="Curve_jpt3o"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wnk4v"]
+texture_mode = 1
+curve = SubResource("Curve_jpt3o")
+
+[sub_resource type="Gradient" id="Gradient_5khej"]
+offsets = PackedFloat32Array(0, 0.26794258, 0.41148326)
+colors = PackedColorArray(0.93, 0.93, 0.93, 1, 0.83843184, 0.6967845, 0.66014457, 1, 0.82, 0.82, 0.82, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ovmv7"]
+gradient = SubResource("Gradient_5khej")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_b4ysl"]
+_data = [Vector2(0.004255317, 0), 0.0, 0.0, 0, 0, Vector2(0.09787234, 0.17977524), 0.0, 0.0, 0, 0, Vector2(0.506383, 0.13483143), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mffl1"]
+curve = SubResource("Curve_b4ysl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l85uf"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.01
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.53999996
+scale_curve = SubResource("CurveTexture_mffl1")
+color_ramp = SubResource("GradientTexture1D_ovmv7")
+alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8ijm4"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_mffl1")
+color_ramp = SubResource("GradientTexture1D_ovmv7")
+alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jha3"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_mffl1")
+color_ramp = SubResource("GradientTexture1D_ovmv7")
+alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[node name="VehicleBody3D" type="VehicleBody3D" node_paths=PackedStringArray("spring_bone_simulator", "exhaust_particles")]
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_bkrhx")
 spring_bone_simulator = NodePath("Gubbe1_PH/char_gubbe1_m,_ph/Armature/Skeleton3D/SpringBoneSimulator3D")
+exhaust_particles = NodePath("===PartSyst===/vfx_Exhaust_Driving")
 
 [node name="CarMain02" parent="." instance=ExtResource("2_xhmyn")]
 
@@ -98,22 +184,69 @@ transform = Transform3D(0.918173, 0, 0, 0, -4.01346e-08, -0.918173, 0, 0.918173,
 shape = SubResource("CapsuleShape3D_xhmyn")
 debug_color = Color(0, 0.643137, 0.290196, 1)
 
-[node name="Extras" type="Node3D" parent="."]
+[node name="===PartSyst===" type="Node3D" parent="."]
 
-[node name="VFXStylizedSmoke2" parent="Extras" instance=ExtResource("9_ifv5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54766685, -1.0248309, -3.1214743)
+[node name="vfx_Exhaust_idle" type="GPUParticles3D" parent="===PartSyst==="]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
+material_override = SubResource("ShaderMaterial_utifk")
+amount = 5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_l85uf")
+draw_pass_1 = ExtResource("11_i00a5")
 
-[node name="Thruster" parent="." instance=ExtResource("8_45u5b")]
+[node name="vfx_Exhaust_Driving" type="GPUParticles3D" parent="===PartSyst==="]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
+material_override = SubResource("ShaderMaterial_utifk")
+amount = 40
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_8ijm4")
+draw_pass_1 = ExtResource("11_i00a5")
+
+[node name="===Thrusters===" type="Node3D" parent="."]
+
+[node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
 transform = Transform3D(-4.371139e-08, 0, -1, -0.9659258, 0.25881907, 3.7252903e-08, 0.25881907, 0.9659258, -1.4901161e-08, 1.3862259, -0.21461034, -2.1589038)
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
 
-[node name="Thruster2" parent="." instance=ExtResource("8_45u5b")]
+[node name="Thruster_R" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
 transform = Transform3D(-3.5326156e-08, -3.1294107e-08, 1, 0.96592575, 0.2588191, 4.2221956e-08, -0.2588191, 0.96592575, 2.1084706e-08, -1.386, -0.215, -2.159)
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
+
+[node name="vfx_Exhaust_SmokePuff_L" type="GPUParticles3D" parent="===Thrusters==="]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.3800956, -0.45450124, -2.8872514)
+material_override = SubResource("ShaderMaterial_utifk")
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_3jha3")
+draw_pass_1 = ExtResource("11_i00a5")
+
+[node name="vfx_Exhaust_SmokePuff_R" type="GPUParticles3D" parent="===Thrusters==="]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.38, -0.455, -2.887)
+material_override = SubResource("ShaderMaterial_utifk")
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_3jha3")
+draw_pass_1 = ExtResource("11_i00a5")
 
 [node name="Gubbe1_PH" parent="." instance=ExtResource("9_7wcxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5375964, 1.2878923, 0.0601807)
 
 [node name="char_gubbe1_m,_ph" parent="Gubbe1_PH" index="0"]
 visible = false
+
+[node name="CarSFXManager" type="Node3D" parent="."]
+script = ExtResource("12_i00a5")
+idle_sounds = Array[AudioStream]([ExtResource("13_utifk")])
+driving_sounds = Array[AudioStream]([ExtResource("14_jpt3o")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CarSFXManager"]
+bus = &"sfx"
 
 [editable path="Gubbe1_PH"]
 [editable path="Gubbe1_PH/char_gubbe1_m,_ph"]
