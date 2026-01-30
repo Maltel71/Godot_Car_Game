@@ -4,6 +4,7 @@ extends Control
 @export var game_scene_path: String = "res://levels/car_level_1.tscn"  # Update this path
 @export var hover_sound: AudioStream
 @export_range(-80, 24) var hover_volume: float = 0.0
+@export_range(-80, 24) var menu_music_volume: float = 0.0
 
 @onready var play_button = $Panel/VBoxContainer/PlayButton  # Renamed
 @onready var settings_button = $Panel/VBoxContainer/SettingsButton
@@ -26,6 +27,11 @@ func _ready():
 		play_button.mouse_entered.connect(_on_button_hover)
 		settings_button.mouse_entered.connect(_on_button_hover)
 		quit_button.mouse_entered.connect(_on_button_hover)
+		
+		# Start menu music
+	if menu_music:
+		MusicManager.play_menu_music(menu_music)
+		MusicManager.music_player.volume_db = menu_music_volume
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://menus/levelselect_menu.tscn")
@@ -42,7 +48,5 @@ func _on_button_hover():
 		audio_player.volume_db = hover_volume
 		audio_player.play()
 		
-	if menu_music:
-		MusicManager.play_menu_music(menu_music)
 		
 		

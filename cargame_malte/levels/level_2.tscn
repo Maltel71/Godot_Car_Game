@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=32 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
@@ -21,8 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="18_k2aru"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
-[ext_resource type="PackedScene" uid="uid://qklhex8wy3ip" path="res://particlesyst/vfx_stylizedmoke1_partsyst.tscn" id="22_ngvhw"]
-[ext_resource type="PackedScene" uid="uid://b1sh8qwhvh665" path="res://particlesyst/vfx_stylizedmoke2_partsyst.tscn" id="23_itbe0"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/time_pickup.tscn" id="22_ngvhw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -433,6 +432,7 @@ point_count = 3
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_dpc8t")
+level_start_time = 30.0
 
 [node name="EscMenu" parent="." instance=ExtResource("1_uo0vl")]
 
@@ -534,12 +534,14 @@ settings/0/exclude_collision_count = 0
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11876, 1.12862, -9.75021)
 curve = SubResource("Curve3D_e3avg")
+metadata/_edit_lock_ = true
 
 [node name="RoadManager" type="Node3D" parent="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
 script = ExtResource("5_dpc8t")
 material_resource = ExtResource("6_ngvhw")
 metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
+metadata/_edit_lock_ = true
 
 [node name="Road_001" type="Node3D" parent="Path3D/RoadManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
@@ -775,28 +777,45 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -326.6
 [node name="Rock1" parent="===ENVIROMENT===" instance=ExtResource("17_4yoxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
 
+[node name="===PICKUPS===" type="Node3D" parent="."]
+
+[node name="Pickup01" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -14.23181)
+
+[node name="Pickup02" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -11.976393)
+
+[node name="Pickup03" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -8.074182)
+
+[node name="Pickup04" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -3.9880133)
+
+[node name="TimePickup" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.20407, 21.954525, -11.904184)
+
+[node name="TimePickup2" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.29498, 21.954525, -9.622512)
+
+[node name="TimePickup3" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.76434, 21.954525, -7.252203)
+
+[node name="TimePickup4" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -7.8570414)
+
+[node name="TimePickup5" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -8.630803)
+
+[node name="TimePickup6" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.75513, 21.954525, -10.340613)
+
+[node name="TimePickup7" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.2364, 21.954525, -10.998918)
+
 [node name="GoalTrigger" parent="." instance=ExtResource("18_k2aru")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.6077538)
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("20_h351q")]
-
-[node name="Pickup01" parent="." instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -14.23181)
-
-[node name="Pickup02" parent="." instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -11.976393)
-
-[node name="Pickup03" parent="." instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -8.074182)
-
-[node name="Pickup04" parent="." instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -3.9880133)
-
-[node name="VFXStylizedSmoke1" parent="." instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.8409, 20.016693, -27.585741)
-
-[node name="VFXStylizedSmoke2" parent="." instance=ExtResource("23_itbe0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.39697, 22.15579, -23.268795)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

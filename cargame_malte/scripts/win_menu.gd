@@ -14,7 +14,14 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 	var manager = get_node("/root/ScoreAndTimeManager")
-	$Panel/VBoxContainer/Time.text = "Time: %.2f" % manager.get_time()
+	
+	# Format time like highscore UI
+	var time = manager.get_time()
+	var minutes = int(time / 60)
+	var seconds = int(time) % 60
+	var milliseconds = int((time - int(time)) * 100)
+	$Panel/VBoxContainer/Time.text = "Time: %02d:%02d:%02d" % [minutes, seconds, milliseconds]
+	
 	$Panel/VBoxContainer/Score.text = "Score: %d" % manager.get_score()
 	
 	if audio_player:

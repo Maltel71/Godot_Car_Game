@@ -112,5 +112,8 @@ transform = Transform3D(-3.5326156e-08, -3.1294107e-08, 1, 0.96592575, 0.2588191
 [node name="Gubbe1_PH" parent="." instance=ExtResource("9_7wcxq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5375964, 1.2878923, 0.0601807)
 
+[node name="char_gubbe1_m,_ph" parent="Gubbe1_PH" index="0"]
+visible = false
+
 [editable path="Gubbe1_PH"]
 [editable path="Gubbe1_PH/char_gubbe1_m,_ph"]
