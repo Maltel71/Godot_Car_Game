@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ujn7dahi5he8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7b0n"]
+size = Vector3(20, 0.5, 5)
+
+[node name="Museum" type="Node3D"]
+
+[node name="=== Anthelope ===" type="Node3D" parent="."]
+
+[node name="= Floor =" type="MeshInstance3D" parent="=== Anthelope ==="]
+mesh = SubResource("BoxMesh_e7b0n")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="=== Bison ===" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="= Floor =" type="MeshInstance3D" parent="=== Bison ==="]
+mesh = SubResource("BoxMesh_e7b0n")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
