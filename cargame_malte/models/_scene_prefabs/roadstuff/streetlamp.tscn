@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bs01qvui6utub"]
 
-[ext_resource type="ArrayMesh" uid="uid://b1ga43t8kcn4x" path="res://models/env_lightsource_streetlamp_mesh_01_v1.glb.mtl.obj" id="1_foo3i"]
+[ext_resource type="ArrayMesh" uid="uid://b1ga43t8kcn4x" path="res://models/lowpoly_stylized/env_lightsource_streetlamp_mesh_01_v1.glb.mtl.obj" id="1_foo3i"]
 
 [node name="Streetlamp" type="Node3D"]
 

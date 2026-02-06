@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://eldibgvcuw65"]
 
-[ext_resource type="PackedScene" uid="uid://dlncst71qikef" path="res://models/halfpipe1-col.glb" id="1_c7p2m"]
+[ext_resource type="PackedScene" uid="uid://dlncst71qikef" path="res://models/lowpoly_stylized/halfpipe1-col.glb" id="1_c7p2m"]
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="2_yq5bi"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yq5bi"]

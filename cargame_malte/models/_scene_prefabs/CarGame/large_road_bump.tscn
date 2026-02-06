@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq0df533v0y17"]
 
-[ext_resource type="PackedScene" uid="uid://dsurmtc81eivt" path="res://models/largeroadbump2.glb" id="1_vl4rp"]
+[ext_resource type="PackedScene" uid="uid://dsurmtc81eivt" path="res://models/lowpoly_stylized/largeroadbump2.glb" id="1_vl4rp"]
 [ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="2_bf37o"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bf37o"]

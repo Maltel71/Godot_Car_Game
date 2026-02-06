@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmm8k73e7pso0"]
 
-[ext_resource type="PackedScene" uid="uid://boqs8bs5md8s5" path="res://models/char_player1_m_ph/char_gubbe1_m,_ph.glb" id="1_f2k1a"]
+[ext_resource type="PackedScene" uid="uid://boqs8bs5md8s5" path="res://models/lowpoly_stylized/char_player1_m_ph/char_gubbe1_m,_ph.glb" id="1_f2k1a"]
 
 [node name="Gubbe1_PH" type="Node3D"]
 

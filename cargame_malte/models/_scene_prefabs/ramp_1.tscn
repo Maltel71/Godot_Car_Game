@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dacpx5a0xoce4"]
 
 [ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="1_bkfdi"]
-[ext_resource type="ArrayMesh" uid="uid://fbkcft7qoykg" path="res://models/env_ramp1_mesh_01_v1.glb.obj" id="1_i6rxx"]
+[ext_resource type="ArrayMesh" uid="uid://fbkcft7qoykg" path="res://models/lowpoly_stylized/env_ramp1_mesh_01_v1.glb.obj" id="1_i6rxx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psxy2"]
 size = Vector3(4.76074, 2.09521, 8.36304)

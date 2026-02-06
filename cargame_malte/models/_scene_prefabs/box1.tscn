@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://djhfjy5n5lwtd"]
 
-[ext_resource type="PackedScene" uid="uid://b328u1gy2be2n" path="res://models/env_obstacle_box1_mesh_01_v1.glb" id="1_7njrg"]
+[ext_resource type="PackedScene" uid="uid://b328u1gy2be2n" path="res://models/lowpoly_stylized/env_obstacle_box1_mesh_01_v1.glb" id="1_7njrg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7njrg"]
 size = Vector3(5, 2, 10)

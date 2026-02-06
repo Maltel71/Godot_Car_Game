@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://bbnpkv87eeaia"]
 
 [ext_resource type="Script" uid="uid://h4sfcanfcl1c" path="res://scripts/thruster.gd" id="1_2xtem"]
-[ext_resource type="PackedScene" uid="uid://dvstrfj7fo66e" path="res://models/uppgrade_thruster1_v1.glb" id="2_1cgkj"]
-[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="3_15ce3"]
-[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="4_grga3"]
-[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="5_kpw17"]
+[ext_resource type="PackedScene" uid="uid://dvstrfj7fo66e" path="res://models/lowpoly_stylized/uppgrade_thruster1_v1.glb" id="2_1cgkj"]
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="3_15ce3"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="4_grga3"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://vfx/Cloud_v2.obj" id="5_kpw17"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cylb8"]
 render_priority = 0

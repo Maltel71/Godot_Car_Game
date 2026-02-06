@@ -13,7 +13,7 @@ config_version=5
 config/name="cargame_malte"
 run/main_scene="uid://1tgo7xcytvyx"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://textures/icon.svg"
 
 [autoload]
 
@@ -32,9 +32,11 @@ enabled=PackedStringArray("res://addons/road-generator/plugin.cfg", "res://addon
 [file_customization]
 
 folder_colors={
+"res://audio/": "yellow",
 "res://models/": "green",
 "res://models/_scene_prefabs/": "red",
-"res://scripts/": "pink"
+"res://scripts/": "pink",
+"res://vfx/": "green"
 }
 
 [filesystem]
