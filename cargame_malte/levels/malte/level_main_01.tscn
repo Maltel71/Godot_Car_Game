@@ -1,27 +1,27 @@
 [gd_scene load_steps=32 format=3 uid="uid://dj445fvglwlav"]
 
-[ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_dpc8t"]
-[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
-[ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="2_k2aru"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/lowpoly_stylized/car/car.tscn" id="3_ndgrd"]
-[ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="5_dpc8t"]
-[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="6_ngvhw"]
-[ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="7_itbe0"]
-[ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="8_xrja0"]
-[ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="9_he6wg"]
-[ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="10_jqt73"]
-[ext_resource type="PackedScene" uid="uid://b0tcfpapx3m2f" path="res://models/lowpoly_stylized/_scene_prefabs/Misc_props/flask_1.tscn" id="11_00pa0"]
-[ext_resource type="PackedScene" uid="uid://bs01qvui6utub" path="res://models/lowpoly_stylized/_scene_prefabs/roadstuff/streetlamp.tscn" id="12_amxoe"]
-[ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/_scene_prefabs/CarGame/halfpipe1.tscn" id="13_cp3aq"]
-[ext_resource type="PackedScene" uid="uid://dq0df533v0y17" path="res://models/lowpoly_stylized/_scene_prefabs/CarGame/large_road_bump.tscn" id="14_wgvos"]
-[ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/lowpoly_stylized/_scene_prefabs/box1.tscn" id="15_m4706"]
-[ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/_scene_prefabs/ramp_1.tscn" id="16_4xp61"]
-[ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/lowpoly_stylized/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
-[ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="18_k2aru"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="19_ndgrd"]
-[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/time_pickup.tscn" id="22_ngvhw"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickup_thrusters.tscn" id="23_itbe0"]
+[ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_4m4wp"]
+[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="2_pufja"]
+[ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="3_cres0"]
+[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/lowpoly_stylized/car/car.tscn" id="4_ms7t8"]
+[ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="5_sipmi"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="6_qgx3t"]
+[ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="7_2xt82"]
+[ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="8_d670u"]
+[ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="9_ifyq0"]
+[ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="10_vh6r6"]
+[ext_resource type="PackedScene" uid="uid://b0tcfpapx3m2f" path="res://models/lowpoly_stylized/_scene_prefabs/Misc_props/flask_1.tscn" id="11_etw8l"]
+[ext_resource type="PackedScene" uid="uid://bs01qvui6utub" path="res://models/lowpoly_stylized/_scene_prefabs/roadstuff/streetlamp.tscn" id="12_uwxvb"]
+[ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/_scene_prefabs/CarGame/halfpipe1.tscn" id="13_h8hf2"]
+[ext_resource type="PackedScene" uid="uid://dq0df533v0y17" path="res://models/lowpoly_stylized/_scene_prefabs/CarGame/large_road_bump.tscn" id="14_0nlbq"]
+[ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/lowpoly_stylized/_scene_prefabs/box1.tscn" id="15_ai82y"]
+[ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/_scene_prefabs/ramp_1.tscn" id="16_3rd0h"]
+[ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/lowpoly_stylized/_scene_prefabs/enviroment/rock1.tscn" id="17_oqfyd"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="18_gutnp"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/time_pickup.tscn" id="19_tkokb"]
+[ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="20_8uvgr"]
+[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="21_45v8m"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickup_thrusters.tscn" id="22_fe68m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -431,10 +431,10 @@ _data = {
 point_count = 3
 
 [node name="Level2" type="Node3D"]
-script = ExtResource("1_dpc8t")
+script = ExtResource("1_4m4wp")
 level_start_time = 30.0
 
-[node name="EscMenu" parent="." instance=ExtResource("1_uo0vl")]
+[node name="EscMenu" parent="." instance=ExtResource("2_pufja")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
@@ -446,11 +446,11 @@ shadow_enabled = true
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://terraindata"
 material = SubResource("Terrain3DMaterial_s8dg4")
-assets = ExtResource("2_k2aru")
+assets = ExtResource("3_cres0")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Car1_Player" parent="." instance=ExtResource("3_ndgrd")]
+[node name="Car1_Player" parent="." instance=ExtResource("4_ms7t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.523, 22.9955, -19.0239)
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -460,20 +460,20 @@ metadata/_edit_lock_ = true
 
 [node name="RoadManager" type="Node3D" parent="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
-script = ExtResource("5_dpc8t")
-material_resource = ExtResource("6_ngvhw")
+script = ExtResource("5_sipmi")
+material_resource = ExtResource("6_qgx3t")
 metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
 metadata/_edit_lock_ = true
 
 [node name="Road_001" type="Node3D" parent="Path3D/RoadManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
-script = ExtResource("7_itbe0")
-material_resource = ExtResource("8_xrja0")
+script = ExtResource("7_2xt82")
+material_resource = ExtResource("8_d670u")
 use_lowpoly_preview = true
 
 [node name="RP_002" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.999211, -0.0112186, 0.0381024, -0.0112213, 0.999937, 0.000143088, -0.0381016, -0.000284583, -0.999274, -374.162, 0, -84.5118)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 68.6143
@@ -485,7 +485,7 @@ next_pt_init = NodePath("../RP_012")
 
 [node name="RP_003" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.999211, -0.0109281, 0.0381867, -0.0112213, 0.999909, -0.00747123, -0.0381016, -0.00789386, -0.999243, -378.813, 0.271271, 37.3877)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 88.5532
@@ -497,7 +497,7 @@ next_pt_init = NodePath("../RP_002")
 
 [node name="RP_004" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.996345, -0.000396116, 0.0854207, -0.0038353, 0.999188, -0.0401014, -0.0853355, -0.0402824, -0.995538, -384.557, 7.59734, 176.355)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 119.709
@@ -509,7 +509,7 @@ next_pt_init = NodePath("../RP_003")
 
 [node name="RP_005" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.998861, 0, 0.0477165, 0, 1, 0, -0.0477165, 0, -0.998861, -391.996, 8.56799, 308.683)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 87.5056
@@ -521,7 +521,7 @@ next_pt_init = NodePath("../RP_004")
 
 [node name="RP_006" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.350217, 0.0537726, -0.935124, 0.0266302, 0.998519, 0.0474446, 0.93629, -0.00828659, -0.35113, -297.168, 25.2223, 473.461)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 74.9163
@@ -533,7 +533,7 @@ next_pt_init = NodePath("../RP_005")
 
 [node name="RP_007" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(0.567908, -0.0477386, -0.821707, 0.137786, 0.989743, 0.0377269, 0.811478, -0.134645, 0.56866, -97.3637, 14.9473, 441.677)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 33.0507
@@ -545,7 +545,7 @@ next_pt_init = NodePath("../RP_006")
 
 [node name="RP_008" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(0.994129, -0.0804404, -0.0723738, 0.0823795, 0.996307, 0.0242137, 0.0701587, -0.0300336, 0.997084, -40.1809, -7.88855, 298.047)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 48.3962
@@ -557,7 +557,7 @@ next_pt_init = NodePath("../RP_007")
 
 [node name="RP_009" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(0.997472, -0.0286607, -0.0650194, 0.0264094, 0.99903, -0.0352247, 0.065966, 0.0334186, 0.997262, -146.92, -1.23155, 52.773)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 56.8288
@@ -569,7 +569,7 @@ next_pt_init = NodePath("../RP_008")
 
 [node name="RP_010" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(0.922364, -0.00532334, -0.386286, -0.00322346, 0.999764, -0.0214745, 0.386309, 0.0210523, 0.922129, -67.6452, -0.29195, -67.1144)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 47.6084
@@ -581,7 +581,7 @@ next_pt_init = NodePath("../RP_009")
 
 [node name="RP_011" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(0.815125, -0.0481498, 0.57728, 0.0309395, 0.998736, 0.0396155, -0.578458, -0.0144309, 0.815585, -84.5744, -5.25392, -226.897)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 68.2697
@@ -593,7 +593,7 @@ next_pt_init = NodePath("../RP_010")
 
 [node name="RP_012" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.147459, 0.0438236, 0.988097, 0.0641825, 0.997336, -0.034655, -0.986984, 0.0583083, -0.149879, -246.094, -1.37317, -259.963)
-script = ExtResource("9_he6wg")
+script = ExtResource("9_ifyq0")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
 prior_mag = 108.742
@@ -604,141 +604,141 @@ prior_pt_init = NodePath("../RP_002")
 next_pt_init = NodePath("../RP_011")
 
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("10_jqt73")
+script = ExtResource("10_vh6r6")
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
-[node name="flask2" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_00pa0")]
+[node name="flask2" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_etw8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -336.068, 20.1723, 42.8672)
 
-[node name="flask3" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_00pa0")]
+[node name="flask3" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_etw8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -336.068, 23.0056, 42.8672)
 
-[node name="flask4" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_00pa0")]
+[node name="flask4" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_etw8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -336.068, 26.056, 42.8672)
 
 [node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
 
-[node name="Streetlamp" parent="===ENVIROMENT===/=LIGHTS=" instance=ExtResource("12_amxoe")]
+[node name="Streetlamp" parent="===ENVIROMENT===/=LIGHTS=" instance=ExtResource("12_uwxvb")]
 transform = Transform3D(-2.08616e-07, 0, -1, 0, 1, 0, 1, 0, -2.08616e-07, -313.909, 19.9312, 19.0306)
 
-[node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("13_h8hf2")]
 transform = Transform3D(-1.51366, 0, -2.56452e-07, 0, 3.36075, 0, 1.32329e-07, 0, -2.93347, -318.474, 19.9784, 43.2691)
 
-[node name="Halfpipe2" parent="===ENVIROMENT===" instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe2" parent="===ENVIROMENT===" instance=ExtResource("13_h8hf2")]
 transform = Transform3D(-1.51366, -5.43081e-08, -2.52033e-07, 0, 3.30284, -0.542232, 1.32329e-07, -0.621212, -2.88292, -368.544, 37.1384, 120.481)
 
-[node name="Halfpipe3" parent="===ENVIROMENT===" instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe3" parent="===ENVIROMENT===" instance=ExtResource("13_h8hf2")]
 transform = Transform3D(-1.51366, 2.64848e-07, -1.11019e-07, 0, 1.45488, 2.64434, 1.32329e-07, 3.02951, -1.26991, -358.211, 61.3307, 133.665)
 
-[node name="Halfpipe4" parent="===ENVIROMENT===" instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe4" parent="===ENVIROMENT===" instance=ExtResource("13_h8hf2")]
 transform = Transform3D(-1.51366, 1.16981e-07, -2.35248e-07, 7.10543e-15, 3.08287, 1.16798, 1.32329e-07, 1.3381, -2.69092, -358.211, 40.287, 223.014)
 
-[node name="LargeRoadBump" parent="===ENVIROMENT===" instance=ExtResource("14_wgvos")]
+[node name="LargeRoadBump" parent="===ENVIROMENT===" instance=ExtResource("14_0nlbq")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -333.629, 27.6663, 300.356)
 
-[node name="LargeRoadBump2" parent="===ENVIROMENT===" instance=ExtResource("14_wgvos")]
+[node name="LargeRoadBump2" parent="===ENVIROMENT===" instance=ExtResource("14_0nlbq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.658, 19.7355, 107.298)
 
-[node name="StaticBody3D" parent="===ENVIROMENT===" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D" parent="===ENVIROMENT===" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 24.7946, 58.8504)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
 
-[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 34.3249, 102.838)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D2" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D2" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D2" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D2" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
 
-[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D2" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D2" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 43.0507, 138.474)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D3" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D3" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D3" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D3" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
 
-[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D3" instance=ExtResource("15_m4706")]
+[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D3" instance=ExtResource("15_ai82y")]
 transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
 
-[node name="ramp4" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
+[node name="ramp4" parent="===ENVIROMENT===" instance=ExtResource("16_3rd0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.62, 19.9535, 40.313)
 
-[node name="ramp8" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
+[node name="ramp8" parent="===ENVIROMENT===" instance=ExtResource("16_3rd0h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.756, 26.4191, 251.402)
 
-[node name="ramp7" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
+[node name="ramp7" parent="===ENVIROMENT===" instance=ExtResource("16_3rd0h")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -342.939, 19.4101, 40.313)
 
-[node name="ramp9" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
+[node name="ramp9" parent="===ENVIROMENT===" instance=ExtResource("16_3rd0h")]
 transform = Transform3D(-1.6744175, 0, -0.044167757, 0, 1.675, 0, 0.044167757, 0, -1.6744175, -333.198, 19.4101, 12.222883)
 
-[node name="ramp6" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
+[node name="ramp6" parent="===ENVIROMENT===" instance=ExtResource("16_3rd0h")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -332.045, 10.14, 158.863)
 
-[node name="ramp5" parent="===ENVIROMENT===" instance=ExtResource("16_4xp61")]
+[node name="ramp5" parent="===ENVIROMENT===" instance=ExtResource("16_3rd0h")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -326.62, 19.8199, 51.0116)
 
-[node name="Rock1" parent="===ENVIROMENT===" instance=ExtResource("17_4yoxl")]
+[node name="Rock1" parent="===ENVIROMENT===" instance=ExtResource("17_oqfyd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
 
 [node name="===PICKUPS===" type="Node3D" parent="."]
 
-[node name="Pickup01" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+[node name="Pickup01" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -14.23181)
 
-[node name="Pickup02" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+[node name="Pickup02" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -11.976393)
 
-[node name="Pickup03" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+[node name="Pickup03" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -8.074182)
 
-[node name="Pickup04" parent="===PICKUPS===" instance=ExtResource("19_ndgrd")]
+[node name="Pickup04" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -3.9880133)
 
-[node name="TimePickup" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+[node name="TimePickup" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.20407, 21.954525, -11.904184)
 
-[node name="TimePickup2" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+[node name="TimePickup2" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.29498, 21.954525, -9.622512)
 
-[node name="TimePickup3" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+[node name="TimePickup3" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.76434, 21.954525, -7.252203)
 
-[node name="TimePickup4" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+[node name="TimePickup4" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -7.8570414)
 
-[node name="TimePickup5" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+[node name="TimePickup5" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -8.630803)
 
-[node name="TimePickup6" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+[node name="TimePickup6" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.75513, 21.954525, -10.340613)
 
-[node name="TimePickup7" parent="===PICKUPS===" instance=ExtResource("22_ngvhw")]
+[node name="TimePickup7" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.2364, 21.954525, -10.998918)
 
-[node name="GoalTrigger" parent="." instance=ExtResource("18_k2aru")]
+[node name="GoalTrigger" parent="." instance=ExtResource("20_8uvgr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.6077538)
 
-[node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("20_h351q")]
+[node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("21_45v8m")]
 
-[node name="Pickup01" parent="." instance=ExtResource("23_itbe0")]
+[node name="Pickup01" parent="." instance=ExtResource("22_fe68m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.7059, 21.885225, -10.000926)
 thruster_duration = 20.0
