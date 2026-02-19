@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://x2l5w4ob53yx"
-path="res://.godot/imported/env_prop_streetcone2_mesh_01_v1.glb-78ed735007922c30b07dcb8494e17ab2.scn"
+path="res://.godot/imported/env_prop_streetcone2_mesh_01_v1.glb-34b23354fd4a7f84b50ed353d4b7e600.scn"
 
 [deps]
 
-source_file="res://models/street_misc/env_prop_streetcone2_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_prop_streetcone2_mesh_01_v1.glb-78ed735007922c30b07dcb8494e17ab2.scn"]
+source_file="res://models/lowpoly_stylized/street_misc/env_prop_streetcone2_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_prop_streetcone2_mesh_01_v1.glb-34b23354fd4a7f84b50ed353d4b7e600.scn"]
 
 [params]
 

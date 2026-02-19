@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://bkrhd7g3sjny0"]
 
-[ext_resource type="PackedScene" uid="uid://b0tcfpapx3m2f" path="res://models/_scene_prefabs/Misc_props/flask_1.tscn" id="1_ishkb"]
-[ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/_scene_prefabs/box1.tscn" id="2_cayux"]
-[ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/_scene_prefabs/enviroment/grass2.tscn" id="3_kb2rw"]
-[ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/_scene_prefabs/ramp_1.tscn" id="4_dyo83"]
-[ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="5_ml01p"]
-[ext_resource type="PackedScene" uid="uid://bs01qvui6utub" path="res://models/_scene_prefabs/roadstuff/streetlamp.tscn" id="6_rmh3u"]
-[ext_resource type="PackedScene" uid="uid://dl1mgv7h1thox" path="res://models/_scene_prefabs/enviroment/tree1.tscn" id="7_hqulm"]
+[ext_resource type="PackedScene" uid="uid://b0tcfpapx3m2f" path="res://models/lowpoly_stylized/_scene_prefabs/Misc_props/flask_1.tscn" id="1_ishkb"]
+[ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/lowpoly_stylized/_scene_prefabs/box1.tscn" id="2_cayux"]
+[ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/_scene_prefabs/enviroment/grass2.tscn" id="3_kb2rw"]
+[ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/_scene_prefabs/ramp_1.tscn" id="4_dyo83"]
+[ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/lowpoly_stylized/_scene_prefabs/enviroment/rock1.tscn" id="5_ml01p"]
+[ext_resource type="PackedScene" uid="uid://bs01qvui6utub" path="res://models/lowpoly_stylized/_scene_prefabs/roadstuff/streetlamp.tscn" id="6_rmh3u"]
+[ext_resource type="PackedScene" uid="uid://dl1mgv7h1thox" path="res://models/lowpoly_stylized/_scene_prefabs/enviroment/tree1.tscn" id="7_hqulm"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p4wo8"]
 size = Vector3(200, 1, 10)

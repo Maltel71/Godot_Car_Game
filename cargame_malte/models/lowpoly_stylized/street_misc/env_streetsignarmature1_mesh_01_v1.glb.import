@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://l3gbej1wsryb"
-path="res://.godot/imported/env_streetsignarmature1_mesh_01_v1.glb-5ad0be85d2999818c56140e3ea4b0e12.scn"
+path="res://.godot/imported/env_streetsignarmature1_mesh_01_v1.glb-9d777b8c7c54e669d68ca98ccaf52f2b.scn"
 
 [deps]
 
-source_file="res://models/street_misc/env_streetsignarmature1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_streetsignarmature1_mesh_01_v1.glb-5ad0be85d2999818c56140e3ea4b0e12.scn"]
+source_file="res://models/lowpoly_stylized/street_misc/env_streetsignarmature1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_streetsignarmature1_mesh_01_v1.glb-9d777b8c7c54e669d68ca98ccaf52f2b.scn"]
 
 [params]
 

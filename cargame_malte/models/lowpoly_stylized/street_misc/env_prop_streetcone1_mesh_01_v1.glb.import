@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b0txvyiwrky2t"
-path="res://.godot/imported/env_handrail1_mesh_01_v1.glb-184a5f307e5b0639b6635e686e7a70eb.scn"
+uid="uid://bg7hn83n8r56c"
+path="res://.godot/imported/env_prop_streetcone1_mesh_01_v1.glb-39cbff0d778fc19725ab4bdd797efe33.scn"
 
 [deps]
 
-source_file="res://models/street_misc/env_handrail1_mesh_01_v1.glb"
-dest_files=["res://.godot/imported/env_handrail1_mesh_01_v1.glb-184a5f307e5b0639b6635e686e7a70eb.scn"]
+source_file="res://models/lowpoly_stylized/street_misc/env_prop_streetcone1_mesh_01_v1.glb"
+dest_files=["res://.godot/imported/env_prop_streetcone1_mesh_01_v1.glb-39cbff0d778fc19725ab4bdd797efe33.scn"]
 
 [params]
 
