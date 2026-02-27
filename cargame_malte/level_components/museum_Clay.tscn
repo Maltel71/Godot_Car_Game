@@ -95,7 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.597831, 1.0503788, 0)
 
 [node name="=== Eagle ===" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
-metadata/_edit_lock_ = true
 
 [node name="= Floor =" type="MeshInstance3D" parent="=== Eagle ==="]
 material_override = ExtResource("1_hoo5r")
@@ -155,7 +154,7 @@ skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
 
 [node name="Malte_Car2" parent="=== Malte ===" instance=ExtResource("2_j2pjm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1916168, 0.913548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1916168, 1.1018541, 0)
 
 [node name="Malte_Character2" parent="=== Malte ===" instance=ExtResource("3_utq50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.677514, 0.913548, 0)
