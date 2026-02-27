@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Aaron_Wheel.glb-5327a7860d40a2617b4d1652a23ab
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

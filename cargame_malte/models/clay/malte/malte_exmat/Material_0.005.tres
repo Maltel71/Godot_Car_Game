@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cqj0is6vecrfj"]
+
+[ext_resource type="Texture2D" uid="uid://qdbj2bxcq6cr" path="res://models/clay/malte/Malte_SmallRock1_c4146d08a1843881a96291c482f86da8.jpg" id="1_520pi"]
+[ext_resource type="Texture2D" uid="uid://c42n24hgyki6b" path="res://models/clay/malte/Malte_SmallRock1_6753fe515f67595510fd09e09c59e420.jpg" id="2_xdtjx"]
+[ext_resource type="Texture2D" uid="uid://d07d7i74unvth" path="res://models/clay/malte/Malte_SmallRock1_6aed45b32b08a7c14ff9c7ea9e54ee8f.jpg" id="3_8wenj"]
+
+[resource]
+resource_name = "Material_0.005"
+albedo_texture = ExtResource("1_520pi")
+normal_enabled = true
+normal_texture = ExtResource("3_8wenj")
+ao_enabled = true
+ao_texture = ExtResource("2_xdtjx")

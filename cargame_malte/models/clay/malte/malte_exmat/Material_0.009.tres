@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cdd5q7su56q3p"]
+
+[ext_resource type="Texture2D" uid="uid://4dcmsi2er5p6" path="res://models/clay/malte/Malte_ShroomThingy_a9071bb076b7fa78709c377237a2f258.jpg" id="1_uor8p"]
+[ext_resource type="Texture2D" uid="uid://cjs5vymwaufkj" path="res://models/clay/malte/Malte_ShroomThingy_6caff7896830ac20c5c2d4f737bc87a6.jpg" id="2_l6xb6"]
+[ext_resource type="Texture2D" uid="uid://w3rm73idegvv" path="res://models/clay/malte/Malte_ShroomThingy_40c0effde52d9ea967199bb673906870.jpg" id="3_0xfix"]
+
+[resource]
+resource_name = "Material_0.009"
+albedo_texture = ExtResource("1_uor8p")
+normal_enabled = true
+normal_texture = ExtResource("3_0xfix")
+ao_enabled = true
+ao_texture = ExtResource("2_l6xb6")

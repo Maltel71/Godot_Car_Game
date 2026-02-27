@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Aaron_Car.glb-a0c83eb7b9deab70fa3a3045a9ad658
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="Node3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true

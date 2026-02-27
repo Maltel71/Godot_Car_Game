@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://c3abg2xxi82q"]
+
+[ext_resource type="Texture2D" uid="uid://dllxsint8twtw" path="res://models/clay/malte/Malte_Tree2_6f9f97cc59c8f9e51c63f59fddb6fde8.jpg" id="1_ueugu"]
+[ext_resource type="Texture2D" uid="uid://c7eodk0kjeeux" path="res://models/clay/malte/Malte_Tree2_809b08c4d9b31abea114bcbcbea408bc.jpg" id="2_u8nta"]
+[ext_resource type="Texture2D" uid="uid://c7t1j5wdtsy6i" path="res://models/clay/malte/Malte_Tree2_4935f27887405ee01b92b3c199fa09d3.jpg" id="3_w5gj3"]
+
+[resource]
+resource_name = "Material_0.012"
+albedo_color = Color(1.164, 1.164, 1.164, 1)
+albedo_texture = ExtResource("1_ueugu")
+normal_enabled = true
+normal_texture = ExtResource("3_w5gj3")
+ao_enabled = true
+ao_texture = ExtResource("2_u8nta")
