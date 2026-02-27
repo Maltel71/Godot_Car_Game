@@ -17,11 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/lowpoly_stylized/_scene_prefabs/box1.tscn" id="15_g1svi"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/_scene_prefabs/ramp_1.tscn" id="16_1gje6"]
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/lowpoly_stylized/_scene_prefabs/enviroment/rock1.tscn" id="17_xwlto"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="18_33wcn"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/time_pickup.tscn" id="19_c2mgf"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_01.tscn" id="18_33wcn"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/time_pickup.tscn" id="19_c2mgf"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="20_5my78"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="21_x822r"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickup_thrusters.tscn" id="22_n1e3j"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters.tscn" id="22_n1e3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
