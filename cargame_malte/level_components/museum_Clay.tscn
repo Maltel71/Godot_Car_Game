@@ -1,6 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://ujn7dahi5he8"]
+[gd_scene load_steps=15 format=3 uid="uid://ujn7dahi5he8"]
 
-[ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="1_eb1pi"]
+[ext_resource type="Material" uid="uid://cllsapoox4hsr" path="res://materials/roadtexture_Clay.tres" id="1_hoo5r"]
+[ext_resource type="PackedScene" uid="uid://cnvfylu6ycwa5" path="res://models/clay/malte/Malte_Car.glb" id="2_j2pjm"]
+[ext_resource type="PackedScene" uid="uid://cx2qgrxbq0yyy" path="res://models/clay/malte/Malte_Character.glb" id="3_utq50"]
+[ext_resource type="PackedScene" uid="uid://bqcl7a4nndfx2" path="res://models/clay/malte/Malte_LargeRock2.glb" id="4_y6fjd"]
+[ext_resource type="PackedScene" uid="uid://pry2oskwcvhi" path="res://models/clay/malte/Malte_LargeRock.glb" id="5_2odso"]
+[ext_resource type="PackedScene" uid="uid://c6ebhh4lk22l2" path="res://models/clay/malte/Malte_Pickup1.glb" id="6_t75kc"]
+[ext_resource type="PackedScene" uid="uid://tvxeuw51bwrh" path="res://models/clay/malte/Malte_ShroomThingy.glb" id="7_wmro6"]
+[ext_resource type="PackedScene" uid="uid://b1cvvvyh0y2mr" path="res://models/clay/malte/Malte_Sign1.glb" id="8_tdh1d"]
+[ext_resource type="PackedScene" uid="uid://op2v3xr33cti" path="res://models/clay/malte/Malte_SmallRock1.glb" id="9_np2m3"]
+[ext_resource type="PackedScene" uid="uid://cdri0l5l1upeb" path="res://models/clay/malte/Malte_smallrock2.glb" id="10_4yanr"]
+[ext_resource type="PackedScene" uid="uid://xrl4es8mf1el" path="res://models/clay/malte/Malte_SmallRock3.glb" id="11_7xo22"]
+[ext_resource type="PackedScene" uid="uid://bkd5h1kbj05aj" path="res://models/clay/malte/Malte_Tree1.glb" id="12_86l1p"]
+[ext_resource type="PackedScene" uid="uid://c3od7diqreqah" path="res://models/clay/malte/Malte_Tree2.glb" id="13_trcxy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_e7b0n"]
 size = Vector3(20, 0.5, 5)
@@ -10,7 +22,7 @@ size = Vector3(20, 0.5, 5)
 [node name="=== Anthelope ===" type="Node3D" parent="."]
 
 [node name="= Floor =" type="MeshInstance3D" parent="=== Anthelope ==="]
-material_override = ExtResource("1_eb1pi")
+material_override = ExtResource("1_hoo5r")
 mesh = SubResource("BoxMesh_e7b0n")
 skeleton = NodePath("../..")
 
@@ -18,6 +30,42 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
 
 [node name="= Floor =" type="MeshInstance3D" parent="=== Bison ==="]
-material_override = ExtResource("1_eb1pi")
+material_override = ExtResource("1_hoo5r")
 mesh = SubResource("BoxMesh_e7b0n")
 skeleton = NodePath("../..")
+
+[node name="Malte_Car2" parent="." instance=ExtResource("2_j2pjm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2844095, 0.82563806, 0.465209)
+
+[node name="Malte_Character2" parent="." instance=ExtResource("3_utq50")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.020958, 0.82563806, 0.465209)
+
+[node name="Malte_LargeRock22" parent="." instance=ExtResource("4_y6fjd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5012574, 0.82563806, 0.465209)
+
+[node name="Malte_LargeRock2" parent="." instance=ExtResource("5_2odso")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5302904, 0.82563806, 0.465209)
+
+[node name="Malte_Pickup12" parent="." instance=ExtResource("6_t75kc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4723845, 0.82563806, 0.465209)
+
+[node name="Malte_ShroomThingy2" parent="." instance=ExtResource("7_wmro6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3034482, 0.82563806, 0.465209)
+
+[node name="Malte_Sign12" parent="." instance=ExtResource("8_tdh1d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19462538, 0.82563806, 0.465209)
+
+[node name="Malte_SmallRock12" parent="." instance=ExtResource("9_np2m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3034482, 0.82563806, 0.465209)
+
+[node name="Malte_smallrock22" parent="." instance=ExtResource("10_4yanr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3034482, 0.82563806, 0.465209)
+
+[node name="Malte_SmallRock32" parent="." instance=ExtResource("11_7xo22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3034482, 0.82563806, 0.465209)
+
+[node name="Malte_Tree12" parent="." instance=ExtResource("12_86l1p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.906982, 0.82563806, 0.465209)
+
+[node name="Malte_Tree22" parent="." instance=ExtResource("13_trcxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7698345, 0.82563806, 0.465209)

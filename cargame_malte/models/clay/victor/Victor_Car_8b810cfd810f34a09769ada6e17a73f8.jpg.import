@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://fynwgkgfxhh4"
+path.s3tc="res://.godot/imported/Victor_Car_8b810cfd810f34a09769ada6e17a73f8.jpg-7d8006fcab0b18c5f18486436f937eea.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ce1d5263b83d7dc019ca96f04aa0f634"
+}
+
+[deps]
+
+source_file="res://models/clay/victor/Victor_Car_8b810cfd810f34a09769ada6e17a73f8.jpg"
+dest_files=["res://.godot/imported/Victor_Car_8b810cfd810f34a09769ada6e17a73f8.jpg-7d8006fcab0b18c5f18486436f937eea.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://models/clay/Victor_Car_32af6e3490048e40e45e63acb9961da1.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

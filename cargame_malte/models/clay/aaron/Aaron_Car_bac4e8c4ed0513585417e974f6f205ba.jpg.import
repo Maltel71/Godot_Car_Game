@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bkr40sp3nn3hj"
+path.s3tc="res://.godot/imported/Aaron_Car_bac4e8c4ed0513585417e974f6f205ba.jpg-4c6adbbabde675108a1d7b778c499091.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d4422229cfe2769d57dcb48c23790434"
+}
+
+[deps]
+
+source_file="res://models/clay/aaron/Aaron_Car_bac4e8c4ed0513585417e974f6f205ba.jpg"
+dest_files=["res://.godot/imported/Aaron_Car_bac4e8c4ed0513585417e974f6f205ba.jpg-4c6adbbabde675108a1d7b778c499091.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://models/clay/Aaron_Car_f482ead5d1a2efb7e04df7c4908b3f26.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

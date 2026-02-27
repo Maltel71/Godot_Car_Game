@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cpn44wl10125b"
+path.s3tc="res://.godot/imported/Aindreas_Thing_d327882386b1af0bba68b586361dddbc.jpg-2963ba7a8240053dd4e4fe14549c4b85.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "fbc829ff30df6d03784c9c07d9653ec3"
+}
+
+[deps]
+
+source_file="res://models/clay/aindreas/Aindreas_Thing_d327882386b1af0bba68b586361dddbc.jpg"
+dest_files=["res://.godot/imported/Aindreas_Thing_d327882386b1af0bba68b586361dddbc.jpg-2963ba7a8240053dd4e4fe14549c4b85.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://models/clay/Aindreas_Thing_c220df25110f53777649546bb76bbff7.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

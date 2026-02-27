@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cvm7k32fvrxhe"
+path.s3tc="res://.godot/imported/Nicolas_Head_6daaf846bdc3395d30295e0455a4dcf7.jpg-8da6b19f0fbf9c362c3b082d2d799110.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "44c4f0797500e23caffa0f76976f8804"
+}
+
+[deps]
+
+source_file="res://models/clay/nicolas/Nicolas_Head_6daaf846bdc3395d30295e0455a4dcf7.jpg"
+dest_files=["res://.godot/imported/Nicolas_Head_6daaf846bdc3395d30295e0455a4dcf7.jpg-8da6b19f0fbf9c362c3b082d2d799110.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://models/clay/Nicolas_Head_6daaf846bdc3395d30295e0455a4dcf7.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

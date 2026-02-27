@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://58mksugjid5y"
+path.s3tc="res://.godot/imported/Malte_Character_078e3b4fdb2fcb74de00791a631670df.jpg-f8d069333b9d26e8975e3de76f20322f.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "bafc0af09f3ca0b9408018d4fa442f53"
+}
+
+[deps]
+
+source_file="res://models/clay/malte/Malte_Character_078e3b4fdb2fcb74de00791a631670df.jpg"
+dest_files=["res://.godot/imported/Malte_Character_078e3b4fdb2fcb74de00791a631670df.jpg-f8d069333b9d26e8975e3de76f20322f.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
