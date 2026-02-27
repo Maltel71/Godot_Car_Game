@@ -10,7 +10,7 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fu0dp")
-level_scenes = Array[String](["res://levels/malte/level_main_01.tscn", "", "", ""])
+level_scenes = Array[String](["res://levels/malte/Malte_Level.tscn", "", "", ""])
 hover_sound = ExtResource("2_medlx")
 hover_volume = -10.0
 

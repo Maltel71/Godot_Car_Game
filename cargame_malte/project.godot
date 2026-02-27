@@ -85,3 +85,7 @@ RollRight={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/default_filters/anisotropic_filtering_level=3

@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bktb1o6fd8i0w"
+path.s3tc="res://.godot/imported/Alfred_Head_c28e96dd0344924ddb04176c7e50496b.jpg-fdc88e0ea401dc60a4fb09e7719fa745.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "8a11521aa0b75608df9645c0ef60a8f1"
+}
+
+[deps]
+
+source_file="res://models/clay/Alfred_Head_c28e96dd0344924ddb04176c7e50496b.jpg"
+dest_files=["res://.godot/imported/Alfred_Head_c28e96dd0344924ddb04176c7e50496b.jpg-fdc88e0ea401dc60a4fb09e7719fa745.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://models/clay/Alfred_Head_c28e96dd0344924ddb04176c7e50496b.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

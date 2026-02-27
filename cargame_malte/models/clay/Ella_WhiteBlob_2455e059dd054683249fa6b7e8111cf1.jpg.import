@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cpipsmi6ujof2"
+path.s3tc="res://.godot/imported/Ella_WhiteBlob_2455e059dd054683249fa6b7e8111cf1.jpg-737e7bbc8928c6488bfddf907d77cd09.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "46b8fd1769ab2b4f4f00407cbed0ed3b"
+}
+
+[deps]
+
+source_file="res://models/clay/Ella_WhiteBlob_2455e059dd054683249fa6b7e8111cf1.jpg"
+dest_files=["res://.godot/imported/Ella_WhiteBlob_2455e059dd054683249fa6b7e8111cf1.jpg-737e7bbc8928c6488bfddf907d77cd09.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://models/clay/Ella_WhiteBlob_22898b18b97335e1c18d03971a922089.jpg"
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
