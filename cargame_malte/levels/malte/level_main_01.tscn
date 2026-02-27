@@ -470,6 +470,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
 script = ExtResource("7_2xt82")
 material_resource = ExtResource("8_d670u")
 use_lowpoly_preview = true
+metadata/_edit_lock_ = true
 
 [node name="RP_002" type="Node3D" parent="Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.999211, -0.0112186, 0.0381024, -0.0112213, 0.999937, 0.000143088, -0.0381016, -0.000284583, -0.999274, -374.162, 0, -84.5118)
@@ -702,28 +703,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
 [node name="===PICKUPS===" type="Node3D" parent="."]
 
 [node name="Pickup01" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -14.23181)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, 66.46586)
 
 [node name="Pickup02" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -11.976393)
 
 [node name="Pickup03" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -8.074182)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.76563, 29.278004, 247.70314)
 
 [node name="Pickup04" parent="===PICKUPS===" instance=ExtResource("18_gutnp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -3.9880133)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.88452, 24.990269, 45.40074)
 
 [node name="TimePickup" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.20407, 21.954525, -11.904184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.88284, 21.954525, 26.83801)
 
 [node name="TimePickup2" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.29498, 21.954525, -9.622512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.29498, 21.954525, 96.03382)
 
 [node name="TimePickup3" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.76434, 21.954525, -7.252203)
-
-[node name="TimePickup4" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -7.8570414)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -345.81198, 31.704792, 385.7767)
 
 [node name="TimePickup5" parent="===PICKUPS===" instance=ExtResource("19_tkokb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -8.630803)
@@ -735,7 +733,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.75513, 21.954525, -10.34
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.2364, 21.954525, -10.998918)
 
 [node name="GoalTrigger" parent="." instance=ExtResource("20_8uvgr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.6077538)
+transform = Transform3D(3.1424465, 0, 0, 0, 1, 0, 0, 0, 1, -317.81888, 20.416477, -72.32146)
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("21_45v8m")]
 

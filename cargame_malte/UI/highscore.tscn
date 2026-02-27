@@ -33,3 +33,26 @@ text = "Timer: 00:00:00"
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Score:1000"
+
+[node name="Controlls" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = -371.00003
+offset_top = 786.00006
+offset_right = 2494.0
+offset_bottom = 1791.0001
+scale = Vector2(0.22425914, 0.22425914)
+text = "Controlls:
+WASD: Drive
+ENTER: Restart
+ESC: menu
+Q, E: Roll (while in air)
+SPACE: Activate Thrusters (if you have the pickup)"
+
+[node name="Explanation" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 784.0001
+offset_top = 964.00006
+offset_right = 3649.0
+offset_bottom = 1969.0
+scale = Vector2(0.3842579, 0.3842579)
+text = "Det här är inte ett färdigt spel. "
