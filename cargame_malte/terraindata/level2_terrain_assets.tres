@@ -1,8 +1,8 @@
 [gd_resource type="Terrain3DAssets" load_steps=16 format=3 uid="uid://dkpy75qn2hnt"]
 
-[ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/_scene_prefabs/enviroment/grass2.tscn" id="1_7bjod"]
-[ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/enviroment/env_rock1_mesh_01_v1.glb" id="2_l1a87"]
-[ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/enviroment/env_tree1_mesh_01_v1.glb" id="3_iu0d8"]
+[ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="1_7bjod"]
+[ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="2_l1a87"]
+[ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="3_iu0d8"]
 [ext_resource type="Texture2D" uid="uid://67wrvwo3xanj" path="res://textures/env_gridtexture_malte_height_sprite_01_v1.png" id="4_0jxf6"]
 [ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/env_gridtexture_malte_height_sprite_01_v2.png" id="5_kvapx"]
 [ext_resource type="Texture2D" uid="uid://ndc0tm8oiuoq" path="res://textures/neutral_normalmap_t.png" id="5_l1a87"]

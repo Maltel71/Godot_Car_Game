@@ -79,19 +79,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0860748, 0.79981804, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.264351, 0.79981804, 0)
 
 [node name="Sebastian_Car2" parent="=== Anthelope ===" instance=ExtResource("9_g3ydp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5590162, 0.86512375, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2703547, 0.86512375, 0)
 
 [node name="Sebastian_Wheel2" parent="=== Anthelope ===" instance=ExtResource("10_wwbgf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3204441, 0.86512375, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6098857, 0.86512375, 0)
 
 [node name="Victor_Car2" parent="=== Anthelope ===" instance=ExtResource("11_0n74v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5310497, 1.0503788, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.898789, 1.0503788, 0)
 
 [node name="Victor_Wheel2" parent="=== Anthelope ===" instance=ExtResource("12_i38nq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.268985, 1.0503788, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5336676, 1.0503788, 0)
 
 [node name="Victor_Wing2" parent="=== Anthelope ===" instance=ExtResource("13_ry2jr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.597831, 1.0503788, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.777487, 1.0503788, 0)
 
 [node name="=== Eagle ===" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)

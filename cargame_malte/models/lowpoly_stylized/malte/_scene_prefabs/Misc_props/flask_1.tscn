@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0tcfpapx3m2f"]
+
+[ext_resource type="PackedScene" uid="uid://oo4te8lmcvvu" path="res://models/lowpoly_stylized/malte/prop_bottle1_mesh_01_v1.glb" id="1_gf72f"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_psxy2"]
+height = 2.15234
+radius = 0.362305
+
+[node name="flask1" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.585582, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09047, 0)
+shape = SubResource("CylinderShape3D_psxy2")
+
+[node name="prop_bottle1_mesh_01_v1" parent="." instance=ExtResource("1_gf72f")]

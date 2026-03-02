@@ -34,7 +34,7 @@ enabled=PackedStringArray("res://addons/road-generator/plugin.cfg", "res://addon
 folder_colors={
 "res://audio/": "yellow",
 "res://models/": "green",
-"res://models/lowpoly_stylized/_scene_prefabs/": "red",
+"res://models/lowpoly_stylized/malte/_scene_prefabs/": "red",
 "res://scripts/": "pink",
 "res://vfx/": "green"
 }

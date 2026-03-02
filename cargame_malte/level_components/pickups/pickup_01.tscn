@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://i7731chqwv0j"]
 
 [ext_resource type="Script" uid="uid://ui352285722i" path="res://scripts/pickup_points.gd" id="1_rmv22"]
-[ext_resource type="PackedScene" uid="uid://ci3ehn0kakhxm" path="res://models/lowpoly_stylized/env_prop_coin1_mesh_01_v1.glb" id="1_s3swh"]
+[ext_resource type="PackedScene" uid="uid://ci3ehn0kakhxm" path="res://models/lowpoly_stylized/malte/env_prop_coin1_mesh_01_v1.glb" id="1_s3swh"]
 [ext_resource type="AudioStream" uid="uid://b6mdqctbyw2yi" path="res://audio/sfx/pickup/pickupCoin.wav" id="2_jtl2q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1f2t"]
