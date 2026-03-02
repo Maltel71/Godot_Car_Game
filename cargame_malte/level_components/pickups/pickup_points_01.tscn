@@ -44,7 +44,7 @@ _data = {
 &"pickup_rotate": SubResource("Animation_rmv22")
 }
 
-[node name="Pickup01" type="Area3D"]
+[node name="Pickup_Points_01" type="Area3D"]
 script = ExtResource("1_rmv22")
 score_value = 10
 pickup_sound = ExtResource("2_jtl2q")

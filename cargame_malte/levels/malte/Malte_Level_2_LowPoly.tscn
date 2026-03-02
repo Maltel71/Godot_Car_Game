@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ndc0tm8oiuoq" path="res://textures/neutral_normalmap_t.png" id="7_e4d78"]
 [ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/env_gridtexture_malte_height_sprite_01_v2.png" id="8_657ph"]
 [ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay/packed/packed_albedo_height.png" id="9_vmmh5"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/lowpoly_stylized/malte/car/car.tscn" id="10_rq5sf"]
+[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/lowpoly_stylized/malte/car/car_default.tscn" id="10_rq5sf"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="11_fxeyy"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="12_ghug3"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="13_tusko"]
@@ -23,11 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/lowpoly_stylized/malte/_scene_prefabs/box1.tscn" id="21_r4oj8"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="22_mqt5f"]
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/rock1.tscn" id="23_o3ofo"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_01.tscn" id="24_7x4wq"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/time_pickup.tscn" id="25_lftl5"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="24_7x4wq"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="25_lftl5"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="26_k22wj"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="27_jadqy"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters.tscn" id="28_0k7uv"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="28_0k7uv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)

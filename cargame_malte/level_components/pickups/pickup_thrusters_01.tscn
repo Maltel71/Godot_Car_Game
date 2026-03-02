@@ -77,7 +77,7 @@ _data = {
 &"pickup_rotate": SubResource("Animation_rmv22")
 }
 
-[node name="PickupThrusters" type="Area3D"]
+[node name="Pickup_Thrusters_01" type="Area3D"]
 script = ExtResource("1_7gam7")
 pickup_sound = ExtResource("2_eiwu8")
 pickup_volume = -10.0

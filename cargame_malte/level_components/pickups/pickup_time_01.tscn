@@ -44,7 +44,7 @@ _data = {
 &"pickup_rotate": SubResource("Animation_rmv22")
 }
 
-[node name="TimePickup" type="Area3D"]
+[node name="Pickup_Time_01" type="Area3D"]
 script = ExtResource("1_bp266")
 pickup_sound = ExtResource("2_iyx04")
 pickup_volume = -5.0
