@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=28 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_vl2bd"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="5_coc8s"]
+[ext_resource type="PackedScene" uid="uid://cnvfylu6ycwa5" path="res://models/clay/malte/Malte_Car.glb" id="5_mu0h7"]
 [ext_resource type="PackedScene" uid="uid://c2mwgiyowkx0d" path="res://models/clay/victor/Victor_Wheel.glb" id="6_fjvud"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="6_wdy7j"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
@@ -110,11 +111,16 @@ script = ExtResource("1_bkrhx")
 spring_bone_simulator = NodePath("")
 exhaust_particles = NodePath("===PartSyst===/vfx_Exhaust_Driving")
 
-[node name="Body_Mesh" parent="." instance=ExtResource("2_xhmyn")]
+[node name="===Body===" type="Node3D" parent="."]
 
-[node name="SteeringWheel" parent="Body_Mesh" instance=ExtResource("3_vl2bd")]
+[node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_xhmyn")]
 
-[node name="Windows_mesh" parent="Body_Mesh" instance=ExtResource("5_coc8s")]
+[node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_vl2bd")]
+
+[node name="Windows_Mesh" parent="===Body===" instance=ExtResource("5_coc8s")]
+
+[node name="Malte_Car2" parent="===Body===" instance=ExtResource("5_mu0h7")]
+transform = Transform3D(-1.5208653e-07, 0, 3.4793344, 0, 3.4793344, 0, -3.4793344, 0, -1.5208653e-07, 0, 0, 0)
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
