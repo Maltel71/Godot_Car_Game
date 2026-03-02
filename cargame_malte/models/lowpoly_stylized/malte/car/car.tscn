@@ -1,11 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=26 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_vl2bd"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="5_coc8s"]
-[ext_resource type="PackedScene" uid="uid://cnvfylu6ycwa5" path="res://models/clay/malte/Malte_Car.glb" id="5_mu0h7"]
-[ext_resource type="PackedScene" uid="uid://c2mwgiyowkx0d" path="res://models/clay/victor/Victor_Wheel.glb" id="6_fjvud"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="6_wdy7j"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
@@ -103,24 +101,24 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
-[node name="Car" type="VehicleBody3D" node_paths=PackedStringArray("spring_bone_simulator", "exhaust_particles")]
+[node name="Car" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles")]
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_bkrhx")
-spring_bone_simulator = NodePath("")
-exhaust_particles = NodePath("===PartSyst===/vfx_Exhaust_Driving")
+exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 
 [node name="===Body===" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_xhmyn")]
+metadata/_edit_lock_ = true
 
 [node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_vl2bd")]
+metadata/_edit_lock_ = true
 
 [node name="Windows_Mesh" parent="===Body===" instance=ExtResource("5_coc8s")]
-
-[node name="Malte_Car2" parent="===Body===" instance=ExtResource("5_mu0h7")]
-transform = Transform3D(-1.5208653e-07, 0, 3.4793344, 0, 3.4793344, 0, -3.4793344, 0, -1.5208653e-07, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
@@ -132,12 +130,10 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
+metadata/_edit_lock_ = true
 
 [node name="Wheel03_mesh" parent="wheel_front_left" instance=ExtResource("6_wdy7j")]
-visible = false
-
-[node name="Victor_Wheel2" parent="wheel_front_left" instance=ExtResource("6_fjvud")]
-transform = Transform3D(1.3848174, 0, 0, 0, 1.3848174, 0, 0, 0, 1.3848174, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="wheel_front_right" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, 1.75)
@@ -149,8 +145,10 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
+metadata/_edit_lock_ = true
 
 [node name="Wheel02_mesh" parent="wheel_front_right" instance=ExtResource("6_wdy7j")]
+metadata/_edit_lock_ = true
 
 [node name="wheel_back_right" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, -1.913)
@@ -161,8 +159,10 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
+metadata/_edit_lock_ = true
 
 [node name="Wheel05_mesh" parent="wheel_back_right" instance=ExtResource("6_wdy7j")]
+metadata/_edit_lock_ = true
 
 [node name="wheel_back_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, -1.913)
@@ -173,8 +173,10 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
+metadata/_edit_lock_ = true
 
 [node name="Wheel04_mesh" parent="wheel_back_left" instance=ExtResource("6_wdy7j")]
+metadata/_edit_lock_ = true
 
 [node name="CamArm" type="SpringArm3D" parent="."]
 transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384248, 0.0711465)
@@ -200,25 +202,27 @@ shape = SubResource("CapsuleShape3D_xhmyn")
 debug_color = Color(0, 0.643137, 0.290196, 1)
 metadata/_edit_lock_ = true
 
-[node name="===PartSyst===" type="Node3D" parent="."]
+[node name="===ParticelSystems===" type="Node3D" parent="."]
 visible = false
 metadata/_edit_lock_ = true
 
-[node name="vfx_Exhaust_idle" type="GPUParticles3D" parent="===PartSyst==="]
+[node name="vfx_Exhaust_idle" type="GPUParticles3D" parent="===ParticelSystems==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
 material_override = SubResource("ShaderMaterial_utifk")
 amount = 5
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_l85uf")
 draw_pass_1 = ExtResource("11_i00a5")
+metadata/_edit_lock_ = true
 
-[node name="vfx_Exhaust_Driving" type="GPUParticles3D" parent="===PartSyst==="]
+[node name="vfx_Exhaust_Driving" type="GPUParticles3D" parent="===ParticelSystems==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
 material_override = SubResource("ShaderMaterial_utifk")
 amount = 40
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_8ijm4")
 draw_pass_1 = ExtResource("11_i00a5")
+metadata/_edit_lock_ = true
 
 [node name="===Thrusters===" type="Node3D" parent="."]
 visible = false
@@ -227,10 +231,12 @@ metadata/_edit_lock_ = true
 [node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
 transform = Transform3D(-4.371139e-08, 0, -1, -0.9659258, 0.25881907, 3.7252903e-08, 0.25881907, 0.9659258, -1.4901161e-08, 1.3862259, -0.21461034, -2.1589038)
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
+metadata/_edit_lock_ = true
 
 [node name="Thruster_R" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
 transform = Transform3D(-3.5326156e-08, -3.1294107e-08, 1, 0.96592575, 0.2588191, 4.2221956e-08, -0.2588191, 0.96592575, 2.1084706e-08, -1.386, -0.215, -2.159)
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
+metadata/_edit_lock_ = true
 
 [node name="vfx_Exhaust_SmokePuff_L" type="GPUParticles3D" parent="===Thrusters==="]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.3800956, -0.45450124, -2.8872514)
@@ -242,6 +248,7 @@ explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_3jha3")
 draw_pass_1 = ExtResource("11_i00a5")
+metadata/_edit_lock_ = true
 
 [node name="vfx_Exhaust_SmokePuff_R" type="GPUParticles3D" parent="===Thrusters==="]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.38, -0.455, -2.887)
@@ -253,6 +260,7 @@ explosiveness = 1.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_3jha3")
 draw_pass_1 = ExtResource("11_i00a5")
+metadata/_edit_lock_ = true
 
 [node name="===Car_SFX_Manager===" type="Node3D" parent="."]
 visible = false
