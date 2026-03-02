@@ -431,7 +431,7 @@ level_start_time = 30.0
 environment = SubResource("Environment_ex07k")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8660235, -0.43301606, 0.25000066, 0.47566867, -0.5594132, 0.6788198, -0.1540862, 0.7067914, 0.6904371, 0, 0, 0)
+transform = Transform3D(-0.8660236, -0.43301606, 0.25000077, -0.18759574, 0.7448641, 0.64030105, -0.4634772, 0.5076166, -0.72630167, 0, 0, 0)
 shadow_enabled = true
 
 [node name="GameManager" type="Node" parent="."]
