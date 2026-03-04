@@ -1,0 +1,207 @@
+[gd_scene load_steps=42 format=3 uid="uid://ujn7dahi5he8"]
+
+[ext_resource type="Material" uid="uid://cllsapoox4hsr" path="res://materials/roadtexture_Clay.tres" id="1_hswr7"]
+[ext_resource type="PackedScene" uid="uid://cfspx3nxqabk0" path="res://models/clay/aaron/Aaron_Car.glb" id="2_8dwvc"]
+[ext_resource type="PackedScene" uid="uid://cocfrfpbkwrp4" path="res://models/clay/aaron/Aaron_Wheel.glb" id="3_1cl63"]
+[ext_resource type="PackedScene" uid="uid://c3ckmg66hedrp" path="res://models/clay/aaron/Aaron_Wing.glb" id="4_n8yum"]
+[ext_resource type="PackedScene" uid="uid://eyaealtjtrv1" path="res://models/clay/alfred/Alfred_Car.glb" id="5_hf63e"]
+[ext_resource type="PackedScene" uid="uid://doo6jvgee6da" path="res://models/clay/alfred/Alfred_Head.glb" id="6_oy4q7"]
+[ext_resource type="PackedScene" uid="uid://hkinistob58g" path="res://models/clay/alfred/Alfred_Wheel.glb" id="7_pop1v"]
+[ext_resource type="PackedScene" uid="uid://c8y3vx3o50hvj" path="res://models/clay/alfred/Alfred_Wingshield.glb" id="8_fstm8"]
+[ext_resource type="PackedScene" uid="uid://bkxdscpg7cu31" path="res://models/clay/sebastian/Sebastian_Car.glb" id="9_7fxum"]
+[ext_resource type="PackedScene" uid="uid://d0qtvgkrqfjw0" path="res://models/clay/sebastian/Sebastian_Wheel.glb" id="10_o36js"]
+[ext_resource type="PackedScene" uid="uid://8w8j037pr2s8" path="res://models/clay/victor/Victor_Car.glb" id="11_ngk2t"]
+[ext_resource type="PackedScene" uid="uid://c2mwgiyowkx0d" path="res://models/clay/victor/Victor_Wheel.glb" id="12_rdsne"]
+[ext_resource type="PackedScene" uid="uid://cs03vo8qk3ei5" path="res://models/clay/victor/Victor_Wing.glb" id="13_663dh"]
+[ext_resource type="PackedScene" uid="uid://tybdwjxicxtv" path="res://models/clay/aindreas/Aindreas_Car.glb" id="14_byyu6"]
+[ext_resource type="PackedScene" uid="uid://dr4lkogxm3d2q" path="res://models/clay/aindreas/Aindreas_Thing.glb" id="15_8on5t"]
+[ext_resource type="PackedScene" uid="uid://dl01oya5bne3m" path="res://models/clay/ella/Ella_Car.glb" id="16_s2gw0"]
+[ext_resource type="PackedScene" uid="uid://c6l08illpdrvy" path="res://models/clay/ella/Ella_Shroom.glb" id="17_7q6b6"]
+[ext_resource type="PackedScene" uid="uid://dp2lmayyj2vfr" path="res://models/clay/ella/Ella_Wheel.glb" id="18_xrocq"]
+[ext_resource type="PackedScene" uid="uid://0u8t0t8prlmo" path="res://models/clay/ella/Ella_WhiteBlob.glb" id="19_kt0rv"]
+[ext_resource type="PackedScene" uid="uid://csxglpcfcw644" path="res://models/clay/felix/Felix_Car.glb" id="20_0h40w"]
+[ext_resource type="PackedScene" uid="uid://brl6vq3ob3jxg" path="res://models/clay/felix/Felix_Character.glb" id="21_jlxan"]
+[ext_resource type="PackedScene" uid="uid://bjprewi8e5ghe" path="res://models/clay/felix/Felix_Wheel.glb" id="22_nlciq"]
+[ext_resource type="PackedScene" uid="uid://dpt64m0mryvpw" path="res://models/clay/henry/Henry_Car.glb" id="23_vb342"]
+[ext_resource type="PackedScene" uid="uid://bd11i1hcmsdm0" path="res://models/clay/nicolas/Nicolas_Car.glb" id="24_mluc5"]
+[ext_resource type="PackedScene" uid="uid://bj7kcnst1wn21" path="res://models/clay/nicolas/Nicolas_Character.glb" id="25_e8ooj"]
+[ext_resource type="PackedScene" uid="uid://bpv1qbq13pggb" path="res://models/clay/nicolas/Nicolas_Head.glb" id="26_xv8un"]
+[ext_resource type="PackedScene" uid="uid://b65ktul3sq3xp" path="res://models/clay/nicolas/Nicolas_Wheel.glb" id="27_e717r"]
+[ext_resource type="PackedScene" uid="uid://cnvfylu6ycwa5" path="res://models/clay/malte/Malte_Car.glb" id="28_5jubx"]
+[ext_resource type="PackedScene" uid="uid://cx2qgrxbq0yyy" path="res://models/clay/malte/Malte_Character.glb" id="29_k65lm"]
+[ext_resource type="PackedScene" uid="uid://bqcl7a4nndfx2" path="res://models/clay/malte/Malte_LargeRock2.glb" id="30_5ve16"]
+[ext_resource type="PackedScene" uid="uid://pry2oskwcvhi" path="res://models/clay/malte/Malte_LargeRock.glb" id="31_e3mbw"]
+[ext_resource type="PackedScene" uid="uid://c6ebhh4lk22l2" path="res://models/clay/malte/Malte_Pickup1.glb" id="32_ls55o"]
+[ext_resource type="PackedScene" uid="uid://tvxeuw51bwrh" path="res://models/clay/malte/Malte_ShroomThingy.glb" id="33_puhgw"]
+[ext_resource type="PackedScene" uid="uid://b1cvvvyh0y2mr" path="res://models/clay/malte/Malte_Sign1.glb" id="34_7xlyi"]
+[ext_resource type="PackedScene" uid="uid://op2v3xr33cti" path="res://models/clay/malte/Malte_SmallRock1.glb" id="35_tu0y6"]
+[ext_resource type="PackedScene" uid="uid://cdri0l5l1upeb" path="res://models/clay/malte/Malte_smallrock2.glb" id="36_12ew6"]
+[ext_resource type="PackedScene" uid="uid://xrl4es8mf1el" path="res://models/clay/malte/Malte_SmallRock3.glb" id="37_n7guv"]
+[ext_resource type="PackedScene" uid="uid://bkd5h1kbj05aj" path="res://models/clay/malte/Malte_Tree1.glb" id="38_nftdm"]
+[ext_resource type="PackedScene" uid="uid://c3od7diqreqah" path="res://models/clay/malte/Malte_Tree2.glb" id="39_m4ion"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e7b0n"]
+size = Vector3(20, 0.5, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g3ydp"]
+size = Vector3(11.33, 0.5, 5)
+
+[node name="Museum" type="Node3D"]
+
+[node name="=== Anthelope ===" type="Node3D" parent="."]
+transform = Transform3D(2.7622662, 0, 0, 0, 2.7622662, 0, 0, 0, 2.7622662, -31.250244, 0, 0)
+
+[node name="= Floor =" type="MeshInstance3D" parent="=== Anthelope ==="]
+material_override = ExtResource("1_hswr7")
+mesh = SubResource("BoxMesh_e7b0n")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="Aaron_Car2" parent="=== Anthelope ===" instance=ExtResource("2_8dwvc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4568405, 0.86749434, 0)
+
+[node name="Aaron_Wheel2" parent="=== Anthelope ===" instance=ExtResource("3_1cl63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.330208, 0.86749434, 0)
+
+[node name="Aaron_Wing2" parent="=== Anthelope ===" instance=ExtResource("4_n8yum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7106266, 0.86749434, 0)
+
+[node name="Alfred_Car2" parent="=== Anthelope ===" instance=ExtResource("5_hf63e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44230938, 0.79981804, 0)
+
+[node name="Alfred_Head2" parent="=== Anthelope ===" instance=ExtResource("6_oy4q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3815026, 0.79981804, 0)
+
+[node name="Alfred_Wheel2" parent="=== Anthelope ===" instance=ExtResource("7_pop1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4184356, 0.79981804, 0)
+
+[node name="Alfred_Wingshield2" parent="=== Anthelope ===" instance=ExtResource("8_fstm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9759874, 0.79981804, 0)
+
+[node name="Sebastian_Car2" parent="=== Anthelope ===" instance=ExtResource("9_7fxum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2703547, 0.86512375, 0)
+
+[node name="Sebastian_Wheel2" parent="=== Anthelope ===" instance=ExtResource("10_o36js")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6098857, 0.86512375, 0)
+
+[node name="Victor_Car2" parent="=== Anthelope ===" instance=ExtResource("11_ngk2t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.898789, 1.0503788, 0)
+
+[node name="Victor_Wheel2" parent="=== Anthelope ===" instance=ExtResource("12_rdsne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5336676, 1.0503788, 0)
+
+[node name="Victor_Wing2" parent="=== Anthelope ===" instance=ExtResource("13_663dh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.777487, 1.0503788, 0)
+
+[node name="=== Eagle ===" type="Node3D" parent="."]
+transform = Transform3D(2.7622662, 0, 0, 0, 2.7622662, 0, 0, 0, 2.7622662, 59.6444, 0, 0)
+
+[node name="= Floor =" type="MeshInstance3D" parent="=== Eagle ==="]
+material_override = ExtResource("1_hswr7")
+mesh = SubResource("BoxMesh_e7b0n")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="Aindreas_Car2" parent="=== Eagle ===" instance=ExtResource("14_byyu6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4746494, 0.7683377, 0)
+
+[node name="Aindreas_Thing2" parent="=== Eagle ===" instance=ExtResource("15_8on5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2458115, 0.7683377, 0)
+
+[node name="Ella_Car2" parent="=== Eagle ===" instance=ExtResource("16_s2gw0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8701344, 0.8771801, 0)
+
+[node name="Ella_Shroom2" parent="=== Eagle ===" instance=ExtResource("17_7q6b6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6829357, 0.8771801, 0)
+
+[node name="Ella_Wheel2" parent="=== Eagle ===" instance=ExtResource("18_xrocq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21129608, 0.8771801, 0)
+
+[node name="Ella_WhiteBlob2" parent="=== Eagle ===" instance=ExtResource("19_kt0rv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66936874, 0.8771801, 0)
+
+[node name="Felix_Car2" parent="=== Eagle ===" instance=ExtResource("20_0h40w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.447855, 0.8141813, 0)
+
+[node name="Felix_Character2" parent="=== Eagle ===" instance=ExtResource("21_jlxan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4900837, 0.8141813, 0)
+
+[node name="Felix_Wheel2" parent="=== Eagle ===" instance=ExtResource("22_nlciq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0845604, 0.8141813, 0)
+
+[node name="Henry_Car2" parent="=== Eagle ===" instance=ExtResource("23_vb342")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4157143, 0.7814269, 0)
+
+[node name="Nicolas_Car2" parent="=== Eagle ===" instance=ExtResource("24_mluc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.855425, 0.8892982, 0)
+
+[node name="Nicolas_Character2" parent="=== Eagle ===" instance=ExtResource("25_e8ooj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.141527, 0.8892982, 0)
+
+[node name="Nicolas_Head2" parent="=== Eagle ===" instance=ExtResource("26_xv8un")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4635143, 0.8892982, 0)
+
+[node name="Nicolas_Wheel2" parent="=== Eagle ===" instance=ExtResource("27_e717r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6034718, 0.8892982, 0)
+
+[node name="=== Malte ===" type="Node3D" parent="."]
+transform = Transform3D(2.7622662, 0, 0, 0, 2.7622662, 0, 0, 0, 2.7622662, -6.649988, 0, 0)
+
+[node name="= Floor =" type="MeshInstance3D" parent="=== Malte ==="]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50506, 0, 0)
+material_override = ExtResource("1_hswr7")
+mesh = SubResource("BoxMesh_g3ydp")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="Malte_Car2" parent="=== Malte ===" instance=ExtResource("28_5jubx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1916168, 1.1018541, 0)
+
+[node name="Malte_Character2" parent="=== Malte ===" instance=ExtResource("29_k65lm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.677514, 0.913548, 0)
+
+[node name="Malte_LargeRock22" parent="=== Malte ===" instance=ExtResource("30_5ve16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.647627, 0.913548, 0)
+
+[node name="Malte_LargeRock2" parent="=== Malte ===" instance=ExtResource("31_e3mbw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6317444, 0.913548, 0)
+
+[node name="Malte_Pickup12" parent="=== Malte ===" instance=ExtResource("32_ls55o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.457476, 0.913548, 0)
+
+[node name="Malte_ShroomThingy2" parent="=== Malte ===" instance=ExtResource("33_puhgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.415587, 0.913548, 0)
+
+[node name="Malte_Sign12" parent="=== Malte ===" instance=ExtResource("34_7xlyi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.050093, 0.913548, 0)
+
+[node name="Malte_SmallRock12" parent="=== Malte ===" instance=ExtResource("35_tu0y6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.773238, 0.913548, 0)
+
+[node name="Malte_smallrock22" parent="=== Malte ===" instance=ExtResource("36_12ew6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.443405, 0.913548, 0)
+
+[node name="Malte_SmallRock32" parent="=== Malte ===" instance=ExtResource("37_n7guv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.12535, 0.913548, 0)
+
+[node name="Malte_Tree12" parent="=== Malte ===" instance=ExtResource("38_nftdm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.786725, 0.913548, 0)
+
+[node name="Malte_Tree22" parent="=== Malte ===" instance=ExtResource("39_m4ion")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.461854, 0.913548, 0)
+
+[node name="=== CAR ===" type="Node3D" parent="."]
+transform = Transform3D(2.7622662, 0, 0, 0, 2.7622662, 0, 0, 0, 2.7622662, -6.649988, 0, 0)
+
+[node name="= Floor =" type="MeshInstance3D" parent="=== CAR ==="]
+transform = Transform3D(0.4697516, 0, 0, 0, 1, 0, 0, 0, 0.6632546, 7.50506, 0, -6.264059)
+material_override = ExtResource("1_hswr7")
+mesh = SubResource("BoxMesh_g3ydp")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="=== CAR ==="]
+transform = Transform3D(1, -4.371139e-08, -1.9106855e-15, 0, -4.371139e-08, 1, -4.371139e-08, -1, -4.371139e-08, 7.512728, 5.092913, -6.2465005)
+light_energy = 30.0
+spot_range = 21.172134
+spot_angle = 28.662447

@@ -416,7 +416,7 @@ _shader_parameters = {
 }
 shader_override = SubResource("Shader_8tfmj")
 
-[sub_resource type="Curve3D" id="Curve3D_e3avg"]
+[sub_resource type="Curve3D" id="Curve3D_u0vps"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -447,6 +447,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.49569
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
+visible = false
 
 [node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("12_f30td")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
@@ -470,8 +471,10 @@ metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11876, 1.12862, -9.75021)
-curve = SubResource("Curve3D_e3avg")
+curve = SubResource("Curve3D_u0vps")
 script = ExtResource("5_u0vps")
+lock_road = true
+metadata/_edit_lock_ = true
 
 [node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
