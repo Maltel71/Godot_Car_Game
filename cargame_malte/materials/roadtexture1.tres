@@ -4,3 +4,4 @@
 
 [resource]
 albedo_texture = ExtResource("1_3tsfh")
+uv1_offset = Vector3(-0.07, 0, 0)
