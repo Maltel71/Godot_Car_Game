@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://belyyeqp8mmjd"]
+
+[ext_resource type="Texture2D" uid="uid://dc74ek2wfebgx" path="res://models/clay/victor/Victor_Wheel_0eb110107517924eb30e309d1b06638a.jpg" id="1_m2xxn"]
+[ext_resource type="Texture2D" uid="uid://csutkav2qxinh" path="res://models/clay/victor/Victor_Wheel_3368e1bf7f10dc6b909cc667c2328c81.jpg" id="2_7w8te"]
+[ext_resource type="Texture2D" uid="uid://d4l1hk2bnsio5" path="res://models/clay/victor/Victor_Wheel_389b9a91f7f7baa0436db3dd7b3e620c.jpg" id="3_jpnos"]
+
+[resource]
+resource_name = "Material_0.024"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_m2xxn")
+normal_enabled = true
+normal_texture = ExtResource("3_jpnos")
+ao_enabled = true
+ao_texture = ExtResource("2_7w8te")

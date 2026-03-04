@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://nvml7e6cj3ch"]
+
+[ext_resource type="Texture2D" uid="uid://dmctrniu6yi5s" path="res://models/clay/aindreas/Aindreas_Car_a30d3e4d605c853eb7824bb468657539.jpg" id="1_vq4il"]
+[ext_resource type="Texture2D" uid="uid://5wqne4avlyox" path="res://models/clay/aindreas/Aindreas_Car_9c14a762526ad2b3db729a888c66d400.jpg" id="2_eb30j"]
+[ext_resource type="Texture2D" uid="uid://bp622rup0ovue" path="res://models/clay/aindreas/Aindreas_Car_d30dea4ed75c70b120837387f7e7751c.jpg" id="3_qe6fo"]
+
+[resource]
+resource_name = "Material_0.026"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_vq4il")
+normal_enabled = true
+normal_texture = ExtResource("3_qe6fo")
+ao_enabled = true
+ao_texture = ExtResource("2_eb30j")

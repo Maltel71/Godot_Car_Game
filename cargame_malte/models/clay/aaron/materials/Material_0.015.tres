@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dw5b621wcgfa8"]
+
+[ext_resource type="Texture2D" uid="uid://dnudwkn53a7fm" path="res://models/clay/aaron/Aaron_Wing_f4e11d6849c0d2078a626d056e495b41.jpg" id="1_op54h"]
+[ext_resource type="Texture2D" uid="uid://cuokqpydv7rk" path="res://models/clay/aaron/Aaron_Wing_7c6848a96b1f1601fcd77552f4fb93d4.jpg" id="2_ny5iy"]
+[ext_resource type="Texture2D" uid="uid://bkp4201nckgxf" path="res://models/clay/aaron/Aaron_Wing_6d60f468093d49de3858bcb037174e4e.jpg" id="3_5fwlt"]
+
+[resource]
+resource_name = "Material_0.015"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_op54h")
+normal_enabled = true
+normal_texture = ExtResource("3_5fwlt")
+ao_enabled = true
+ao_texture = ExtResource("2_ny5iy")

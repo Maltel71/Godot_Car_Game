@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://d2ut0jlrpjwsm"]
+
+[ext_resource type="Texture2D" uid="uid://b471hi4gtt5i3" path="res://models/clay/victor/Victor_Car_8fbea61bfdf1e35412e557defb1e50bf.jpg" id="1_65s0o"]
+[ext_resource type="Texture2D" uid="uid://fynwgkgfxhh4" path="res://models/clay/victor/Victor_Car_8b810cfd810f34a09769ada6e17a73f8.jpg" id="2_konko"]
+[ext_resource type="Texture2D" uid="uid://dbjk00r06x41l" path="res://models/clay/victor/Victor_Car_32af6e3490048e40e45e63acb9961da1.jpg" id="3_uyyn6"]
+
+[resource]
+resource_name = "Material_0.023"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_65s0o")
+normal_enabled = true
+normal_texture = ExtResource("3_uyyn6")
+ao_enabled = true
+ao_texture = ExtResource("2_konko")

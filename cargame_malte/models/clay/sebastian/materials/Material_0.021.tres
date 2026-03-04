@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://dgvcdga4gqiko"]
+
+[ext_resource type="Texture2D" uid="uid://4a07xf6y2t2y" path="res://models/clay/sebastian/Sebastian_Car_7bd6156779d3cc67f1f362edfa9b2e59.jpg" id="1_5572f"]
+[ext_resource type="Texture2D" uid="uid://bjkkrj6ai7bhw" path="res://models/clay/sebastian/Sebastian_Car_31fb56bb7e487122d8cbe220a281bcbf.jpg" id="2_myg3u"]
+[ext_resource type="Texture2D" uid="uid://381t3tmxjf5e" path="res://models/clay/sebastian/Sebastian_Car_77da9d0157ebf4b237c6a68f77ce161d.jpg" id="3_vg4f1"]
+
+[resource]
+resource_name = "Material_0.021"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_5572f")
+normal_enabled = true
+normal_texture = ExtResource("3_vg4f1")
+ao_enabled = true
+ao_texture = ExtResource("2_myg3u")

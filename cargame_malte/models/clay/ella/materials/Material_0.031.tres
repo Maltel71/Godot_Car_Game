@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://ckta0ghpx05tp"]
+
+[ext_resource type="Texture2D" uid="uid://dwao0a4byi2e6" path="res://models/clay/ella/Ella_WhiteBlob_4f08f71214ae8d4490d31e6d46bfab9d.jpg" id="1_rromg"]
+[ext_resource type="Texture2D" uid="uid://cpipsmi6ujof2" path="res://models/clay/ella/Ella_WhiteBlob_2455e059dd054683249fa6b7e8111cf1.jpg" id="2_2v5l1"]
+[ext_resource type="Texture2D" uid="uid://d1my33en4rf61" path="res://models/clay/ella/Ella_WhiteBlob_22898b18b97335e1c18d03971a922089.jpg" id="3_cl57n"]
+
+[resource]
+resource_name = "Material_0.031"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_rromg")
+normal_enabled = true
+normal_texture = ExtResource("3_cl57n")
+ao_enabled = true
+ao_texture = ExtResource("2_2v5l1")

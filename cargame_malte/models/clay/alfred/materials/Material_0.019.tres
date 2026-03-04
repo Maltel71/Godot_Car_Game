@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://b5hn6uieuom6g"]
+
+[ext_resource type="Texture2D" uid="uid://sefckd2jjn2s" path="res://models/clay/alfred/Alfred_Head_099c4485724dabee601844c25ebcd6be.jpg" id="1_tcfuu"]
+[ext_resource type="Texture2D" uid="uid://drl68qyqcfrd8" path="res://models/clay/alfred/Alfred_Head_43c293850a533a04c595eaabb9910765.jpg" id="2_3377b"]
+[ext_resource type="Texture2D" uid="uid://bktb1o6fd8i0w" path="res://models/clay/alfred/Alfred_Head_c28e96dd0344924ddb04176c7e50496b.jpg" id="3_dmdpa"]
+
+[resource]
+resource_name = "Material_0.019"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_tcfuu")
+normal_enabled = true
+normal_texture = ExtResource("3_dmdpa")
+ao_enabled = true
+ao_texture = ExtResource("2_3377b")

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://camnc5o221q4b"]
+
+[ext_resource type="Texture2D" uid="uid://2eis5ngx4eu3" path="res://models/clay/aindreas/Aindreas_Thing_ff56c68904929402de8ee71a89f96c43.jpg" id="1_k2xdj"]
+[ext_resource type="Texture2D" uid="uid://cpn44wl10125b" path="res://models/clay/aindreas/Aindreas_Thing_d327882386b1af0bba68b586361dddbc.jpg" id="2_lcqn3"]
+[ext_resource type="Texture2D" uid="uid://cqldyfgjpdtca" path="res://models/clay/aindreas/Aindreas_Thing_c220df25110f53777649546bb76bbff7.jpg" id="3_wggw7"]
+
+[resource]
+resource_name = "Material_0.027"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_k2xdj")
+normal_enabled = true
+normal_texture = ExtResource("3_wggw7")
+ao_enabled = true
+ao_texture = ExtResource("2_lcqn3")

@@ -6,7 +6,7 @@
 
 [resource]
 resource_name = "Material_0.012"
-albedo_color = Color(1.164, 1.164, 1.164, 1)
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
 albedo_texture = ExtResource("1_ueugu")
 normal_enabled = true
 normal_texture = ExtResource("3_w5gj3")

@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://d2l1llmaeo8cg"]
+
+[ext_resource type="Texture2D" uid="uid://c81xeruocqxs4" path="res://models/clay/felix/Felix_Character_e905a7a5eda37fed05958a4027de719d.jpg" id="1_y8v03"]
+[ext_resource type="Texture2D" uid="uid://62gg28feeway" path="res://models/clay/felix/Felix_Character_62680f3cc2bf622db9c0effd7854f118.jpg" id="2_omvwk"]
+[ext_resource type="Texture2D" uid="uid://dg1dpj0v7n0u" path="res://models/clay/felix/Felix_Character_f3323262fc677473191bd0333a124fe8.jpg" id="3_211im"]
+
+[resource]
+resource_name = "Material_0.034"
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("1_y8v03")
+normal_enabled = true
+normal_texture = ExtResource("3_211im")
+ao_enabled = true
+ao_texture = ExtResource("2_omvwk")
