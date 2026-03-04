@@ -54,7 +54,7 @@ func _on_sfx_volume_changed(value: float):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("sfx"), linear_to_db(value / 100.0))
 
 func _on_ok_pressed():
-	get_tree().change_scene_to_file("res://menus/start_menu.tscn")
+	get_tree().change_scene_to_file("res://ui/menus/start_menu.tscn")
 
 func _on_button_hover():
 	if hover_sound and audio_player:

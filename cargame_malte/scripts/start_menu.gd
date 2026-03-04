@@ -34,10 +34,10 @@ func _ready():
 		MusicManager.music_player.volume_db = menu_music_volume
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://menus/levelselect_menu.tscn")
+	get_tree().change_scene_to_file("res://ui/menus/levelselect_menu.tscn")
 
 func _on_settings_pressed():
-	get_tree().change_scene_to_file("res://menus/settings_menu.tscn")
+	get_tree().change_scene_to_file("res://ui/menus/settings_menu.tscn")
 
 func _on_quit_pressed():
 	get_tree().quit()

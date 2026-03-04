@@ -42,7 +42,7 @@ func _on_level_pressed(index: int):
 		get_tree().change_scene_to_file(level_scenes[index])
 
 func _on_main_menu_pressed():
-	get_tree().change_scene_to_file("res://menus/start_menu.tscn")
+	get_tree().change_scene_to_file("res://ui/menus/start_menu.tscn")
 
 func _on_button_hover():
 	if hover_sound and audio_player:
