@@ -1,0 +1,679 @@
+[gd_scene load_steps=39 format=3 uid="uid://lc3tdp4sq2id"]
+
+[ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_m2aga"]
+[ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_cvpq7"]
+[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_jt3uw"]
+[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_bj0we"]
+[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_m2i55"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_an2ca"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_ymbs7"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_tfwhb"]
+[ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_bn0hm"]
+[ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_maiyf"]
+[ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_rkpjc"]
+[ext_resource type="Texture2D" uid="uid://67wrvwo3xanj" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v1.png" id="12_q2po2"]
+[ext_resource type="Texture2D" uid="uid://ndc0tm8oiuoq" path="res://textures/neutral_normalmap_t.png" id="13_nt1m4"]
+[ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v2.png" id="14_7grbk"]
+[ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay_t/packed/packed_albedo_height.png" id="15_roxbc"]
+[ext_resource type="Texture2D" uid="uid://bfqss5kcs346u" path="res://textures/terrain_clay_t/env_clay_01_512px_texture_v2_specular.png" id="16_3v0xn"]
+[ext_resource type="Script" uid="uid://bd5wtka1ofdi0" path="res://scripts/roadlock.gd" id="17_ctyoj"]
+[ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="18_xqc4s"]
+[ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_3yw6c"]
+[ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_6j40j"]
+[ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_xum4w"]
+[ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_j0dwk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_s8dg4"]
+sky_material = SubResource("ProceduralSkyMaterial_q04gf")
+
+[sub_resource type="Environment" id="Environment_ex07k"]
+background_mode = 2
+sky = SubResource("Sky_s8dg4")
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_density = 0.0005
+
+[sub_resource type="Gradient" id="Gradient_dvodd"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8mrap"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q04gf"]
+noise = SubResource("FastNoiseLite_8mrap")
+color_ramp = SubResource("Gradient_dvodd")
+seamless = true
+
+[sub_resource type="Shader" id="Shader_8tfmj"]
+code = "shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+
+/* This shader is generated based upon the debug views you have selected.
+ * The terrain function depends on this shader. So don't change:
+ * - vertex positioning in vertex()
+ * - terrain normal calculation in fragment()
+ * - the last function being fragment() as the editor injects code before the closing }
+ *
+ * Most will only want to customize the material calculation and PBR application in fragment()
+ *
+ * Uniforms that begin with _ are private and will not display in the inspector. However,
+ * you can set them via code. You are welcome to create more of your own hidden uniforms.
+ *
+ * This system only supports albedo, height, normal, roughness. Most textures don't need the other
+ * PBR channels. Height can be used as an approximation for AO. For the rare textures do need
+ * additional channels, you can add maps for that one texture. e.g. an emissive map for lava.
+ *
+ */
+
+// Private uniforms
+uniform float _region_size = 1024.0;
+uniform float _region_texel_size = 0.0009765625; // = 1./1024.
+uniform int _region_map_size = 16;
+uniform int _region_map[256];
+uniform vec2 _region_offsets[256];
+uniform highp sampler2DArray _height_maps : repeat_disable;
+uniform lowp sampler2DArray _control_maps : repeat_disable;
+uniform lowp sampler2DArray _color_maps : source_color, filter_linear_mipmap_anisotropic, repeat_disable;
+uniform lowp sampler2DArray _texture_array_albedo : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
+uniform lowp sampler2DArray _texture_array_normal : hint_normal, filter_linear_mipmap_anisotropic, repeat_enable;
+uniform lowp sampler2D noise_texture : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
+
+uniform float _texture_uv_scale_array[32];
+uniform float _texture_uv_rotation_array[32];
+uniform vec4 _texture_color_array[32];
+uniform int _background_mode = 1;  // NONE = 0, FLAT = 1, NOISE = 2
+
+// Public uniforms
+
+uniform bool height_blending = true;
+uniform float blend_sharpness : hint_range(0, 1) = 0.87;
+uniform vec3 macro_variation1 : source_color = vec3(1.);
+uniform vec3 macro_variation2 : source_color = vec3(1.);
+// Generic noise at 3 scales, which can be used for anything
+uniform float noise1_scale : hint_range(0.001, 1.) = 0.04;	// Used for macro variation 1. Scaled up 10x
+uniform float noise1_angle : hint_range(0, 6.283) = 0.;
+uniform vec2 noise1_offset = vec2(0.5);
+uniform float noise2_scale : hint_range(0.001, 1.) = 0.076;	// Used for macro variation 2. Scaled up 10x
+uniform float noise3_scale : hint_range(0.001, 1.) = 0.225;  // Used for texture blending edge.
+
+// Varyings & Types
+
+struct Material {
+	vec4 alb_ht;
+	vec4 nrm_rg;
+	int base;
+	int over;
+	float blend;
+};
+
+varying vec3 v_vertex;	// World coordinate vertex location
+varying vec3 v_camera_pos;
+varying float v_xz_dist;
+varying flat ivec3 v_region;
+
+////////////////////////
+// Vertex
+////////////////////////
+
+// Takes in UV world space coordinates, returns ivec3 with:
+// XY: (0 to _region_size) coordinates within a region
+// Z: layer index used for texturearrays, -1 if not in a region
+ivec3 get_region_uv(vec2 uv) {
+	uv *= _region_texel_size;
+	ivec2 pos = ivec2(floor(uv)) + (_region_map_size / 2);
+	int bounds = int(pos.x>=0 && pos.x<_region_map_size && pos.y>=0 && pos.y<_region_map_size);
+	int layer_index = _region_map[ pos.y * _region_map_size + pos.x ] * bounds - 1;
+	return ivec3(ivec2((uv - _region_offsets[layer_index]) * _region_size), layer_index);
+}
+
+// Takes in UV2 region space coordinates, returns vec3 with:
+// XY: (0 to 1) coordinates within a region
+// Z: layer index used for texturearrays, -1 if not in a region
+vec3 get_region_uv2(vec2 uv) {
+	ivec2 pos = ivec2(floor(uv)) + (_region_map_size / 2);
+	int bounds = int(pos.x>=0 && pos.x<_region_map_size && pos.y>=0 && pos.y<_region_map_size);
+	int layer_index = _region_map[ pos.y * _region_map_size + pos.x ] * bounds - 1;
+	return vec3(uv - _region_offsets[layer_index], float(layer_index));
+}
+
+// 1 lookup
+float get_height(vec2 uv) {
+	highp float height = 0.0;
+	vec3 region = get_region_uv2(uv);
+	if (region.z >= 0.) {
+		height = texture(_height_maps, region).r;
+	}
+ 	return height;
+}
+
+void vertex() {
+	// Get camera pos in world vertex coords
+    v_camera_pos = INV_VIEW_MATRIX[3].xyz;
+
+	// Get vertex of flat plane in world coordinates and set world UV
+	v_vertex = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	v_xz_dist = length(v_vertex.xz - v_camera_pos.xz);
+
+	// UV coordinates in world space. Values are 0 to _region_size within regions
+	UV = v_vertex.xz;
+
+	// Discard vertices if designated as a hole or background disabled. 1 lookup.
+	v_region = get_region_uv(UV);
+	uint control = floatBitsToUint(texelFetch(_control_maps, v_region, 0).r);
+	bool hole = bool(control >>2u & 0x1u);
+	if ( hole || (_background_mode == 0 && v_region.z < 0) ) {
+		VERTEX.x = 0./0.;
+	} else {
+		// UV coordinates in region space + texel offset. Values are 0 to 1 within regions
+		UV2 = (UV + vec2(0.5)) * _region_texel_size;
+
+		// Get final vertex location and save it
+		VERTEX.y = get_height(UV2);
+		v_vertex = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	}
+}
+
+////////////////////////
+// Fragment
+////////////////////////
+
+// 4 lookups
+vec3 get_normal(vec2 uv, out vec3 tangent, out vec3 binormal) {
+	float left = get_height(uv + vec2(-_region_texel_size, 0));
+	float right = get_height(uv + vec2(_region_texel_size, 0));
+	float back = get_height(uv + vec2(0, -_region_texel_size));
+	float front = get_height(uv + vec2(0, _region_texel_size));
+	vec3 horizontal = vec3(2.0, right - left, 0.0);
+	vec3 vertical = vec3(0.0, back - front, 2.0);
+	vec3 normal = normalize(cross(vertical, horizontal));
+	normal.z *= -1.0;
+	tangent = cross(normal, vec3(0, 0, 1));
+	binormal = cross(normal, tangent);
+	return normal;
+}
+
+vec3 unpack_normal(vec4 rgba) {
+	vec3 n = rgba.xzy * 2.0 - vec3(1.0);
+	n.z *= -1.0;
+	return n;
+}
+
+vec4 pack_normal(vec3 n, float a) {
+	n.z *= -1.0;
+	return vec4((n.xzy + vec3(1.0)) * 0.5, a);
+}
+
+float random(in vec2 xy) {
+	return fract(sin(dot(xy, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+vec2 rotate(vec2 v, float cosa, float sina) {
+	return vec2(cosa * v.x - sina * v.y, sina * v.x + cosa * v.y);
+}
+
+vec4 height_blend(vec4 a_value, float a_height, vec4 b_value, float b_height, float blend) {
+	if(height_blending) {
+		float ma = max(a_height + (1.0 - blend), b_height + blend) - (1.001 - blend_sharpness);
+	    float b1 = max(a_height + (1.0 - blend) - ma, 0.0);
+	    float b2 = max(b_height + blend - ma, 0.0);
+	    return (a_value * b1 + b_value * b2) / (b1 + b2);
+	} else {
+		float contrast = 1.0 - blend_sharpness;
+		float factor = (blend - contrast) / contrast;
+		return mix(a_value, b_value, clamp(factor, 0.0, 1.0));
+	}
+}
+
+// 2-4 lookups
+void get_material(vec2 uv, uint control, ivec3 iuv_center, vec3 normal, out Material out_mat) {
+	out_mat = Material(vec4(0.), vec4(0.), 0, 0, 0.0);
+	vec2 uv_center = vec2(iuv_center.xy);
+	int region = iuv_center.z;
+
+	out_mat.base = int(control >>27u & 0x1Fu);
+	out_mat.over = int(control >> 22u & 0x1Fu);
+	out_mat.blend = float(control >>14u & 0xFFu) * 0.003921568627450; // 1./255.0
+
+	float r = random(uv_center) * PI;
+	float rand = r * _texture_uv_rotation_array[out_mat.base];
+	vec2 rot = vec2(cos(rand), sin(rand));
+	uv *= .5; // Allow larger numbers on uv scale array - move to C++
+	vec2 matUV = rotate(uv, rot.x, rot.y) * _texture_uv_scale_array[out_mat.base];
+
+	vec4 albedo_ht = vec4(0.);
+	vec4 normal_rg = vec4(0.5f, 0.5f, 1.0f, 1.0f);
+	vec4 albedo_far = vec4(0.);
+	vec4 normal_far = vec4(0.5f, 0.5f, 1.0f, 1.0f);
+
+	albedo_ht = texture(_texture_array_albedo, vec3(matUV, float(out_mat.base)));
+	normal_rg = texture(_texture_array_normal, vec3(matUV, float(out_mat.base)));
+
+	// Apply color to base
+	albedo_ht.rgb *= _texture_color_array[out_mat.base].rgb;
+
+	// Unpack base normal for blending
+	vec3 n = unpack_normal(normal_rg);
+	normal_rg.xz = rotate(n.xz, rot.x, -rot.y);
+
+	// Setup overlay texture to blend
+	float rand2 = r * _texture_uv_rotation_array[out_mat.over];
+	vec2 rot2 = vec2(cos(rand2), sin(rand2));
+	vec2 matUV2 = rotate(uv, rot2.x, rot2.y) * _texture_uv_scale_array[out_mat.over];
+
+	vec4 albedo_ht2 = texture(_texture_array_albedo, vec3(matUV2, float(out_mat.over)));
+	vec4 normal_rg2 = texture(_texture_array_normal, vec3(matUV2, float(out_mat.over)));
+
+	// Though it would seem having the above lookups in this block, or removing the branch would
+	// be more optimal, the first introduces artifacts #276, and the second is noticably slower.
+	// It seems the branching off dual scaling and the color array lookup is more optimal.
+	if (out_mat.blend > 0.f) {
+		// Apply color to overlay
+		albedo_ht2.rgb *= _texture_color_array[out_mat.over].rgb;
+
+		// Unpack overlay normal for blending
+		n = unpack_normal(normal_rg2);
+		normal_rg2.xz = rotate(n.xz, rot2.x, -rot2.y);
+
+		// Blend overlay and base
+		albedo_ht = height_blend(albedo_ht, albedo_ht.a, albedo_ht2, albedo_ht2.a, out_mat.blend);
+		normal_rg = height_blend(normal_rg, albedo_ht.a, normal_rg2, albedo_ht2.a, out_mat.blend);
+	}
+
+	// Repack normals and return material
+	normal_rg = pack_normal(normal_rg.xyz, normal_rg.a);
+	out_mat.alb_ht = albedo_ht;
+	out_mat.nrm_rg = normal_rg;
+	return;
+}
+
+float blend_weights(float weight, float detail) {
+	weight = sqrt(weight * 0.5);
+	float result = max(0.1 * weight, 10.0 * (weight + detail) + 1.0f - (detail + 10.0));
+	return result;
+}
+
+void fragment() {
+	// Calculate Terrain Normals. 4 lookups
+	vec3 w_tangent, w_binormal;
+	vec3 w_normal = get_normal(UV2, w_tangent, w_binormal);
+	NORMAL = mat3(VIEW_MATRIX) * w_normal;
+	TANGENT = mat3(VIEW_MATRIX) * w_tangent;
+	BINORMAL = mat3(VIEW_MATRIX) * w_binormal;
+
+	// Idenfity 4 vertices surrounding this pixel
+	vec2 texel_pos = UV;
+	highp vec2 texel_pos_floor = floor(UV);
+
+	// Create a cross hatch grid of alternating 0/1 horizontal and vertical stripes 1 unit wide in XY
+	vec4 mirror = vec4(fract(texel_pos_floor * 0.5) * 2.0, 1.0, 1.0);
+	// And the opposite grid in ZW
+	mirror.zw = vec2(1.0) - mirror.xy;
+
+	// Get the region and control map ID for the vertices
+	ivec3 index00UV = get_region_uv(texel_pos_floor + mirror.xy);
+	ivec3 index01UV = get_region_uv(texel_pos_floor + mirror.xw);
+	ivec3 index10UV = get_region_uv(texel_pos_floor + mirror.zy);
+	ivec3 index11UV = get_region_uv(texel_pos_floor + mirror.zw);
+
+	// Lookup adjacent vertices. 4 lookups
+	uint control00 = floatBitsToUint(texelFetch(_control_maps, index00UV, 0).r);
+	uint control01 = floatBitsToUint(texelFetch(_control_maps, index01UV, 0).r);
+	uint control10 = floatBitsToUint(texelFetch(_control_maps, index10UV, 0).r);
+	uint control11 = floatBitsToUint(texelFetch(_control_maps, index11UV, 0).r);
+
+	// Get the textures for each vertex. 8-16 lookups (2-4 ea)
+	Material mat[4];
+	get_material(UV, control00, index00UV, w_normal, mat[0]);
+	get_material(UV, control01, index01UV, w_normal, mat[1]);
+	get_material(UV, control10, index10UV, w_normal, mat[2]);
+	get_material(UV, control11, index11UV, w_normal, mat[3]);
+
+	// Calculate weight for the pixel position between the vertices
+	// Bilinear interpolation of difference of UV and floor(UV)
+	vec2 weights1 = clamp(texel_pos - texel_pos_floor, 0, 1);
+	weights1 = mix(weights1, vec2(1.0) - weights1, mirror.xy);
+	vec2 weights0 = vec2(1.0) - weights1;
+	// Adjust final weights by noise. 1 lookup
+	float noise3 = texture(noise_texture, UV*noise3_scale).r;
+	vec4 weights;
+	weights.x = blend_weights(weights0.x * weights0.y, noise3);
+	weights.y = blend_weights(weights0.x * weights1.y, noise3);
+	weights.z = blend_weights(weights1.x * weights0.y, noise3);
+	weights.w = blend_weights(weights1.x * weights1.y, noise3);
+	float weight_sum = weights.x + weights.y + weights.z + weights.w;
+	float weight_inv = 1.0/weight_sum;
+
+	// Weighted average of albedo & height
+	vec4 albedo_height = weight_inv * (
+		mat[0].alb_ht * weights.x +
+		mat[1].alb_ht * weights.y +
+		mat[2].alb_ht * weights.z +
+		mat[3].alb_ht * weights.w );
+
+	// Weighted average of normal & rough
+	vec4 normal_rough = weight_inv * (
+		mat[0].nrm_rg * weights.x +
+		mat[1].nrm_rg * weights.y +
+		mat[2].nrm_rg * weights.z +
+		mat[3].nrm_rg * weights.w );
+
+	// Determine if we're in a region or not (region_uv.z>0)
+	vec3 region_uv = get_region_uv2(UV2);
+
+	// Colormap. 1 lookup
+	vec4 color_map = vec4(1., 1., 1., .5);
+	if (region_uv.z >= 0.) {
+		color_map = texture(_color_maps, region_uv);
+	}
+
+	// Macro variation. 2 Lookups
+	float noise1 = texture(noise_texture, rotate(UV*noise1_scale*.1, cos(noise1_angle), sin(noise1_angle)) + noise1_offset).r;
+	float noise2 = texture(noise_texture, UV*noise2_scale*.1).r;
+	vec3 macrov = mix(macro_variation1, vec3(1.), clamp(noise1 + v_xz_dist*.0002, 0., 1.));
+	macrov *= mix(macro_variation2, vec3(1.), clamp(noise2 + v_xz_dist*.0002, 0., 1.));
+
+	// Wetness/roughness modifier, converting 0-1 range to -1 to 1 range
+	float roughness = (color_map.a-0.5) * 2.0 + normal_rough.a;
+
+	// Apply PBR
+	ALBEDO = albedo_height.rgb * color_map.rgb * macrov;
+	ROUGHNESS = roughness;
+	SPECULAR = 1.-normal_rough.a;
+	NORMAL_MAP = normal_rough.rgb;
+	NORMAL_MAP_DEPTH = 1.0;
+
+}
+"
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_m2aga"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.5,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"height_blending": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise3_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_q04gf"),
+&"projection_threshold": 0.8
+}
+shader_override = SubResource("Shader_8tfmj")
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_6faey"]
+name = "grass2"
+scene_file = ExtResource("9_bn0hm")
+density = 0.679946
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pj4lr"]
+name = "env_rock1_mesh_01_v1"
+id = 1
+scene_file = ExtResource("10_maiyf")
+density = 2.32272
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_00xh1"]
+name = "env_tree1_mesh_01_v1"
+id = 2
+scene_file = ExtResource("11_rkpjc")
+density = 0.0427419
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nc7oo"]
+name = "env_gridtexture_malte_height_sprite_01_v1"
+albedo_texture = ExtResource("12_q2po2")
+normal_texture = ExtResource("13_nt1m4")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_46pvi"]
+name = "env_gridtexture_malte_height_sprite_01_v2"
+id = 1
+albedo_texture = ExtResource("14_7grbk")
+normal_texture = ExtResource("13_nt1m4")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_qk8pd"]
+name = "packed_albedo_height"
+id = 2
+albedo_texture = ExtResource("15_roxbc")
+normal_texture = ExtResource("16_3v0xn")
+normal_depth = 0.4
+roughness = 1.0
+uv_scale = 0.111
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_cvpq7"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
+
+[sub_resource type="Curve3D" id="Curve3D_jt3uw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="Level2" type="Node3D"]
+script = ExtResource("1_m2aga")
+level_start_time = 30.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ex07k")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660236, -0.43301606, 0.25000077, -0.18759574, 0.7448641, 0.64030105, -0.4634772, 0.5076166, -0.72630167, 0, 0, 0)
+shadow_enabled = true
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("2_cvpq7")
+
+[node name="EscMenu" parent="." instance=ExtResource("3_jt3uw")]
+
+[node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_bj0we")]
+
+[node name="Car_Default" parent="." instance=ExtResource("5_m2i55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
+
+[node name="===ENVIROMENT===" type="Node3D" parent="."]
+
+[node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
+visible = false
+
+[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_an2ca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
+
+[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_ymbs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
+
+[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_tfwhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
+
+[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
+
+[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
+
+[node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT==="]
+data_directory = "res://terrain_data/lowpoly/grizzly/terraindata_lowpoly_emil"
+material = SubResource("Terrain3DMaterial_m2aga")
+assets = SubResource("Terrain3DAssets_cvpq7")
+top_level = true
+
+[node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
+curve = SubResource("Curve3D_jt3uw")
+script = ExtResource("17_ctyoj")
+lock_road = true
+
+[node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
+script = ExtResource("18_xqc4s")
+material_resource = ExtResource("19_3yw6c")
+metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
+
+[node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
+script = ExtResource("20_6j40j")
+material_resource = ExtResource("19_3yw6c")
+density = 0.03
+use_lowpoly_preview = true
+metadata/_edit_lock_ = true
+
+[node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(-0.999211, -0.011218602, 0.038102377, -0.0112213, 0.999937, 0.00014308815, -0.038101584, -0.00028458284, -0.99927396, -374.162, 1.8966904, -84.5118)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 68.6143
+next_mag = 82.4723
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_003")
+next_pt_init = NodePath("../RP_012")
+metadata/_edit_lock_ = true
+
+[node name="RP_003" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(-0.999211, -0.010928133, 0.038186613, -0.0112213, 0.999909, -0.0074712564, -0.038101487, -0.007893859, -0.999243, -378.813, 1.878582, 37.387695)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 88.5532
+next_mag = 83.4014
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_005")
+next_pt_init = NodePath("../RP_002")
+metadata/_edit_lock_ = true
+
+[node name="RP_005" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(-0.9923255, 0, -0.12365336, 0, 1, 0, 0.12365336, 0, -0.9923255, -352.82358, 2, 205.42087)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 87.5056
+next_mag = 119.709
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_006")
+next_pt_init = NodePath("../RP_003")
+metadata/_edit_lock_ = true
+
+[node name="RP_006" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.3529, 1.9846306, 283.76642)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 74.9163
+next_mag = 81.38095
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_007")
+next_pt_init = NodePath("../RP_005")
+metadata/_edit_lock_ = true
+
+[node name="RP_007" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(0.9496232, -0.0931603, -0.29922855, 0.109721884, 0.993197, 0.038992897, 0.2935605, -0.06986041, 0.9533845, -141.88426, 3.0981636, 176.36313)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 51.09955
+next_mag = 37.32126
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_008")
+next_pt_init = NodePath("../RP_006")
+metadata/_edit_lock_ = true
+
+[node name="RP_008" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(0.9975049, 0.010031506, -0.06988615, -0.0079033375, 0.9994986, 0.030662453, 0.07015871, -0.030033598, 0.99708396, -130.32391, 2.8001862, 108.74963)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 18.496918
+next_mag = 46.29657
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_009")
+next_pt_init = NodePath("../RP_007")
+metadata/_edit_lock_ = true
+
+[node name="RP_009" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(0.9974719, -0.02866073, -0.06501949, 0.026409399, 0.99903, -0.035224773, 0.065966, 0.0334186, 0.99726194, -125.15282, 2.8286934, 32.29042)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 56.8288
+next_mag = 82.9638
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_010")
+next_pt_init = NodePath("../RP_008")
+metadata/_edit_lock_ = true
+
+[node name="RP_010" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(0.9225326, 0.0032202585, -0.385906, -0.003490652, 0.99999374, 0, 0.38590375, 0.0013470632, 0.92253804, -67.6452, 1.7474709, -67.1144)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 47.6084
+next_mag = 59.364
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_011")
+next_pt_init = NodePath("../RP_009")
+metadata/_edit_lock_ = true
+
+[node name="RP_011" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(0.8151249, -0.04814977, 0.5772805, 0.030939503, 0.99873596, 0.03961564, -0.578458, -0.014430925, 0.8155846, -163.82983, 2.1070251, -203.64684)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 20.493225
+next_mag = 62.224396
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_012")
+next_pt_init = NodePath("../RP_010")
+metadata/_edit_lock_ = true
+
+[node name="RP_012" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(-0.14922377, 0.009649862, 0.9887565, 0.06453234, 0.9979153, 0, -0.9866959, 0.06380671, -0.1495354, -310.5929, 1.775837, -213.19476)
+script = ExtResource("21_xum4w")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 51.9778
+next_mag = 47.928253
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_002")
+next_pt_init = NodePath("../RP_011")
+metadata/_edit_lock_ = true
+
+[node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_j0dwk")]
+transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
+metadata/_edit_lock_ = true
