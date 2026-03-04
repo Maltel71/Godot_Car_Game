@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://crjxf5j4wrq56" path="res://scripts/esc_menu.gd" id="1_wgmhh"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_4v7l0"]
 [ext_resource type="AudioStream" uid="uid://4cyrjilpsy6d" path="res://audio/sfx/click/click (2).wav" id="3_ajk5i"]
-[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="4_gyi8h"]
-[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="5_ajk5i"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://ui/menus/ui_theme_fresh1.tres" id="4_gyi8h"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://ui/menus/ui_theme_subtext.tres" id="5_ajk5i"]
 
 [node name="EscMenu" type="Control"]
 layout_mode = 3

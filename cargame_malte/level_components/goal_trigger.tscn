@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://doayyi07lbsx4"]
 
 [ext_resource type="Script" uid="uid://bbl1e3xk1vqnh" path="res://scripts/goal_trigger.gd" id="1_6kx45"]
-[ext_resource type="PackedScene" uid="uid://2qtvy28ooeek" path="res://menus/win_menu.tscn" id="2_qr0kk"]
+[ext_resource type="PackedScene" uid="uid://2qtvy28ooeek" path="res://ui/menus/win_menu.tscn" id="2_qr0kk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qr0kk"]
 size = Vector3(10, 3, 1)

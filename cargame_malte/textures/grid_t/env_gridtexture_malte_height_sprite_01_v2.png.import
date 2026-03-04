@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm1u10deikbxs"
-path.s3tc="res://.godot/imported/packed_normal_roughness.png-6e88b8bde56914f0527ea3e6d731c2d2.s3tc.ctex"
+uid="uid://c2iqvsmgpdhd6"
+path.s3tc="res://.godot/imported/env_gridtexture_malte_height_sprite_01_v2.png-0bff41988ebe9751c76d0f47ce15bbf0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/terrain_clay/packed/packed_normal_roughness.png"
-dest_files=["res://.godot/imported/packed_normal_roughness.png-6e88b8bde56914f0527ea3e6d731c2d2.s3tc.ctex"]
+source_file="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v2.png"
+dest_files=["res://.godot/imported/env_gridtexture_malte_height_sprite_01_v2.png-0bff41988ebe9751c76d0f47ce15bbf0.s3tc.ctex"]
 
 [params]
 

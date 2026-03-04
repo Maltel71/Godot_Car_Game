@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2iqvsmgpdhd6"
-path.s3tc="res://.godot/imported/env_gridtexture_malte_height_sprite_01_v2.png-46d506c68a0a35232f1581d85bba9635.s3tc.ctex"
+uid="uid://lyba8cdqlnld"
+path.s3tc="res://.godot/imported/env_roadtexture1_sprite_01_v1.png-8781bfa38a3e4917b0e0391efe1c5a1c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/grid/env_gridtexture_malte_height_sprite_01_v2.png"
-dest_files=["res://.godot/imported/env_gridtexture_malte_height_sprite_01_v2.png-46d506c68a0a35232f1581d85bba9635.s3tc.ctex"]
+source_file="res://textures/road_t/env_roadtexture1_sprite_01_v1.png"
+dest_files=["res://.godot/imported/env_roadtexture1_sprite_01_v1.png-8781bfa38a3e4917b0e0391efe1c5a1c.s3tc.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
@@ -38,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

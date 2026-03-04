@@ -2,28 +2,29 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmhuuda2la7c5"
-path="res://.godot/imported/env_clay_01_texture_v1_height.png-d6e787a1dd0012afb6631631ed44d9e4.ctex"
+uid="uid://bm1u10deikbxs"
+path.s3tc="res://.godot/imported/packed_normal_roughness.png-db947c97c56cd22d0c956ee7dab68726.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://textures/terrain_clay/env_clay_01_texture_v1_height.png"
-dest_files=["res://.godot/imported/env_clay_01_texture_v1_height.png-d6e787a1dd0012afb6631631ed44d9e4.ctex"]
+source_file="res://textures/terrain_clay_t/packed/packed_normal_roughness.png"
+dest_files=["res://.godot/imported/packed_normal_roughness.png-db947c97c56cd22d0c956ee7dab68726.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=2
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

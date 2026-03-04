@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://67wrvwo3xanj"
-path.s3tc="res://.godot/imported/env_gridtexture_malte_height_sprite_01_v1.png-c4e3d1f34db4909d313cda51e6d1e836.s3tc.ctex"
+path.s3tc="res://.godot/imported/env_gridtexture_malte_height_sprite_01_v1.png-566a65c86e8fe906dda4bbc94613d703.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/grid/env_gridtexture_malte_height_sprite_01_v1.png"
-dest_files=["res://.godot/imported/env_gridtexture_malte_height_sprite_01_v1.png-c4e3d1f34db4909d313cda51e6d1e836.s3tc.ctex"]
+source_file="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v1.png"
+dest_files=["res://.godot/imported/env_gridtexture_malte_height_sprite_01_v1.png-566a65c86e8fe906dda4bbc94613d703.s3tc.ctex"]
 
 [params]
 

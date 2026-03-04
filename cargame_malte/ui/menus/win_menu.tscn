@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://2qtvy28ooeek"]
 
 [ext_resource type="Script" uid="uid://d4clxqm0vu844" path="res://scripts/win_menu.gd" id="1_dlju8"]
-[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_dlju8"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://ui/menus/ui_theme_fresh1.tres" id="2_dlju8"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_qbfu6"]
-[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_dlju8"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://ui/menus/ui_theme_subtext.tres" id="3_dlju8"]
 
 [node name="WinMenu" type="Control"]
 layout_mode = 3

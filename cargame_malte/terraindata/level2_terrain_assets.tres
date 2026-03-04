@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="1_7bjod"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="2_l1a87"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="3_iu0d8"]
-[ext_resource type="Texture2D" uid="uid://67wrvwo3xanj" path="res://textures/grid/env_gridtexture_malte_height_sprite_01_v1.png" id="4_0jxf6"]
+[ext_resource type="Texture2D" uid="uid://67wrvwo3xanj" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v1.png" id="4_0jxf6"]
 [ext_resource type="Texture2D" uid="uid://ndc0tm8oiuoq" path="res://textures/neutral_normalmap_t.png" id="5_l1a87"]
-[ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/grid/env_gridtexture_malte_height_sprite_01_v2.png" id="6_kvapx"]
-[ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay/packed/packed_albedo_height.png" id="7_iu0d8"]
-[ext_resource type="Texture2D" uid="uid://bfqss5kcs346u" path="res://textures/terrain_clay/env_clay_01_512px_texture_v2_specular.png" id="8_qk8pd"]
+[ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v2.png" id="6_kvapx"]
+[ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay_t/packed/packed_albedo_height.png" id="7_qk8pd"]
+[ext_resource type="Texture2D" uid="uid://bfqss5kcs346u" path="res://textures/terrain_clay_t/env_clay_01_512px_texture_v2_specular.png" id="8_rjaud"]
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_6faey"]
 name = "grass2"
@@ -49,8 +49,8 @@ normal_texture = ExtResource("5_l1a87")
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_qk8pd"]
 name = "packed_albedo_height"
 id = 2
-albedo_texture = ExtResource("7_iu0d8")
-normal_texture = ExtResource("8_qk8pd")
+albedo_texture = ExtResource("7_qk8pd")
+normal_texture = ExtResource("8_rjaud")
 normal_depth = 0.4
 roughness = 1.0
 uv_scale = 0.111

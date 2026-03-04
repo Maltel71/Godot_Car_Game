@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwuu4s421mqfv"
-path.s3tc="res://.godot/imported/packed_albedo_height.png-f190f2247447eb08613592e242c14666.s3tc.ctex"
+uid="uid://dansumd8303sd"
+path.s3tc="res://.godot/imported/env_clay_01_texture_v1_roughness.png-a536f3a78e87a7ae5a7cbfa4d1f0a321.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/terrain_clay/packed/packed_albedo_height.png"
-dest_files=["res://.godot/imported/packed_albedo_height.png-f190f2247447eb08613592e242c14666.s3tc.ctex"]
+source_file="res://textures/terrain_clay_t/env_clay_01_texture_v1_roughness.png"
+dest_files=["res://.godot/imported/env_clay_01_texture_v1_roughness.png-a536f3a78e87a7ae5a7cbfa4d1f0a321.s3tc.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=2
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
@@ -38,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

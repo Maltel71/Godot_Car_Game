@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_lhwyg"]
-[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="2_oj3n0"]
+[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="2_oj3n0"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="3_unrxn"]
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/lowpoly_stylized/malte/car/car_default.tscn" id="4_oxff4"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="5_oa6qk"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="13_u0vps"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="14_1fqtl"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="20_f34ws"]
-[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="21_cwyiq"]
+[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/highscore.tscn" id="21_cwyiq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)

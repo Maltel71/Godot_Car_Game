@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://djof21p20hh2g" path="res://scripts/settings_menu.gd" id="1_83qjl"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_7h2wy"]
-[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_v0bl3"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://ui/menus/ui_theme_fresh1.tres" id="2_v0bl3"]
 [ext_resource type="AudioStream" uid="uid://cdv86a6rostyn" path="res://audio/sfx/click/looping/click (2)_looping.wav" id="3_7h2wy"]
-[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="5_f368g"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://ui/menus/ui_theme_subtext.tres" id="5_f368g"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d4clxqm0vu844" path="res://scripts/win_menu.gd" id="1_e2qk0"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_8sxe3"]
-[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="3_1tnfo"]
-[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="4_ssldk"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://ui/menus/ui_theme_fresh1.tres" id="3_1tnfo"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://ui/menus/ui_theme_subtext.tres" id="4_ssldk"]
 
 [node name="TimeIsUp" type="Control"]
 layout_mode = 3

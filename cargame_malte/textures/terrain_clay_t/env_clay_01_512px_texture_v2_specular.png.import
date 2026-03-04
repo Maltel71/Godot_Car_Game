@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcugreb45ug0j"
-path="res://.godot/imported/env_clay_01_texture_v1_specular (2).png-3d97370cdc56d190195124e502e10c40.ctex"
+uid="uid://bfqss5kcs346u"
+path="res://.godot/imported/env_clay_01_512px_texture_v2_specular.png-bd205d56ed1000ee68365a9b73152528.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/terrain_clay/env_clay_01_texture_v1_specular (2).png"
-dest_files=["res://.godot/imported/env_clay_01_texture_v1_specular (2).png-3d97370cdc56d190195124e502e10c40.ctex"]
+source_file="res://textures/terrain_clay_t/env_clay_01_512px_texture_v2_specular.png"
+dest_files=["res://.godot/imported/env_clay_01_512px_texture_v2_specular.png-bd205d56ed1000ee68365a9b73152528.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

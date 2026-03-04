@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://77eo4rxgyu31"
-path.s3tc="res://.godot/imported/env_clay_01_texture_v1_albedo.png-f145072dd6c553662ba28b6eebb6ab36.s3tc.ctex"
+path.s3tc="res://.godot/imported/env_clay_01_texture_v1_albedo.png-6fa8fd9edc8ec2ba86dffc2c08e409ad.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/terrain_clay/env_clay_01_texture_v1_albedo.png"
-dest_files=["res://.godot/imported/env_clay_01_texture_v1_albedo.png-f145072dd6c553662ba28b6eebb6ab36.s3tc.ctex"]
+source_file="res://textures/terrain_clay_t/env_clay_01_texture_v1_albedo.png"
+dest_files=["res://.godot/imported/env_clay_01_texture_v1_albedo.png-6fa8fd9edc8ec2ba86dffc2c08e409ad.s3tc.ctex"]
 
 [params]
 

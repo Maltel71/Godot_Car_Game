@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc8wqrk1ux3dd"
-path.s3tc="res://.godot/imported/env_clay_01_texture_v1_normal.png-e1ff38c61e86753059946a49864ef2d5.s3tc.ctex"
+uid="uid://5quek16yvbjt"
+path.s3tc="res://.godot/imported/env_gridtexture_malte_sprite_v3.jpg-f9ea3256488722dfbd08db89db21c162.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/terrain_clay/env_clay_01_texture_v1_normal.png"
-dest_files=["res://.godot/imported/env_clay_01_texture_v1_normal.png-e1ff38c61e86753059946a49864ef2d5.s3tc.ctex"]
+source_file="res://textures/grid_t/env_gridtexture_malte_sprite_v3.jpg"
+dest_files=["res://.godot/imported/env_gridtexture_malte_sprite_v3.jpg-f9ea3256488722dfbd08db89db21c162.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +22,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://textures/terrain_clay/env_clay_01_texture_v1_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
