@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ndc0tm8oiuoq" path="res://textures/neutral_normalmap_t.png" id="7_e4d78"]
 [ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v2.png" id="8_657ph"]
 [ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay_t/packed/packed_albedo_height.png" id="9_vmmh5"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/lowpoly_stylized/malte/car/car_default.tscn" id="10_rq5sf"]
+[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="10_rq5sf"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="11_fxeyy"]
 [ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="12_ghug3"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="13_tusko"]

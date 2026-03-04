@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_lhwyg"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="2_oj3n0"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="3_unrxn"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/lowpoly_stylized/malte/car/car_default.tscn" id="4_oxff4"]
+[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="4_oxff4"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="5_oa6qk"]
 [ext_resource type="Script" uid="uid://bd5wtka1ofdi0" path="res://scripts/roadlock.gd" id="5_u0vps"]
 [ext_resource type="Material" uid="uid://cllsapoox4hsr" path="res://materials/roadtexture_Clay.tres" id="6_lhwyg"]
@@ -470,7 +470,6 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11876, 1.12862, -9.75021)
 curve = SubResource("Curve3D_u0vps")
 script = ExtResource("5_u0vps")
 lock_road = true
@@ -491,7 +490,7 @@ use_lowpoly_preview = true
 metadata/_edit_lock_ = true
 
 [node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
-transform = Transform3D(-0.999211, -0.011218602, 0.038102377, -0.0112213, 0.999937, 0.00014308815, -0.038101584, -0.00028458284, -0.99927396, -374.162, 0.271, -84.5118)
+transform = Transform3D(-0.999211, -0.011218602, 0.038102377, -0.0112213, 0.999937, 0.00014308815, -0.038101584, -0.00028458284, -0.99927396, -374.162, 1.8966904, -84.5118)
 script = ExtResource("9_dysxi")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
@@ -504,7 +503,7 @@ next_pt_init = NodePath("../RP_012")
 metadata/_edit_lock_ = true
 
 [node name="RP_003" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
-transform = Transform3D(-0.999211, -0.010928133, 0.038186613, -0.0112213, 0.999909, -0.0074712564, -0.038101487, -0.007893859, -0.999243, -378.813, 0.9488182, 37.387695)
+transform = Transform3D(-0.999211, -0.010928133, 0.038186613, -0.0112213, 0.999909, -0.0074712564, -0.038101487, -0.007893859, -0.999243, -378.813, 1.878582, 37.387695)
 script = ExtResource("9_dysxi")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
@@ -612,7 +611,7 @@ transform = Transform3D(-0.14922377, 0.009649862, 0.9887565, 0.06453234, 0.99791
 script = ExtResource("9_dysxi")
 traffic_dir = Array[int]([2, 2, 1, 1])
 lanes = Array[int]([2, 4, 4, 2])
-prior_mag = 51.81682
+prior_mag = 51.9778
 next_mag = 47.928253
 lane_width = 7.0
 gutter_profile = Vector2(35, -30)
@@ -622,3 +621,4 @@ metadata/_edit_lock_ = true
 
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("20_f34ws")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
+metadata/_edit_lock_ = true
