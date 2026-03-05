@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://br4aqjcq34l7"]
+[gd_scene load_steps=25 format=3 uid="uid://br4aqjcq34l7"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_7kqok"]
-[ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_xen1e"]
-[ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_jkuig"]
-[ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="4_wroah"]
+[ext_resource type="PackedScene" uid="uid://cs12x8a3xwm1c" path="res://models/lowpoly_stylized/mark_models/ carbody.glb" id="2_irq83"]
+[ext_resource type="PackedScene" uid="uid://c6qwiajeywoj1" path="res://models/lowpoly_stylized/mark_models/mark_tier.glb" id="3_7kqok"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="5_hlnlc"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_fj0cq"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_kofeb"]
@@ -111,14 +110,10 @@ exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 [node name="===Body===" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_xen1e")]
-metadata/_edit_lock_ = true
+[node name="carbody" parent="===Body===" instance=ExtResource("2_irq83")]
 
-[node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_jkuig")]
-metadata/_edit_lock_ = true
-
-[node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_wroah")]
-metadata/_edit_lock_ = true
+[node name="mark_tier" parent="===Body===" instance=ExtResource("3_7kqok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.626018, 0, 5.765246)
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
