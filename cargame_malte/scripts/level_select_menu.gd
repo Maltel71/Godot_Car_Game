@@ -5,12 +5,7 @@ extends Control
 @export_range(-80, 24) var hover_volume: float = 0.0
 
 @onready var main_menu_button = $Panel/VBoxContainer/MainMenuButton
-@onready var level_1 = $Panel/GridContainer/Level_1
-@onready var level_2 = $Panel/GridContainer/Level_2
-@onready var level_3 = $Panel/GridContainer/Level_3
-@onready var level_4 = $Panel/GridContainer/Level_4
-@onready var level_5 = $Panel/GridContainer/Level_5
-@onready var level_6 = $Panel/GridContainer/Level_6
+@onready var grid_container = $Panel/GridContainer # Reference the parent container
 @onready var audio_player = $AudioStreamPlayer
 
 func _ready():
@@ -20,26 +15,28 @@ func _ready():
 		audio_player.bus = "sfx"
 	
 	main_menu_button.pressed.connect(_on_main_menu_pressed)
-	level_1.pressed.connect(_on_level_pressed.bind(0))
-	level_2.pressed.connect(_on_level_pressed.bind(1))
-	level_3.pressed.connect(_on_level_pressed.bind(2))
-	level_4.pressed.connect(_on_level_pressed.bind(3))
-	level_5.pressed.connect(_on_level_pressed.bind(4))
-	level_6.pressed.connect(_on_level_pressed.bind(5))
-	
 	if hover_sound:
 		main_menu_button.mouse_entered.connect(_on_button_hover)
-		level_1.mouse_entered.connect(_on_button_hover)
-		level_2.mouse_entered.connect(_on_button_hover)
-		level_3.mouse_entered.connect(_on_button_hover)
-		level_4.mouse_entered.connect(_on_button_hover)
-		level_5.mouse_entered.connect(_on_button_hover)
-		level_6.mouse_entered.connect(_on_button_hover)
+
+	# This loop handles ALL buttons inside the GridContainer automatically
+	var buttons = grid_container.get_children()
+	for i in range(buttons.size()):
+		var btn = buttons[i]
+		
+		# Connect the click signal with the button's index
+		btn.pressed.connect(_on_level_pressed.bind(i))
+		
+		# Connect the hover signal
+		if hover_sound:
+			btn.mouse_entered.connect(_on_button_hover)
 
 func _on_level_pressed(index: int):
+	# Check if the index exists in your array and isn't empty
 	if index < level_scenes.size() and level_scenes[index] != "":
-		MusicManager.stop_music()
+		# MusicManager.stop_music() # Ensure your MusicManager singleton exists!
 		get_tree().change_scene_to_file(level_scenes[index])
+	else:
+		print("Warning: No scene assigned for level index: ", index)
 
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://ui/menus/start_menu.tscn")
