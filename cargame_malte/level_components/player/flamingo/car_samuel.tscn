@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://deseavo37ors"]
+[gd_scene load_steps=25 format=3 uid="uid://deseavo37ors"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_ce0rj"]
-[ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_fdptc"]
-[ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_4mfwf"]
-[ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="4_7jhb5"]
+[ext_resource type="PackedScene" uid="uid://ctsiuw8gu4usp" path="res://models/lowpoly_stylized/samuel_model/Samuel_bil.glb" id="2_rp7e8"]
+[ext_resource type="PackedScene" uid="uid://b85q8purbxtpc" path="res://models/lowpoly_stylized/samuel_model/samuel_hjul.glb" id="3_ce0rj"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="5_dggme"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_11v2x"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_g5o5a"]
@@ -102,6 +101,7 @@ color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
 [node name="Car_Default" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.528296, 0.391248, 0.2444582)
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
@@ -109,16 +109,11 @@ script = ExtResource("1_ce0rj")
 exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 
 [node name="===Body===" type="Node3D" parent="."]
-metadata/_edit_lock_ = true
 
-[node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_fdptc")]
-metadata/_edit_lock_ = true
+[node name="Samuel_bil" parent="===Body===" instance=ExtResource("2_rp7e8")]
 
-[node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_4mfwf")]
-metadata/_edit_lock_ = true
-
-[node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_7jhb5")]
-metadata/_edit_lock_ = true
+[node name="samuel_hjul" parent="===Body===" instance=ExtResource("3_ce0rj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036154747, 0.035196304, 4.634852)
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
@@ -267,7 +262,6 @@ visible = false
 script = ExtResource("11_lk8e2")
 idle_sounds = Array[AudioStream]([ExtResource("12_ip8p8")])
 driving_sounds = Array[AudioStream]([ExtResource("13_mrdye")])
-metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
