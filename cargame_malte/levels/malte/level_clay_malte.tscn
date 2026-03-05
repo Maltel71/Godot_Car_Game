@@ -451,6 +451,7 @@ visible = false
 
 [node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_iajmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
+visible = false
 
 [node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_kjfvy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
