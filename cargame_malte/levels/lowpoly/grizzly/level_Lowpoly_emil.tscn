@@ -1,10 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://lc3tdp4sq2id"]
+[gd_scene load_steps=40 format=3 uid="uid://lc3tdp4sq2id"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_m2aga"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_cvpq7"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_jt3uw"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_bj0we"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_m2i55"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_an2ca"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_ymbs7"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_tfwhb"]
@@ -21,7 +20,9 @@
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_3yw6c"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_6j40j"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_xum4w"]
+[ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="22_cvpq7"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_j0dwk"]
+[ext_resource type="PackedScene" uid="uid://dluj5pc4sn8ag" path="res://level_components/player/grizzly/car_emil.tscn" id="22_m2aga"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -482,7 +483,7 @@ point_count = 3
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_m2aga")
-level_start_time = 30.0
+level_start_time = 100000000000.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
@@ -498,19 +499,15 @@ script = ExtResource("2_cvpq7")
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_bj0we")]
 
-[node name="Car_Default" parent="." instance=ExtResource("5_m2i55")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
-
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
-visible = false
 
 [node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_an2ca")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.81497, 21.486032, -11.098995)
 
 [node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_ymbs7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.89023, 21.3504, 2.0104113)
 
 [node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_tfwhb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
@@ -524,17 +521,20 @@ data_directory = "res://terrain_data/lowpoly/grizzly/terraindata_lowpoly_emil"
 material = SubResource("Terrain3DMaterial_m2aga")
 assets = SubResource("Terrain3DAssets_cvpq7")
 top_level = true
+metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
 curve = SubResource("Curve3D_jt3uw")
 script = ExtResource("17_ctyoj")
 lock_road = true
+metadata/_edit_lock_ = true
 
 [node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
 script = ExtResource("18_xqc4s")
 material_resource = ExtResource("19_3yw6c")
 metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
+metadata/_edit_lock_ = true
 
 [node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
@@ -677,3 +677,9 @@ metadata/_edit_lock_ = true
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_j0dwk")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
+
+[node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("22_cvpq7")]
+transform = Transform3D(-9.51417, 0, -0.4273306, 0, 6.140014, 0, 0.33224156, 0, -12.237156, -395.9458, 20.185722, 27.262323)
+
+[node name="Car_Default" parent="." instance=ExtResource("22_m2aga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.27838, 22.242249, -21.86707)
