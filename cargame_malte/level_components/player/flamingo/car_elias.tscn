@@ -1,10 +1,12 @@
-[gd_scene load_steps=26 format=3 uid="uid://bvpb7r0sxfao0"]
+[gd_scene load_steps=28 format=3 uid="uid://bvpb7r0sxfao0"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_ch74o"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_v4838"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_iu64e"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="4_1tdql"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="5_1amfe"]
+[ext_resource type="PackedScene" uid="uid://52mkjoarn3c2" path="res://models/lowpoly_stylized/elias_models/Elias_carbody.glb" id="5_iu64e"]
+[ext_resource type="PackedScene" uid="uid://p3jc3ukejron" path="res://models/lowpoly_stylized/elias_models/Elias_tire.glb" id="6_1tdql"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_c27eu"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_b5mdm"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="8_tgswd"]
@@ -119,6 +121,10 @@ metadata/_edit_lock_ = true
 
 [node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_1tdql")]
 metadata/_edit_lock_ = true
+
+[node name="Elias_carbody" parent="===Body===" instance=ExtResource("5_iu64e")]
+
+[node name="Elias_tire" parent="===Body===" instance=ExtResource("6_1tdql")]
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
