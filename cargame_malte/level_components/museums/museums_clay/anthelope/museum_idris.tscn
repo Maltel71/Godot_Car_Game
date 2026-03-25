@@ -51,12 +51,6 @@ size = Vector3(11.33, 0.5, 5)
 [node name="=== Anthelope ===" type="Node3D" parent="."]
 transform = Transform3D(2.7622662, 0, 0, 0, 2.7622662, 0, 0, 0, 2.7622662, -31.250244, 0, 0)
 
-[node name="= Floor =" type="MeshInstance3D" parent="=== Anthelope ==="]
-material_override = ExtResource("1_jqljn")
-mesh = SubResource("BoxMesh_e7b0n")
-skeleton = NodePath("../..")
-metadata/_edit_lock_ = true
-
 [node name="Aaron_Car2" parent="=== Anthelope ===" instance=ExtResource("2_4whcw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4568405, 0.86749434, 0)
 
@@ -67,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.330208, 0.86749434, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7106266, 0.86749434, 0)
 
 [node name="Alfred_Car2" parent="=== Anthelope ===" instance=ExtResource("5_s2uf8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44230938, 0.79981804, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.296745, 0.7998181, -5.7923474)
 
 [node name="Alfred_Head2" parent="=== Anthelope ===" instance=ExtResource("6_y5ped")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3815026, 0.79981804, 0)
@@ -75,11 +69,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3815026, 0.79981804, 0)
 [node name="Alfred_Wheel2" parent="=== Anthelope ===" instance=ExtResource("7_s3fm2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4184356, 0.79981804, 0)
 
-[node name="Alfred_Wingshield2" parent="=== Anthelope ===" instance=ExtResource("8_yycvw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9759874, 0.79981804, 0)
-
 [node name="Sebastian_Car2" parent="=== Anthelope ===" instance=ExtResource("9_x0qt3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2703547, 0.86512375, 0)
+visible = false
+
+[node name="Alfred_Wingshield2" parent="=== Anthelope ===" instance=ExtResource("8_yycvw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9759874, 0.79981804, 0)
 
 [node name="Sebastian_Wheel2" parent="=== Anthelope ===" instance=ExtResource("10_jdt1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6098857, 0.86512375, 0)
@@ -88,10 +83,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6098857, 0.86512375, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.898789, 1.0503788, 0)
 
 [node name="Victor_Wheel2" parent="=== Anthelope ===" instance=ExtResource("12_i2yoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5336676, 1.0503788, 0)
+transform = Transform3D(-2.544365e-08, 0, -1, 0, 1, 0, 0.58208287, 0, -4.371139e-08, 16.61571, 0.6518805, -5.3012996)
+
+[node name="Victor_Wheel4" parent="=== Anthelope ===" instance=ExtResource("12_i2yoh")]
+transform = Transform3D(-1.458665e-08, 0, -0.5732924, 0, 0.5732924, 0, 0.33370367, 0, -2.5059405e-08, 18.116053, 0.6398313, -5.5603485)
+
+[node name="Victor_Wheel5" parent="=== Anthelope ===" instance=ExtResource("12_i2yoh")]
+transform = Transform3D(-1.458665e-08, 0, -0.5732924, 0, 0.5732924, 0, 0.33370367, 0, -2.5059405e-08, 18.116053, 0.6398313, -5.997182)
+
+[node name="Victor_Wheel3" parent="=== Anthelope ===" instance=ExtResource("12_i2yoh")]
+transform = Transform3D(-2.544365e-08, 0, -1, 0, 1, 0, 0.58208287, 0, -4.371139e-08, 16.61571, 0.6518805, -6.26933)
+
+[node name="= Floor =" type="MeshInstance3D" parent="=== Anthelope ==="]
+material_override = ExtResource("1_jqljn")
+mesh = SubResource("BoxMesh_e7b0n")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
 
 [node name="Victor_Wing2" parent="=== Anthelope ===" instance=ExtResource("13_xonie")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.777487, 1.0503788, 0)
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 16.914091, 1.4195887, -6.8784103)
 
 [node name="=== Eagle ===" type="Node3D" parent="."]
 transform = Transform3D(2.7622662, 0, 0, 0, 2.7622662, 0, 0, 0, 2.7622662, 59.6444, 0, 0)
@@ -103,10 +113,10 @@ skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
 
 [node name="Aindreas_Car2" parent="=== Eagle ===" instance=ExtResource("14_h4n20")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4746494, 0.7683377, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4746475, 0.7683377, 0)
 
 [node name="Aindreas_Thing2" parent="=== Eagle ===" instance=ExtResource("15_f1hq2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2458115, 0.7683377, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2458134, 0.7683377, 0)
 
 [node name="Ella_Car2" parent="=== Eagle ===" instance=ExtResource("16_vo2e8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8701344, 0.8771801, 0)
@@ -130,7 +140,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4900837, 0.8141813, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0845604, 0.8141813, 0)
 
 [node name="Henry_Car2" parent="=== Eagle ===" instance=ExtResource("23_rgydc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4157143, 0.7814269, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.415716, 0.7814269, 0)
 
 [node name="Nicolas_Car2" parent="=== Eagle ===" instance=ExtResource("24_o78x4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.855425, 0.8892982, 0)
@@ -158,22 +168,22 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1916168, 1.1018541, 0)
 
 [node name="Malte_Character2" parent="=== Malte ===" instance=ExtResource("29_i7yi4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.677514, 0.913548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.677514, 1.6375912, -6.154367)
 
 [node name="Malte_LargeRock22" parent="=== Malte ===" instance=ExtResource("30_sklhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.647627, 0.913548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.905821, 0.913548, -7.6024537)
 
 [node name="Malte_LargeRock2" parent="=== Malte ===" instance=ExtResource("31_phce5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6317444, 0.913548, 0)
+transform = Transform3D(0.9765724, -0.17429376, -0.12620644, 0.153941, 0.97565264, -0.15621732, 0.15036137, 0.13312916, 0.9796265, 6.6317444, 0.913548, -5.7923455)
 
 [node name="Malte_Pickup12" parent="=== Malte ===" instance=ExtResource("32_fnmc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.457476, 0.913548, 0)
 
 [node name="Malte_ShroomThingy2" parent="=== Malte ===" instance=ExtResource("33_q1obp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.415587, 0.913548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.415586, 0.913548, -1.7358887)
 
 [node name="Malte_Sign12" parent="=== Malte ===" instance=ExtResource("34_o8sg7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.050093, 0.913548, 0)
+transform = Transform3D(-15.408613, 2.771361, -285.54846, -18.589142, -1.0856942, 1367.7557, 14.422737, 1.5614752, 1457.8029, 39.357372, -1.0380855, -5.068302)
 
 [node name="Malte_SmallRock12" parent="=== Malte ===" instance=ExtResource("35_1e3u7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.773238, 0.913548, 0)
@@ -188,7 +198,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.12535, 0.913548, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.786725, 0.913548, 0)
 
 [node name="Malte_Tree22" parent="=== Malte ===" instance=ExtResource("39_w3vg0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.461854, 0.913548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1245313, -5.226737, -4.4089966)
 
 [node name="=== CAR ===" type="Node3D" parent="."]
 transform = Transform3D(2.7622662, 0, 0, 0, 2.7622662, 0, 0, 0, 2.7622662, -6.649988, 0, 0)
@@ -201,7 +211,7 @@ skeleton = NodePath("../..")
 metadata/_edit_lock_ = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="=== CAR ==="]
-transform = Transform3D(1, -4.371139e-08, -1.9106855e-15, 0, -4.371139e-08, 1, -4.371139e-08, -1, -4.371139e-08, 7.512728, 5.092913, -6.2465005)
+transform = Transform3D(0.3620216, -1.5824467e-08, -6.917094e-16, -5.550591e-23, -1.5824467e-08, 0.3620216, -1.5824467e-08, -0.3620216, -1.5824467e-08, 7.512728, -1414.3591, -6.2465005)
 light_energy = 30.0
-spot_range = 21.172134
+spot_range = 0.0
 spot_angle = 28.662447
