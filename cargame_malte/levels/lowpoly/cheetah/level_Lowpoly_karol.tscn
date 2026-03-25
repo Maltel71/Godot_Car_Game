@@ -24,7 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_b2jdx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.054654874, 0.40251726, 0.9417504, 1)
+sky_horizon_color = Color(0.8616388, 0.5938996, 0.53015023, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
 [sub_resource type="Sky" id="Sky_s8dg4"]
@@ -34,9 +35,9 @@ sky_material = SubResource("ProceduralSkyMaterial_q04gf")
 background_mode = 2
 sky = SubResource("Sky_s8dg4")
 tonemap_mode = 2
+ssr_enabled = true
 glow_enabled = true
 fog_density = 0.0005
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.02
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
@@ -483,7 +484,7 @@ point_count = 3
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_os8rd")
-level_start_time = 30.0
+level_start_time = 300.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
@@ -528,6 +529,7 @@ metadata/_edit_lock_ = true
 curve = SubResource("Curve3D_6lost")
 script = ExtResource("17_1cl7f")
 lock_road = true
+metadata/_edit_lock_ = true
 
 [node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
@@ -678,7 +680,10 @@ transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0,
 metadata/_edit_lock_ = true
 
 [node name="Car_Default" parent="." instance=ExtResource("22_6lost")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.13354, 22.205788, -19.415056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.13354, 25.181995, -19.415056)
 
 [node name="Pickup_Points_01" parent="." instance=ExtResource("6_trggn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.36017, 23.845348, -8.416375)
+
+[node name="Pickup_Thrusters_01" parent="." instance=ExtResource("7_8j4rw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.08835, 24.98089, -6.525196)
