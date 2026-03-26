@@ -547,7 +547,6 @@ data_directory = "res://terrain_data/clay/eagle/terraindata_clay_ella"
 material = SubResource("Terrain3DMaterial_sh73f")
 assets = SubResource("Terrain3DAssets_xfubl")
 top_level = true
-metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
 curve = SubResource("Curve3D_nw2a0")
