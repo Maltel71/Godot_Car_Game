@@ -505,7 +505,7 @@ point_count = 3
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_787sj")
-level_start_time = 30.0
+level_start_time = 100.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")

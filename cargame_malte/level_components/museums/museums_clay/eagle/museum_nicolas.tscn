@@ -167,7 +167,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.045209, 1.4401577, -5.82280
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2505713, 1.8617005, -5.8228045)
 
 [node name="Malte_Character4" parent="=== Malte ===" instance=ExtResource("29_pb1oo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2509522, 2.8472745, -6.2826223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8372755, 2.61292, -5.860371)
 
 [node name="Malte_Character5" parent="=== Malte ===" instance=ExtResource("29_pb1oo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4998407, 2.253085, -5.8228045)
@@ -182,16 +182,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6317444, 0.913548, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.503484, 0.913548, -4.5515876)
 
 [node name="Malte_Pickup13" parent="=== Malte ===" instance=ExtResource("32_a8gce")]
-transform = Transform3D(-0.4108932, -0.0841684, 0.9077901, -0.053220876, 0.99624556, 0.068280414, -0.9101289, -0.020257378, -0.4138301, 7.499495, 0.8778665, -6.31342)
+transform = Transform3D(0.0014708975, -0.06829908, 0.99766403, -0.053220868, 0.9962455, 0.06828041, -0.9985818, -0.053196944, -0.0021695986, 7.4996324, 0.9461786, -6.2699323)
 
 [node name="Malte_Pickup14" parent="=== Malte ===" instance=ExtResource("32_a8gce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.907816, 0.913548, -5.1538625)
+transform = Transform3D(0.10300082, 0, 0.9946813, 0, 1, 0, -0.9946813, 0, 0.10300082, 7.5842557, 0.8691652, -6.7762694)
 
 [node name="Malte_Pickup15" parent="=== Malte ===" instance=ExtResource("32_a8gce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4574757, 0.913548, -5.2566338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.274267, 0.913548, -6.4666333)
 
 [node name="Malte_Pickup16" parent="=== Malte ===" instance=ExtResource("32_a8gce")]
-transform = Transform3D(-0.18905272, 0.9513745, -0.24319841, -0.013673551, 0.2450901, 0.96940404, 0.98187166, 0.18659389, -0.033326242, 8.10906, 0.913548, -6.3154984)
+transform = Transform3D(-0.037644234, 0.0196447, -0.9990983, 0.80142874, 0.5978061, -0.018442024, 0.59690464, -0.80139995, -0.038247805, 8.703318, -136.83934, -6.512814)
 
 [node name="Malte_ShroomThingy2" parent="=== Malte ===" instance=ExtResource("33_r3d5i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.415587, 0.913548, 0)
