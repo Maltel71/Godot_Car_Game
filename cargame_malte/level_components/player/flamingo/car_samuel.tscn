@@ -125,7 +125,6 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel03_mesh" parent="wheel_front_left" instance=ExtResource("5_dggme")]
 metadata/_edit_lock_ = true
@@ -140,7 +139,6 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel02_mesh" parent="wheel_front_right" instance=ExtResource("5_dggme")]
 metadata/_edit_lock_ = true
