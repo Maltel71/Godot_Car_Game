@@ -473,7 +473,7 @@ uv_scale = 0.111
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
 
-[sub_resource type="Curve3D" id="Curve3D_10mro"]
+[sub_resource type="Curve3D" id="Curve3D_1q445"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -495,6 +495,10 @@ shadow_enabled = true
 script = ExtResource("2_dueim")
 
 [node name="EscMenu" parent="." instance=ExtResource("3_10mro")]
+offset_left = -10.0
+offset_top = -5.0
+offset_right = -10.0
+offset_bottom = -5.0
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_6uapk")]
 
@@ -526,15 +530,17 @@ assets = SubResource("Terrain3DAssets_dueim")
 top_level = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_10mro")
+curve = SubResource("Curve3D_1q445")
 script = ExtResource("17_0yi6e")
 lock_road = true
+metadata/_edit_lock_ = true
 
 [node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
 script = ExtResource("18_8hl4y")
 material_resource = ExtResource("19_jcgqj")
 metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
+metadata/_edit_lock_ = true
 
 [node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
