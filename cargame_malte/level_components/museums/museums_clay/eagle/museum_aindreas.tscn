@@ -127,7 +127,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.415716, 0.7814269, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.66936874, 0.8771801, 0)
 
 [node name="Felix_Car2" parent="=== Eagle ===" instance=ExtResource("20_cech7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.037, 0.8141806, -6.3601885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.324415, 0.8141806, -6.5026836)
 
 [node name="Felix_Character2" parent="=== Eagle ===" instance=ExtResource("21_wyhrm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.3342, 155.75748, 4.7166033)
@@ -158,16 +158,16 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1916168, 1.1018541, 0)
 
 [node name="Malte_Character2" parent="=== Malte ===" instance=ExtResource("29_5lxpd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.382696, 1.8153929, -2.1081007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.606956, 0.5569258, -5.007693)
 
 [node name="Malte_LargeRock22" parent="=== Malte ===" instance=ExtResource("30_2fwws")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.647627, 0.913548, 0)
+transform = Transform3D(0.5444457, 0, 0, 0, 0.5444457, 0, 0, 0, 0.5444457, 7.950001, 0.7806827, -7.0381565)
 
 [node name="Malte_LargeRock2" parent="=== Malte ===" instance=ExtResource("31_yevul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.799444, 1.0014157, -6.714756)
 
 [node name="Malte_Pickup12" parent="=== Malte ===" instance=ExtResource("32_pnblx")]
-transform = Transform3D(0.16377242, -0.446532, 0.879652, 0.11900867, 0.8941221, 0.43172047, -0.9792934, 0.033982314, 0.19957373, 8.88629, 0.5214756, -5.744235)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.005678, -0.81885177, -5.8143015)
 
 [node name="Malte_ShroomThingy2" parent="=== Malte ===" instance=ExtResource("33_llpag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.415587, 0.913548, 0)
