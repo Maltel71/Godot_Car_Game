@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dymkpfbf1idh3"]
+[gd_scene load_steps=28 format=3 uid="uid://dymkpfbf1idh3"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bdqh6"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_4pab8"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="11_ttkbe"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="12_g1sf4"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="13_g1p2e"]
+[ext_resource type="PackedScene" uid="uid://bcucwnphulpnp" path="res://models/sofia_models/car_sofia_mesh.glb" id="14_n5ak5"]
+[ext_resource type="PackedScene" uid="uid://b2c2sb6w7qxpg" path="res://models/sofia_models/tire_sofia_mesh.glb" id="15_nbeyt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.40625, 6.8826)
@@ -271,3 +273,9 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
+
+[node name="car_sofia_mesh" parent="." instance=ExtResource("14_n5ak5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.043213, 0, -9.399946)
+
+[node name="tire_sofia_mesh" parent="." instance=ExtResource("15_nbeyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.043213, 0, -3.605608)
