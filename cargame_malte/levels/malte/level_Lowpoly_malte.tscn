@@ -429,7 +429,7 @@ scene_file = ExtResource("9_322vd")
 density = 0.679946
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 3435.65
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pj4lr"]
 name = "env_rock1_mesh_01_v1"
@@ -438,7 +438,7 @@ scene_file = ExtResource("10_2gtgb")
 density = 2.32272
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 3399.1
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_00xh1"]
 name = "env_tree1_mesh_01_v1"
@@ -447,7 +447,7 @@ scene_file = ExtResource("11_fn8sc")
 density = 0.0427419
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 3512.9
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nc7oo"]
 name = "env_gridtexture_malte_height_sprite_01_v1"
@@ -499,12 +499,11 @@ script = ExtResource("2_k1csa")
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_1c732")]
 
 [node name="Car_Default" parent="." instance=ExtResource("5_84r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, 21.191854)
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
-visible = false
 
 [node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_gehmx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
@@ -514,6 +513,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085
 
 [node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_cnoay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
+
+[node name="Pickup_Points_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_gehmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.3953, 22.814589, 52.83811)
+score_value = 1
+
+[node name="Pickup_Points_03" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_gehmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.3953, 22.814589, 182.82098)
+
+[node name="Pickup_Points_04" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_gehmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.3953, 22.814589, 235.4129)
+
+[node name="Pickup_Thrusters_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_in1qk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.03677, 21.349667, 40.788593)
+
+[node name="Pickup_Time_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_cnoay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -313.89392, 21.566608, 240.66734)
+
+[node name="Pickup_Points_05" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_gehmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.44656, 21.169949, 65.65218)
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
@@ -530,12 +548,14 @@ metadata/_edit_lock_ = true
 curve = SubResource("Curve3D_sj3a6")
 script = ExtResource("17_0r231")
 lock_road = true
+metadata/_edit_lock_ = true
 
 [node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
 script = ExtResource("18_y2xty")
 material_resource = ExtResource("19_cv51p")
 metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
+metadata/_edit_lock_ = true
 
 [node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
@@ -676,5 +696,4 @@ next_pt_init = NodePath("../RP_011")
 metadata/_edit_lock_ = true
 
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_7jhre")]
-transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
-metadata/_edit_lock_ = true
+transform = Transform3D(1.1925199, 0, -3.4761355, 0, 3.6749995, 0, 3.4761355, 0, 1.1925199, -278.2273, 20.416477, -120.86577)
