@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b41pfn3wukgcx"]
+[gd_scene load_steps=30 format=3 uid="uid://b41pfn3wukgcx"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_7o5sh"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_xwxkl"]
@@ -13,6 +13,10 @@
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="11_e7q46"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="12_kurgc"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="13_drcsk"]
+[ext_resource type="PackedScene" uid="uid://eyaealtjtrv1" path="res://models/clay/alfred/Alfred_Car.glb" id="14_7mjce"]
+[ext_resource type="PackedScene" uid="uid://c8y3vx3o50hvj" path="res://models/clay/alfred/Alfred_Wingshield.glb" id="15_slh36"]
+[ext_resource type="PackedScene" uid="uid://doo6jvgee6da" path="res://models/clay/alfred/Alfred_Head.glb" id="16_k4sia"]
+[ext_resource type="PackedScene" uid="uid://hkinistob58g" path="res://models/clay/alfred/Alfred_Wheel.glb" id="17_a4n03"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.40625, 6.8826)
@@ -111,17 +115,32 @@ exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 [node name="===Body===" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
+[node name="Alfred_Head3" parent="===Body===" instance=ExtResource("16_k4sia")]
+transform = Transform3D(8.367879e-09, -6.920044e-08, -1.5576249, -3.3081439, -0.024166811, 0, -0.05046696, 1.5841513, -6.8085946e-08, 0.04718572, 0.17808354, -1.914217)
+
+[node name="Alfred_Head2" parent="===Body===" instance=ExtResource("16_k4sia")]
+transform = Transform3D(-9.8955404e-08, -1.585186e-08, -2.2926986, -0.36264834, 2.263836, 0, 2.2638357, 0.3626483, -1.0021703e-07, 0.022310019, 1.122864, -1.0660031)
+
+[node name="Alfred_Wingshield2" parent="===Body===" instance=ExtResource("15_slh36")]
+transform = Transform3D(-4.8962626e-08, -4.2045887e-08, -1.2196704, -0.22858523, 1.8091149, 0, 1.1980587, 0.34517258, -5.331348e-08, 0.010282159, 0.028209925, -0.2699653)
+
+[node name="Alfred_Car2" parent="===Body===" instance=ExtResource("14_7mjce")]
+transform = Transform3D(-1.0021703e-07, 0, -2.2926984, 0, 2.2926984, 0, 2.2926984, 0, -1.0021703e-07, 0.08653045, -0.4677748, -0.21785688)
+
 [node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_xwxkl")]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_fiiim")]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_hmmcx")]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.65917957, -1, 1.75)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.0
@@ -130,13 +149,16 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel03_mesh" parent="wheel_front_left" instance=ExtResource("5_7mjce")]
+visible = false
 metadata/_edit_lock_ = true
 
+[node name="Alfred_Wheel3" parent="wheel_front_left" instance=ExtResource("17_a4n03")]
+transform = Transform3D(-1.1675829, 0, 1.0207333e-07, 0, 1.1675829, 0, -1.0207333e-07, 0, -1.1675829, 0, 0, 0)
+
 [node name="wheel_front_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, 1.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75841355, -1, 1.75)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.0
@@ -145,10 +167,13 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel02_mesh" parent="wheel_front_right" instance=ExtResource("5_7mjce")]
+visible = false
 metadata/_edit_lock_ = true
+
+[node name="Alfred_Wheel4" parent="wheel_front_right" instance=ExtResource("17_a4n03")]
+transform = Transform3D(1.1675829, 0, -4.0726505e-15, 0, 1.1675829, 0, 4.0726505e-15, 0, 1.1675829, 0, 0, 0)
 
 [node name="wheel_back_right" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, -1.913)
@@ -159,10 +184,13 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel05_mesh" parent="wheel_back_right" instance=ExtResource("5_7mjce")]
+visible = false
 metadata/_edit_lock_ = true
+
+[node name="Alfred_Wheel2" parent="wheel_back_right" instance=ExtResource("17_a4n03")]
+transform = Transform3D(-1.1675829, 0, 1.0207333e-07, 0, 1.1675829, 0, -1.0207333e-07, 0, -1.1675829, 0, 0, 0)
 
 [node name="wheel_back_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, -1.913)
@@ -173,10 +201,13 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel04_mesh" parent="wheel_back_left" instance=ExtResource("5_7mjce")]
+visible = false
 metadata/_edit_lock_ = true
+
+[node name="Alfred_Wheel5" parent="wheel_back_left" instance=ExtResource("17_a4n03")]
+transform = Transform3D(1.1675829, 0, -4.0726505e-15, 0, 1.1675829, 0, 4.0726505e-15, 0, 1.1675829, 0, 0, 0)
 
 [node name="CamArm" type="SpringArm3D" parent="."]
 transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384248, 0.0711465)
