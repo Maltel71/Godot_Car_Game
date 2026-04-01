@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://2ljuq814jl38"]
+[gd_scene load_steps=27 format=3 uid="uid://2ljuq814jl38"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_3jfo4"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_alwb3"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_0wtih"]
-[ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="4_siuyo"]
+[ext_resource type="PackedScene" uid="uid://bkxdscpg7cu31" path="res://models/clay/sebastian/Sebastian_Car.glb" id="4_or0c0"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="5_7l5i6"]
+[ext_resource type="PackedScene" uid="uid://c2mwgiyowkx0d" path="res://models/clay/victor/Victor_Wheel.glb" id="5_quswb"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_pk5va"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_a7vhi"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="8_8orfm"]
@@ -112,31 +113,27 @@ exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 metadata/_edit_lock_ = true
 
 [node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_alwb3")]
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28184438, 0.29944777, 0)
+visible = false
 
 [node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_0wtih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28184438, 0.29944777, 0)
 metadata/_edit_lock_ = true
 
-[node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_siuyo")]
-metadata/_edit_lock_ = true
+[node name="Sebastian_CarBodypart1" parent="===Body===" instance=ExtResource("4_or0c0")]
+transform = Transform3D(-7.23025e-08, 0, -1.6540885, 0, 1.6540885, 0, 1.6540885, 0, -7.23025e-08, -0.107673705, 0.45155528, -1.3495027)
 
-[node name="wheel_front_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
-use_as_traction = true
-use_as_steering = true
-wheel_roll_influence = 0.0
-wheel_radius = 0.545
-suspension_travel = 10.0
-suspension_stiffness = 40.0
-damping_compression = 1.9
-damping_relaxation = 2.0
-metadata/_edit_lock_ = true
+[node name="Victor_Wheel4" parent="===Body===" instance=ExtResource("5_quswb")]
+transform = Transform3D(-7.23025e-08, 0, -1.6540885, 0, 1.6540885, 0, 1.6540885, 0, -7.23025e-08, -0.04820104, 0.38906085, -0.34099045)
 
-[node name="Wheel03_mesh" parent="wheel_front_left" instance=ExtResource("5_7l5i6")]
-metadata/_edit_lock_ = true
+[node name="Victor_Wheel9" parent="===Body===" instance=ExtResource("5_quswb")]
+transform = Transform3D(-0.0921608, -7.227156e-08, -1.6515193, -1.6514868, 0.010335194, 0.092158966, 0.010319132, 1.6540562, -0.00057591766, -0.07104662, 0.15074372, -0.047169268)
+
+[node name="Victor_Wheel3" parent="===Body===" instance=ExtResource("5_quswb")]
+transform = Transform3D(-4.7027189e-07, 0, -2.1267385, 0, -1.4877743, 0, 10.758565, 0, -9.2962686e-08, -0.062009335, -0.28860855, 0.33398968)
 
 [node name="wheel_front_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, 1.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91537726, -1, 1.75)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.0
@@ -145,13 +142,32 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
+
+[node name="Wheel03_mesh" parent="wheel_front_right" instance=ExtResource("5_7l5i6")]
 metadata/_edit_lock_ = true
 
-[node name="Wheel02_mesh" parent="wheel_front_right" instance=ExtResource("5_7l5i6")]
+[node name="Victor_Wheel5" parent="wheel_front_right" instance=ExtResource("5_quswb")]
+transform = Transform3D(-1.6512537, 0, -0.09680095, 0, 1.6540885, 0, 0.09680095, 0, -1.6512537, 0, 0, 0)
+
+[node name="wheel_front_left" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7876184, -1, 1.75)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel02_mesh" parent="wheel_front_left" instance=ExtResource("5_7l5i6")]
 metadata/_edit_lock_ = true
+
+[node name="Victor_Wheel8" parent="wheel_front_left" instance=ExtResource("5_quswb")]
+transform = Transform3D(-1.5682354, -0.117001586, -0.5127926, -0.10466467, 1.649812, -0.05634196, 0.51545215, -0.02096998, -1.5715846, 0, 0, 0)
 
 [node name="wheel_back_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, -1.913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99868983, -1, -1.913)
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.545
@@ -159,13 +175,16 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel05_mesh" parent="wheel_back_right" instance=ExtResource("5_7l5i6")]
+visible = false
 metadata/_edit_lock_ = true
 
+[node name="Victor_Wheel7" parent="wheel_back_right" instance=ExtResource("5_quswb")]
+transform = Transform3D(-7.23025e-08, 0, -1.6540885, 0, 1.6540885, 0, 1.6540885, 0, -7.23025e-08, 0, 0, 0)
+
 [node name="wheel_back_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, -1.913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8534169, -1, -1.913)
 use_as_traction = true
 wheel_roll_influence = 0.0
 wheel_radius = 0.545
@@ -173,10 +192,13 @@ suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
 [node name="Wheel04_mesh" parent="wheel_back_left" instance=ExtResource("5_7l5i6")]
+visible = false
 metadata/_edit_lock_ = true
+
+[node name="Victor_Wheel2" parent="wheel_back_left" instance=ExtResource("5_quswb")]
+transform = Transform3D(-1.5682354, -0.117001586, -0.5127926, -0.10466467, 1.649812, -0.05634196, 0.51545215, -0.02096998, -1.5715846, -0.0862807, 0, 0)
 
 [node name="CamArm" type="SpringArm3D" parent="."]
 transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384248, 0.0711465)
