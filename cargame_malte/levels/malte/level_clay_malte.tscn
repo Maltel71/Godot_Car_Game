@@ -442,22 +442,12 @@ script = ExtResource("2_x0var")
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_3kwi3")]
 
 [node name="Car_Default" parent="." instance=ExtResource("5_5fatd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 22.678839, -19.495695)
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
 visible = false
-
-[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_iajmf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
-visible = false
-
-[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_kjfvy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
-
-[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_spuaq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
@@ -623,3 +613,13 @@ metadata/_edit_lock_ = true
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("15_iut5r")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
+
+[node name="Pickup_Points_01" parent="===ENVIROMENT===" instance=ExtResource("6_iajmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.40085, 22.178528, 8.179109)
+
+[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===" instance=ExtResource("7_kjfvy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.56418, 21.358656, -10.410866)
+thruster_duration = 30.0
+
+[node name="Pickup_Time_01" parent="===ENVIROMENT===" instance=ExtResource("8_spuaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.7495, 21.782722, 12.781953)

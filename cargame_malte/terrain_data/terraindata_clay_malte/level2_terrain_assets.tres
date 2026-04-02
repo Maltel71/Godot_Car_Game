@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="1_8dm2o"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="2_1qbxv"]
-[ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="3_44t7y"]
+[ext_resource type="PackedScene" uid="uid://dl1mgv7h1thox" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/tree1.tscn" id="3_8dm2o"]
 [ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v2.png" id="4_nf2y2"]
 [ext_resource type="Texture2D" uid="uid://67wrvwo3xanj" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v1.png" id="5_ty060"]
 [ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay_t/packed/packed_albedo_height.png" id="6_apoa8"]
@@ -28,8 +28,8 @@ lod0_range = 128.0
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_00xh1"]
 name = "env_tree1_mesh_01_v1"
 id = 2
-scene_file = ExtResource("3_44t7y")
-density = 0.0427419
+scene_file = ExtResource("3_8dm2o")
+density = 0.042741943
 last_lod = 0
 last_shadow_lod = 0
 lod0_range = 128.0
