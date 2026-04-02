@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_cj8b0"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_275g5"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_vcg8h"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_gfcpt"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://pickup_time_01.tscn" id="8_gfcpt"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_08pcn"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_0k075"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_k3wl8"]
@@ -23,20 +23,16 @@
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_5ty36"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_k273m"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1q445"]
+sky_top_color = Color(0, 0.3947133, 0.96555775, 1)
+sky_horizon_color = Color(0.1874961, 0.7171289, 0.99999994, 1)
 
-[sub_resource type="Sky" id="Sky_s8dg4"]
-sky_material = SubResource("ProceduralSkyMaterial_q04gf")
+[sub_resource type="Sky" id="Sky_dueim"]
+sky_material = SubResource("ProceduralSkyMaterial_1q445")
 
-[sub_resource type="Environment" id="Environment_ex07k"]
+[sub_resource type="Environment" id="Environment_10mro"]
 background_mode = 2
-sky = SubResource("Sky_s8dg4")
-tonemap_mode = 2
-glow_enabled = true
-fog_enabled = true
-fog_density = 0.0005
+sky = SubResource("Sky_dueim")
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -482,10 +478,10 @@ point_count = 3
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_1q445")
-level_start_time = 30.0
+level_start_time = 160.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ex07k")
+environment = SubResource("Environment_10mro")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660236, -0.43301606, 0.25000077, -0.18759574, 0.7448641, 0.64030105, -0.4634772, 0.5076166, -0.72630167, 0, 0, 0)
@@ -528,6 +524,7 @@ data_directory = "res://terrain_data/lowpoly/flamingo/terraindata_lowpoly_mark"
 material = SubResource("Terrain3DMaterial_1q445")
 assets = SubResource("Terrain3DAssets_dueim")
 top_level = true
+metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
 curve = SubResource("Curve3D_1q445")
@@ -680,6 +677,25 @@ prior_pt_init = NodePath("../RP_002")
 next_pt_init = NodePath("../RP_011")
 metadata/_edit_lock_ = true
 
+[node name="Pickup_Time_01" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_gfcpt")]
+transform = Transform3D(0.39606315, -0.82834774, 0.39619932, 0.9129995, 0.40122402, -0.07383243, -0.09780572, 0.39097214, 0.9151912, -256.79514, 71.96831, 44.581146)
+time_value = 1000000.0
+
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_k273m")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
+
+[node name="Pickup_Time_01" parent="." instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.55199, 21.35672, 176.0792)
+
+[node name="Pickup_Time_02" parent="." instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.89682, 22.503088, 65.93981)
+
+[node name="Pickup_Time_03" parent="." instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1279, 22.503088, -70.642166)
+
+[node name="Pickup_Time_04" parent="." instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.89682, 22.503088, 65.93981)
+
+[node name="Pickup_Time_05" parent="." instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.229195, 22.503088, -14.147926)
