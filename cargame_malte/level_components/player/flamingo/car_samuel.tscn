@@ -172,9 +172,10 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CamArm" type="SpringArm3D" parent="."]
-transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384248, 0.0711465)
+transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384, 0.071)
 visible = false
-spring_length = 5.0
+spring_length = 3.0
+margin = 1.0
 script = ExtResource("6_11v2x")
 metadata/_edit_lock_ = true
 
@@ -196,7 +197,6 @@ debug_color = Color(0, 0.643137, 0.290196, 1)
 metadata/_edit_lock_ = true
 
 [node name="===ParticelSystems===" type="Node3D" parent="."]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="vfx_Exhaust_idle" type="GPUParticles3D" parent="===ParticelSystems==="]
@@ -218,7 +218,6 @@ draw_pass_1 = ExtResource("9_15mn1")
 metadata/_edit_lock_ = true
 
 [node name="===Thrusters===" type="Node3D" parent="."]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_lkch0")]

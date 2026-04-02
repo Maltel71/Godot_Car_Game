@@ -1,10 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://ctent62oianmi"]
+[gd_scene load_steps=41 format=3 uid="uid://ctent62oianmi"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_vdcri"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_jnho2"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_ertsf"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_6oima"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_aosg3"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_815rw"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_i31v0"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_t0js7"]
@@ -21,22 +20,23 @@
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_yyru5"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_deifn"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_df53m"]
+[ext_resource type="PackedScene" uid="uid://deseavo37ors" path="res://level_components/player/flamingo/car_samuel.tscn" id="21_jnho2"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_1vrni"]
 [ext_resource type="AudioStream" uid="uid://b6mdqctbyw2yi" path="res://audio/sfx/pickup/pickupCoin.wav" id="23_jnho2"]
+[ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="24_ertsf"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6oima"]
+sky_top_color = Color(0.63542026, 0.39170253, 0.020616807, 1)
+sky_horizon_color = Color(0.81203127, 0.5747294, 0.6733799, 1)
 
-[sub_resource type="Sky" id="Sky_s8dg4"]
-sky_material = SubResource("ProceduralSkyMaterial_q04gf")
+[sub_resource type="Sky" id="Sky_aosg3"]
+sky_material = SubResource("ProceduralSkyMaterial_6oima")
 
 [sub_resource type="Environment" id="Environment_ex07k"]
 background_mode = 2
-sky = SubResource("Sky_s8dg4")
+sky = SubResource("Sky_aosg3")
 tonemap_mode = 2
 glow_enabled = true
-fog_enabled = true
 fog_density = 0.0005
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
@@ -474,7 +474,7 @@ uv_scale = 0.111
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
 
-[sub_resource type="Curve3D" id="Curve3D_vdcri"]
+[sub_resource type="Curve3D" id="Curve3D_jnho2"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -483,7 +483,7 @@ point_count = 3
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_vdcri")
-level_start_time = 30.0
+level_start_time = 100.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
@@ -499,8 +499,9 @@ script = ExtResource("2_jnho2")
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_6oima")]
 
-[node name="Car_Default" parent="." instance=ExtResource("5_aosg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
+[node name="Car_Default" parent="." instance=ExtResource("21_jnho2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.91888, 22.223883, -10.405197)
+disable_mode = 2
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
@@ -511,13 +512,13 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
 
 [node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_i31v0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 18.863556, 1.887085)
 
 [node name="Pickup_Time_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_t0js7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.89612, 22.474306, 130.85991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.0618, 22.474306, 99.77284)
 
 [node name="Pickup_Time_03" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_t0js7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.36792, 22.98818, 131.0629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.1732, 22.98818, 98.763275)
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
@@ -531,7 +532,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_vdcri")
+curve = SubResource("Curve3D_jnho2")
 script = ExtResource("17_b27k6")
 lock_road = true
 
@@ -684,10 +685,15 @@ transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0,
 metadata/_edit_lock_ = true
 
 [node name="Pickup_Time_01" parent="===ENVIROMENT===" instance=ExtResource("8_t0js7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.77856, 23.001158, 130.12022)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -318.4858, 23.001158, 100.01408)
 time_value = 30.0
 pickup_sound = ExtResource("23_jnho2")
 pickup_volume = 4.5789999999999935
 
 [node name="Pickup_Thrusters_01" parent="===ENVIROMENT===" instance=ExtResource("7_i31v0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.9592, 21.50006, 149.18437)
+transform = Transform3D(0.95602363, 0, 0.29328954, 0, 1, 0, -0.29328954, 0, 0.95602363, -327.21246, 21.50006, -11.200949)
+thruster_duration = 999.0
+pickup_volume = 10.107
+
+[node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("24_ertsf")]
+transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9095442, -304.19485, 20.854706, 283.20227)
