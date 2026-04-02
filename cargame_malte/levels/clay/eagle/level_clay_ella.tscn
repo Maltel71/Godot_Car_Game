@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://3ppfxcwym4dh"]
+[gd_scene load_steps=43 format=3 uid="uid://3ppfxcwym4dh"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_24jc5"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_a3r2g"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay_t/packed/packed_albedo_height.png" id="14_nvo3r"]
 [ext_resource type="Texture2D" uid="uid://bfqss5kcs346u" path="res://textures/terrain_clay_t/env_clay_01_512px_texture_v2_specular.png" id="15_b1ls2"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="15_dw05d"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="19_8qpxd"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="20_xow64"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -483,17 +485,32 @@ normal_texture = SubResource("ImageTexture_cm1tt")
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_qk8pd"]
 name = "packed_albedo_height"
 id = 2
+albedo_color = Color(0.57996243, 0.57996243, 0.57996243, 1)
 albedo_texture = ExtResource("14_nvo3r")
 normal_texture = ExtResource("15_b1ls2")
 normal_depth = 0.4
 roughness = 1.0
 uv_scale = 0.111
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_cxhjc"]
+name = "packed_albedo_height"
+id = 3
+albedo_color = Color(0.8213161, 0.7879815, 0.727469, 1)
+albedo_texture = ExtResource("14_nvo3r")
+normal_texture = ExtResource("15_b1ls2")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_8qpxd"]
+name = "packed_albedo_height"
+id = 4
+albedo_color = Color(0.49438578, 0.788354, 0.53527105, 1)
+albedo_texture = ExtResource("14_nvo3r")
+normal_texture = ExtResource("15_b1ls2")
+
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_xfubl"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
-texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_cxhjc"), SubResource("Terrain3DTextureAsset_8qpxd")])
 
-[sub_resource type="Curve3D" id="Curve3D_cxhjc"]
+[sub_resource type="Curve3D" id="Curve3D_xow64"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -502,7 +519,7 @@ point_count = 3
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_24jc5")
-level_start_time = 30.0
+level_start_time = 332.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
@@ -531,7 +548,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_cxhjc")
+curve = SubResource("Curve3D_xow64")
 script = ExtResource("10_lqw1i")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -683,3 +700,30 @@ metadata/_edit_lock_ = true
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("15_dw05d")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
+
+[node name="Pickup_Points_01" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.61783, 21.419222, -7.1647797)
+
+[node name="Pickup_Points_02" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333.33383, 21.222935, 55.804714)
+
+[node name="Pickup_Points_03" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.8868, 21.753801, 199.71379)
+
+[node name="Pickup_Points_04" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -218.54344, 17.00661, 382.3198)
+
+[node name="Pickup_Points_05" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.08229, 21.610613, 246.9733)
+
+[node name="Pickup_Points_06" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.931, 22.897318, 79.47302)
+
+[node name="Pickup_Points_07" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.269188, 22.77965, -66.268196)
+
+[node name="Pickup_Points_08" parent="." instance=ExtResource("19_8qpxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.89552, 11.9394455, -149.91048)
+
+[node name="Pickup_Thrusters_01" parent="." instance=ExtResource("20_xow64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.15305, 21.384958, -15.905285)

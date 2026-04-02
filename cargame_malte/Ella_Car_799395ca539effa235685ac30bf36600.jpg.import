@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://f0o27v5cwdlk"
-path.s3tc="res://.godot/imported/Ella_Car_799395ca539effa235685ac30bf36600.jpg-915662a9dec3a02875289f5d2e149736.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ella_Car_799395ca539effa235685ac30bf36600.jpg-0e7a4df3b6ea7b5158a9d7a575903181.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/clay/ella/Ella_Car_799395ca539effa235685ac30bf36600.jpg"
-dest_files=["res://.godot/imported/Ella_Car_799395ca539effa235685ac30bf36600.jpg-915662a9dec3a02875289f5d2e149736.s3tc.ctex"]
+source_file="res://Ella_Car_799395ca539effa235685ac30bf36600.jpg"
+dest_files=["res://.godot/imported/Ella_Car_799395ca539effa235685ac30bf36600.jpg-0e7a4df3b6ea7b5158a9d7a575903181.s3tc.ctex"]
 
 [params]
 
