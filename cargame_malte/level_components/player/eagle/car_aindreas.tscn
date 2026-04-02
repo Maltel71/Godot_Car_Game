@@ -1,21 +1,25 @@
-[gd_scene load_steps=26 format=3 uid="uid://b54yxpeei1peq"]
+[gd_scene load_steps=30 format=3 uid="uid://b54yxpeei1peq"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_3hgtb"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_4xqah"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_k0x6r"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="4_odmdh"]
-[ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="5_xvnle"]
+[ext_resource type="PackedScene" uid="uid://csxglpcfcw644" path="res://models/clay/felix/Felix_Car.glb" id="5_cpmvp"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_asvl3"]
+[ext_resource type="PackedScene" uid="uid://bd11i1hcmsdm0" path="res://models/clay/nicolas/Nicolas_Car.glb" id="6_hla4u"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_oep3s"]
+[ext_resource type="PackedScene" uid="uid://bqcl7a4nndfx2" path="res://models/clay/malte/Malte_LargeRock2.glb" id="7_wq7ah"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="8_klevg"]
+[ext_resource type="PackedScene" uid="uid://pry2oskwcvhi" path="res://models/clay/malte/Malte_LargeRock.glb" id="8_l2yw8"]
 [ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://vfx/Cloud_v2.obj" id="9_khq21"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="10_3mkfn"]
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="11_ystjl"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="12_g1lur"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="13_dk38b"]
+[ext_resource type="PackedScene" uid="uid://c6ebhh4lk22l2" path="res://models/clay/malte/Malte_Pickup1.glb" id="18_b503k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
-size = Vector3(2.29102, 1.40625, 6.8826)
+size = Vector3(2.29102, 1.40625, 5.4986305)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhmyn"]
 radius = 0.978364
@@ -112,70 +116,103 @@ exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 metadata/_edit_lock_ = true
 
 [node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_4xqah")]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_k0x6r")]
+visible = false
 metadata/_edit_lock_ = true
 
 [node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_odmdh")]
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="MainBody2" parent="===Body===" instance=ExtResource("5_cpmvp")]
+transform = Transform3D(-1.0478002e-07, 0, -2.3970873, 0, 2.3970873, 0, 2.3970873, 0, -1.0478002e-07, 0.046201404, 0.17228138, -1.1806436)
+
+[node name="MainBody" parent="===Body===" instance=ExtResource("6_hla4u")]
+transform = Transform3D(-1.0478002e-07, 0, -2.397087, 0, 2.397087, 0, 2.397087, 0, -1.0478e-07, 0.025471585, -0.4160255, -0.23197782)
+
+[node name="Malte_LargeRock22" parent="===Body===" instance=ExtResource("7_wq7ah")]
+transform = Transform3D(-2.346721e-08, 0, -0.5368672, 0, 0.5368672, 0, 0.5368672, 0, -2.346721e-08, -0.41147864, -0.14659041, -2.8302827)
+
+[node name="Malte_LargeRock2" parent="===Body===" instance=ExtResource("8_l2yw8")]
+transform = Transform3D(-0.0043516867, 0.4176766, -0.45433134, -0.23555486, 0.41882157, 0.38728794, 0.57042485, 0.17613722, 0.15646312, 0.40347528, -0.13940078, 1.2149515)
+
+[node name="Malte_LargeRock3" parent="===Body===" instance=ExtResource("8_l2yw8")]
+transform = Transform3D(1.4367329e-08, 0.46243426, 0.40871018, -0.2355607, -0.377768, 0.4274248, 0.57043904, -0.15599793, 0.17650357, -0.34884012, -0.09861326, 1.2317952)
+
+[node name="Malte_LargeRock4" parent="===Body===" instance=ExtResource("8_l2yw8")]
+transform = Transform3D(-1.9859943e-08, 0.41768694, -0.45434254, 1.8257676e-08, 0.45434254, 0.41768694, 0.6171625, -2.1290412e-15, -2.697703e-08, 0.40347528, -0.14107186, 0.6389837)
+
+[node name="Malte_LargeRock5" parent="===Body===" instance=ExtResource("8_l2yw8")]
+transform = Transform3D(1.7865293e-08, 0.4624343, 0.40871015, 2.021365e-08, -0.40871015, 0.4624343, 0.6171625, -2.1290412e-15, -2.697704e-08, -0.34884012, -0.09694272, 0.6389837)
+
+[node name="Malte_LargeRock6" parent="===Body===" instance=ExtResource("8_l2yw8")]
+transform = Transform3D(5.865285e-09, 0.4176869, -0.45434257, -0.2997149, 0.39716914, 0.36512622, 0.5395002, 0.22064404, 0.20284282, 0.3381311, -0.25923395, 1.74198)
+
+[node name="Malte_LargeRock8" parent="===Body===" instance=ExtResource("8_l2yw8")]
+transform = Transform3D(-2.697703e-08, 1.0334003, 2.6977027e-08, 0, -4.5171358e-08, 0.61716247, 0.61716247, 4.5171358e-08, -1.0133981e-15, 0.062588885, -0.9414565, 1.9420154)
+
+[node name="Malte_LargeRock7" parent="===Body===" instance=ExtResource("8_l2yw8")]
+transform = Transform3D(1.3220838e-08, 0.4624343, 0.40871015, -0.29971492, -0.35727906, 0.40424272, 0.53950036, -0.1984834, 0.22457363, -0.36515906, -0.21715367, 1.7653571)
+
+[node name="wheel_front_right" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54550016, -1, 1.9452391)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.52
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Malte_Pickup14" parent="wheel_front_right" instance=ExtResource("18_b503k")]
+transform = Transform3D(1.2146945, 0, 0, 0, 1.2146944, 0, 0, 0, 1.2146945, 0, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6275153, -1, 1.75)
 use_as_traction = true
 use_as_steering = true
 wheel_roll_influence = 0.0
-wheel_radius = 0.545
+wheel_radius = 0.52
 suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
-[node name="Wheel03_mesh" parent="wheel_front_left" instance=ExtResource("5_xvnle")]
-metadata/_edit_lock_ = true
-
-[node name="wheel_front_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, 1.75)
-use_as_traction = true
-use_as_steering = true
-wheel_roll_influence = 0.0
-wheel_radius = 0.545
-suspension_travel = 10.0
-suspension_stiffness = 40.0
-damping_compression = 1.9
-damping_relaxation = 2.0
-metadata/_edit_lock_ = true
-
-[node name="Wheel02_mesh" parent="wheel_front_right" instance=ExtResource("5_xvnle")]
+[node name="Malte_Pickup15" parent="wheel_front_left" instance=ExtResource("18_b503k")]
+transform = Transform3D(1.2146945, 0, 0, 0, 1.2146944, 0, 0, 0, 1.2146945, 0, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="wheel_back_right" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, -1.913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9871837, -1, -1.913)
 use_as_traction = true
 wheel_roll_influence = 0.0
-wheel_radius = 0.545
+wheel_radius = 1.02
 suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
-[node name="Wheel05_mesh" parent="wheel_back_right" instance=ExtResource("5_xvnle")]
+[node name="Malte_Pickup12" parent="wheel_back_right" instance=ExtResource("18_b503k")]
+transform = Transform3D(2.3970876, 0, 0, 0, 2.3970873, 0, 0, 0, 2.3970876, 0, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="wheel_back_left" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, -1.913)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1423211, -1, -1.913)
 use_as_traction = true
 wheel_roll_influence = 0.0
-wheel_radius = 0.545
+wheel_radius = 1.02
 suspension_travel = 10.0
 suspension_stiffness = 40.0
 damping_compression = 1.9
 damping_relaxation = 2.0
-metadata/_edit_lock_ = true
 
-[node name="Wheel04_mesh" parent="wheel_back_left" instance=ExtResource("5_xvnle")]
+[node name="Malte_Pickup13" parent="wheel_back_left" instance=ExtResource("18_b503k")]
+transform = Transform3D(2.3970876, 0, 0, 0, 2.3970873, 0, 0, 0, 2.3970876, 0, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="CamArm" type="SpringArm3D" parent="."]
@@ -189,15 +226,13 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0.441584, 0, 0, 0, 1, 0, 0, 0, 0.180584, 0, 0.887635, 0.19532)
 
 [node name="CollisionShape_01" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.186504, 0.0198936)
-visible = false
+transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.186504, -0.2724106)
 shape = SubResource("BoxShape3D_xhmyn")
 debug_color = Color(0.607608, 0.363727, 1, 0.42)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape_02" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.918173, 0, 0, 0, -4.01346e-08, -0.918173, 0, 0.918173, -4.01346e-08, 0, 0.14752, 0.0198936)
-visible = false
 shape = SubResource("CapsuleShape3D_xhmyn")
 debug_color = Color(0, 0.643137, 0.290196, 1)
 metadata/_edit_lock_ = true
@@ -225,7 +260,6 @@ draw_pass_1 = ExtResource("9_khq21")
 metadata/_edit_lock_ = true
 
 [node name="===Thrusters===" type="Node3D" parent="."]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_3mkfn")]
