@@ -24,8 +24,9 @@
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_upfyy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.59680617, 0.5450889, 0.21966326, 1)
+sky_horizon_color = Color(0.6593029, 0.35831589, 0.49384475, 1)
+ground_horizon_color = Color(0.65882355, 0.35686275, 0.49411765, 1)
 
 [sub_resource type="Sky" id="Sky_s8dg4"]
 sky_material = SubResource("ProceduralSkyMaterial_q04gf")
@@ -35,7 +36,6 @@ background_mode = 2
 sky = SubResource("Sky_s8dg4")
 tonemap_mode = 2
 glow_enabled = true
-fog_enabled = true
 fog_density = 0.0005
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
