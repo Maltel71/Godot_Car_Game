@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bt10rjtgt1q11"]
+
+[ext_resource type="Script" uid="uid://dsvk40os1iop4" path="res://scripts/helicontroller.gd" id="1_2xw3t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2o2qb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xw3t"]
+
+[node name="Heli" type="RigidBody3D" unique_id=220749651]
+script = ExtResource("1_2xw3t")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=201351999]
+mesh = SubResource("BoxMesh_2o2qb")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=1637921485]
+shape = SubResource("BoxShape3D_2xw3t")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=948623819]
+
+[node name="Camera" type="Camera3D" parent="Node3D" unique_id=407411220]
+transform = Transform3D(1, 0, 0, 0, 0.97107595, 0.23877075, 0, -0.23877075, 0.97107595, 0, 1.1472551, 2.5110621)
