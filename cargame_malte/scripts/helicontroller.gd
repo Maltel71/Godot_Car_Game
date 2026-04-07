@@ -32,8 +32,8 @@ func _physics_process(delta: float) -> void:
 
 	apply_central_force(up * throttle_input * throttle_force)
 
-	var fwd_speed := -fwd.dot(Vector3.UP)
-	apply_central_force(-fwd * fwd_speed * tilt_fwd_force)
+	var flat_fwd := Vector3(fwd.x, 0, fwd.z).normalized()
+	apply_central_force(flat_fwd * tilt_fwd_force * throttle_input)
 
 	apply_torque(basis.x * pitch_input * pitch_torque)
 	apply_torque(basis.z * roll_input  * roll_torque)
