@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bpp7ixfm514m6"]
+[gd_scene load_steps=8 format=3 uid="uid://bpp7ixfm514m6"]
 
 [ext_resource type="PackedScene" uid="uid://bt10rjtgt1q11" path="res://level_components/heli.tscn" id="2_jirdo"]
 [ext_resource type="Material" uid="uid://0jt656wxaltq" path="res://materials/new_standard_material_3d.tres" id="3_ihfcg"]
@@ -22,91 +22,93 @@ size = Vector2(29.95, 30.015)
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbghi"]
 size = Vector3(30, 0.1, 30)
 
-[node name="Level1" type="Node3D" unique_id=1575359955]
+[node name="Level1" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1413959789]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hn12h")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=682302097]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1873711119]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=932231282]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 material_override = ExtResource("3_ihfcg")
 mesh = SubResource("PlaneMesh_3hls8")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1389601821]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1063667932]
+[node name="StaticBody3D3" type="StaticBody3D" parent="."]
 transform = Transform3D(0.991852, -0.127394, 0, 0.127394, 0.991852, 0, 0, 0, 1, 0, 2.47228, 42.7706)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=1055729565]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3"]
 material_override = ExtResource("3_ihfcg")
 mesh = SubResource("PlaneMesh_3hls8")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=1465937901]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=1328412572]
+[node name="StaticBody3D4" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6221, -2.00601, 42.7706)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4" unique_id=549443477]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4"]
 material_override = ExtResource("3_ihfcg")
 mesh = SubResource("PlaneMesh_3hls8")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" unique_id=1433036448]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=1296681758]
+[node name="StaticBody3D5" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5317, -3.03275, 42.7706)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5" unique_id=1459099815]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5"]
 material_override = ExtResource("3_ihfcg")
 mesh = SubResource("PlaneMesh_3hls8")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5" unique_id=133550942]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="StaticBody3D6" type="StaticBody3D" parent="." unique_id=466743466]
+[node name="StaticBody3D6" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5317, -3.76887, 13.3856)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D6" unique_id=278140232]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D6"]
 material_override = ExtResource("3_ihfcg")
 mesh = SubResource("PlaneMesh_3hls8")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6" unique_id=375832369]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6"]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="StaticBody3D7" type="StaticBody3D" parent="." unique_id=1853615679]
+[node name="StaticBody3D7" type="StaticBody3D" parent="."]
 transform = Transform3D(0.93716, 0.348899, 0, -0.348899, 0.93716, 0, 0, 0, 1, 24.4831, 1.31788, 13.3856)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D7" unique_id=985650954]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D7"]
 material_override = ExtResource("3_ihfcg")
 mesh = SubResource("PlaneMesh_3hls8")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7" unique_id=1937462824]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D7"]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=2067720027]
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.973199, 0.229965, 0, -0.229965, 0.973199, 0, 1.22647, 15.7057)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1680513337]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
 material_override = ExtResource("3_ihfcg")
 mesh = SubResource("PlaneMesh_3hls8")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=375642988]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="Node3D" parent="." unique_id=220749651 instance=ExtResource("2_jirdo")]
+[node name="Node3D" parent="." instance=ExtResource("2_jirdo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0869889, 0.5500002, 1.6637993)
+pitch_torque = 2.0
+roll_torque = 2.0
 yaw_torque = 0.3

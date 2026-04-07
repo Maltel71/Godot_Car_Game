@@ -21,7 +21,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		pitch_input = event.relative.y * mouse_sensitivity
-		roll_input  = event.relative.x * mouse_sensitivity
+		roll_input  = -event.relative.x * mouse_sensitivity
 
 func _physics_process(delta: float) -> void:
 	throttle_input = Input.get_axis("throttle_down", "throttle_up")
