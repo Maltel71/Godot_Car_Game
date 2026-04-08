@@ -164,11 +164,17 @@ damping_relaxation = 2.0
 
 [node name="Wheel04" parent="wheel_back_left" instance=ExtResource("6_wdy7j")]
 
-[node name="CamArm" type="SpringArm3D" parent="."]
+[node name="CamArm" type="SpringArm3D" parent="." node_paths=PackedStringArray("car_node")]
 transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384248, 0.0711465)
-visible = false
 spring_length = 5.0
 script = ExtResource("7_xhmyn")
+car_node = NodePath("..")
+idle_timeout = 0.5
+reset_speed = 1.0
+mouse_threshold = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="CamArm"]
+transform = Transform3D(0.441583, -8.246283e-09, -8.910952e-10, 1.86744e-08, 0.976919, 0.21361014, -3.6438053e-10, -0.03857457, 0.17641592, 4.555855e-07, 5.2141337, 2.326463)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.187, 0)
@@ -287,6 +293,3 @@ driving_sounds = Array[AudioStream]([ExtResource("14_jpt3o")])
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CarSFXManager"]
 bus = &"sfx"
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-1, 5.232091e-18, 8.7422826e-08, 1.86744e-08, 0.976919, 0.21361014, -8.5405034e-08, 0.21361014, -0.976919, 9.455656e-08, 4.829886, -12.8118515)
