@@ -14,7 +14,8 @@ var MouseSensitivity = 0.1
 
 # Auto-reset settings
 @export var idle_timeout: float = 2.0
-@export var reset_speed: float = 3.0
+@export var reset_speed: float = 3.0    # How fast camera snaps back behind car after idle
+@export var reset_tilt_speed: float = 3.0  # How fast the X tilt resets separately
 @export var mouse_threshold: float = 1.0
 
 var _idle_timer: float = 0.0
@@ -50,13 +51,13 @@ func _process(delta):
 	if _idle_timer >= idle_timeout:
 		_is_resetting = true
 
-	# Smoothly reset to behind the car
+	# Smoothly reset to behind the car only after idle timeout
 	if _is_resetting:
 		var car_y = wrapf(rad_to_deg(car_node.rotation.y) + 180.0, 0.0, 360.0)
 		var target_x = -15.0
 		var diff = wrapf(car_y - rotation_degrees.y, -180.0, 180.0)
 		rotation_degrees.y = wrapf(rotation_degrees.y + diff * reset_speed * delta, 0.0, 360.0)
-		rotation_degrees.x = lerp(rotation_degrees.x, target_x, reset_speed * delta)
+		rotation_degrees.x = lerp(rotation_degrees.x, target_x, reset_tilt_speed * delta)
 
 	# Dynamic zoom based on speed
 	var car_speed = car_node.linear_velocity.length()

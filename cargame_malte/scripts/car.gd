@@ -8,6 +8,10 @@ var turn_amount = 0.3
 @export var exhaust_particles: GPUParticles3D
 @export var rpm_threshold: float = 50.0
 
+@export_group("Auto Levelling")
+@export var level_strength: float = 5.0  # How hard it corrects the tilt
+@export var level_damping: float = 3.0   # How quickly it kills rotation (prevents oscillation)
+
 func _physics_process(delta):
 	$CamArm.position = position
 	
@@ -23,3 +27,17 @@ func _physics_process(delta):
 	# Exhaust particles
 	if exhaust_particles:
 		exhaust_particles.emitting = dir != 0
+	
+	# Auto levelling while airborne
+	var wheels = [$wheel_front_left, $wheel_front_right, $wheel_back_left, $wheel_back_right]
+	var is_airborne = not wheels.any(func(w): return w.is_in_contact())
+	
+	if is_airborne:
+		# Find the tilt axes: cross product of car's up vs world up
+		var car_up = global_transform.basis.y
+		var world_up = Vector3.UP
+		var correction_axis = car_up.cross(world_up)
+		
+		# Apply corrective torque and damping both through physics
+		apply_torque(correction_axis * level_strength * mass)
+		apply_torque(-angular_velocity * level_damping * mass)
