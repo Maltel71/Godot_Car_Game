@@ -18,13 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/_scene_prefabs/box1.tscn" id="15_m4706"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/_scene_prefabs/ramp_1.tscn" id="16_4xp61"]
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
-[ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="18_k2aru"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickup_01.tscn" id="19_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/time_pickup.tscn" id="22_ngvhw"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickup_thrusters.tscn" id="23_itbe0"]
 [ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
 [ext_resource type="PackedScene" uid="uid://vvt8c25evg6t" path="res://level_components/delivery_area.tscn" id="25_jqt73"]
+[ext_resource type="PackedScene" uid="uid://dh3nmimchv1p3" path="res://level_components/npc_giver.tscn" id="26_00pa0"]
+[ext_resource type="PackedScene" uid="uid://bixf6jy6ch7p2" path="res://level_components/npc_receiver.tscn" id="27_amxoe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -454,7 +452,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Car1_Player" parent="." unique_id=754041233 instance=ExtResource("3_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.523, 22.9955, -19.0239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 22.9955, -36.98169)
 
 [node name="WiggleTest" parent="Car1_Player" unique_id=1501707153 instance=ExtResource("4_h351q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
@@ -800,53 +798,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
 
 [node name="===PICKUPS===" type="Node3D" parent="." unique_id=232689023]
 
-[node name="Pickup01" parent="===PICKUPS===" unique_id=1089392618 instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -14.23181)
-
-[node name="Pickup02" parent="===PICKUPS===" unique_id=539566912 instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -11.976393)
-
-[node name="Pickup03" parent="===PICKUPS===" unique_id=1530230738 instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -8.074182)
-
-[node name="Pickup04" parent="===PICKUPS===" unique_id=1685016718 instance=ExtResource("19_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.442, 21.882862, -3.9880133)
-
-[node name="TimePickup" parent="===PICKUPS===" unique_id=1278637366 instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.20407, 21.954525, -11.904184)
-
-[node name="TimePickup2" parent="===PICKUPS===" unique_id=95445414 instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.29498, 21.954525, -9.622512)
-
-[node name="TimePickup3" parent="===PICKUPS===" unique_id=706723887 instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.76434, 21.954525, -7.252203)
-
-[node name="TimePickup4" parent="===PICKUPS===" unique_id=1742559508 instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -7.8570414)
-
-[node name="TimePickup5" parent="===PICKUPS===" unique_id=1310111889 instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.01086, 21.954525, -8.630803)
-
-[node name="TimePickup6" parent="===PICKUPS===" unique_id=738572085 instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.75513, 21.954525, -10.340613)
-
-[node name="TimePickup7" parent="===PICKUPS===" unique_id=1937761025 instance=ExtResource("22_ngvhw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.2364, 21.954525, -10.998918)
-
-[node name="GoalTrigger" parent="." unique_id=531621955 instance=ExtResource("18_k2aru")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.6077538)
-
 [node name="Highscore" parent="." unique_id=1080435621 groups=["highscore_ui"] instance=ExtResource("20_h351q")]
 
-[node name="Pickup01" parent="." unique_id=1554835180 instance=ExtResource("23_itbe0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.7059, 21.885225, -10.000926)
-thruster_duration = 20.0
-
 [node name="GetPackageArea" parent="." unique_id=1336415522 instance=ExtResource("24_he6wg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.086, 19.835297, -6.3072443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.30215, 19.835297, -17.926296)
 
 [node name="DeliveryArea" parent="." unique_id=1448386087 instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.2573, 20.015982, 6.6629167)
+
+[node name="NPC_Giver" parent="." unique_id=882193193 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("26_00pa0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.12973, 19.79825, -17.927784)
+point_a = NodePath("../===NPC_POINTS===/NPC1")
+linked_area = NodePath("../GetPackageArea")
+
+[node name="NPC_Reciever" parent="." unique_id=2045726150 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 20.00547, 25.499258)
+point_a = NodePath("../===NPC_POINTS===/NPC2")
+linked_area = NodePath("../DeliveryArea")
+
+[node name="===NPC_POINTS===" type="Node3D" parent="." unique_id=1755396391]
+
+[node name="NPC1" type="Node3D" parent="===NPC_POINTS===" unique_id=851971085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.98798, 20.857956, -17.063972)
+
+[node name="NPC2" type="Node3D" parent="===NPC_POINTS===" unique_id=724000899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.47708, 21.954039, 23.587212)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

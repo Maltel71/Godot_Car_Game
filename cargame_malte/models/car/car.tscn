@@ -101,6 +101,8 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
+[sub_resource type="BoxMesh" id="BoxMesh_b751l"]
+
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles")]
 mass = 240.0
 center_of_mass_mode = 1
@@ -295,3 +297,7 @@ driving_sounds = Array[AudioStream]([ExtResource("14_jpt3o")])
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=248696536]
 bus = &"sfx"
+
+[node name="PackageMesh" type="MeshInstance3D" parent="." unique_id=1825445116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47323775, -2.1615758)
+mesh = SubResource("BoxMesh_b751l")

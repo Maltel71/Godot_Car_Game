@@ -17,6 +17,7 @@ var HasPackage: bool = false
 
 func _physics_process(delta):
 	$CamArm.position = position
+	$PackageMesh.visible = HasPackage
 	
 	var dir = Input.get_action_strength("Gas") - Input.get_action_strength("Reverse")
 	var steering_dir = Input.get_action_strength("Left") - Input.get_action_strength("Right")

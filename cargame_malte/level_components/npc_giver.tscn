@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dh3nmimchv1p3"]
+
+[ext_resource type="Script" uid="uid://b4vxtd2swg7ua" path="res://scripts/npc_giver.gd" id="1_wrhms"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wrhms"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l2vm4"]
+radius = 1.0
+
+[node name="NPC_Giver" type="CharacterBody3D" unique_id=882193193]
+script = ExtResource("1_wrhms")
+move_speed = 6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_l2vm4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1468327011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_wrhms")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=693237114]
+transform = Transform3D(0.837727, 0, 0, 0, -1.5911109e-08, -0.50494975, 0, 0.36400375, -2.2072054e-08, 0, 0.48675787, -0.46960437)
+mesh = SubResource("CapsuleMesh_wrhms")
+skeleton = NodePath("../..")
+
+[node name="TouchArea" type="Area3D" parent="." unique_id=1099626848]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TouchArea" unique_id=2010793040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_l2vm4")
