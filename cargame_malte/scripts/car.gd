@@ -4,6 +4,9 @@ var max_RPM = 900
 var max_torque = 600
 var turn_speed = 3
 var turn_amount = 0.3
+
+var HasPackage: bool = false
+
 @export var spring_bone_simulator: SpringBoneSimulator3D
 @export var exhaust_particles: GPUParticles3D
 @export var rpm_threshold: float = 50.0

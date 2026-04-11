@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://by4lbj6m4rtcc"]
+
+[ext_resource type="Script" uid="uid://bwqm7vq7r8641" path="res://scripts/get_package_area.gd" id="1_0tcj8"]
+[ext_resource type="AudioStream" uid="uid://ha48rdm0hubj" path="res://audio/sfx/power_up/powerUp.wav" id="2_mmt32"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e1d7v"]
+radius = 10.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mmt32"]
+
+[node name="GetPackageArea" type="Area3D" unique_id=1336415522]
+script = ExtResource("1_0tcj8")
+pickup_sound = ExtResource("2_mmt32")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1281981301]
+shape = SubResource("SphereShape3D_e1d7v")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=157755021]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=114579785]
+mesh = SubResource("CylinderMesh_mmt32")

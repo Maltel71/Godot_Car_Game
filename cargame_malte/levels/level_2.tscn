@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/time_pickup.tscn" id="22_ngvhw"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickup_thrusters.tscn" id="23_itbe0"]
+[ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
+[ext_resource type="PackedScene" uid="uid://vvt8c25evg6t" path="res://level_components/delivery_area.tscn" id="25_jqt73"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -839,6 +841,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.267, 20.416477, -3.60775
 [node name="Pickup01" parent="." unique_id=1554835180 instance=ExtResource("23_itbe0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.7059, 21.885225, -10.000926)
 thruster_duration = 20.0
+
+[node name="GetPackageArea" parent="." unique_id=1336415522 instance=ExtResource("24_he6wg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.086, 19.835297, -6.3072443)
+
+[node name="DeliveryArea" parent="." unique_id=1448386087 instance=ExtResource("25_jqt73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.2573, 20.015982, 6.6629167)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
