@@ -6,6 +6,7 @@ var turn_speed = 3
 var turn_amount = 0.3
 
 var HasPackage: bool = false
+var assigned_delivery_id: String = ""
 
 @export var spring_bone_simulator: SpringBoneSimulator3D
 @export var exhaust_particles: GPUParticles3D

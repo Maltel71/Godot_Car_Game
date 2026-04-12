@@ -4,6 +4,7 @@ var level_time: float = 0.0
 var max_time: float = 60.0
 var level_score: int = 0
 var is_timing: bool = false
+var target_delivery: String = ""
 
 func _ready():
 	pass
@@ -36,21 +37,26 @@ func get_time() -> float:
 func get_score() -> int:
 	return level_score
 
+func set_target_delivery(id: String):
+	target_delivery = id
+
+func get_target_delivery() -> String:
+	return target_delivery
+
 func reset():
 	level_time = 0.0
 	level_score = 0
 	is_timing = false
+	target_delivery = ""
 
 func times_up():
 	is_timing = false
 	set_process(false)
 	var scene_tree = Engine.get_main_loop() as SceneTree
 	if scene_tree:
-		# Hide highscore UI
 		var highscore_ui = scene_tree.get_first_node_in_group("highscore_ui")
 		if highscore_ui:
 			highscore_ui.hide()
-		
 		scene_tree.paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		var times_up_scene = load("res://menus/timeisup_menu.tscn")

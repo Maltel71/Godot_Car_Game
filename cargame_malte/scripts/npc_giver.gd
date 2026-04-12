@@ -40,6 +40,6 @@ func _on_area_body_exited(body):
 func _on_body_entered(body):
 	if body is VehicleBody3D and not body.HasPackage:
 		body.HasPackage = true
-		linked_area.play_pickup_sound()
+		linked_area.play_pickup_sound(body)
 		car = null
 		returning = true

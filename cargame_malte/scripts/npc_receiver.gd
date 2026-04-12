@@ -28,7 +28,7 @@ func _move_toward(target: Vector3, delta: float):
 	move_and_slide()
 
 func _on_area_body_entered(body):
-	if body is VehicleBody3D and body.HasPackage:
+	if body is VehicleBody3D and body.HasPackage and body.assigned_delivery_id == linked_area.name:
 		car = body
 		returning = false
 
@@ -38,8 +38,11 @@ func _on_area_body_exited(body):
 		returning = true
 
 func _on_body_entered(body):
-	if body is VehicleBody3D and body.HasPackage:
+	if body is VehicleBody3D and body.HasPackage and body.assigned_delivery_id == linked_area.name:
 		body.HasPackage = false
+		body.assigned_delivery_id = ""
 		linked_area.play_delivery_sound()
+		var manager = get_node("/root/ScoreAndTimeManager")
+		manager.set_target_delivery("")
 		car = null
 		returning = true

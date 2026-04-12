@@ -10,6 +10,7 @@ func _input(event):
 
 func restart_scene():
 	get_tree().paused = false
+	get_node("/root/ScoreAndTimeManager").reset()
 	get_tree().reload_current_scene()
 
 func pause_game():

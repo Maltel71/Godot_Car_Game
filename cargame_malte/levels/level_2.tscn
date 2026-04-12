@@ -437,19 +437,14 @@ level_start_time = 9000.0
 
 [node name="EscMenu" parent="." unique_id=841350275 instance=ExtResource("1_uo0vl")]
 
+[node name="Highscore" parent="." unique_id=1080435621 groups=["highscore_ui"] instance=ExtResource("20_h351q")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1472119363]
 environment = SubResource("Environment_ex07k")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=593735158]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
-
-[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1775803937]
-data_directory = "res://terraindata"
-material = SubResource("Terrain3DMaterial_s8dg4")
-assets = ExtResource("2_k2aru")
-top_level = true
-metadata/_edit_lock_ = true
 
 [node name="Car1_Player" parent="." unique_id=754041233 instance=ExtResource("3_ndgrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 22.9955, -36.98169)
@@ -550,25 +545,37 @@ settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="Path3D" type="Path3D" parent="." unique_id=41101713]
+[node name="GameManager" type="Node" parent="." unique_id=1232870169]
+script = ExtResource("10_jqt73")
+
+[node name="===ENVIROMENT===" type="Node3D" parent="." unique_id=1195249406]
+
+[node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT===" unique_id=1775803937]
+data_directory = "res://terraindata"
+material = SubResource("Terrain3DMaterial_s8dg4")
+assets = ExtResource("2_k2aru")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Path3D" type="Path3D" parent="===ENVIROMENT===" unique_id=41101713]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11876, 1.12862, -9.75021)
 curve = SubResource("Curve3D_e3avg")
 metadata/_edit_lock_ = true
 
-[node name="RoadManager" type="Node3D" parent="Path3D" unique_id=1655393966]
+[node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D" unique_id=1655393966]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
 script = ExtResource("5_dpc8t")
 material_resource = ExtResource("6_ngvhw")
 metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
 metadata/_edit_lock_ = true
 
-[node name="Road_001" type="Node3D" parent="Path3D/RoadManager" unique_id=648782503]
+[node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager" unique_id=648782503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
 script = ExtResource("7_itbe0")
 material_resource = ExtResource("8_xrja0")
 use_lowpoly_preview = true
 
-[node name="RP_002" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=836879427]
+[node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=836879427]
 transform = Transform3D(-0.999211, -0.0112186, 0.0381024, -0.0112213, 0.999937, 0.000143088, -0.0381016, -0.000284583, -0.999274, -374.162, 0, -84.5118)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -580,7 +587,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_003")
 next_pt_init = NodePath("../RP_012")
 
-[node name="RP_003" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=535494063]
+[node name="RP_003" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=535494063]
 transform = Transform3D(-0.999211, -0.0109281, 0.0381867, -0.0112213, 0.999909, -0.00747123, -0.0381016, -0.00789386, -0.999243, -378.813, 0.271271, 37.3877)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -592,7 +599,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_004")
 next_pt_init = NodePath("../RP_002")
 
-[node name="RP_004" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=1990885257]
+[node name="RP_004" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1990885257]
 transform = Transform3D(-0.996345, -0.000396116, 0.0854207, -0.0038353, 0.999188, -0.0401014, -0.0853355, -0.0402824, -0.995538, -384.557, 7.59734, 176.355)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -604,7 +611,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_005")
 next_pt_init = NodePath("../RP_003")
 
-[node name="RP_005" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=2000706688]
+[node name="RP_005" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=2000706688]
 transform = Transform3D(-0.998861, 0, 0.0477165, 0, 1, 0, -0.0477165, 0, -0.998861, -391.996, 8.56799, 308.683)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -616,7 +623,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_006")
 next_pt_init = NodePath("../RP_004")
 
-[node name="RP_006" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=362042000]
+[node name="RP_006" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=362042000]
 transform = Transform3D(-0.350217, 0.0537726, -0.935124, 0.0266302, 0.998519, 0.0474446, 0.93629, -0.00828659, -0.35113, -297.168, 25.2223, 473.461)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -628,7 +635,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_007")
 next_pt_init = NodePath("../RP_005")
 
-[node name="RP_007" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=2030933676]
+[node name="RP_007" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=2030933676]
 transform = Transform3D(0.567908, -0.0477386, -0.821707, 0.137786, 0.989743, 0.0377269, 0.811478, -0.134645, 0.56866, -97.3637, 14.9473, 441.677)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -640,7 +647,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_008")
 next_pt_init = NodePath("../RP_006")
 
-[node name="RP_008" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=760537747]
+[node name="RP_008" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=760537747]
 transform = Transform3D(0.994129, -0.0804404, -0.0723738, 0.0823795, 0.996307, 0.0242137, 0.0701587, -0.0300336, 0.997084, -40.1809, -7.88855, 298.047)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -652,7 +659,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_009")
 next_pt_init = NodePath("../RP_007")
 
-[node name="RP_009" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=1969617458]
+[node name="RP_009" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1969617458]
 transform = Transform3D(0.997472, -0.0286607, -0.0650194, 0.0264094, 0.99903, -0.0352247, 0.065966, 0.0334186, 0.997262, -146.92, -1.23155, 52.773)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -664,7 +671,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_010")
 next_pt_init = NodePath("../RP_008")
 
-[node name="RP_010" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=1375333681]
+[node name="RP_010" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1375333681]
 transform = Transform3D(0.922364, -0.00532334, -0.386286, -0.00322346, 0.999764, -0.0214745, 0.386309, 0.0210523, 0.922129, -67.6452, -0.29195, -67.1144)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -676,7 +683,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_011")
 next_pt_init = NodePath("../RP_009")
 
-[node name="RP_011" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=1497656295]
+[node name="RP_011" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1497656295]
 transform = Transform3D(0.815125, -0.0481498, 0.57728, 0.0309395, 0.998736, 0.0396155, -0.578458, -0.0144309, 0.815585, -84.5744, -5.25392, -226.897)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -688,7 +695,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_012")
 next_pt_init = NodePath("../RP_010")
 
-[node name="RP_012" type="Node3D" parent="Path3D/RoadManager/Road_001" unique_id=463358099]
+[node name="RP_012" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=463358099]
 transform = Transform3D(-0.147459, 0.0438236, 0.988097, 0.0641825, 0.997336, -0.034655, -0.986984, 0.0583083, -0.149879, -246.094, -1.37317, -259.963)
 script = ExtResource("9_he6wg")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -699,11 +706,6 @@ lane_width = 7.0
 gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_002")
 next_pt_init = NodePath("../RP_011")
-
-[node name="GameManager" type="Node" parent="." unique_id=1232870169]
-script = ExtResource("10_jqt73")
-
-[node name="===ENVIROMENT===" type="Node3D" parent="." unique_id=1195249406]
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT===" unique_id=1425346478]
 
@@ -798,31 +800,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
 
 [node name="===PICKUPS===" type="Node3D" parent="." unique_id=232689023]
 
-[node name="Highscore" parent="." unique_id=1080435621 groups=["highscore_ui"] instance=ExtResource("20_h351q")]
-
-[node name="GetPackageArea" parent="." unique_id=1336415522 instance=ExtResource("24_he6wg")]
+[node name="GetPackageArea" parent="." unique_id=1336415522 node_paths=PackedStringArray("delivery_areas") instance=ExtResource("24_he6wg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.30215, 19.835297, -17.926296)
-
-[node name="DeliveryArea" parent="." unique_id=1448386087 instance=ExtResource("25_jqt73")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.2573, 20.015982, 6.6629167)
+delivery_areas = [NodePath("../=Area_01=/DeliveryArea_01"), NodePath("../=Area_02=/DeliveryArea_02")]
 
 [node name="NPC_Giver" parent="." unique_id=882193193 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("26_00pa0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.12973, 19.79825, -17.927784)
-point_a = NodePath("../===NPC_POINTS===/NPC1")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.12973, 19.79825, -17.927786)
+point_a = NodePath("../GiverPoint_A")
 linked_area = NodePath("../GetPackageArea")
 
-[node name="NPC_Reciever" parent="." unique_id=2045726150 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 20.00547, 25.499258)
-point_a = NodePath("../===NPC_POINTS===/NPC2")
-linked_area = NodePath("../DeliveryArea")
-
-[node name="===NPC_POINTS===" type="Node3D" parent="." unique_id=1755396391]
-
-[node name="NPC1" type="Node3D" parent="===NPC_POINTS===" unique_id=851971085]
+[node name="GiverPoint_A" type="Node3D" parent="." unique_id=851971085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.98798, 20.857956, -17.063972)
 
-[node name="NPC2" type="Node3D" parent="===NPC_POINTS===" unique_id=724000899]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.47708, 21.954039, 23.587212)
+[node name="=Area_01=" type="Node3D" parent="." unique_id=1755396391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 20.00547, 26.79616)
+
+[node name="DeliveryArea_01" parent="=Area_01=" unique_id=1448386087 instance=ExtResource("25_jqt73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
+
+[node name="NPC_Reciever_01" parent="=Area_01=" unique_id=2045726150 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2969017)
+point_a = NodePath("../NPC_Point_A_01")
+linked_area = NodePath("../DeliveryArea_01")
+
+[node name="NPC_Point_A_01" type="Node3D" parent="=Area_01=" unique_id=724000899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9268799, 1.9485683, -3.2089481)
+
+[node name="=Area_02=" type="Node3D" parent="." unique_id=1094997417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -287.46017, 20.00547, 26.79616)
+
+[node name="DeliveryArea_02" parent="=Area_02=" unique_id=1937722874 instance=ExtResource("25_jqt73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
+
+[node name="NPC_Reciever_02" parent="=Area_02=" unique_id=1475976692 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2969017)
+point_a = NodePath("../NPC_Point_A_02")
+linked_area = NodePath("../DeliveryArea_02")
+
+[node name="NPC_Point_A_02" type="Node3D" parent="=Area_02=" unique_id=1813242552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9268799, 1.9485683, -3.2089481)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
