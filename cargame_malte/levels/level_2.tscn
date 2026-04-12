@@ -33,9 +33,12 @@ sky_material = SubResource("ProceduralSkyMaterial_q04gf")
 background_mode = 2
 sky = SubResource("Sky_s8dg4")
 tonemap_mode = 2
+ssao_enabled = true
 glow_enabled = true
 fog_enabled = true
 fog_density = 0.0005
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.001
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -430,6 +433,16 @@ radius = 1.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_he6wg"]
 radius = 2.0
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ndgrd"]
+fractal_gain = -0.01
+fractal_weighted_strength = 0.33
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_h351q"]
+noise = SubResource("FastNoiseLite_ndgrd")
+
+[sub_resource type="FogMaterial" id="FogMaterial_ndgrd"]
+density_texture = SubResource("NoiseTexture3D_h351q")
+
 [node name="Level2" type="Node3D" unique_id=589024435]
 script = SubResource("GDScript_ndgrd")
 
@@ -779,6 +792,9 @@ shape = SubResource("SphereShape3D_he6wg")
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, -1.800293, -1.6909561, -0.8101425)
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=183676703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.40585, 10.107708, -35.186165)
+size = Vector3(114.81, 20, 301.83)
+material = SubResource("FogMaterial_ndgrd")
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
