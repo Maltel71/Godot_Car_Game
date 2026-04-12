@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
 var max_RPM = 900
-var max_torque = 600
+var max_torque = 800
 var turn_speed = 3
 var turn_amount = 0.3
 

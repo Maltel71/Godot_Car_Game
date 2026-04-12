@@ -446,6 +446,7 @@ shadow_enabled = true
 
 [node name="Car1_Player" parent="." unique_id=754041233 instance=ExtResource("3_ndgrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 22.9955, -36.98169)
+gravity_scale = 1.8
 
 [node name="WiggleTest" parent="Car1_Player" unique_id=1501707153 instance=ExtResource("4_h351q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
@@ -559,7 +560,7 @@ metadata/_edit_lock_ = true
 [node name="=OBSTACLES=" type="Node3D" parent="===ENVIROMENT===" unique_id=150761011]
 
 [node name="Halfpipe1" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1367933284 instance=ExtResource("13_cp3aq")]
-transform = Transform3D(-1.51366, 0, -2.56452e-07, 0, 3.36075, 0, 1.32329e-07, 0, -2.93347, -318.474, 19.442533, 43.2691)
+transform = Transform3D(-1.51366, 0, -2.56452e-07, 0, 3.36075, 0, 1.32329e-07, 0, -2.93347, -287.25565, 19.442533, 43.2691)
 
 [node name="Halfpipe2" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1232584977 instance=ExtResource("13_cp3aq")]
 transform = Transform3D(-1.51366, -5.43081e-08, -2.52033e-07, 0, 3.30284, -0.542232, 1.32329e-07, -0.621212, -2.88292, -368.544, 37.1384, 120.481)
@@ -723,11 +724,13 @@ transform = Transform3D(-1.2472363, 0, -6.2074084, 2.2758288, 5.890587, -0.45727
 [node name="===DELIVER_AREAS===" type="Node3D" parent="." unique_id=770502761]
 
 [node name="=Area_01=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1755396391]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 19.2369, 26.79616)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 18.25928, 129.99129)
 
 [node name="DeliveryArea_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1448386087 instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
 display_name = "Bosse Shrouding"
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier3D" parent="===DELIVER_AREAS===/=Area_01=/DeliveryArea_01" unique_id=190115948]
 
 [node name="NPC_Reciever_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=2045726150 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0351429, -1.1683807)
@@ -749,6 +752,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.89413, 120.00129, -44.36
 [node name="DeliveryArea_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1937722874 instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
 display_name = "Gnagge Gnagsson"
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier3D" parent="===DELIVER_AREAS===/=Area_02=/DeliveryArea_02" unique_id=1347472445]
 
 [node name="NPC_Reciever_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1475976692 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4613953, 0.58490753, -1.2969017)

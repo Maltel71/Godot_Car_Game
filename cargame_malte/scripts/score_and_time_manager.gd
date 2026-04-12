@@ -2,6 +2,7 @@ extends Node
 
 var level_score: int = 0
 var target_delivery: String = ""
+var target_delivery_node: Node3D = null
 
 @export var reference_speed: float = 5.0
 @export var very_good_multiplier: float = 0.5
@@ -33,6 +34,9 @@ func set_target_delivery(id: String):
 func get_target_delivery() -> String:
 	return target_delivery
 
+func set_target_delivery_node(node: Node3D):
+	target_delivery_node = node
+
 func start_delivery(distance: float):
 	base_delivery_time = distance / reference_speed
 	delivery_timer = 0.0
@@ -40,6 +44,7 @@ func start_delivery(distance: float):
 
 func complete_delivery() -> int:
 	is_delivering = false
+	target_delivery_node = null
 	var payout: int
 	if delivery_timer <= base_delivery_time * very_good_multiplier:
 		payout = very_good_payout
@@ -55,5 +60,6 @@ func complete_delivery() -> int:
 func reset():
 	level_score = 0
 	target_delivery = ""
+	target_delivery_node = null
 	delivery_timer = 0.0
 	is_delivering = false
