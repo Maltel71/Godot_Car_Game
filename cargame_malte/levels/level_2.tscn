@@ -721,6 +721,15 @@ transform = Transform3D(1.0802932, 0, -6.4604244, 0, 6.5501227, 0, 6.4604244, 0,
 [node name="Package_08" parent="===POSTOFFICE===/=HOUSE=" unique_id=481006971 instance=ExtResource("25_00pa0")]
 transform = Transform3D(-1.2472363, 0, -6.2074084, 2.2758288, 5.890587, -0.45727563, 5.7751637, -2.3213139, -1.1603867, -2.4558105, 0.2300396, -1.2435265)
 
+[node name="Package_13" parent="===POSTOFFICE===/=HOUSE=" unique_id=2049792261 instance=ExtResource("25_00pa0")]
+transform = Transform3D(9.671, 0, 0, 0, 9.671, 0, 0, 0, 9.671, -56.59668, 58.01584, -143.34735)
+
+[node name="Package_14" parent="===POSTOFFICE===/=HOUSE=" unique_id=1787567451 instance=ExtResource("25_00pa0")]
+transform = Transform3D(3.2419624, 0, 0, 0, 10.014374, 0, 0, 0, 3.2419624, -53.97943, 61.545715, -145.79225)
+
+[node name="HamsterHouse_01" parent="===POSTOFFICE===/=HOUSE=" unique_id=1088232959 instance=ExtResource("25_he6wg")]
+transform = Transform3D(0.094002254, 0, 1.5221002, 0, 1.5250002, 0, -1.5221002, 0, 0.094002254, -50.855377, 56.94037, -143.1209)
+
 [node name="===DELIVER_AREAS===" type="Node3D" parent="." unique_id=770502761]
 
 [node name="=Area_01=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1755396391]
@@ -768,6 +777,8 @@ shape = SubResource("SphereShape3D_he6wg")
 
 [node name="HamsterHouse_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1356105675 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, -1.800293, -1.6909561, -0.8101425)
+
+[node name="FogVolume" type="FogVolume" parent="." unique_id=183676703]
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
