@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
 [ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
+[ext_resource type="PackedScene" uid="uid://c0bo5hs3easkh" path="res://level_components/test_cube.tscn" id="24_xrja0"]
 [ext_resource type="PackedScene" uid="uid://vvt8c25evg6t" path="res://level_components/delivery_area.tscn" id="25_jqt73"]
 [ext_resource type="PackedScene" uid="uid://dh3nmimchv1p3" path="res://level_components/npc_giver.tscn" id="26_00pa0"]
 [ext_resource type="PackedScene" uid="uid://bixf6jy6ch7p2" path="res://level_components/npc_receiver.tscn" id="27_amxoe"]
@@ -554,6 +555,7 @@ script = ExtResource("10_jqt73")
 data_directory = "res://terraindata"
 material = SubResource("Terrain3DMaterial_s8dg4")
 assets = ExtResource("2_k2aru")
+collision_mode = 3
 top_level = true
 metadata/_edit_lock_ = true
 
@@ -707,6 +709,83 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_002")
 next_pt_init = NodePath("../RP_011")
 
+[node name="=OBSTACLES=" type="Node3D" parent="===ENVIROMENT===" unique_id=150761011]
+
+[node name="Halfpipe1" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1367933284 instance=ExtResource("13_cp3aq")]
+transform = Transform3D(-1.51366, 0, -2.56452e-07, 0, 3.36075, 0, 1.32329e-07, 0, -2.93347, -318.474, 19.9784, 43.2691)
+
+[node name="Halfpipe2" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1232584977 instance=ExtResource("13_cp3aq")]
+transform = Transform3D(-1.51366, -5.43081e-08, -2.52033e-07, 0, 3.30284, -0.542232, 1.32329e-07, -0.621212, -2.88292, -368.544, 37.1384, 120.481)
+
+[node name="Halfpipe3" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=738940451 instance=ExtResource("13_cp3aq")]
+transform = Transform3D(-1.51366, 2.64848e-07, -1.11019e-07, 0, 1.45488, 2.64434, 1.32329e-07, 3.02951, -1.26991, -358.211, 61.3307, 133.665)
+
+[node name="Halfpipe4" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1022407926 instance=ExtResource("13_cp3aq")]
+transform = Transform3D(-1.51366, 1.16981e-07, -2.35248e-07, 7.10543e-15, 3.08287, 1.16798, 1.32329e-07, 1.3381, -2.69092, -358.211, 40.287, 223.014)
+
+[node name="LargeRoadBump" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=333946398 instance=ExtResource("14_wgvos")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -333.629, 27.6663, 300.356)
+
+[node name="LargeRoadBump2" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=670448765 instance=ExtResource("14_wgvos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.658, 19.7355, 107.298)
+
+[node name="StaticBody3D" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1069539415 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 24.7946, 58.8504)
+
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" unique_id=1387054062 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
+
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" unique_id=1317933123 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
+
+[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" unique_id=2001027527 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
+
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=849422891 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 34.3249, 102.838)
+
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" unique_id=980052525 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
+
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" unique_id=1416178129 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
+
+[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" unique_id=808351444 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
+
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1470922996 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 43.0507, 138.474)
+
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" unique_id=85750239 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
+
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" unique_id=175176165 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
+
+[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" unique_id=1639373642 instance=ExtResource("15_m4706")]
+transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
+
+[node name="ramp4" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1196135749 instance=ExtResource("16_4xp61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.62, 19.9535, 40.313)
+
+[node name="ramp8" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=527806041 instance=ExtResource("16_4xp61")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.756, 26.4191, 251.402)
+
+[node name="ramp7" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1769396833 instance=ExtResource("16_4xp61")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -342.939, 19.4101, 40.313)
+
+[node name="ramp9" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=640988393 instance=ExtResource("16_4xp61")]
+transform = Transform3D(-1.6744175, 0, -0.044167757, 0, 1.675, 0, 0.044167757, 0, -1.6744175, -333.198, 19.4101, 12.222883)
+
+[node name="ramp6" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=709815084 instance=ExtResource("16_4xp61")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -332.045, 10.14, 158.863)
+
+[node name="ramp5" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1693440710 instance=ExtResource("16_4xp61")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -326.62, 19.8199, 51.0116)
+
+[node name="Rock1" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=883233221 instance=ExtResource("17_4yoxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
+
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT===" unique_id=1425346478]
 
 [node name="flask2" parent="===ENVIROMENT===/=PHYSICS_OBJ=" unique_id=1235375244 instance=ExtResource("11_00pa0")]
@@ -723,81 +802,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -336.068, 26.056, 42.8672)
 [node name="Streetlamp" parent="===ENVIROMENT===/=LIGHTS=" unique_id=926926184 instance=ExtResource("12_amxoe")]
 transform = Transform3D(-2.08616e-07, 0, -1, 0, 1, 0, 1, 0, -2.08616e-07, -313.909, 19.9312, 19.0306)
 
-[node name="Halfpipe1" parent="===ENVIROMENT===" unique_id=1367933284 instance=ExtResource("13_cp3aq")]
-transform = Transform3D(-1.51366, 0, -2.56452e-07, 0, 3.36075, 0, 1.32329e-07, 0, -2.93347, -318.474, 19.9784, 43.2691)
-
-[node name="Halfpipe2" parent="===ENVIROMENT===" unique_id=1232584977 instance=ExtResource("13_cp3aq")]
-transform = Transform3D(-1.51366, -5.43081e-08, -2.52033e-07, 0, 3.30284, -0.542232, 1.32329e-07, -0.621212, -2.88292, -368.544, 37.1384, 120.481)
-
-[node name="Halfpipe3" parent="===ENVIROMENT===" unique_id=738940451 instance=ExtResource("13_cp3aq")]
-transform = Transform3D(-1.51366, 2.64848e-07, -1.11019e-07, 0, 1.45488, 2.64434, 1.32329e-07, 3.02951, -1.26991, -358.211, 61.3307, 133.665)
-
-[node name="Halfpipe4" parent="===ENVIROMENT===" unique_id=1022407926 instance=ExtResource("13_cp3aq")]
-transform = Transform3D(-1.51366, 1.16981e-07, -2.35248e-07, 7.10543e-15, 3.08287, 1.16798, 1.32329e-07, 1.3381, -2.69092, -358.211, 40.287, 223.014)
-
-[node name="LargeRoadBump" parent="===ENVIROMENT===" unique_id=333946398 instance=ExtResource("14_wgvos")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -333.629, 27.6663, 300.356)
-
-[node name="LargeRoadBump2" parent="===ENVIROMENT===" unique_id=670448765 instance=ExtResource("14_wgvos")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.658, 19.7355, 107.298)
-
-[node name="StaticBody3D" parent="===ENVIROMENT===" unique_id=1069539415 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 24.7946, 58.8504)
-
-[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D" unique_id=1387054062 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
-
-[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D" unique_id=1317933123 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
-
-[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D" unique_id=2001027527 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
-
-[node name="StaticBody3D2" parent="===ENVIROMENT===" unique_id=849422891 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 34.3249, 102.838)
-
-[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D2" unique_id=980052525 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
-
-[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D2" unique_id=1416178129 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
-
-[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D2" unique_id=808351444 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
-
-[node name="StaticBody3D3" parent="===ENVIROMENT===" unique_id=1470922996 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 43.0507, 138.474)
-
-[node name="StaticBody3D2" parent="===ENVIROMENT===/StaticBody3D3" unique_id=85750239 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
-
-[node name="StaticBody3D3" parent="===ENVIROMENT===/StaticBody3D3" unique_id=175176165 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
-
-[node name="StaticBody3D4" parent="===ENVIROMENT===/StaticBody3D3" unique_id=1639373642 instance=ExtResource("15_m4706")]
-transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
-
-[node name="ramp4" parent="===ENVIROMENT===" unique_id=1196135749 instance=ExtResource("16_4xp61")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.62, 19.9535, 40.313)
-
-[node name="ramp8" parent="===ENVIROMENT===" unique_id=527806041 instance=ExtResource("16_4xp61")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.756, 26.4191, 251.402)
-
-[node name="ramp7" parent="===ENVIROMENT===" unique_id=1769396833 instance=ExtResource("16_4xp61")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -342.939, 19.4101, 40.313)
-
-[node name="ramp9" parent="===ENVIROMENT===" unique_id=640988393 instance=ExtResource("16_4xp61")]
-transform = Transform3D(-1.6744175, 0, -0.044167757, 0, 1.675, 0, 0.044167757, 0, -1.6744175, -333.198, 19.4101, 12.222883)
-
-[node name="ramp6" parent="===ENVIROMENT===" unique_id=709815084 instance=ExtResource("16_4xp61")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -332.045, 10.14, 158.863)
-
-[node name="ramp5" parent="===ENVIROMENT===" unique_id=1693440710 instance=ExtResource("16_4xp61")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -326.62, 19.8199, 51.0116)
-
-[node name="Rock1" parent="===ENVIROMENT===" unique_id=883233221 instance=ExtResource("17_4yoxl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
-
 [node name="===PICKUPS===" type="Node3D" parent="." unique_id=232689023]
 
 [node name="GetPackageArea" parent="." unique_id=1336415522 node_paths=PackedStringArray("delivery_areas") instance=ExtResource("24_he6wg")]
@@ -811,6 +815,12 @@ linked_area = NodePath("../GetPackageArea")
 
 [node name="GiverPoint_A" type="Node3D" parent="." unique_id=851971085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.98798, 20.857956, -17.063972)
+
+[node name="TestCube" parent="." unique_id=1571242530 instance=ExtResource("24_xrja0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.04913, 25.671436, 28.606083)
+
+[node name="TestCube2" parent="." unique_id=1326596595 instance=ExtResource("24_xrja0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.04913, 35.671436, 34.887333)
 
 [node name="=Area_01=" type="Node3D" parent="." unique_id=1755396391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 20.00547, 26.79616)
@@ -833,7 +843,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -287.46017, 20.00547, 26.7961
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
 
 [node name="NPC_Reciever_02" parent="=Area_02=" unique_id=1475976692 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2969017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.865265, 4.9065323, -1.2969017)
 point_a = NodePath("../NPC_Point_A_02")
 linked_area = NodePath("../DeliveryArea_02")
 

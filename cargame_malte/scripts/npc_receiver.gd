@@ -13,19 +13,36 @@ func _ready():
 	$TouchArea.body_entered.connect(_on_body_entered)
 
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y -= 9.8 * delta
+	else:
+		velocity.y = 0.0
+
 	if car != null and not returning:
 		_move_toward(car.global_position, delta)
 	elif returning:
 		_move_toward(point_a.global_position, delta)
-		if global_position.distance_to(point_a.global_position) < 0.3:
+		if global_position.distance_to(point_a.global_position) < 1.5:
 			returning = false
+			velocity.x = 0.0
+			velocity.z = 0.0
+	else:
+		velocity.x = 0.0
+		velocity.z = 0.0
+
+	move_and_slide()
 
 func _move_toward(target: Vector3, delta: float):
 	var dir = (target - global_position)
 	dir.y = 0.0
-	dir = dir.normalized()
-	velocity = dir * move_speed
-	move_and_slide()
+	if dir.length() > 1.5:
+		dir = dir.normalized()
+		velocity.x = dir.x * move_speed
+		velocity.z = dir.z * move_speed
+		look_at(global_position + dir, Vector3.UP)
+	else:
+		velocity.x = 0.0
+		velocity.z = 0.0
 
 func _on_area_body_entered(body):
 	if body is VehicleBody3D and body.HasPackage and body.assigned_delivery_id == linked_area.name:

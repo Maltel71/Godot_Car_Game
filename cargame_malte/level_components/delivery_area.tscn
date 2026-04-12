@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bgq0hfw05qtp0" path="res://scripts/delivery_area.gd" id="1_8d1xe"]
 [ext_resource type="AudioStream" uid="uid://cdbwupu6r0c4l" path="res://audio/sfx/power_up/powerUp (1).wav" id="2_eoej7"]
+[ext_resource type="Material" uid="uid://dlf5xhiq30xoh" path="res://materials/TranspArea_01.tres" id="3_eoej7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e1d7v"]
 radius = 10.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8d1xe"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dertx"]
+radius = 10.0
+height = 20.0
 
 [node name="DeliveryArea" type="Area3D" unique_id=1336415522]
 script = ExtResource("1_8d1xe")
@@ -19,3 +24,8 @@ shape = SubResource("SphereShape3D_e1d7v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1795288670]
 mesh = SubResource("CylinderMesh_8d1xe")
+
+[node name="Mesh_Sphere" type="MeshInstance3D" parent="." unique_id=145958608]
+transform = Transform3D(0.9943562, 0, 0, 0, 0.9943562, 0, 0, 0, 0.9943562, 0, 0, 0)
+material_override = ExtResource("3_eoej7")
+mesh = SubResource("SphereMesh_dertx")
