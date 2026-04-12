@@ -28,8 +28,9 @@ func _move_toward(target: Vector3, delta: float):
 	move_and_slide()
 
 func _on_area_body_entered(body):
-	if body is VehicleBody3D:
+	if body is VehicleBody3D and not body.HasPackage:
 		car = body
+		returning = false
 
 func _on_area_body_exited(body):
 	if body is VehicleBody3D:
