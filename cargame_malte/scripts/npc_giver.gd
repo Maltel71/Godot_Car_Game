@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var point_a: Area3D
 @export var linked_area: Area3D
 @export var move_speed: float = 3.0
-@export var package_mesh: MeshInstance3D
+@export var package_mesh: Node3D
 
 var car: VehicleBody3D = null
 var returning: bool = false

@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://bixf6jy6ch7p2"]
 
 [ext_resource type="Script" uid="uid://di35ch8men74b" path="res://scripts/npc_receiver.gd" id="1_s6nld"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="2_8tgar"]
+[ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="3_pniom"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wrhms"]
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_l2vm4"]
 radius = 1.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_s6nld"]
 
 [node name="NPC_Reciever" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("package_mesh")]
 script = ExtResource("1_s6nld")
@@ -20,21 +18,14 @@ package_mesh = NodePath("PackageMesh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_l2vm4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1468327011]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_wrhms")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=693237114]
-transform = Transform3D(0.837727, 0, 0, 0, -1.5911109e-08, -0.50494975, 0, 0.36400375, -2.2072054e-08, 0, 0.48675787, -0.46960437)
-mesh = SubResource("CapsuleMesh_wrhms")
-skeleton = NodePath("../..")
-
 [node name="TouchArea" type="Area3D" parent="." unique_id=1099626848]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TouchArea" unique_id=2010793040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_l2vm4")
 
-[node name="PackageMesh" type="MeshInstance3D" parent="." unique_id=1332558948]
+[node name="lowpolyhamster_01" parent="." unique_id=975115071 instance=ExtResource("2_8tgar")]
+transform = Transform3D(-1.255, 0, -1.09715586e-07, 0, 1.255, 0, 1.09715586e-07, 0, -1.255, 0, 0, 0)
+
+[node name="PackageMesh" parent="." unique_id=1826512157 instance=ExtResource("3_pniom")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80688083, -1.1028403)
-mesh = SubResource("BoxMesh_s6nld")

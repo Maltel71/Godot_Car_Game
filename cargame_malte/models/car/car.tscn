@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="11_i00a5"]
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="12_i00a5"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="13_utifk"]
+[ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="14_i00a5"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
@@ -100,8 +101,6 @@ scale_max = 1.1999999
 scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
-
-[sub_resource type="BoxMesh" id="BoxMesh_b751l"]
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles")]
 mass = 240.0
@@ -298,6 +297,5 @@ driving_sounds = Array[AudioStream]([ExtResource("14_jpt3o")])
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=248696536]
 bus = &"sfx"
 
-[node name="PackageMesh" type="MeshInstance3D" parent="." unique_id=1825445116]
+[node name="PackageMesh" parent="." unique_id=1826512157 instance=ExtResource("14_i00a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47323775, -2.1615758)
-mesh = SubResource("BoxMesh_b751l")

@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://dh3nmimchv1p3"]
 
 [ext_resource type="Script" uid="uid://b4vxtd2swg7ua" path="res://scripts/npc_giver.gd" id="1_wrhms"]
+[ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="2_py3y0"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="3_bxcs6"]
+[ext_resource type="Material" uid="uid://jpaqr4j2b6tg" path="res://materials/blue_mat.tres" id="4_wlsky"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wrhms"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l2vm4"]
 radius = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_wrhms"]
+[sub_resource type="SphereMesh" id="SphereMesh_7hddn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jnl0h"]
 
 [node name="NPC_Giver" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("package_mesh")]
 script = ExtResource("1_wrhms")
@@ -20,21 +23,25 @@ package_mesh = NodePath("PackageMesh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_l2vm4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1468327011]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_wrhms")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=693237114]
-transform = Transform3D(0.837727, 0, 0, 0, -1.5911109e-08, -0.50494975, 0, 0.36400375, -2.2072054e-08, 0, 0.48675787, -0.46960437)
-mesh = SubResource("CapsuleMesh_wrhms")
-skeleton = NodePath("../..")
-
 [node name="TouchArea" type="Area3D" parent="." unique_id=1099626848]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TouchArea" unique_id=2010793040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_l2vm4")
 
-[node name="PackageMesh" type="MeshInstance3D" parent="." unique_id=1179006658]
+[node name="PackageMesh" parent="." unique_id=1826512157 instance=ExtResource("2_py3y0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80688083, -1.1028403)
-mesh = SubResource("BoxMesh_wrhms")
+
+[node name="lowpolyhamster_01" parent="." unique_id=975115071 instance=ExtResource("3_bxcs6")]
+transform = Transform3D(-1.255, 0, -1.09715586e-07, 0, 1.255, 0, 1.09715586e-07, 0, -1.255, 0, 0, 0)
+
+[node name="hat2" type="MeshInstance3D" parent="." unique_id=1319565663]
+transform = Transform3D(0.6523432, 0, 0, 0, 0.6523432, 0, 0, 0, 0.6523432, 0, 1.9031909, 0)
+material_override = ExtResource("4_wlsky")
+mesh = SubResource("SphereMesh_7hddn")
+
+[node name="hat" type="MeshInstance3D" parent="hat2" unique_id=544724559]
+transform = Transform3D(0.66548944, 0, 0, 0, 0.15901202, -0.1285687, 0, 0.03447259, 0.59305006, 0, 0.039952993, -0.7348975)
+material_override = ExtResource("4_wlsky")
+mesh = SubResource("BoxMesh_jnl0h")
+skeleton = NodePath("../..")
