@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_eki7a"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_8fwp6"]
 
-[node name="Highscore" type="CanvasLayer" unique_id=83232620]
+[node name="HUD_Player" type="CanvasLayer" unique_id=83232620]
 script = ExtResource("1_i1glq")
 
 [node name="Panel" type="Panel" parent="." unique_id=146702254]
@@ -20,16 +20,22 @@ theme = ExtResource("2_eki7a")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1859040254]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 5.0
-offset_right = 1705.0
-offset_bottom = 89.0
+offset_left = 18.999994
+offset_top = -16.000002
+offset_right = 1926.0
+offset_bottom = 176.0
+scale = Vector2(0.70071614, 0.70071614)
 theme_override_constants/separation = 74
 
 [node name="TimerLabel" type="Label" parent="Panel/HBoxContainer" unique_id=1082840315]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Timer: 00:00:00"
+
+[node name="DeliveryStatus" type="Label" parent="Panel/HBoxContainer" unique_id=1804283853]
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "DeliveryStatus"
 
 [node name="ScoreLabel" type="Label" parent="Panel/HBoxContainer" unique_id=537820615]
 layout_mode = 2

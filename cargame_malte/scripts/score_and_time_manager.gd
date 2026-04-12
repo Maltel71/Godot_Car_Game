@@ -1,38 +1,28 @@
 extends Node
 
-var level_time: float = 0.0
-var max_time: float = 60.0
 var level_score: int = 0
-var is_timing: bool = false
 var target_delivery: String = ""
 
-func _ready():
-	pass
+@export var reference_speed: float = 5.0
+@export var very_good_multiplier: float = 0.5
+@export var good_multiplier: float = 1.0
+@export var bad_multiplier: float = 1.5
+@export var very_bad_multiplier: float = 2.0
+@export var very_good_payout: int = 100
+@export var good_payout: int = 50
+@export var bad_payout: int = 20
+@export var very_bad_payout: int = 3
+
+var delivery_timer: float = 0.0
+var base_delivery_time: float = 0.0
+var is_delivering: bool = false
 
 func _process(delta):
-	if is_timing:
-		level_time -= delta
-		if level_time <= 0.0:
-			level_time = 0.0
-			times_up()
-
-func start_timer(duration: float = 60.0):
-	max_time = duration
-	level_time = duration
-	level_score = 0
-	is_timing = true
-
-func stop_timer():
-	is_timing = false
-
-func add_time(seconds: float):
-	level_time += seconds
+	if is_delivering:
+		delivery_timer += delta
 
 func add_score(points: int):
 	level_score += points
-
-func get_time() -> float:
-	return level_time
 
 func get_score() -> int:
 	return level_score
@@ -43,23 +33,27 @@ func set_target_delivery(id: String):
 func get_target_delivery() -> String:
 	return target_delivery
 
-func reset():
-	level_time = 0.0
-	level_score = 0
-	is_timing = false
-	target_delivery = ""
+func start_delivery(distance: float):
+	base_delivery_time = distance / reference_speed
+	delivery_timer = 0.0
+	is_delivering = true
 
-func times_up():
-	is_timing = false
-	set_process(false)
-	var scene_tree = Engine.get_main_loop() as SceneTree
-	if scene_tree:
-		var highscore_ui = scene_tree.get_first_node_in_group("highscore_ui")
-		if highscore_ui:
-			highscore_ui.hide()
-		scene_tree.paused = true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		var times_up_scene = load("res://menus/timeisup_menu.tscn")
-		if times_up_scene:
-			var times_up_menu = times_up_scene.instantiate()
-			scene_tree.current_scene.add_child(times_up_menu)
+func complete_delivery() -> int:
+	is_delivering = false
+	var payout: int
+	if delivery_timer <= base_delivery_time * very_good_multiplier:
+		payout = very_good_payout
+	elif delivery_timer <= base_delivery_time * good_multiplier:
+		payout = good_payout
+	elif delivery_timer <= base_delivery_time * bad_multiplier:
+		payout = bad_payout
+	else:
+		payout = very_bad_payout
+	add_score(payout)
+	return payout
+
+func reset():
+	level_score = 0
+	target_delivery = ""
+	delivery_timer = 0.0
+	is_delivering = false

@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dj445fvglwlav"]
 
-[ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="2_k2aru"]
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/car/car.tscn" id="3_ndgrd"]
@@ -13,13 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/_scene_prefabs/box1.tscn" id="15_m4706"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/_scene_prefabs/ramp_1.tscn" id="16_4xp61"]
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
-[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/highscore.tscn" id="20_h351q"]
+[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/hud_player.tscn" id="20_h351q"]
 [ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="25_00pa0"]
 [ext_resource type="PackedScene" uid="uid://cnyvud1uoflv3" path="res://models/LowpolyHamsterStuff/HamsterHouse_01.glb" id="25_he6wg"]
 [ext_resource type="PackedScene" uid="uid://vvt8c25evg6t" path="res://level_components/delivery_area.tscn" id="25_jqt73"]
 [ext_resource type="PackedScene" uid="uid://dh3nmimchv1p3" path="res://level_components/npc_giver.tscn" id="26_00pa0"]
 [ext_resource type="PackedScene" uid="uid://bixf6jy6ch7p2" path="res://level_components/npc_receiver.tscn" id="27_amxoe"]
+
+[sub_resource type="GDScript" id="GDScript_ndgrd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -430,8 +431,7 @@ radius = 1.0
 radius = 2.0
 
 [node name="Level2" type="Node3D" unique_id=589024435]
-script = ExtResource("1_dpc8t")
-level_start_time = 9000.0
+script = SubResource("GDScript_ndgrd")
 
 [node name="EscMenu" parent="." unique_id=841350275 instance=ExtResource("1_uo0vl")]
 
@@ -670,52 +670,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3178711, -0.19701958, 0.52
 [node name="CollisionShape3D" type="CollisionShape3D" parent="===POSTOFFICE===/GiverPoint_A" unique_id=869943017]
 shape = SubResource("SphereShape3D_jqt73")
 
-[node name="HamsterHouse_02" parent="===POSTOFFICE===" unique_id=73723418 instance=ExtResource("25_he6wg")]
+[node name="=HOUSE=" type="Node3D" parent="===POSTOFFICE===" unique_id=394954908]
+
+[node name="HamsterHouse_02" parent="===POSTOFFICE===/=HOUSE=" unique_id=73723418 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -1.5339661, -1.2906113, 0.47280693)
 
-[node name="HamsterHouse_03" parent="===POSTOFFICE===" unique_id=64732216 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_03" parent="===POSTOFFICE===/=HOUSE=" unique_id=64732216 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -4.6250305, -1.2906113, 0.47280693)
 
-[node name="HamsterHouse_04" parent="===POSTOFFICE===" unique_id=826929046 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_04" parent="===POSTOFFICE===/=HOUSE=" unique_id=826929046 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -7.768524, -1.2906113, 0.47280693)
 
-[node name="Streetlamp" parent="===POSTOFFICE===" unique_id=480650928 instance=ExtResource("12_amxoe")]
+[node name="Streetlamp" parent="===POSTOFFICE===/=HOUSE=" unique_id=480650928 instance=ExtResource("12_amxoe")]
 transform = Transform3D(0.032712966, 0.00020267731, 0.9994648, -0.00040234852, 0.99999994, -0.00018963942, -0.99946475, -0.0003959411, 0.032713033, -7.3261414, 5.7828865, 0.51693726)
 
-[node name="Package_01" parent="===POSTOFFICE===" unique_id=1826512157 instance=ExtResource("25_00pa0")]
+[node name="Package_01" parent="===POSTOFFICE===/=HOUSE=" unique_id=1826512157 instance=ExtResource("25_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4645691, -0.64884186, 2.636446)
 
-[node name="Package_02" parent="===POSTOFFICE===" unique_id=1033434627 instance=ExtResource("25_00pa0")]
+[node name="Package_02" parent="===POSTOFFICE===/=HOUSE=" unique_id=1033434627 instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.7553619, 0, -0.6553079, 0, 1, 0, 0.6553079, 0, 0.7553619, 0.50064087, -0.64884186, 3.750368)
 
-[node name="Package_03" parent="===POSTOFFICE===" unique_id=102589706 instance=ExtResource("25_00pa0")]
+[node name="Package_03" parent="===POSTOFFICE===/=HOUSE=" unique_id=102589706 instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.8728199, 0, 0.48804247, 0, 1, 0, -0.48804247, 0, 0.8728199, 2.8477783, -0.64884186, 2.9972773)
 
-[node name="Package_10" parent="===POSTOFFICE===" unique_id=251277545 instance=ExtResource("25_00pa0")]
+[node name="Package_10" parent="===POSTOFFICE===/=HOUSE=" unique_id=251277545 instance=ExtResource("25_00pa0")]
 transform = Transform3D(-0.10707973, 0, 0.9942504, 0, 1, 0, -0.9942504, 0, -0.10707973, 1.9673157, -0.9369068, -2.8500767)
 
-[node name="Package_11" parent="===POSTOFFICE===" unique_id=1364349598 instance=ExtResource("25_00pa0")]
+[node name="Package_11" parent="===POSTOFFICE===/=HOUSE=" unique_id=1364349598 instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.5706562, 0, 0.82118905, 0, 1, 0, -0.82118905, 0, 0.5706562, 3.1780396, -0.9369068, -2.0109692)
 
-[node name="Package_12" parent="===POSTOFFICE===" unique_id=932380316 instance=ExtResource("25_00pa0")]
+[node name="Package_12" parent="===POSTOFFICE===/=HOUSE=" unique_id=932380316 instance=ExtResource("25_00pa0")]
 transform = Transform3D(-0.57869774, 0, 0.8155421, 0, 1, 0, -0.8155421, 0, -0.57869774, 2.177948, -0.9369068, -4.2639713)
 
-[node name="Package_04" parent="===POSTOFFICE===" unique_id=2108418412 instance=ExtResource("25_00pa0")]
+[node name="Package_04" parent="===POSTOFFICE===/=HOUSE=" unique_id=2108418412 instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.96935534, 0, -0.24566269, 0, 1, 0, 0.24566269, 0, 0.96935534, 2.1418457, 0.292902, 2.7903595)
 
-[node name="Package_05" parent="===POSTOFFICE===" unique_id=911178673 instance=ExtResource("25_00pa0")]
+[node name="Package_05" parent="===POSTOFFICE===/=HOUSE=" unique_id=911178673 instance=ExtResource("25_00pa0")]
 transform = Transform3D(5.282077, 0, -1.338631, 0, 5.4490614, 0, 1.338631, 0, 5.282077, -5.2987976, 0.292902, 3.6911087)
 
-[node name="Package_09" parent="===POSTOFFICE===" unique_id=1850022676 instance=ExtResource("25_00pa0")]
+[node name="Package_09" parent="===POSTOFFICE===/=HOUSE=" unique_id=1850022676 instance=ExtResource("25_00pa0")]
 transform = Transform3D(5.4215016, 0, 0.54735005, 0, 5.4490614, 0, -0.54735005, 0, 5.4215016, -5.2987976, 4.097124, 0.31132126)
 
-[node name="Package_06" parent="===POSTOFFICE===" unique_id=1276677485 instance=ExtResource("25_00pa0")]
+[node name="Package_06" parent="===POSTOFFICE===/=HOUSE=" unique_id=1276677485 instance=ExtResource("25_00pa0")]
 transform = Transform3D(2.8885958, -2.2855453, -5.617705, 1.0451437, 6.316849, -2.0325825, 5.9741106, 0, 3.071858, -9.152954, 0.292902, 3.6911087)
 
-[node name="Package_07" parent="===POSTOFFICE===" unique_id=1612196964 instance=ExtResource("25_00pa0")]
+[node name="Package_07" parent="===POSTOFFICE===/=HOUSE=" unique_id=1612196964 instance=ExtResource("25_00pa0")]
 transform = Transform3D(1.0802932, 0, -6.4604244, 0, 6.5501227, 0, 6.4604244, 0, 1.0802932, -9.188843, 0.292902, -1.924406)
 
-[node name="Package_08" parent="===POSTOFFICE===" unique_id=481006971 instance=ExtResource("25_00pa0")]
+[node name="Package_08" parent="===POSTOFFICE===/=HOUSE=" unique_id=481006971 instance=ExtResource("25_00pa0")]
 transform = Transform3D(-1.2472363, 0, -6.2074084, 2.2758288, 5.890587, -0.45727563, 5.7751637, -2.3213139, -1.1603867, -2.4558105, 0.2300396, -1.2435265)
 
 [node name="===DELIVER_AREAS===" type="Node3D" parent="." unique_id=770502761]

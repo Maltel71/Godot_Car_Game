@@ -70,6 +70,7 @@ func _on_body_entered(body):
 		linked_area.play_delivery_sound()
 		has_package = true
 		var manager = get_node("/root/ScoreAndTimeManager")
+		manager.complete_delivery()
 		manager.set_target_delivery("")
 		car = null
 		returning = true
