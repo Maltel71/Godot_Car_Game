@@ -37,12 +37,13 @@ layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "DeliveryStatus"
 
-[node name="ScoreLabel" type="Label" parent="Panel/HBoxContainer" unique_id=537820615]
-layout_mode = 2
-theme = ExtResource("3_8fwp6")
-text = "Score:1000"
-
 [node name="DeliveryLabel" type="Label" parent="Panel/HBoxContainer" unique_id=60870066]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "DeliveryArea_01"
+
+[node name="ScoreLabel" type="Label" parent="Panel/HBoxContainer" unique_id=537820615]
+modulate = Color(0.96429783, 0.9967267, 0.75552636, 1)
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "Score:1000"
