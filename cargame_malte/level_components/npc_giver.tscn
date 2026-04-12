@@ -9,9 +9,12 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_l2vm4"]
 radius = 1.0
 
-[node name="NPC_Giver" type="CharacterBody3D" unique_id=882193193]
+[sub_resource type="BoxMesh" id="BoxMesh_wrhms"]
+
+[node name="NPC_Giver" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("package_mesh")]
 script = ExtResource("1_wrhms")
 move_speed = 6.0
+package_mesh = NodePath("PackageMesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -31,3 +34,7 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TouchArea" unique_id=2010793040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_l2vm4")
+
+[node name="PackageMesh" type="MeshInstance3D" parent="." unique_id=1179006658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80688083, -1.1028403)
+mesh = SubResource("BoxMesh_wrhms")

@@ -9,7 +9,7 @@ func play_pickup_sound(car: VehicleBody3D):
 		var picked = delivery_areas.pick_random()
 		car.assigned_delivery_id = picked.name
 		var manager = get_node("/root/ScoreAndTimeManager")
-		manager.set_target_delivery(picked.name)
+		manager.set_target_delivery(picked.display_name)
 	if pickup_sound:
 		audio_player.stream = pickup_sound
 		audio_player.play()

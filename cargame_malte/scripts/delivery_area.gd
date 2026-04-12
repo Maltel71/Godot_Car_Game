@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var display_name: String = "House 1"
 @export var delivery_sound: AudioStream
 @onready var audio_player = $AudioStreamPlayer3D
 

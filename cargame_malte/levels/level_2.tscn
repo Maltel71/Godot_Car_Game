@@ -432,6 +432,12 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_jqt73"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrja0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_he6wg"]
+
 [node name="Level2" type="Node3D" unique_id=589024435]
 script = ExtResource("1_dpc8t")
 level_start_time = 9000.0
@@ -806,15 +812,18 @@ transform = Transform3D(-2.08616e-07, 0, -1, 0, 1, 0, 1, 0, -2.08616e-07, -313.9
 
 [node name="GetPackageArea" parent="." unique_id=1336415522 node_paths=PackedStringArray("delivery_areas") instance=ExtResource("24_he6wg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.30215, 19.835297, -17.926296)
-delivery_areas = [NodePath("../=Area_01=/DeliveryArea_01"), NodePath("../=Area_02=/DeliveryArea_02")]
+delivery_areas = [NodePath("../===DELIVER_AREAS===/=Area_01=/DeliveryArea_01"), NodePath("../===DELIVER_AREAS===/=Area_02=/DeliveryArea_02")]
 
 [node name="NPC_Giver" parent="." unique_id=882193193 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("26_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.12973, 19.79825, -17.927786)
 point_a = NodePath("../GiverPoint_A")
 linked_area = NodePath("../GetPackageArea")
 
-[node name="GiverPoint_A" type="Node3D" parent="." unique_id=851971085]
+[node name="GiverPoint_A" type="Area3D" parent="." unique_id=1469691189]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.98798, 20.857956, -17.063972)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GiverPoint_A" unique_id=869943017]
+shape = SubResource("SphereShape3D_jqt73")
 
 [node name="TestCube" parent="." unique_id=1571242530 instance=ExtResource("24_xrja0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.04913, 25.671436, 28.606083)
@@ -822,33 +831,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.04913, 25.671436, 28.606
 [node name="TestCube2" parent="." unique_id=1326596595 instance=ExtResource("24_xrja0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -304.04913, 35.671436, 34.887333)
 
-[node name="=Area_01=" type="Node3D" parent="." unique_id=1755396391]
+[node name="===DELIVER_AREAS===" type="Node3D" parent="." unique_id=770502761]
+
+[node name="=Area_01=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1755396391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 20.00547, 26.79616)
 
-[node name="DeliveryArea_01" parent="=Area_01=" unique_id=1448386087 instance=ExtResource("25_jqt73")]
+[node name="DeliveryArea_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1448386087 instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
+display_name = "Bosse Shrouding"
 
-[node name="NPC_Reciever_01" parent="=Area_01=" unique_id=2045726150 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
+[node name="NPC_Reciever_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=2045726150 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2969017)
 point_a = NodePath("../NPC_Point_A_01")
 linked_area = NodePath("../DeliveryArea_01")
 
-[node name="NPC_Point_A_01" type="Node3D" parent="=Area_01=" unique_id=724000899]
+[node name="NPC_Point_A_01" type="Area3D" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1165503694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9268799, 1.9485683, -3.2089481)
 
-[node name="=Area_02=" type="Node3D" parent="." unique_id=1094997417]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_01=/NPC_Point_A_01" unique_id=1526831179]
+shape = SubResource("SphereShape3D_xrja0")
+
+[node name="=Area_02=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1094997417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -287.46017, 20.00547, 26.79616)
 
-[node name="DeliveryArea_02" parent="=Area_02=" unique_id=1937722874 instance=ExtResource("25_jqt73")]
+[node name="DeliveryArea_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1937722874 instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
+display_name = "Gnagge Gnagsson"
 
-[node name="NPC_Reciever_02" parent="=Area_02=" unique_id=1475976692 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
+[node name="NPC_Reciever_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1475976692 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.865265, 4.9065323, -1.2969017)
 point_a = NodePath("../NPC_Point_A_02")
 linked_area = NodePath("../DeliveryArea_02")
 
-[node name="NPC_Point_A_02" type="Node3D" parent="=Area_02=" unique_id=1813242552]
+[node name="NPC_Point_A_02" type="Area3D" parent="===DELIVER_AREAS===/=Area_02=" unique_id=696563904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9268799, 1.9485683, -3.2089481)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_02=/NPC_Point_A_02" unique_id=1529867567]
+shape = SubResource("SphereShape3D_he6wg")
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
