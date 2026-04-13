@@ -444,6 +444,9 @@ radius = 1.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_he6wg"]
 radius = 2.0
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_h351q"]
+size = Vector2(10000, 10000)
+
 [node name="Level2" type="Node3D" unique_id=589024435]
 script = SubResource("GDScript_ndgrd")
 
@@ -458,7 +461,7 @@ environment = SubResource("Environment_ex07k")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Car1_Player" parent="." unique_id=754041233 instance=ExtResource("3_ndgrd")]
+[node name="Car1_Player" parent="." unique_id=754041233 groups=["car"] instance=ExtResource("3_ndgrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 22.9955, -36.98169)
 gravity_scale = 1.8
 
@@ -755,8 +758,9 @@ transform = Transform3D(0.094002254, 0, 1.5221002, 0, 1.5250002, 0, -1.5221002, 
 [node name="DeliveryAreaArrow" parent="===DELIVER_AREAS===" unique_id=892715020 instance=ExtResource("20_dpc8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.5439, 5.8861485, -18.903452)
 height_offset = 10.0
+max_scale = 20.0
 min_distance = 10.0
-max_distance = 200.0
+max_distance = 2000.0
 
 [node name="=Area_01=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1755396391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 18.25928, 129.99129)
@@ -803,6 +807,10 @@ shape = SubResource("SphereShape3D_he6wg")
 
 [node name="HamsterHouse_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1356105675 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, -1.800293, -1.6909561, -0.8101425)
+
+[node name="Water" type="MeshInstance3D" parent="." unique_id=416129405]
+visible = false
+mesh = SubResource("PlaneMesh_h351q")
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
