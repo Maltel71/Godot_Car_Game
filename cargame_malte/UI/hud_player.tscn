@@ -2,18 +2,20 @@
 
 [ext_resource type="Script" uid="uid://1bmqsl4a2qq7" path="res://scripts/highscore.gd" id="1_i1glq"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_eki7a"]
+[ext_resource type="Texture2D" uid="uid://do20ksjdye78m" path="res://textures/ui/arrow_v2.png" id="2_vgabk"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_8fwp6"]
-[ext_resource type="Texture2D" uid="uid://d0skrludyx0o2" path="res://textures/grabber_v1.png" id="4_vgabk"]
 
 [node name="HUD_Player" type="CanvasLayer" unique_id=83232620 node_paths=PackedStringArray("delivery_arrow")]
 script = ExtResource("1_i1glq")
 delivery_arrow = NodePath("DeliveryArrow")
 
 [node name="DeliveryArrow" type="TextureRect" parent="." unique_id=1575313222]
+modulate = Color(0.87843084, 0.7793748, 0.59739155, 1)
 z_index = 20
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("4_vgabk")
+texture = ExtResource("2_vgabk")
+flip_v = true
 
 [node name="Panel" type="Panel" parent="." unique_id=146702254]
 anchors_preset = 5
