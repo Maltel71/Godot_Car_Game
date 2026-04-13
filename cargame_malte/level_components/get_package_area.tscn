@@ -23,6 +23,7 @@ shape = SubResource("SphereShape3D_e1d7v")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=157755021]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=114579785]
+transform = Transform3D(19.728237, 0, 0, 0, 0.8436473, 0, 0, 0, 19.728237, 0, -2.1242328, 0)
 mesh = SubResource("CylinderMesh_mmt32")
 
 [node name="Mesh_Sphere" type="MeshInstance3D" parent="." unique_id=1392569016]

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/_scene_prefabs/box1.tscn" id="15_m4706"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/_scene_prefabs/ramp_1.tscn" id="16_4xp61"]
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
+[ext_resource type="PackedScene" uid="uid://dum00rp3akon0" path="res://level_components/delivery_area_arrow.tscn" id="20_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/hud_player.tscn" id="20_h351q"]
 [ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="25_00pa0"]
@@ -425,14 +426,6 @@ _shader_parameters = {
 }
 shader_override = SubResource("Shader_8tfmj")
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_jqt73"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_xrja0"]
-radius = 1.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_he6wg"]
-radius = 2.0
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ndgrd"]
 fractal_gain = -0.01
 fractal_weighted_strength = 0.33
@@ -442,6 +435,14 @@ noise = SubResource("FastNoiseLite_ndgrd")
 
 [sub_resource type="FogMaterial" id="FogMaterial_ndgrd"]
 density_texture = SubResource("NoiseTexture3D_h351q")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jqt73"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrja0"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_he6wg"]
+radius = 2.0
 
 [node name="Level2" type="Node3D" unique_id=589024435]
 script = SubResource("GDScript_ndgrd")
@@ -570,6 +571,13 @@ collision_mode = 3
 top_level = true
 metadata/_edit_lock_ = true
 
+[node name="FogVolume" type="FogVolume" parent="===ENVIROMENT===" unique_id=183676703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.40585, 10.107708, -35.186165)
+visible = false
+size = Vector3(114.81, 20, 301.83)
+shape = 2
+material = SubResource("FogMaterial_ndgrd")
+
 [node name="=OBSTACLES=" type="Node3D" parent="===ENVIROMENT===" unique_id=150761011]
 
 [node name="Halfpipe1" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1367933284 instance=ExtResource("13_cp3aq")]
@@ -669,9 +677,8 @@ transform = Transform3D(-2.08616e-07, 0, -1, 0, 1, 0, 1, 0, -2.08616e-07, -313.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.96103, 19.52204, -18.91623)
 
 [node name="GetPackageArea" parent="===POSTOFFICE===" unique_id=1336415522 node_paths=PackedStringArray("delivery_areas") instance=ExtResource("24_he6wg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6588745, -1.2434406, 0.989933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6588745, -0.12089348, 0.989933)
 delivery_areas = [NodePath("../../===DELIVER_AREAS===/=Area_01=/DeliveryArea_01"), NodePath("../../===DELIVER_AREAS===/=Area_02=/DeliveryArea_02")]
-metadata/_edit_lock_ = true
 
 [node name="NPC_Giver" parent="===POSTOFFICE===" unique_id=882193193 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("26_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.064209, 0.8016052, 0.9884434)
@@ -745,11 +752,15 @@ transform = Transform3D(0.094002254, 0, 1.5221002, 0, 1.5250002, 0, -1.5221002, 
 
 [node name="===DELIVER_AREAS===" type="Node3D" parent="." unique_id=770502761]
 
+[node name="DeliveryAreaArrow" parent="===DELIVER_AREAS===" unique_id=892715020 instance=ExtResource("20_dpc8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.5439, 5.8861485, -18.903452)
+height_offset = 10.0
+
 [node name="=Area_01=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1755396391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 18.25928, 129.99129)
 
-[node name="DeliveryArea_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1448386087 instance=ExtResource("25_jqt73")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
+[node name="DeliveryArea_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1448386087 groups=["delivery_areas"] instance=ExtResource("25_jqt73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 1.4663525, -20.13324)
 display_name = "Bosse Shrouding"
 
 [node name="ScreenNotifier" type="VisibleOnScreenNotifier3D" parent="===DELIVER_AREAS===/=Area_01=/DeliveryArea_01" unique_id=190115948]
@@ -771,7 +782,7 @@ transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0
 [node name="=Area_02=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1094997417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.89413, 120.00129, -44.36493)
 
-[node name="DeliveryArea_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1937722874 instance=ExtResource("25_jqt73")]
+[node name="DeliveryArea_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1937722874 groups=["delivery_areas"] instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
 display_name = "Gnagge Gnagsson"
 
@@ -790,11 +801,6 @@ shape = SubResource("SphereShape3D_he6wg")
 
 [node name="HamsterHouse_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1356105675 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, -1.800293, -1.6909561, -0.8101425)
-
-[node name="FogVolume" type="FogVolume" parent="." unique_id=183676703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.40585, 10.107708, -35.186165)
-size = Vector3(114.81, 20, 301.83)
-material = SubResource("FogMaterial_ndgrd")
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

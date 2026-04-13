@@ -18,7 +18,7 @@ func _process(_delta):
 	if current_target == null or current_target.display_name != target_id:
 		current_target = null
 		for area in get_tree().get_nodes_in_group("delivery_areas"):
-			if area.display_name == target_id:
+			if area is Area3D and "display_name" in area and area.display_name == target_id:
 				current_target = area
 				break
 
