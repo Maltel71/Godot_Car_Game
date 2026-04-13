@@ -46,7 +46,8 @@ func _update_arrow():
 	var viewport_size  = get_viewport().get_visible_rect().size
 	var center         = viewport_size / 2.0
 	var to_target      = target.global_position - cam.global_position
-	var is_behind      = cam.global_transform.basis.z.dot(to_target) > 0.0
+	var dot = cam.global_transform.basis.z.dot(to_target)
+	var is_behind = dot > 0.05
 
 	var screen_pos = cam.unproject_position(target.global_position)
 
@@ -57,19 +58,22 @@ func _update_arrow():
 	var dir = (screen_pos - center).normalized()
 
 	# Check if on screen (with margin)
-	var margin  = 80.0
+	var margin_out = 70.0
+	var margin_in  = 100.0
+	var m = margin_in if delivery_arrow.visible == false else margin_out
+
 	var on_screen = (
-		screen_pos.x > margin and screen_pos.x < viewport_size.x - margin and
-		screen_pos.y > margin and screen_pos.y < viewport_size.y - margin and
-		not is_behind
+	screen_pos.x > m and screen_pos.x < viewport_size.x - m and
+	screen_pos.y > m and screen_pos.y < viewport_size.y - m and
+	not is_behind
 	)
 
 	if on_screen:
 		delivery_arrow.hide()
 	else:
 		delivery_arrow.show()
-		delivery_arrow.position = center + dir * (min(center.x, center.y) - margin)
-		delivery_arrow.rotation = dir.angle()
+		delivery_arrow.position = center + dir * (min(center.x, center.y) - margin_out)
+		delivery_arrow.rotation = lerp_angle(delivery_arrow.rotation, dir.angle(), 0.2)
 
 func _get_delivery_status() -> String:
 	var t    = manager.delivery_timer
