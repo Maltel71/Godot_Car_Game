@@ -574,7 +574,6 @@ material = SubResource("Terrain3DMaterial_s8dg4")
 assets = ExtResource("2_k2aru")
 collision_mode = 3
 top_level = true
-metadata/_edit_lock_ = true
 
 [node name="FogVolume" type="FogVolume" parent="===ENVIROMENT===" unique_id=183676703]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.40585, 10.107708, -35.186165)
@@ -810,6 +809,10 @@ transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 material_override = ExtResource("21_dpc8t")
 mesh = SubResource("PlaneMesh_h351q")
+metadata/_edit_lock_ = true
+
+[node name="VehicleBody3D" parent="." unique_id=1455623620 instance=ExtResource("3_ndgrd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1034.3224, 36.45128, 19.2191)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
