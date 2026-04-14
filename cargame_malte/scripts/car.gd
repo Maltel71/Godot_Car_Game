@@ -19,7 +19,7 @@ var _flip_timer: float = 0.0
 @export var rpm_threshold: float = 50.0
 
 @export_group("Flip")
-@export var flip_up_impulse: float = 8.0
+@export var flip_up_impulse: float = 7.0
 @export var flip_torque_impulse: float = 2.0
 @export var flip_cooldown: float = 2.0
 @export var flip_sound: AudioStream
