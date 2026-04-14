@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://btgsfjw4wqnph" path="res://models/_scene_prefabs/enviroment/rock1.tscn" id="17_4yoxl"]
 [ext_resource type="PackedScene" uid="uid://dum00rp3akon0" path="res://level_components/delivery_area_arrow.tscn" id="20_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/hud_player.tscn" id="20_h351q"]
+[ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="21_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="25_00pa0"]
 [ext_resource type="PackedScene" uid="uid://cnyvud1uoflv3" path="res://models/LowpolyHamsterStuff/HamsterHouse_01.glb" id="25_he6wg"]
@@ -24,8 +25,10 @@
 [sub_resource type="GDScript" id="GDScript_ndgrd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.3302241, 0.45790964, 0.61487746, 1)
+sky_horizon_color = Color(0.7645305, 0.6206959, 0.7163661, 1)
+ground_bottom_color = Color(0.7647059, 0.61960787, 0.7176471, 1)
+ground_horizon_color = Color(0.7647059, 0.61960787, 0.7176471, 1)
 
 [sub_resource type="Sky" id="Sky_s8dg4"]
 sky_material = SubResource("ProceduralSkyMaterial_q04gf")
@@ -36,7 +39,6 @@ sky = SubResource("Sky_s8dg4")
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
-fog_enabled = true
 fog_density = 0.0005
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.001
@@ -469,7 +471,7 @@ gravity_scale = 1.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest/Armature/Skeleton3D" index="1" unique_id=983452176]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1501707153, 1088390257) index="1" unique_id=983452176]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -501,7 +503,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, 0.353553, 0, -0.353553, 0.353553, 0, 0, 0, 0.5, 0.753754, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest2/Armature/Skeleton3D" index="1" unique_id=818525636]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest2/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1370998523, 1088390257) index="1" unique_id=818525636]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -533,7 +535,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, -0.353553, 0, 0.353553, 0.353553, 0, 0, 0, 0.5, -0.848877, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest3/Armature/Skeleton3D" index="1" unique_id=512492295]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest3/Armature/Skeleton3D" parent_id_path=PackedInt32Array(451572785, 1088390257) index="1" unique_id=512492295]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -769,8 +771,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 18.25928, 129.9912
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 1.4663525, -20.13324)
 display_name = "Bosse Shrouding"
 
-[node name="ScreenNotifier" type="VisibleOnScreenNotifier3D" parent="===DELIVER_AREAS===/=Area_01=/DeliveryArea_01" unique_id=190115948]
-
 [node name="NPC_Reciever_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=2045726150 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0351429, -1.1683807)
 point_a = NodePath("../NPC_Point_A_01")
@@ -792,8 +792,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.89413, 120.00129, -44.36
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
 display_name = "Gnagge Gnagsson"
 
-[node name="ScreenNotifier" type="VisibleOnScreenNotifier3D" parent="===DELIVER_AREAS===/=Area_02=/DeliveryArea_02" unique_id=1347472445]
-
 [node name="NPC_Reciever_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1475976692 node_paths=PackedStringArray("point_a", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4613953, 0.58490753, -1.2969017)
 point_a = NodePath("../NPC_Point_A_02")
@@ -809,7 +807,8 @@ shape = SubResource("SphereShape3D_he6wg")
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, -1.800293, -1.6909561, -0.8101425)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=416129405]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.906006, 0)
+material_override = ExtResource("21_dpc8t")
 mesh = SubResource("PlaneMesh_h351q")
 
 [editable path="Car1_Player/WiggleTest"]

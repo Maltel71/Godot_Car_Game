@@ -8,6 +8,8 @@ extends CanvasLayer
 @export var delivery_arrow: TextureRect
 
 var manager
+var _arrow_visible: bool = false
+var _smoothed_screen_pos: Vector2 = Vector2.ZERO
 
 func _ready():
 	manager = get_node("/root/ScoreAndTimeManager")
@@ -37,42 +39,42 @@ func _update_arrow():
 	var target: Node3D = manager.target_delivery_node
 	if not manager.is_delivering or not is_instance_valid(target):
 		delivery_arrow.hide()
+		_arrow_visible = false
 		return
 
 	var cam = get_viewport().get_camera_3d()
 	if not cam:
 		return
 
-	var viewport_size  = get_viewport().get_visible_rect().size
-	var center         = viewport_size / 2.0
-	var to_target      = target.global_position - cam.global_position
-	var dot = cam.global_transform.basis.z.dot(to_target)
-	var is_behind = dot > 0.05
+	var viewport_size = get_viewport().get_visible_rect().size
+	var center        = viewport_size / 2.0
+	var to_target     = target.global_position - cam.global_position
+	var is_behind     = cam.global_transform.basis.z.dot(to_target) > 0.05
 
-	var screen_pos = cam.unproject_position(target.global_position)
+	var raw_pos = cam.unproject_position(target.global_position)
+	_smoothed_screen_pos = lerp(_smoothed_screen_pos, raw_pos, 0.15)
+	var screen_pos = _smoothed_screen_pos
 
-	# When behind camera, flip the point through center so arrow points backward
 	if is_behind:
 		screen_pos = center + (center - screen_pos)
 
 	var dir = (screen_pos - center).normalized()
 
-	# Check if on screen (with margin)
-	var margin_out = 70.0
-	var margin_in  = 100.0
-	var m = margin_in if delivery_arrow.visible == false else margin_out
-
+	var margin = 120.0 if _arrow_visible else 60.0
 	var on_screen = (
-	screen_pos.x > m and screen_pos.x < viewport_size.x - m and
-	screen_pos.y > m and screen_pos.y < viewport_size.y - m and
-	not is_behind
+		screen_pos.x > margin and screen_pos.x < viewport_size.x - margin and
+		screen_pos.y > margin and screen_pos.y < viewport_size.y - margin and
+		not is_behind
 	)
+
+	_arrow_visible = not on_screen
 
 	if on_screen:
 		delivery_arrow.hide()
 	else:
 		delivery_arrow.show()
-		delivery_arrow.position = center + dir * (min(center.x, center.y) - margin_out)
+		var target_pos = center + dir * (min(center.x, center.y) - 60.0)
+		delivery_arrow.position = lerp(delivery_arrow.position, target_pos, 0.2)
 		delivery_arrow.rotation = lerp_angle(delivery_arrow.rotation, dir.angle(), 0.2)
 
 func _get_delivery_status() -> String:
