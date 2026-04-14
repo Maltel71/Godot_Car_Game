@@ -807,7 +807,7 @@ shape = SubResource("SphereShape3D_he6wg")
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, -1.800293, -1.6909561, -0.8101425)
 
 [node name="Water" type="MeshInstance3D" parent="." unique_id=416129405]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -41.906006, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 material_override = ExtResource("21_dpc8t")
 mesh = SubResource("PlaneMesh_h351q")
 
