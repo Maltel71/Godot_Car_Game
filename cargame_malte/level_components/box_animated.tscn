@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://cttvpwk518718"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r8df7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jgc0l"]
+
+[sub_resource type="Animation" id="Animation_r8df7"]
+resource_name = "box_anim_01"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.1247578, 0), Vector3(0, 0, 0), Vector3(0, 1.1247578, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jgc0l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.1247578, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mb1yj"]
+_data = {
+&"RESET": SubResource("Animation_jgc0l"),
+&"box_anim_01": SubResource("Animation_r8df7")
+}
+
+[node name="Node3D" type="StaticBody3D"]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 1.1247578, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_r8df7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jgc0l")
+debug_color = Color(0.9757759, 0, 0.39668944, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mb1yj")
+}
+autoplay = "box_anim_01"

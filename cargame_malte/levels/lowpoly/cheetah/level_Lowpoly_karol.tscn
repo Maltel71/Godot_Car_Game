@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://djyn82ynm3jp2"]
+[gd_scene load_steps=41 format=3 uid="uid://djyn82ynm3jp2"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_os8rd"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_kgdtg"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_3aud2"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_trggn"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_8j4rw"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_rvy6e"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_xplh4"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_quuqj"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_fxoj6"]
@@ -20,8 +19,11 @@
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_nsgy3"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_876tx"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_5r84x"]
+[ext_resource type="PackedScene" uid="uid://cttvpwk518718" path="res://level_components/box_animated.tscn" id="21_6lost"]
+[ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="22_05ekl"]
 [ext_resource type="PackedScene" uid="uid://dxfc2rrm1kevo" path="res://level_components/player/cheetah/car_karol.tscn" id="22_6lost"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_b2jdx"]
+[ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="24_7p3wf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_top_color = Color(0.054654874, 0.40251726, 0.9417504, 1)
@@ -431,7 +433,7 @@ scene_file = ExtResource("9_xplh4")
 density = 0.679946
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 4096.0
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pj4lr"]
 name = "env_rock1_mesh_01_v1"
@@ -449,7 +451,7 @@ scene_file = ExtResource("11_fxoj6")
 density = 0.0427419
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 4096.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nc7oo"]
 name = "env_gridtexture_malte_height_sprite_01_v1"
@@ -475,7 +477,7 @@ uv_scale = 0.111
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
 
-[sub_resource type="Curve3D" id="Curve3D_6lost"]
+[sub_resource type="Curve3D" id="Curve3D_4dpcq"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -492,6 +494,7 @@ environment = SubResource("Environment_ex07k")
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660236, -0.43301606, 0.25000077, -0.18759574, 0.7448641, 0.64030105, -0.4634772, 0.5076166, -0.72630167, 0, 0, 0)
 shadow_enabled = true
+directional_shadow_max_distance = 1000.0
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("2_kgdtg")
@@ -503,16 +506,14 @@ script = ExtResource("2_kgdtg")
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
-visible = false
 
 [node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_trggn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.36017, 23.845348, -8.416375)
 
 [node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_8j4rw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
-
-[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_rvy6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.08835, 22.91978, -6.525196)
+thruster_duration = 300.0
+pickup_volume = 7.129000000000005
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
@@ -526,7 +527,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_6lost")
+curve = SubResource("Curve3D_4dpcq")
 script = ExtResource("17_1cl7f")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -679,11 +680,13 @@ metadata/_edit_lock_ = true
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
 
+[node name="Node3D" parent="===ENVIROMENT===" instance=ExtResource("21_6lost")]
+
+[node name="ramp1" parent="===ENVIROMENT===" instance=ExtResource("22_05ekl")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -329.00507, 20.709705, 27.150793)
+
 [node name="Car_Default" parent="." instance=ExtResource("22_6lost")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.13354, 25.181995, -19.415056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.13354, 30.021786, -19.415056)
 
-[node name="Pickup_Points_01" parent="." instance=ExtResource("6_trggn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.36017, 23.845348, -8.416375)
-
-[node name="Pickup_Thrusters_01" parent="." instance=ExtResource("7_8j4rw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.08835, 24.98089, -6.525196)
+[node name="Halfpipe1" parent="." instance=ExtResource("24_7p3wf")]
+transform = Transform3D(5, 0, 0, 0, 1.2668483, 4.836848, 0, -4.836848, 1.2668483, -327.69748, 77.61877, 100.85316)
