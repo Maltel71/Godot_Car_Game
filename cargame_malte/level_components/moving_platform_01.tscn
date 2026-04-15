@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://csrtenjxmadnd"]
+
+[ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="1_wwmnc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y2xty"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cv51p"]
+size = Vector3(10, 1, 10)
+
+[node name="animbody" type="AnimatableBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_wwmnc")
+mesh = SubResource("BoxMesh_y2xty")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_cv51p")
