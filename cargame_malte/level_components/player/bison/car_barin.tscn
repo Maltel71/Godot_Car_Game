@@ -1,10 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cihyxpvdl31k0"]
+[gd_scene load_steps=24 format=3 uid="uid://cihyxpvdl31k0"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_owsq0"]
-[ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_mn8it"]
-[ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_s73xn"]
-[ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="4_bx4tn"]
-[ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="5_05ivc"]
+[ext_resource type="PackedScene" uid="uid://dxdp6iwybc7cj" path="res://level_components/player/bison/barin_models/barin_car_mesh.glb" id="2_mr5rg"]
+[ext_resource type="PackedScene" uid="uid://cy17fw3lif5gt" path="res://level_components/player/bison/barin_models/barin_tire_mesh.glb" id="3_7u35o"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_8ioku"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_vn35j"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="8_8fouv"]
@@ -111,14 +109,8 @@ exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 [node name="===Body===" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_mn8it")]
-metadata/_edit_lock_ = true
-
-[node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_s73xn")]
-metadata/_edit_lock_ = true
-
-[node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_bx4tn")]
-metadata/_edit_lock_ = true
+[node name="barin_car_mesh" parent="===Body===" instance=ExtResource("2_mr5rg")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
@@ -132,8 +124,7 @@ damping_compression = 1.9
 damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="Wheel03_mesh" parent="wheel_front_left" instance=ExtResource("5_05ivc")]
-metadata/_edit_lock_ = true
+[node name="barin_tire_mesh" parent="wheel_front_left" instance=ExtResource("3_7u35o")]
 
 [node name="wheel_front_right" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, 1.75)
@@ -147,8 +138,7 @@ damping_compression = 1.9
 damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="Wheel02_mesh" parent="wheel_front_right" instance=ExtResource("5_05ivc")]
-metadata/_edit_lock_ = true
+[node name="barin_tire_mesh2" parent="wheel_front_right" instance=ExtResource("3_7u35o")]
 
 [node name="wheel_back_right" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, -1.913)
@@ -161,8 +151,7 @@ damping_compression = 1.9
 damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="Wheel05_mesh" parent="wheel_back_right" instance=ExtResource("5_05ivc")]
-metadata/_edit_lock_ = true
+[node name="barin_tire_mesh3" parent="wheel_back_right" instance=ExtResource("3_7u35o")]
 
 [node name="wheel_back_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, -1.913)
@@ -175,8 +164,7 @@ damping_compression = 1.9
 damping_relaxation = 2.0
 metadata/_edit_lock_ = true
 
-[node name="Wheel04_mesh" parent="wheel_back_left" instance=ExtResource("5_05ivc")]
-metadata/_edit_lock_ = true
+[node name="barin_tire_mesh4" parent="wheel_back_left" instance=ExtResource("3_7u35o")]
 
 [node name="CamArm" type="SpringArm3D" parent="."]
 transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, -0.384248, 0.0711465)
