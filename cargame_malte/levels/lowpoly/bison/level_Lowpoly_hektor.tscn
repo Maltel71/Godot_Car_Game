@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_hqo6q"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_puksq"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_b1e52"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_dwpad"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_74ey5"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_t5fcc"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_s4wp3"]
@@ -22,6 +21,7 @@
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_nm7jk"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_bl8mc"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_5gnm8"]
+[ext_resource type="PackedScene" uid="uid://cuyj5xfilxaui" path="res://level_components/player/bison/car_hektor.tscn" id="22_cq47f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -473,7 +473,7 @@ uv_scale = 0.111
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
 
-[sub_resource type="Curve3D" id="Curve3D_puksq"]
+[sub_resource type="Curve3D" id="Curve3D_df0sh"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -498,9 +498,6 @@ script = ExtResource("2_hqo6q")
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_b1e52")]
 
-[node name="Car_Default" parent="." instance=ExtResource("5_dwpad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
-
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
@@ -524,9 +521,10 @@ data_directory = "res://terrain_data/lowpoly/bison/terraindata_lowpoly_hektor"
 material = SubResource("Terrain3DMaterial_cq47f")
 assets = SubResource("Terrain3DAssets_hqo6q")
 top_level = true
+metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_puksq")
+curve = SubResource("Curve3D_df0sh")
 script = ExtResource("17_jqm2p")
 lock_road = true
 
@@ -677,3 +675,6 @@ metadata/_edit_lock_ = true
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_5gnm8")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
+
+[node name="Car_Default" parent="." instance=ExtResource("22_cq47f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.9677, 23.370335, -19.594353)
