@@ -1,19 +1,22 @@
 extends CharacterBody3D
 
-@export var waypoints: Array[Node3D] = []
+@export var waypoints: Array[Area3D] = []
 @export var linked_area: Area3D
 @export var move_speed: float = 3.0
 @export var package_mesh: Node3D
 
 var car: VehicleBody3D = null
-var returning: bool = false
 var has_package: bool = false
 var waypoint_index: int = 0
+var going_out: bool = false
+var returning: bool = false
 
 func _ready():
 	linked_area.body_entered.connect(_on_area_body_entered)
 	linked_area.body_exited.connect(_on_area_body_exited)
 	$TouchArea.body_entered.connect(_on_body_entered)
+	for wp in waypoints:
+		wp.body_entered.connect(_on_waypoint_reached)
 
 func _physics_process(delta):
 	if package_mesh:
@@ -24,26 +27,24 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0.0
 
-	if car != null and not returning:
+	if going_out:
 		if waypoint_index < waypoints.size():
 			var wp = waypoints[waypoint_index].global_position
 			_move_toward(wp, delta)
-			if global_position.distance_to(wp) < 0.8:
+			if global_position.distance_to(wp) < 2.0:
 				waypoint_index += 1
-		else:
+		elif car:
 			_move_toward(car.global_position, delta)
 	elif returning:
-		if waypoint_index >= 0 and waypoints.size() > 0:
+		if waypoint_index >= 0 and waypoint_index < waypoints.size():
 			var wp = waypoints[waypoint_index].global_position
 			_move_toward(wp, delta)
-			if global_position.distance_to(wp) < 0.8:
+			if global_position.distance_to(wp) < 2.0:
 				waypoint_index -= 1
 				if waypoint_index < 0:
+					waypoint_index = 0
 					returning = false
 					has_package = false
-		else:
-			returning = false
-			has_package = false
 	else:
 		velocity.x = 0.0
 		velocity.z = 0.0
@@ -62,17 +63,25 @@ func _move_toward(target: Vector3, delta: float):
 		velocity.x = 0.0
 		velocity.z = 0.0
 
+func _on_waypoint_reached(body):
+	if body != self:
+		return
+	if going_out:
+		waypoint_index += 1
+
 func _on_area_body_entered(body):
 	if body is VehicleBody3D and body.HasPackage and body.assigned_delivery_id == linked_area.name:
 		car = body
+		going_out = true
 		returning = false
 		waypoint_index = 0
 
 func _on_area_body_exited(body):
 	if body is VehicleBody3D:
 		car = null
+		going_out = false
 		returning = true
-		waypoint_index = waypoints.size() - 1
+		waypoint_index = clamp(waypoint_index, 0, waypoints.size() - 1)
 
 func _on_body_entered(body):
 	if body is VehicleBody3D and body.HasPackage and body.assigned_delivery_id == linked_area.name:
@@ -81,6 +90,7 @@ func _on_body_entered(body):
 		linked_area.play_delivery_sound()
 		has_package = true
 		car = null
+		going_out = false
 		returning = true
 		waypoint_index = waypoints.size() - 1
 		var manager = get_node("/root/ScoreAndTimeManager")
