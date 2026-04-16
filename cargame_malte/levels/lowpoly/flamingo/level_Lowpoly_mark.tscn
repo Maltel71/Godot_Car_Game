@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://4p40qhpa2npt"]
+[gd_scene load_steps=38 format=3 uid="uid://4p40qhpa2npt"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_1q445"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_dueim"]
@@ -11,12 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_08pcn"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_0k075"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_k3wl8"]
-[ext_resource type="Texture2D" uid="uid://67wrvwo3xanj" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v1.png" id="12_vxdtp"]
-[ext_resource type="Texture2D" uid="uid://ndc0tm8oiuoq" path="res://textures/neutral_normalmap_t.png" id="13_3bipl"]
-[ext_resource type="Texture2D" uid="uid://c2iqvsmgpdhd6" path="res://textures/grid_t/env_gridtexture_malte_height_sprite_01_v2.png" id="14_xqtfx"]
-[ext_resource type="Texture2D" uid="uid://dwuu4s421mqfv" path="res://textures/terrain_clay_t/packed/packed_albedo_height.png" id="15_r2571"]
-[ext_resource type="Texture2D" uid="uid://bfqss5kcs346u" path="res://textures/terrain_clay_t/env_clay_01_512px_texture_v2_specular.png" id="16_lslk3"]
 [ext_resource type="Script" uid="uid://bd5wtka1ofdi0" path="res://scripts/roadlock.gd" id="17_0yi6e"]
+[ext_resource type="Texture2D" uid="uid://dm8eimgu8x8qa" path="res://textures/mark_textures/white_1024px_t.png" id="17_10mro"]
+[ext_resource type="Texture2D" uid="uid://bc3foq04iy5nd" path="res://textures/mark_textures/neutr_n_map_t.png" id="18_6uapk"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="18_8hl4y"]
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_jcgqj"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_01brl"]
@@ -425,7 +422,7 @@ scene_file = ExtResource("9_08pcn")
 density = 0.679946
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 2461.75
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pj4lr"]
 name = "env_rock1_mesh_01_v1"
@@ -443,33 +440,35 @@ scene_file = ExtResource("11_k3wl8")
 density = 0.0427419
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 2414.15
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nc7oo"]
-name = "env_gridtexture_malte_height_sprite_01_v1"
-albedo_texture = ExtResource("12_vxdtp")
-normal_texture = ExtResource("13_3bipl")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_46pvi"]
-name = "env_gridtexture_malte_height_sprite_01_v2"
 id = 1
-albedo_texture = ExtResource("14_xqtfx")
-normal_texture = ExtResource("13_3bipl")
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_qk8pd"]
-name = "packed_albedo_height"
 id = 2
-albedo_texture = ExtResource("15_r2571")
-normal_texture = ExtResource("16_lslk3")
 normal_depth = 0.4
 roughness = 1.0
-uv_scale = 0.111
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_cj8b0"]
+name = "white_1024px_t"
+id = 3
+albedo_texture = ExtResource("17_10mro")
+normal_texture = ExtResource("18_6uapk")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_275g5"]
+name = "neutr_n_map_t"
+id = 4
+albedo_color = Color(0.26698524, 0.5715374, 0.20833543, 1)
+albedo_texture = ExtResource("18_6uapk")
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_dueim"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
-texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_cj8b0"), SubResource("Terrain3DTextureAsset_275g5")])
 
-[sub_resource type="Curve3D" id="Curve3D_1q445"]
+[sub_resource type="Curve3D" id="Curve3D_ctg75"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -527,7 +526,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_1q445")
+curve = SubResource("Curve3D_ctg75")
 script = ExtResource("17_0yi6e")
 lock_road = true
 metadata/_edit_lock_ = true
