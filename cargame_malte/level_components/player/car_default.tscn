@@ -1,7 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=28 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_xhmyn"]
+[ext_resource type="Material" uid="uid://c7h84slqqr00m" path="res://materials/Pink_mat.tres" id="3_0uc3w"]
+[ext_resource type="Material" uid="uid://drnqkcgbet71e" path="res://materials/white_mat.tres" id="3_02hd2"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_vl2bd"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="5_coc8s"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="6_wdy7j"]
@@ -113,6 +115,13 @@ metadata/_edit_lock_ = true
 
 [node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_xhmyn")]
 metadata/_edit_lock_ = true
+
+[node name="Cube_008" parent="===Body===/Body_Mesh" index="0"]
+surface_material_override/0 = ExtResource("3_02hd2")
+surface_material_override/1 = ExtResource("3_0uc3w")
+surface_material_override/2 = ExtResource("3_0uc3w")
+surface_material_override/4 = ExtResource("3_0uc3w")
+surface_material_override/5 = ExtResource("3_0uc3w")
 
 [node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_vl2bd")]
 metadata/_edit_lock_ = true
@@ -270,3 +279,5 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
+
+[editable path="===Body===/Body_Mesh"]

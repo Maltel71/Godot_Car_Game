@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://csrtenjxmadnd"]
+[gd_scene load_steps=5 format=3 uid="uid://csrtenjxmadnd"]
 
 [ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="1_wwmnc"]
+[ext_resource type="Material" uid="uid://4gg0edrfmvhx" path="res://materials/turquise_mat.tres" id="2_n2fj6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_y2xty"]
 size = Vector3(10, 1, 10)
@@ -14,8 +15,10 @@ size = Vector3(10, 1, 10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="animbody"]
 material_override = ExtResource("1_wwmnc")
+material_overlay = ExtResource("2_n2fj6")
 mesh = SubResource("BoxMesh_y2xty")
 skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_n2fj6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="animbody"]
 shape = SubResource("BoxShape3D_cv51p")

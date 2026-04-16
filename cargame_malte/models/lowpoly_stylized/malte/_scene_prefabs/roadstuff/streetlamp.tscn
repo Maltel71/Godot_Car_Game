@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs01qvui6utub"]
+[gd_scene load_steps=4 format=3 uid="uid://bs01qvui6utub"]
 
 [ext_resource type="ArrayMesh" uid="uid://b1ga43t8kcn4x" path="res://models/lowpoly_stylized/malte/env_lightsource_streetlamp_mesh_01_v1.glb.mtl.obj" id="1_foo3i"]
+[ext_resource type="Material" uid="uid://c7h84slqqr00m" path="res://materials/Pink_mat.tres" id="2_3ufyu"]
+[ext_resource type="Material" uid="uid://4gg0edrfmvhx" path="res://materials/turquise_mat.tres" id="3_5pkpp"]
 
 [node name="Streetlamp" type="Node3D"]
 
 [node name="EnvLightsourceStreetlampMesh01V1_glb_mtl" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_foo3i")
+surface_material_override/0 = ExtResource("2_3ufyu")
+surface_material_override/1 = ExtResource("3_5pkpp")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 7.39467, 1.19375)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cogss6cln87ao"]
+[gd_scene load_steps=67 format=3 uid="uid://cogss6cln87ao"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_sj3a6"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_k1csa"]
@@ -11,11 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_322vd"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_2gtgb"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_fn8sc"]
-[ext_resource type="Texture2D" uid="uid://ndc0tm8oiuoq" path="res://textures/neutral_normalmap_t.png" id="13_cbuqg"]
+[ext_resource type="Texture2D" uid="uid://cv2as0q10o0o2" path="res://textures/malte_textures/white_1024px_t.png" id="14_cbuqg"]
 [ext_resource type="Script" uid="uid://bd5wtka1ofdi0" path="res://scripts/roadlock.gd" id="17_0r231"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="18_y2xty"]
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_cv51p"]
-[ext_resource type="Texture2D" uid="uid://hd71p5p1n5dd" path="res://textures/malte_t/pack2/packed_green_v7.png" id="19_dy221"]
+[ext_resource type="Material" uid="uid://djsp4bshurwx8" path="res://materials/Purple_mat.tres" id="19_dy221"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_n3tdk"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_2i3v0"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_7jhre"]
@@ -30,6 +30,8 @@
 [ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="30_y2xty"]
 [ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="31_cv51p"]
 [ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="32_n3tdk"]
+[ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="35_ntm3b"]
+[ext_resource type="Material" uid="uid://c7h84slqqr00m" path="res://materials/Pink_mat.tres" id="36_2r22p"]
 [ext_resource type="Script" uid="uid://g3opjh3m3iww" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="37_n3tdk"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="37_ntm3b"]
 [ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="38_0r231"]
@@ -37,7 +39,10 @@
 [ext_resource type="PackedScene" uid="uid://b0tcfpapx3m2f" path="res://models/lowpoly_stylized/malte/_scene_prefabs/Misc_props/flask_1.tscn" id="40_n3tdk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.26632667, 0.4579429, 0.68265367, 1)
+sky_horizon_color = Color(0.8781369, 0.538444, 0.79087114, 1)
+sky_curve = 0.24367559
+sky_energy_multiplier = 0.9
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
 [sub_resource type="Sky" id="Sky_s8dg4"]
@@ -47,9 +52,16 @@ sky_material = SubResource("ProceduralSkyMaterial_q04gf")
 background_mode = 2
 sky = SubResource("Sky_s8dg4")
 tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
 glow_enabled = true
-fog_enabled = true
-fog_density = 0.0005
+glow_normalized = true
+glow_intensity = 3.35
+glow_strength = 0.29
+glow_bloom = 0.24
+glow_hdr_scale = 0.2
+fog_sun_scatter = 0.18
+fog_density = 0.0
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -462,62 +474,71 @@ last_lod = 0
 last_shadow_lod = 0
 lod0_range = 3512.9
 
-[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nc7oo"]
-name = "packed_green_v7"
-albedo_color = Color(0.39465296, 0.7609545, 0.59152704, 1)
-albedo_texture = ExtResource("19_dy221")
-normal_texture = ExtResource("13_cbuqg")
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_dy221"]
+name = "white_1024px_t"
+albedo_color = Color(0.8613957, 0.64316106, 0.9300386, 1)
+albedo_texture = ExtResource("14_cbuqg")
+normal_texture = ExtResource("14_cbuqg")
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_hfdp3"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
-texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_dy221")])
 
-[sub_resource type="Curve3D" id="Curve3D_dy221"]
+[sub_resource type="Curve3D" id="Curve3D_2r22p"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="Resource" id="Resource_2r22p"]
+[sub_resource type="Resource" id="Resource_ntm3b"]
 script = ExtResource("26_dy221")
-amount = 4000
+amount = 8000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ntm3b"]
+[sub_resource type="Resource" id="Resource_0r231"]
 script = ExtResource("27_2r22p")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_0r231"]
+[sub_resource type="Resource" id="Resource_y2xty"]
 script = ExtResource("28_ntm3b")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_y2xty"]
+[sub_resource type="Resource" id="Resource_cv51p"]
 script = ExtResource("29_0r231")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_cv51p"]
+[sub_resource type="Resource" id="Resource_n3tdk"]
 script = ExtResource("37_n3tdk")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_n3tdk"]
+[sub_resource type="Resource" id="Resource_2i3v0"]
 script = ExtResource("24_oin0i")
-stack = Array[ExtResource("25_cbuqg")]([SubResource("Resource_2r22p"), SubResource("Resource_ntm3b"), SubResource("Resource_0r231"), SubResource("Resource_y2xty"), SubResource("Resource_cv51p")])
+stack = Array[ExtResource("25_cbuqg")]([SubResource("Resource_ntm3b"), SubResource("Resource_0r231"), SubResource("Resource_y2xty"), SubResource("Resource_cv51p"), SubResource("Resource_n3tdk")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("32_n3tdk")
 radius = 650.0
+
+[sub_resource type="Resource" id="Resource_7jhre"]
+script = ExtResource("35_ntm3b")
+size = Vector3(43.405, 30, 300)
+metadata/_custom_type_script = "uid://bto17stixsm1"
+
+[sub_resource type="Resource" id="Resource_1gmbu"]
+script = ExtResource("35_ntm3b")
+size = Vector3(43.405, 30, 100)
 
 [sub_resource type="Animation" id="Animation_n3tdk"]
 length = 0.001
@@ -642,6 +663,7 @@ _data = {
 size = Vector3(170, 1, 17.825)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2r22p"]
+size = Vector3(170, 1, 17.825)
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_sj3a6")
@@ -730,7 +752,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_dy221")
+curve = SubResource("Curve3D_2r22p")
 script = ExtResource("17_0r231")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -744,14 +766,9 @@ metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
 [node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
 script = ExtResource("20_n3tdk")
-material_resource = ExtResource("19_cv51p")
+material_resource = ExtResource("19_dy221")
 density = 0.03
 use_lowpoly_preview = true
-edge_containers = Array[NodePath]([NodePath(""), NodePath(""), NodePath(""), NodePath("")])
-edge_rp_targets = Array[NodePath]([NodePath(""), NodePath(""), NodePath(""), NodePath("")])
-edge_rp_target_dirs = Array[int]([-1, -1, -1, -1])
-edge_rp_locals = Array[NodePath]([NodePath(""), NodePath(""), NodePath(""), NodePath("")])
-edge_rp_local_dirs = Array[int]([0, 1, 0, 1])
 
 [node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
 transform = Transform3D(-0.999211, -0.011218602, 0.038102377, -0.0112213, 0.999937, 0.00014308815, -0.038101584, -0.00028458284, -0.99927396, -374.162, 1.8966904, -84.5118)
@@ -778,7 +795,7 @@ prior_pt_init = NodePath("../RP_005")
 next_pt_init = NodePath("../RP_002")
 
 [node name="RP_005" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
-transform = Transform3D(-0.8375138, 0.5363571, -0.10436233, 0.53224087, 0.84399104, 0.066322364, 0.12365335, -1.8333567e-09, -0.9923254, -349.95575, 29.425957, 265.9329)
+transform = Transform3D(-0.99380606, 0.026738979, -0.10786235, 0.03135048, 0.9986554, -0.041285887, 0.106613375, -0.0444117, -0.9933081, -350.8525, 6.0016613, 264.46164)
 script = ExtResource("21_2i3v0")
 traffic_dir = Array[int]([2, 2, 2, 1, 1])
 lanes = Array[int]([2, 3, 4, 4, 2])
@@ -874,7 +891,7 @@ prior_pt_init = NodePath("../RP_002")
 next_pt_init = NodePath("../RP_011")
 
 [node name="Streetlamp" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("25_cv51p")]
-transform = Transform3D(-1.4962886e-07, 0, 1.0000001, 0, 1, 0, -3.4231093, 0, -4.3711392e-08, -391.28607, 1.3784809, -17.801682)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -391.28607, 1.3645232, -17.801682)
 
 [node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("38_0r231")]
 transform = Transform3D(-2.5340805, 0, -2.2153635e-07, 0, 2.5340805, 0, 2.2153635e-07, 0, -2.5340805, -325.99783, 20.24565, 85.49187)
@@ -886,7 +903,7 @@ transform = Transform3D(2.23, 0, 0, 0, 2.23, 0, 0, 0, 2.23, -338.09537, 20.19266
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -308.2008, 34.279095, 64.471596)
 script = ExtResource("23_fn8sc")
 render_mode = 1
-modifier_stack = SubResource("Resource_n3tdk")
+modifier_stack = SubResource("Resource_2i3v0")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -895,10 +912,26 @@ metadata/_custom_type_script = "uid://c17aknedeyxm4"
 script = ExtResource("30_y2xty")
 path = "uid://dl1mgv7h1thox"
 
+[node name="ScatterItem2" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("30_y2xty")
+path = "uid://cv3pvux6mm38t"
+
 [node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 83.16458, 0, 4.6992493)
 script = ExtResource("31_cv51p")
 shape = SubResource("Resource_g8bsm")
+
+[node name="ScatterShape_Negativ1" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -19.806398, 0, 89.00337)
+script = ExtResource("31_cv51p")
+negative = true
+shape = SubResource("Resource_7jhre")
+
+[node name="ScatterShape_Negativ2" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(0.98226106, 0, 0.18751843, 0, 1, 0, -0.18751843, 0, 0.98226106, -3.1894894, 0, 241.95227)
+script = ExtResource("31_cv51p")
+negative = true
+shape = SubResource("Resource_1gmbu")
 
 [node name="MovingPlatform_01" parent="." instance=ExtResource("40_cv51p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.0669, 24.014894, 114.778786)
@@ -912,16 +945,37 @@ autoplay = "movingplatform_anim_02"
 [node name="Pickup_Time_01" parent="." instance=ExtResource("8_cnoay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 23, 148)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.41137, 0)
+[node name="Tunnel" type="StaticBody3D" parent="."]
+transform = Transform3D(0.9775558, 0, 0.21067649, 0, 1, 0, -0.21067649, 0, 0.9775558, -212.55222, 23.474167, 227.34564)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(0.97788197, 0, 0.20915776, 0, 1, 0, -0.20915776, 0, 0.97788197, -209.0766, -3.0326538, 225.99495)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel"]
+material_override = ExtResource("36_2r22p")
 mesh = SubResource("BoxMesh_dy221")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(0.97788215, -0.20915776, 1.4901161e-08, 0, -4.371139e-08, 1.0000001, -0.20915778, -0.97788197, -4.0978193e-08, -207.51306, -3.032654, 233.30501)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Tunnel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.98838, 0)
+material_override = ExtResource("36_2r22p")
 mesh = SubResource("BoxMesh_dy221")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel"]
+shape = SubResource("BoxShape3D_2r22p")
+
+[node name="Tunnel2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.9775559, 0.2106765, 0, 0, -4.371139e-08, -1, -0.21067649, 0.9775559, -4.0978193e-08, -214.49342, 32.02905, 218.33826)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel2"]
+material_override = ExtResource("36_2r22p")
+mesh = SubResource("BoxMesh_dy221")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel2"]
+shape = SubResource("BoxShape3D_2r22p")
+
+[node name="Tunnel3" type="StaticBody3D" parent="."]
+transform = Transform3D(0.9775559, 0.2106765, 0, 0, -4.371139e-08, -1, -0.21067649, 0.9775559, -4.0978193e-08, -211.14642, 32.02905, 233.86858)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel3"]
+material_override = ExtResource("36_2r22p")
+mesh = SubResource("BoxMesh_dy221")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel3"]
 shape = SubResource("BoxShape3D_2r22p")

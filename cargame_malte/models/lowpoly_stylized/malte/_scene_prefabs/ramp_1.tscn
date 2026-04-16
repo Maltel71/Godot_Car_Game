@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dacpx5a0xoce4"]
 
-[ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="1_bkfdi"]
 [ext_resource type="ArrayMesh" uid="uid://fbkcft7qoykg" path="res://models/lowpoly_stylized/malte/env_ramp1_mesh_01_v1.glb.obj" id="1_i6rxx"]
+[ext_resource type="Material" uid="uid://4gg0edrfmvhx" path="res://materials/turquise_mat.tres" id="1_ncgcs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_psxy2"]
 size = Vector3(4.76074, 2.09521, 8.36304)
@@ -12,7 +12,7 @@ size = Vector3(4.76074, 2.00757, 2.04291)
 [node name="ramp1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = ExtResource("1_bkfdi")
+material_override = ExtResource("1_ncgcs")
 mesh = ExtResource("1_i6rxx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbnpkv87eeaia"]
+[gd_scene load_steps=16 format=3 uid="uid://bbnpkv87eeaia"]
 
 [ext_resource type="Script" uid="uid://h4sfcanfcl1c" path="res://scripts/thruster.gd" id="1_2xtem"]
 [ext_resource type="PackedScene" uid="uid://dvstrfj7fo66e" path="res://models/lowpoly_stylized/malte/uppgrade_thruster1_v1.glb" id="2_1cgkj"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="3_15ce3"]
+[ext_resource type="Material" uid="uid://drnqkcgbet71e" path="res://materials/white_mat.tres" id="3_kpw17"]
+[ext_resource type="Material" uid="uid://4gg0edrfmvhx" path="res://materials/turquise_mat.tres" id="4_cylb8"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="4_grga3"]
 [ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://vfx/Cloud_v2.obj" id="5_kpw17"]
 
@@ -58,6 +60,10 @@ particle_effect = NodePath("vfx_stylized_fire1")
 
 [node name="Mesh" parent="." instance=ExtResource("2_1cgkj")]
 
+[node name="Cylinder" parent="Mesh" index="0"]
+surface_material_override/0 = ExtResource("3_kpw17")
+surface_material_override/1 = ExtResource("4_cylb8")
+
 [node name="vfx_stylized_fire1" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, -0.5601196, 0)
 material_override = SubResource("ShaderMaterial_cylb8")
@@ -65,3 +71,5 @@ amount = 20
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_p7rde")
 draw_pass_1 = ExtResource("5_kpw17")
+
+[editable path="Mesh"]

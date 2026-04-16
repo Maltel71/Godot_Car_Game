@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl1mgv7h1thox"]
+[gd_scene load_steps=5 format=3 uid="uid://dl1mgv7h1thox"]
 
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="1_gknex"]
+[ext_resource type="Material" uid="uid://djsp4bshurwx8" path="res://materials/Purple_mat.tres" id="2_qif5l"]
+[ext_resource type="Material" uid="uid://c7h84slqqr00m" path="res://materials/Pink_mat.tres" id="3_7w3uy"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gknex"]
 height = 10.9021
@@ -10,6 +12,12 @@ radius = 1.35547
 
 [node name="env_tree1_mesh_01_v1" parent="." instance=ExtResource("1_gknex")]
 
+[node name="Tree1_LOD0" parent="env_tree1_mesh_01_v1" index="0"]
+surface_material_override/0 = ExtResource("2_qif5l")
+surface_material_override/1 = ExtResource("3_7w3uy")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="env_tree1_mesh_01_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.77014, 0)
 shape = SubResource("CylinderShape3D_gknex")
+
+[editable path="env_tree1_mesh_01_v1"]
