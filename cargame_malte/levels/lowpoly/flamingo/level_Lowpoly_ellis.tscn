@@ -513,7 +513,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.84
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
 
 [node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_kwv3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
+transform = Transform3D(46.48322, 0, 0, 0, 46.48322, 0, 0, 0, 46.48322, -280.26068, 136.80792, 372.18588)
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
@@ -679,7 +679,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -362.2256, 2.6598988, -119.61249)
 
 [node name="Pickup_Time_01" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -361.0443, 3.0276737, -135.32722)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.61005, 3.0276737, -110.429016)
 
 [node name="Pickup_Points_01" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("6_1ibi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.2008, 2.6444778, -92.436745)
@@ -709,7 +709,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.10352, 2.6205158, -59.26
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384.77014, 2.4798603, -64.86932)
 
 [node name="Pickup_Time_03" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -370.38672, 2.9454575, -39.98384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -374.09998, 2.9454575, -111.866486)
 
 [node name="Pickup_Points_07" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("6_1ibi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -380.68573, 2.3071442, -11.752808)
