@@ -8,12 +8,14 @@ size = Vector3(10, 1, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cv51p"]
 size = Vector3(10, 1, 10)
 
-[node name="animbody" type="AnimatableBody3D"]
+[node name="MovingPlatform_01" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="animbody" type="AnimatableBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="animbody"]
 material_override = ExtResource("1_wwmnc")
 mesh = SubResource("BoxMesh_y2xty")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="animbody"]
 shape = SubResource("BoxShape3D_cv51p")
