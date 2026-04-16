@@ -545,7 +545,10 @@ thruster_duration = 999.0
 pickup_volume = 10.107
 
 [node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("24_ertsf")]
-transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9095442, -304.19485, 20.854706, 283.20227)
+transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9095442, -304.19485, 20.854706, 4.309784)
+
+[node name="Halfpipe1" parent="===ENVIROMENT===/Halfpipe1" instance=ExtResource("24_ertsf")]
+transform = Transform3D(1.0128574, -0.029682875, 0.04157787, 0.043549206, -0.06265879, -0.9241252, 0.03287281, 0.99759126, -0.05680722, -0.10513306, 7.544361, -11.825821)
 
 [node name="ramp1" parent="." instance=ExtResource("22_vdcri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -371.212, 19.975893, 2.873903)
