@@ -1,13 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://cogss6cln87ao"]
+[gd_scene load_steps=36 format=3 uid="uid://cogss6cln87ao"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_sj3a6"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_k1csa"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_fpgqe"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_1c732"]
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_84r6b"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_gehmx"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_in1qk"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_cnoay"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_322vd"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_2gtgb"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_fn8sc"]
@@ -473,7 +470,7 @@ uv_scale = 0.111
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
 
-[sub_resource type="Curve3D" id="Curve3D_sj3a6"]
+[sub_resource type="Curve3D" id="Curve3D_fpgqe"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -504,16 +501,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.49569
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
-visible = false
-
-[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_gehmx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
-
-[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_in1qk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
-
-[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_cnoay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
@@ -527,7 +514,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_sj3a6")
+curve = SubResource("Curve3D_fpgqe")
 script = ExtResource("17_0r231")
 lock_road = true
 

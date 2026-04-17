@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_jnho2"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_ertsf"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_6oima"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_815rw"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_i31v0"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_t0js7"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_hb0pl"]
@@ -20,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://deseavo37ors" path="res://level_components/player/flamingo/car_samuel.tscn" id="21_jnho2"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_1vrni"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="22_vdcri"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="23_6oima"]
 [ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/lowpoly_stylized/malte/_scene_prefabs/box1.tscn" id="23_ertsf"]
 [ext_resource type="AudioStream" uid="uid://b6mdqctbyw2yi" path="res://audio/sfx/pickup/pickupCoin.wav" id="23_jnho2"]
 [ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="24_ertsf"]
@@ -504,25 +504,6 @@ disable_mode = 2
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
-[node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
-visible = false
-
-[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_815rw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
-
-[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_i31v0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 18.863556, 1.887085)
-
-[node name="Pickup_Time_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_t0js7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.0618, 22.474306, 99.77284)
-
-[node name="Pickup_Time_03" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_t0js7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.1732, 22.98818, 98.763275)
-
-[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
-
-[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
-
 [node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT==="]
 data_directory = "res://terrain_data/lowpoly/flamingo/terraindata_lowpoly_samuel"
 material = SubResource("Terrain3DMaterial_vdcri")
@@ -530,19 +511,28 @@ assets = SubResource("Terrain3DAssets_jnho2")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_1vrni")]
-transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -184.6169)
+[node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
 
-[node name="Pickup_Time_01" parent="===ENVIROMENT===" instance=ExtResource("8_t0js7")]
+[node name="Pickup_Time_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_t0js7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.0618, 22.474306, 99.77284)
+
+[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_t0js7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -318.4858, 23.001158, 100.01408)
 time_value = 30.0
 pickup_sound = ExtResource("23_jnho2")
 pickup_volume = 4.5789999999999935
 
-[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===" instance=ExtResource("7_i31v0")]
+[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_i31v0")]
 transform = Transform3D(0.95602363, 0, 0.29328954, 0, 1, 0, -0.29328954, 0, 0.95602363, -327.21246, 21.50006, -11.200949)
 thruster_duration = 999.0
 pickup_volume = 10.107
+
+[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
+
+[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
+
+[node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_1vrni")]
+transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -184.6169)
 
 [node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("24_ertsf")]
 transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9095442, -304.19485, 20.854706, 4.309784)
@@ -550,17 +540,20 @@ transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9
 [node name="Halfpipe1" parent="===ENVIROMENT===/Halfpipe1" instance=ExtResource("24_ertsf")]
 transform = Transform3D(1.0128574, -0.029682875, 0.04157787, 0.043549206, -0.06265879, -0.9241252, 0.03287281, 0.99759126, -0.05680722, -0.10513306, 7.544361, -11.825821)
 
-[node name="ramp1" parent="." instance=ExtResource("22_vdcri")]
+[node name="ramp1" parent="===ENVIROMENT===" instance=ExtResource("22_vdcri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -371.212, 19.975893, 2.873903)
 
-[node name="ramp1" parent="ramp1" instance=ExtResource("22_vdcri")]
+[node name="ramp1" parent="===ENVIROMENT===/ramp1" instance=ExtResource("22_vdcri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.823944, 0.025520325, 0.044564962)
 
-[node name="ramp2" parent="ramp1" instance=ExtResource("22_vdcri")]
+[node name="ramp2" parent="===ENVIROMENT===/ramp1" instance=ExtResource("22_vdcri")]
 transform = Transform3D(-0.99951214, 0, -0.031236421, 0, 1, 0, 0.031236421, 0, -0.99951214, -4.0033875, -0.04685211, 18.767677)
 
-[node name="ramp1" parent="ramp1/ramp2" instance=ExtResource("22_vdcri")]
+[node name="ramp1" parent="===ENVIROMENT===/ramp1/ramp2" instance=ExtResource("22_vdcri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.823944, 0.025520325, 0.044564962)
 
-[node name="StaticBody3D" parent="." instance=ExtResource("23_ertsf")]
+[node name="box" parent="===ENVIROMENT===" instance=ExtResource("23_ertsf")]
 transform = Transform3D(0.999794, 0, 0.020296786, 0, 1, 0, -0.020296786, 0, 0.999794, -373.50778, 19.248596, 12.254603)
+
+[node name="DangerArea" parent="." instance=ExtResource("23_6oima")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.7591, 20.056444, 10.193245)
