@@ -9,10 +9,10 @@ var target_delivery_node: Node3D = null
 @export var good_multiplier: float = 1.0
 @export var bad_multiplier: float = 1.5
 @export var very_bad_multiplier: float = 2.0
-@export var very_good_payout: int = 100
-@export var good_payout: int = 50
-@export var bad_payout: int = 20
-@export var very_bad_payout: int = 3
+@export var very_good_payout: int = 20
+@export var good_payout: int = 12
+@export var bad_payout: int = 6
+@export var very_bad_payout: int = 2
 
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
@@ -45,17 +45,14 @@ func start_delivery(distance: float):
 func complete_delivery() -> int:
 	is_delivering = false
 	target_delivery_node = null
-	var payout: int
 	if delivery_timer <= base_delivery_time * very_good_multiplier:
-		payout = very_good_payout
+		return very_good_payout
 	elif delivery_timer <= base_delivery_time * good_multiplier:
-		payout = good_payout
+		return good_payout
 	elif delivery_timer <= base_delivery_time * bad_multiplier:
-		payout = bad_payout
+		return bad_payout
 	else:
-		payout = very_bad_payout
-	add_score(payout)
-	return payout
+		return very_bad_payout
 
 func reset():
 	level_score = 0

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://di35ch8men74b" path="res://scripts/npc_receiver.gd" id="1_s6nld"]
 [ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="2_8tgar"]
+[ext_resource type="PackedScene" uid="uid://bg1kk5x1q5v50" path="res://level_components/money_pickup.tscn" id="2_nuqgy"]
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="3_pniom"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
@@ -13,6 +14,8 @@ radius = 1.0
 script = ExtResource("1_s6nld")
 move_speed = 6.0
 package_mesh = NodePath("PackageMesh")
+money_scene = ExtResource("2_nuqgy")
+spawn_height_offset = 3.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

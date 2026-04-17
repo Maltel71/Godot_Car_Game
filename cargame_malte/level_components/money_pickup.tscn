@@ -4,9 +4,17 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1hx30"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_myykb"]
+radius = 1.0
+
 [node name="MoneyPickup" type="RigidBody3D" unique_id=1957211909]
 
 [node name="MoneyMesh" parent="." unique_id=367947848 instance=ExtResource("1_myykb")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147404072]
 shape = SubResource("SphereShape3D_1hx30")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=677937370]
+
+[node name="Area3DCollisionShape" type="CollisionShape3D" parent="Area3D" unique_id=706402100]
+shape = SubResource("SphereShape3D_myykb")

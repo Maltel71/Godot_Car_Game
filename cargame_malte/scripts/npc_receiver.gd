@@ -5,6 +5,10 @@ extends CharacterBody3D
 @export var move_speed: float = 3.0
 @export var package_mesh: Node3D
 
+@export var money_scene: PackedScene
+@export var spawn_height_offset: float = 1.0
+@export var spawn_force: float = 5.0
+
 var car: VehicleBody3D = null
 var has_package: bool = false
 var waypoint_index: int = 0
@@ -94,5 +98,17 @@ func _on_body_entered(body):
 		returning = true
 		waypoint_index = waypoints.size() - 1
 		var manager = get_node("/root/ScoreAndTimeManager")
-		manager.complete_delivery()
+		var coin_count = manager.complete_delivery()
 		manager.set_target_delivery("")
+		_spawn_coins(coin_count)
+
+func _spawn_coins(count: int):
+	if not money_scene:
+		return
+	var spawn_pos = global_position + Vector3.UP * spawn_height_offset
+	for i in count:
+		var coin = money_scene.instantiate()
+		get_tree().current_scene.add_child(coin)
+		coin.global_position = spawn_pos
+		var dir = Vector3(randf_range(-1, 1), 1.0, randf_range(-1, 1)).normalized()
+		coin.apply_impulse(dir * spawn_force)
