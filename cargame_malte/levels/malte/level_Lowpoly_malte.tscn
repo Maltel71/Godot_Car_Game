@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cogss6cln87ao"]
+[gd_scene load_steps=66 format=3 uid="uid://cogss6cln87ao"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_sj3a6"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_k1csa"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_2i3v0"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_7jhre"]
 [ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="23_fn8sc"]
+[ext_resource type="PackedScene" uid="uid://da6knqmoemkuh" path="res://level_components/rock_01.tscn" id="24_0r231"]
 [ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="24_oin0i"]
 [ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="25_cbuqg"]
 [ext_resource type="PackedScene" uid="uid://bs01qvui6utub" path="res://models/lowpoly_stylized/malte/_scene_prefabs/roadstuff/streetlamp.tscn" id="25_cv51p"]
@@ -31,7 +32,7 @@
 [ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="31_cv51p"]
 [ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="32_n3tdk"]
 [ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="35_ntm3b"]
-[ext_resource type="Material" uid="uid://c7h84slqqr00m" path="res://materials/Pink_mat.tres" id="36_2r22p"]
+[ext_resource type="PackedScene" uid="uid://dmcvwfrjsy7mk" path="res://models/lowpoly_stylized/malte/_scene_prefabs/tunnel_01.tscn" id="37_0r231"]
 [ext_resource type="Script" uid="uid://g3opjh3m3iww" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="37_n3tdk"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="37_ntm3b"]
 [ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="38_0r231"]
@@ -484,48 +485,48 @@ normal_texture = ExtResource("14_cbuqg")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_dy221")])
 
-[sub_resource type="Curve3D" id="Curve3D_2r22p"]
+[sub_resource type="Curve3D" id="Curve3D_0r231"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="Resource" id="Resource_ntm3b"]
+[sub_resource type="Resource" id="Resource_y2xty"]
 script = ExtResource("26_dy221")
 amount = 8000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_0r231"]
+[sub_resource type="Resource" id="Resource_cv51p"]
 script = ExtResource("27_2r22p")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_y2xty"]
+[sub_resource type="Resource" id="Resource_n3tdk"]
 script = ExtResource("28_ntm3b")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_cv51p"]
+[sub_resource type="Resource" id="Resource_2i3v0"]
 script = ExtResource("29_0r231")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_n3tdk"]
+[sub_resource type="Resource" id="Resource_nhrv8"]
 script = ExtResource("37_n3tdk")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_2i3v0"]
+[sub_resource type="Resource" id="Resource_xmdqw"]
 script = ExtResource("24_oin0i")
-stack = Array[ExtResource("25_cbuqg")]([SubResource("Resource_ntm3b"), SubResource("Resource_0r231"), SubResource("Resource_y2xty"), SubResource("Resource_cv51p"), SubResource("Resource_n3tdk")])
+stack = Array[ExtResource("25_cbuqg")]([SubResource("Resource_y2xty"), SubResource("Resource_cv51p"), SubResource("Resource_n3tdk"), SubResource("Resource_2i3v0"), SubResource("Resource_nhrv8")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("32_n3tdk")
@@ -659,12 +660,6 @@ _data = {
 &"movingplatform_anim_02": SubResource("Animation_xmdqw")
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_dy221"]
-size = Vector3(170, 1, 17.825)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2r22p"]
-size = Vector3(170, 1, 17.825)
-
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_sj3a6")
 level_start_time = 30.0
@@ -689,6 +684,69 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, 21.191854
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
+[node name="Tunnel_01" parent="===ENVIROMENT===" instance=ExtResource("37_0r231")]
+transform = Transform3D(0.22404328, -3.156505e-09, -1.115148, 7.200812e-10, 1.1374313, -3.0749086e-09, 1.115148, -1.0029996e-10, 0.22404328, -210.76755, 28.724648, 226.48793)
+
+[node name="Rock_01" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-1.7457458e-07, 0, -3.9938009, 0, 3.9938009, 0, 3.9938009, 0, -1.7457458e-07, -293.41864, 26.712975, 234.8878)
+
+[node name="Rock_03" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-3.6298268, -0.79195, -1.4654753, -5.9604645e-08, 3.513572, -1.8987511, 1.6657739, -1.725709, -3.1933637, -296.91013, 31.315384, 236.4901)
+
+[node name="Rock_16" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-3.6298268, -0.79195, -1.4654753, -5.9604645e-08, 3.513572, -1.8987511, 1.6657739, -1.725709, -3.1933637, -288.3162, 32.682068, 228.88205)
+
+[node name="Rock_10" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-3.6954591, 0.09147146, -1.5118381, -0.29338655, 3.8677742, 0.9511528, 1.4859158, 0.991161, -3.572128, -294.11545, 34.095757, 247.39023)
+
+[node name="Rock_11" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-1.7038938, 0.35124388, -0.59639865, -0.54222316, 0.30754182, 1.7302401, 0.43018326, 1.778866, -0.1813738, -294.7189, 30.206985, 249.86673)
+
+[node name="Rock_07" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-7.7650065, 0.7475916, 1.3833923, -1.1823957e-07, 6.9699807, -3.766611, -1.5724719, -3.6916757, -6.831315, -292.4058, 24.4217, 228.6055)
+
+[node name="Rock_14" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-2.065094, 2.4096284, 1.7550561, 2.8918364, 2.1376712, 0.46774524, -0.7237495, 1.6658908, -3.138811, -300.6681, 21.650814, 209.10893)
+
+[node name="Rock_17" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-2.065094, 2.4096284, 1.7550561, 2.8918364, 2.1376712, 0.46774524, -0.7237495, 1.6658908, -3.138811, -288.23523, 23.172441, 263.57004)
+
+[node name="Rock_18" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-2.065094, 2.4096284, 1.7550561, 2.8918364, 2.1376712, 0.46774524, -0.7237495, 1.6658908, -3.138811, -288.23523, 23.172441, 263.57004)
+
+[node name="Rock_19" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-2.0705252, -0.07654812, 0.92624414, 0.82787895, -1.1798303, 1.7531333, 0.42237943, 1.9372661, 1.1042898, -295.34192, 20.850227, 258.4165)
+
+[node name="Rock_15" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-2.065094, -1.2998136, 2.682725, 2.8918366, -0.08115506, 2.186742, -0.72374976, 3.3845294, 1.0827236, -302.67892, 19.418562, 200.4381)
+
+[node name="Rock_20" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-1.2328717, -0.40228966, 0.5518609, 0.18305299, 0.90255874, 1.066883, -0.6579359, 1.004943, -0.73727226, -300.20367, 22.105711, 219.59525)
+
+[node name="Rock_02" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-2.3889186, -2.571553, 1.9054205, 2.1711397, 0.4448645, 3.3224525, -2.3515239, 3.0231867, 1.1318682, -293.1419, 26.041887, 251.13194)
+
+[node name="Rock_08" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-1.7259439, -5.459359, 1.8734031, 2.4634242, -2.465081, -4.914066, 5.219749, -0.64179564, 2.938612, -285.33112, 30.357473, 251.43996)
+
+[node name="Rock_09" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-2.8947337, -4.367578, 2.97286, 4.5042787, -0.2684189, 3.9915595, -2.7613618, 4.1406927, 3.3945086, -284.9856, 37.845345, 238.09077)
+
+[node name="Rock_13" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(0.4117378, -5.4678864, 2.4951587, 4.736484, -1.2444181, -3.5086024, 3.6999092, 2.2015383, 4.2139087, -280.42178, 36.3998, 250.72366)
+
+[node name="Rock_04" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(0.9161837, -3.7583423, 0.99293494, 3.8472598, 1.0226994, 0.3211255, -0.55645597, 0.882836, 3.8550494, -295.09232, 20.296215, 247.02126)
+
+[node name="Rock_05" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(0.9161837, -3.7583423, 0.99293494, 3.8472598, 1.0226994, 0.3211255, -0.55645597, 0.882836, 3.8550494, -295.09232, 20.708385, 238.91772)
+
+[node name="Rock_06" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(1.5245637, -3.563399, -0.9635068, 0.5574106, 1.2527294, -3.7510552, 3.6490333, 1.297424, 0.9755469, -295.31915, 23.163939, 237.66185)
+
+[node name="Rock_12" parent="===ENVIROMENT===" instance=ExtResource("24_0r231")]
+transform = Transform3D(-0.121830985, -0.7368917, -1.029565, -1.0686113, 0.61457014, -0.3134153, 0.6790305, 0.83495533, -0.67795503, -298.77814, 21.246851, 241.28009)
+
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_7jhre")]
 transform = Transform3D(1.1925199, 0, -3.4761355, 0, 3.6749995, 0, 3.4761355, 0, 1.1925199, -254.57884, 20.416477, -120.86577)
 
@@ -698,6 +756,9 @@ transform = Transform3D(1.1925199, 0, -3.4761355, 0, 3.6749995, 0, 3.4761355, 0,
 
 [node name="Pickup_Time_02" parent="===ENVIROMENT===/==PICKUPS==/=TIME=" instance=ExtResource("8_cnoay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -318.49847, 22.010178, 233.13889)
+
+[node name="Pickup_Time_08" parent="===ENVIROMENT===/==PICKUPS==/=TIME=" instance=ExtResource("8_cnoay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -257.75043, 26.013115, 235.37216)
 
 [node name="Pickup_Time_03" parent="===ENVIROMENT===/==PICKUPS==/=TIME=" instance=ExtResource("8_cnoay")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.89813, 21.929651, 369.1824)
@@ -752,7 +813,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_2r22p")
+curve = SubResource("Curve3D_0r231")
 script = ExtResource("17_0r231")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -899,11 +960,17 @@ transform = Transform3D(-2.5340805, 0, -2.2153635e-07, 0, 2.5340805, 0, 2.215363
 [node name="ramp1" parent="===ENVIROMENT===" instance=ExtResource("37_ntm3b")]
 transform = Transform3D(2.23, 0, 0, 0, 2.23, 0, 0, 0, 2.23, -338.09537, 20.192661, 100.607574)
 
+[node name="ramp2" parent="===ENVIROMENT===" instance=ExtResource("37_ntm3b")]
+transform = Transform3D(-0.1703817, 0, 1.1703545, 0, 1.1826917, 0, -1.1703545, 0, -0.1703817, -297.288, 20.518986, 244.77231)
+
+[node name="Pickup_Time_01" parent="===ENVIROMENT===" instance=ExtResource("8_cnoay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 23, 148)
+
 [node name="ProtonScatter" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -308.2008, 34.279095, 64.471596)
 script = ExtResource("23_fn8sc")
 render_mode = 1
-modifier_stack = SubResource("Resource_2i3v0")
+modifier_stack = SubResource("Resource_xmdqw")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -941,41 +1008,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_2i3v0")
 }
 autoplay = "movingplatform_anim_02"
-
-[node name="Pickup_Time_01" parent="." instance=ExtResource("8_cnoay")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 23, 148)
-
-[node name="Tunnel" type="StaticBody3D" parent="."]
-transform = Transform3D(0.9775558, 0, 0.21067649, 0, 1, 0, -0.21067649, 0, 0.9775558, -212.55222, 23.474167, 227.34564)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel"]
-material_override = ExtResource("36_2r22p")
-mesh = SubResource("BoxMesh_dy221")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Tunnel"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.98838, 0)
-material_override = ExtResource("36_2r22p")
-mesh = SubResource("BoxMesh_dy221")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel"]
-shape = SubResource("BoxShape3D_2r22p")
-
-[node name="Tunnel2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.9775559, 0.2106765, 0, 0, -4.371139e-08, -1, -0.21067649, 0.9775559, -4.0978193e-08, -214.49342, 32.02905, 218.33826)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel2"]
-material_override = ExtResource("36_2r22p")
-mesh = SubResource("BoxMesh_dy221")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel2"]
-shape = SubResource("BoxShape3D_2r22p")
-
-[node name="Tunnel3" type="StaticBody3D" parent="."]
-transform = Transform3D(0.9775559, 0.2106765, 0, 0, -4.371139e-08, -1, -0.21067649, 0.9775559, -4.0978193e-08, -211.14642, 32.02905, 233.86858)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tunnel3"]
-material_override = ExtResource("36_2r22p")
-mesh = SubResource("BoxMesh_dy221")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tunnel3"]
-shape = SubResource("BoxShape3D_2r22p")
