@@ -4,15 +4,18 @@ extends CanvasLayer
 @onready var delivery_label = $Panel/HBoxContainer/DeliveryLabel
 @onready var timer_label   = $Panel/HBoxContainer/TimerLabel
 @onready var status_label  = $Panel/HBoxContainer/DeliveryStatus
+@onready var speed_label   = $Panel2/HBoxContainer2/CurrentSpeedLabel
 
 @export var delivery_arrow: TextureRect
 
 var manager
+var car: VehicleBody3D
 var _arrow_visible: bool = false
 var _smoothed_screen_pos: Vector2 = Vector2.ZERO
 
 func _ready():
 	manager = get_node("/root/ScoreAndTimeManager")
+	car = get_tree().get_first_node_in_group("car")
 	if delivery_arrow:
 		delivery_arrow.hide()
 
@@ -29,6 +32,9 @@ func _process(_delta):
 	else:
 		timer_label.text  = ""
 		status_label.text = ""
+
+	if car:
+		speed_label.text = "%03d mph" % int(car.linear_velocity.length() * 2.237)
 
 	_update_arrow()
 

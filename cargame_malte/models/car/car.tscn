@@ -102,7 +102,7 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
-[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles")]
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
 script = ExtResource("1_bkrhx")

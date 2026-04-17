@@ -55,3 +55,28 @@ modulate = Color(0.96429783, 0.9967267, 0.75552636, 1)
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Score:1000"
+
+[node name="Panel2" type="Panel" parent="." unique_id=2014608624]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -959.0
+offset_top = 972.0
+offset_right = -587.0
+offset_bottom = 1071.0
+grow_horizontal = 2
+theme = ExtResource("2_eki7a")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel2" unique_id=1246425837]
+layout_mode = 0
+offset_left = 18.999994
+offset_top = -16.000002
+offset_right = 1926.0
+offset_bottom = 176.0
+scale = Vector2(0.70071614, 0.70071614)
+theme_override_constants/separation = 74
+
+[node name="CurrentSpeedLabel" type="Label" parent="Panel2/HBoxContainer2" unique_id=1551227844]
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "Speed: 000"
