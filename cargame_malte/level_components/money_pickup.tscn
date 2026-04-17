@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bg1kk5x1q5v50"]
+
+[ext_resource type="PackedScene" uid="uid://ci3ehn0kakhxm" path="res://models/env_prop_coin1_mesh_01_v1.glb" id="1_myykb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1hx30"]
+
+[node name="MoneyPickup" type="RigidBody3D" unique_id=1957211909]
+
+[node name="MoneyMesh" parent="." unique_id=367947848 instance=ExtResource("1_myykb")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147404072]
+shape = SubResource("SphereShape3D_1hx30")
