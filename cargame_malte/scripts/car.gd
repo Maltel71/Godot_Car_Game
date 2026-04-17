@@ -10,12 +10,16 @@ var air_control_roll_strength = 2000.0
 var air_control_damping = 0.98
 var air_control_fade_time = 2.0
 var air_time = 0.0
+var is_dead: bool = false
 @export var spring_bone_simulator: SpringBoneSimulator3D
 @export var exhaust_particles: GPUParticles3D
 @export var explosion_particles: GPUParticles3D
 @export var rpm_threshold: float = 50.0
 
 func _physics_process(delta):
+	if is_dead:
+		return
+	
 	$CamArm.position = position
 	
 	var dir = Input.get_action_strength("Gas") - Input.get_action_strength("Reverse")
@@ -48,6 +52,8 @@ func _physics_process(delta):
 		air_time = 0.0
 
 func explode() -> void:
+	is_dead = true
+	
 	if explosion_particles:
 		explosion_particles.reparent(get_tree().current_scene)
 		explosion_particles.restart()
