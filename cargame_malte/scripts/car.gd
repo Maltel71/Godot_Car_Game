@@ -12,6 +12,7 @@ var air_control_fade_time = 2.0
 var air_time = 0.0
 @export var spring_bone_simulator: SpringBoneSimulator3D
 @export var exhaust_particles: GPUParticles3D
+@export var explosion_particles: GPUParticles3D
 @export var rpm_threshold: float = 50.0
 
 func _physics_process(delta):
@@ -20,16 +21,14 @@ func _physics_process(delta):
 	var dir = Input.get_action_strength("Gas") - Input.get_action_strength("Reverse")
 	var steering_dir = Input.get_action_strength("Left") - Input.get_action_strength("Right")
 	
-	# Ground controls
 	var avg_rpm = (abs($wheel_back_left.get_rpm()) + abs($wheel_back_right.get_rpm())) / 2.0
 	engine_force = dir * max_torque * (1.0 - avg_rpm / max_RPM)
 	steering = lerp(steering, steering_dir * turn_amount, turn_speed * delta)
 	brake = 2 if dir == 0 else 0
-	# Exhaust particles
+	
 	if exhaust_particles:
 		exhaust_particles.emitting = dir != 0
 	
-	# Air controls
 	var wheels = [$wheel_front_left, $wheel_front_right, $wheel_back_left, $wheel_back_right]
 	var is_airborne = not wheels.any(func(w): return w.is_in_contact())
 	
@@ -47,3 +46,14 @@ func _physics_process(delta):
 		angular_velocity *= air_control_damping
 	else:
 		air_time = 0.0
+
+func explode() -> void:
+	if explosion_particles:
+		explosion_particles.reparent(get_tree().current_scene)
+		explosion_particles.restart()
+	
+	visible = false
+	engine_force = 0
+	steering = 0
+	linear_velocity = Vector3.ZERO
+	angular_velocity = Vector3.ZERO

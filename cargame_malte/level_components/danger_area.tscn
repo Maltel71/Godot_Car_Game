@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://1y6cmyyhhp8u"]
+
+[ext_resource type="PackedScene" uid="uid://cgr0pee3hk47a" path="res://models/lowpoly_stylized/spikes_m_01.glb" id="1_3gi71"]
+[ext_resource type="Script" uid="uid://dulhfnicn1vlv" path="res://scripts/danger_area.gd" id="1_nmbvf"]
+[ext_resource type="AudioStream" uid="uid://4xumqdqv8xvc" path="res://audio/sfx/hit_hurt/hitHurt (2).wav" id="2_nvx7p"]
+[ext_resource type="Material" uid="uid://in4rs1irvh11" path="res://materials/black_mat.tres" id="2_w6c4e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_05pec"]
+size = Vector3(1, 1.0980225, 2.0112305)
+
+[node name="DangerArea" type="Node3D"]
+script = ExtResource("1_nmbvf")
+explosion_sound = ExtResource("2_nvx7p")
+explosion_volume = 0.20000000000000284
+
+[node name="Mesh" parent="." instance=ExtResource("1_3gi71")]
+
+[node name="Cube_001" parent="Mesh" index="0"]
+material_override = ExtResource("2_w6c4e")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7944946, 0.033935547)
+shape = SubResource("BoxShape3D_05pec")
+
+[editable path="Mesh"]
