@@ -4,17 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://ci3ehn0kakhxm" path="res://models/env_prop_coin1_mesh_01_v1.glb" id="1_myykb"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1hx30"]
+radius = 0.3475027
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_myykb"]
-radius = 1.0
+radius = 0.4044445
 
 [node name="MoneyPickup" type="RigidBody3D" unique_id=1957211909]
 script = ExtResource("1_1hx30")
-
-[node name="MoneyMesh" parent="." unique_id=367947848 instance=ExtResource("1_myykb")]
+suction_force_min = 20.0
+suction_force_max = 160.0
+suction_ramp_time = 4.0
+suction_range = 100.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1147404072]
 shape = SubResource("SphereShape3D_1hx30")
+
+[node name="MoneyMesh" parent="." unique_id=367947848 instance=ExtResource("1_myykb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="." unique_id=677937370]
 

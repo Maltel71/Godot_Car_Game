@@ -105,10 +105,12 @@ func _on_body_entered(body):
 func _spawn_coins(count: int):
 	if not money_scene:
 		return
-	var spawn_pos = global_position + Vector3.UP * spawn_height_offset
 	for i in count:
+		await get_tree().create_timer(0.01 * i).timeout
 		var coin = money_scene.instantiate()
 		get_tree().current_scene.add_child(coin)
-		coin.global_position = spawn_pos
+		coin.global_position = global_position + Vector3.UP * spawn_height_offset
 		var dir = Vector3(randf_range(-1, 1), 1.0, randf_range(-1, 1)).normalized()
 		coin.apply_impulse(dir * spawn_force)
+		var torque = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)).normalized()
+		coin.apply_torque_impulse(torque * spawn_force * 0.2)
