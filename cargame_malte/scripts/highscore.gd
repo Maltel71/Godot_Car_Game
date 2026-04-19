@@ -1,10 +1,18 @@
 extends CanvasLayer
 
-@onready var score_label   = $Panel/HBoxContainer/ScoreLabel
+@onready var score_label    = $Panel/HBoxContainer/ScoreLabel
 @onready var delivery_label = $Panel/HBoxContainer/DeliveryLabel
-@onready var timer_label   = $Panel/HBoxContainer/TimerLabel
-@onready var status_label  = $Panel/HBoxContainer/DeliveryStatus
-@onready var speed_label   = $Panel2/HBoxContainer2/CurrentSpeedLabel
+@onready var timer_label    = $Panel/HBoxContainer/TimerLabel
+@onready var status_label   = $Panel/HBoxContainer/DeliveryStatus
+@onready var speed_label    = $Panel2/HBoxContainer_Speed/CurrentSpeedLabel
+@onready var star_xp_label  = $Panel/HBoxContainer/StarXPMeter
+@onready var stars = [
+	$HBoxContainer_StarRating/Star1,
+	$HBoxContainer_StarRating/Star2,
+	$HBoxContainer_StarRating/Star3,
+	$HBoxContainer_StarRating/Star4,
+	$HBoxContainer_StarRating/Star5,
+]
 
 @export var delivery_arrow: TextureRect
 
@@ -35,6 +43,12 @@ func _process(_delta):
 
 	if car:
 		speed_label.text = "%03d mph" % int(car.linear_velocity.length() * 2.237)
+
+	var rating = manager.get_star_rating()
+	for i in stars.size():
+		stars[i].modulate.a = 1.0 if i < rating else 0.3
+
+	star_xp_label.text = "starxpmeter: %s" % manager.get_star_xp_progress()
 
 	_update_arrow()
 

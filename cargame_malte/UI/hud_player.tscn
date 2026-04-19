@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_eki7a"]
 [ext_resource type="Texture2D" uid="uid://do20ksjdye78m" path="res://textures/ui/arrow_v2.png" id="2_vgabk"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_8fwp6"]
+[ext_resource type="Texture2D" uid="uid://b011ol5s4tl66" path="res://textures/star_icon1_v1.png" id="5_abs7e"]
 
 [node name="HUD_Player" type="CanvasLayer" unique_id=83232620 node_paths=PackedStringArray("delivery_arrow")]
 script = ExtResource("1_i1glq")
@@ -56,6 +57,11 @@ layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Score:1000"
 
+[node name="StarXPMeter" type="Label" parent="Panel/HBoxContainer" unique_id=623340440]
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "starxpmeter:"
+
 [node name="Panel2" type="Panel" parent="." unique_id=2014608624]
 anchors_preset = 5
 anchor_left = 0.5
@@ -67,7 +73,7 @@ offset_bottom = 1071.0
 grow_horizontal = 2
 theme = ExtResource("2_eki7a")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel2" unique_id=1246425837]
+[node name="HBoxContainer_Speed" type="HBoxContainer" parent="Panel2" unique_id=1246425837]
 layout_mode = 0
 offset_left = 18.999994
 offset_top = -16.000002
@@ -76,7 +82,39 @@ offset_bottom = 176.0
 scale = Vector2(0.70071614, 0.70071614)
 theme_override_constants/separation = 74
 
-[node name="CurrentSpeedLabel" type="Label" parent="Panel2/HBoxContainer2" unique_id=1551227844]
+[node name="CurrentSpeedLabel" type="Label" parent="Panel2/HBoxContainer_Speed" unique_id=1551227844]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Speed: 000"
+
+[node name="HBoxContainer_StarRating" type="HBoxContainer" parent="." unique_id=1068227140]
+offset_left = 6.0
+offset_top = 107.0
+offset_right = 622.0
+offset_bottom = 171.0
+theme_override_constants/separation = -2
+
+[node name="Star1" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=447771481]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star2" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=975772089]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star3" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=1426957938]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star4" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=1359476431]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star5" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=1560481005]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2

@@ -100,7 +100,7 @@ func _on_body_entered(body):
 		returning = true
 		waypoint_index = waypoints.size() - 1
 		var manager = get_node("/root/ScoreAndTimeManager")
-		var coin_count = manager.complete_delivery()
+		var coin_count = manager.complete_delivery_with_star_xp()
 		manager.set_target_delivery("")
 		_spawn_coins(coin_count)
 
