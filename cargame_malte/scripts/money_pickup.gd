@@ -4,6 +4,7 @@ extends RigidBody3D
 @export var suction_force_max: float = 40.0
 @export var suction_ramp_time: float = 3.0
 @export var suction_range: float = 10.0
+@export var pickup_particles: GPUParticles3D
 
 var car: VehicleBody3D = null
 var _time: float = 0.0
@@ -28,4 +29,7 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body is VehicleBody3D:
 		get_node("/root/ScoreAndTimeManager").add_score(1)
+		if pickup_particles:
+			pickup_particles.reparent(get_tree().current_scene)
+			pickup_particles.emitting = true
 		queue_free()

@@ -9,6 +9,8 @@ extends CharacterBody3D
 @export var spawn_height_offset: float = 1.0
 @export var spawn_force: float = 5.0
 
+@export var coin_spawn_particles: GPUParticles3D
+
 var car: VehicleBody3D = null
 var has_package: bool = false
 var waypoint_index: int = 0
@@ -114,3 +116,5 @@ func _spawn_coins(count: int):
 		coin.apply_impulse(dir * spawn_force)
 		var torque = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)).normalized()
 		coin.apply_torque_impulse(torque * spawn_force * 0.2)
+		if coin_spawn_particles:
+			coin_spawn_particles.restart()

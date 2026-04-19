@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://oqhb4d8seo34"]
+
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="1_ri2io"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="2_j270m"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="3_pqrxt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2j6gv"]
+render_priority = 0
+shader = ExtResource("1_ri2io")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("2_j270m")
+
+[sub_resource type="Curve" id="Curve_2btkh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ri2io"]
+texture_mode = 1
+curve = SubResource("Curve_2btkh")
+
+[sub_resource type="Gradient" id="Gradient_rebef"]
+offsets = PackedFloat32Array(0.13207547, 0.3773585, 0.988391)
+colors = PackedColorArray(1, 1, 1, 1, 0.4198462, 0.9649963, 0.8591809, 1, 0.93276393, 0.75427693, 0.3119415, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j270m"]
+gradient = SubResource("Gradient_rebef")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_e85de"]
+_data = [Vector2(0, 0), 0.0, 0.328478, 0, 0, Vector2(0.5636363, 0.1685394), 0.0, 0.0, 0, 0, Vector2(0.98636353, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_pqrxt"]
+curve = SubResource("Curve_e85de")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mutqc"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_pqrxt")
+color_ramp = SubResource("GradientTexture1D_j270m")
+alpha_curve = SubResource("CurveTexture_ri2io")
+
+[node name="VFXPickupParticles1" type="Node3D" unique_id=1037302497]
+
+[node name="ParticlePuff" type="GPUParticles3D" parent="." unique_id=948495692]
+material_override = SubResource("ShaderMaterial_2j6gv")
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.87
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_mutqc")
+draw_pass_1 = ExtResource("3_pqrxt")
