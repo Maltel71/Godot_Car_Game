@@ -60,8 +60,8 @@ func complete_delivery() -> int:
 func complete_delivery_with_star_xp() -> int:
 	var payout = complete_delivery()
 	var xp_delta = {
-		very_good_payout: 5,
-		good_payout: 1,
+		very_good_payout: 50,
+		good_payout: 25,
 		bad_payout: -2,
 		very_bad_payout: -10
 	}.get(payout, 0)
