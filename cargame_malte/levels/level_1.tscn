@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bpp7ixfm514m6"]
 
-[ext_resource type="PackedScene" uid="uid://bt10rjtgt1q11" path="res://level_components/heli.tscn" id="2_jirdo"]
+[ext_resource type="PackedScene" uid="uid://cgt37m24x8hcw" path="res://level_components/player.tscn" id="2_jirdo"]
 [ext_resource type="Material" uid="uid://0jt656wxaltq" path="res://materials/new_standard_material_3d.tres" id="3_ihfcg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3hls8"]
@@ -107,11 +107,5 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1813413880]
 shape = SubResource("BoxShape3D_hbghi")
 
-[node name="Node3D" parent="." unique_id=1408699924 instance=ExtResource("2_jirdo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0869889, 0.5500002, 1.6637993)
-throttle_force = 25.0
-pitch_torque = 2.0
-roll_torque = 2.0
-yaw_torque = 0.3
-tilt_fwd_force = 6.0
-mouse_sensitivity = 0.001
+[node name="Player" parent="." unique_id=882193193 instance=ExtResource("2_jirdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6702871, 0.078167334, -0.96763945)

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cgt37m24x8hcw"]
+
+[ext_resource type="Script" uid="uid://btiijdjixnrt2" path="res://scripts/3rdperson_char_controller.gd" id="1_hfcel"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="3_tvuhn"]
+[ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="4_e2g51"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
+
+[node name="Player" type="CharacterBody3D" unique_id=882193193]
+script = ExtResource("1_hfcel")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_l2vm4")
+
+[node name="visuals" parent="." unique_id=975115071 instance=ExtResource("3_tvuhn")]
+transform = Transform3D(-1.255, 0, -1.09715586e-07, 0, 1.255, 0, 1.09715586e-07, 0, -1.255, 0, 0, 0)
+
+[node name="PackageMesh" parent="visuals" unique_id=1826512157 instance=ExtResource("4_e2g51")]
+transform = Transform3D(-0.7968128, 0, 6.965959e-08, 0, 0.7968128, 0, -6.965959e-08, 0, -0.7968128, -7.6823405e-08, 0.64293295, 0.87875724)
+visible = false
+
+[node name="camera_mount" type="Node3D" parent="." unique_id=2131950497]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="camera_mount" unique_id=970497929]
+spring_length = 6.0
+
+[node name="Camera3D" type="Camera3D" parent="camera_mount/SpringArm3D" unique_id=1784817906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3652132, 5.0236793)
