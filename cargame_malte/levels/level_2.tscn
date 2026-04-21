@@ -33,6 +33,7 @@
 [ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="30_ghfw4"]
 [ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="31_s67ts"]
 [ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="33_4yoxl"]
+[ext_resource type="Script" uid="uid://djha0k1o3sp7w" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="34_6dcgf"]
 
 [sub_resource type="GDScript" id="GDScript_ndgrd"]
 
@@ -459,32 +460,32 @@ radius = 2.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_h351q"]
 size = Vector2(10000, 10000)
 
-[sub_resource type="Resource" id="Resource_6oa44"]
+[sub_resource type="Resource" id="Resource_6dcgf"]
 script = ExtResource("25_6dcgf")
 amount = 8000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_4yoxl"]
+[sub_resource type="Resource" id="Resource_ubuva"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_3582p"]
+[sub_resource type="Resource" id="Resource_0nm7o"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_nomkf"]
+[sub_resource type="Resource" id="Resource_pjs8f"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_rddwe"]
+[sub_resource type="Resource" id="Resource_bf7t1"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -492,9 +493,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_6bdx5"]
+[sub_resource type="Resource" id="Resource_6oa44"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_6oa44"), SubResource("Resource_4yoxl"), SubResource("Resource_3582p"), SubResource("Resource_nomkf"), SubResource("Resource_rddwe")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_6dcgf"), SubResource("Resource_ubuva"), SubResource("Resource_0nm7o"), SubResource("Resource_pjs8f"), SubResource("Resource_bf7t1")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_s67ts")
@@ -505,32 +506,44 @@ script = ExtResource("33_4yoxl")
 size = Vector3(120.12787, 81.34689, 493.13168)
 metadata/_custom_type_script = "uid://bto17stixsm1"
 
-[sub_resource type="Resource" id="Resource_4xp61"]
+[sub_resource type="Curve3D" id="Curve3D_nomkf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 127.07349, -4.5776367e-05, -176.99887, 0, 0, 0, 0, 0, 0, 80.94928, -4.5776367e-05, -164.41954, 0, 0, 0, 0, 0, 0, 69.06885, -4.5776367e-05, -203.55519, 0, 0, 0, 0, 0, 0, 84.44354, -4.5776367e-05, -254.5713, 0, 0, 0, 0, 0, 0, 123.57922, -4.5776367e-05, -283.2242, 0, 0, 0, 0, 0, 0, 168.30566, -4.5776367e-05, -287.41733, 0, 0, 0, 0, 0, 0, 222.11719, -4.5776367e-05, -295.1047, 0, 0, 0, 0, 0, 0, 250.77008, -4.5776367e-05, -318.86563, 0, 0, 0, 0, 0, 0, 293.40002, -4.5776367e-05, -364.9898, 0, 0, 0, 0, 0, 0, 320.6552, -4.5776367e-05, -351.71164, 0, 0, 0, 0, 0, 0, 301.08734, -4.5776367e-05, -311.8771, 0, 0, 0, 0, 0, 0, 298.292, -4.5776367e-05, -257.36673, 0, 0, 0, 0, 0, 0, 329.7403, -4.5776367e-05, -192.37363, 0, 0, 0, 0, 0, 0, 387.74493, -4.5776367e-05, -133.67012, 0, 0, 0, 0, 0, 0, 424.784, -4.5776367e-05, -103.61952, 0, 0, 0, 0, 0, 0, 461.12433, -4.5776367e-05, -112.00571, 0, 0, 0, 0, 0, 0, 496.0669, -4.5776367e-05, -138.56207, 0, 0, 0, 0, 0, 0, 518.43005, -4.5776367e-05, -122.48851, 0, 0, 0, 0, 0, 0, 486.28284, -4.5776367e-05, -88.94366, 0, 0, 0, 0, 0, 0, 456.93115, -4.5776367e-05, -33.73442, 0, 0, 0, 0, 0, 0, 453.4369, -4.5776367e-05, 70.394394, 0, 0, 0, 0, 0, 0, 472.3059, -4.5776367e-05, 208.7669, 0, 0, 0, 0, 0, 0, 424.784, -4.5776367e-05, 282.84512, 0, 0, 0, 0, 0, 0, 438.761, -4.5776367e-05, 384.87738, 0, 0, 0, 0, 0, 0, 432.47137, -4.5776367e-05, 426.10956, 0, 0, 0, 0, 0, 0, 401.722, -4.5776367e-05, 449.17166, 0, 0, 0, 0, 0, 0, 361.8874, -4.5776367e-05, 408.6383, 0, 0, 0, 0, 0, 0, 284.31494, -4.5776367e-05, 400.2521, 0, 0, 0, 0, 0, 0, 250.77008, -4.5776367e-05, 338.75317, 0, 0, 0, 0, 0, 0, 190.66896, -4.5776367e-05, 254.89108, 0, 0, 0, 0, 0, 0, 126.37459, -4.5776367e-05, 220.64734, 0, 0, 0, 0, 0, 0, 171.10107, -4.5776367e-05, 196.18759, 0, 0, 0, 0, 0, 0, 166.2091, -4.5776367e-05, 154.95535, 0, 0, 0, 0, 0, 0, 164.8114, -4.5776367e-05, 74.587494, 0, 0, 0, 0, 0, 0, 203.24823, -4.5776367e-05, 34.054157, 0, 0, 0, 0, 0, 0, 264.74713, -4.5776367e-05, -38.626354, 0, 0, 0, 0, 0, 0, 275.9287, -4.5776367e-05, -111.306885, 0, 0, 0, 0, 0, 0, 252.16779, -4.5776367e-05, -163.02187, 0, 0, 0, 0, 0, 0, 169.70337, -4.5776367e-05, -192.37363, 0, 0, 0, 0, 0, 0, 124.278076, -4.5776367e-05, -176.99887),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 40
+
+[sub_resource type="Resource" id="Resource_rddwe"]
+script = ExtResource("34_6dcgf")
+curve = SubResource("Curve3D_nomkf")
+metadata/_custom_type_script = "uid://djha0k1o3sp7w"
+
+[sub_resource type="Resource" id="Resource_3582p"]
 script = ExtResource("25_6dcgf")
 amount = 90000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_pjs8f"]
+[sub_resource type="Resource" id="Resource_nomkf"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_6dcgf"]
+[sub_resource type="Resource" id="Resource_6bdx5"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_ubuva"]
+[sub_resource type="Resource" id="Resource_qthv2"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_0nm7o"]
+[sub_resource type="Resource" id="Resource_wnekv"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -538,13 +551,17 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_bf7t1"]
+[sub_resource type="Resource" id="Resource_jyp08"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_4xp61"), SubResource("Resource_pjs8f"), SubResource("Resource_6dcgf"), SubResource("Resource_ubuva"), SubResource("Resource_0nm7o")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_3582p"), SubResource("Resource_nomkf"), SubResource("Resource_6bdx5"), SubResource("Resource_qthv2"), SubResource("Resource_wnekv")])
 
 [sub_resource type="Resource" id="Resource_ghfw4"]
 script = ExtResource("31_s67ts")
 radius = 1000.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6dcgf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ubuva"]
 
 [node name="Level2" type="Node3D" unique_id=589024435]
 script = SubResource("GDScript_ndgrd")
@@ -561,7 +578,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Car1_Player" parent="." unique_id=754041233 instance=ExtResource("3_ndgrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 22.9955, -36.98169)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 20.042086, -36.98169)
 gravity_scale = 1.8
 
 [node name="WiggleTest" parent="Car1_Player" unique_id=1501707153 instance=ExtResource("4_h351q")]
@@ -788,7 +805,6 @@ waypoints = [NodePath("../NPC_Point_A"), NodePath("../NPC_Point_B")]
 linked_area = NodePath("../GetPackageArea")
 
 [node name="=HOUSE=" type="Node3D" parent="===POSTOFFICE===" unique_id=394954908]
-visible = false
 
 [node name="HamsterHouse_02" parent="===POSTOFFICE===/=HOUSE=" unique_id=73723418 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -1.5339661, -1.2906113, 0.47280693)
@@ -932,7 +948,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 script = ExtResource("22_m4706")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_6bdx5")
+modifier_stack = SubResource("Resource_6oa44")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -953,10 +969,17 @@ script = ExtResource("30_ghfw4")
 negative = true
 shape = SubResource("Resource_s67ts")
 
+[node name="ScatterShapeNegative2" type="Node3D" parent="ProtonScatter_Trees1" unique_id=1297294759]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -342.71082, 26.975388, 30.773163)
+visible = false
+script = ExtResource("30_ghfw4")
+negative = true
+shape = SubResource("Resource_rddwe")
+
 [node name="ProtonScatter_Grass1" type="Node3D" parent="." unique_id=1759491452]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_bf7t1")
+modifier_stack = SubResource("Resource_jyp08")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -970,6 +993,18 @@ path = "uid://cv3pvux6mm38t"
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.02155, 0, 73.39328)
 script = ExtResource("30_ghfw4")
 shape = SubResource("Resource_ghfw4")
+
+[node name="RigidBodPackage_Test" type="RigidBody3D" parent="." unique_id=2017937485]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.67218, 20.978338, -39.333508)
+visible = false
+gravity_scale = 1.9
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBodPackage_Test" unique_id=74736992]
+shape = SubResource("BoxShape3D_6dcgf")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBodPackage_Test" unique_id=264262541]
+mesh = SubResource("BoxMesh_ubuva")
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

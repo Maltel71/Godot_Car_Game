@@ -42,7 +42,7 @@ func _process(_delta):
 		status_label.text = ""
 
 	if car:
-		speed_label.text = "%03d mph" % int(car.linear_velocity.length() * 2.237)
+		speed_label.text = "%03d km/h" % int(car.linear_velocity.length() * 3.6)
 
 	var rating = manager.get_star_rating()
 	for i in stars.size():

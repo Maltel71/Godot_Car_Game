@@ -15,8 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="14_i00a5"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_i00a5"]
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_utifk"]
+size = Vector3(2, 0.2, 2)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
-size = Vector3(2.29102, 1.40625, 6.8826)
+size = Vector3(2.29102, 1.0693359, 6.8826)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhmyn"]
 radius = 0.978364
@@ -110,6 +116,66 @@ exhaust_particles = NodePath("===PartSyst===/vfx_Exhaust_Driving")
 level_strength = 2.0
 level_damping = 1.0
 
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=2091299720]
+transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -3.330795)
+visible = false
+shape = SubResource("BoxShape3D_i00a5")
+disabled = true
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=198548522]
+transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -3.330795)
+visible = false
+mesh = SubResource("BoxMesh_utifk")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=995259573]
+transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -1.4430928)
+visible = false
+shape = SubResource("BoxShape3D_i00a5")
+disabled = true
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1634523718]
+transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -1.4430928)
+visible = false
+mesh = SubResource("BoxMesh_utifk")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=746970314]
+transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, -0.8957286, 0.28144336, -2.4043798)
+visible = false
+shape = SubResource("BoxShape3D_i00a5")
+disabled = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=43519605]
+transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, -0.8957286, 0.28144336, -2.4043798)
+visible = false
+mesh = SubResource("BoxMesh_utifk")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=109637337]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03607668, -2.4043798)
+visible = false
+shape = SubResource("BoxShape3D_i00a5")
+disabled = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1757596252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03607668, -2.4043798)
+visible = false
+mesh = SubResource("BoxMesh_utifk")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=1171436539]
+transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, 0.8985343, 0.28144336, -2.4043798)
+visible = false
+shape = SubResource("BoxShape3D_i00a5")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=799006110]
+transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, 0.8985343, 0.28144336, -2.4043798)
+visible = false
+mesh = SubResource("BoxMesh_utifk")
+skeleton = NodePath("")
+
 [node name="CarMain02" parent="." unique_id=2027472306 instance=ExtResource("2_xhmyn")]
 
 [node name="SteeringWheel" parent="CarMain02" unique_id=2028302276 instance=ExtResource("3_vl2bd")]
@@ -180,12 +246,12 @@ mouse_threshold = 2.0
 transform = Transform3D(0.441583, -8.246283e-09, -8.910952e-10, 1.86744e-08, 0.976919, 0.21361014, -3.6438053e-10, -0.03857457, 0.17641592, 4.555855e-07, 5.2141337, 2.326463)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1513694900]
-transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.187, 0)
+transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.34167272, 0)
 shape = SubResource("BoxShape3D_xhmyn")
 debug_color = Color(0.607608, 0.363727, 1, 0.42)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1533986134]
-transform = Transform3D(0.918173, 0, 0, 0, -4.01346e-08, -0.918173, 0, 0.918173, -4.01346e-08, 0, 0.148, 0)
+transform = Transform3D(0.383, 0, 0, 0, -1.6741462e-08, -0.383, 0, 0.383, -1.6741462e-08, 0, 0.148, 0)
 shape = SubResource("CapsuleShape3D_xhmyn")
 debug_color = Color(0, 0.643137, 0.290196, 1)
 
@@ -299,3 +365,4 @@ bus = &"sfx"
 
 [node name="PackageMesh" parent="." unique_id=1826512157 instance=ExtResource("14_i00a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47323775, -2.1615758)
+visible = false

@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://do20ksjdye78m" path="res://textures/ui/arrow_v2.png" id="2_vgabk"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_8fwp6"]
 [ext_resource type="Texture2D" uid="uid://b011ol5s4tl66" path="res://textures/star_icon1_v1.png" id="5_abs7e"]
+[ext_resource type="Script" uid="uid://c3aptijipievd" path="res://scripts/speedometer.gd" id="6_hvg1e"]
+[ext_resource type="Texture2D" uid="uid://4rxljur0smut" path="res://textures/ui/ui_speedometer_bg_t_v1.png" id="6_k8emw"]
+[ext_resource type="Texture2D" uid="uid://b5ba4b3xq3jg" path="res://textures/ui/ui_speedometer_needle_t_v1.png" id="7_hvg1e"]
 
 [node name="HUD_Player" type="CanvasLayer" unique_id=83232620 node_paths=PackedStringArray("delivery_arrow")]
 script = ExtResource("1_i1glq")
@@ -118,3 +121,45 @@ stretch_mode = 2
 layout_mode = 2
 texture = ExtResource("5_abs7e")
 stretch_mode = 2
+
+[node name="Controlls_temp" type="Label" parent="." unique_id=1247988723]
+offset_left = 1663.0001
+offset_top = 812.00006
+offset_right = 2260.0
+offset_bottom = 1497.0
+scale = Vector2(0.39999998, 0.39999998)
+theme = ExtResource("3_8fwp6")
+text = "WASD - move/fly
+Q,E - roll/steer in air
+MOUSE - camera
+R - flip car
+F - activate thrusters
+SPACE - thruster up
+ESC - menu"
+
+[node name="Control_Speedometer" type="Control" parent="." unique_id=823763963]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 841.0
+offset_right = 114.0
+offset_bottom = 881.0
+script = ExtResource("6_hvg1e")
+max_speed_kmh = 300.0
+
+[node name="BG" type="TextureRect" parent="Control_Speedometer" unique_id=664271771]
+layout_mode = 0
+offset_left = -73.0
+offset_top = -125.0
+offset_right = 183.0
+offset_bottom = 131.0
+texture = ExtResource("6_k8emw")
+
+[node name="Needle" type="TextureRect" parent="Control_Speedometer" unique_id=1448637892]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -109.0
+offset_right = 181.0
+offset_bottom = 147.0
+pivot_offset = Vector2(129, 234)
+texture = ExtResource("7_hvg1e")
