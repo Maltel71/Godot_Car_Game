@@ -22,6 +22,8 @@ func _ready():
 	set_physics_process(true)
 
 func _input(event):
+	if parent_body and "driver_in_car" in parent_body and not parent_body.driver_in_car:
+		return
 	# Toggle thruster on/off with the assigned button
 	if event.is_action_pressed("thruster_toggle"):
 		thruster_enabled = not thruster_enabled
@@ -31,6 +33,10 @@ func _input(event):
 
 func _physics_process(delta):
 	if not parent_body:
+		return
+	if "driver_in_car" in parent_body and not parent_body.driver_in_car:
+		if particle_effect:
+			particle_effect.emitting = false
 		return
 
 	# Hold the assigned action to thrust (only when toggled on)
