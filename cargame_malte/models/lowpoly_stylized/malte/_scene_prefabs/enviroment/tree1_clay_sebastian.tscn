@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ggn1uj4rmops"]
+
+[ext_resource type="PackedScene" uid="uid://bkd5h1kbj05aj" path="res://models/clay/malte/Malte_Tree1.glb" id="2_l2d0e"]
+[ext_resource type="PackedScene" uid="uid://pry2oskwcvhi" path="res://models/clay/malte/Malte_LargeRock.glb" id="3_8khax"]
+
+[node name="Tree1" type="Node3D"]
+
+[node name="Malte_Tree12" parent="." instance=ExtResource("2_l2d0e")]
+transform = Transform3D(10.556615, 0.56441027, 0, -0.7746736, 7.691319, 0, 0, 0, 10.389, -0.2967646, 2.273652, 0)
+
+[node name="Malte_LargeRock2" parent="Malte_Tree12" instance=ExtResource("3_8khax")]
+transform = Transform3D(0.33674252, -0.04622739, 0.0008963598, 0.030847024, 0.50451434, 0.0023729464, -0.0011343969, -0.0034958276, 0.33060798, 0.04357702, -0.16688737, -0.015538761)
