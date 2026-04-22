@@ -15,12 +15,13 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * sens_h))
+		visuals.rotate_y(deg_to_rad(event.relative.x * sens_h))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y * sens_v))
 		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-60), deg_to_rad(20))
 
 func _physics_process(delta):
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() *2* delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
