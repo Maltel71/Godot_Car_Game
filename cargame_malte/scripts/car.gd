@@ -25,21 +25,36 @@ var assigned_delivery_id: String = ""
 @export var player_scene: PackedScene
 @export var exit_offset: Vector3 = Vector3(-1.5, 0, 0)
 @export var car_camera: Camera3D
+@export var max_exit_speed: float = 1.5          # m/s (~5 km/h)
+@export var exit_hold_time: float = 1.5          # seconds car must stay slow
+@export var handbrake_sound: AudioStream
+@export var handbrake_audio_player: AudioStreamPlayer3D
 
 var _flip_timer: float = 0.0
 var driver_in_car: bool = true
 var current_player: Node3D = null
+var _slow_timer: float = 0.0
+var _doors_locked: bool = true
 
 func _physics_process(delta):
 	$CamArm.position = position
 	$PackageMesh.visible = HasPackage
 
-	if Input.is_action_just_pressed("enter_exit") and driver_in_car:
-		_exit_car()
-		return
-	if not driver_in_car:
+	if driver_in_car:
+		# Track how long the car has been nearly still
+		if linear_velocity.length() < max_exit_speed:
+			_slow_timer += delta
+		else:
+			_slow_timer = 0.0
+		_doors_locked = _slow_timer < exit_hold_time
+
+		if Input.is_action_just_pressed("enter_exit") and not _doors_locked:
+			_exit_car()
+			return
+	else:
+		# Parked: hold handbrake
 		engine_force = 0
-		brake = 2
+		brake = 5
 		steering = 0
 		return
 
@@ -79,6 +94,9 @@ func _try_flip():
 func _exit_car():
 	if not player_scene:
 		return
+	if handbrake_sound and handbrake_audio_player:
+		handbrake_audio_player.stream = handbrake_sound
+		handbrake_audio_player.play()
 	driver_in_car = false
 	current_player = player_scene.instantiate()
 	get_tree().current_scene.add_child(current_player)
@@ -95,3 +113,5 @@ func enter_car():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await get_tree().process_frame
 	driver_in_car = true
+	_slow_timer = 0.0
+	_doors_locked = true

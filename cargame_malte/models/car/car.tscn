@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://cgt37m24x8hcw" path="res://level_components/player.tscn" id="2_jpt3o"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/car/CarMain02.fbx" id="2_xhmyn"]
+[ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="3_5khej"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/car/SteeringWheel.fbx" id="3_vl2bd"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/car/CarWindows02.fbx" id="5_coc8s"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
@@ -110,7 +111,7 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
-[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles", "car_camera") groups=["car"]]
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles", "car_camera", "handbrake_audio_player") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
 script = ExtResource("1_bkrhx")
@@ -119,6 +120,8 @@ level_strength = 2.0
 level_damping = 1.0
 player_scene = ExtResource("2_jpt3o")
 car_camera = NodePath("CamArm/Camera3D")
+handbrake_sound = ExtResource("3_5khej")
+handbrake_audio_player = NodePath("CarSFXManager/AudioStreamPlayer3D_HandBrake")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=2091299720]
 transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -3.330795)
@@ -366,6 +369,8 @@ driving_sounds = Array[AudioStream]([ExtResource("14_jpt3o")])
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=248696536]
 bus = &"sfx"
+
+[node name="AudioStreamPlayer3D_HandBrake" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=594960715]
 
 [node name="PackageMesh" parent="." unique_id=1826512157 instance=ExtResource("14_i00a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47323775, -2.1615758)
