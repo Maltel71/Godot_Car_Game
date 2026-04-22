@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dxfc2rrm1kevo"]
+[gd_scene load_steps=27 format=3 uid="uid://dxfc2rrm1kevo"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_yhcl1"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_p42rm"]
@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="10_trpj1"]
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="11_yrdmk"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="12_4vvi5"]
+[ext_resource type="Script" uid="uid://cmfwe3o2k8g47" path="res://scripts/sigma_kama.gd" id="12_6jjn3"]
+[ext_resource type="Script" uid="uid://c055m3yrmdwdv" path="res://scripts/tuut_sigma_kama.gd" id="13_bc4qo"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="13_c54gn"]
+[ext_resource type="AudioStream" uid="uid://cl2ue4p0evdc0" path="res://audio/sfx/laser_shoot/laserShoot (3).wav" id="13_ic0xc"]
 [ext_resource type="PackedScene" uid="uid://bfy4tkqsasve1" path="res://models/lowpoly_stylized/models_karol/car_body_v1.glb" id="14_lvcff"]
 [ext_resource type="PackedScene" uid="uid://xt3bsye06g60" path="res://models/lowpoly_stylized/models_karol/car_wheel_v1.glb" id="15_b6k0v"]
 
@@ -260,7 +263,13 @@ bus = &"sfx"
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 5)
 light_color = Color(0.99607843, 1, 0, 1)
-light_energy = 50.0
+light_energy = 2.0
 shadow_enabled = true
 spot_range = 9.664399
 spot_angle = 45.63559
+script = ExtResource("12_6jjn3")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 5)
+stream = ExtResource("13_ic0xc")
+script = ExtResource("13_bc4qo")
