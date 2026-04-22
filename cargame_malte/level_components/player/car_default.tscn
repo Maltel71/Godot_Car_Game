@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=39 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_xhmyn"]
@@ -15,6 +15,9 @@
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="12_i00a5"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="13_utifk"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
+[ext_resource type="Script" uid="uid://xe2yqxcqrgts" path="res://scripts/light.gd" id="16_217ou"]
+[ext_resource type="AudioStream" uid="uid://jfc3aifplq0i" path="res://audio/sfx/malte/sfx_car_honk_01.mp3" id="17_l2pg3"]
+[ext_resource type="Script" uid="uid://c76kv5uess2ng" path="res://scripts/honk.gd" id="18_l2pg3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.40625, 6.8826)
@@ -289,7 +292,7 @@ amount = 20
 one_shot = true
 explosiveness = 0.93
 fixed_fps = 60
-trail_lifetime = 1.4000000000000001
+trail_lifetime = 1.4
 process_material = SubResource("ParticleProcessMaterial_st23m")
 draw_pass_1 = ExtResource("11_i00a5")
 
@@ -339,5 +342,25 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, -0.52870136, -0.37887797, 3.3835526)
+light_color = Color(0.99999994, 0.9241846, 0.6018946, 1)
+light_energy = 2.0
+spot_range = 20.0
+spot_angle = 26.05
+script = ExtResource("16_217ou")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9659258, 0.25881913, 0, -0.25881913, -0.9659258, 0.5520305, -0.37887797, 3.3835526)
+light_color = Color(0.99999994, 0.9241846, 0.6018946, 1)
+light_energy = 2.0
+spot_range = 20.0
+spot_angle = 26.05
+script = ExtResource("16_217ou")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("17_l2pg3")
+script = ExtResource("18_l2pg3")
 
 [editable path="===Body===/Body_Mesh"]

@@ -721,7 +721,7 @@ script = ExtResource("2_k1csa")
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_1c732")]
 
 [node name="Car_Default" parent="." instance=ExtResource("5_84r6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, 21.191854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 22.240784, 21.191854)
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
@@ -1084,7 +1084,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333, 23, 148)
 
 [node name="ProtonScatter" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -308.2008, 34.279095, 64.471596)
-visible = false
 script = ExtResource("23_fn8sc")
 render_mode = 1
 modifier_stack = SubResource("Resource_3pfkr")
