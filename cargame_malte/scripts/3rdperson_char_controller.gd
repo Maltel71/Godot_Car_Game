@@ -6,11 +6,21 @@ extends CharacterBody3D
 @export var sens_h: float = 0.2
 @export var sens_v: float = 0.2
 
+@export var enter_distance: float = 3.0
+@export var player_camera: Camera3D
+
 @onready var camera_mount: Node3D = $camera_mount
 @onready var visuals: Node3D = $visuals
 
+var car_ref: VehicleBody3D = null
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if player_camera:
+		player_camera.make_current()
+
+func set_car_ref(car: VehicleBody3D):
+	car_ref = car
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -20,8 +30,13 @@ func _input(event):
 		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-60), deg_to_rad(20))
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("enter_exit") and car_ref \
+	and global_position.distance_to(car_ref.global_position) < enter_distance:
+		car_ref.enter_car()
+		return
+
 	if not is_on_floor():
-		velocity += get_gravity() *2* delta
+		velocity += get_gravity() * 2 * delta
 
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity

@@ -29,6 +29,8 @@ func _ready():
 		car_node = get_parent()
 
 func _input(event):
+	if car_node and "driver_in_car" in car_node and not car_node.driver_in_car:
+		return
 	if event is InputEventMouseMotion:
 		var motion = event.relative.length()
 		if motion > mouse_threshold:
