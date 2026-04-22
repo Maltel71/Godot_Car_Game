@@ -481,6 +481,7 @@ name = "white_1024px_t"
 albedo_color = Color(0.8613957, 0.64316106, 0.9300386, 1)
 albedo_texture = ExtResource("14_cbuqg")
 normal_texture = ExtResource("14_cbuqg")
+roughness = 1.0
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_hfdp3"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
