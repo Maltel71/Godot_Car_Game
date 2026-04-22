@@ -41,6 +41,17 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=58307320]
 shape = SubResource("BoxShape3D_hbghi")
 
+[node name="StaticBody3D8" type="StaticBody3D" parent="." unique_id=888349551]
+transform = Transform3D(0.65485626, 0.7546351, -0.04110587, -0.11173142, 0.042878404, -0.99281317, -0.7474488, 0.6547425, 0.112395614, 0, 0, -10.499123)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D8" unique_id=1512987889]
+material_override = ExtResource("3_ihfcg")
+mesh = SubResource("PlaneMesh_3hls8")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D8" unique_id=1078067644]
+shape = SubResource("BoxShape3D_hbghi")
+
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1967315367]
 transform = Transform3D(0.991852, -0.127394, 0, 0.127394, 0.991852, 0, 0, 0, 1, 0, 2.47228, 42.7706)
 

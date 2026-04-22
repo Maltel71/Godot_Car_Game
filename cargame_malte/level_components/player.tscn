@@ -6,6 +6,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_hfcel"]
+radius = 0.2
+
 [node name="Player" type="CharacterBody3D" unique_id=882193193]
 script = ExtResource("1_hfcel")
 
@@ -21,9 +24,12 @@ transform = Transform3D(-0.7968128, 0, 6.965959e-08, 0, 0.7968128, 0, -6.965959e
 visible = false
 
 [node name="camera_mount" type="Node3D" parent="." unique_id=2131950497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0358593, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="camera_mount" unique_id=970497929]
+shape = SubResource("SphereShape3D_hfcel")
 spring_length = 6.0
+margin = 0.6
 
 [node name="Camera3D" type="Camera3D" parent="camera_mount/SpringArm3D" unique_id=1784817906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3652132, 5.0236793)

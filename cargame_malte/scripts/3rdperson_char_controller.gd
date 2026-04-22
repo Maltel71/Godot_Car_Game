@@ -22,7 +22,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 
 	var speed = run_speed if Input.is_action_pressed("run") else walk_speed
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
-		visuals.look_at(position + direction)
+		visuals.look_at(position - direction)
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
