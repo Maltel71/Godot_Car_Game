@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ctent62oianmi"]
+[gd_scene load_steps=39 format=3 uid="uid://ctent62oianmi"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_vdcri"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_jnho2"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_1vrni"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="22_vdcri"]
 [ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="23_6oima"]
-[ext_resource type="PackedScene" uid="uid://djhfjy5n5lwtd" path="res://models/lowpoly_stylized/malte/_scene_prefabs/box1.tscn" id="23_ertsf"]
 [ext_resource type="AudioStream" uid="uid://b6mdqctbyw2yi" path="res://audio/sfx/pickup/pickupCoin.wav" id="23_jnho2"]
 [ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="24_ertsf"]
 
@@ -482,7 +481,7 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_vdcri")
-level_start_time = 100.0
+level_start_time = 1e+15
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
@@ -536,7 +535,7 @@ pickup_volume = 10.107
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -184.6169)
 
 [node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("24_ertsf")]
-transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9095442, -304.19485, 20.854706, 4.309784)
+transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9095442, -304.19485, 20.028162, 4.309784)
 
 [node name="Halfpipe1" parent="===ENVIROMENT===/Halfpipe1" instance=ExtResource("24_ertsf")]
 transform = Transform3D(1.0128574, -0.029682875, 0.04157787, 0.043549206, -0.06265879, -0.9241252, 0.03287281, 0.99759126, -0.05680722, -0.10513306, 7.544361, -11.825821)
@@ -552,9 +551,6 @@ transform = Transform3D(-0.99951214, 0, -0.031236421, 0, 1, 0, 0.031236421, 0, -
 
 [node name="ramp1" parent="===ENVIROMENT===/ramp1/ramp2" instance=ExtResource("22_vdcri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.823944, 0.025520325, 0.044564962)
-
-[node name="box" parent="===ENVIROMENT===" instance=ExtResource("23_ertsf")]
-transform = Transform3D(0.999794, 0, 0.020296786, 0, 1, 0, -0.020296786, 0, 0.999794, -373.50778, 19.248596, 12.254603)
 
 [node name="DangerArea" parent="." instance=ExtResource("23_6oima")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.7591, 20.056444, 10.193245)

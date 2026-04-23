@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://deseavo37ors"]
+[gd_scene load_steps=28 format=3 uid="uid://deseavo37ors"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_ce0rj"]
 [ext_resource type="PackedScene" uid="uid://ctsiuw8gu4usp" path="res://models/lowpoly_stylized/samuel_model/Samuel_bil.glb" id="2_rp7e8"]
@@ -7,9 +7,11 @@
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_g5o5a"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="8_gg7hu"]
 [ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://vfx/Cloud_v2.obj" id="9_15mn1"]
+[ext_resource type="Material" uid="uid://7bfo3qeh1oed" path="res://materials/black_metal_samuel.tres" id="9_ce0rj"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="10_lkch0"]
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="11_lk8e2"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="12_ip8p8"]
+[ext_resource type="Script" uid="uid://dqefr1ivplbdg" path="res://scripts/spotlights.gd" id="12_rp7e8"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="13_mrdye"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
@@ -98,6 +100,10 @@ scale_max = 1.1999999
 scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fdptc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4mfwf"]
 
 [node name="Car_Default" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles")]
 mass = 240.0
@@ -191,35 +197,33 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="vfx_Exhaust_idle" type="GPUParticles3D" parent="===ParticelSystems==="]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025796294, -0.82071316, -3.2441275)
 material_override = SubResource("ShaderMaterial_utifk")
 amount = 5
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_l85uf")
 draw_pass_1 = ExtResource("9_15mn1")
-metadata/_edit_lock_ = true
 
 [node name="vfx_Exhaust_Driving" type="GPUParticles3D" parent="===ParticelSystems==="]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024096966, -0.82071316, -3.2441275)
 material_override = SubResource("ShaderMaterial_utifk")
 amount = 40
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_8ijm4")
 draw_pass_1 = ExtResource("9_15mn1")
-metadata/_edit_lock_ = true
 
 [node name="===Thrusters===" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
 [node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_lkch0")]
-transform = Transform3D(-4.371139e-08, 0, -1, -0.9659258, 0.25881907, 3.7252903e-08, 0.25881907, 0.9659258, -1.4901161e-08, 1.3862259, -0.21461034, -2.1589038)
+transform = Transform3D(-4.371139e-08, 0, -1, 0.04023646, 0.9991902, -6.3508367e-09, 0.9991902, -0.04023646, -3.961679e-08, 1.3862259, 0.08587313, 0.094386995)
+thrust_force = 3000.0
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
-metadata/_edit_lock_ = true
 
 [node name="Thruster_R" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_lkch0")]
-transform = Transform3D(-3.5326156e-08, -3.1294107e-08, 1, 0.96592575, 0.2588191, 4.2221956e-08, -0.2588191, 0.96592575, 2.1084706e-08, -1.386, -0.215, -2.159)
+transform = Transform3D(-3.532616e-08, -3.1294107e-08, 1, -0.017103463, 0.9998538, 3.0685328e-08, -0.9998538, -0.017103463, -3.5856225e-08, -1.386, 0.06473437, 0.20127547)
+thrust_force = 3000.0
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
-metadata/_edit_lock_ = true
 
 [node name="vfx_Exhaust_SmokePuff_L" type="GPUParticles3D" parent="===Thrusters==="]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.3800956, -0.45450124, -2.8872514)
@@ -245,6 +249,26 @@ process_material = SubResource("ParticleProcessMaterial_3jha3")
 draw_pass_1 = ExtResource("9_15mn1")
 metadata/_edit_lock_ = true
 
+[node name="propellor" type="Node3D" parent="===Thrusters==="]
+transform = Transform3D(0.4821777, 0, 0, 0, 1, 0, 0, 0, 0.39999998, 0, 0, -0.6585134)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="===Thrusters===/propellor"]
+
+[node name="propellor rod" type="MeshInstance3D" parent="===Thrusters===/propellor/StaticBody3D"]
+transform = Transform3D(0.48000002, 0, 0, 0, 2.1120002, 0, 0, 0, 0.48000002, 0, 0, 0)
+material_override = ExtResource("9_ce0rj")
+mesh = SubResource("CylinderMesh_fdptc")
+
+[node name="propellor flap" type="MeshInstance3D" parent="===Thrusters===/propellor/StaticBody3D"]
+transform = Transform3D(8.266747, 0, 0, 0, 0.113015674, 0, 0, 0, 0.48000002, 0, 2.05723, 0)
+material_override = ExtResource("9_ce0rj")
+mesh = SubResource("BoxMesh_4mfwf")
+
+[node name="propellor flap 2" type="MeshInstance3D" parent="===Thrusters===/propellor/StaticBody3D"]
+transform = Transform3D(0.17298175, 0, 0.47989488, 0, 0.113015674, 0, -8.264937, 0, 0.010044005, 0, 2.05723, 0)
+material_override = ExtResource("9_ce0rj")
+mesh = SubResource("BoxMesh_4mfwf")
+
 [node name="===Car_SFX_Manager===" type="Node3D" parent="."]
 visible = false
 script = ExtResource("11_lk8e2")
@@ -253,3 +277,21 @@ driving_sounds = Array[AudioStream]([ExtResource("13_mrdye")])
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.9967998, 0, -0.07993806, 0, 1, 0, 0.07993806, 0, -0.9967998, -0.8765873, -0.35294616, 3.3603666)
+light_color = Color(0.78948367, 0.8050386, 0, 1)
+light_energy = 10.143
+spot_range = 21.992
+spot_attenuation = -1.19
+spot_angle = 22.81
+script = ExtResource("12_rp7e8")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.9967998, 0, -0.07993806, 0, 1, 0, 0.07993806, 0, -0.9967998, 0.8861731, -0.35294616, 3.3603666)
+light_color = Color(0.78948367, 0.8050386, 0, 1)
+light_energy = 10.143
+spot_range = 21.992
+spot_attenuation = -1.19
+spot_angle = 22.81
+script = ExtResource("12_rp7e8")
