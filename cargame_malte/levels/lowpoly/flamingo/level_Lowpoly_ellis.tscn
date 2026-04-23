@@ -681,6 +681,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -362.2256, 2.6598988, -119.61
 [node name="Pickup_Time_01" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.61005, 3.0276737, -110.429016)
 
+[node name="Pickup_Time_04" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.61005, 3.0276737, -110.429016)
+
+[node name="Pickup_Time_05" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.61005, 3.0276737, -110.429016)
+
+[node name="Pickup_Time_06" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.61005, 3.0276737, -110.429016)
+
+[node name="Pickup_Time_07" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.61005, 3.0276737, -110.429016)
+
+[node name="Pickup_Time_08" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.61005, 3.0276737, -110.429016)
+
 [node name="Pickup_Points_01" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("6_1ibi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.2008, 2.6444778, -92.436745)
 
@@ -697,7 +712,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -374.5409, 2.623602, -107.983
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -374.5528, 2.6020699, -107.70784)
 
 [node name="Pickup_Time_02" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -374.46545, 3.0200539, -107.5274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -374.46545, 3.0200539, -111.25006)
+time_value = 100.0
 
 [node name="Pickup_Points_05" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("6_1ibi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -374.60352, 4.360304, -109.82916)
@@ -709,7 +725,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -373.10352, 2.6205158, -59.26
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -384.77014, 2.4798603, -64.86932)
 
 [node name="Pickup_Time_03" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("8_kwv3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -374.09998, 2.9454575, -111.866486)
+transform = Transform3D(12398.198, 0, 0, 0, 12398.198, 0, 0, 0, 12398.198, -451.60114, 87.70083, -143.74332)
+time_value = 1000.0
 
 [node name="Pickup_Points_07" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" instance=ExtResource("6_1ibi7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -380.68573, 2.3071442, -11.752808)

@@ -50,6 +50,7 @@ pickup_sound = ExtResource("2_iyx04")
 pickup_volume = -5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.98789227, -0.1551415, 0, 0.1551415, -0.98789227, 0, 0, 0)
 shape = SubResource("BoxShape3D_b1f2t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
