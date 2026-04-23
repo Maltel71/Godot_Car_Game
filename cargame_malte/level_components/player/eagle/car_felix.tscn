@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c5ouye51r45m5"]
+[gd_scene load_steps=28 format=3 uid="uid://c5ouye51r45m5"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_vxkux"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_pujcu"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="11_8hmx8"]
 [ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="12_mf7ho"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="13_ik6y2"]
+[ext_resource type="Script" uid="uid://bexsmcae076nl" path="res://scripts/lampa_felix.gd" id="15_fofsb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.40625, 5.290226)
@@ -276,3 +277,11 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9942093, -0.107461356, 0, 0.107461356, -0.9942093, 0, 0, 2.8605208)
+light_color = Color(0.7845023, 0, 0.04133497, 1)
+spot_range = 4096.0
+spot_attenuation = 0.04
+spot_angle = 11.49
+script = ExtResource("15_fofsb")
