@@ -8,6 +8,7 @@ extends CharacterBody3D
 
 @export var enter_distance: float = 3.0
 @export var package_pickup_distance: float = 2.0
+@export var package_interaction_node_path: NodePath = "packagedistancepoint"
 @export var player_camera: Camera3D
 @export var package_mesh: Node3D
 
@@ -39,9 +40,22 @@ func _physics_process(delta):
 	if package_mesh:
 		package_mesh.visible = HasPackage
 	
+	# Get package interaction point or fallback to car center
+	var interaction_point = car_ref.get_node_or_null(package_interaction_node_path) if car_ref else null
+	var check_position = interaction_point.global_position if interaction_point else (car_ref.global_position if car_ref else global_position)
+	
+	# Put package in car
+	if Input.is_action_just_pressed("interact") and car_ref \
+	and HasPackage and global_position.distance_to(check_position) < package_pickup_distance:
+		car_ref.HasPackage = true
+		car_ref.assigned_delivery_id = assigned_delivery_id
+		HasPackage = false
+		assigned_delivery_id = ""
+		return
+	
 	# Pick up package from car
 	if Input.is_action_just_pressed("interact") and car_ref \
-	and car_ref.HasPackage and global_position.distance_to(car_ref.global_position) < package_pickup_distance:
+	and car_ref.HasPackage and global_position.distance_to(check_position) < package_pickup_distance:
 		HasPackage = true
 		assigned_delivery_id = car_ref.assigned_delivery_id
 		car_ref.HasPackage = false

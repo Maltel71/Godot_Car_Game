@@ -462,7 +462,7 @@ size = Vector2(10000, 10000)
 
 [sub_resource type="Resource" id="Resource_6dcgf"]
 script = ExtResource("25_6dcgf")
-amount = 8000
+amount = 8
 restrict_height = true
 reference_frame = 1
 
@@ -520,7 +520,7 @@ metadata/_custom_type_script = "uid://djha0k1o3sp7w"
 
 [sub_resource type="Resource" id="Resource_3582p"]
 script = ExtResource("25_6dcgf")
-amount = 90000
+amount = 9
 restrict_height = true
 reference_frame = 1
 

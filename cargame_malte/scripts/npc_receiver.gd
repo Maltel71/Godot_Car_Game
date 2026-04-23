@@ -28,6 +28,21 @@ func _physics_process(delta):
 	if package_mesh:
 		package_mesh.visible = has_package
 
+	# Check if player with package is already in area
+	if not going_out and not returning and not car:
+		var bodies = linked_area.get_overlapping_bodies()
+		for body in bodies:
+			if body is CharacterBody3D and "HasPackage" in body and body.HasPackage \
+			and "assigned_delivery_id" in body and body.assigned_delivery_id == linked_area.name:
+				car = body
+				going_out = true
+				returning = false
+				waypoint_index = 0
+				break
+
+	if not is_on_floor():
+		velocity.y -= 9.8 * delta
+
 	if not is_on_floor():
 		velocity.y -= 9.8 * delta
 	else:
