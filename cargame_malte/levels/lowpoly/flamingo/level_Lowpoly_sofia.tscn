@@ -1,10 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://x85m7nf8lvx1"]
+[gd_scene load_steps=50 format=3 uid="uid://x85m7nf8lvx1"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_jsgmk"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_4i2wb"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_f4eoi"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_jcgh7"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_50nne"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_srbpi"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_38c0c"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_eshih"]
@@ -24,6 +23,8 @@
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_t5c8p"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_p05lg"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_upfyy"]
+[ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="25_08jog"]
+[ext_resource type="PackedScene" uid="uid://dymkpfbf1idh3" path="res://level_components/player/flamingo/car_sofia.tscn" id="25_ufea4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_top_color = Color(0.59680617, 0.5450889, 0.21966326, 1)
@@ -542,7 +543,7 @@ normal_texture = ExtResource("18_08jog")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1"), SubResource("Terrain3DMeshAsset_00v0j"), SubResource("Terrain3DMeshAsset_l5ybj")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_h55dl"), SubResource("Terrain3DTextureAsset_kuiw6"), SubResource("Terrain3DTextureAsset_08jog"), SubResource("Terrain3DTextureAsset_ufea4")])
 
-[sub_resource type="Curve3D" id="Curve3D_00v0j"]
+[sub_resource type="Curve3D" id="Curve3D_08jog"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -566,9 +567,6 @@ script = ExtResource("2_4i2wb")
 [node name="EscMenu" parent="." instance=ExtResource("3_f4eoi")]
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_jcgh7")]
-
-[node name="Car_Default" parent="." instance=ExtResource("5_50nne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
@@ -596,7 +594,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_00v0j")
+curve = SubResource("Curve3D_08jog")
 script = ExtResource("17_q6po6")
 lock_road = true
 
@@ -747,3 +745,10 @@ metadata/_edit_lock_ = true
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_upfyy")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
+
+[node name="ramp1" parent="." instance=ExtResource("25_08jog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.8828, 20.766628, -0.43725434)
+
+[node name="Car_Default2" parent="." instance=ExtResource("25_ufea4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.39844, 22.404016, -20.953108)
+gravity_scale = 1.8
