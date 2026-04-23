@@ -25,8 +25,9 @@ var assigned_delivery_id: String = ""
 @export var player_scene: PackedScene
 @export var exit_offset: Vector3 = Vector3(-1.5, 0, 0)
 @export var car_camera: Camera3D
-@export var max_exit_speed: float = 1.5          # m/s (~5 km/h)
-@export var exit_hold_time: float = 1.5          # seconds car must stay slow
+@export var driver_mesh: Node3D
+@export var max_exit_speed: float = 1.5
+@export var exit_hold_time: float = 1.5
 @export var handbrake_sound: AudioStream
 @export var handbrake_audio_player: AudioStreamPlayer3D
 
@@ -39,6 +40,9 @@ var _doors_locked: bool = true
 func _physics_process(delta):
 	$CamArm.position = position
 	$PackageMesh.visible = HasPackage
+	
+	if driver_mesh:
+		driver_mesh.visible = driver_in_car
 
 	if driver_in_car:
 		# Track how long the car has been nearly still

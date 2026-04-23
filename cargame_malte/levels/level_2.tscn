@@ -585,7 +585,7 @@ gravity_scale = 1.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest/Armature/Skeleton3D" index="1" unique_id=983452176]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1501707153, 1088390257) index="1" unique_id=983452176]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -617,7 +617,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, 0.353553, 0, -0.353553, 0.353553, 0, 0, 0, 0.5, 0.753754, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest2/Armature/Skeleton3D" index="1" unique_id=818525636]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest2/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1370998523, 1088390257) index="1" unique_id=818525636]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -649,7 +649,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, -0.353553, 0, 0.353553, 0.353553, 0, 0, 0, 0.5, -0.848877, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest3/Armature/Skeleton3D" index="1" unique_id=512492295]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest3/Armature/Skeleton3D" parent_id_path=PackedInt32Array(451572785, 1088390257) index="1" unique_id=512492295]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="14_i00a5"]
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
 [ext_resource type="Script" uid="uid://c2ugxnvgykxq1" path="res://scripts/headlights.gd" id="15_utifk"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="18_b4ysl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i00a5"]
 size = Vector3(2, 0.2, 2)
@@ -111,7 +112,7 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
-[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles", "car_camera", "handbrake_audio_player") groups=["car"]]
+[node name="VehicleBody3D" type="VehicleBody3D" unique_id=1455623620 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
 script = ExtResource("1_bkrhx")
@@ -120,6 +121,7 @@ level_strength = 2.0
 level_damping = 1.0
 player_scene = ExtResource("2_jpt3o")
 car_camera = NodePath("CamArm/Camera3D")
+driver_mesh = NodePath("DriverMesh")
 handbrake_sound = ExtResource("3_5khej")
 handbrake_audio_player = NodePath("CarSFXManager/AudioStreamPlayer3D_HandBrake")
 
@@ -391,3 +393,6 @@ light_energy = 2.0
 spot_range = 11.094419
 spot_angle = 16.874998
 script = ExtResource("15_utifk")
+
+[node name="DriverMesh" parent="." unique_id=975115071 instance=ExtResource("18_b4ysl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23134422, -0.7412058, 0)
