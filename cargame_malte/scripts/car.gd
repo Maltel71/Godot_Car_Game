@@ -1,6 +1,6 @@
 extends VehicleBody3D
 var max_RPM = 900
-var max_torque = 600
+var max_torque = 800
 var turn_speed = 3
 var turn_amount = 0.3
 var air_control_pitch_strength = 2000.0
@@ -16,7 +16,7 @@ var is_dead: bool = false
 @export var rpm_threshold: float = 50.0
 @export_group("Flip")
 @export var flip_up_impulse: float = 8.0
-@export var flip_torque_impulse: float = 5.0
+@export var flip_torque_impulse: float = 3.0
 @export var flip_cooldown: float = 2.0
 var _flip_timer: float = 0.0
 
@@ -45,16 +45,17 @@ func _physics_process(delta):
 	
 	if is_airborne:
 		air_time += delta
-		var fade_multiplier = min(air_time / air_control_fade_time, 1.0)
-		
-		var air_input = Vector3(
-			(Input.get_action_strength("Reverse") - Input.get_action_strength("Gas")) * air_control_pitch_strength * fade_multiplier,
-			(Input.get_action_strength("Left") - Input.get_action_strength("Right")) * air_control_yaw_strength * fade_multiplier,
-			(Input.get_action_strength("RollRight") - Input.get_action_strength("RollLeft")) * air_control_roll_strength * fade_multiplier
-		)
-		if air_input != Vector3.ZERO:
-			apply_torque(global_transform.basis * air_input)
-		angular_velocity *= air_control_damping
+		var just_flipped = _flip_timer > (flip_cooldown - 0.5)
+		if not just_flipped:
+			var fade_multiplier = min(air_time / air_control_fade_time, 1.0)
+			var air_input = Vector3(
+				(Input.get_action_strength("Reverse") - Input.get_action_strength("Gas")) * air_control_pitch_strength * fade_multiplier,
+				(Input.get_action_strength("Left") - Input.get_action_strength("Right")) * air_control_yaw_strength * fade_multiplier,
+				(Input.get_action_strength("RollRight") - Input.get_action_strength("RollLeft")) * air_control_roll_strength * fade_multiplier
+			)
+			if air_input != Vector3.ZERO:
+				apply_torque(global_transform.basis * air_input)
+			angular_velocity *= air_control_damping
 	else:
 		air_time = 0.0
 
