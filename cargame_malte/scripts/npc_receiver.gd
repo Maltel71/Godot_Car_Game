@@ -11,7 +11,7 @@ extends CharacterBody3D
 
 @export var coin_spawn_particles: GPUParticles3D
 
-var car: VehicleBody3D = null
+var car = null
 var has_package: bool = false
 var waypoint_index: int = 0
 var going_out: bool = false
@@ -76,21 +76,21 @@ func _on_waypoint_reached(body):
 		waypoint_index += 1
 
 func _on_area_body_entered(body):
-	if body is VehicleBody3D and body.HasPackage and body.assigned_delivery_id == linked_area.name:
+	if body is CharacterBody3D and "HasPackage" in body and body.HasPackage and "assigned_delivery_id" in body and body.assigned_delivery_id == linked_area.name:
 		car = body
 		going_out = true
 		returning = false
 		waypoint_index = 0
 
 func _on_area_body_exited(body):
-	if body is VehicleBody3D:
+	if body is CharacterBody3D and "HasPackage" in body:
 		car = null
 		going_out = false
 		returning = true
 		waypoint_index = clamp(waypoint_index, 0, waypoints.size() - 1)
 
 func _on_body_entered(body):
-	if body is VehicleBody3D and body.HasPackage and body.assigned_delivery_id == linked_area.name:
+	if body is CharacterBody3D and "HasPackage" in body and body.HasPackage and "assigned_delivery_id" in body and body.assigned_delivery_id == linked_area.name:
 		body.HasPackage = false
 		body.assigned_delivery_id = ""
 		linked_area.play_delivery_sound()

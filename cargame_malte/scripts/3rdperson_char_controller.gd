@@ -7,17 +7,23 @@ extends CharacterBody3D
 @export var sens_v: float = 0.2
 
 @export var enter_distance: float = 3.0
+@export var package_pickup_distance: float = 2.0
 @export var player_camera: Camera3D
+@export var package_mesh: Node3D
 
 @onready var camera_mount: Node3D = $camera_mount
 @onready var visuals: Node3D = $visuals
 
 var car_ref: VehicleBody3D = null
+var HasPackage: bool = false
+var assigned_delivery_id: String = ""
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if player_camera:
 		player_camera.make_current()
+	if package_mesh:
+		package_mesh.visible = false
 
 func set_car_ref(car: VehicleBody3D):
 	car_ref = car
@@ -30,6 +36,19 @@ func _input(event):
 		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-60), deg_to_rad(20))
 
 func _physics_process(delta):
+	if package_mesh:
+		package_mesh.visible = HasPackage
+	
+	# Pick up package from car
+	if Input.is_action_just_pressed("interact") and car_ref \
+	and car_ref.HasPackage and global_position.distance_to(car_ref.global_position) < package_pickup_distance:
+		HasPackage = true
+		assigned_delivery_id = car_ref.assigned_delivery_id
+		car_ref.HasPackage = false
+		car_ref.assigned_delivery_id = ""
+		return
+	
+	# Enter car
 	if Input.is_action_just_pressed("enter_exit") and car_ref \
 	and global_position.distance_to(car_ref.global_position) < enter_distance:
 		car_ref.enter_car()

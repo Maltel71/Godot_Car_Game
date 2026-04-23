@@ -9,9 +9,10 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_hfcel"]
 radius = 0.2
 
-[node name="Player" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("player_camera")]
+[node name="Player" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("player_camera", "package_mesh")]
 script = ExtResource("1_hfcel")
 player_camera = NodePath("camera_mount/SpringArm3D/Camera3D")
+package_mesh = NodePath("visuals/PackageMesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
