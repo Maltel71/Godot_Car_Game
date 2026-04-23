@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c3mfolo7c5uvh"
-path="res://.godot/imported/tree.glb-86fae6fb2428df7d74097b1a7c75b288.scn"
+uid="uid://cgr0pee3hk47a"
+path="res://.godot/imported/spikes_m_01.glb-75d29cc17341809faa13b9f44f1793fe.scn"
 
 [deps]
 
-source_file="res://addons/proton_scatter/demos/assets/models/tree.glb"
-dest_files=["res://.godot/imported/tree.glb-86fae6fb2428df7d74097b1a7c75b288.scn"]
+source_file="res://dangerarea/spikes_m_01.glb"
+dest_files=["res://.godot/imported/spikes_m_01.glb-75d29cc17341809faa13b9f44f1793fe.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -38,5 +38,5 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-gltf/naming_version=0
+gltf/naming_version=2
 gltf/embedded_image_handling=1

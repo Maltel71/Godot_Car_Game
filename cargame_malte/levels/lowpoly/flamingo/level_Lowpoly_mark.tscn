@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://4p40qhpa2npt"]
+[gd_scene load_steps=39 format=3 uid="uid://4p40qhpa2npt"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_1q445"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_dueim"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_10mro"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_6uapk"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_cj8b0"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_275g5"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_vcg8h"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://pickup_time_01.tscn" id="8_gfcpt"]
@@ -15,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://dm8eimgu8x8qa" path="res://textures/mark_textures/white_1024px_t.png" id="17_10mro"]
 [ext_resource type="Texture2D" uid="uid://bc3foq04iy5nd" path="res://textures/mark_textures/neutr_n_map_t.png" id="18_6uapk"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="18_8hl4y"]
+[ext_resource type="PackedScene" uid="uid://br4aqjcq34l7" path="res://level_components/player/flamingo/car_mark.tscn" id="19_ctg75"]
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_jcgqj"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_01brl"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://dangerarea/danger_area.tscn" id="20_cxjp2"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_5ty36"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_k273m"]
 
@@ -468,7 +469,7 @@ albedo_texture = ExtResource("18_6uapk")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_cj8b0"), SubResource("Terrain3DTextureAsset_275g5")])
 
-[sub_resource type="Curve3D" id="Curve3D_ctg75"]
+[sub_resource type="Curve3D" id="Curve3D_uafhl"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -497,9 +498,6 @@ offset_bottom = -5.0
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_6uapk")]
 
-[node name="Car_Default" parent="." instance=ExtResource("5_cj8b0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
-
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
@@ -526,7 +524,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_ctg75")
+curve = SubResource("Curve3D_uafhl")
 script = ExtResource("17_0yi6e")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -698,3 +696,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.89682, 22.503088, 65.9398
 
 [node name="Pickup_Time_05" parent="." instance=ExtResource("8_gfcpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.229195, 22.503088, -14.147926)
+
+[node name="Car_mark" parent="." instance=ExtResource("19_ctg75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.3975, 24.226603, -47.012676)
+
+[node name="DangerArea" parent="." instance=ExtResource("20_cxjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.04727, 20.954678, -12.607116)
