@@ -501,6 +501,7 @@ script = ExtResource("2_jnho2")
 [node name="Car_Default" parent="." instance=ExtResource("21_jnho2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.91888, 22.223883, -10.405197)
 disable_mode = 2
+gravity_scale = 1.8
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
