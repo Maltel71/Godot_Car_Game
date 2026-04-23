@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bt8hodm31vo4p"]
+[gd_scene load_steps=25 format=3 uid="uid://bt8hodm31vo4p"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_cfw6q"]
 [ext_resource type="PackedScene" uid="uid://cnkqe8uywvh8c" path="res://models/ZUZZUZUZU_Models/MYBIODADHATESME (CAR).glb" id="2_ygvuk"]
+[ext_resource type="Script" uid="uid://drpduiury1jss" path="res://scripts/carlight.gd" id="3_cfw6q"]
 [ext_resource type="PackedScene" uid="uid://c7f8uyqri8rqk" path="res://models/ZUZZUZUZU_Models/MYBIODADHATESME (TIRE).glb" id="3_hqng3"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_spg8g"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_n61cf"]
@@ -111,6 +112,16 @@ metadata/_edit_lock_ = true
 
 [node name="MYBIODADHATESME (CAR)" parent="===Body===" instance=ExtResource("2_ygvuk")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.35499346, -1.3359585, -0.1177268)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="===Body===/MYBIODADHATESME (CAR)"]
+transform = Transform3D(-0.064250596, -0.01728761, -0.9977841, 0.010520728, 0.9997827, -0.017999703, 0.9978784, -0.011653907, -0.06405475, 4.36688, 0.8946798, 0.5088747)
+light_color = Color(1, 0.7, 0, 1)
+light_energy = 16.055
+light_size = 1.125
+shadow_enabled = true
+spot_range = 22.353888
+spot_angle = 24.255009
+script = ExtResource("3_cfw6q")
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
