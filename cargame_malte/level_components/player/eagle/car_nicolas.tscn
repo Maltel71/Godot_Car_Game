@@ -141,7 +141,7 @@ transform = Transform3D(-6.5934174e-08, 0, -1.508398, 0, 1.508398, 0, 1.508398, 
 transform = Transform3D(3.28541e-07, 0, 2.5053806, 0, 2.5053806, 0, -2.5053806, 0, 3.28541e-07, 0.13357231, -0.6138588, -0.37563032)
 
 [node name="Malte_Pickup15" parent="===Body===" instance=ExtResource("16_3ot55")]
-transform = Transform3D(-1.0951368e-07, 0, -2.5053809, 0, 2.5053809, 0, 2.5053809, 0, -1.0951368e-07, -0.006542757, -0.5531038, 0.57859004)
+transform = Transform3D(-1.0951368e-07, 0, -2.5053809, 0, 2.5053809, 0, 2.5053809, 0, -1.0951368e-07, -0.006542757, -0.5531038, -0.24066126)
 
 [node name="wheel_front_right" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86985457, -1, 1.75)
@@ -156,6 +156,9 @@ damping_relaxation = 2.0
 
 [node name="Malte_Pickup12" parent="wheel_front_right" instance=ExtResource("16_3ot55")]
 transform = Transform3D(2.505, 0, 9.324059e-15, 0, 2.505, 0, -9.324059e-15, 0, 2.505, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wheel_front_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6140609)
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0751239, -1, 1.75)
