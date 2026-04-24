@@ -8,6 +8,8 @@ extends CanvasLayer
 @onready var star_xp_label  = $Control_Debug/StarXPMeter
 @onready var radio_label    = $Control_Debug/RadioLabel
 @onready var panel_delivery = $Panel_Delivery
+@onready var height_label = $Panel_Car/CurrentHeightLabel
+@export var height_world_zero: float = 0.0
 @onready var stars = [
 	$Control_Stats/HBoxContainer_StarRating/Star1,
 	$Control_Stats/HBoxContainer_StarRating/Star2,
@@ -34,6 +36,10 @@ func _ready():
 func _process(_delta):
 	if not manager:
 		return
+		
+	if car:
+		speed_label.text = "%03d km/h" % int(car.linear_velocity.length() * 3.6)
+		height_label.text = "%dm" % int(car.global_position.y - height_world_zero)
 
 	money_label.text    = "Money: %d" % manager.get_score()
 	delivery_label.text = "Deliver to: %s" % manager.get_target_delivery()
@@ -46,9 +52,6 @@ func _process(_delta):
 	else:
 		timer_label.text  = ""
 		status_label.text = ""
-
-	if car:
-		speed_label.text = "%03d km/h" % int(car.linear_velocity.length() * 3.6)
 
 	var rating = manager.get_star_rating()
 	for i in stars.size():

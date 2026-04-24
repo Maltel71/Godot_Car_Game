@@ -104,7 +104,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -959.0
 offset_top = 972.0
-offset_right = -587.0
+offset_right = -221.0
 offset_bottom = 1071.0
 grow_horizontal = 2
 theme = ExtResource("2_eki7a")
@@ -117,6 +117,15 @@ offset_right = 342.0
 offset_bottom = 88.0
 theme = ExtResource("3_8fwp6")
 text = "Speed: 000"
+
+[node name="CurrentHeightLabel" type="Label" parent="Panel_Car" unique_id=1571098647]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 1.0
+offset_right = 700.0
+offset_bottom = 84.0
+theme = ExtResource("3_8fwp6")
+text = "Height: 000"
 
 [node name="Control_Speedometer" type="Control" parent="." unique_id=377246877]
 layout_mode = 3
