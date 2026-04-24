@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1q1ph05ej7pt"
+path="res://.godot/imported/Tactical Disadvantage.mp3-71bda5e0181eefd6143dcd7d5cc2d104.mp3str"
+
+[deps]
+
+source_file="res://audio/music/radiostation_1/Tactical Disadvantage.mp3"
+dest_files=["res://.godot/imported/Tactical Disadvantage.mp3-71bda5e0181eefd6143dcd7d5cc2d104.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

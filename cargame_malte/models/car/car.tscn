@@ -20,9 +20,15 @@
 [ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="18_b4ysl"]
 [ext_resource type="Script" uid="uid://djubakr51hvus" path="res://scripts/car_radio_manager.gd" id="19_8ijm4"]
 [ext_resource type="Script" uid="uid://c4lwum6etjrd1" path="res://scripts/radio_channel.gd" id="20_2vbte"]
-[ext_resource type="AudioStream" uid="uid://b1td50djstx55" path="res://audio/music/jazz-lounge-elevator-music-332339.mp3" id="21_hl0ga"]
-[ext_resource type="AudioStream" uid="uid://c3deq33kv5kgg" path="res://audio/music/My DA (why).mp3" id="22_okmhs"]
-[ext_resource type="AudioStream" uid="uid://d2pp8ysvnb3ob" path="res://audio/music/My DA.mp3" id="23_hvgae"]
+[ext_resource type="AudioStream" uid="uid://c1e5geoiewnaa" path="res://audio/music/radiostation_1/Innocent Intent.mp3" id="21_4gna3"]
+[ext_resource type="AudioStream" uid="uid://3kslwii3wouw" path="res://audio/music/radiostation_1/Not_givin_a2.mp3" id="22_8sd2q"]
+[ext_resource type="AudioStream" uid="uid://c2bjnr1pj1jf0" path="res://audio/music/radiostation_1/Rock'em n Sock'em.mp3" id="23_h84a2"]
+[ext_resource type="AudioStream" uid="uid://qna13yry1ohc" path="res://audio/music/radiostation_2/Jag Är - e3.mp3" id="24_yln85"]
+[ext_resource type="AudioStream" uid="uid://b5wrefj002klt" path="res://audio/music/radiostation_2/Snearstugan (1).mp3" id="25_3nyae"]
+[ext_resource type="AudioStream" uid="uid://bfi1y3vb5y78a" path="res://audio/music/radiostation_2/ursäkta men det är gröt i basen.mp3" id="26_t47rn"]
+[ext_resource type="AudioStream" uid="uid://bc01apre73u2u" path="res://audio/music/radiostation_3/FlummorOchKnas.mp3" id="27_2ynax"]
+[ext_resource type="AudioStream" uid="uid://dxv8h1u1erl7j" path="res://audio/music/radiostation_3/HumlorUrFas.mp3" id="28_s0e8v"]
+[ext_resource type="AudioStream" uid="uid://btcdsvq51lb4d" path="res://audio/music/radiostation_3/Nästan Själv.mp3" id="29_wrhr8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i00a5"]
 size = Vector3(2, 0.2, 2)
@@ -119,16 +125,23 @@ alpha_curve = SubResource("CurveTexture_wnk4v")
 
 [sub_resource type="Resource" id="Resource_2ad3o"]
 script = ExtResource("20_2vbte")
-channel_name = "HamsterTunez"
-tracks = Array[AudioStream]([ExtResource("21_hl0ga"), ExtResource("22_okmhs"), ExtResource("21_hl0ga")])
-track_names = Array[String](["Jazzy", "CoolKid", "JazLyZ"])
+channel_name = "Running Wheel Radio"
+tracks = Array[AudioStream]([ExtResource("21_4gna3"), ExtResource("22_8sd2q"), ExtResource("23_h84a2")])
+track_names = Array[String](["Innocent", "NotGivin", "RockEm"])
 metadata/_custom_type_script = "uid://c4lwum6etjrd1"
 
 [sub_resource type="Resource" id="Resource_pmakp"]
 script = ExtResource("20_2vbte")
-channel_name = "FunkyFuzz"
-tracks = Array[AudioStream]([ExtResource("23_hvgae"), ExtResource("22_okmhs")])
-track_names = Array[String](["MYDY", "NIDI"])
+channel_name = "Munch FM"
+tracks = Array[AudioStream]([ExtResource("24_yln85"), ExtResource("25_3nyae"), ExtResource("26_t47rn")])
+track_names = Array[String](["JagÄr", "SnearStugan", "Ursäkta"])
+metadata/_custom_type_script = "uid://c4lwum6etjrd1"
+
+[sub_resource type="Resource" id="Resource_2vbte"]
+script = ExtResource("20_2vbte")
+channel_name = "Rodent News"
+tracks = Array[AudioStream]([ExtResource("27_2ynax"), ExtResource("28_s0e8v"), ExtResource("29_wrhr8")])
+track_names = Array[String](["FlummorOch", "HumlorUrFas", "NästanSjälv"])
 metadata/_custom_type_script = "uid://c4lwum6etjrd1"
 
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player") groups=["car"]]
@@ -422,4 +435,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1233106)
 
 [node name="CarRadioManager" type="Node" parent="." unique_id=201759591 groups=["car_radio"]]
 script = ExtResource("19_8ijm4")
-channels = Array[ExtResource("20_2vbte")]([SubResource("Resource_2ad3o"), SubResource("Resource_pmakp")])
+channels = Array[ExtResource("20_2vbte")]([SubResource("Resource_2ad3o"), SubResource("Resource_pmakp"), SubResource("Resource_2vbte")])

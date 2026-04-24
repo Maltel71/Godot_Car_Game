@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2bjnr1pj1jf0"
+path="res://.godot/imported/Rock'em n Sock'em.mp3-021cd72d7cf1ec937df6f428c68cbdfb.mp3str"
+
+[deps]
+
+source_file="res://audio/music/radiostation_1/Rock'em n Sock'em.mp3"
+dest_files=["res://.godot/imported/Rock'em n Sock'em.mp3-021cd72d7cf1ec937df6f428c68cbdfb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
