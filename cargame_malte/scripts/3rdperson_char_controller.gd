@@ -64,6 +64,7 @@ func _physics_process(delta):
 	
 	# Enter car
 	if Input.is_action_just_pressed("enter_exit") and car_ref \
+	and not HasPackage \
 	and global_position.distance_to(car_ref.global_position) < enter_distance:
 		car_ref.enter_car()
 		return
