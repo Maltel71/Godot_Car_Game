@@ -1,4 +1,4 @@
-[gd_resource type="Terrain3DAssets" load_steps=12 format=3 uid="uid://dkpy75qn2hnt"]
+[gd_resource type="Terrain3DAssets" format=3 uid="uid://dkpy75qn2hnt"]
 
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/_scene_prefabs/enviroment/grass2.tscn" id="1_7bjod"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/enviroment/env_rock1_mesh_01_v1.glb" id="2_l1a87"]

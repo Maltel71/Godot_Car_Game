@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hfcel"]
-radius = 0.2
+radius = 0.6
 
 [node name="Player" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("player_camera", "package_mesh")]
 script = ExtResource("1_hfcel")

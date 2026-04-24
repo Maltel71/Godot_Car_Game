@@ -1,18 +1,18 @@
 extends CanvasLayer
 
-@onready var score_label    = $Panel/HBoxContainer/ScoreLabel
-@onready var delivery_label = $Panel/HBoxContainer/DeliveryLabel
-@onready var timer_label    = $Panel/HBoxContainer/TimerLabel
-@onready var status_label   = $Panel/HBoxContainer/DeliveryStatus
-@onready var speed_label    = $Panel2/HBoxContainer_Speed/CurrentSpeedLabel
-@onready var star_xp_label  = $Panel/HBoxContainer/StarXPMeter
-@onready var radio_label    = $Panel/HBoxContainer/RadioLabel
+@onready var money_label    = $Control_Stats/MoneyLabel
+@onready var delivery_label = $Panel_Delivery/HBoxContainer/DeliveryLabel
+@onready var timer_label    = $Panel_Delivery/HBoxContainer/TimerLabel
+@onready var status_label   = $Panel_Delivery/HBoxContainer/DeliveryStatus
+@onready var speed_label    = $Panel_Car/CurrentSpeedLabel
+@onready var star_xp_label  = $Control_Debug/StarXPMeter
+@onready var radio_label    = $Control_Debug/RadioLabel
 @onready var stars = [
-	$HBoxContainer_StarRating/Star1,
-	$HBoxContainer_StarRating/Star2,
-	$HBoxContainer_StarRating/Star3,
-	$HBoxContainer_StarRating/Star4,
-	$HBoxContainer_StarRating/Star5,
+	$Control_Stats/HBoxContainer_StarRating/Star1,
+	$Control_Stats/HBoxContainer_StarRating/Star2,
+	$Control_Stats/HBoxContainer_StarRating/Star3,
+	$Control_Stats/HBoxContainer_StarRating/Star4,
+	$Control_Stats/HBoxContainer_StarRating/Star5,
 ]
 
 @export var delivery_arrow: TextureRect
@@ -34,7 +34,7 @@ func _process(_delta):
 	if not manager:
 		return
 
-	score_label.text    = "Score: %d" % manager.get_score()
+	money_label.text    = "Money: %d" % manager.get_score()
 	delivery_label.text = "Deliver to: %s" % manager.get_target_delivery()
 
 	if manager.is_delivering:
