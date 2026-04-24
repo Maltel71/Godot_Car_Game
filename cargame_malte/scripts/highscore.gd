@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var speed_label    = $Panel_Car/CurrentSpeedLabel
 @onready var star_xp_label  = $Control_Debug/StarXPMeter
 @onready var radio_label    = $Control_Debug/RadioLabel
+@onready var panel_delivery = $Panel_Delivery
 @onready var stars = [
 	$Control_Stats/HBoxContainer_StarRating/Star1,
 	$Control_Stats/HBoxContainer_StarRating/Star2,
@@ -36,6 +37,8 @@ func _process(_delta):
 
 	money_label.text    = "Money: %d" % manager.get_score()
 	delivery_label.text = "Deliver to: %s" % manager.get_target_delivery()
+
+	panel_delivery.visible = manager.is_delivering
 
 	if manager.is_delivering:
 		timer_label.text  = "%ds" % int(manager.delivery_timer)
