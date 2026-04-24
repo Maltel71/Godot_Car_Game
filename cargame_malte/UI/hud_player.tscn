@@ -65,6 +65,11 @@ layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "starxpmeter:"
 
+[node name="RadioLabel" type="Label" parent="Panel/HBoxContainer" unique_id=314088813]
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "RadioStatus"
+
 [node name="Panel2" type="Panel" parent="." unique_id=2014608624]
 anchors_preset = 5
 anchor_left = 0.5

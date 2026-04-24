@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var status_label   = $Panel/HBoxContainer/DeliveryStatus
 @onready var speed_label    = $Panel2/HBoxContainer_Speed/CurrentSpeedLabel
 @onready var star_xp_label  = $Panel/HBoxContainer/StarXPMeter
+@onready var radio_label    = $Panel/HBoxContainer/RadioLabel
 @onready var stars = [
 	$HBoxContainer_StarRating/Star1,
 	$HBoxContainer_StarRating/Star2,
@@ -18,12 +19,14 @@ extends CanvasLayer
 
 var manager
 var car: VehicleBody3D
+var radio: Node
 var _arrow_visible: bool = false
 var _smoothed_screen_pos: Vector2 = Vector2.ZERO
 
 func _ready():
 	manager = get_node("/root/ScoreAndTimeManager")
 	car = get_tree().get_first_node_in_group("car")
+	radio = get_tree().get_first_node_in_group("car_radio")
 	if delivery_arrow:
 		delivery_arrow.hide()
 
@@ -49,6 +52,9 @@ func _process(_delta):
 		stars[i].modulate.a = 1.0 if i < rating else 0.3
 
 	star_xp_label.text = "starxpmeter: %s" % manager.get_star_xp_progress()
+
+	if radio:
+		radio_label.text = radio.get_status()
 
 	_update_arrow()
 

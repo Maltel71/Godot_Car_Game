@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
 [ext_resource type="Script" uid="uid://c2ugxnvgykxq1" path="res://scripts/headlights.gd" id="15_utifk"]
 [ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="18_b4ysl"]
+[ext_resource type="Script" uid="uid://djubakr51hvus" path="res://scripts/car_radio_manager.gd" id="19_8ijm4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i00a5"]
 size = Vector3(2, 0.2, 2)
@@ -399,3 +400,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23134422, -0.7412058, 0)
 
 [node name="packagedistancepoint" type="Node3D" parent="." unique_id=1356052636]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1233106)
+
+[node name="CarRadioManager" type="Node" parent="." unique_id=1430797464 groups=["car_radio"]]
+script = ExtResource("19_8ijm4")
