@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://d2wmgpeyuehvc"]
+[gd_scene load_steps=61 format=3 uid="uid://d2wmgpeyuehvc"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_a0m2a"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_h8637"]
@@ -22,6 +22,17 @@
 [ext_resource type="Texture2D" uid="uid://bfqss5kcs346u" path="res://textures/terrain_clay_t/env_clay_01_512px_texture_v2_specular.png" id="15_y52my"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="20_4yb8j"]
 [ext_resource type="PackedScene" uid="uid://2ljuq814jl38" path="res://level_components/player/anthelope/car_victor.tscn" id="21_8qr2e"]
+[ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="23_m7sjs"]
+[ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="24_7dk2s"]
+[ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="25_f44cp"]
+[ext_resource type="Script" uid="uid://bdmddvysq5lr7" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="26_fv5hn"]
+[ext_resource type="Script" uid="uid://g3opjh3m3iww" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="27_7dk2s"]
+[ext_resource type="Script" uid="uid://bmob6pfsj2tqx" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="27_oluft"]
+[ext_resource type="Script" uid="uid://7bpqtd2p8kjn" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="28_m0plv"]
+[ext_resource type="Script" uid="uid://bly43vu2asvh0" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="29_yu32q"]
+[ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="30_q5rmd"]
+[ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="31_hyvj6"]
+[ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="32_rxadb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -504,6 +515,43 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Resource" id="Resource_36f0o"]
+script = ExtResource("26_fv5hn")
+amount = 75
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_f44cp"]
+script = ExtResource("27_7dk2s")
+terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
+
+[sub_resource type="Resource" id="Resource_u1s4c"]
+script = ExtResource("27_oluft")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(5, 5, 5)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_g072s"]
+script = ExtResource("28_m0plv")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_3kvi0"]
+script = ExtResource("29_yu32q")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_djido"]
+script = ExtResource("24_7dk2s")
+stack = Array[ExtResource("25_f44cp")]([SubResource("Resource_36f0o"), SubResource("Resource_f44cp"), SubResource("Resource_u1s4c"), SubResource("Resource_g072s"), SubResource("Resource_3kvi0")])
+
+[sub_resource type="Resource" id="Resource_g8bsm"]
+script = ExtResource("32_rxadb")
+radius = 30.0
+
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_a0m2a")
 level_start_time = 30.0
@@ -526,6 +574,90 @@ script = ExtResource("2_h8637")
 
 [node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
 visible = false
+
+[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.71414, 21.82448, 131.19482)
+
+[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_a40gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.32382, 21.174528, 67.441216)
+
+[node name="Pickup_Time_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.47052, 21.932978, 299.25803)
+
+[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_yy6hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.927536, 25.288286, 272.6933)
+
+[node name="Pickup_Thrusters_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_yy6hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.59631, 26.015018, 269.8327)
+
+[node name="Pickup_Thrusters_03" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_yy6hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.20767, 26.937819, 266.19275)
+
+[node name="Pickup_Thrusters_04" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_yy6hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.05844, 27.943533, 262.16037)
+
+[node name="Pickup_Thrusters_05" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_yy6hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.1703, 21.47207, 10.762578)
+
+[node name="Pickup_Thrusters_06" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_yy6hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.17386, 21.173525, 64.112274)
+
+[node name="Pickup_Time_03" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.28802, 21.563837, 69.27578)
+
+[node name="Pickup_Time_04" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.74554, 21.549799, 72.19852)
+
+[node name="Pickup_Time_05" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.01318, 21.541656, 75.99513)
+
+[node name="Pickup_Time_06" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.2285, 21.540758, 79.269516)
+
+[node name="Pickup_Time_07" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.236, 21.548462, 83.47698)
+
+[node name="Pickup_Time_08" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.33826, 21.560703, 87.74788)
+
+[node name="Pickup_Time_09" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.14664, 21.572031, 90.15485)
+
+[node name="Pickup_Time_10" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.81943, 21.593075, 93.98215)
+
+[node name="Pickup_Time_11" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.65384, 21.62432, 99.44581)
+
+[node name="Pickup_Time_12" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.8485, 21.6645, 106.41129)
+
+[node name="Pickup_Time_13" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.0538, 21.740715, 117.79047)
+
+[node name="Pickup_Points_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_a40gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.60715, 21.214012, 96.765274)
+score_value = 100000000000000000
+
+[node name="Pickup_Points_03" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_a40gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.56955, 21.224968, 98.6029)
+
+[node name="Pickup_Points_04" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_a40gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.55, 21.21133, 96.18806)
+
+[node name="Pickup_Points_05" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_a40gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.61276, 21.218815, 97.613205)
+
+[node name="Pickup_Points_06" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_a40gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.5159, 21.228699, 99.150536)
+
+[node name="Pickup_Time_14" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_mmko5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.79227, 21.641441, 102.33925)
+time_value = 3600.0
+
+[node name="Pickup_Thrusters_07" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_yy6hc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.4582, 21.604992, -8.668102)
+thruster_duration = 5000.0
 
 [node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
@@ -758,89 +890,23 @@ metadata/_edit_lock_ = true
 [node name="Car_Default2" parent="." instance=ExtResource("21_8qr2e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.70367, 22.475452, -17.553205)
 
-[node name="Pickup_Time_01" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.71414, 21.82448, 131.19482)
-
-[node name="Pickup_Points_01" parent="." instance=ExtResource("6_a40gx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.32382, 21.174528, 67.441216)
-
-[node name="Pickup_Time_02" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -305.47052, 21.932978, 299.25803)
-
 [node name="ramp1" parent="." instance=ExtResource("20_4yb8j")]
 transform = Transform3D(-4.051527, 0, 0.96558356, 0, 4.165, 0, -0.96558356, 0, -4.051527, -94.9829, 20.978798, 262.2023)
 
-[node name="Pickup_Thrusters_01" parent="." instance=ExtResource("7_yy6hc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.927536, 25.288286, 272.6933)
+[node name="ProtonScatter" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.7673, 23.796959, 30.816582)
+script = ExtResource("23_m7sjs")
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_djido")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://c17aknedeyxm4"
 
-[node name="Pickup_Thrusters_02" parent="." instance=ExtResource("7_yy6hc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.59631, 26.015018, 269.8327)
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("30_q5rmd")
+path = "res://addons/proton_scatter/demos/assets/brick.tscn"
 
-[node name="Pickup_Thrusters_03" parent="." instance=ExtResource("7_yy6hc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.20767, 26.937819, 266.19275)
-
-[node name="Pickup_Thrusters_04" parent="." instance=ExtResource("7_yy6hc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.05844, 27.943533, 262.16037)
-
-[node name="Pickup_Thrusters_05" parent="." instance=ExtResource("7_yy6hc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.1703, 21.47207, 10.762578)
-
-[node name="Pickup_Thrusters_06" parent="." instance=ExtResource("7_yy6hc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.17386, 21.173525, 64.112274)
-
-[node name="Pickup_Time_03" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.28802, 21.563837, 69.27578)
-
-[node name="Pickup_Time_04" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.74554, 21.549799, 72.19852)
-
-[node name="Pickup_Time_05" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.01318, 21.541656, 75.99513)
-
-[node name="Pickup_Time_06" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.2285, 21.540758, 79.269516)
-
-[node name="Pickup_Time_07" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.236, 21.548462, 83.47698)
-
-[node name="Pickup_Time_08" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.33826, 21.560703, 87.74788)
-
-[node name="Pickup_Time_09" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.14664, 21.572031, 90.15485)
-
-[node name="Pickup_Time_10" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.81943, 21.593075, 93.98215)
-
-[node name="Pickup_Time_11" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.65384, 21.62432, 99.44581)
-
-[node name="Pickup_Time_12" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.8485, 21.6645, 106.41129)
-
-[node name="Pickup_Time_13" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.0538, 21.740715, 117.79047)
-
-[node name="Pickup_Points_02" parent="." instance=ExtResource("6_a40gx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.60715, 21.214012, 96.765274)
-score_value = 100000000000000000
-
-[node name="Pickup_Points_03" parent="." instance=ExtResource("6_a40gx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.56955, 21.224968, 98.6029)
-
-[node name="Pickup_Points_04" parent="." instance=ExtResource("6_a40gx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.55, 21.21133, 96.18806)
-
-[node name="Pickup_Points_05" parent="." instance=ExtResource("6_a40gx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.61276, 21.218815, 97.613205)
-
-[node name="Pickup_Points_06" parent="." instance=ExtResource("6_a40gx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.5159, 21.228699, 99.150536)
-
-[node name="Pickup_Time_14" parent="." instance=ExtResource("8_mmko5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.79227, 21.641441, 102.33925)
-time_value = 3600.0
-
-[node name="Pickup_Thrusters_07" parent="." instance=ExtResource("7_yy6hc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.4582, 21.604992, -8.668102)
-thruster_duration = 5000.0
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("31_hyvj6")
+shape = SubResource("Resource_g8bsm")
