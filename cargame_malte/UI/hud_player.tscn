@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dc8t82quf5ro6"]
+[gd_scene load_steps=9 format=3 uid="uid://dc8t82quf5ro6"]
 
 [ext_resource type="Script" uid="uid://1bmqsl4a2qq7" path="res://scripts/highscore.gd" id="1_i1glq"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_eki7a"]
@@ -9,17 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://4rxljur0smut" path="res://textures/ui/ui_speedometer_bg_t_v1.png" id="6_k8emw"]
 [ext_resource type="Texture2D" uid="uid://b5ba4b3xq3jg" path="res://textures/ui/ui_speedometer_needle_t_v1.png" id="7_hvg1e"]
 
-[node name="HUD_Player" type="CanvasLayer" unique_id=83232620 node_paths=PackedStringArray("delivery_arrow")]
+[node name="HUD_Player" type="CanvasLayer" node_paths=PackedStringArray("delivery_arrow")]
 script = ExtResource("1_i1glq")
 delivery_arrow = NodePath("DeliveryArrow")
 
-[node name="DeliveryArrow" type="TextureRect" parent="." unique_id=1575313222]
+[node name="DeliveryArrow" type="TextureRect" parent="."]
 z_index = 20
 offset_right = 64.0
 offset_bottom = 64.0
 texture = ExtResource("2_vgabk")
 
-[node name="Panel" type="Panel" parent="." unique_id=146702254]
+[node name="Panel" type="Panel" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -30,7 +30,7 @@ offset_bottom = 101.0
 grow_horizontal = 2
 theme = ExtResource("2_eki7a")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1859040254]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 18.999994
 offset_top = -16.000002
@@ -39,38 +39,38 @@ offset_bottom = 176.0
 scale = Vector2(0.70071614, 0.70071614)
 theme_override_constants/separation = 74
 
-[node name="TimerLabel" type="Label" parent="Panel/HBoxContainer" unique_id=1082840315]
+[node name="TimerLabel" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Timer: 00:00:00"
 
-[node name="DeliveryStatus" type="Label" parent="Panel/HBoxContainer" unique_id=1804283853]
+[node name="DeliveryStatus" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "DeliveryStatus"
 
-[node name="DeliveryLabel" type="Label" parent="Panel/HBoxContainer" unique_id=60870066]
+[node name="DeliveryLabel" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "DeliveryArea_01"
 
-[node name="ScoreLabel" type="Label" parent="Panel/HBoxContainer" unique_id=537820615]
+[node name="ScoreLabel" type="Label" parent="Panel/HBoxContainer"]
 modulate = Color(0.96429783, 0.9967267, 0.75552636, 1)
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Score:1000"
 
-[node name="StarXPMeter" type="Label" parent="Panel/HBoxContainer" unique_id=623340440]
+[node name="StarXPMeter" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "starxpmeter:"
 
-[node name="RadioLabel" type="Label" parent="Panel/HBoxContainer" unique_id=314088813]
+[node name="RadioLabel" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "RadioStatus"
 
-[node name="Panel2" type="Panel" parent="." unique_id=2014608624]
+[node name="Panel2" type="Panel" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -81,7 +81,7 @@ offset_bottom = 1071.0
 grow_horizontal = 2
 theme = ExtResource("2_eki7a")
 
-[node name="HBoxContainer_Speed" type="HBoxContainer" parent="Panel2" unique_id=1246425837]
+[node name="HBoxContainer_Speed" type="HBoxContainer" parent="Panel2"]
 layout_mode = 0
 offset_left = 18.999994
 offset_top = -16.000002
@@ -90,44 +90,44 @@ offset_bottom = 176.0
 scale = Vector2(0.70071614, 0.70071614)
 theme_override_constants/separation = 74
 
-[node name="CurrentSpeedLabel" type="Label" parent="Panel2/HBoxContainer_Speed" unique_id=1551227844]
+[node name="CurrentSpeedLabel" type="Label" parent="Panel2/HBoxContainer_Speed"]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Speed: 000"
 
-[node name="HBoxContainer_StarRating" type="HBoxContainer" parent="." unique_id=1068227140]
+[node name="HBoxContainer_StarRating" type="HBoxContainer" parent="."]
 offset_left = 6.0
 offset_top = 107.0
 offset_right = 622.0
 offset_bottom = 171.0
 theme_override_constants/separation = -2
 
-[node name="Star1" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=447771481]
+[node name="Star1" type="TextureRect" parent="HBoxContainer_StarRating"]
 layout_mode = 2
 texture = ExtResource("5_abs7e")
 stretch_mode = 2
 
-[node name="Star2" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=975772089]
+[node name="Star2" type="TextureRect" parent="HBoxContainer_StarRating"]
 layout_mode = 2
 texture = ExtResource("5_abs7e")
 stretch_mode = 2
 
-[node name="Star3" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=1426957938]
+[node name="Star3" type="TextureRect" parent="HBoxContainer_StarRating"]
 layout_mode = 2
 texture = ExtResource("5_abs7e")
 stretch_mode = 2
 
-[node name="Star4" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=1359476431]
+[node name="Star4" type="TextureRect" parent="HBoxContainer_StarRating"]
 layout_mode = 2
 texture = ExtResource("5_abs7e")
 stretch_mode = 2
 
-[node name="Star5" type="TextureRect" parent="HBoxContainer_StarRating" unique_id=1560481005]
+[node name="Star5" type="TextureRect" parent="HBoxContainer_StarRating"]
 layout_mode = 2
 texture = ExtResource("5_abs7e")
 stretch_mode = 2
 
-[node name="Controlls_temp" type="Label" parent="." unique_id=1247988723]
+[node name="Controlls_temp" type="Label" parent="."]
 offset_left = 1663.0001
 offset_top = 812.00006
 offset_right = 2260.0
@@ -142,7 +142,7 @@ F - activate thrusters
 SPACE - thruster up
 ESC - menu"
 
-[node name="Control_Speedometer" type="Control" parent="." unique_id=823763963]
+[node name="Control_Speedometer" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 74.0
@@ -152,7 +152,7 @@ offset_bottom = 881.0
 script = ExtResource("6_hvg1e")
 max_speed_kmh = 300.0
 
-[node name="BG" type="TextureRect" parent="Control_Speedometer" unique_id=664271771]
+[node name="BG" type="TextureRect" parent="Control_Speedometer"]
 layout_mode = 0
 offset_left = -73.0
 offset_top = -125.0
@@ -160,7 +160,7 @@ offset_right = 183.0
 offset_bottom = 131.0
 texture = ExtResource("6_k8emw")
 
-[node name="Needle" type="TextureRect" parent="Control_Speedometer" unique_id=1448637892]
+[node name="Needle" type="TextureRect" parent="Control_Speedometer"]
 layout_mode = 0
 offset_left = -75.0
 offset_top = -109.0

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=69 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="2_k2aru"]
@@ -563,29 +563,29 @@ radius = 1000.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ubuva"]
 
-[node name="Level2" type="Node3D" unique_id=589024435]
+[node name="Level2" type="Node3D"]
 script = SubResource("GDScript_ndgrd")
 
-[node name="EscMenu" parent="." unique_id=841350275 instance=ExtResource("1_uo0vl")]
+[node name="EscMenu" parent="." instance=ExtResource("1_uo0vl")]
 
-[node name="Highscore" parent="." unique_id=1080435621 groups=["highscore_ui"] instance=ExtResource("20_h351q")]
+[node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("20_h351q")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1472119363]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ex07k")
 
-[node name="Sun" type="DirectionalLight3D" parent="." unique_id=593735158]
+[node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Car1_Player" parent="." unique_id=754041233 instance=ExtResource("3_ndgrd")]
+[node name="Car1_Player" parent="." instance=ExtResource("3_ndgrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 20.042086, -36.98169)
 gravity_scale = 1.8
 
-[node name="WiggleTest" parent="Car1_Player" unique_id=1501707153 instance=ExtResource("4_h351q")]
+[node name="WiggleTest" parent="Car1_Player" instance=ExtResource("4_h351q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1501707153, 1088390257) index="1" unique_id=983452176]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest/Armature/Skeleton3D" index="1"]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -604,20 +604,14 @@ settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
-settings/0/joints/0/bone_name = "Bone"
-settings/0/joints/0/bone = 0
-settings/0/joints/1/bone_name = "Bone.001"
-settings/0/joints/1/bone = 1
-settings/0/joints/2/bone_name = "Bone.002"
-settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="WiggleTest2" parent="Car1_Player" unique_id=1370998523 instance=ExtResource("4_h351q")]
+[node name="WiggleTest2" parent="Car1_Player" instance=ExtResource("4_h351q")]
 transform = Transform3D(0.353553, 0.353553, 0, -0.353553, 0.353553, 0, 0, 0, 0.5, 0.753754, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest2/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1370998523, 1088390257) index="1" unique_id=818525636]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest2/Armature/Skeleton3D" index="1"]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -636,20 +630,14 @@ settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
-settings/0/joints/0/bone_name = "Bone"
-settings/0/joints/0/bone = 0
-settings/0/joints/1/bone_name = "Bone.001"
-settings/0/joints/1/bone = 1
-settings/0/joints/2/bone_name = "Bone.002"
-settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="WiggleTest3" parent="Car1_Player" unique_id=451572785 instance=ExtResource("4_h351q")]
+[node name="WiggleTest3" parent="Car1_Player" instance=ExtResource("4_h351q")]
 transform = Transform3D(0.353553, -0.353553, 0, 0.353553, 0.353553, 0, 0, 0, 0.5, -0.848877, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest3/Armature/Skeleton3D" parent_id_path=PackedInt32Array(451572785, 1088390257) index="1" unique_id=512492295]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest3/Armature/Skeleton3D" index="1"]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -668,21 +656,15 @@ settings/0/drag/damping_curve = null
 settings/0/gravity/value = 0.0
 settings/0/gravity/damping_curve = null
 settings/0/gravity/direction = Vector3(0, -1, 0)
-settings/0/joints/0/bone_name = "Bone"
-settings/0/joints/0/bone = 0
-settings/0/joints/1/bone_name = "Bone.001"
-settings/0/joints/1/bone = 1
-settings/0/joints/2/bone_name = "Bone.002"
-settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="GameManager" type="Node" parent="." unique_id=1232870169]
+[node name="GameManager" type="Node" parent="."]
 script = ExtResource("10_jqt73")
 
-[node name="===ENVIROMENT===" type="Node3D" parent="." unique_id=1195249406]
+[node name="===ENVIROMENT===" type="Node3D" parent="."]
 
-[node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT===" unique_id=1775803937]
+[node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT==="]
 data_directory = "res://terraindata"
 material = SubResource("Terrain3DMaterial_s8dg4")
 assets = ExtResource("2_k2aru")
@@ -690,261 +672,261 @@ collision_mode = 3
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="FogVolume" type="FogVolume" parent="===ENVIROMENT===" unique_id=183676703]
+[node name="FogVolume" type="FogVolume" parent="===ENVIROMENT==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.40585, 10.107708, -35.186165)
 visible = false
 size = Vector3(114.81, 20, 301.83)
 shape = 2
 material = SubResource("FogMaterial_ndgrd")
 
-[node name="=OBSTACLES=" type="Node3D" parent="===ENVIROMENT===" unique_id=150761011]
+[node name="=OBSTACLES=" type="Node3D" parent="===ENVIROMENT==="]
 
-[node name="Halfpipe1" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1367933284 instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe1" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("13_cp3aq")]
 transform = Transform3D(-1.51366, 0, -2.56452e-07, 0, 3.36075, 0, 1.32329e-07, 0, -2.93347, -287.25565, 19.442533, 43.2691)
 
-[node name="Halfpipe2" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1232584977 instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe2" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("13_cp3aq")]
 transform = Transform3D(-1.51366, -5.43081e-08, -2.52033e-07, 0, 3.30284, -0.542232, 1.32329e-07, -0.621212, -2.88292, -368.544, 37.1384, 120.481)
 
-[node name="Halfpipe3" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=738940451 instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe3" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("13_cp3aq")]
 transform = Transform3D(-1.51366, 2.64848e-07, -1.11019e-07, 0, 1.45488, 2.64434, 1.32329e-07, 3.02951, -1.26991, -358.211, 61.3307, 133.665)
 
-[node name="Halfpipe4" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1022407926 instance=ExtResource("13_cp3aq")]
+[node name="Halfpipe4" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("13_cp3aq")]
 transform = Transform3D(-1.51366, 1.16981e-07, -2.35248e-07, 7.10543e-15, 3.08287, 1.16798, 1.32329e-07, 1.3381, -2.69092, -358.211, 40.287, 223.014)
 
-[node name="LargeRoadBump" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=333946398 instance=ExtResource("14_wgvos")]
+[node name="LargeRoadBump" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("14_wgvos")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -333.629, 14.350922, 300.356)
 
-[node name="LargeRoadBump2" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=670448765 instance=ExtResource("14_wgvos")]
+[node name="LargeRoadBump2" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("14_wgvos")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -372.658, 19.7355, 107.298)
 
-[node name="StaticBody3D" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1069539415 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 24.7946, 58.8504)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" unique_id=1387054062 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" unique_id=1317933123 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
 
-[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" unique_id=2001027527 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=849422891 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 34.3249, 102.838)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" unique_id=980052525 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" unique_id=1416178129 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
 
-[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" unique_id=808351444 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D2" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1470922996 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -339.07, 43.0507, 138.474)
 
-[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" unique_id=85750239 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D2" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 1.13042, 7.83519)
 
-[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" unique_id=175176165 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D3" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.968078, 0.25065, 0, -0.25065, 0.968078, 0, 3.56394, 17.2341)
 
-[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" unique_id=1639373642 instance=ExtResource("15_m4706")]
+[node name="StaticBody3D4" parent="===ENVIROMENT===/=OBSTACLES=/StaticBody3D3" instance=ExtResource("15_m4706")]
 transform = Transform3D(1, 0, 0, 0, 0.902375, 0.430952, 0, -0.430952, 0.902375, 0, 6.05429, 23.0387)
 
-[node name="ramp4" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1196135749 instance=ExtResource("16_4xp61")]
+[node name="ramp4" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("16_4xp61")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.62, 19.438156, 40.313)
 
-[node name="ramp8" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=527806041 instance=ExtResource("16_4xp61")]
+[node name="ramp8" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("16_4xp61")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.3114, 15.801897, 251.402)
 
-[node name="ramp7" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1769396833 instance=ExtResource("16_4xp61")]
+[node name="ramp7" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("16_4xp61")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -342.939, 19.4101, 40.313)
 
-[node name="ramp9" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=640988393 instance=ExtResource("16_4xp61")]
+[node name="ramp9" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("16_4xp61")]
 transform = Transform3D(-1.6744175, 0, -0.044167757, 0, 1.675, 0, 0.044167757, 0, -1.6744175, -333.198, 19.4101, 12.222883)
 
-[node name="ramp6" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=709815084 instance=ExtResource("16_4xp61")]
+[node name="ramp6" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("16_4xp61")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -332.045, 10.14, 158.863)
 
-[node name="ramp5" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=1693440710 instance=ExtResource("16_4xp61")]
+[node name="ramp5" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("16_4xp61")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -326.62, 19.289387, 51.0116)
 
-[node name="Rock1" parent="===ENVIROMENT===/=OBSTACLES=" unique_id=883233221 instance=ExtResource("17_4yoxl")]
+[node name="Rock1" parent="===ENVIROMENT===/=OBSTACLES=" instance=ExtResource("17_4yoxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.617, 19.6103, 31.1248)
 
-[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT===" unique_id=1425346478]
+[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
 
-[node name="flask2" parent="===ENVIROMENT===/=PHYSICS_OBJ=" unique_id=1235375244 instance=ExtResource("11_00pa0")]
+[node name="flask2" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -336.068, 20.1723, 42.8672)
 
-[node name="flask3" parent="===ENVIROMENT===/=PHYSICS_OBJ=" unique_id=1817093972 instance=ExtResource("11_00pa0")]
+[node name="flask3" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -336.068, 23.0056, 42.8672)
 
-[node name="flask4" parent="===ENVIROMENT===/=PHYSICS_OBJ=" unique_id=631426078 instance=ExtResource("11_00pa0")]
+[node name="flask4" parent="===ENVIROMENT===/=PHYSICS_OBJ=" instance=ExtResource("11_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -336.068, 26.056, 42.8672)
 
-[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT===" unique_id=913445506]
+[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
 
-[node name="Streetlamp" parent="===ENVIROMENT===/=LIGHTS=" unique_id=926926184 instance=ExtResource("12_amxoe")]
+[node name="Streetlamp" parent="===ENVIROMENT===/=LIGHTS=" instance=ExtResource("12_amxoe")]
 transform = Transform3D(-2.08616e-07, 0, -1, 0, 1, 0, 1, 0, -2.08616e-07, -313.909, 19.9312, 19.0306)
 
-[node name="===PICKUPS===" type="Node3D" parent="." unique_id=232689023]
+[node name="===PICKUPS===" type="Node3D" parent="."]
 
-[node name="===POSTOFFICE===" type="Node3D" parent="." unique_id=49137861]
+[node name="===POSTOFFICE===" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.96103, 19.52204, -18.91623)
 
-[node name="GetPackageArea" parent="===POSTOFFICE===" unique_id=1336415522 node_paths=PackedStringArray("delivery_areas") instance=ExtResource("24_he6wg")]
+[node name="GetPackageArea" parent="===POSTOFFICE===" node_paths=PackedStringArray("delivery_areas") instance=ExtResource("24_he6wg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6588745, -0.12089348, 0.989933)
 delivery_areas = [NodePath("../../===DELIVER_AREAS===/=Area_01=/DeliveryArea_01"), NodePath("../../===DELIVER_AREAS===/=Area_02=/DeliveryArea_02")]
 
-[node name="NPC_Giver" parent="===POSTOFFICE===" unique_id=882193193 node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("26_00pa0")]
+[node name="NPC_Giver" parent="===POSTOFFICE===" node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("26_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5683899, 0.037322998, 0.9884434)
 waypoints = [NodePath("../NPC_Point_A"), NodePath("../NPC_Point_B")]
 linked_area = NodePath("../GetPackageArea")
 
-[node name="=HOUSE=" type="Node3D" parent="===POSTOFFICE===" unique_id=394954908]
+[node name="=HOUSE=" type="Node3D" parent="===POSTOFFICE==="]
 
-[node name="HamsterHouse_02" parent="===POSTOFFICE===/=HOUSE=" unique_id=73723418 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_02" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -1.5339661, -1.2906113, 0.47280693)
 
-[node name="HamsterHouse_03" parent="===POSTOFFICE===/=HOUSE=" unique_id=64732216 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_03" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -4.6250305, -1.2906113, 0.47280693)
 
-[node name="HamsterHouse_04" parent="===POSTOFFICE===/=HOUSE=" unique_id=826929046 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_04" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -7.768524, -1.2906113, 0.47280693)
 
-[node name="Streetlamp" parent="===POSTOFFICE===/=HOUSE=" unique_id=480650928 instance=ExtResource("12_amxoe")]
+[node name="Streetlamp" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("12_amxoe")]
 transform = Transform3D(0.032712966, 0.00020267731, 0.9994648, -0.00040234852, 0.99999994, -0.00018963942, -0.99946475, -0.0003959411, 0.032713033, -7.3261414, 5.7828865, 0.51693726)
 
-[node name="Package_01" parent="===POSTOFFICE===/=HOUSE=" unique_id=1826512157 instance=ExtResource("25_00pa0")]
+[node name="Package_01" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4645691, -0.64884186, 2.636446)
 
-[node name="Package_02" parent="===POSTOFFICE===/=HOUSE=" unique_id=1033434627 instance=ExtResource("25_00pa0")]
+[node name="Package_02" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.7553619, 0, -0.6553079, 0, 1, 0, 0.6553079, 0, 0.7553619, 0.50064087, -0.64884186, 3.750368)
 
-[node name="Package_03" parent="===POSTOFFICE===/=HOUSE=" unique_id=102589706 instance=ExtResource("25_00pa0")]
+[node name="Package_03" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.8728199, 0, 0.48804247, 0, 1, 0, -0.48804247, 0, 0.8728199, 2.8477783, -0.64884186, 2.9972773)
 
-[node name="Package_10" parent="===POSTOFFICE===/=HOUSE=" unique_id=251277545 instance=ExtResource("25_00pa0")]
+[node name="Package_10" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(-0.10707973, 0, 0.9942504, 0, 1, 0, -0.9942504, 0, -0.10707973, 1.9673157, -0.9369068, -2.8500767)
 
-[node name="Package_11" parent="===POSTOFFICE===/=HOUSE=" unique_id=1364349598 instance=ExtResource("25_00pa0")]
+[node name="Package_11" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.5706562, 0, 0.82118905, 0, 1, 0, -0.82118905, 0, 0.5706562, 3.1780396, -0.9369068, -2.0109692)
 
-[node name="Package_12" parent="===POSTOFFICE===/=HOUSE=" unique_id=932380316 instance=ExtResource("25_00pa0")]
+[node name="Package_12" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(-0.57869774, 0, 0.8155421, 0, 1, 0, -0.8155421, 0, -0.57869774, 2.177948, -0.9369068, -4.2639713)
 
-[node name="Package_04" parent="===POSTOFFICE===/=HOUSE=" unique_id=2108418412 instance=ExtResource("25_00pa0")]
+[node name="Package_04" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(0.96935534, 0, -0.24566269, 0, 1, 0, 0.24566269, 0, 0.96935534, 2.1418457, 0.292902, 2.7903595)
 
-[node name="Package_05" parent="===POSTOFFICE===/=HOUSE=" unique_id=911178673 instance=ExtResource("25_00pa0")]
+[node name="Package_05" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(5.282077, 0, -1.338631, 0, 5.4490614, 0, 1.338631, 0, 5.282077, -5.2987976, 0.292902, 3.6911087)
 
-[node name="Package_09" parent="===POSTOFFICE===/=HOUSE=" unique_id=1850022676 instance=ExtResource("25_00pa0")]
+[node name="Package_09" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(5.4215016, 0, 0.54735005, 0, 5.4490614, 0, -0.54735005, 0, 5.4215016, -5.2987976, 4.097124, 0.31132126)
 
-[node name="Package_06" parent="===POSTOFFICE===/=HOUSE=" unique_id=1276677485 instance=ExtResource("25_00pa0")]
+[node name="Package_06" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(2.8885958, -2.2855453, -5.617705, 1.0451437, 6.316849, -2.0325825, 5.9741106, 0, 3.071858, -9.152954, 0.292902, 3.6911087)
 
-[node name="Package_07" parent="===POSTOFFICE===/=HOUSE=" unique_id=1612196964 instance=ExtResource("25_00pa0")]
+[node name="Package_07" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(1.0802932, 0, -6.4604244, 0, 6.5501227, 0, 6.4604244, 0, 1.0802932, -9.188843, 0.292902, -1.924406)
 
-[node name="Package_08" parent="===POSTOFFICE===/=HOUSE=" unique_id=481006971 instance=ExtResource("25_00pa0")]
+[node name="Package_08" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(-1.2472363, 0, -6.2074084, 2.2758288, 5.890587, -0.45727563, 5.7751637, -2.3213139, -1.1603867, -2.4558105, 0.2300396, -1.2435265)
 
-[node name="Package_13" parent="===POSTOFFICE===/=HOUSE=" unique_id=2049792261 instance=ExtResource("25_00pa0")]
+[node name="Package_13" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(9.671, 0, 0, 0, 9.671, 0, 0, 0, 9.671, -56.59668, 58.01584, -143.34735)
 
-[node name="Package_14" parent="===POSTOFFICE===/=HOUSE=" unique_id=1787567451 instance=ExtResource("25_00pa0")]
+[node name="Package_14" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_00pa0")]
 transform = Transform3D(3.2419624, 0, 0, 0, 10.014374, 0, 0, 0, 3.2419624, -53.97943, 61.545715, -145.79225)
 
-[node name="HamsterHouse_01" parent="===POSTOFFICE===/=HOUSE=" unique_id=1088232959 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_01" parent="===POSTOFFICE===/=HOUSE=" instance=ExtResource("25_he6wg")]
 transform = Transform3D(0.094002254, 0, 1.5221002, 0, 1.5250002, 0, -1.5221002, 0, 0.094002254, -50.855377, 56.94037, -143.1209)
 
-[node name="NPC_Point_A" type="Area3D" parent="===POSTOFFICE===" unique_id=792188884]
+[node name="NPC_Point_A" type="Area3D" parent="===POSTOFFICE==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6918945, 0.29799843, 0.49049187)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="===POSTOFFICE===/NPC_Point_A" unique_id=1221764478]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===POSTOFFICE===/NPC_Point_A"]
 shape = SubResource("SphereShape3D_xrja0")
 
-[node name="NPC_Point_B" type="Area3D" parent="===POSTOFFICE===" unique_id=225771799]
+[node name="NPC_Point_B" type="Area3D" parent="===POSTOFFICE==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5553894, 0, 0.43649673)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="===POSTOFFICE===/NPC_Point_B" unique_id=1777093178]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===POSTOFFICE===/NPC_Point_B"]
 shape = SubResource("SphereShape3D_xrja0")
 
-[node name="===DELIVER_AREAS===" type="Node3D" parent="." unique_id=770502761]
+[node name="===DELIVER_AREAS===" type="Node3D" parent="."]
 
-[node name="DeliveryAreaArrow" parent="===DELIVER_AREAS===" unique_id=892715020 instance=ExtResource("20_dpc8t")]
+[node name="DeliveryAreaArrow" parent="===DELIVER_AREAS===" instance=ExtResource("20_dpc8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.5439, 5.8861485, -18.903452)
 height_offset = 10.0
 max_scale = 20.0
 min_distance = 10.0
 max_distance = 2000.0
 
-[node name="=Area_01=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1755396391]
+[node name="=Area_01=" type="Node3D" parent="===DELIVER_AREAS==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.5502, 18.25928, 129.99129)
 
-[node name="DeliveryArea_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1448386087 groups=["delivery_areas"] instance=ExtResource("25_jqt73")]
+[node name="DeliveryArea_01" parent="===DELIVER_AREAS===/=Area_01=" groups=["delivery_areas"] instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 1.4663525, -20.13324)
 display_name = "Bosse Shrouding"
 
-[node name="NPC_Reciever_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=2045726150 node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("27_amxoe")]
+[node name="NPC_Reciever_01" parent="===DELIVER_AREAS===/=Area_01=" node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0351429, -1.1683807)
 waypoints = [NodePath("../NPC_Point_A"), NodePath("../NPC_Point_B")]
 linked_area = NodePath("../DeliveryArea_01")
 
-[node name="NPC_Point_A" type="Area3D" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1165503694]
+[node name="NPC_Point_A" type="Area3D" parent="===DELIVER_AREAS===/=Area_01="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041137695, 1.0373077, -0.7407341)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_01=/NPC_Point_A" unique_id=1526831179]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_01=/NPC_Point_A"]
 shape = SubResource("SphereShape3D_xrja0")
 
-[node name="NPC_Point_B" type="Area3D" parent="===DELIVER_AREAS===/=Area_01=" unique_id=584831247]
+[node name="NPC_Point_B" type="Area3D" parent="===DELIVER_AREAS===/=Area_01="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13919067, 1.0373077, -5.847084)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_01=/NPC_Point_B" unique_id=1344321075]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_01=/NPC_Point_B"]
 shape = SubResource("SphereShape3D_xrja0")
 
-[node name="HamsterHouse_01" parent="===DELIVER_AREAS===/=Area_01=" unique_id=1414251931 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_01" parent="===DELIVER_AREAS===/=Area_01=" instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, 0.13208008, 0.15243721, 0.05971527)
 
-[node name="=Area_02=" type="Node3D" parent="===DELIVER_AREAS===" unique_id=1094997417]
+[node name="=Area_02=" type="Node3D" parent="===DELIVER_AREAS==="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -259.77847, 19.761192, 68.38846)
 
-[node name="DeliveryArea_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1937722874 groups=["delivery_areas"] instance=ExtResource("25_jqt73")]
+[node name="DeliveryArea_02" parent="===DELIVER_AREAS===/=Area_02=" groups=["delivery_areas"] instance=ExtResource("25_jqt73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2929077, 0.010511398, -20.133244)
 display_name = "Gnagge Gnagsson"
 
-[node name="NPC_Reciever_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1475976692 node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("27_amxoe")]
+[node name="NPC_Reciever_02" parent="===DELIVER_AREAS===/=Area_02=" node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("27_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4613953, 0.58490753, -1.2969017)
 waypoints = [NodePath("../NPC_Point_A"), NodePath("../NPC_Point_B")]
 linked_area = NodePath("../DeliveryArea_02")
 
-[node name="NPC_Point_A" type="Area3D" parent="===DELIVER_AREAS===/=Area_02=" unique_id=696563904]
+[node name="NPC_Point_A" type="Area3D" parent="===DELIVER_AREAS===/=Area_02="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9247742, 0.42679787, -0.7568493)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_02=/NPC_Point_A" unique_id=1529867567]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_02=/NPC_Point_A"]
 shape = SubResource("SphereShape3D_he6wg")
 
-[node name="NPC_Point_B" type="Area3D" parent="===DELIVER_AREAS===/=Area_02=" unique_id=96407203]
+[node name="NPC_Point_B" type="Area3D" parent="===DELIVER_AREAS===/=Area_02="]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9247742, 0.11293793, -6.5073776)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_02=/NPC_Point_B" unique_id=117214534]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="===DELIVER_AREAS===/=Area_02=/NPC_Point_B"]
 shape = SubResource("SphereShape3D_he6wg")
 
-[node name="HamsterHouse_02" parent="===DELIVER_AREAS===/=Area_02=" unique_id=1356105675 instance=ExtResource("25_he6wg")]
+[node name="HamsterHouse_02" parent="===DELIVER_AREAS===/=Area_02=" instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0, -1.705, -1.800293, -1.6909561, -0.8101425)
 
-[node name="Water" type="MeshInstance3D" parent="." unique_id=416129405]
+[node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 material_override = ExtResource("21_dpc8t")
 mesh = SubResource("PlaneMesh_h351q")
 metadata/_edit_lock_ = true
 
-[node name="ProtonScatter_Trees1" type="Node3D" parent="." unique_id=697071043]
+[node name="ProtonScatter_Trees1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 visible = false
 script = ExtResource("22_m4706")
@@ -954,30 +936,30 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
 
-[node name="ScatterItem" type="Node3D" parent="ProtonScatter_Trees1" unique_id=726695338]
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter_Trees1"]
 script = ExtResource("29_bf7t1")
 path = "uid://dl1mgv7h1thox"
 
-[node name="ScatterShape" type="Node3D" parent="ProtonScatter_Trees1" unique_id=1482297990]
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter_Trees1"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.02155, 0, 73.39328)
 script = ExtResource("30_ghfw4")
 shape = SubResource("Resource_g8bsm")
 
-[node name="ScatterShapeNegative" type="Node3D" parent="ProtonScatter_Trees1" unique_id=224359564]
+[node name="ScatterShapeNegative" type="Node3D" parent="ProtonScatter_Trees1"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -342.71082, 26.975388, 30.773163)
 visible = false
 script = ExtResource("30_ghfw4")
 negative = true
 shape = SubResource("Resource_s67ts")
 
-[node name="ScatterShapeNegative2" type="Node3D" parent="ProtonScatter_Trees1" unique_id=1297294759]
+[node name="ScatterShapeNegative2" type="Node3D" parent="ProtonScatter_Trees1"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -342.71082, 26.975388, 30.773163)
 visible = false
 script = ExtResource("30_ghfw4")
 negative = true
 shape = SubResource("Resource_rddwe")
 
-[node name="ProtonScatter_Grass1" type="Node3D" parent="." unique_id=1759491452]
+[node name="ProtonScatter_Grass1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 visible = false
 script = ExtResource("22_m4706")
@@ -986,26 +968,26 @@ Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
 
-[node name="ScatterItem" type="Node3D" parent="ProtonScatter_Grass1" unique_id=1830467766]
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter_Grass1"]
 script = ExtResource("29_bf7t1")
 source_scale_multiplier = 0.2
 path = "uid://cv3pvux6mm38t"
 
-[node name="ScatterShape" type="Node3D" parent="ProtonScatter_Grass1" unique_id=300678636]
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter_Grass1"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.02155, 0, 73.39328)
 script = ExtResource("30_ghfw4")
 shape = SubResource("Resource_ghfw4")
 
-[node name="RigidBodPackage_Test" type="RigidBody3D" parent="." unique_id=2017937485]
+[node name="RigidBodPackage_Test" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.67218, 20.978338, -39.333508)
 visible = false
 gravity_scale = 1.9
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBodPackage_Test" unique_id=74736992]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBodPackage_Test"]
 shape = SubResource("BoxShape3D_6dcgf")
 disabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBodPackage_Test" unique_id=264262541]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBodPackage_Test"]
 mesh = SubResource("BoxMesh_ubuva")
 
 [editable path="Car1_Player/WiggleTest"]
