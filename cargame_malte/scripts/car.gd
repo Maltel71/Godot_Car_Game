@@ -31,6 +31,12 @@ var assigned_delivery_id: String = ""
 @export var handbrake_sound: AudioStream
 @export var handbrake_audio_player: AudioStreamPlayer3D
 
+@export_group("Brake")
+@export var brake_force: float = 14.0
+@export var slide_speed: float = 17.0
+@export var slide_friction: float = 0.5
+@export var grip_friction: float = 11.0
+
 var _flip_timer: float = 0.0
 var driver_in_car: bool = true
 var current_player: Node3D = null
@@ -72,6 +78,21 @@ func _physics_process(delta):
 	engine_force = dir * max_torque * (1.0 - avg_rpm / max_RPM)
 	steering = lerp(steering, steering_dir * turn_amount, turn_speed * delta)
 	brake = 2 if dir == 0 else 0
+	if Input.is_action_pressed("brake"):
+		brake = brake_force
+		engine_force = 0
+		var slide = clamp(linear_velocity.length() / slide_speed, 0.0, 1.0)
+		var f = lerp(grip_friction, slide_friction, slide)
+		$wheel_back_left.wheel_friction_slip = f
+		$wheel_back_right.wheel_friction_slip = f
+		
+		# Dampen sideways velocity to prevent full spinout
+		var right = global_transform.basis.x
+		var lateral = right.dot(linear_velocity)
+		linear_velocity -= right * lateral * 0.1
+	else:
+		$wheel_back_left.wheel_friction_slip = grip_friction
+		$wheel_back_right.wheel_friction_slip = grip_friction
 
 	if exhaust_particles:
 		exhaust_particles.emitting = dir != 0
