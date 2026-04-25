@@ -33,6 +33,13 @@ func _ready():
 		current_state = "idle"
 
 func _physics_process(_delta):
+	# Don't react to driving inputs when driver isn't in the car
+	if not car.driver_in_car:
+		if current_state != "idle" and idle_sounds.size() > 0:
+			_play_sound(idle_sounds[0], 1.0, true)
+			current_state = "idle"
+		return
+	
 	var speed = car.linear_velocity.length()
 	var is_accelerating = Input.is_action_pressed("Gas") or Input.is_action_pressed("Reverse")
 	

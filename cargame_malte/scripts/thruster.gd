@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var thrust_force: float = 5000.0
+@export var visual: Node3D
 @export var particle_effect: GPUParticles3D
 @export var puff_effect: GPUParticles3D
 @export var activate_action: String = "ui_select"  # Set per-instance in the Inspector
@@ -16,7 +17,8 @@ func _ready():
 		node = node.get_parent()
 	parent_body = node as VehicleBody3D
 
-	visible = false
+	if visual:
+		visual.visible = false
 	if particle_effect:
 		particle_effect.emitting = false
 	set_physics_process(true)
@@ -27,7 +29,8 @@ func _input(event):
 	# Toggle thruster on/off with the assigned button
 	if event.is_action_pressed("thruster_toggle"):
 		thruster_enabled = not thruster_enabled
-		visible = thruster_enabled
+		if visual:
+			visual.visible = thruster_enabled
 		if not thruster_enabled and particle_effect:
 			particle_effect.emitting = false
 

@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://bc01apre73u2u" path="res://audio/music/radiostation_3/FlummorOchKnas.mp3" id="27_2ynax"]
 [ext_resource type="AudioStream" uid="uid://dxv8h1u1erl7j" path="res://audio/music/radiostation_3/HumlorUrFas.mp3" id="28_s0e8v"]
 [ext_resource type="AudioStream" uid="uid://btcdsvq51lb4d" path="res://audio/music/radiostation_3/Nästan Själv.mp3" id="29_wrhr8"]
+[ext_resource type="AudioStream" uid="uid://4cyrjilpsy6d" path="res://audio/sfx/click/click (2).wav" id="30_8sd2q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i00a5"]
 size = Vector3(2, 0.2, 2)
@@ -433,6 +434,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23134422, -0.7412058, 0)
 [node name="packagedistancepoint" type="Node3D" parent="." unique_id=1014112667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1233106)
 
-[node name="CarRadioManager" type="Node" parent="." unique_id=201759591 groups=["car_radio"]]
+[node name="CarRadioManager" type="Node" parent="." unique_id=201759591 node_paths=PackedStringArray("radio_emitter_3d") groups=["car_radio"]]
 script = ExtResource("19_8ijm4")
 channels = Array[ExtResource("20_2vbte")]([SubResource("Resource_2ad3o"), SubResource("Resource_pmakp"), SubResource("Resource_2vbte")])
+search_sound = ExtResource("30_8sd2q")
+radio_emitter_3d = NodePath("../AudioStreamPlayer3D_RadioOutside")
+max_distance_3d = 50.0
+
+[node name="AudioStreamPlayer_RadioInside" type="AudioStreamPlayer" parent="." unique_id=1189959232]
+
+[node name="AudioStreamPlayer3D_RadioOutside" type="AudioStreamPlayer3D" parent="." unique_id=787663702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35116014, 0.738428)
+max_distance = 100.0
+bus = &"music"

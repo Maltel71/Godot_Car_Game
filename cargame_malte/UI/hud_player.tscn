@@ -165,23 +165,24 @@ scale = Vector2(0.61211336, 0.61211336)
 
 [node name="RadioLabel" type="Label" parent="Control_Debug" unique_id=196560312]
 layout_mode = 0
-offset_left = 1324.0
-offset_top = 837.0
-offset_right = 1670.0
-offset_bottom = 920.0
+offset_left = 1035.7557
+offset_top = 596.2948
+offset_right = 1381.7557
+offset_bottom = 679.2948
 theme = ExtResource("3_8fwp6")
 text = "RadioStatus"
 
 [node name="StarXPMeter" type="Label" parent="Control_Debug" unique_id=738463298]
 layout_mode = 0
-offset_left = 1326.5519
-offset_top = 931.2001
-offset_right = 1703.5519
-offset_bottom = 1014.2001
+offset_left = 1042.2905
+offset_top = 692.6821
+offset_right = 1419.2905
+offset_bottom = 775.6821
 theme = ExtResource("3_8fwp6")
 text = "starxpmeter:"
 
 [node name="Controlls_temp" type="Label" parent="." unique_id=790814695]
+visible = false
 offset_left = 1663.0001
 offset_top = 812.00006
 offset_right = 2260.0

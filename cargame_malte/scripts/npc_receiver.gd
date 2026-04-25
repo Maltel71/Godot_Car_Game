@@ -40,8 +40,13 @@ func _physics_process(delta):
 				waypoint_index = 0
 				break
 
-	if not is_on_floor():
-		velocity.y -= 9.8 * delta
+	# Abort chase if target no longer holds our package
+	if going_out and car and "HasPackage" in car \
+	and (not car.HasPackage or car.assigned_delivery_id != linked_area.name):
+		car = null
+		going_out = false
+		returning = true
+		waypoint_index = clamp(waypoint_index, 0, waypoints.size() - 1)
 
 	if not is_on_floor():
 		velocity.y -= 9.8 * delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bbnpkv87eeaia"]
+[gd_scene format=3 uid="uid://bbnpkv87eeaia"]
 
 [ext_resource type="Script" uid="uid://h4sfcanfcl1c" path="res://scripts/thruster.gd" id="1_2xtem"]
 [ext_resource type="PackedScene" uid="uid://dvstrfj7fo66e" path="res://models/uppgrade_thruster1_v1.glb" id="2_1cgkj"]
@@ -51,14 +51,15 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
-[node name="Thruster" type="Node3D" node_paths=PackedStringArray("particle_effect")]
+[node name="Thruster" type="Node3D" unique_id=640673278 node_paths=PackedStringArray("visual", "particle_effect")]
 script = ExtResource("1_2xtem")
 thrust_force = 1000.0
+visual = NodePath("Mesh")
 particle_effect = NodePath("vfx_stylized_fire1")
 
-[node name="Mesh" parent="." instance=ExtResource("2_1cgkj")]
+[node name="Mesh" parent="." unique_id=1376125595 instance=ExtResource("2_1cgkj")]
 
-[node name="vfx_stylized_fire1" type="GPUParticles3D" parent="."]
+[node name="vfx_stylized_fire1" type="GPUParticles3D" parent="." unique_id=969370806]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, -0.5601196, 0)
 material_override = SubResource("ShaderMaterial_cylb8")
 amount = 20
