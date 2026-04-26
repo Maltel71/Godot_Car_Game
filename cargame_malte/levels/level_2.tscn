@@ -38,14 +38,11 @@
 
 [sub_resource type="GDScript" id="GDScript_ndgrd"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
-sky_top_color = Color(0.3302241, 0.45790964, 0.61487746, 1)
-sky_horizon_color = Color(0.7645305, 0.6206959, 0.7163661, 1)
-ground_bottom_color = Color(0.7647059, 0.61960787, 0.7176471, 1)
-ground_horizon_color = Color(0.7647059, 0.61960787, 0.7176471, 1)
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
+ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
 
 [sub_resource type="Sky" id="Sky_s8dg4"]
-sky_material = SubResource("ProceduralSkyMaterial_q04gf")
+sky_material = SubResource("PhysicalSkyMaterial_ubuva")
 
 [sub_resource type="Environment" id="Environment_ex07k"]
 background_mode = 2
@@ -54,6 +51,8 @@ reflected_light_source = 2
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
+fog_enabled = true
+fog_sun_scatter = 0.1
 fog_density = 0.0005
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.001
@@ -462,32 +461,32 @@ radius = 2.0
 [sub_resource type="PlaneMesh" id="PlaneMesh_h351q"]
 size = Vector2(10000, 10000)
 
-[sub_resource type="Resource" id="Resource_6dcgf"]
+[sub_resource type="Resource" id="Resource_ubuva"]
 script = ExtResource("25_6dcgf")
 amount = 8
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ubuva"]
+[sub_resource type="Resource" id="Resource_0nm7o"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_0nm7o"]
+[sub_resource type="Resource" id="Resource_pjs8f"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_pjs8f"]
+[sub_resource type="Resource" id="Resource_bf7t1"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_bf7t1"]
+[sub_resource type="Resource" id="Resource_6oa44"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -495,9 +494,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_6oa44"]
+[sub_resource type="Resource" id="Resource_3582p"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_6dcgf"), SubResource("Resource_ubuva"), SubResource("Resource_0nm7o"), SubResource("Resource_pjs8f"), SubResource("Resource_bf7t1")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_ubuva"), SubResource("Resource_0nm7o"), SubResource("Resource_pjs8f"), SubResource("Resource_bf7t1"), SubResource("Resource_6oa44")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_s67ts")
@@ -520,32 +519,32 @@ script = ExtResource("34_6dcgf")
 curve = SubResource("Curve3D_nomkf")
 metadata/_custom_type_script = "uid://djha0k1o3sp7w"
 
-[sub_resource type="Resource" id="Resource_3582p"]
+[sub_resource type="Resource" id="Resource_nomkf"]
 script = ExtResource("25_6dcgf")
 amount = 9
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_nomkf"]
+[sub_resource type="Resource" id="Resource_6bdx5"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_6bdx5"]
+[sub_resource type="Resource" id="Resource_qthv2"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_qthv2"]
+[sub_resource type="Resource" id="Resource_wnekv"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_wnekv"]
+[sub_resource type="Resource" id="Resource_jyp08"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -553,9 +552,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_jyp08"]
+[sub_resource type="Resource" id="Resource_wvv8u"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_3582p"), SubResource("Resource_nomkf"), SubResource("Resource_6bdx5"), SubResource("Resource_qthv2"), SubResource("Resource_wnekv")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_nomkf"), SubResource("Resource_6bdx5"), SubResource("Resource_qthv2"), SubResource("Resource_wnekv"), SubResource("Resource_jyp08")])
 
 [sub_resource type="Resource" id="Resource_ghfw4"]
 script = ExtResource("31_s67ts")
@@ -576,14 +575,16 @@ script = SubResource("GDScript_ndgrd")
 environment = SubResource("Environment_ex07k")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=774138517]
-transform = Transform3D(-0.86602485, -0.12940949, 0.4829632, 0, 0.9659255, 0.25881916, -0.49999976, 0.2241438, -0.8365167, 0, 0, 0)
+transform = Transform3D(-0.8660253, -0.12940949, 0.482963, 0.32926598, 0.57930416, 0.74564767, -0.3762764, 0.804773, -0.45908222, 0, 0, 0)
 shadow_enabled = true
+directional_shadow_max_distance = 972.4
 
-[node name="DaynNight_Manager" type="Node3D" parent="." unique_id=558459497 node_paths=PackedStringArray("sun", "environment")]
+[node name="DaynNight_Manager" type="Node3D" parent="." unique_id=558459497 node_paths=PackedStringArray("sun", "environment") groups=["daynight"]]
 script = ExtResource("35_ubuva")
 sun = NodePath("../Sun")
 environment = NodePath("../WorldEnvironment")
-sunset_color = Color(0.6716175, 0.29110518, 0.142524, 1)
+cycle_duration = 1.0
+sunset_color = Color(0.59791434, 0.35617933, 0.08197368, 1)
 min_energy = 0.0
 
 [node name="Car1_Player" parent="." unique_id=1904992392 instance=ExtResource("3_ndgrd")]
@@ -958,7 +959,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 visible = false
 script = ExtResource("22_m4706")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_6oa44")
+modifier_stack = SubResource("Resource_3582p")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -990,7 +991,7 @@ shape = SubResource("Resource_rddwe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 visible = false
 script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_jyp08")
+modifier_stack = SubResource("Resource_wvv8u")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1016,6 +1017,15 @@ disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBodPackage_Test" unique_id=326055141]
 mesh = SubResource("BoxMesh_ubuva")
+
+[node name="Streetlamp" parent="." unique_id=1274681122 instance=ExtResource("12_amxoe")]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -269.67654, 17.916142, 64.030075)
+
+[node name="Streetlamp2" parent="." unique_id=1740721666 instance=ExtResource("12_amxoe")]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -327.2336, 17.916142, 126.44304)
+
+[node name="Streetlamp3" parent="." unique_id=30132183 instance=ExtResource("12_amxoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.87604, 117.872574, -68.092865)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]

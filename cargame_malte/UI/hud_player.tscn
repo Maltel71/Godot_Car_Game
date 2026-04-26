@@ -181,6 +181,15 @@ offset_bottom = 775.6821
 theme = ExtResource("3_8fwp6")
 text = "starxpmeter:"
 
+[node name="PhaseLabel" type="Label" parent="Control_Debug" unique_id=1460755862]
+layout_mode = 0
+offset_left = 1047.1915
+offset_top = 798.87164
+offset_right = 1424.1915
+offset_bottom = 881.87164
+theme = ExtResource("3_8fwp6")
+text = "DaynNightDebug"
+
 [node name="Controlls_temp" type="Label" parent="." unique_id=790814695]
 visible = false
 offset_left = 1663.0001

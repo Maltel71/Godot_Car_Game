@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
 [ext_resource type="Script" uid="uid://c2ugxnvgykxq1" path="res://scripts/headlights.gd" id="15_utifk"]
 [ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="18_b4ysl"]
+[ext_resource type="Script" uid="uid://b1edjfb0eknpo" path="res://scripts/headlights_omni.gd" id="18_h84a2"]
 [ext_resource type="Script" uid="uid://djubakr51hvus" path="res://scripts/car_radio_manager.gd" id="19_8ijm4"]
 [ext_resource type="Script" uid="uid://c4lwum6etjrd1" path="res://scripts/radio_channel.gd" id="20_2vbte"]
 [ext_resource type="AudioStream" uid="uid://c1e5geoiewnaa" path="res://audio/music/radiostation_1/Innocent Intent.mp3" id="21_4gna3"]
@@ -30,12 +31,6 @@
 [ext_resource type="AudioStream" uid="uid://dxv8h1u1erl7j" path="res://audio/music/radiostation_3/HumlorUrFas.mp3" id="28_s0e8v"]
 [ext_resource type="AudioStream" uid="uid://btcdsvq51lb4d" path="res://audio/music/radiostation_3/Nästan Själv.mp3" id="29_wrhr8"]
 [ext_resource type="AudioStream" uid="uid://4cyrjilpsy6d" path="res://audio/sfx/click/click (2).wav" id="30_8sd2q"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_i00a5"]
-size = Vector3(2, 0.2, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_utifk"]
-size = Vector3(2, 0.2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.0693359, 6.8826)
@@ -145,6 +140,9 @@ tracks = Array[AudioStream]([ExtResource("27_2ynax"), ExtResource("28_s0e8v"), E
 track_names = Array[String](["FlummorOch", "HumlorUrFas", "NästanSjälv"])
 metadata/_custom_type_script = "uid://c4lwum6etjrd1"
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_8sd2q"]
+size = Vector2(200, 200)
+
 [node name="VehicleBody3D" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
@@ -158,66 +156,6 @@ driver_mesh = NodePath("DriverMesh")
 exit_hold_time = 1.0
 handbrake_sound = ExtResource("3_5khej")
 handbrake_audio_player = NodePath("CarSFXManager/AudioStreamPlayer3D_HandBrake")
-
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=214846136]
-transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -3.330795)
-visible = false
-shape = SubResource("BoxShape3D_i00a5")
-disabled = true
-
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=554619161]
-transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -3.330795)
-visible = false
-mesh = SubResource("BoxMesh_utifk")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1786130292]
-transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -1.4430928)
-visible = false
-shape = SubResource("BoxShape3D_i00a5")
-disabled = true
-
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=194791960]
-transform = Transform3D(4.440892e-16, -4.371139e-08, 1, -0.14513926, -4.3711385e-08, 0, 6.3442385e-09, -1, -4.371139e-08, -0.008684039, 0.28144336, -1.4430928)
-visible = false
-mesh = SubResource("BoxMesh_utifk")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=771073661]
-transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, -0.8957286, 0.28144336, -2.4043798)
-visible = false
-shape = SubResource("BoxShape3D_i00a5")
-disabled = true
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=501937140]
-transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, -0.8957286, 0.28144336, -2.4043798)
-visible = false
-mesh = SubResource("BoxMesh_utifk")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1640573758]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03607668, -2.4043798)
-visible = false
-shape = SubResource("BoxShape3D_i00a5")
-disabled = true
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1012263934]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03607668, -2.4043798)
-visible = false
-mesh = SubResource("BoxMesh_utifk")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="." unique_id=117069818]
-transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, 0.8985343, 0.28144336, -2.4043798)
-visible = false
-shape = SubResource("BoxShape3D_i00a5")
-disabled = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1393872444]
-transform = Transform3D(-6.3442385e-09, 1, 0, -0.14513926, -4.371139e-08, 0, 0, 0, 1, 0.8985343, 0.28144336, -2.4043798)
-visible = false
-mesh = SubResource("BoxMesh_utifk")
-skeleton = NodePath("")
 
 [node name="CarMain02" parent="." unique_id=1858086224 instance=ExtResource("2_xhmyn")]
 
@@ -414,19 +352,55 @@ visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1788457257]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.50775075, -0.42383558, 3.3568554)
-light_color = Color(0.957529, 0.93783736, 0, 1)
-light_energy = 2.0
-spot_range = 11.094419
-spot_angle = 16.874998
+light_color = Color(0.92123526, 0.9262932, 0.6377255, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 1.195
+shadow_enabled = true
+spot_range = 50.0
+spot_attenuation = 0.37
+spot_angle = 61.89
 script = ExtResource("15_utifk")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=146634233]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5120549, -0.42383558, 3.3568554)
-light_color = Color(0.957529, 0.93783736, 0, 1)
-light_energy = 2.0
-spot_range = 11.094419
-spot_angle = 16.874998
+light_color = Color(0.92123526, 0.9262932, 0.6377255, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 1.195
+shadow_enabled = true
+spot_range = 50.0
+spot_attenuation = 0.37
+spot_angle = 61.89
 script = ExtResource("15_utifk")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1695882209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54800564, -0.4095912, 3.3984754)
+light_color = Color(0.8183502, 0.66114986, 0.21956053, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
+script = ExtResource("18_h84a2")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=114691167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53856725, -0.4095912, 3.3984754)
+light_color = Color(0.8183502, 0.66114986, 0.21956053, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
+script = ExtResource("18_h84a2")
+
+[node name="OmniLight3D_Rear" type="OmniLight3D" parent="." unique_id=1536307540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75216675, -0.53178847, -3.1900916)
+light_color = Color(0.96165425, 0.56256866, 0.4097834, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
+
+[node name="OmniLight3D_Rear2" type="OmniLight3D" parent="." unique_id=2129876626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7780013, -0.53178847, -3.1900916)
+light_color = Color(0.96165425, 0.56256866, 0.4097834, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
 
 [node name="DriverMesh" parent="." unique_id=1502235154 instance=ExtResource("18_b4ysl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23134422, -0.7412058, 0)
@@ -447,3 +421,8 @@ max_distance_3d = 50.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35116014, 0.738428)
 max_distance = 100.0
 bus = &"music"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1036239420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4144078, 84.99061)
+visible = false
+mesh = SubResource("PlaneMesh_8sd2q")

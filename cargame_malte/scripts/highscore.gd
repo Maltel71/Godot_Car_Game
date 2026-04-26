@@ -7,8 +7,9 @@ extends CanvasLayer
 @onready var speed_label    = $Panel_Car/CurrentSpeedLabel
 @onready var star_xp_label  = $Control_Debug/StarXPMeter
 @onready var radio_label    = $Control_Debug/RadioLabel
+@onready var phase_label    = $Control_Debug/PhaseLabel
 @onready var panel_delivery = $Panel_Delivery
-@onready var height_label = $Panel_Car/CurrentHeightLabel
+@onready var height_label   = $Panel_Car/CurrentHeightLabel
 @export var height_world_zero: float = 0.0
 @onready var stars = [
 	$Control_Stats/HBoxContainer_StarRating/Star1,
@@ -23,6 +24,7 @@ extends CanvasLayer
 var manager
 var car: VehicleBody3D
 var radio: Node
+var daynight: Node3D
 var _arrow_visible: bool = false
 var _smoothed_screen_pos: Vector2 = Vector2.ZERO
 
@@ -30,6 +32,7 @@ func _ready():
 	manager = get_node("/root/ScoreAndTimeManager")
 	car = get_tree().get_first_node_in_group("car")
 	radio = get_tree().get_first_node_in_group("car_radio")
+	daynight = get_tree().get_first_node_in_group("daynight")
 	if delivery_arrow:
 		delivery_arrow.hide()
 
@@ -61,6 +64,9 @@ func _process(_delta):
 
 	if radio:
 		radio_label.text = radio.get_status()
+
+	if daynight:
+		phase_label.text = "%s  %d%%" % [daynight.get_phase(), int(daynight.get_day_percent())]
 
 	_update_arrow()
 
