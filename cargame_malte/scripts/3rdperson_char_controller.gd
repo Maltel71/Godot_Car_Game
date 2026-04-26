@@ -14,6 +14,7 @@ extends CharacterBody3D
 
 @onready var camera_mount: Node3D = $camera_mount
 @onready var visuals: Node3D = $visuals
+@onready var spring_arm: SpringArm3D = $camera_mount/SpringArm3D
 
 var car_ref: VehicleBody3D = null
 var HasPackage: bool = false
@@ -28,6 +29,7 @@ func _ready():
 
 func set_car_ref(car: VehicleBody3D):
 	car_ref = car
+	spring_arm.add_excluded_object(car.get_rid())
 
 func _input(event):
 	if event is InputEventMouseMotion:

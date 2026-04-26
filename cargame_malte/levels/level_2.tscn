@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="31_s67ts"]
 [ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="33_4yoxl"]
 [ext_resource type="Script" uid="uid://djha0k1o3sp7w" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="34_6dcgf"]
+[ext_resource type="Script" uid="uid://cyen5sn36j50h" path="res://scripts/daynnight.gd" id="35_ubuva"]
 
 [sub_resource type="GDScript" id="GDScript_ndgrd"]
 
@@ -49,6 +50,7 @@ sky_material = SubResource("ProceduralSkyMaterial_q04gf")
 [sub_resource type="Environment" id="Environment_ex07k"]
 background_mode = 2
 sky = SubResource("Sky_s8dg4")
+reflected_light_source = 2
 tonemap_mode = 2
 ssao_enabled = true
 glow_enabled = true
@@ -574,8 +576,15 @@ script = SubResource("GDScript_ndgrd")
 environment = SubResource("Environment_ex07k")
 
 [node name="Sun" type="DirectionalLight3D" parent="." unique_id=774138517]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.86602485, -0.12940949, 0.4829632, 0, 0.9659255, 0.25881916, -0.49999976, 0.2241438, -0.8365167, 0, 0, 0)
 shadow_enabled = true
+
+[node name="DaynNight_Manager" type="Node3D" parent="." unique_id=558459497 node_paths=PackedStringArray("sun", "environment")]
+script = ExtResource("35_ubuva")
+sun = NodePath("../Sun")
+environment = NodePath("../WorldEnvironment")
+sunset_color = Color(0.6716175, 0.29110518, 0.142524, 1)
+min_energy = 0.0
 
 [node name="Car1_Player" parent="." unique_id=1904992392 instance=ExtResource("3_ndgrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 20.042086, -36.98169)
