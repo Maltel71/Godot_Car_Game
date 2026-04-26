@@ -36,7 +36,7 @@ func _input(event):
 		rotate_y(deg_to_rad(-event.relative.x * sens_h))
 		visuals.rotate_y(deg_to_rad(event.relative.x * sens_h))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y * sens_v))
-		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-60), deg_to_rad(20))
+		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-85), deg_to_rad(20))
 
 func _physics_process(delta):
 	if package_mesh:
