@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b8iy71udaje64"]
+
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="1_1360x"]
+[ext_resource type="Script" uid="uid://d4hw6v4ldspdk" path="res://scripts/npc_shop.gd" id="1_ef8gk"]
+[ext_resource type="PackedScene" uid="uid://cy010oxxoqk7f" path="res://UI/menu_mechanic.tscn" id="2_606jt"]
+[ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="2_y66u0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ef8gk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_606jt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1360x"]
+radius = 0.6118164
+height = 1.2236328
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y66u0"]
+radius = 3.5
+
+[node name="NPC_Mechanic" type="StaticBody3D" unique_id=1211935691]
+script = ExtResource("1_ef8gk")
+menu_scene = ExtResource("2_606jt")
+
+[node name="Mesh" parent="." unique_id=1040379739 instance=ExtResource("1_1360x")]
+
+[node name="hat2" type="MeshInstance3D" parent="Mesh" unique_id=1835543042]
+transform = Transform3D(0.6523432, 0, 0, 0, 0.6523432, 0, 0, 0, 0.6523432, 0, 1.442538, 0.047002614)
+material_override = ExtResource("2_y66u0")
+mesh = SubResource("SphereMesh_ef8gk")
+skeleton = NodePath("../..")
+
+[node name="hat" type="MeshInstance3D" parent="Mesh/hat2" unique_id=2115457396]
+transform = Transform3D(0.66548944, 0, 0, 0, 0.15901202, -0.1285687, 0, 0.03447259, 0.59305006, 0, 0.039952993, -0.7348975)
+material_override = ExtResource("2_y66u0")
+mesh = SubResource("BoxMesh_606jt")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1397560360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8125, 0)
+shape = SubResource("CapsuleShape3D_1360x")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1504395243]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=479780624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_y66u0")

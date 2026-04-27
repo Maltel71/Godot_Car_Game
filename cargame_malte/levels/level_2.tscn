@@ -41,6 +41,7 @@
 [ext_resource type="Script" uid="uid://djha0k1o3sp7w" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="34_6dcgf"]
 [ext_resource type="Script" uid="uid://cyen5sn36j50h" path="res://scripts/daynnight.gd" id="35_ubuva"]
 [ext_resource type="PackedScene" uid="uid://bmtdexg0hgby" path="res://level_components/hamsterhouse_v2.tscn" id="37_pjs8f"]
+[ext_resource type="PackedScene" uid="uid://b8iy71udaje64" path="res://level_components/npc_mechanic.tscn" id="42_3582p"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
@@ -470,32 +471,32 @@ noise = SubResource("FastNoiseLite_ndgrd")
 [sub_resource type="FogMaterial" id="FogMaterial_ndgrd"]
 density_texture = SubResource("NoiseTexture3D_h351q")
 
-[sub_resource type="Resource" id="Resource_pjs8f"]
+[sub_resource type="Resource" id="Resource_3582p"]
 script = ExtResource("25_6dcgf")
 amount = 200
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_bf7t1"]
+[sub_resource type="Resource" id="Resource_nomkf"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_6oa44"]
+[sub_resource type="Resource" id="Resource_6bdx5"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_3582p"]
+[sub_resource type="Resource" id="Resource_qthv2"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_nomkf"]
+[sub_resource type="Resource" id="Resource_wnekv"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -503,9 +504,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_6bdx5"]
+[sub_resource type="Resource" id="Resource_jyp08"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_pjs8f"), SubResource("Resource_bf7t1"), SubResource("Resource_6oa44"), SubResource("Resource_3582p"), SubResource("Resource_nomkf")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_3582p"), SubResource("Resource_nomkf"), SubResource("Resource_6bdx5"), SubResource("Resource_qthv2"), SubResource("Resource_wnekv")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_s67ts")
@@ -528,32 +529,32 @@ script = ExtResource("34_6dcgf")
 curve = SubResource("Curve3D_nomkf")
 metadata/_custom_type_script = "uid://djha0k1o3sp7w"
 
-[sub_resource type="Resource" id="Resource_qthv2"]
+[sub_resource type="Resource" id="Resource_wvv8u"]
 script = ExtResource("25_6dcgf")
 amount = 300
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_wnekv"]
+[sub_resource type="Resource" id="Resource_4s8mp"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_jyp08"]
+[sub_resource type="Resource" id="Resource_wsmxb"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_wvv8u"]
+[sub_resource type="Resource" id="Resource_nfgrx"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_4s8mp"]
+[sub_resource type="Resource" id="Resource_m0g18"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -561,9 +562,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_wsmxb"]
+[sub_resource type="Resource" id="Resource_df2rw"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_qthv2"), SubResource("Resource_wnekv"), SubResource("Resource_jyp08"), SubResource("Resource_wvv8u"), SubResource("Resource_4s8mp")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_wvv8u"), SubResource("Resource_4s8mp"), SubResource("Resource_wsmxb"), SubResource("Resource_nfgrx"), SubResource("Resource_m0g18")])
 
 [sub_resource type="Resource" id="Resource_ghfw4"]
 script = ExtResource("31_s67ts")
@@ -1234,7 +1235,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 visible = false
 script = ExtResource("22_m4706")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_6bdx5")
+modifier_stack = SubResource("Resource_jyp08")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1264,7 +1265,7 @@ shape = SubResource("Resource_rddwe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 visible = false
 script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_wsmxb")
+modifier_stack = SubResource("Resource_df2rw")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1279,6 +1280,10 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.021
 script = ExtResource("30_ghfw4")
 shape = SubResource("Resource_ghfw4")
 
+[node name="NPC_Mechanic" parent="===ENVIROMENT===" unique_id=1211935691 node_paths=PackedStringArray("dialogue_camera") instance=ExtResource("42_3582p")]
+transform = Transform3D(0.28533706, 0, 0.95842725, 0, 1, 0, -0.95842725, 0, 0.28533706, -384.53268, 18.292593, -65.42987)
+dialogue_camera = NodePath("../../Camera3D_Mechanic")
+
 [node name="RigidBodPackage_Test" type="RigidBody3D" parent="." unique_id=883844870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.67218, 20.978338, -39.333508)
 visible = false
@@ -1290,6 +1295,9 @@ disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBodPackage_Test" unique_id=326055141]
 mesh = SubResource("BoxMesh_ubuva")
+
+[node name="Camera3D_Mechanic" type="Camera3D" parent="." unique_id=1730780419]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -378.49796, 20.956812, -65.31181)
 
 [editable path="Car1_Player/WiggleTest"]
 [editable path="Car1_Player/WiggleTest2"]
