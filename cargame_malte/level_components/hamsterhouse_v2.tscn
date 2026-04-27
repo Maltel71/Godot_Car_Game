@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bmtdexg0hgby"]
+
+[ext_resource type="PackedScene" uid="uid://cnyvud1uoflv3" path="res://models/LowpolyHamsterStuff/HamsterHouse_01.glb" id="1_hw17x"]
+[ext_resource type="Material" uid="uid://byn31jdchg2b6" path="res://materials/darkgreen1_mat.tres" id="2_3e45i"]
+[ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="3_ahmsg"]
+
+[node name="HamsterHouse_01" type="Node3D" unique_id=1005312954]
+
+[node name="HamsterHouse_01" parent="." unique_id=1627041071 instance=ExtResource("1_hw17x")]
+
+[node name="Cylinder" parent="HamsterHouse_01" index="0" unique_id=654903292]
+surface_material_override/0 = ExtResource("2_3e45i")
+surface_material_override/1 = ExtResource("3_ahmsg")
+
+[editable path="HamsterHouse_01"]

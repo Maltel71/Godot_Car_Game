@@ -10,6 +10,9 @@ radius = 1.35547
 
 [node name="env_tree1_mesh_01_v1" parent="." unique_id=1160206913 instance=ExtResource("1_gknex")]
 
+[node name="Tree1_LOD0" parent="env_tree1_mesh_01_v1" index="0"]
+lod_bias = 0.001
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="env_tree1_mesh_01_v1" unique_id=836566704]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.77014, 0)
 shape = SubResource("CylinderShape3D_gknex")
