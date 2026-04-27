@@ -36,8 +36,6 @@
 [ext_resource type="Script" uid="uid://djha0k1o3sp7w" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="34_6dcgf"]
 [ext_resource type="Script" uid="uid://cyen5sn36j50h" path="res://scripts/daynnight.gd" id="35_ubuva"]
 
-[sub_resource type="GDScript" id="GDScript_ndgrd"]
-
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
 
@@ -565,7 +563,6 @@ radius = 1000.0
 [sub_resource type="BoxMesh" id="BoxMesh_ubuva"]
 
 [node name="Level2" type="Node3D" unique_id=1594088076]
-script = SubResource("GDScript_ndgrd")
 
 [node name="EscMenu" parent="." unique_id=2091164180 instance=ExtResource("1_uo0vl")]
 
@@ -583,7 +580,6 @@ directional_shadow_max_distance = 972.4
 script = ExtResource("35_ubuva")
 sun = NodePath("../Sun")
 environment = NodePath("../WorldEnvironment")
-cycle_duration = 1.0
 sunset_color = Color(0.59791434, 0.35617933, 0.08197368, 1)
 min_energy = 0.0
 

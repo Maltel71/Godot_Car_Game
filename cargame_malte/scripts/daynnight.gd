@@ -6,6 +6,7 @@ extends Node3D
 @export_group("Cycle")
 @export var cycle_duration: float = 10.0 ## Full day/night in seconds
 @export var time_of_day: float = 0.25 ## 0.0-1.0, 0.25 = noon start
+@export var speed_scale_game: float = 1.0
 
 @export_group("Sun Colors")
 @export var midday_color: Color = Color(1.0, 1.0, 0.95)
@@ -18,6 +19,9 @@ extends Node3D
 @export_group("Fog Colors")
 @export var day_fog_color: Color = Color(0.7, 0.8, 0.9)
 @export var night_fog_color: Color = Color(0.05, 0.05, 0.1)
+
+func _ready():
+	Engine.time_scale = speed_scale_game
 
 func _process(delta):
 	time_of_day = fmod(time_of_day + delta / (cycle_duration * 60.0), 1.0)
