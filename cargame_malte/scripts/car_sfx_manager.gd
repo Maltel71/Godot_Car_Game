@@ -7,7 +7,7 @@ extends Node
 @export var suspension_sounds: Array[AudioStream]
 @export var crash_sounds: Array[AudioStream]
 
-@onready var audio_player = $AudioStreamPlayer3D
+@onready var audio_player: AudioStreamPlayer3D = $CarEngine
 
 # Settings
 @export var min_pitch: float = 0.8
@@ -18,14 +18,15 @@ extends Node
 @export var crash_min_impulse: float = 5.0
 @export var crash_pitch_variation: float = 0.1
 
+@export var exhaust_particles_idle: GPUParticles3D
+
 var car: VehicleBody3D
 var was_braking: bool = false
 var prev_suspension_states: Array = [0.0, 0.0, 0.0, 0.0]
-var current_state: String = "idle"  # idle, driving
+var current_state: String = "idle"  # idle, driving, off
 
 func _ready():
 	car = get_parent()
-	audio_player.bus = "sfx"
 	car.body_entered.connect(_on_collision)
 	
 	if idle_sounds.size() > 0:
@@ -33,7 +34,14 @@ func _ready():
 		current_state = "idle"
 
 func _physics_process(_delta):
-	# Don't react to driving inputs when driver isn't in the car
+	# Engine off: silence everything
+	if not car.engine_on:
+		if current_state != "off":
+			audio_player.stop()
+			current_state = "off"
+		return
+	
+	# No driver but engine running: idle ambience
 	if not car.driver_in_car:
 		if current_state != "idle" and idle_sounds.size() > 0:
 			_play_sound(idle_sounds[0], 1.0, true)

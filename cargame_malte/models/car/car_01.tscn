@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/car/CarMain02.fbx" id="2_xhmyn"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="3_5khej"]
 [ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/car/SteeringWheel.fbx" id="3_vl2bd"]
+[ext_resource type="AudioStream" uid="uid://dei8veamqyj77" path="res://audio/sfx/Footsteps_U/snow_001.mp3" id="4_i13nd"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/car/CarWindows02.fbx" id="5_coc8s"]
+[ext_resource type="AudioStream" uid="uid://c2ig5eppuljgt" path="res://audio/sfx/Footsteps_U/wood_001.mp3" id="5_ftogp"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
@@ -49,7 +51,7 @@ shader_parameter/Dissolver_texture = ExtResource("10_b751l")
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_wnk4v"]
+[sub_resource type="CurveTexture" id="CurveTexture_i13nd"]
 texture_mode = 1
 curve = SubResource("Curve_jpt3o")
 
@@ -57,7 +59,7 @@ curve = SubResource("Curve_jpt3o")
 offsets = PackedFloat32Array(0, 0.26794258, 0.41148326)
 colors = PackedColorArray(0.93, 0.93, 0.93, 1, 0.83843184, 0.6967845, 0.66014457, 1, 0.82, 0.82, 0.82, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ovmv7"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ftogp"]
 gradient = SubResource("Gradient_5khej")
 use_hdr = true
 
@@ -65,7 +67,7 @@ use_hdr = true
 _data = [Vector2(0.004255317, 0), 0.0, 0.0, 0, 0, Vector2(0.09787234, 0.17977524), 0.0, 0.0, 0, 0, Vector2(0.506383, 0.13483143), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="CurveTexture" id="CurveTexture_mffl1"]
+[sub_resource type="CurveTexture" id="CurveTexture_28qo3"]
 curve = SubResource("Curve_b4ysl")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l85uf"]
@@ -81,9 +83,9 @@ initial_velocity_max = 2.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.099999994
 scale_max = 0.53999996
-scale_curve = SubResource("CurveTexture_mffl1")
-color_ramp = SubResource("GradientTexture1D_ovmv7")
-alpha_curve = SubResource("CurveTexture_wnk4v")
+scale_curve = SubResource("CurveTexture_28qo3")
+color_ramp = SubResource("GradientTexture1D_ftogp")
+alpha_curve = SubResource("CurveTexture_i13nd")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8ijm4"]
 particle_flag_rotate_y = true
@@ -98,9 +100,9 @@ initial_velocity_max = 4.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 scale_max = 1.1999999
-scale_curve = SubResource("CurveTexture_mffl1")
-color_ramp = SubResource("GradientTexture1D_ovmv7")
-alpha_curve = SubResource("CurveTexture_wnk4v")
+scale_curve = SubResource("CurveTexture_28qo3")
+color_ramp = SubResource("GradientTexture1D_ftogp")
+alpha_curve = SubResource("CurveTexture_i13nd")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jha3"]
 particle_flag_rotate_y = true
@@ -115,9 +117,9 @@ initial_velocity_max = 4.0
 gravity = Vector3(0, 0, 0)
 scale_min = 0.5
 scale_max = 1.1999999
-scale_curve = SubResource("CurveTexture_mffl1")
-color_ramp = SubResource("GradientTexture1D_ovmv7")
-alpha_curve = SubResource("CurveTexture_wnk4v")
+scale_curve = SubResource("CurveTexture_28qo3")
+color_ramp = SubResource("GradientTexture1D_ftogp")
+alpha_curve = SubResource("CurveTexture_i13nd")
 
 [sub_resource type="Resource" id="Resource_2ad3o"]
 script = ExtResource("20_2vbte")
@@ -143,7 +145,7 @@ metadata/_custom_type_script = "uid://c4lwum6etjrd1"
 [sub_resource type="PlaneMesh" id="PlaneMesh_8sd2q"]
 size = Vector2(200, 200)
 
-[node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player") groups=["car"]]
+[node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player", "engine_toggle_audio_player", "exhaust_particles_idle") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
 script = ExtResource("1_bkrhx")
@@ -155,7 +157,11 @@ car_camera = NodePath("CamArm/Camera3D")
 driver_mesh = NodePath("DriverMesh")
 exit_hold_time = 1.0
 handbrake_sound = ExtResource("3_5khej")
-handbrake_audio_player = NodePath("CarSFXManager/AudioStreamPlayer3D_HandBrake")
+handbrake_audio_player = NodePath("CarSFXManager/CarOneShots")
+engine_toggle_audio_player = NodePath("CarSFXManager/CarToggle")
+engine_start_sound = ExtResource("4_i13nd")
+engine_stop_sound = ExtResource("5_ftogp")
+exhaust_particles_idle = NodePath("===PartSyst===/vfx_Exhaust_idle")
 
 [node name="CarMain02" parent="." unique_id=1858086224 instance=ExtResource("2_xhmyn")]
 
@@ -336,15 +342,18 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_3jha3")
 draw_pass_1 = ExtResource("11_i00a5")
 
-[node name="CarSFXManager" type="Node3D" parent="." unique_id=1483181439]
+[node name="CarSFXManager" type="Node3D" parent="." unique_id=1483181439 node_paths=PackedStringArray("exhaust_particles_idle")]
 script = ExtResource("12_i00a5")
 idle_sounds = Array[AudioStream]([ExtResource("13_utifk")])
 driving_sounds = Array[AudioStream]([ExtResource("14_jpt3o")])
+exhaust_particles_idle = NodePath("../===PartSyst===/vfx_Exhaust_idle")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=512227219]
+[node name="CarEngine" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=512227219]
 bus = &"sfx"
 
-[node name="AudioStreamPlayer3D_HandBrake" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=256672081]
+[node name="CarOneShots" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=256672081]
+
+[node name="CarToggle" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=2074608762]
 
 [node name="PackageMesh" parent="." unique_id=2034292386 instance=ExtResource("14_i00a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47323775, -2.1615758)

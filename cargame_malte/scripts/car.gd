@@ -29,8 +29,14 @@ var assigned_delivery_id: String = ""
 @export var driver_mesh: Node3D
 @export var max_exit_speed: float = 1.5
 @export var exit_hold_time: float = 1.5
+
+@export_group("Audio")
 @export var handbrake_sound: AudioStream
 @export var handbrake_audio_player: AudioStreamPlayer3D
+@export var engine_toggle_audio_player: AudioStreamPlayer3D
+@export var engine_start_sound: AudioStream
+@export var engine_stop_sound: AudioStream
+@export var exhaust_particles_idle: GPUParticles3D
 
 
 var _flip_timer: float = 0.0
@@ -46,6 +52,8 @@ func _ready():
 		engine_on = true
 		if car_camera:
 			car_camera.make_current()
+	if exhaust_particles_idle:
+		exhaust_particles_idle.emitting = engine_on
 
 func _physics_process(delta):
 	$CamArm.position = position
@@ -57,6 +65,7 @@ func _physics_process(delta):
 	if driver_in_car:
 		if Input.is_action_just_pressed("toggle_engine"):
 			engine_on = !engine_on
+			_on_engine_toggled()
 
 		# Track how long the car has been nearly still
 		if linear_velocity.length() < max_exit_speed:
@@ -139,6 +148,16 @@ func enter_car():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await get_tree().process_frame
 	driver_in_car = true
-	engine_on = true
 	_slow_timer = 0.0
 	_doors_locked = true
+
+func _on_engine_toggled():
+	for light in find_children("*", "Light3D", true):
+		light.visible = engine_on
+	if exhaust_particles_idle:
+		exhaust_particles_idle.emitting = engine_on
+	if engine_toggle_audio_player:
+		var s: AudioStream = engine_start_sound if engine_on else engine_stop_sound
+		if s:
+			engine_toggle_audio_player.stream = s
+			engine_toggle_audio_player.play()

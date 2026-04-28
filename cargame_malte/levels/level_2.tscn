@@ -1312,7 +1312,7 @@ mesh = SubResource("BoxMesh_ubuva")
 transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -378.49796, 20.956812, -65.31181)
 
 [node name="Car_02" parent="." unique_id=2065331023 instance=ExtResource("45_6bdx5")]
-transform = Transform3D(0.62925255, 0, -0.7772009, 0, 1, 0, 0.7772009, 0, 0.62925255, -327.29254, 19.771116, -77.42948)
+transform = Transform3D(0.5452537, 0, -0.8382711, 0, 1, 0, 0.8382711, 0, 0.5452537, -323.23935, 19.616802, -76.7524)
 
 [editable path="Car_01/WiggleTest"]
 [editable path="Car_01/WiggleTest2"]

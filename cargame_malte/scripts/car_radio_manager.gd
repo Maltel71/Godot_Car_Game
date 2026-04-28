@@ -59,13 +59,16 @@ func _on_track_finished(channel_idx: int):
 	_track_indices[channel_idx] = (_track_indices[channel_idx] + 1) % ch.tracks.size()
 	_play_track(channel_idx)
 
+var _last_engine_on: bool = false
+
 func _process(_delta):
-	if car.driver_in_car != _last_inside_car:
+	if car.driver_in_car != _last_inside_car or car.engine_on != _last_engine_on:
 		_last_inside_car = car.driver_in_car
+		_last_engine_on = car.engine_on
 		_update_volumes()
 
 func _input(event):
-	if not car.driver_in_car:
+	if not car.driver_in_car or not car.engine_on:
 		return
 	if event.is_action_pressed("car_radio"):
 		radio_on = !radio_on
@@ -86,8 +89,9 @@ func _switch_channel():
 
 func _update_volumes():
 	var inside_car = car.driver_in_car
+	var powered = car.engine_on
 	for i in _players_2d.size():
-		var is_active = radio_on and i == current_channel and not is_searching
+		var is_active = radio_on and powered and i == current_channel and not is_searching
 		_players_2d[i].volume_db = 0.0 if (is_active and inside_car) else -80.0
 		_players_3d[i].volume_db = 0.0 if (is_active and not inside_car) else -80.0
 	

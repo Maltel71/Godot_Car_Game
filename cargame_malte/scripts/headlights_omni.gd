@@ -7,4 +7,6 @@ func _input(event):
 			car = car.get_parent()
 		if car and "driver_in_car" in car and not car.driver_in_car:
 			return
+		if car and "engine_on" in car and not car.engine_on:
+			return
 		visible = !visible
