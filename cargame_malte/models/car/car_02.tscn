@@ -151,12 +151,12 @@ size = Vector2(200, 200)
 mass = 240.0
 center_of_mass_mode = 1
 script = ExtResource("1_snx0y")
-exhaust_particles = NodePath("")
+exhaust_particles = NodePath("===PartSyst===/vfx_Exhaust_Driving")
 level_strength = 2.0
 level_damping = 1.0
 player_scene = ExtResource("2_kfqaa")
-car_camera = NodePath("")
-driver_mesh = NodePath("")
+car_camera = NodePath("CamArm/Camera3D")
+driver_mesh = NodePath("DriverMesh")
 exit_hold_time = 1.0
 handbrake_sound = ExtResource("3_ads1p")
 handbrake_audio_player = NodePath("CarSFXManager/CarToggle")

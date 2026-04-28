@@ -52,8 +52,11 @@ func _ready():
 		engine_on = true
 		if car_camera:
 			car_camera.make_current()
+	if exhaust_particles:
+		exhaust_particles.emitting = false
 	if exhaust_particles_idle:
 		exhaust_particles_idle.emitting = engine_on
+	_sync_lights()
 
 func _physics_process(delta):
 	$CamArm.position = position
@@ -67,7 +70,6 @@ func _physics_process(delta):
 			engine_on = !engine_on
 			_on_engine_toggled()
 
-		# Track how long the car has been nearly still
 		if linear_velocity.length() < max_exit_speed:
 			_slow_timer += delta
 		else:
@@ -82,6 +84,10 @@ func _physics_process(delta):
 		engine_force = 0
 		brake = 5
 		steering = 0
+		if exhaust_particles:
+			exhaust_particles.emitting = false
+		if exhaust_particles_idle:
+			exhaust_particles_idle.emitting = engine_on
 		return
 
 	if not engine_on:
@@ -152,8 +158,7 @@ func enter_car():
 	_doors_locked = true
 
 func _on_engine_toggled():
-	for light in find_children("*", "Light3D", true):
-		light.visible = engine_on
+	_sync_lights()
 	if exhaust_particles_idle:
 		exhaust_particles_idle.emitting = engine_on
 	if engine_toggle_audio_player:
@@ -161,3 +166,9 @@ func _on_engine_toggled():
 		if s:
 			engine_toggle_audio_player.stream = s
 			engine_toggle_audio_player.play()
+
+func _sync_lights():
+	for light in find_children("*", "Light3D", true):
+		if light.is_in_group("headlight"):
+			continue
+		light.visible = engine_on

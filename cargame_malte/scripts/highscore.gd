@@ -10,6 +10,9 @@ extends CanvasLayer
 @onready var phase_label    = $Control_Debug/PhaseLabel
 @onready var panel_delivery = $Panel_Delivery
 @onready var height_label   = $Panel_Car/CurrentHeightLabel
+@onready var panel_car           = $Panel_Car
+@onready var control_speedometer = $Control_Speedometer
+@onready var control_carkey      = $Control_CarKey
 @export var height_world_zero: float = 0.0
 @onready var stars = [
 	$Control_Stats/HBoxContainer_StarRating/Star1,
@@ -25,14 +28,12 @@ extends CanvasLayer
 @export var key_off_angle: float = -45.0
 
 var manager
-var radio: Node
 var daynight: Node3D
 var _arrow_visible: bool = false
 var _smoothed_screen_pos: Vector2 = Vector2.ZERO
 
 func _ready():
 	manager = get_node("/root/ScoreAndTimeManager")
-	radio = get_tree().get_first_node_in_group("car_radio")
 	daynight = get_tree().get_first_node_in_group("daynight")
 	if delivery_arrow:
 		delivery_arrow.hide()
@@ -43,14 +44,32 @@ func _get_active_car() -> VehicleBody3D:
 			return c
 	return null
 
+func _get_car_radio(car: VehicleBody3D) -> Node:
+	if not car:
+		return null
+	for r in get_tree().get_nodes_in_group("car_radio"):
+		if r.get_parent() == car:
+			return r
+	return null
+
 func _process(_delta):
 	if not manager:
 		return
 
 	var car = _get_active_car()
+	var in_car = car != null
+
+	panel_car.visible           = in_car
+	control_speedometer.visible = in_car
+	control_carkey.visible      = in_car
+	radio_label.visible         = in_car
+
 	if car:
-		speed_label.text = "%03d km/h" % int(car.linear_velocity.length() * 3.6)
+		speed_label.text  = "%03d km/h" % int(car.linear_velocity.length() * 3.6)
 		height_label.text = "%dm" % int(car.global_position.y - height_world_zero)
+
+		var radio = _get_car_radio(car)
+		radio_label.text = radio.get_status() if radio else ""
 
 	money_label.text    = "Money: %d" % manager.get_score()
 	delivery_label.text = "Deliver to: %s" % manager.get_target_delivery()
@@ -69,9 +88,6 @@ func _process(_delta):
 		stars[i].modulate.a = 1.0 if i < rating else 0.3
 
 	star_xp_label.text = "starxpmeter: %s" % manager.get_star_xp_progress()
-
-	if radio:
-		radio_label.text = radio.get_status()
 
 	if daynight:
 		phase_label.text = "%s  %d%%" % [daynight.get_phase(), int(daynight.get_day_percent())]
@@ -135,7 +151,7 @@ func _get_delivery_status() -> String:
 		return "Bad time"
 	else:
 		return "Very Bad time!"
-		
+
 func _update_key_hud(car: VehicleBody3D):
 	if not key_sprite:
 		return
