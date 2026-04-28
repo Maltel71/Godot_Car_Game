@@ -70,7 +70,8 @@ func _on_waypoint_reached(body):
 		waypoint_index += 1
 
 func _on_area_body_entered(body):
-	if body is CharacterBody3D and "HasPackage" in body and not body.HasPackage:
+	if body is CharacterBody3D and "HasPackage" in body and not body.HasPackage \
+	and not get_node("/root/ScoreAndTimeManager").is_delivering:
 		car = body
 		going_out = true
 		returning = false
@@ -84,7 +85,8 @@ func _on_area_body_exited(body):
 		waypoint_index = clamp(waypoint_index, 0, waypoints.size() - 1)
 
 func _on_body_entered(body):
-	if body is CharacterBody3D and "HasPackage" in body and not body.HasPackage:
+	if body is CharacterBody3D and "HasPackage" in body and not body.HasPackage \
+	and not get_node("/root/ScoreAndTimeManager").is_delivering:
 		body.HasPackage = true
 		linked_area.play_pickup_sound(body)
 		has_package = false

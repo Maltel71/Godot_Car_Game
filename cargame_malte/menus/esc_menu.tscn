@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhkqs47dwaq13"]
+[gd_scene format=3 uid="uid://bhkqs47dwaq13"]
 
 [ext_resource type="Script" uid="uid://crjxf5j4wrq56" path="res://scripts/esc_menu.gd" id="1_wgmhh"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_4v7l0"]
@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="4_gyi8h"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="5_ajk5i"]
 
-[node name="EscMenu" type="Control"]
+[node name="EscMenu" type="Control" unique_id=304805562]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +19,7 @@ slider_drag_sound = ExtResource("3_ajk5i")
 hover_volume = -10.0
 slider_drag_volume = -10.0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1268033763]
 layout_mode = 0
 offset_left = 574.0
 offset_top = 64.0
@@ -27,7 +27,7 @@ offset_right = 1346.0
 offset_bottom = 1016.0
 theme = ExtResource("4_gyi8h")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1364872143]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -39,52 +39,71 @@ offset_bottom = 895.0
 grow_horizontal = 2
 theme = ExtResource("4_gyi8h")
 
-[node name="Header" type="Label" parent="Panel/VBoxContainer"]
+[node name="Header" type="Label" parent="Panel/VBoxContainer" unique_id=526601896]
 layout_mode = 2
 theme = ExtResource("4_gyi8h")
 text = "*Paused*"
 horizontal_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer" unique_id=214030431]
 layout_mode = 2
 theme = ExtResource("4_gyi8h")
 text = "Resume"
 
-[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=1966132053]
 layout_mode = 2
 theme = ExtResource("4_gyi8h")
 text = "Main Menu"
 
-[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="Panel/VBoxContainer" unique_id=653311139]
 layout_mode = 2
 theme = ExtResource("4_gyi8h")
 text = "Quit"
 
-[node name="MasterLabel" type="Label" parent="Panel/VBoxContainer"]
+[node name="MasterLabel" type="Label" parent="Panel/VBoxContainer" unique_id=311002172]
 layout_mode = 2
 theme = ExtResource("5_ajk5i")
 text = "Master Volume"
 
-[node name="MasterVolume" type="HSlider" parent="Panel/VBoxContainer"]
+[node name="MasterVolume" type="HSlider" parent="Panel/VBoxContainer" unique_id=247977577]
 layout_mode = 2
 theme = ExtResource("4_gyi8h")
 
-[node name="MusicLabel" type="Label" parent="Panel/VBoxContainer"]
+[node name="MusicLabel" type="Label" parent="Panel/VBoxContainer" unique_id=458814664]
 layout_mode = 2
 theme = ExtResource("5_ajk5i")
 text = "Music Volume"
 
-[node name="MusicVolume" type="HSlider" parent="Panel/VBoxContainer"]
+[node name="MusicVolume" type="HSlider" parent="Panel/VBoxContainer" unique_id=1122486470]
 layout_mode = 2
 theme = ExtResource("4_gyi8h")
 
-[node name="SFXLabel" type="Label" parent="Panel/VBoxContainer"]
+[node name="SFXLabel" type="Label" parent="Panel/VBoxContainer" unique_id=1272599434]
 layout_mode = 2
 theme = ExtResource("5_ajk5i")
 text = "SFX Volume"
 
-[node name="SFXVolume" type="HSlider" parent="Panel/VBoxContainer"]
+[node name="SFXVolume" type="HSlider" parent="Panel/VBoxContainer" unique_id=842249304]
 layout_mode = 2
 theme = ExtResource("4_gyi8h")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1140920435]
+
+[node name="Keybinds" type="Label" parent="." unique_id=749210430]
+layout_mode = 0
+offset_left = 1365.0
+offset_top = 483.0
+offset_right = 2208.0
+offset_bottom = 1340.0
+scale = Vector2(0.6199449, 0.6199449)
+theme = ExtResource("5_ajk5i")
+text = "Keybinds
+W,A,S,D: steer/walk
+Q,E - Roll with thrusters
+E - interact
+F - Exit/Enter Car/House
+H - car horn
+T - Turn on/off engine
+C - Turn on/off car radio
+V - Next radio station
+ESC - exit menus/esc menu"

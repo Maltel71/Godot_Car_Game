@@ -20,9 +20,9 @@ key_sprite = NodePath("Control_CarKey/Key")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -959.0
+offset_left = -118.0
 offset_top = 2.0
-offset_right = 115.0
+offset_right = 956.0
 offset_bottom = 101.0
 grow_horizontal = 2
 theme = ExtResource("2_eki7a")
@@ -54,8 +54,9 @@ text = "DeliveryArea_01"
 [node name="Control_Stats" type="Control" parent="." unique_id=144263790]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -123.0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = -83.0
 
 [node name="MoneyLabel" type="Label" parent="Control_Stats" unique_id=123515194]
 modulate = Color(0.96429783, 0.9967267, 0.75552636, 1)
@@ -71,9 +72,9 @@ text = "Score:1000"
 [node name="HBoxContainer_StarRating" type="HBoxContainer" parent="Control_Stats" unique_id=1174814687]
 layout_mode = 0
 offset_left = 13.0
-offset_top = 225.0
+offset_top = 208.0
 offset_right = 629.0
-offset_bottom = 289.0
+offset_bottom = 272.0
 theme_override_constants/separation = -2
 
 [node name="Star1" type="TextureRect" parent="Control_Stats/HBoxContainer_StarRating" unique_id=85579253]
@@ -160,10 +161,10 @@ texture = ExtResource("7_hvg1e")
 [node name="Control_Debug" type="Control" parent="." unique_id=196858165]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 779.0
-offset_top = -343.0
-offset_right = 819.0
-offset_bottom = -303.0
+offset_left = 889.00006
+offset_top = -267.0
+offset_right = 929.00006
+offset_bottom = -227.0
 scale = Vector2(0.61211336, 0.61211336)
 
 [node name="RadioLabel" type="Label" parent="Control_Debug" unique_id=196560312]
