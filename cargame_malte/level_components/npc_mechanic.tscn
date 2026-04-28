@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d4hw6v4ldspdk" path="res://scripts/npc_shop.gd" id="1_ef8gk"]
 [ext_resource type="PackedScene" uid="uid://cy010oxxoqk7f" path="res://UI/menu_mechanic.tscn" id="2_606jt"]
 [ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="2_y66u0"]
+[ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="5_m6crv"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ef8gk"]
 
@@ -16,11 +17,14 @@ height = 1.2236328
 [sub_resource type="SphereShape3D" id="SphereShape3D_y66u0"]
 radius = 3.5
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wijj7"]
+
 [node name="NPC_Mechanic" type="StaticBody3D" unique_id=1211935691]
 script = ExtResource("1_ef8gk")
 menu_scene = ExtResource("2_606jt")
 
 [node name="Mesh" parent="." unique_id=1040379739 instance=ExtResource("1_1360x")]
+transform = Transform3D(1.255, 0, 0, 0, 1.255, 0, 0, 0, 1.255, 0, 0, 0)
 
 [node name="hat2" type="MeshInstance3D" parent="Mesh" unique_id=1835543042]
 transform = Transform3D(0.6523432, 0, 0, 0, 0.6523432, 0, 0, 0, 0.6523432, 0, 1.442538, 0.047002614)
@@ -43,3 +47,15 @@ shape = SubResource("CapsuleShape3D_1360x")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=479780624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_y66u0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=581492204]
+transform = Transform3D(-0.09451788, -0.035275064, -0.0138624795, 0, -0.2015254, 0.07919597, 0.016803864, -0.1984141, -0.077973284, 0.570688, 0.739797, 0.33612013)
+material_override = ExtResource("5_m6crv")
+mesh = SubResource("CapsuleMesh_wijj7")
+skeleton = NodePath("../../../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1575389285]
+transform = Transform3D(-0.09451788, -0.024454165, -1.9562272e-09, 0, 7.3044966e-09, 0.11200002, 0.016803864, -0.13754909, -1.1003332e-08, 0.60916555, 0.84111834, 0.5525473)
+material_override = ExtResource("5_m6crv")
+mesh = SubResource("CapsuleMesh_wijj7")
+skeleton = NodePath("../../../..")

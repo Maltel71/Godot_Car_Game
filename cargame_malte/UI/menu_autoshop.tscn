@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://wdwk0xgdirqt"]
+
+[ext_resource type="Script" uid="uid://cob8xmwliqx4t" path="res://scripts/shop_menu.gd" id="1_mc2q5"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_qorpr"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_gvmij"]
+
+[node name="Menu_AutoShop" type="CanvasLayer" unique_id=844512391]
+script = ExtResource("1_mc2q5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1360305700]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -762.0
+offset_top = 101.0
+offset_right = -41.0
+offset_bottom = 918.0
+grow_horizontal = 2
+theme = ExtResource("2_qorpr")
+
+[node name="Label_Header" type="Label" parent="Panel" unique_id=276833083]
+layout_mode = 0
+offset_left = 53.999992
+offset_top = 31.000002
+offset_right = 493.0
+offset_bottom = 114.0
+theme = ExtResource("3_gvmij")
+text = "HW AutoShop"
+
+[node name="ExitButton" type="Button" parent="Panel" unique_id=929997083]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 729.0
+offset_right = 703.0
+offset_bottom = 798.0
+text = "Close X"

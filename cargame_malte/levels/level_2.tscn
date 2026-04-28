@@ -16,10 +16,12 @@
 [ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="20_6oa44"]
 [ext_resource type="PackedScene" uid="uid://dum00rp3akon0" path="res://level_components/delivery_area_arrow.tscn" id="20_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/hud_player.tscn" id="20_h351q"]
+[ext_resource type="PackedScene" uid="uid://cmola6wlrukwt" path="res://level_components/npc_autoshop.tscn" id="20_nomkf"]
 [ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="21_dpc8t"]
 [ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="21_s67ts"]
 [ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="22_m4706"]
 [ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="23_4xp61"]
+[ext_resource type="PackedScene" uid="uid://wdwk0xgdirqt" path="res://UI/menu_autoshop.tscn" id="23_rddwe"]
 [ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="24_4yoxl"]
 [ext_resource type="Material" uid="uid://byn31jdchg2b6" path="res://materials/darkgreen1_mat.tres" id="24_bf7t1"]
 [ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
@@ -471,32 +473,32 @@ noise = SubResource("FastNoiseLite_ndgrd")
 [sub_resource type="FogMaterial" id="FogMaterial_ndgrd"]
 density_texture = SubResource("NoiseTexture3D_h351q")
 
-[sub_resource type="Resource" id="Resource_3582p"]
+[sub_resource type="Resource" id="Resource_6bdx5"]
 script = ExtResource("25_6dcgf")
 amount = 200
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_nomkf"]
+[sub_resource type="Resource" id="Resource_qthv2"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_6bdx5"]
+[sub_resource type="Resource" id="Resource_wnekv"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_qthv2"]
+[sub_resource type="Resource" id="Resource_jyp08"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_wnekv"]
+[sub_resource type="Resource" id="Resource_wvv8u"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -504,9 +506,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_jyp08"]
+[sub_resource type="Resource" id="Resource_4s8mp"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_3582p"), SubResource("Resource_nomkf"), SubResource("Resource_6bdx5"), SubResource("Resource_qthv2"), SubResource("Resource_wnekv")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_6bdx5"), SubResource("Resource_qthv2"), SubResource("Resource_wnekv"), SubResource("Resource_jyp08"), SubResource("Resource_wvv8u")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_s67ts")
@@ -529,32 +531,32 @@ script = ExtResource("34_6dcgf")
 curve = SubResource("Curve3D_nomkf")
 metadata/_custom_type_script = "uid://djha0k1o3sp7w"
 
-[sub_resource type="Resource" id="Resource_wvv8u"]
+[sub_resource type="Resource" id="Resource_wsmxb"]
 script = ExtResource("25_6dcgf")
 amount = 300
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_4s8mp"]
+[sub_resource type="Resource" id="Resource_nfgrx"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_wsmxb"]
+[sub_resource type="Resource" id="Resource_m0g18"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_nfgrx"]
+[sub_resource type="Resource" id="Resource_df2rw"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_m0g18"]
+[sub_resource type="Resource" id="Resource_1h2df"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -562,9 +564,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_df2rw"]
+[sub_resource type="Resource" id="Resource_p36y6"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_wvv8u"), SubResource("Resource_4s8mp"), SubResource("Resource_wsmxb"), SubResource("Resource_nfgrx"), SubResource("Resource_m0g18")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_wsmxb"), SubResource("Resource_nfgrx"), SubResource("Resource_m0g18"), SubResource("Resource_df2rw"), SubResource("Resource_1h2df")])
 
 [sub_resource type="Resource" id="Resource_ghfw4"]
 script = ExtResource("31_s67ts")
@@ -980,47 +982,52 @@ spot_range = 16.757624
 [node name="==AUTOSHOP==" type="Node3D" parent="===ENVIROMENT===" unique_id=1833834728]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.75427, 17.323492, -88.82913)
 
+[node name="NPC_AutoShop" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1211935691 node_paths=PackedStringArray("dialogue_camera") instance=ExtResource("20_nomkf")]
+transform = Transform3D(0.93469554, 0, 0.35544956, 0, 1, 0, -0.35544956, 0, 0.93469554, 1.834198, 0.6915016, 24.422714)
+menu_scene = ExtResource("23_rddwe")
+dialogue_camera = NodePath("../Camera3D_Autoshop")
+
 [node name="ChainLinkFence_01" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=936593920 instance=ExtResource("26_ghfw4")]
 transform = Transform3D(1.94, 0, 0, 0, 1.94, 0, 0, 0, 1.94, 9.32431, 0.17252922, 25.707897)
 
-[node name="ChainLinkFence_08" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1073415555 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(0.55160654, 0, 1.8599275, 0, 1.94, 0, -1.8599275, 0, 0.55160654, 21.146545, 0.17252922, 17.935532)
+[node name="ChainLinkFence_08" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=1073415555 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(0.28433326, 0, 0.95872545, 0, 1, 0, -0.95872545, 0, 0.28433326, 6.093933, 0, -4.0063744)
 
-[node name="ChainLinkFence_09" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=865497742 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(-0.324099, 0, 1.9127362, 0, 1.94, 0, -1.9127362, 0, -0.324099, 21.575226, 0.17252922, 10.469681)
+[node name="ChainLinkFence_09" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=865497742 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(-0.16706133, 0, 0.9859464, 0, 1, 0, -0.9859464, 0, -0.16706133, 6.314911, 0, -7.8547516)
 
-[node name="ChainLinkFence_10" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=978957432 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(-0.324099, 0, 1.9127362, 0, 1.94, 0, -1.9127362, 0, -0.324099, 20.217804, 0.17252922, 2.7537842)
+[node name="ChainLinkFence_10" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=978957432 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(-0.16706133, 0, 0.9859464, 0, 1, 0, -0.9859464, 0, -0.16706133, 5.615204, 0, -11.832016)
 
-[node name="ChainLinkFence_11" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1875089404 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(-1.8544675, 0, 0.5696939, 0, 1.9400003, 0, -0.5696939, 0, -1.8544675, 15.859772, 0.17252922, -2.3901443)
+[node name="ChainLinkFence_11" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=1875089404 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(-0.95591104, 0, 0.29365665, 0, 1.0000001, 0, -0.29365665, 0, -0.95591104, 3.3687897, 0, -14.483528)
 
-[node name="ChainLinkFence_12" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=366357386 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(0.21089897, 0, 1.9285027, 0, 1.9400003, 0, -1.9285027, 0, 0.21089897, -7.0378723, 0.17252922, 6.718895)
+[node name="ChainLinkFence_12" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=366357386 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(0.1087108, 0, 0.9940735, 0, 1.0000001, 0, -0.9940735, 0, 0.1087108, -8.434113, 0, -9.788147)
 
-[node name="ChainLinkFence_13" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=61264955 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(0.21089897, 0, 1.9285027, 0, 1.9400003, 0, -1.9285027, 0, 0.21089897, -7.8952026, 0.17252922, 14.506233)
+[node name="ChainLinkFence_13" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=61264955 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(0.1087108, 0, 0.9940735, 0, 1.0000001, 0, -0.9940735, 0, 0.1087108, -8.876038, 0, -5.7740555)
 
-[node name="ChainLinkFence_14" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1470029391 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(-0.463248, 0, 1.8838795, 0, 1.9400005, 0, -1.8838795, 0, -0.463248, -7.716614, 0.17252922, 20.507484)
+[node name="ChainLinkFence_14" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=1470029391 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(-0.23878762, 0, 0.9710719, 0, 1.0000002, 0, -0.9710719, 0, -0.23878762, -8.783981, 0, -2.680626)
 
-[node name="ChainLinkFence_02" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=416485076 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(-8.480009e-08, 0, 1.94, 0, 1.94, 0, -1.94, 0, -8.480009e-08, -2.3092957, 0.17252922, 21.665482)
+[node name="ChainLinkFence_02" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=416485076 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711385e-08, -5.996704, 0, -2.0837212)
 
-[node name="ChainLinkFence_05" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1506004115 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(1.94, 0, 0, 0, 1.94, 0, 0, 0, 1.94, 6.0083923, 0.17252922, -4.141075)
+[node name="ChainLinkFence_05" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=1506004115 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7092285, 0, -15.386066)
 
-[node name="ChainLinkFence_06" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1798215359 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(1.94, 0, 0, 0, 1.94, 0, 0, 0, 1.94, 1.4841309, 0.17252922, -4.141075)
+[node name="ChainLinkFence_06" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=1798215359 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.041336, 0, -15.386066)
 
-[node name="ChainLinkFence_03" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=9819854 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(1.6800895, 0, -0.97, 0, 1.94, 0, 0.97, 0, 1.6800895, -5.8388977, 0.17252922, 23.620834)
+[node name="ChainLinkFence_03" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=9819854 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(0.86602545, 0, -0.5, 0, 1, 0, 0.5, 0, 0.86602545, -7.816086, 0, -1.0758057)
 
-[node name="ChainLinkFence_04" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=2027051130 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(-0.9700001, 0, -1.6800894, 0, 1.94, 0, 1.6800894, 0, -0.9700001, -4.68161, 0.17252922, -0.6408844)
+[node name="ChainLinkFence_04" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=2027051130 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(-0.5, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.5, -7.2195435, 0, -13.581844)
 
-[node name="ChainLinkFence_07" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=2108772300 instance=ExtResource("26_ghfw4")]
-transform = Transform3D(-1.6800895, 0, -0.9699999, 0, 1.94, 0, 0.9699999, 0, -1.6800895, 16.576416, 0.17252922, 23.780434)
+[node name="ChainLinkFence_07" parent="===ENVIROMENT===/==AUTOSHOP==/ChainLinkFence_01" unique_id=2108772300 instance=ExtResource("26_ghfw4")]
+transform = Transform3D(-0.86602545, 0, -0.4999999, 0, 1, 0, 0.4999999, 0, -0.86602545, 3.738205, 0, -0.9935379)
 
 [node name="Box7" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=2043460456]
 transform = Transform3D(2.787, 0, 0, 0, 3.2347243, 0, 0, 0, 7.016, -0.73101807, 3.4067936, 22.762512)
@@ -1028,98 +1035,101 @@ material_override = ExtResource("24_bf7t1")
 mesh = SubResource("BoxMesh_bf7t1")
 skeleton = NodePath("../../..")
 
-[node name="Box19" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=679603175]
-transform = Transform3D(0.8258198, 0, 0, 0, 3.2347243, 0, 0, 0, 0.65630805, 4.38031, 3.1583462, 25.231625)
+[node name="Box19" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=679603175]
+transform = Transform3D(0.29631138, 0, 0, 0, 1, 0, 0, 0, 0.09354448, 1.833992, -0.076806545, 0.3519268)
 material_override = ExtResource("24_bf7t1")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box20" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=202215975]
-transform = Transform3D(0.08475925, -4.2325172, 0, 0.42394763, 0.8462012, 0, 0, 0, 0.433982, 2.4779968, 4.8613853, 25.231625)
+[node name="Box20" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=202215975]
+transform = Transform3D(0.030412361, -1.5186642, 0, 0.13106145, 0.26159918, 0, 0, 0, 0.2339604, 1.1514206, 0.44967985, 0.26922607)
 material_override = ExtResource("24_bf7t1")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box9" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=965841447]
-transform = Transform3D(1.702, 0, 0, 0, 1.976, 0, 0, 0, 0.892, -0.73101807, 2.7985268, 26.176483)
+[node name="Box9" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=965841447]
+transform = Transform3D(0.6106925, 0, 0, 0, 0.6108712, 0, 0, 0, 0.12713797, 0, -0.18804312, 0.486598)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box14" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1471878894]
-transform = Transform3D(3.2481685, 0, 0, 0, 1.976, 0, 0, 0, 0.892, 5.4007874, 1.3859615, 25.146679)
+[node name="Box14" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=1471878894]
+transform = Transform3D(1.1654713, 0, 0, 0, 0.6108712, 0, 0, 0, 0.12713797, 2.2001495, -0.62473106, 0.33981895)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box15" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1307845239]
-transform = Transform3D(3.185183, 0, 1.6184043, 0, 1.9760002, 0, -3.846806, 0, 1.3400502, -1.477478, 1.0383129, 7.1787643)
+[node name="Box15" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=1307845239]
+transform = Transform3D(1.1428716, 0, 0.5806976, 0, 0.6108713, 0, -0.5482905, 0, 0.19099918, -0.26783752, -0.7322049, -2.2211723)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box17" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1777438321]
-transform = Transform3D(4.994328, 0, 0, 0, 1.976, 0, 0, 0, 2.1011827, 14.227936, 1.0383129, 3.5238037)
+[node name="Box17" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=1777438321]
+transform = Transform3D(1.7920086, 0, 0, 0, 0.6108712, 0, 0, 0, 0.29948443, 5.367401, -0.7322049, -2.7421188)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box18" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1034024627]
-transform = Transform3D(1.503252, 0, 2.7778003, 0, 3.315776, 0, -8.003966, 0, 0.521708, 14.227936, 1.0383129, 15.139999)
+[node name="Box18" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=1034024627]
+transform = Transform3D(0.53938, 0, 0.9966991, 0, 1.0250568, 0, -1.1408162, 0, 0.07435975, 5.367401, -0.7322049, -1.0864468)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box16" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1217389964]
-transform = Transform3D(4.918982, 0, 0.36360246, 0, 1.9760004, 0, -0.86425126, 0, 2.0694835, 6.016693, 1.0383129, 2.1453094)
+[node name="Box16" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=1217389964]
+transform = Transform3D(1.7649739, 0, 0.13046375, 0, 0.6108714, 0, -0.12318291, 0, 0.2949663, 2.421135, -0.7322049, -2.9385977)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box10" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=2109968843]
-transform = Transform3D(1.702, 0, 0, 0, 1.976, 0, 0, 0, 0.892, 0.13668823, 1.5232849, 23.7668)
+[node name="Box10" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=2109968843]
+transform = Transform3D(0.6106925, 0, 0, 0, 0.6108712, 0, 0, 0, 0.12713797, 0.31134033, -0.58227825, 0.1431427)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box12" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1933057831]
-transform = Transform3D(0.892, 0, 0, 0, 1.036, 0, 0, 0, 1.094, 0.5385742, 3.990982, 24.714111)
+[node name="Box12" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=1933057831]
+transform = Transform3D(0.32005742, 0, 0, 0, 0.3202746, 0, 0, 0, 0.15592931, 0.45554352, 0.18059874, 0.27816486)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box13" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1663128287]
-transform = Transform3D(0.892, 0, 0, 0, 1.036, 0, 0, 0, 1.094, 0.5385742, 3.990982, 21.294914)
+[node name="Box13" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=1663128287]
+transform = Transform3D(0.32005742, 0, 0, 0, 0.3202746, 0, 0, 0, 0.15592931, 0.45554352, 0.18059874, -0.20917797)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box11" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=698885839]
-transform = Transform3D(1.702, 0, 0, 0, 1.976, 0, 0, 0, 0.892, 0.13668823, 1.6094189, 21.069168)
+[node name="Box11" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=698885839]
+transform = Transform3D(0.6106925, 0, 0, 0, 0.6108712, 0, 0, 0, 0.12713797, 0.31134033, -0.55565023, -0.24135399)
 material_override = ExtResource("21_s67ts")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Box8" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=50907784]
-transform = Transform3D(2.7542076, 0.023067217, 0, -0.4262754, 0.14903955, 0, 0, 0, 7.016, -0.5152588, 5.1910458, 22.762512)
+[node name="Box8" type="MeshInstance3D" parent="===ENVIROMENT===/==AUTOSHOP==/Box7" unique_id=50907784]
+transform = Transform3D(0.9882338, 0.00827672, 0, -0.13178106, 0.046074886, 0, 0, 0, 1, 0.07741547, 0.5515933, 0)
 material_override = ExtResource("24_bf7t1")
 mesh = SubResource("BoxMesh_bf7t1")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
 [node name="Streetlamp" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=398948822 instance=ExtResource("12_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3904724, 0.56848717, 25.185162)
 
-[node name="Streetlamp2" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=749108616 instance=ExtResource("12_amxoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9968262, 0.56848717, 25.51118)
+[node name="Streetlamp2" parent="===ENVIROMENT===/==AUTOSHOP==/Streetlamp" unique_id=749108616 instance=ExtResource("12_amxoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3936462, 0, 0.3260193)
 
-[node name="Streetlamp3" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1055893525 instance=ExtResource("12_amxoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9968262, 0.56848717, -3.2583466)
+[node name="Streetlamp3" parent="===ENVIROMENT===/==AUTOSHOP==/Streetlamp" unique_id=1055893525 instance=ExtResource("12_amxoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3936462, 0, -28.443508)
 
-[node name="Streetlamp4" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=972814432 instance=ExtResource("12_amxoe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.647522, 0.56848717, -0.66765594)
+[node name="Streetlamp4" parent="===ENVIROMENT===/==AUTOSHOP==/Streetlamp" unique_id=972814432 instance=ExtResource("12_amxoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.25705, 0, -25.852818)
 
-[node name="Streetlamp5" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=1419431167 instance=ExtResource("12_amxoe")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 18.647522, 0.56848717, 20.683487)
+[node name="Streetlamp5" parent="===ENVIROMENT===/==AUTOSHOP==/Streetlamp" unique_id=1419431167 instance=ExtResource("12_amxoe")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 14.25705, 0, -4.5016747)
+
+[node name="Camera3D_Autoshop" type="Camera3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=677974789]
+transform = Transform3D(0.9653248, -0.13698578, 0.2222228, 0.034421533, 0.9106188, 0.41181144, -0.25877252, -0.38988248, 0.8837581, 6.933781, 7.5102, 30.407722)
 
 [node name="FogVolume" type="FogVolume" parent="===ENVIROMENT===" unique_id=1330823085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.40585, 10.107708, -35.186165)
@@ -1235,7 +1245,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 visible = false
 script = ExtResource("22_m4706")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_jyp08")
+modifier_stack = SubResource("Resource_4s8mp")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1265,7 +1275,7 @@ shape = SubResource("Resource_rddwe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 visible = false
 script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_df2rw")
+modifier_stack = SubResource("Resource_p36y6")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1280,7 +1290,7 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.021
 script = ExtResource("30_ghfw4")
 shape = SubResource("Resource_ghfw4")
 
-[node name="NPC_Mechanic" parent="===ENVIROMENT===" unique_id=1211935691 node_paths=PackedStringArray("dialogue_camera") instance=ExtResource("42_3582p")]
+[node name="NPC_Mechanic" parent="===ENVIROMENT===" unique_id=1670471662 node_paths=PackedStringArray("dialogue_camera") instance=ExtResource("42_3582p")]
 transform = Transform3D(0.28533706, 0, 0.95842725, 0, 1, 0, -0.95842725, 0, 0.28533706, -384.53268, 18.292593, -65.42987)
 dialogue_camera = NodePath("../../Camera3D_Mechanic")
 

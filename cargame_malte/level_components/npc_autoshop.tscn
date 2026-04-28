@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cmola6wlrukwt"]
+
+[ext_resource type="Script" uid="uid://d4hw6v4ldspdk" path="res://scripts/npc_shop.gd" id="1_x4h51"]
+[ext_resource type="PackedScene" uid="uid://cy010oxxoqk7f" path="res://UI/menu_mechanic.tscn" id="2_52h5x"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="3_hxku2"]
+[ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="4_lrjh8"]
+[ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="5_gufk4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wijj7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1360x"]
+radius = 0.6118164
+height = 1.2236328
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y66u0"]
+radius = 3.5
+
+[node name="NPC_AutoShop" type="StaticBody3D" unique_id=1211935691]
+script = ExtResource("1_x4h51")
+menu_scene = ExtResource("2_52h5x")
+
+[node name="Mesh" parent="." unique_id=1040379739 instance=ExtResource("3_hxku2")]
+transform = Transform3D(1.23, 0, 0, 0, 1.23, 0, 0, 0, 1.23, 0, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh" unique_id=581492204]
+transform = Transform3D(-0.28125203, -0.080967, -0.0653927, 0.036261372, -0.3222687, 0.022429878, 0.3318148, -0.03341096, -0.057879187, 0.5746245, 0.7358762, 0.36439902)
+material_override = ExtResource("4_lrjh8")
+mesh = SubResource("CapsuleMesh_wijj7")
+skeleton = NodePath("../../../../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Mesh" unique_id=1244645788]
+transform = Transform3D(-0.045269016, 0.011816096, -0.017406594, -0.022540124, -0.18036461, 0.0059705125, 0.042410597, -0.08324658, -0.015406605, 0.45433438, 0.8367677, 0.4869398)
+material_override = ExtResource("5_gufk4")
+mesh = SubResource("CapsuleMesh_wijj7")
+skeleton = NodePath("../../../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1397560360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8125, 0)
+shape = SubResource("CapsuleShape3D_1360x")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1504395243]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=479780624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_y66u0")
