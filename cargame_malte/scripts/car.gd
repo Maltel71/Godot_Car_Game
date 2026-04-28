@@ -22,6 +22,7 @@ var assigned_delivery_id: String = ""
 @export var flip_cooldown: float = 2.0
 
 @export_group("Enter/Exit")
+@export var starts_with_driver: bool = false
 @export var player_scene: PackedScene
 @export var exit_offset: Vector3 = Vector3(-1.5, 0, 0)
 @export var car_camera: Camera3D
@@ -33,19 +34,30 @@ var assigned_delivery_id: String = ""
 
 
 var _flip_timer: float = 0.0
-var driver_in_car: bool = true
+var driver_in_car: bool = false
 var current_player: Node3D = null
 var _slow_timer: float = 0.0
 var _doors_locked: bool = true
+var engine_on: bool = false
+
+func _ready():
+	if starts_with_driver:
+		driver_in_car = true
+		engine_on = true
+		if car_camera:
+			car_camera.make_current()
 
 func _physics_process(delta):
 	$CamArm.position = position
 	$PackageMesh.visible = HasPackage
-	
+
 	if driver_mesh:
 		driver_mesh.visible = driver_in_car
 
 	if driver_in_car:
+		if Input.is_action_just_pressed("toggle_engine"):
+			engine_on = !engine_on
+
 		# Track how long the car has been nearly still
 		if linear_velocity.length() < max_exit_speed:
 			_slow_timer += delta
@@ -61,6 +73,14 @@ func _physics_process(delta):
 		engine_force = 0
 		brake = 5
 		steering = 0
+		return
+
+	if not engine_on:
+		engine_force = 0
+		brake = 2
+		steering = 0
+		if exhaust_particles:
+			exhaust_particles.emitting = false
 		return
 
 	_try_flip()
@@ -110,13 +130,15 @@ func _exit_car():
 		current_player.set_car_ref(self)
 
 func enter_car():
-	if current_player:
-		current_player.queue_free()
-		current_player = null
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		player.queue_free()
+	current_player = null
 	if car_camera:
 		car_camera.make_current()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	await get_tree().process_frame
 	driver_in_car = true
+	engine_on = true
 	_slow_timer = 0.0
 	_doors_locked = true

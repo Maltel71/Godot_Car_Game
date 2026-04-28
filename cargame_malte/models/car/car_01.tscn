@@ -1,0 +1,428 @@
+[gd_scene format=3 uid="uid://dqai0u6p38b8"]
+
+[ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
+[ext_resource type="PackedScene" uid="uid://cgt37m24x8hcw" path="res://level_components/player.tscn" id="2_jpt3o"]
+[ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/car/CarMain02.fbx" id="2_xhmyn"]
+[ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="3_5khej"]
+[ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/car/SteeringWheel.fbx" id="3_vl2bd"]
+[ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/car/CarWindows02.fbx" id="5_coc8s"]
+[ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
+[ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
+[ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="9_3jha3"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="10_b751l"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="11_i00a5"]
+[ext_resource type="Script" uid="uid://bl4i7eame0dig" path="res://scripts/car_sfx_manager.gd" id="12_i00a5"]
+[ext_resource type="AudioStream" uid="uid://tdld5b2r4ho1" path="res://audio/sfx/car/sfx_car_engine_idle.wav" id="13_utifk"]
+[ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="14_i00a5"]
+[ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="14_jpt3o"]
+[ext_resource type="Script" uid="uid://c2ugxnvgykxq1" path="res://scripts/headlights.gd" id="15_utifk"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="18_b4ysl"]
+[ext_resource type="Script" uid="uid://b1edjfb0eknpo" path="res://scripts/headlights_omni.gd" id="18_h84a2"]
+[ext_resource type="Script" uid="uid://djubakr51hvus" path="res://scripts/car_radio_manager.gd" id="19_8ijm4"]
+[ext_resource type="Script" uid="uid://c4lwum6etjrd1" path="res://scripts/radio_channel.gd" id="20_2vbte"]
+[ext_resource type="AudioStream" uid="uid://c1e5geoiewnaa" path="res://audio/music/radiostation_1/Innocent Intent.mp3" id="21_4gna3"]
+[ext_resource type="AudioStream" uid="uid://3kslwii3wouw" path="res://audio/music/radiostation_1/Not_givin_a2.mp3" id="22_8sd2q"]
+[ext_resource type="AudioStream" uid="uid://c2bjnr1pj1jf0" path="res://audio/music/radiostation_1/Rock'em n Sock'em.mp3" id="23_h84a2"]
+[ext_resource type="AudioStream" uid="uid://qna13yry1ohc" path="res://audio/music/radiostation_2/Jag Är - e3.mp3" id="24_yln85"]
+[ext_resource type="AudioStream" uid="uid://b5wrefj002klt" path="res://audio/music/radiostation_2/Snearstugan (1).mp3" id="25_3nyae"]
+[ext_resource type="AudioStream" uid="uid://bfi1y3vb5y78a" path="res://audio/music/radiostation_2/ursäkta men det är gröt i basen.mp3" id="26_t47rn"]
+[ext_resource type="AudioStream" uid="uid://bc01apre73u2u" path="res://audio/music/radiostation_3/FlummorOchKnas.mp3" id="27_2ynax"]
+[ext_resource type="AudioStream" uid="uid://dxv8h1u1erl7j" path="res://audio/music/radiostation_3/HumlorUrFas.mp3" id="28_s0e8v"]
+[ext_resource type="AudioStream" uid="uid://btcdsvq51lb4d" path="res://audio/music/radiostation_3/Nästan Själv.mp3" id="29_wrhr8"]
+[ext_resource type="AudioStream" uid="uid://4cyrjilpsy6d" path="res://audio/sfx/click/click (2).wav" id="30_8sd2q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
+size = Vector3(2.29102, 1.0693359, 6.8826)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhmyn"]
+radius = 0.978364
+height = 6.10681
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_utifk"]
+render_priority = 0
+shader = ExtResource("9_3jha3")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("10_b751l")
+
+[sub_resource type="Curve" id="Curve_jpt3o"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wnk4v"]
+texture_mode = 1
+curve = SubResource("Curve_jpt3o")
+
+[sub_resource type="Gradient" id="Gradient_5khej"]
+offsets = PackedFloat32Array(0, 0.26794258, 0.41148326)
+colors = PackedColorArray(0.93, 0.93, 0.93, 1, 0.83843184, 0.6967845, 0.66014457, 1, 0.82, 0.82, 0.82, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ovmv7"]
+gradient = SubResource("Gradient_5khej")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_b4ysl"]
+_data = [Vector2(0.004255317, 0), 0.0, 0.0, 0, 0, Vector2(0.09787234, 0.17977524), 0.0, 0.0, 0, 0, Vector2(0.506383, 0.13483143), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mffl1"]
+curve = SubResource("Curve_b4ysl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l85uf"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.01
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.53999996
+scale_curve = SubResource("CurveTexture_mffl1")
+color_ramp = SubResource("GradientTexture1D_ovmv7")
+alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8ijm4"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_mffl1")
+color_ramp = SubResource("GradientTexture1D_ovmv7")
+alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jha3"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.5
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 1.1999999
+scale_curve = SubResource("CurveTexture_mffl1")
+color_ramp = SubResource("GradientTexture1D_ovmv7")
+alpha_curve = SubResource("CurveTexture_wnk4v")
+
+[sub_resource type="Resource" id="Resource_2ad3o"]
+script = ExtResource("20_2vbte")
+channel_name = "Running Wheel Radio"
+tracks = Array[AudioStream]([ExtResource("21_4gna3"), ExtResource("22_8sd2q"), ExtResource("23_h84a2")])
+track_names = Array[String](["Innocent", "NotGivin", "RockEm"])
+metadata/_custom_type_script = "uid://c4lwum6etjrd1"
+
+[sub_resource type="Resource" id="Resource_pmakp"]
+script = ExtResource("20_2vbte")
+channel_name = "Munch FM"
+tracks = Array[AudioStream]([ExtResource("24_yln85"), ExtResource("25_3nyae"), ExtResource("26_t47rn")])
+track_names = Array[String](["JagÄr", "SnearStugan", "Ursäkta"])
+metadata/_custom_type_script = "uid://c4lwum6etjrd1"
+
+[sub_resource type="Resource" id="Resource_2vbte"]
+script = ExtResource("20_2vbte")
+channel_name = "Rodent News"
+tracks = Array[AudioStream]([ExtResource("27_2ynax"), ExtResource("28_s0e8v"), ExtResource("29_wrhr8")])
+track_names = Array[String](["FlummorOch", "HumlorUrFas", "NästanSjälv"])
+metadata/_custom_type_script = "uid://c4lwum6etjrd1"
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8sd2q"]
+size = Vector2(200, 200)
+
+[node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player") groups=["car"]]
+mass = 240.0
+center_of_mass_mode = 1
+script = ExtResource("1_bkrhx")
+exhaust_particles = NodePath("===PartSyst===/vfx_Exhaust_Driving")
+level_strength = 2.0
+level_damping = 1.0
+player_scene = ExtResource("2_jpt3o")
+car_camera = NodePath("CamArm/Camera3D")
+driver_mesh = NodePath("DriverMesh")
+exit_hold_time = 1.0
+handbrake_sound = ExtResource("3_5khej")
+handbrake_audio_player = NodePath("CarSFXManager/AudioStreamPlayer3D_HandBrake")
+
+[node name="CarMain02" parent="." unique_id=1858086224 instance=ExtResource("2_xhmyn")]
+
+[node name="SteeringWheel" parent="CarMain02" unique_id=1978625636 instance=ExtResource("3_vl2bd")]
+
+[node name="CarWindows02" parent="CarMain02" unique_id=594238288 instance=ExtResource("5_coc8s")]
+
+[node name="wheel_front_left" type="VehicleWheel3D" parent="." unique_id=1895005995]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel03" parent="wheel_front_left" unique_id=120459072 instance=ExtResource("6_wdy7j")]
+
+[node name="wheel_front_right" type="VehicleWheel3D" parent="." unique_id=1981571654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, 1.75)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel02" parent="wheel_front_right" unique_id=662353275 instance=ExtResource("6_wdy7j")]
+
+[node name="wheel_back_right" type="VehicleWheel3D" parent="." unique_id=206740174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, -1.75)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel05" parent="wheel_back_right" unique_id=708315375 instance=ExtResource("6_wdy7j")]
+
+[node name="wheel_back_left" type="VehicleWheel3D" parent="." unique_id=105866180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21, -1, -1.75)
+use_as_traction = true
+wheel_roll_influence = 0.0
+wheel_radius = 0.545
+suspension_travel = 10.0
+suspension_stiffness = 40.0
+damping_compression = 1.9
+damping_relaxation = 2.0
+
+[node name="Wheel04" parent="wheel_back_left" unique_id=752354650 instance=ExtResource("6_wdy7j")]
+
+[node name="CamArm" type="SpringArm3D" parent="." unique_id=932646751 node_paths=PackedStringArray("car_node")]
+transform = Transform3D(-2.26458, 0, 4.84111e-07, 0, 1, 0, -1.97976e-07, 0, -5.53759, 0, 0, 0.071)
+spring_length = 5.0
+script = ExtResource("7_xhmyn")
+car_node = NodePath("..")
+camera_height_offset = 2.0
+idle_timeout = 0.5
+reset_speed = 1.0
+mouse_threshold = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="CamArm" unique_id=1930146500]
+transform = Transform3D(0.441583, -8.246283e-09, -8.910952e-10, 1.86744e-08, 0.976919, 0.21361014, -3.6438053e-10, -0.03857457, 0.17641592, 4.555855e-07, 5.2141337, 2.326463)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1903783037]
+transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.34167272, 0)
+shape = SubResource("BoxShape3D_xhmyn")
+debug_color = Color(0.607608, 0.363727, 1, 0.42)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=635570933]
+transform = Transform3D(0.383, 0, 0, 0, -1.6741462e-08, -0.383, 0, 0.383, -1.6741462e-08, 0, 0.148, 0)
+shape = SubResource("CapsuleShape3D_xhmyn")
+debug_color = Color(0, 0.643137, 0.290196, 1)
+
+[node name="===PartSyst===" type="Node3D" parent="." unique_id=1238306755]
+
+[node name="vfx_Exhaust_idle" type="GPUParticles3D" parent="===PartSyst===" unique_id=1917668136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
+material_override = SubResource("ShaderMaterial_utifk")
+amount = 5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_l85uf")
+draw_pass_1 = ExtResource("11_i00a5")
+
+[node name="vfx_Exhaust_Driving" type="GPUParticles3D" parent="===PartSyst===" unique_id=1155251686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66032064, -0.82071316, -3.2441275)
+material_override = SubResource("ShaderMaterial_utifk")
+amount = 40
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_8ijm4")
+draw_pass_1 = ExtResource("11_i00a5")
+
+[node name="===Thrusters===" type="Node3D" parent="." unique_id=5626404]
+
+[node name="Thruster_w" parent="===Thrusters===" unique_id=637115976 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-4.3711385e-08, -2.2201636e-08, -1, 0, 0.99999994, -2.2201638e-08, 0.99999994, -9.704643e-16, -4.371139e-08, 1.3862259, -0.214613, -2.1)
+thrust_force = 500.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
+activate_action = "th_w"
+
+[node name="Thruster_w2" parent="===Thrusters===" unique_id=1633766594 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-4.371138e-08, 2.2201633e-08, 1, 0, 0.9999998, -2.2201636e-08, -0.9999998, -9.704642e-16, -4.371139e-08, -1.3859999, -0.21499746, -2.1)
+thrust_force = 500.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
+activate_action = "th_w"
+
+[node name="Thruster_space" parent="===Thrusters===" unique_id=1746133811 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.3862259, -0.21470073, 0)
+thrust_force = 2700.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
+activate_action = "th_space"
+
+[node name="Thruster_space2" parent="===Thrusters===" unique_id=1884624724 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-4.3711385e-08, 0, 1, 0, 0.99999994, 0, -0.99999994, 0, -4.371139e-08, -1.3859999, -0.21490961, 0)
+thrust_force = 2700.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
+activate_action = "th_space"
+
+[node name="Thruster_s" parent="===Thrusters===" unique_id=1209774950 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-4.371139e-08, -3.623113e-08, -1, 0, 1, -3.623113e-08, 1, -1.583713e-15, -4.371139e-08, 1.3862259, -0.21488883, 2.1)
+thrust_force = 500.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
+activate_action = "th_s"
+
+[node name="Thruster_s2" parent="===Thrusters===" unique_id=1869769174 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-4.371138e-08, 3.623113e-08, 1, 0, 0.9999998, -3.6231135e-08, -0.9999998, -1.583713e-15, -4.371139e-08, -1.3859999, -0.21472171, 2.1)
+thrust_force = 500.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
+activate_action = "th_s"
+
+[node name="Thruster_d" parent="===Thrusters===" unique_id=570753172 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(0.070052475, -0.99754333, 3.4793082e-08, 0.99754333, 0.070052475, -2.1748308e-08, 1.9257538e-08, 3.623113e-08, 1, 1.3862259, -0.21488883, 2.5389009)
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
+activate_action = "th_d"
+
+[node name="Thruster_a" parent="===Thrusters===" unique_id=628919273 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(0.070052445, 0.9975431, -3.4793075e-08, -0.9975431, 0.070052445, -2.1748308e-08, -1.9257538e-08, 3.6231125e-08, 1, -1.3859999, -0.21472171, 2.5389009)
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
+activate_action = "th_a"
+
+[node name="Thruster_q2" parent="===Thrusters===" unique_id=1752115833 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-1, -8.742278e-08, -3.4793075e-08, 8.742278e-08, -1, 2.174831e-08, -3.479308e-08, 2.1748306e-08, 1, 1.3862259, -0.21488883, 0.7675247)
+thrust_force = 500.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
+activate_action = "th_q"
+
+[node name="Thruster_e" parent="===Thrusters===" unique_id=1607500035 node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("8_45u5b")]
+transform = Transform3D(-0.99999976, -8.7422755e-08, 3.4793086e-08, 8.7422755e-08, -0.99999976, 2.1748308e-08, 3.4793075e-08, 2.1748306e-08, 1, -1.3859999, -0.21472171, 0.7675247)
+thrust_force = 500.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
+activate_action = "th_e"
+
+[node name="vfx_Exhaust_SmokePuff_L" type="GPUParticles3D" parent="===Thrusters===" unique_id=1324894920]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.3800956, -0.45450124, -2.8872514)
+material_override = SubResource("ShaderMaterial_utifk")
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_3jha3")
+draw_pass_1 = ExtResource("11_i00a5")
+
+[node name="vfx_Exhaust_SmokePuff_R" type="GPUParticles3D" parent="===Thrusters===" unique_id=1229266079]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.38, -0.455, -2.887)
+material_override = SubResource("ShaderMaterial_utifk")
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_3jha3")
+draw_pass_1 = ExtResource("11_i00a5")
+
+[node name="CarSFXManager" type="Node3D" parent="." unique_id=1483181439]
+script = ExtResource("12_i00a5")
+idle_sounds = Array[AudioStream]([ExtResource("13_utifk")])
+driving_sounds = Array[AudioStream]([ExtResource("14_jpt3o")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=512227219]
+bus = &"sfx"
+
+[node name="AudioStreamPlayer3D_HandBrake" type="AudioStreamPlayer3D" parent="CarSFXManager" unique_id=256672081]
+
+[node name="PackageMesh" parent="." unique_id=2034292386 instance=ExtResource("14_i00a5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47323775, -2.1615758)
+visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1788457257]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.50775075, -0.42383558, 3.3568554)
+light_color = Color(0.92123526, 0.9262932, 0.6377255, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 1.195
+shadow_enabled = true
+spot_range = 50.0
+spot_attenuation = 0.37
+spot_angle = 61.89
+script = ExtResource("15_utifk")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=146634233]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.5120549, -0.42383558, 3.3568554)
+light_color = Color(0.92123526, 0.9262932, 0.6377255, 1)
+light_energy = 5.0
+light_volumetric_fog_energy = 1.195
+shadow_enabled = true
+spot_range = 50.0
+spot_attenuation = 0.37
+spot_angle = 61.89
+script = ExtResource("15_utifk")
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1695882209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54800564, -0.4095912, 3.3984754)
+light_color = Color(0.8183502, 0.66114986, 0.21956053, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
+script = ExtResource("18_h84a2")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=114691167]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53856725, -0.4095912, 3.3984754)
+light_color = Color(0.8183502, 0.66114986, 0.21956053, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
+script = ExtResource("18_h84a2")
+
+[node name="OmniLight3D_Rear" type="OmniLight3D" parent="." unique_id=1536307540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75216675, -0.53178847, -3.1900916)
+light_color = Color(0.96165425, 0.56256866, 0.4097834, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
+
+[node name="OmniLight3D_Rear2" type="OmniLight3D" parent="." unique_id=2129876626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7780013, -0.53178847, -3.1900916)
+light_color = Color(0.96165425, 0.56256866, 0.4097834, 1)
+light_energy = 0.5
+light_size = 0.058
+shadow_enabled = true
+
+[node name="DriverMesh" parent="." unique_id=1502235154 instance=ExtResource("18_b4ysl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23134422, -0.7412058, 0)
+
+[node name="packagedistancepoint" type="Node3D" parent="." unique_id=1014112667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.1233106)
+
+[node name="CarRadioManager" type="Node" parent="." unique_id=201759591 node_paths=PackedStringArray("radio_emitter_3d") groups=["car_radio"]]
+script = ExtResource("19_8ijm4")
+channels = Array[ExtResource("20_2vbte")]([SubResource("Resource_2ad3o"), SubResource("Resource_pmakp"), SubResource("Resource_2vbte")])
+search_sound = ExtResource("30_8sd2q")
+radio_emitter_3d = NodePath("../AudioStreamPlayer3D_RadioOutside")
+max_distance_3d = 50.0
+
+[node name="AudioStreamPlayer_RadioInside" type="AudioStreamPlayer" parent="." unique_id=1189959232]
+
+[node name="AudioStreamPlayer3D_RadioOutside" type="AudioStreamPlayer3D" parent="." unique_id=787663702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35116014, 0.738428)
+max_distance = 100.0
+bus = &"music"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1036239420]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4144078, 84.99061)
+visible = false
+mesh = SubResource("PlaneMesh_8sd2q")

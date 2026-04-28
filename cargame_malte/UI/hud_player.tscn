@@ -8,10 +8,13 @@
 [ext_resource type="Script" uid="uid://c3aptijipievd" path="res://scripts/speedometer.gd" id="6_hvg1e"]
 [ext_resource type="Texture2D" uid="uid://4rxljur0smut" path="res://textures/ui/ui_speedometer_bg_t_v1.png" id="6_k8emw"]
 [ext_resource type="Texture2D" uid="uid://b5ba4b3xq3jg" path="res://textures/ui/ui_speedometer_needle_t_v1.png" id="7_hvg1e"]
+[ext_resource type="Texture2D" uid="uid://udhf0nb56k4v" path="res://textures/ui/ui_carkeyhole_bg_t_v1.png" id="9_c0f76"]
+[ext_resource type="Texture2D" uid="uid://br5w4dxe0x8hy" path="res://textures/ui/ui_carkey_t_v1.png" id="10_6prc6"]
 
-[node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow")]
+[node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow", "key_sprite")]
 script = ExtResource("1_i1glq")
 delivery_arrow = NodePath("DeliveryArrow")
+key_sprite = NodePath("Control_CarKey/Key")
 
 [node name="Panel_Delivery" type="Panel" parent="." unique_id=1360305700]
 anchors_preset = 5
@@ -211,3 +214,29 @@ z_index = 20
 offset_right = 64.0
 offset_bottom = 64.0
 texture = ExtResource("2_vgabk")
+
+[node name="Control_CarKey" type="Control" parent="." unique_id=2038163363]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Keyhole" type="TextureRect" parent="Control_CarKey" unique_id=1568506193]
+layout_mode = 0
+offset_left = 1559.0001
+offset_top = 852.99994
+offset_right = 1687.0001
+offset_bottom = 980.99994
+scale = Vector2(2.2041497, 2.2041497)
+texture = ExtResource("9_c0f76")
+
+[node name="Key" type="TextureRect" parent="Control_CarKey" unique_id=673562794]
+z_index = 1
+layout_mode = 0
+offset_left = 1636.0
+offset_top = 927.0
+offset_right = 1764.0
+offset_bottom = 1055.0
+scale = Vector2(2.1240473, 2.1240473)
+pivot_offset = Vector2(62.145508, 61.674683)
+texture = ExtResource("10_6prc6")

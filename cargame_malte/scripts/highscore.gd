@@ -20,9 +20,11 @@ extends CanvasLayer
 ]
 
 @export var delivery_arrow: TextureRect
+@export var key_sprite: TextureRect
+@export var key_on_angle: float = 45.0
+@export var key_off_angle: float = -45.0
 
 var manager
-var car: VehicleBody3D
 var radio: Node
 var daynight: Node3D
 var _arrow_visible: bool = false
@@ -30,16 +32,22 @@ var _smoothed_screen_pos: Vector2 = Vector2.ZERO
 
 func _ready():
 	manager = get_node("/root/ScoreAndTimeManager")
-	car = get_tree().get_first_node_in_group("car")
 	radio = get_tree().get_first_node_in_group("car_radio")
 	daynight = get_tree().get_first_node_in_group("daynight")
 	if delivery_arrow:
 		delivery_arrow.hide()
 
+func _get_active_car() -> VehicleBody3D:
+	for c in get_tree().get_nodes_in_group("car"):
+		if c.driver_in_car:
+			return c
+	return null
+
 func _process(_delta):
 	if not manager:
 		return
-		
+
+	var car = _get_active_car()
 	if car:
 		speed_label.text = "%03d km/h" % int(car.linear_velocity.length() * 3.6)
 		height_label.text = "%dm" % int(car.global_position.y - height_world_zero)
@@ -68,6 +76,7 @@ func _process(_delta):
 	if daynight:
 		phase_label.text = "%s  %d%%" % [daynight.get_phase(), int(daynight.get_day_percent())]
 
+	_update_key_hud(car)
 	_update_arrow()
 
 func _update_arrow():
@@ -126,3 +135,13 @@ func _get_delivery_status() -> String:
 		return "Bad time"
 	else:
 		return "Very Bad time!"
+		
+func _update_key_hud(car: VehicleBody3D):
+	if not key_sprite:
+		return
+	if car:
+		key_sprite.visible = true
+		var target_angle = key_on_angle if car.engine_on else key_off_angle
+		key_sprite.rotation_degrees = lerp(key_sprite.rotation_degrees, target_angle, 0.15)
+	else:
+		key_sprite.visible = false

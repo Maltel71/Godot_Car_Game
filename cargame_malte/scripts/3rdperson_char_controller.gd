@@ -21,6 +21,7 @@ var HasPackage: bool = false
 var assigned_delivery_id: String = ""
 
 func _ready():
+	add_to_group("player")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	if player_camera:
 		player_camera.make_current()
@@ -30,6 +31,16 @@ func _ready():
 func set_car_ref(car: VehicleBody3D):
 	car_ref = car
 	spring_arm.add_excluded_object(car.get_rid())
+
+func _find_nearest_car(max_dist: float) -> VehicleBody3D:
+	var nearest: VehicleBody3D = null
+	var best := max_dist
+	for c in get_tree().get_nodes_in_group("car"):
+		var d := global_position.distance_to(c.global_position)
+		if d < best:
+			best = d
+			nearest = c
+	return nearest
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -41,11 +52,14 @@ func _input(event):
 func _physics_process(delta):
 	if package_mesh:
 		package_mesh.visible = HasPackage
-	
+
+	# Track the nearest car for interaction
+	car_ref = _find_nearest_car(enter_distance)
+
 	# Get package interaction point or fallback to car center
 	var interaction_point = car_ref.get_node_or_null(package_interaction_node_path) if car_ref else null
 	var check_position = interaction_point.global_position if interaction_point else (car_ref.global_position if car_ref else global_position)
-	
+
 	# Put package in car
 	if Input.is_action_just_pressed("interact") and car_ref \
 	and HasPackage and global_position.distance_to(check_position) < package_pickup_distance:
@@ -54,7 +68,7 @@ func _physics_process(delta):
 		HasPackage = false
 		assigned_delivery_id = ""
 		return
-	
+
 	# Pick up package from car
 	if Input.is_action_just_pressed("interact") and car_ref \
 	and car_ref.HasPackage and global_position.distance_to(check_position) < package_pickup_distance:
@@ -63,7 +77,7 @@ func _physics_process(delta):
 		car_ref.HasPackage = false
 		car_ref.assigned_delivery_id = ""
 		return
-	
+
 	# Enter car
 	if Input.is_action_just_pressed("enter_exit") and car_ref \
 	and not HasPackage \

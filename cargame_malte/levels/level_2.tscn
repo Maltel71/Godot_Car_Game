@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://menus/esc_menu.tscn" id="1_uo0vl"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terraindata/level2_terrain_assets.tres" id="2_k2aru"]
 [ext_resource type="Texture2D" uid="uid://cxr7cpvtl54vp" path="res://textures/skytexture_night_01.png" id="3_0nm7o"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/car/car.tscn" id="3_ndgrd"]
+[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://models/car/car_01.tscn" id="3_ndgrd"]
 [ext_resource type="PackedScene" uid="uid://dxe446hy46qh2" path="res://models/WiggleTest.glb" id="4_h351q"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="10_jqt73"]
 [ext_resource type="PackedScene" uid="uid://b0tcfpapx3m2f" path="res://models/_scene_prefabs/Misc_props/flask_1.tscn" id="11_00pa0"]
@@ -44,6 +44,7 @@
 [ext_resource type="Script" uid="uid://cyen5sn36j50h" path="res://scripts/daynnight.gd" id="35_ubuva"]
 [ext_resource type="PackedScene" uid="uid://bmtdexg0hgby" path="res://level_components/hamsterhouse_v2.tscn" id="37_pjs8f"]
 [ext_resource type="PackedScene" uid="uid://b8iy71udaje64" path="res://level_components/npc_mechanic.tscn" id="42_3582p"]
+[ext_resource type="PackedScene" uid="uid://dwc7757gh8og0" path="res://models/car/car_02.tscn" id="45_6bdx5"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
@@ -597,15 +598,16 @@ environment = NodePath("../WorldEnvironment")
 sunset_color = Color(0.59791434, 0.35617933, 0.08197368, 1)
 min_energy = 0.0
 
-[node name="Car1_Player" parent="." unique_id=1904992392 instance=ExtResource("3_ndgrd")]
+[node name="Car_01" parent="." unique_id=1904992392 instance=ExtResource("3_ndgrd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 20.042086, -36.98169)
 gravity_scale = 1.8
+starts_with_driver = true
 
-[node name="WiggleTest" parent="Car1_Player" unique_id=1888891987 instance=ExtResource("4_h351q")]
+[node name="WiggleTest" parent="Car_01" unique_id=1888891987 instance=ExtResource("4_h351q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest/Armature/Skeleton3D" index="1" unique_id=2104506610]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest/Armature/Skeleton3D" index="1" unique_id=2104506610]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -633,11 +635,11 @@ settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="WiggleTest2" parent="Car1_Player" unique_id=1757339708 instance=ExtResource("4_h351q")]
+[node name="WiggleTest2" parent="Car_01" unique_id=1757339708 instance=ExtResource("4_h351q")]
 transform = Transform3D(0.353553, 0.353553, 0, -0.353553, 0.353553, 0, 0, 0, 0.5, 0.753754, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest2/Armature/Skeleton3D" index="1" unique_id=416319181]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest2/Armature/Skeleton3D" index="1" unique_id=416319181]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -665,11 +667,11 @@ settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="WiggleTest3" parent="Car1_Player" unique_id=1655613105 instance=ExtResource("4_h351q")]
+[node name="WiggleTest3" parent="Car_01" unique_id=1655613105 instance=ExtResource("4_h351q")]
 transform = Transform3D(0.353553, -0.353553, 0, 0.353553, 0.353553, 0, 0, 0, 0.5, -0.848877, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car1_Player/WiggleTest3/Armature/Skeleton3D" index="1" unique_id=2107444651]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest3/Armature/Skeleton3D" index="1" unique_id=2107444651]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -1309,6 +1311,9 @@ mesh = SubResource("BoxMesh_ubuva")
 [node name="Camera3D_Mechanic" type="Camera3D" parent="." unique_id=1730780419]
 transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -378.49796, 20.956812, -65.31181)
 
-[editable path="Car1_Player/WiggleTest"]
-[editable path="Car1_Player/WiggleTest2"]
-[editable path="Car1_Player/WiggleTest3"]
+[node name="Car_02" parent="." unique_id=2065331023 instance=ExtResource("45_6bdx5")]
+transform = Transform3D(0.62925255, 0, -0.7772009, 0, 1, 0, 0.7772009, 0, 0.62925255, -327.29254, 19.771116, -77.42948)
+
+[editable path="Car_01/WiggleTest"]
+[editable path="Car_01/WiggleTest2"]
+[editable path="Car_01/WiggleTest3"]
