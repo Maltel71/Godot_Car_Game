@@ -30,13 +30,16 @@ func _open_shop():
 	var prev_cam := get_viewport().get_camera_3d()
 	await _blend_camera(prev_cam, dialogue_camera)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	menu_instance = menu_scene.instantiate()
+	menu_instance = menu_scene.instantiate()  # ← instantiate FIRST
 	menu_instance.previous_camera = prev_cam
 	menu_instance.transition_time = transition_time
 	menu_instance.transition_curve = transition_curve
+	menu_instance.player_ref = player_in_range
+	menu_instance.player_original_mode = player_in_range.process_mode if player_in_range else Node.PROCESS_MODE_INHERIT  # ← THEN assign
+	if player_in_range:
+		player_in_range.process_mode = Node.PROCESS_MODE_DISABLED
 	menu_instance.tree_exited.connect(func(): menu_instance = null)
 	get_tree().current_scene.add_child(menu_instance)
-	get_tree().paused = true
 
 func _blend_camera(from_cam: Camera3D, to_cam: Camera3D) -> void:
 	if not from_cam or not to_cam or transition_time <= 0.0:

@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var exit_button: Button = $Panel/ExitButton
 
 var previous_camera: Camera3D
+var player_ref: Node = null
+var player_original_mode: int = Node.PROCESS_MODE_INHERIT
 var transition_time: float = 0.6
 var transition_curve: Tween.TransitionType = Tween.TRANS_CUBIC
 
@@ -11,11 +13,12 @@ func _ready():
 	exit_button.pressed.connect(_on_exit_pressed)
 
 func _on_exit_pressed():
-	get_tree().paused = false
 	exit_button.disabled = true
 	var current_cam := get_viewport().get_camera_3d()
 	await _blend_camera(current_cam, previous_camera)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	if player_ref and is_instance_valid(player_ref):
+		player_ref.process_mode = player_original_mode
 	queue_free()
 
 func _blend_camera(from_cam: Camera3D, to_cam: Camera3D) -> void:
@@ -34,3 +37,8 @@ func _blend_camera(from_cam: Camera3D, to_cam: Camera3D) -> void:
 	await tween.finished
 	to_cam.make_current()
 	blend_cam.queue_free()
+	
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+		_on_exit_pressed()

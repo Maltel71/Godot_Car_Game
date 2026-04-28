@@ -50,7 +50,7 @@ func _ready():
 		music_volume.mouse_entered.connect(_on_button_hover)
 		sfx_volume.mouse_entered.connect(_on_button_hover)
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		toggle_menu()
 
