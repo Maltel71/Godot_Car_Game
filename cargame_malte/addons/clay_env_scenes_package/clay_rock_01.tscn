@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://m423w3vl70gi"]
+
+[ext_resource type="PackedScene" uid="uid://bqcl7a4nndfx2" path="res://models/clay/malte/Malte_LargeRock2.glb" id="1_eveko"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2aq5s"]
+radius = 0.361
+
+[node name="ClayRock_01" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_2aq5s")
+
+[node name="Malte_LargeRock22" parent="StaticBody3D" instance=ExtResource("1_eveko")]
