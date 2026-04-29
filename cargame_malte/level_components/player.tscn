@@ -20,6 +20,7 @@ package_pickup_distance = 3.0
 player_camera = NodePath("camera_mount/SpringArm3D/Camera3D")
 package_mesh = NodePath("visuals/PackageMesh")
 flashlight = NodePath("visuals/Flashlight")
+flashlight_pitch_offset = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -33,7 +34,7 @@ transform = Transform3D(-0.7968128, 0, 6.965959e-08, 0, 0.7968128, 0, -6.965959e
 visible = false
 
 [node name="Flashlight" type="Node3D" parent="visuals" unique_id=1186735200]
-transform = Transform3D(-0.7968128, 0, 6.965959e-08, 0, 0.7968128, 0, -6.965959e-08, 0, -0.7968128, -0.63071406, 0.72385657, 0.17128621)
+transform = Transform3D(-0.7968128, 2.7707562e-08, 6.391207e-08, 7.077119e-16, 0.73106873, -0.3169375, -6.9659606e-08, -0.3169375, -0.73106873, -0.6307141, 0.72385657, 0.17128621)
 
 [node name="Mesh" type="MeshInstance3D" parent="visuals/Flashlight" unique_id=1559372246]
 transform = Transform3D(0.235, 0, 0, 0, -1.9888684e-08, 0.23500003, 0, -0.455, -1.0272176e-08, 0, 0, 0)

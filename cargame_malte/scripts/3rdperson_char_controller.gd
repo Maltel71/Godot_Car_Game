@@ -17,6 +17,8 @@ extends CharacterBody3D
 @onready var visuals: Node3D = $visuals
 @onready var spring_arm: SpringArm3D = $camera_mount/SpringArm3D
 
+@export var flashlight_pitch_offset: float = -0.3
+
 var car_ref: VehicleBody3D = null
 var HasPackage: bool = false
 var assigned_delivery_id: String = ""
@@ -57,6 +59,8 @@ func _input(event):
 func _physics_process(delta):
 	if package_mesh:
 		package_mesh.visible = HasPackage
+	if flashlight:
+			flashlight.rotation.x = camera_mount.rotation.x + flashlight_pitch_offset
 
 	# Track the nearest car for interaction
 	car_ref = _find_nearest_car(enter_distance)

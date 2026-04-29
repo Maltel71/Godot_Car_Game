@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://bmtdexg0hgby" path="res://level_components/hamsterhouse_v2.tscn" id="37_pjs8f"]
 [ext_resource type="PackedScene" uid="uid://b8iy71udaje64" path="res://level_components/npc_mechanic.tscn" id="42_3582p"]
 [ext_resource type="PackedScene" uid="uid://dwc7757gh8og0" path="res://models/car/car_02.tscn" id="45_6bdx5"]
+[ext_resource type="PackedScene" uid="uid://m5tmgig1qvxh" path="res://level_components/house_door.tscn" id="46_qthv2"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
@@ -474,32 +475,32 @@ noise = SubResource("FastNoiseLite_ndgrd")
 [sub_resource type="FogMaterial" id="FogMaterial_ndgrd"]
 density_texture = SubResource("NoiseTexture3D_h351q")
 
-[sub_resource type="Resource" id="Resource_6bdx5"]
+[sub_resource type="Resource" id="Resource_qthv2"]
 script = ExtResource("25_6dcgf")
 amount = 200
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_qthv2"]
+[sub_resource type="Resource" id="Resource_wnekv"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_wnekv"]
+[sub_resource type="Resource" id="Resource_jyp08"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_jyp08"]
+[sub_resource type="Resource" id="Resource_wvv8u"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_wvv8u"]
+[sub_resource type="Resource" id="Resource_4s8mp"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -507,9 +508,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_4s8mp"]
+[sub_resource type="Resource" id="Resource_wsmxb"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_6bdx5"), SubResource("Resource_qthv2"), SubResource("Resource_wnekv"), SubResource("Resource_jyp08"), SubResource("Resource_wvv8u")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_qthv2"), SubResource("Resource_wnekv"), SubResource("Resource_jyp08"), SubResource("Resource_wvv8u"), SubResource("Resource_4s8mp")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_s67ts")
@@ -532,32 +533,32 @@ script = ExtResource("34_6dcgf")
 curve = SubResource("Curve3D_nomkf")
 metadata/_custom_type_script = "uid://djha0k1o3sp7w"
 
-[sub_resource type="Resource" id="Resource_wsmxb"]
+[sub_resource type="Resource" id="Resource_nfgrx"]
 script = ExtResource("25_6dcgf")
 amount = 300
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_nfgrx"]
+[sub_resource type="Resource" id="Resource_m0g18"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_m0g18"]
+[sub_resource type="Resource" id="Resource_df2rw"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_df2rw"]
+[sub_resource type="Resource" id="Resource_1h2df"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_1h2df"]
+[sub_resource type="Resource" id="Resource_p36y6"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -565,9 +566,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_p36y6"]
+[sub_resource type="Resource" id="Resource_af6je"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_wsmxb"), SubResource("Resource_nfgrx"), SubResource("Resource_m0g18"), SubResource("Resource_df2rw"), SubResource("Resource_1h2df")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_nfgrx"), SubResource("Resource_m0g18"), SubResource("Resource_df2rw"), SubResource("Resource_1h2df"), SubResource("Resource_p36y6")])
 
 [sub_resource type="Resource" id="Resource_ghfw4"]
 script = ExtResource("31_s67ts")
@@ -1247,7 +1248,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 visible = false
 script = ExtResource("22_m4706")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_4s8mp")
+modifier_stack = SubResource("Resource_wsmxb")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1277,7 +1278,7 @@ shape = SubResource("Resource_rddwe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 visible = false
 script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_p36y6")
+modifier_stack = SubResource("Resource_af6je")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1313,6 +1314,20 @@ transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50
 
 [node name="Car_02" parent="." unique_id=2065331023 instance=ExtResource("45_6bdx5")]
 transform = Transform3D(0.5452537, 0, -0.8382711, 0, 1, 0, 0.8382711, 0, 0.5452537, -323.23935, 19.616802, -76.7524)
+
+[node name="HouseDoor_Outside" parent="." unique_id=1599881961 node_paths=PackedStringArray("spawn_point") instance=ExtResource("46_qthv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.74295, 20.030579, -31.099415)
+spawn_point = NodePath("../SpawnPoint_PlayerHouse_Inside")
+
+[node name="SpawnPoint_PlayerHouse_Outside" type="Node3D" parent="." unique_id=276068504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.20062, 21.964489, -35.739815)
+
+[node name="SpawnPoint_PlayerHouse_Inside" type="Node3D" parent="." unique_id=1226023622]
+transform = Transform3D(0.57009715, 0, -0.8215773, 0, 1, 0, 0.8215773, 0, 0.57009715, -354.54828, 21.964489, -38.171337)
+
+[node name="HouseDoor_Inside" parent="." unique_id=559443049 node_paths=PackedStringArray("spawn_point") instance=ExtResource("46_qthv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -363.03345, 20.030579, -39.12257)
+spawn_point = NodePath("../SpawnPoint_PlayerHouse_Outside")
 
 [editable path="Car_01/WiggleTest"]
 [editable path="Car_01/WiggleTest2"]

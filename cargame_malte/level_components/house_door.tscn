@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://m5tmgig1qvxh"]
+
+[ext_resource type="Script" uid="uid://dgml5ntm2f6q" path="res://scripts/house_door.gd" id="1_mdnhy"]
+[ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="1_q0yds"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7s7i"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mdnhy"]
+size = Vector3(4, 4, 4)
+
+[node name="HouseDoor" type="Area3D" unique_id=1599881961]
+script = ExtResource("1_mdnhy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1943149566]
+shape = SubResource("BoxShape3D_a7s7i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=371422161]
+material_override = ExtResource("1_q0yds")
+mesh = SubResource("BoxMesh_mdnhy")
