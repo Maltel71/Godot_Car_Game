@@ -611,8 +611,7 @@ next_pt_init = NodePath("../RP_011")
 metadata/_edit_lock_ = true
 
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("15_iut5r")]
-transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
-metadata/_edit_lock_ = true
+transform = Transform3D(0.49646676, 0, -3.6413107, 0, 3.6749995, 0, 3.6413107, 0, 0.49646676, -186.329, 20.416477, -123.51247)
 
 [node name="Pickup_Points_01" parent="===ENVIROMENT===" instance=ExtResource("6_iajmf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.40085, 22.178528, 8.179109)
