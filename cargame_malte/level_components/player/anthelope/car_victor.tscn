@@ -108,6 +108,7 @@ center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_3jfo4")
 exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
+flip_torque_impulse = 1.0
 
 [node name="===Body===" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
