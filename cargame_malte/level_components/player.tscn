@@ -50,6 +50,7 @@ mesh = SubResource("CapsuleMesh_uud6i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.47161037)
 light_energy = 5.0
 light_volumetric_fog_energy = 1.195
+shadow_enabled = true
 spot_range = 40.0
 spot_attenuation = 0.37
 spot_angle = 24.1

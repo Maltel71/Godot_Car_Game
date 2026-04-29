@@ -4,10 +4,10 @@
 [ext_resource type="Material" uid="uid://cvj5ju1cjik8c" path="res://materials/Orangemat.tres" id="1_q0yds"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a7s7i"]
-size = Vector3(4, 4, 4)
+size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mdnhy"]
-size = Vector3(4, 4, 4)
+size = Vector3(2, 2, 2)
 
 [node name="HouseDoor" type="Area3D" unique_id=1599881961]
 script = ExtResource("1_mdnhy")
