@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://byggxcyommovg"]
+
+[ext_resource type="PackedScene" uid="uid://c3od7diqreqah" path="res://models/clay/malte/Malte_Tree2.glb" id="1_jmmv1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jmmv1"]
+radius = 1.2
+height = 7.9223633
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Clay_Tree_02" type="StaticBody3D" parent="."]
+
+[node name="Malte_Tree22" parent="Clay_Tree_02" instance=ExtResource("1_jmmv1")]
+transform = Transform3D(7.794032, 0, 0, 0, 7.794032, 0, 0, 0, 7.794032, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clay_Tree_02"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27352333, 3.213623, -0.07346058)
+shape = SubResource("CapsuleShape3D_jmmv1")
+
+[editable path="Clay_Tree_02/Malte_Tree22"]
