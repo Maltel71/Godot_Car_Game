@@ -11,6 +11,7 @@ extends CharacterBody3D
 @export var package_interaction_node_path: NodePath = "packagedistancepoint"
 @export var player_camera: Camera3D
 @export var package_mesh: Node3D
+@export var flashlight: Node3D
 
 @onready var camera_mount: Node3D = $camera_mount
 @onready var visuals: Node3D = $visuals
@@ -48,6 +49,10 @@ func _input(event):
 		visuals.rotate_y(deg_to_rad(event.relative.x * sens_h))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y * sens_v))
 		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-85), deg_to_rad(20))
+	
+	if event.is_action_pressed("flashlight"):
+		if flashlight:
+			flashlight.visible = !flashlight.visible
 
 func _physics_process(delta):
 	if package_mesh:
@@ -82,6 +87,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("enter_exit") and car_ref \
 	and not HasPackage \
 	and global_position.distance_to(car_ref.global_position) < enter_distance:
+		if flashlight:
+			flashlight.visible = false
 		car_ref.enter_car()
 		return
 

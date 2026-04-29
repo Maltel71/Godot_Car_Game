@@ -2,18 +2,24 @@
 
 [ext_resource type="Script" uid="uid://btiijdjixnrt2" path="res://scripts/3rdperson_char_controller.gd" id="1_hfcel"]
 [ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="3_tvuhn"]
+[ext_resource type="Material" uid="uid://byn31jdchg2b6" path="res://materials/darkgreen1_mat.tres" id="4_5ot4w"]
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="4_e2g51"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uud6i"]
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_hfcel"]
 radius = 0.6
 
-[node name="Player" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("player_camera", "package_mesh")]
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ot4w"]
+
+[node name="Player" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("player_camera", "package_mesh", "flashlight")]
 script = ExtResource("1_hfcel")
 package_pickup_distance = 3.0
 player_camera = NodePath("camera_mount/SpringArm3D/Camera3D")
 package_mesh = NodePath("visuals/PackageMesh")
+flashlight = NodePath("visuals/Flashlight")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -26,6 +32,27 @@ transform = Transform3D(-1.255, 0, -1.09715586e-07, 0, 1.255, 0, 1.09715586e-07,
 transform = Transform3D(-0.7968128, 0, 6.965959e-08, 0, 0.7968128, 0, -6.965959e-08, 0, -0.7968128, -7.6823405e-08, 0.64293295, 0.87875724)
 visible = false
 
+[node name="Flashlight" type="Node3D" parent="visuals" unique_id=1186735200]
+transform = Transform3D(-0.7968128, 0, 6.965959e-08, 0, 0.7968128, 0, -6.965959e-08, 0, -0.7968128, -0.63071406, 0.72385657, 0.17128621)
+
+[node name="Mesh" type="MeshInstance3D" parent="visuals/Flashlight" unique_id=1559372246]
+transform = Transform3D(0.235, 0, 0, 0, -1.9888684e-08, 0.23500003, 0, -0.455, -1.0272176e-08, 0, 0, 0)
+material_override = ExtResource("4_5ot4w")
+mesh = SubResource("CapsuleMesh_uud6i")
+
+[node name="Mesh2" type="MeshInstance3D" parent="visuals/Flashlight" unique_id=1601174489]
+transform = Transform3D(0.29, 0, 0, 0, -5.726192e-09, 0.29, 0, -0.131, -1.2676303e-08, 0, 0, -0.31811982)
+material_override = ExtResource("4_5ot4w")
+mesh = SubResource("CapsuleMesh_uud6i")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="visuals/Flashlight" unique_id=854831516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.47161037)
+light_energy = 5.0
+light_volumetric_fog_energy = 1.195
+spot_range = 40.0
+spot_attenuation = 0.37
+spot_angle = 24.1
+
 [node name="camera_mount" type="Node3D" parent="." unique_id=2131950497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0358593, 0)
 
@@ -36,3 +63,13 @@ margin = 0.6
 
 [node name="Camera3D" type="Camera3D" parent="camera_mount/SpringArm3D" unique_id=1784817906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3652132, 5.0236793)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=738627379]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_5ot4w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=463667884]
+transform = Transform3D(30, 0, 0, 0, -1.3113416e-06, -30, 0, 30, -1.3113416e-06, 0, 0, -13.343459)
+visible = false
+mesh = SubResource("PlaneMesh_5ot4w")
