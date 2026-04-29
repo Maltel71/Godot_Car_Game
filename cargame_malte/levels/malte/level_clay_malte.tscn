@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=57 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_5tf2s"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_x0var"]
@@ -509,6 +509,44 @@ stack = Array[ExtResource("18_db6sc")]([SubResource("Resource_p2vi1"), SubResour
 script = ExtResource("25_7yxr2")
 radius = 1000.0
 
+[sub_resource type="Resource" id="Resource_b1ph0"]
+script = ExtResource("19_mojwa")
+amount = 2000
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_1h8i6"]
+script = ExtResource("20_p2vi1")
+terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
+align_with_collision_normal = true
+
+[sub_resource type="Resource" id="Resource_ypdud"]
+script = ExtResource("20_iut5r")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(2, 2, 2)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_cjly1"]
+script = ExtResource("21_5g8mm")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_c0nd6"]
+script = ExtResource("22_brawk")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_bkcv5"]
+script = ExtResource("17_p2vi1")
+stack = Array[ExtResource("18_db6sc")]([SubResource("Resource_b1ph0"), SubResource("Resource_1h8i6"), SubResource("Resource_ypdud"), SubResource("Resource_cjly1"), SubResource("Resource_c0nd6")])
+
+[sub_resource type="Resource" id="Resource_iw4u1"]
+script = ExtResource("25_7yxr2")
+radius = 1000.0
+
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_5tf2s")
 level_start_time = 900.0
@@ -756,3 +794,26 @@ path = "uid://ddndprpjs2c31"
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 3.3906403, 0, 4.1960907)
 script = ExtResource("24_t0l6q")
 shape = SubResource("Resource_kani3")
+
+[node name="ProtonScatter3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.44226, 0, 144.56252)
+visible = false
+script = ExtResource("16_6nfsc")
+render_mode = 1
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_bkcv5")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://c17aknedeyxm4"
+
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.382332, 57.630554)
+script = ExtResource("23_ky1kx")
+proportion = 3000
+source_scale_multiplier = 2.0
+path = "uid://ddndprpjs2c31"
+
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter3"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 3.3906403, 0, -29.40947)
+script = ExtResource("24_t0l6q")
+shape = SubResource("Resource_iw4u1")
