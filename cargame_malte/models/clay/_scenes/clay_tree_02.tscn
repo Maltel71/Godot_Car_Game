@@ -6,7 +6,7 @@
 radius = 1.2
 height = 7.9223633
 
-[node name="Node3D" type="Node3D"]
+[node name="ClayTree_02" type="Node3D"]
 
 [node name="Clay_Tree_02" type="StaticBody3D" parent="."]
 
