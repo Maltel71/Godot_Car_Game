@@ -1,12 +1,101 @@
-[gd_scene load_steps=6 format=3 uid="uid://1tgo7xcytvyx"]
+[gd_scene format=3 uid="uid://1tgo7xcytvyx"]
 
 [ext_resource type="Script" uid="uid://do5pf17hawno6" path="res://scripts/start_menu.gd" id="1_3kg5v"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_1t8nw"]
 [ext_resource type="AudioStream" uid="uid://b0g1qoa26mqc3" path="res://audio/sfx/click/click (1).wav" id="2_w3tic"]
 [ext_resource type="AudioStream" uid="uid://b1td50djstx55" path="res://audio/music/jazz-lounge-elevator-music-332339.mp3" id="3_b72g3"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="4_hys1b"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="6_h6phu"]
+[ext_resource type="Material" uid="uid://byn31jdchg2b6" path="res://materials/darkgreen1_mat.tres" id="7_yhcmu"]
+[ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="8_hxqlv"]
+[ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="9_3ingb"]
+[ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="10_a4xl7"]
+[ext_resource type="Script" uid="uid://bdmddvysq5lr7" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="11_x8t6t"]
+[ext_resource type="Script" uid="uid://bmob6pfsj2tqx" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="12_tt1r7"]
+[ext_resource type="Script" uid="uid://7bpqtd2p8kjn" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="13_jhaot"]
+[ext_resource type="Script" uid="uid://bly43vu2asvh0" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="14_pywjr"]
+[ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="15_l7ksa"]
+[ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="16_js57v"]
+[ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="17_hxqlv"]
 
-[node name="StartMenu" type="Control"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h6phu"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_yhcmu"]
+sky_material = SubResource("ProceduralSkyMaterial_h6phu")
+
+[sub_resource type="Environment" id="Environment_ostuc"]
+background_mode = 2
+sky = SubResource("Sky_yhcmu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_ostuc"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_54tpi"]
+radius = 10.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hxqlv"]
+size = Vector2(50, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ingb"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="Resource" id="Resource_4yr8g"]
+script = ExtResource("11_x8t6t")
+amount = 250
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_pq80j"]
+script = ExtResource("12_tt1r7")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_3xrw4"]
+script = ExtResource("13_jhaot")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_p5nkc"]
+script = ExtResource("14_pywjr")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_45q2u"]
+script = ExtResource("9_3ingb")
+stack = Array[ExtResource("10_a4xl7")]([SubResource("Resource_4yr8g"), SubResource("Resource_pq80j"), SubResource("Resource_3xrw4"), SubResource("Resource_p5nkc")])
+
+[sub_resource type="Resource" id="Resource_3ingb"]
+script = ExtResource("17_hxqlv")
+size = Vector3(20, 30, 20)
+metadata/_custom_type_script = "uid://bto17stixsm1"
+
+[node name="StartMenu_3d" type="Node3D" unique_id=1651521028]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2030516258]
+environment = SubResource("Environment_ostuc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=934694801]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1236320328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 12)
+
+[node name="lowpolyhamster_01" parent="." unique_id=975115071 instance=ExtResource("6_h6phu")]
+transform = Transform3D(0.8001351, 0, 0.5998199, 0, 1, 0, -0.5998199, 0, 0.8001351, -0.59728646, 10.056012, 1.1721764)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1677740404]
+
+[node name="StartMenu" type="Control" parent="." unique_id=588088302]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3kg5v")
@@ -16,49 +105,92 @@ hover_volume = -10.0
 menu_music_volume = -15.0
 menu_music = ExtResource("3_b72g3")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="StartMenu" unique_id=1300646489]
+visible = false
 z_index = 10
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme = ExtResource("2_1t8nw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StartMenu" unique_id=1145723471]
+volume_db = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu" unique_id=1011502479]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -356.5
+offset_left = 457.5
 offset_top = 181.0
-offset_right = 356.5
+offset_right = 1462.5
 offset_bottom = 758.0
 grow_horizontal = 2
 
-[node name="Header" type="Label" parent="Panel/VBoxContainer"]
+[node name="Header" type="Label" parent="StartMenu/VBoxContainer" unique_id=1675841160]
 layout_mode = 2
-text = "MyCarGame"
+theme = ExtResource("2_1t8nw")
+text = "Hamster Delivery"
 horizontal_alignment = 1
 
-[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=1103564834]
 z_index = 1
 layout_mode = 2
 text = "Play"
 
-[node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=970313736]
 z_index = 1
 layout_mode = 2
 text = "Settings"
 
-[node name="QuitButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="StartMenu/VBoxContainer" unique_id=789848621]
 z_index = 1
 layout_mode = 2
 text = "Quit"
 
-[node name="Credits" type="Label" parent="Panel/VBoxContainer"]
+[node name="Credits" type="Label" parent="StartMenu/VBoxContainer" unique_id=686758523]
 layout_mode = 2
 theme = ExtResource("4_hys1b")
 text = "MadeBy-LM"
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = 1.0
+[node name="ground" type="StaticBody3D" parent="." unique_id=722906534]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=1001356117]
+material_override = ExtResource("7_yhcmu")
+mesh = SubResource("SphereMesh_ostuc")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground" unique_id=639424396]
+shape = SubResource("SphereShape3D_54tpi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=450410670]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=436859420]
+visible = false
+mesh = SubResource("PlaneMesh_hxqlv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=132433193]
+shape = SubResource("BoxShape3D_3ingb")
+
+[node name="ProtonScatter" type="Node3D" parent="." unique_id=484600644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6510715, 0)
+script = ExtResource("8_hxqlv")
+modifier_stack = SubResource("Resource_45q2u")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://c17aknedeyxm4"
+
+[node name="boxes" type="Node3D" parent="ProtonScatter" unique_id=362683175]
+script = ExtResource("15_l7ksa")
+path = "uid://ce1d6xjtdedys"
+
+[node name="grass" type="Node3D" parent="ProtonScatter" unique_id=1039180299]
+script = ExtResource("15_l7ksa")
+source_scale_multiplier = 0.3
+path = "uid://cv3pvux6mm38t"
+
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter" unique_id=1890777506]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 1.5148306, 0)
+script = ExtResource("16_js57v")
+shape = SubResource("Resource_3ingb")

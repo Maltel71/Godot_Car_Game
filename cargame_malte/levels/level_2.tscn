@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://dwc7757gh8og0" path="res://models/car/car_02.tscn" id="45_6bdx5"]
 [ext_resource type="PackedScene" uid="uid://m5tmgig1qvxh" path="res://level_components/house_door.tscn" id="46_qthv2"]
 [ext_resource type="PackedScene" uid="uid://bdi2oqrkwvuen" path="res://level_components/player_house_interior.tscn" id="47_wnekv"]
+[ext_resource type="Script" uid="uid://bq4ou6xgw4pe8" path="res://scripts/interact_label.gd" id="48_jyp08"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
@@ -701,6 +702,9 @@ settings/0/joints/2/bone = 2
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
+[node name="Car_02" parent="." unique_id=2065331023 instance=ExtResource("45_6bdx5")]
+transform = Transform3D(0.5452537, 0, -0.8382711, 0, 1, 0, 0.8382711, 0, 0.5452537, -323.23935, 19.616802, -76.7524)
+
 [node name="GameManager" type="Node" parent="." unique_id=2072807302]
 script = ExtResource("10_jqt73")
 
@@ -753,6 +757,14 @@ transform = Transform3D(0.9986667, 0, -0.051621318, 0, 1, 0, 0.051621318, 0, 0.9
 [node name="HouseDoor_Outside" parent="===ENVIROMENT===/==HOME==" unique_id=1599881961 node_paths=PackedStringArray("spawn_point") instance=ExtResource("46_qthv2")]
 transform = Transform3D(0.99598813, 0, -0.08948529, 0, 1, 0, 0.08948529, 0, 0.99598813, 8.236359, 2.9518814, 0.6533203)
 spawn_point = NodePath("../../../SpawnPoint_PlayerHouse_Inside")
+
+[node name="InteractLabel_E" type="Label3D" parent="===ENVIROMENT===/==HOME==/HouseDoor_Outside" unique_id=1300788770]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+text = "(F)
+Enter"
+font_size = 64
+script = ExtResource("48_jyp08")
+show_distance = 2.1
 
 [node name="==POSTOFFICE==" type="Node3D" parent="===ENVIROMENT===" unique_id=1671871621]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.96103, 19.52204, -18.91623)
@@ -1320,15 +1332,20 @@ mesh = SubResource("BoxMesh_ubuva")
 [node name="Camera3D_Mechanic" type="Camera3D" parent="." unique_id=1730780419]
 transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -378.49796, 20.956812, -65.31181)
 
-[node name="Car_02" parent="." unique_id=2065331023 instance=ExtResource("45_6bdx5")]
-transform = Transform3D(0.5452537, 0, -0.8382711, 0, 1, 0, 0.8382711, 0, 0.5452537, -323.23935, 19.616802, -76.7524)
-
 [node name="SpawnPoint_PlayerHouse_Inside" type="Node3D" parent="." unique_id=1226023622]
 transform = Transform3D(0.57009715, 0, -0.8215773, 0, 1, 0, 0.8215773, 0, 0.57009715, -358.84857, -14.933076, -72.192276)
 
 [node name="HouseDoor_Inside" parent="." unique_id=559443049 node_paths=PackedStringArray("spawn_point") instance=ExtResource("46_qthv2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -361.57446, -15.807094, -74.11743)
 spawn_point = NodePath("../===ENVIROMENT===/==HOME==/SpawnPoint_PlayerHouse_Outside")
+
+[node name="InteractLabel_E" type="Label3D" parent="HouseDoor_Inside" unique_id=471933643]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+text = "(F)
+Exit"
+font_size = 64
+script = ExtResource("48_jyp08")
+show_distance = 2.1
 
 [node name="PlayerHouseInterior" parent="." unique_id=931714386 instance=ExtResource("47_wnekv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -354.70242, -17.505642, -69.60272)

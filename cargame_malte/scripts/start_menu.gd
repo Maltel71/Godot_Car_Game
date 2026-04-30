@@ -6,9 +6,9 @@ extends Control
 @export_range(-80, 24) var hover_volume: float = 0.0
 @export_range(-80, 24) var menu_music_volume: float = 0.0
 
-@onready var play_button = $Panel/VBoxContainer/PlayButton  # Renamed
-@onready var settings_button = $Panel/VBoxContainer/SettingsButton
-@onready var quit_button = $Panel/VBoxContainer/QuitButton
+@onready var play_button = $VBoxContainer/PlayButton
+@onready var settings_button = $VBoxContainer/SettingsButton
+@onready var quit_button = $VBoxContainer/QuitButton
 @onready var audio_player = $AudioStreamPlayer
 
 @export var menu_music: AudioStream
@@ -34,7 +34,8 @@ func _ready():
 		MusicManager.music_player.volume_db = menu_music_volume
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://menus/levelselect_menu.tscn")
+	MusicManager.stop_music()
+	get_tree().change_scene_to_file("res://levels/level_2.tscn")
 
 func _on_settings_pressed():
 	get_tree().change_scene_to_file("res://menus/settings_menu.tscn")
