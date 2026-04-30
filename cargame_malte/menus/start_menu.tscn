@@ -18,18 +18,20 @@
 [ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="16_js57v"]
 [ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="17_hxqlv"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h6phu"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_hxqlv"]
 
 [sub_resource type="Sky" id="Sky_yhcmu"]
-sky_material = SubResource("ProceduralSkyMaterial_h6phu")
+sky_material = SubResource("PhysicalSkyMaterial_hxqlv")
 
 [sub_resource type="Environment" id="Environment_ostuc"]
 background_mode = 2
 sky = SubResource("Sky_yhcmu")
 tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
 glow_enabled = true
+fog_enabled = true
+volumetric_fog_enabled = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_ostuc"]
 radius = 10.0
@@ -88,7 +90,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1236320328]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.029021, 6.1547003)
 
 [node name="lowpolyhamster_01" parent="." unique_id=975115071 instance=ExtResource("6_h6phu")]
 transform = Transform3D(0.8001351, 0, 0.5998199, 0, 1, 0, -0.5998199, 0, 0.8001351, -0.59728646, 10.056012, 1.1721764)
@@ -98,6 +100,8 @@ transform = Transform3D(0.8001351, 0, 0.5998199, 0, 1, 0, -0.5998199, 0, 0.80013
 [node name="StartMenu" type="Control" parent="." unique_id=588088302]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -99.0
+offset_bottom = -99.0
 script = ExtResource("1_3kg5v")
 game_scene_path = "res://levels/level_2.tscn"
 hover_sound = ExtResource("2_w3tic")
@@ -151,7 +155,7 @@ text = "Quit"
 [node name="Credits" type="Label" parent="StartMenu/VBoxContainer" unique_id=686758523]
 layout_mode = 2
 theme = ExtResource("4_hys1b")
-text = "MadeBy-LM"
+text = "Game"
 horizontal_alignment = 1
 
 [node name="ground" type="StaticBody3D" parent="." unique_id=722906534]
@@ -194,3 +198,11 @@ path = "uid://cv3pvux6mm38t"
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 1.5148306, 0)
 script = ExtResource("16_js57v")
 shape = SubResource("Resource_3ingb")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=133088128]
+transform = Transform3D(-0.053433985, 0, -0.9985714, 0, 1, 0, 0.9985714, 0, -0.053433985, -20.755013, 10.166196, -4.9670258)
+light_color = Color(0.78850776, 0.56656724, 0.2102327, 1)
+light_energy = 20.0
+light_volumetric_fog_energy = 5.0
+spot_range = 40.0
+spot_angle = 36.657223
