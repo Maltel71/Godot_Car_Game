@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://4p40qhpa2npt"]
+[gd_scene load_steps=57 format=3 uid="uid://4p40qhpa2npt"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_1q445"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_dueim"]
@@ -18,8 +18,19 @@
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_jcgqj"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_01brl"]
 [ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://dangerarea/danger_area.tscn" id="20_cxjp2"]
+[ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="21_0k075"]
 [ext_resource type="Script" uid="uid://bogu367lw1nco" path="res://addons/road-generator/nodes/road_point.gd" id="21_5ty36"]
+[ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="22_k3wl8"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_k273m"]
+[ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="23_vxdtp"]
+[ext_resource type="Script" uid="uid://bdmddvysq5lr7" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="24_3bipl"]
+[ext_resource type="Script" uid="uid://g3opjh3m3iww" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="25_xqtfx"]
+[ext_resource type="Script" uid="uid://bmob6pfsj2tqx" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="26_r2571"]
+[ext_resource type="Script" uid="uid://7bpqtd2p8kjn" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="27_lslk3"]
+[ext_resource type="Script" uid="uid://bly43vu2asvh0" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="28_0yi6e"]
+[ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="29_8hl4y"]
+[ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="30_jcgqj"]
+[ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="31_01brl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1q445"]
 sky_top_color = Color(0, 0.3947133, 0.96555775, 1)
@@ -432,7 +443,7 @@ scene_file = ExtResource("10_0k075")
 density = 2.32272
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 3454.1
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_00xh1"]
 name = "env_tree1_mesh_01_v1"
@@ -469,12 +480,49 @@ albedo_texture = ExtResource("18_6uapk")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_cj8b0"), SubResource("Terrain3DTextureAsset_275g5")])
 
-[sub_resource type="Curve3D" id="Curve3D_uafhl"]
+[sub_resource type="Curve3D" id="Curve3D_0k075"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Resource" id="Resource_k3wl8"]
+script = ExtResource("24_3bipl")
+amount = 2000
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_vxdtp"]
+script = ExtResource("25_xqtfx")
+terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
+
+[sub_resource type="Resource" id="Resource_3bipl"]
+script = ExtResource("26_r2571")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_xqtfx"]
+script = ExtResource("27_lslk3")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_r2571"]
+script = ExtResource("28_0yi6e")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_lslk3"]
+script = ExtResource("22_k3wl8")
+stack = Array[ExtResource("23_vxdtp")]([SubResource("Resource_k3wl8"), SubResource("Resource_vxdtp"), SubResource("Resource_3bipl"), SubResource("Resource_xqtfx"), SubResource("Resource_r2571")])
+
+[sub_resource type="Resource" id="Resource_g8bsm"]
+script = ExtResource("31_01brl")
+radius = 800.0
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_1q445")
@@ -500,22 +548,6 @@ offset_bottom = -5.0
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
-[node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
-visible = false
-
-[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_275g5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
-
-[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_vcg8h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
-
-[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_gfcpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
-
-[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
-
-[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
-
 [node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT==="]
 data_directory = "res://terrain_data/lowpoly/flamingo/terraindata_lowpoly_mark"
 material = SubResource("Terrain3DMaterial_1q445")
@@ -524,7 +556,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_uafhl")
+curve = SubResource("Curve3D_0k075")
 script = ExtResource("17_0yi6e")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -678,27 +710,67 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0.39606315, -0.82834774, 0.39619932, 0.9129995, 0.40122402, -0.07383243, -0.09780572, 0.39097214, 0.9151912, -256.79514, 71.96831, 44.581146)
 time_value = 1000000.0
 
+[node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
+visible = false
+
+[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_275g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
+
+[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_vcg8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
+
+[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
+
+[node name="Pickup_Time_02" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.55199, 21.35672, 176.0792)
+
+[node name="Pickup_Time_03" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.89682, 22.503088, 65.93981)
+
+[node name="Pickup_Time_04" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1279, 22.503088, -70.642166)
+
+[node name="Pickup_Time_05" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.89682, 22.503088, 65.93981)
+
+[node name="Pickup_Time_06" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_gfcpt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.229195, 22.503088, -14.147926)
+
+[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
+
+[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
+
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_k273m")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
-
-[node name="Pickup_Time_01" parent="." instance=ExtResource("8_gfcpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.55199, 21.35672, 176.0792)
-
-[node name="Pickup_Time_02" parent="." instance=ExtResource("8_gfcpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.89682, 22.503088, 65.93981)
-
-[node name="Pickup_Time_03" parent="." instance=ExtResource("8_gfcpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1279, 22.503088, -70.642166)
-
-[node name="Pickup_Time_04" parent="." instance=ExtResource("8_gfcpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.89682, 22.503088, 65.93981)
-
-[node name="Pickup_Time_05" parent="." instance=ExtResource("8_gfcpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.229195, 22.503088, -14.147926)
 
 [node name="Car_mark" parent="." instance=ExtResource("19_ctg75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.3975, 24.226603, -47.012676)
 
 [node name="DangerArea" parent="." instance=ExtResource("20_cxjp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.04727, 20.954678, -12.607116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.3657, 20.954678, -22.540707)
+
+[node name="ProtonScatter" type="Node3D" parent="."]
+script = ExtResource("21_0k075")
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_lslk3")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://c17aknedeyxm4"
+
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("29_8hl4y")
+path = "uid://dl1mgv7h1thox"
+
+[node name="ScatterItem2" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("29_8hl4y")
+path = "uid://cv3pvux6mm38t"
+
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -161.1228, 0, 49.493927)
+script = ExtResource("30_jcgqj")
+shape = SubResource("Resource_g8bsm")
+
+[node name="DangerArea2" parent="." instance=ExtResource("20_cxjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.8486, 20.977787, -21.735931)
