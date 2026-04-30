@@ -444,7 +444,7 @@ scene_file = ExtResource("9_b5bgj")
 density = 0.679946
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 2899.75
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pj4lr"]
 name = "env_rock1_mesh_01_v1"
@@ -453,7 +453,7 @@ scene_file = ExtResource("10_m2tqj")
 density = 2.32272
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 2714.95
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_00xh1"]
 name = "env_tree1_mesh_01_v1"
@@ -462,7 +462,7 @@ scene_file = ExtResource("11_1wukh")
 density = 0.0427419
 last_lod = 0
 last_shadow_lod = 0
-lod0_range = 128.0
+lod0_range = 2591.75
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufea4"]
 transparency = 4
@@ -555,7 +555,7 @@ normal_texture = ExtResource("18_08jog")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1"), SubResource("Terrain3DMeshAsset_00v0j"), SubResource("Terrain3DMeshAsset_l5ybj")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_h55dl"), SubResource("Terrain3DTextureAsset_kuiw6"), SubResource("Terrain3DTextureAsset_08jog"), SubResource("Terrain3DTextureAsset_ufea4")])
 
-[sub_resource type="Curve3D" id="Curve3D_8xb2t"]
+[sub_resource type="Curve3D" id="Curve3D_baj8n"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -643,7 +643,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_8xb2t")
+curve = SubResource("Curve3D_baj8n")
 script = ExtResource("17_q6po6")
 lock_road = true
 
@@ -816,7 +816,7 @@ metadata/_custom_type_script = "uid://c17aknedeyxm4"
 
 [node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
 script = ExtResource("34_5tvq7")
-path = "uid://dl1mgv7h1thox"
+path = "uid://d32oj8vpg0wdn"
 
 [node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
