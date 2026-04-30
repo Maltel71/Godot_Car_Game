@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dqai0u6p38b8"]
+[gd_scene load_steps=34 format=3 uid="uid://dqai0u6p38b8"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_bkrhx"]
 [ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_xhmyn"]
@@ -101,12 +101,62 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
-[node name="Car_Default" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ykpaj"]
+render_priority = 0
+shader = ExtResource("9_3jha3")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("10_b751l")
+
+[sub_resource type="Curve" id="Curve_0uc3w"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7y3ot"]
+texture_mode = 1
+curve = SubResource("Curve_0uc3w")
+
+[sub_resource type="Gradient" id="Gradient_02hd2"]
+offsets = PackedFloat32Array(0.13207547, 0.3773585, 0.988391)
+colors = PackedColorArray(0.99999994, 0.7726111, 0.12258693, 1, 0.7442253, 0.06303743, 1.92523e-07, 1, 0.8091658, 0.6744181, 0.6291941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x0lqn"]
+gradient = SubResource("Gradient_02hd2")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_217ou"]
+_data = [Vector2(0, 0.15730345), 0.0, 0.328478, 0, 0, Vector2(0.99593484, 0.32584274), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mv3wq"]
+curve = SubResource("Curve_217ou")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7y3ot"]
+lifetime_randomness = 0.3
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 1, 0)
+scale_min = 2.0
+scale_max = 15.0
+scale_curve = SubResource("CurveTexture_mv3wq")
+color_ramp = SubResource("GradientTexture1D_x0lqn")
+alpha_curve = SubResource("CurveTexture_7y3ot")
+hue_variation_min = -1.0
+hue_variation_max = -1.0
+
+[node name="Car_Default" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles", "explosion_particles")]
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_bkrhx")
 exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
+explosion_particles = NodePath("vfx_stylized_explotion")
 
 [node name="===Body===" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
@@ -271,3 +321,14 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
+
+[node name="vfx_stylized_explotion" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_ykpaj")
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.93
+fixed_fps = 60
+trail_lifetime = 1.4
+process_material = SubResource("ParticleProcessMaterial_7y3ot")
+draw_pass_1 = ExtResource("11_i00a5")
