@@ -58,6 +58,8 @@ color_ramp = SubResource("GradientTexture1D_dlbfg")
 alpha_curve = SubResource("CurveTexture_6lmqs")
 
 [node name="MoneyPickup" type="RigidBody3D" unique_id=1957211909 node_paths=PackedStringArray("pickup_particles")]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_1hx30")
 suction_force_min = 20.0
 suction_force_max = 160.0
