@@ -9,7 +9,6 @@ cull_mode = 2
 no_depth_test = true
 albedo_color = Color(0.76278406, 1, 0.96011597, 1)
 albedo_texture = ExtResource("1_e1ag0")
-disable_receive_shadows = true
 billboard_mode = 1
 
 [sub_resource type="Animation" id="Animation_sos7a"]
