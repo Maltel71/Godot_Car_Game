@@ -154,13 +154,16 @@ alpha_curve = SubResource("CurveTexture_7y3ot")
 hue_variation_min = -1.0
 hue_variation_max = -1.0
 
-[node name="Car_Default" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles", "explosion_particles")]
+[node name="Car_Default" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles", "explosion_particles", "main_rotor", "tail_rotor")]
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_ce0rj")
 exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 explosion_particles = NodePath("vfx_stylized_explotion")
+main_rotor = NodePath("===Thrusters===/propellor/Main_Rotorblade")
+tail_rotor = NodePath("===Thrusters===/propellor/Tail_Rotorblade")
+tail_rotor_speed = 10.0
 
 [node name="===Body===" type="Node3D" parent="."]
 
@@ -300,24 +303,43 @@ draw_pass_1 = ExtResource("9_15mn1")
 metadata/_edit_lock_ = true
 
 [node name="propellor" type="Node3D" parent="===Thrusters==="]
-transform = Transform3D(0.4821777, 0, 0, 0, 1, 0, 0, 0, 0.39999998, 0, 0, -0.6585134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6585134)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="===Thrusters===/propellor"]
-
-[node name="propellor rod" type="MeshInstance3D" parent="===Thrusters===/propellor/StaticBody3D"]
-transform = Transform3D(0.48000002, 0, 0, 0, 2.1120002, 0, 0, 0, 0.48000002, 0, 0, 0)
+[node name="Main_Rotorblade" type="MeshInstance3D" parent="===Thrusters===/propellor"]
+transform = Transform3D(0.48000005, 0, 0, 0, 1.4383274, 0, 0, 0, 0.48000005, 0, 0.6646475, 0)
 material_override = ExtResource("9_ce0rj")
 mesh = SubResource("CylinderMesh_fdptc")
+skeleton = NodePath("")
 
-[node name="propellor flap" type="MeshInstance3D" parent="===Thrusters===/propellor/StaticBody3D"]
-transform = Transform3D(8.266747, 0, 0, 0, 0.113015674, 0, 0, 0, 0.48000002, 0, 2.05723, 0)
+[node name="propellor flap 2" type="MeshInstance3D" parent="===Thrusters===/propellor/Main_Rotorblade"]
+transform = Transform3D(0.20500484, 0, 0.56873494, 0, 0.044697784, 0, -9.794976, 0, 0.011903393, 0, 0.9681955, 0)
 material_override = ExtResource("9_ce0rj")
 mesh = SubResource("BoxMesh_4mfwf")
+skeleton = NodePath("")
 
-[node name="propellor flap 2" type="MeshInstance3D" parent="===Thrusters===/propellor/StaticBody3D"]
-transform = Transform3D(0.17298175, 0, 0.47989488, 0, 0.113015674, 0, -8.264937, 0, 0.010044005, 0, 2.05723, 0)
+[node name="propellor flap" type="MeshInstance3D" parent="===Thrusters===/propellor/Main_Rotorblade"]
+transform = Transform3D(9.797123, 0, 0, 0, 0.044697784, 0, 0, 0, 0.56885964, 0, 0.9681955, 0)
 material_override = ExtResource("9_ce0rj")
 mesh = SubResource("BoxMesh_4mfwf")
+skeleton = NodePath("")
+
+[node name="Tail_Rotorblade" type="MeshInstance3D" parent="===Thrusters===/propellor"]
+transform = Transform3D(-8.713553e-09, -0.9417356, -8.713553e-09, 0, -4.1164572e-08, 0.19934288, -0.19934288, 4.1164572e-08, 3.8088152e-16, -1.2522928, 0.19455262, -2.488841)
+material_override = ExtResource("9_ce0rj")
+mesh = SubResource("CylinderMesh_fdptc")
+skeleton = NodePath("")
+
+[node name="propellor flap 3" type="MeshInstance3D" parent="===Thrusters===/propellor/Tail_Rotorblade"]
+transform = Transform3D(4.6553526, 4.440892e-15, -0.020821156, -7.1054274e-15, 0.047168512, -5.4281154e-16, 0.097434886, 4.440892e-15, 0.9948163, 2.9334767e-14, 0.91628194, 1.5675601e-13)
+material_override = ExtResource("9_ce0rj")
+mesh = SubResource("BoxMesh_4mfwf")
+skeleton = NodePath("")
+
+[node name="propellor flap 4" type="MeshInstance3D" parent="===Thrusters===/propellor/Tail_Rotorblade"]
+transform = Transform3D(-0.09743509, 4.440892e-15, -0.9948163, 1.12414655e-14, 0.047168512, 1.8678013e-13, 4.6553526, 4.440892e-15, -0.020821199, 2.9334767e-14, 0.91628194, 1.5675601e-13)
+material_override = ExtResource("9_ce0rj")
+mesh = SubResource("BoxMesh_4mfwf")
+skeleton = NodePath("")
 
 [node name="===Car_SFX_Manager===" type="Node3D" parent="."]
 visible = false

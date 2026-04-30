@@ -19,6 +19,11 @@ var is_dead: bool = false
 @export var flip_torque_impulse: float = 3.0
 @export var flip_cooldown: float = 2.0
 var _flip_timer: float = 0.0
+@export_group("Rotors")
+@export var main_rotor: Node3D
+@export var tail_rotor: Node3D
+@export var main_rotor_speed: float = 20.0  # radians/sec, spins around local Y
+@export var tail_rotor_speed: float = 30.0  # radians/sec, spins around local X
 
 func _physics_process(delta):
 	if is_dead:
@@ -28,6 +33,11 @@ func _physics_process(delta):
 	
 	_try_flip()
 	_flip_timer -= delta
+	
+	if main_rotor and Input.is_action_pressed("main_rotorblades"):
+		main_rotor.rotate_y(main_rotor_speed * delta)
+	if tail_rotor and Input.is_action_pressed("tail_rotorblades"):
+		tail_rotor.rotate_x(tail_rotor_speed * delta)
 	
 	var dir = Input.get_action_strength("Gas") - Input.get_action_strength("Reverse")
 	var steering_dir = Input.get_action_strength("Left") - Input.get_action_strength("Right")
