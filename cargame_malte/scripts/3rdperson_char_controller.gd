@@ -30,6 +30,8 @@ func _ready():
 		player_camera.make_current()
 	if package_mesh:
 		package_mesh.visible = false
+	if flashlight:
+		flashlight.visible = false
 
 func set_car_ref(car: VehicleBody3D):
 	car_ref = car

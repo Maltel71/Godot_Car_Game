@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dum00rp3akon0"]
 
 [ext_resource type="Texture2D" uid="uid://co2wphpx6kka3" path="res://textures/ui/arrow_v1.png" id="1_e1ag0"]
-[ext_resource type="Script" uid="uid://ccr027culltht" path="res://scripts/delivery_area_arrow.gd" id="1_sos7a"]
+[ext_resource type="Script" path="res://scripts/delivery_area_arrow.gd" id="1_sos7a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sos7a"]
 transparency = 1
@@ -9,6 +9,7 @@ cull_mode = 2
 no_depth_test = true
 albedo_color = Color(0.76278406, 1, 0.96011597, 1)
 albedo_texture = ExtResource("1_e1ag0")
+disable_receive_shadows = true
 billboard_mode = 1
 
 [sub_resource type="Animation" id="Animation_sos7a"]
