@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://djyn82ynm3jp2"]
+[gd_scene load_steps=60 format=3 uid="uid://djyn82ynm3jp2"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_os8rd"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_kgdtg"]
@@ -24,6 +24,18 @@
 [ext_resource type="PackedScene" uid="uid://dxfc2rrm1kevo" path="res://level_components/player/cheetah/car_karol.tscn" id="22_6lost"]
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_b2jdx"]
 [ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="24_7p3wf"]
+[ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="25_moocv"]
+[ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="26_48fx5"]
+[ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="27_h6b54"]
+[ext_resource type="Script" uid="uid://bdmddvysq5lr7" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="28_op1pa"]
+[ext_resource type="Script" uid="uid://g3opjh3m3iww" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="29_omkki"]
+[ext_resource type="Script" uid="uid://bmob6pfsj2tqx" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="30_ctrbj"]
+[ext_resource type="Script" uid="uid://7bpqtd2p8kjn" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="31_eu72n"]
+[ext_resource type="Script" uid="uid://bly43vu2asvh0" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="32_6oby7"]
+[ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="33_0ynmo"]
+[ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="34_bvx4k"]
+[ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="35_c6tn8"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="36_48fx5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_top_color = Color(0.054654874, 0.40251726, 0.9417504, 1)
@@ -477,12 +489,49 @@ uv_scale = 0.111
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
 
-[sub_resource type="Curve3D" id="Curve3D_7p3wf"]
+[sub_resource type="Curve3D" id="Curve3D_h6b54"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Resource" id="Resource_op1pa"]
+script = ExtResource("28_op1pa")
+amount = 1000
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_omkki"]
+script = ExtResource("29_omkki")
+terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
+
+[sub_resource type="Resource" id="Resource_ctrbj"]
+script = ExtResource("30_ctrbj")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_eu72n"]
+script = ExtResource("31_eu72n")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_6oby7"]
+script = ExtResource("32_6oby7")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_0ynmo"]
+script = ExtResource("26_48fx5")
+stack = Array[ExtResource("27_h6b54")]([SubResource("Resource_op1pa"), SubResource("Resource_omkki"), SubResource("Resource_ctrbj"), SubResource("Resource_eu72n"), SubResource("Resource_6oby7")])
+
+[sub_resource type="Resource" id="Resource_g8bsm"]
+script = ExtResource("35_c6tn8")
+radius = 500.0
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_os8rd")
@@ -527,7 +576,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_7p3wf")
+curve = SubResource("Curve3D_h6b54")
 script = ExtResource("17_1cl7f")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -690,3 +739,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.13354, 30.021786, -19.41
 
 [node name="Halfpipe1" parent="." instance=ExtResource("24_7p3wf")]
 transform = Transform3D(5, 0, 0, 0, 1.2668483, 4.836848, 0, -4.836848, 1.2668483, -327.69748, 77.61877, 100.85316)
+
+[node name="ProtonScatter" type="Node3D" parent="."]
+script = ExtResource("25_moocv")
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_0ynmo")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://c17aknedeyxm4"
+
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("33_0ynmo")
+path = "uid://dl1mgv7h1thox"
+
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -206.84178, 0, 125.90369)
+script = ExtResource("34_bvx4k")
+shape = SubResource("Resource_g8bsm")
+
+[node name="DangerArea" parent="." instance=ExtResource("36_48fx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.1622, 24.049484, 8.876252)
