@@ -1,10 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://k5c27q3vdtld"]
+[gd_scene load_steps=58 format=3 uid="uid://k5c27q3vdtld"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_ex38a"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_dkn1a"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_hsb3s"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_kdy0w"]
-[ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_tqevo"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_dyc4y"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_fy3pj"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_ywqy7"]
@@ -33,6 +32,8 @@
 [ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="30_oqyt8"]
 [ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="31_7wbde"]
 [ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="32_srh8o"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="33_upvfl"]
+[ext_resource type="PackedScene" uid="uid://bvpb7r0sxfao0" path="res://level_components/player/flamingo/car_elias.tscn" id="34_hn3ad"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_top_color = Color(0.18980882, 0.73179394, 1.92523e-07, 1)
@@ -484,45 +485,45 @@ uv_scale = 0.111
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd")])
 
-[sub_resource type="Curve3D" id="Curve3D_ex38a"]
+[sub_resource type="Curve3D" id="Curve3D_ave6g"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="Resource" id="Resource_2s1qv"]
+[sub_resource type="Resource" id="Resource_7wi2c"]
 script = ExtResource("26_hn3ad")
 amount = 600
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_upvfl"]
+[sub_resource type="Resource" id="Resource_61v65"]
 script = ExtResource("27_b7akv")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 
-[sub_resource type="Resource" id="Resource_3c730"]
+[sub_resource type="Resource" id="Resource_oqyt8"]
 script = ExtResource("27_ave6g")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_57co2"]
+[sub_resource type="Resource" id="Resource_7wbde"]
 script = ExtResource("28_7wi2c")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_mwieb"]
+[sub_resource type="Resource" id="Resource_srh8o"]
 script = ExtResource("29_61v65")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_j15sq"]
+[sub_resource type="Resource" id="Resource_2s1qv"]
 script = ExtResource("24_b7akv")
-stack = Array[ExtResource("25_upvfl")]([SubResource("Resource_2s1qv"), SubResource("Resource_upvfl"), SubResource("Resource_3c730"), SubResource("Resource_57co2"), SubResource("Resource_mwieb")])
+stack = Array[ExtResource("25_upvfl")]([SubResource("Resource_7wi2c"), SubResource("Resource_61v65"), SubResource("Resource_oqyt8"), SubResource("Resource_7wbde"), SubResource("Resource_srh8o")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("32_srh8o")
@@ -546,10 +547,6 @@ script = ExtResource("2_dkn1a")
 [node name="EscMenu" parent="." instance=ExtResource("3_hsb3s")]
 
 [node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_kdy0w")]
-
-[node name="Car_Default" parent="." instance=ExtResource("5_tqevo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.0177, 21.7924, -19.495695)
-gravity_scale = 1.8
 
 [node name="===ENVIROMENT===" type="Node3D" parent="."]
 
@@ -577,7 +574,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_ex38a")
+curve = SubResource("Curve3D_ave6g")
 script = ExtResource("17_61v65")
 lock_road = true
 
@@ -816,7 +813,7 @@ time_value = 100.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.8241, 0, 148.48187)
 script = ExtResource("23_d606u")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_j15sq")
+modifier_stack = SubResource("Resource_2s1qv")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -833,3 +830,9 @@ path = "uid://cv3pvux6mm38t"
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
 script = ExtResource("31_7wbde")
 shape = SubResource("Resource_g8bsm")
+
+[node name="DangerArea" parent="." instance=ExtResource("33_upvfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -321.3045, 21.029726, 8.093348)
+
+[node name="Car_Default2" parent="." instance=ExtResource("34_hn3ad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.43683, 22.248995, -19.663277)
