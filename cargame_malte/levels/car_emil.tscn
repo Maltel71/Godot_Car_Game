@@ -329,9 +329,9 @@ bus = &"sfx"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.036050368, -0.99934125, -0.004171314, -0.99935, 0.036050677, -2.8034394e-11, 0.00015037875, 0.0041686026, -0.9999913, -0.8486676, -0.45584077, 4.110135)
-light_energy = 16.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 16.0
+light_energy = 10.0
+light_indirect_energy = 10.0
+light_volumetric_fog_energy = 10.0
 light_size = 0.132
 light_specular = 17.45
 shadow_enabled = true
@@ -344,9 +344,9 @@ script = ExtResource("12_qiy2v")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.036050368, -0.99934125, -0.004171314, -0.99935, 0.036050677, -2.8034394e-11, 0.00015037875, 0.0041686026, -0.9999913, 0.8780074, -0.45584077, 4.110135)
-light_energy = 16.0
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 16.0
+light_energy = 10.0
+light_indirect_energy = 10.0
+light_volumetric_fog_energy = 10.0
 light_size = 0.132
 light_specular = 17.45
 shadow_enabled = true
