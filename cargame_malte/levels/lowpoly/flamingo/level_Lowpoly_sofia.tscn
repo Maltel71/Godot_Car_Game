@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://x85m7nf8lvx1"]
+[gd_scene load_steps=69 format=3 uid="uid://x85m7nf8lvx1"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_jsgmk"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_4i2wb"]
@@ -25,6 +25,18 @@
 [ext_resource type="PackedScene" uid="uid://doayyi07lbsx4" path="res://level_components/goal_trigger.tscn" id="22_upfyy"]
 [ext_resource type="PackedScene" uid="uid://dacpx5a0xoce4" path="res://models/lowpoly_stylized/malte/_scene_prefabs/ramp_1.tscn" id="25_08jog"]
 [ext_resource type="PackedScene" uid="uid://dymkpfbf1idh3" path="res://level_components/player/flamingo/car_sofia.tscn" id="25_ufea4"]
+[ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="26_jj0nk"]
+[ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="27_baj8n"]
+[ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="28_8xb2t"]
+[ext_resource type="Script" uid="uid://bdmddvysq5lr7" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="29_8r8mg"]
+[ext_resource type="Script" uid="uid://g3opjh3m3iww" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="30_o3h6q"]
+[ext_resource type="Script" uid="uid://bmob6pfsj2tqx" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="31_uajou"]
+[ext_resource type="Script" uid="uid://7bpqtd2p8kjn" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="32_e0nre"]
+[ext_resource type="Script" uid="uid://bly43vu2asvh0" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="33_rjavc"]
+[ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="34_5tvq7"]
+[ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="35_q2a7o"]
+[ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="36_k811n"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="37_baj8n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_top_color = Color(0.59680617, 0.5450889, 0.21966326, 1)
@@ -543,12 +555,49 @@ normal_texture = ExtResource("18_08jog")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1"), SubResource("Terrain3DMeshAsset_00v0j"), SubResource("Terrain3DMeshAsset_l5ybj")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_h55dl"), SubResource("Terrain3DTextureAsset_kuiw6"), SubResource("Terrain3DTextureAsset_08jog"), SubResource("Terrain3DTextureAsset_ufea4")])
 
-[sub_resource type="Curve3D" id="Curve3D_08jog"]
+[sub_resource type="Curve3D" id="Curve3D_8xb2t"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="Resource" id="Resource_8r8mg"]
+script = ExtResource("29_8r8mg")
+amount = 75
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_o3h6q"]
+script = ExtResource("30_o3h6q")
+terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
+
+[sub_resource type="Resource" id="Resource_uajou"]
+script = ExtResource("31_uajou")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_e0nre"]
+script = ExtResource("32_e0nre")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_rjavc"]
+script = ExtResource("33_rjavc")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_5tvq7"]
+script = ExtResource("27_baj8n")
+stack = Array[ExtResource("28_8xb2t")]([SubResource("Resource_8r8mg"), SubResource("Resource_o3h6q"), SubResource("Resource_uajou"), SubResource("Resource_e0nre"), SubResource("Resource_rjavc")])
+
+[sub_resource type="Resource" id="Resource_g8bsm"]
+script = ExtResource("36_k811n")
+radius = 350.0
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_jsgmk")
@@ -594,7 +643,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_08jog")
+curve = SubResource("Curve3D_8xb2t")
 script = ExtResource("17_q6po6")
 lock_road = true
 
@@ -746,9 +795,30 @@ metadata/_edit_lock_ = true
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
 
+[node name="DangerArea" parent="===ENVIROMENT===" instance=ExtResource("37_baj8n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.69388, 20.91664, -4.6237183)
+
 [node name="ramp1" parent="." instance=ExtResource("25_08jog")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -323.8828, 20.766628, -0.43725434)
 
 [node name="Car_Default2" parent="." instance=ExtResource("25_ufea4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.39844, 22.404016, -20.953108)
 gravity_scale = 1.8
+
+[node name="ProtonScatter" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -195.51808, 0, 126.061035)
+script = ExtResource("26_jj0nk")
+keep_static_colliders = true
+modifier_stack = SubResource("Resource_5tvq7")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://c17aknedeyxm4"
+
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("34_5tvq7")
+path = "uid://dl1mgv7h1thox"
+
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("35_q2a7o")
+shape = SubResource("Resource_g8bsm")
