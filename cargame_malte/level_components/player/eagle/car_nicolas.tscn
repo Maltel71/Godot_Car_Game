@@ -354,3 +354,10 @@ fixed_fps = 60
 trail_lifetime = 1.4
 process_material = SubResource("ParticleProcessMaterial_lj5nw")
 draw_pass_1 = ExtResource("9_gq7at")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 2)
+light_color = Color(1, 0.29963666, 0.24055442, 1)
+light_energy = 10.0
+spot_range = 65.076
+spot_angle = 54.57
