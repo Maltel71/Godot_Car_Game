@@ -606,11 +606,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 20.042086, -36.98
 gravity_scale = 1.8
 starts_with_driver = true
 
+[node name="InteractLabel_E2" type="Label3D" parent="Car_01" unique_id=1471719917]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.48716736, -2.1502419)
+text = "(E)
+Place Package"
+font_size = 64
+script = ExtResource("48_jyp08")
+show_distance = 3.3
+require_package = true
+
 [node name="WiggleTest" parent="Car_01" unique_id=1888891987 instance=ExtResource("4_h351q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1888891987, 1088390257) index="1" unique_id=2104506610]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest/Armature/Skeleton3D" index="1" unique_id=2104506610]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -642,7 +651,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, 0.353553, 0, -0.353553, 0.353553, 0, 0, 0, 0.5, 0.753754, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest2/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1757339708, 1088390257) index="1" unique_id=416319181]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest2/Armature/Skeleton3D" index="1" unique_id=416319181]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -674,7 +683,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, -0.353553, 0, 0.353553, 0.353553, 0, 0, 0, 0.5, -0.848877, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest3/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1655613105, 1088390257) index="1" unique_id=2107444651]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest3/Armature/Skeleton3D" index="1" unique_id=2107444651]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -756,7 +765,7 @@ transform = Transform3D(0.9986667, 0, -0.051621318, 0, 1, 0, 0.051621318, 0, 0.9
 
 [node name="HouseDoor_Outside" parent="===ENVIROMENT===/==HOME==" unique_id=1599881961 node_paths=PackedStringArray("spawn_point") instance=ExtResource("46_qthv2")]
 transform = Transform3D(0.99598813, 0, -0.08948529, 0, 1, 0, 0.08948529, 0, 0.99598813, 8.236359, 2.9518814, 0.6533203)
-spawn_point = NodePath("../../../SpawnPoint_PlayerHouse_Inside")
+spawn_point = NodePath("../../==HOUSE_INTERIOR==/SpawnPoint_PlayerHouse_Inside")
 
 [node name="InteractLabel_E" type="Label3D" parent="===ENVIROMENT===/==HOME==/HouseDoor_Outside" unique_id=1300788770]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
@@ -765,6 +774,37 @@ Enter"
 font_size = 64
 script = ExtResource("48_jyp08")
 show_distance = 2.1
+
+[node name="==HOUSE_INTERIOR==" type="Node3D" parent="===ENVIROMENT===" unique_id=209481450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -354.70242, -17.505642, -69.60272)
+
+[node name="SpawnPoint_PlayerHouse_Inside" type="Node3D" parent="===ENVIROMENT===/==HOUSE_INTERIOR==" unique_id=1226023622]
+transform = Transform3D(0.57009715, 0, -0.8215773, 0, 1, 0, 0.8215773, 0, 0.57009715, -4.1461487, 2.572566, -2.5895538)
+
+[node name="HouseDoor_Inside" parent="===ENVIROMENT===/==HOUSE_INTERIOR==" unique_id=559443049 node_paths=PackedStringArray("spawn_point") instance=ExtResource("46_qthv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87204, 1.6985483, -4.5147095)
+spawn_point = NodePath("../../==HOME==/SpawnPoint_PlayerHouse_Outside")
+
+[node name="InteractLabel_E" type="Label3D" parent="===ENVIROMENT===/==HOUSE_INTERIOR==/HouseDoor_Inside" unique_id=471933643]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+text = "(F)
+Exit"
+font_size = 64
+script = ExtResource("48_jyp08")
+show_distance = 2.1
+
+[node name="SpotLight3D" type="SpotLight3D" parent="===ENVIROMENT===/==HOUSE_INTERIOR==" unique_id=967129641]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 9.106619, 0)
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 16.433302
+spot_angle = 47.812492
+
+[node name="PlayerHouseInterior" parent="===ENVIROMENT===/==HOUSE_INTERIOR==" unique_id=931714386 instance=ExtResource("47_wnekv")]
+
+[node name="PlayerHouseInterior2" parent="===ENVIROMENT===/==HOUSE_INTERIOR==" unique_id=892639994 instance=ExtResource("47_wnekv")]
+transform = Transform3D(1.405, 0, 0, 0, 1.405, 0, 0, 0, 1.405, 0, 0, 0)
+metadata/_edit_lock_ = true
 
 [node name="==POSTOFFICE==" type="Node3D" parent="===ENVIROMENT===" unique_id=1671871621]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -331.96103, 19.52204, -18.91623)
@@ -905,6 +945,17 @@ transform = Transform3D(-1.705, 0, -2.5744785e-07, 0, 1.705, 0, 2.5744785e-07, 0
 
 [node name="==MECHANIC==" type="Node3D" parent="===ENVIROMENT===" unique_id=1820262286]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -404.3797, 16.992023, -61.70063)
+
+[node name="NPC_Mechanic" parent="===ENVIROMENT===/==MECHANIC==" unique_id=1670471662 node_paths=PackedStringArray("dialogue_camera") instance=ExtResource("42_3582p")]
+transform = Transform3D(0.28533706, 0, 0.95842725, 0, 1, 0, -0.95842725, 0, 0.28533706, 19.847015, 1.3005695, -3.7292404)
+dialogue_camera = NodePath("../../../Camera3D_Mechanic")
+
+[node name="InteractLabel_E" type="Label3D" parent="===ENVIROMENT===/==MECHANIC==/NPC_Mechanic" unique_id=610836120]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.0074501038, 1.1214733, 1.2037964)
+text = "(E)"
+font_size = 64
+script = ExtResource("48_jyp08")
+show_distance = 2.1
 
 [node name="HamsterHouse_01" parent="===ENVIROMENT===/==MECHANIC==" unique_id=1005312954 instance=ExtResource("37_pjs8f")]
 transform = Transform3D(-6.9938224e-08, 0, 1.6, 0, 1.6, 0, -1.6, 0, -6.9938224e-08, 15.299988, 1.2175465, -5.005638)
@@ -1313,10 +1364,6 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.021
 script = ExtResource("30_ghfw4")
 shape = SubResource("Resource_ghfw4")
 
-[node name="NPC_Mechanic" parent="===ENVIROMENT===" unique_id=1670471662 node_paths=PackedStringArray("dialogue_camera") instance=ExtResource("42_3582p")]
-transform = Transform3D(0.28533706, 0, 0.95842725, 0, 1, 0, -0.95842725, 0, 0.28533706, -384.53268, 18.292593, -65.42987)
-dialogue_camera = NodePath("../../Camera3D_Mechanic")
-
 [node name="RigidBodPackage_Test" type="RigidBody3D" parent="." unique_id=883844870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.67218, 20.978338, -39.333508)
 visible = false
@@ -1331,35 +1378,6 @@ mesh = SubResource("BoxMesh_ubuva")
 
 [node name="Camera3D_Mechanic" type="Camera3D" parent="." unique_id=1730780419]
 transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, -378.49796, 20.956812, -65.31181)
-
-[node name="SpawnPoint_PlayerHouse_Inside" type="Node3D" parent="." unique_id=1226023622]
-transform = Transform3D(0.57009715, 0, -0.8215773, 0, 1, 0, 0.8215773, 0, 0.57009715, -358.84857, -14.933076, -72.192276)
-
-[node name="HouseDoor_Inside" parent="." unique_id=559443049 node_paths=PackedStringArray("spawn_point") instance=ExtResource("46_qthv2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -361.57446, -15.807094, -74.11743)
-spawn_point = NodePath("../===ENVIROMENT===/==HOME==/SpawnPoint_PlayerHouse_Outside")
-
-[node name="InteractLabel_E" type="Label3D" parent="HouseDoor_Inside" unique_id=471933643]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
-text = "(F)
-Exit"
-font_size = 64
-script = ExtResource("48_jyp08")
-show_distance = 2.1
-
-[node name="PlayerHouseInterior" parent="." unique_id=931714386 instance=ExtResource("47_wnekv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -354.70242, -17.505642, -69.60272)
-
-[node name="PlayerHouseInterior2" parent="." unique_id=892639994 instance=ExtResource("47_wnekv")]
-transform = Transform3D(1.405, 0, 0, 0, 1.405, 0, 0, 0, 1.405, -354.70242, -17.505642, -69.60272)
-metadata/_edit_lock_ = true
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=967129641]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -354.70242, -8.399023, -69.60272)
-light_energy = 5.0
-shadow_enabled = true
-spot_range = 16.433302
-spot_angle = 47.812492
 
 [editable path="Car_01/WiggleTest"]
 [editable path="Car_01/WiggleTest2"]
