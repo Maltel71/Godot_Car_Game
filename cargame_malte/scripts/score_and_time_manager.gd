@@ -15,7 +15,7 @@ var has_special_badge: bool = false
 @export var bad_payout: int = 6
 @export var very_bad_payout: int = 2
 
-@export var debug_start_star_xp: int = 500
+@export var debug_start_star_xp: int = 0
 
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
