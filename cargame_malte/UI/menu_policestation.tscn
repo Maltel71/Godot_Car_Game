@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b0dhlrvns2ox6"]
+
+[ext_resource type="Script" uid="uid://dukv4oxrmd3ai" path="res://scripts/police_menu.gd" id="1_gsuet"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_h8e12"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_63p3a"]
+[ext_resource type="Texture2D" uid="uid://3ckrat70q8lj" path="res://particlesyst/T_MarbleNoise5_tiled.png" id="4_4oa14"]
+[ext_resource type="Texture2D" uid="uid://udhf0nb56k4v" path="res://textures/ui/ui_carkeyhole_bg_t_v1.png" id="5_h8e12"]
+
+[node name="Menu_PoliceStation" type="CanvasLayer" unique_id=844512391]
+script = ExtResource("1_gsuet")
+
+[node name="Panel" type="Panel" parent="." unique_id=1360305700]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -762.0
+offset_top = 101.0
+offset_right = -41.0
+offset_bottom = 918.0
+grow_horizontal = 2
+theme = ExtResource("2_h8e12")
+
+[node name="Label_Header" type="Label" parent="Panel" unique_id=276833083]
+layout_mode = 0
+offset_left = 53.999992
+offset_top = 31.000002
+offset_right = 493.0
+offset_bottom = 114.0
+theme = ExtResource("3_63p3a")
+text = "POLICE STATION"
+
+[node name="ExitButton" type="Button" parent="Panel" unique_id=929997083]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 817.0
+offset_right = 721.0
+offset_bottom = 886.0
+text = "Close X"
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=118580895]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 127.0
+offset_right = 2438.909
+offset_bottom = 2232.4546
+scale = Vector2(0.275, 0.275)
+theme_override_constants/h_separation = 62
+theme_override_constants/v_separation = 66
+columns = 4
+
+[node name="SecurityBadge" type="Button" parent="Panel/GridContainer" unique_id=1489711704]
+layout_mode = 2
+text = "SecurityBadge
+(req star level 5)"
+icon = ExtResource("4_4oa14")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Locked" type="TextureRect" parent="Panel/GridContainer/SecurityBadge" unique_id=1483773640]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(4.030047, 4.030047)
+texture = ExtResource("5_h8e12")

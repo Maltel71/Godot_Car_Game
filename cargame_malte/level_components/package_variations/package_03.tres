@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PackageVariation" format=3 uid="uid://bj4dvk3axdm8"]
+
+[ext_resource type="Script" uid="uid://bb56idq2f7xix" path="res://scripts/package_variation.gd" id="1_yetop"]
+
+[resource]
+script = ExtResource("1_yetop")
+package_name = "Package_03"
+metadata/_custom_type_script = "uid://bb56idq2f7xix"

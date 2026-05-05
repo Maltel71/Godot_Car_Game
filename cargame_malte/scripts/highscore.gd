@@ -27,6 +27,8 @@ extends CanvasLayer
 @export var key_on_angle: float = 45.0
 @export var key_off_angle: float = -45.0
 
+@export var security_badge_visual: TextureRect
+
 var manager
 var daynight: Node3D
 var _arrow_visible: bool = false
@@ -86,6 +88,9 @@ func _process(_delta):
 	var rating = manager.get_star_rating()
 	for i in stars.size():
 		stars[i].modulate.a = 1.0 if i < rating else 0.3
+		
+	if security_badge_visual:
+		security_badge_visual.visible = manager.has_special_badge
 
 	star_xp_label.text = "starxpmeter: %s" % manager.get_star_xp_progress()
 

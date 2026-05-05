@@ -72,6 +72,8 @@ func _on_waypoint_reached(body):
 func _on_area_body_entered(body):
 	if body is CharacterBody3D and "HasPackage" in body and not body.HasPackage \
 	and not get_node("/root/ScoreAndTimeManager").is_delivering:
+		if linked_area.special_office and not get_node("/root/ScoreAndTimeManager").has_special_badge:
+			return
 		car = body
 		going_out = true
 		returning = false
@@ -87,8 +89,9 @@ func _on_area_body_exited(body):
 func _on_body_entered(body):
 	if body is CharacterBody3D and "HasPackage" in body and not body.HasPackage \
 	and not get_node("/root/ScoreAndTimeManager").is_delivering:
+		if not linked_area.play_pickup_sound(body):
+			return
 		body.HasPackage = true
-		linked_area.play_pickup_sound(body)
 		has_package = false
 		car = null
 		going_out = false

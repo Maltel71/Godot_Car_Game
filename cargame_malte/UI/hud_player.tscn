@@ -10,11 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://b5ba4b3xq3jg" path="res://textures/ui/ui_speedometer_needle_t_v1.png" id="7_hvg1e"]
 [ext_resource type="Texture2D" uid="uid://udhf0nb56k4v" path="res://textures/ui/ui_carkeyhole_bg_t_v1.png" id="9_c0f76"]
 [ext_resource type="Texture2D" uid="uid://br5w4dxe0x8hy" path="res://textures/ui/ui_carkey_t_v1.png" id="10_6prc6"]
+[ext_resource type="Texture2D" uid="uid://3ckrat70q8lj" path="res://particlesyst/T_MarbleNoise5_tiled.png" id="11_6prc6"]
 
-[node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow", "key_sprite")]
+[node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow", "key_sprite", "security_badge_visual")]
 script = ExtResource("1_i1glq")
 delivery_arrow = NodePath("DeliveryArrow")
 key_sprite = NodePath("Control_CarKey/Key")
+security_badge_visual = NodePath("SecurityBadgeVisual")
 
 [node name="Panel_Delivery" type="Panel" parent="." unique_id=1360305700]
 anchors_preset = 5
@@ -50,6 +52,22 @@ text = "DeliveryStatus"
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "DeliveryArea_01"
+
+[node name="Panel_parameter" type="Panel" parent="Panel_Delivery" unique_id=1699994849]
+layout_mode = 0
+offset_top = 105.0
+offset_right = 670.0
+offset_bottom = 211.0
+
+[node name="ParameterLabel" type="Label" parent="Panel_Delivery/Panel_parameter" unique_id=1090582519]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 457.0
+offset_bottom = 102.0
+scale = Vector2(0.74928504, 0.74928504)
+theme = ExtResource("3_8fwp6")
+text = "Special: \"Afraid of heights\""
 
 [node name="Control_Stats" type="Control" parent="." unique_id=144263790]
 layout_mode = 3
@@ -241,3 +259,11 @@ offset_bottom = 1055.0
 scale = Vector2(2.1240473, 2.1240473)
 pivot_offset = Vector2(62.145508, 61.674683)
 texture = ExtResource("10_6prc6")
+
+[node name="SecurityBadgeVisual" type="TextureRect" parent="." unique_id=1743063709]
+offset_left = 335.0
+offset_top = 8.0
+offset_right = 847.0
+offset_bottom = 520.0
+scale = Vector2(0.1679297, 0.27260476)
+texture = ExtResource("11_6prc6")

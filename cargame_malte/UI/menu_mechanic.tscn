@@ -3,10 +3,7 @@
 [ext_resource type="Script" uid="uid://cob8xmwliqx4t" path="res://scripts/shop_menu.gd" id="1_daaws"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_38hln"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_lj50s"]
-[ext_resource type="Texture2D" uid="uid://d0skrludyx0o2" path="res://textures/grabber_v1.png" id="4_8htv5"]
 [ext_resource type="Texture2D" uid="uid://3ckrat70q8lj" path="res://particlesyst/T_MarbleNoise5_tiled.png" id="4_j1v71"]
-[ext_resource type="Texture2D" uid="uid://b011ol5s4tl66" path="res://textures/star_icon1_v1.png" id="6_3pdnc"]
-[ext_resource type="Texture2D" uid="uid://df4g74u8qqjqe" path="res://icon.svg" id="7_3pdnc"]
 
 [node name="Menu_Mechanic" type="CanvasLayer" unique_id=844512391]
 script = ExtResource("1_daaws")
@@ -33,74 +30,115 @@ text = "MECHANIC"
 
 [node name="ExitButton" type="Button" parent="Panel" unique_id=929997083]
 layout_mode = 0
-offset_left = 530.0
-offset_top = 729.0
-offset_right = 703.0
-offset_bottom = 798.0
+offset_left = 548.0
+offset_top = 817.0
+offset_right = 721.0
+offset_bottom = 886.0
 text = "Close X"
 
 [node name="GridContainer" type="GridContainer" parent="Panel" unique_id=118580895]
 layout_mode = 0
-offset_right = 1074.0
-offset_bottom = 512.0
+offset_left = 28.0
+offset_top = 127.0
+offset_right = 2438.909
+offset_bottom = 2232.4546
 scale = Vector2(0.275, 0.275)
+theme_override_constants/h_separation = 62
+theme_override_constants/v_separation = 66
 columns = 4
 
-[node name="TextureRect" type="TextureRect" parent="Panel/GridContainer" unique_id=261832875]
+[node name="Menuitem12" type="Button" parent="Panel/GridContainer" unique_id=1489711704]
 layout_mode = 2
-texture = ExtResource("4_8htv5")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="Label" type="Label" parent="Panel/GridContainer/TextureRect" unique_id=956646218]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 165.0
-text = "balsdal
-1000€"
-
-[node name="TextureRect2" type="TextureRect" parent="Panel/GridContainer" unique_id=894217035]
+[node name="Menuitem13" type="Button" parent="Panel/GridContainer" unique_id=1011517453]
 layout_mode = 2
-texture = ExtResource("4_j1v71")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TextureRect3" type="TextureRect" parent="Panel/GridContainer" unique_id=435129791]
+[node name="Menuitem14" type="Button" parent="Panel/GridContainer" unique_id=1517675235]
 layout_mode = 2
-texture = ExtResource("4_j1v71")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TextureRect4" type="TextureRect" parent="Panel/GridContainer" unique_id=943870565]
+[node name="Menuitem15" type="Button" parent="Panel/GridContainer" unique_id=565704425]
 layout_mode = 2
-texture = ExtResource("4_j1v71")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TextureRect5" type="TextureRect" parent="Panel/GridContainer" unique_id=920785219]
+[node name="Menuitem16" type="Button" parent="Panel/GridContainer" unique_id=1533448212]
 layout_mode = 2
-texture = ExtResource("4_j1v71")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TextureRect6" type="TextureRect" parent="Panel/GridContainer" unique_id=1713616643]
+[node name="Menuitem17" type="Button" parent="Panel/GridContainer" unique_id=524650273]
 layout_mode = 2
-texture = ExtResource("4_j1v71")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TextureRect7" type="TextureRect" parent="Panel/GridContainer" unique_id=1327586165]
+[node name="Menuitem18" type="Button" parent="Panel/GridContainer" unique_id=2002864704]
 layout_mode = 2
-texture = ExtResource("4_j1v71")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TextureRect8" type="TextureRect" parent="Panel/GridContainer" unique_id=378085100]
+[node name="Menuitem19" type="Button" parent="Panel/GridContainer" unique_id=1919971184]
 layout_mode = 2
-texture = ExtResource("4_j1v71")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="TextureButton" type="TextureButton" parent="Panel/GridContainer" unique_id=1502537191]
+[node name="Menuitem20" type="Button" parent="Panel/GridContainer" unique_id=824513500]
 layout_mode = 2
-texture_normal = ExtResource("6_3pdnc")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="Button" type="Button" parent="Panel/GridContainer" unique_id=1958045484]
+[node name="Menuitem21" type="Button" parent="Panel/GridContainer" unique_id=697371262]
 layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/GridContainer/Button" unique_id=1481758581]
-layout_mode = 0
-offset_right = 774.0
-offset_bottom = 297.0
-
-[node name="TextureRect" type="TextureRect" parent="Panel/GridContainer/Button/VBoxContainer" unique_id=2026416132]
+[node name="Menuitem22" type="Button" parent="Panel/GridContainer" unique_id=1563762977]
 layout_mode = 2
-texture = ExtResource("7_3pdnc")
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
 
-[node name="Label" type="Label" parent="Panel/GridContainer/Button/VBoxContainer" unique_id=1159996036]
+[node name="Menuitem23" type="Button" parent="Panel/GridContainer" unique_id=1067045610]
 layout_mode = 2
-text = "asdalksaskda"
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0

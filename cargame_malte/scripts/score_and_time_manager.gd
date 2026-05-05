@@ -3,6 +3,7 @@ extends Node
 var level_score: int = 0
 var target_delivery: String = ""
 var target_delivery_node: Node3D = null
+var has_special_badge: bool = false
 
 @export var reference_speed: float = 5.0
 @export var very_good_multiplier: float = 0.5
@@ -14,12 +15,17 @@ var target_delivery_node: Node3D = null
 @export var bad_payout: int = 6
 @export var very_bad_payout: int = 2
 
+@export var debug_start_star_xp: int = 500
+
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
 var is_delivering: bool = false
 
 var star_xp: int = 0
 const STAR_THRESHOLDS = [0, 100, 200, 300, 500]
+
+func _ready():
+	star_xp = debug_start_star_xp
 
 func _process(delta):
 	if is_delivering:
@@ -88,3 +94,4 @@ func reset():
 	delivery_timer = 0.0
 	is_delivering = false
 	star_xp = 0
+	has_special_badge = false

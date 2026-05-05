@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://br4xbd73oojxj"]
+
+[ext_resource type="Script" uid="uid://d4hw6v4ldspdk" path="res://scripts/npc_shop.gd" id="1_dhh53"]
+[ext_resource type="PackedScene" uid="uid://b0dhlrvns2ox6" path="res://UI/menu_policestation.tscn" id="2_dhh53"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="3_rd3ln"]
+[ext_resource type="Material" uid="uid://jpaqr4j2b6tg" path="res://materials/blue_mat.tres" id="4_dhh53"]
+[ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="5_oqp1w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_606jt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1360x"]
+radius = 0.6118164
+height = 1.2236328
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y66u0"]
+radius = 3.5
+
+[node name="NPC_Police_Admin" type="StaticBody3D" unique_id=1211935691]
+script = ExtResource("1_dhh53")
+menu_scene = ExtResource("2_dhh53")
+
+[node name="Mesh" parent="." unique_id=1040379739 instance=ExtResource("3_rd3ln")]
+transform = Transform3D(1.255, 0, 0, 0, 1.255, 0, 0, 0, 1.255, 0, 0, 0)
+
+[node name="hat" type="MeshInstance3D" parent="Mesh" unique_id=2115457396]
+transform = Transform3D(0.4341275, 0, 0, 0, 0.50957286, -0.004546035, 0, 0.0058523268, 0.395833, 0, 1.5503341, -0.0042857155)
+material_override = ExtResource("4_dhh53")
+mesh = SubResource("BoxMesh_606jt")
+skeleton = NodePath("../..")
+
+[node name="hat2" type="MeshInstance3D" parent="Mesh" unique_id=1220720228]
+transform = Transform3D(0.30493966, 0, 0, 0, 0.0911138, -0.00116756, 0, 0.0010464209, 0.10166194, 0, 1.6656789, 0.17007272)
+material_override = ExtResource("5_oqp1w")
+mesh = SubResource("BoxMesh_606jt")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1397560360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8125, 0)
+shape = SubResource("CapsuleShape3D_1360x")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1504395243]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=479780624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_y66u0")

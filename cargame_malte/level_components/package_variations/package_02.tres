@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PackageVariation" format=3 uid="uid://bleqwgp3mhmvm"]
+
+[ext_resource type="Script" uid="uid://bb56idq2f7xix" path="res://scripts/package_variation.gd" id="1_tx7ba"]
+
+[resource]
+script = ExtResource("1_tx7ba")
+package_name = "Package_02"
+security_params = Array[int]([0])
+metadata/_custom_type_script = "uid://bb56idq2f7xix"
