@@ -4,7 +4,8 @@
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_h8e12"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_63p3a"]
 [ext_resource type="Texture2D" uid="uid://3ckrat70q8lj" path="res://particlesyst/T_MarbleNoise5_tiled.png" id="4_4oa14"]
-[ext_resource type="Texture2D" uid="uid://udhf0nb56k4v" path="res://textures/ui/ui_carkeyhole_bg_t_v1.png" id="5_h8e12"]
+[ext_resource type="Texture2D" uid="uid://cduewk2lajtbo" path="res://textures/prop_padlock_sprite_01.png" id="5_h8e12"]
+[ext_resource type="Texture2D" uid="uid://b011ol5s4tl66" path="res://textures/star_icon1_v1.png" id="6_63p3a"]
 
 [node name="Menu_PoliceStation" type="CanvasLayer" unique_id=844512391]
 script = ExtResource("1_gsuet")
@@ -58,7 +59,57 @@ vertical_icon_alignment = 0
 
 [node name="Locked" type="TextureRect" parent="Panel/GridContainer/SecurityBadge" unique_id=1483773640]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 104.668304
+offset_bottom = 119.620926
 scale = Vector2(4.030047, 4.030047)
 texture = ExtResource("5_h8e12")
+
+[node name="Locked2" type="TextureRect" parent="Panel/GridContainer/SecurityBadge" unique_id=1033364272]
+modulate = Color(1, 1, 1, 0.48235294)
+layout_mode = 0
+offset_left = 39.999996
+offset_top = 407.27274
+offset_right = 104.0
+offset_bottom = 480.4156
+scale = Vector2(1.3116095, 1.3116095)
+texture = ExtResource("6_63p3a")
+
+[node name="Locked3" type="TextureRect" parent="Panel/GridContainer/SecurityBadge" unique_id=1776866467]
+modulate = Color(1, 1, 1, 0.48235294)
+layout_mode = 0
+offset_left = 123.63637
+offset_top = 407.27274
+offset_right = 187.63637
+offset_bottom = 480.4156
+scale = Vector2(1.3116095, 1.3116095)
+texture = ExtResource("6_63p3a")
+
+[node name="Locked4" type="TextureRect" parent="Panel/GridContainer/SecurityBadge" unique_id=1223380536]
+modulate = Color(1, 1, 1, 0.48235294)
+layout_mode = 0
+offset_left = 210.9091
+offset_top = 407.27274
+offset_right = 274.90912
+offset_bottom = 480.4156
+scale = Vector2(1.3116095, 1.3116095)
+texture = ExtResource("6_63p3a")
+
+[node name="Locked5" type="TextureRect" parent="Panel/GridContainer/SecurityBadge" unique_id=1082014451]
+modulate = Color(1, 1, 1, 0.48235294)
+layout_mode = 0
+offset_left = 298.18182
+offset_top = 407.27274
+offset_right = 362.18182
+offset_bottom = 480.4156
+scale = Vector2(1.3116095, 1.3116095)
+texture = ExtResource("6_63p3a")
+
+[node name="Locked6" type="TextureRect" parent="Panel/GridContainer/SecurityBadge" unique_id=929284917]
+modulate = Color(1, 1, 1, 0.48235294)
+layout_mode = 0
+offset_left = 389.0909
+offset_top = 407.27274
+offset_right = 453.0909
+offset_bottom = 480.4156
+scale = Vector2(1.3116095, 1.3116095)
+texture = ExtResource("6_63p3a")
