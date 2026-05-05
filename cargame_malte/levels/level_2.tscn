@@ -46,13 +46,17 @@
 [ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="33_4yoxl"]
 [ext_resource type="Script" uid="uid://djha0k1o3sp7w" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="34_6dcgf"]
 [ext_resource type="Script" uid="uid://cyen5sn36j50h" path="res://scripts/daynnight.gd" id="35_ubuva"]
+[ext_resource type="PackedScene" uid="uid://b6k5cxdew0dtw" path="res://level_components/npc_criminal.tscn" id="36_1h2df"]
+[ext_resource type="Material" uid="uid://fqf1yv48eafk" path="res://materials/Brown_mat.tres" id="37_af6je"]
 [ext_resource type="PackedScene" uid="uid://bmtdexg0hgby" path="res://level_components/hamsterhouse_v2.tscn" id="37_pjs8f"]
+[ext_resource type="Material" uid="uid://bpfhobntcfnqr" path="res://materials/brown1_mat.tres" id="38_hit22"]
 [ext_resource type="PackedScene" uid="uid://b8iy71udaje64" path="res://level_components/npc_mechanic.tscn" id="42_3582p"]
 [ext_resource type="PackedScene" uid="uid://dwc7757gh8og0" path="res://models/car/car_02.tscn" id="45_6bdx5"]
 [ext_resource type="PackedScene" uid="uid://m5tmgig1qvxh" path="res://level_components/house_door.tscn" id="46_qthv2"]
 [ext_resource type="PackedScene" uid="uid://bdi2oqrkwvuen" path="res://level_components/player_house_interior.tscn" id="47_wnekv"]
 [ext_resource type="Script" uid="uid://bq4ou6xgw4pe8" path="res://scripts/interact_label.gd" id="48_jyp08"]
 [ext_resource type="PackedScene" uid="uid://br4xbd73oojxj" path="res://level_components/npc_police_admin.tscn" id="53_m0g18"]
+[ext_resource type="PackedScene" uid="uid://b0k3dmvnwnamc" path="res://level_components/broken_package_scene.tscn" id="54_df2rw"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
@@ -472,32 +476,32 @@ radius = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ghfw4"]
 
-[sub_resource type="Resource" id="Resource_m0g18"]
+[sub_resource type="Resource" id="Resource_af6je"]
 script = ExtResource("25_6dcgf")
 amount = 200
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_df2rw"]
+[sub_resource type="Resource" id="Resource_hit22"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_1h2df"]
+[sub_resource type="Resource" id="Resource_4wafr"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_p36y6"]
+[sub_resource type="Resource" id="Resource_w87fk"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_af6je"]
+[sub_resource type="Resource" id="Resource_s5is7"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -505,9 +509,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_hit22"]
+[sub_resource type="Resource" id="Resource_rdd5d"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_m0g18"), SubResource("Resource_df2rw"), SubResource("Resource_1h2df"), SubResource("Resource_p36y6"), SubResource("Resource_af6je")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_af6je"), SubResource("Resource_hit22"), SubResource("Resource_4wafr"), SubResource("Resource_w87fk"), SubResource("Resource_s5is7")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_s67ts")
@@ -530,32 +534,32 @@ script = ExtResource("34_6dcgf")
 curve = SubResource("Curve3D_nomkf")
 metadata/_custom_type_script = "uid://djha0k1o3sp7w"
 
-[sub_resource type="Resource" id="Resource_4wafr"]
+[sub_resource type="Resource" id="Resource_pmt47"]
 script = ExtResource("25_6dcgf")
 amount = 300
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_w87fk"]
+[sub_resource type="Resource" id="Resource_uvpi8"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_s5is7"]
+[sub_resource type="Resource" id="Resource_26l26"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_rdd5d"]
+[sub_resource type="Resource" id="Resource_cqcr4"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_pmt47"]
+[sub_resource type="Resource" id="Resource_trqat"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -563,9 +567,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_uvpi8"]
+[sub_resource type="Resource" id="Resource_r6t30"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_4wafr"), SubResource("Resource_w87fk"), SubResource("Resource_s5is7"), SubResource("Resource_rdd5d"), SubResource("Resource_pmt47")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_pmt47"), SubResource("Resource_uvpi8"), SubResource("Resource_26l26"), SubResource("Resource_cqcr4"), SubResource("Resource_trqat")])
 
 [sub_resource type="Resource" id="Resource_ghfw4"]
 script = ExtResource("31_s67ts")
@@ -971,6 +975,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3.65
 light_color = Color(0.866499, 0.8836354, 0.5436686, 1)
 light_energy = 5.0
 spot_range = 16.757624
+
+[node name="broken_package_scene" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=548510662 instance=ExtResource("54_df2rw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.245453, -0.7999935, -27.499273)
+
+[node name="broken_package_scene2" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=1883071227 instance=ExtResource("54_df2rw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.245453, 0.23934555, -27.499273)
+
+[node name="broken_package_scene3" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=688994268 instance=ExtResource("54_df2rw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.245453, 1.2687435, -27.499273)
 
 [node name="==POLICESTATION==" type="Node3D" parent="===ENVIROMENT===" unique_id=1547355675]
 transform = Transform3D(0.887719, 0, 0.46038568, 0, 1, 0, -0.46038568, 0, 0.887719, -375.33353, 17.023846, -10.588371)
@@ -1651,6 +1664,73 @@ transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.
 [node name="Camera3D_Autoshop" type="Camera3D" parent="===ENVIROMENT===/==AUTOSHOP==" unique_id=677974789]
 transform = Transform3D(0.9653248, -0.13698578, 0.2222228, 0.034421533, 0.9106188, 0.41181144, -0.25877252, -0.38988248, 0.8837581, 6.933781, 7.5102, 30.407722)
 
+[node name="==CRIMINAL_1==" type="Node3D" parent="===ENVIROMENT===" unique_id=426615566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -413.0007, 16.92788, -52.94571)
+
+[node name="NPC_Criminal" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=1233833628 node_paths=PackedStringArray("waypoints") instance=ExtResource("36_1h2df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89852905, 2.8130226, 1.9086761)
+waypoints = [NodePath("../A"), NodePath("../B"), NodePath("../C"), NodePath("../D")]
+
+[node name="Box" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=892980532]
+transform = Transform3D(6.8101516, 0, 0, 0, 0.35895932, 0, 0, 0, 22.343185, -6.856903, 6.906996, 7.6485176)
+material_override = ExtResource("37_af6je")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="Box6" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=1161017795]
+transform = Transform3D(6.7977033, 0, -1.3503954, 0.019654395, 0.35854986, 1.0649704, 0.4111279, -0.017140847, 22.276901, -7.0763245, 7.6169086, 7.9913526)
+material_override = ExtResource("38_hit22")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="Box4" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=1772301325]
+transform = Transform3D(-3.731433e-07, -0.35895932, 0, 8.536524, -1.569061e-08, 0, 0, 0, 25.476484, -10.197601, 2.8536606, 9.403969)
+material_override = ExtResource("37_af6je")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="Box5" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=2122420290]
+transform = Transform3D(-3.731433e-07, -0.35895932, 0, 8.536524, -1.569061e-08, 0, 0, 0, 25.476484, -3.334137, 2.8536606, 12.384037)
+material_override = ExtResource("37_af6je")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="Box2" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=1546519573]
+transform = Transform3D(5.8758216, -0.6882283, -2.6055312e-07, -3.7114094e-07, -9.559507e-09, -12.424358, 6.4642396, 0.62558115, -4.765023e-07, -6.7873535, 0.5806217, 0.7201195)
+material_override = ExtResource("21_s67ts")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="Box7" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=46047617]
+transform = Transform3D(2.8080883, -0.78185564, -0.119221956, -0.4685902, -3.7252903e-09, -2.4358737, 4.3588037, 0.5036978, -0.18506013, -4.5873337, 5.5320473, -1.8973107)
+material_override = ExtResource("38_hit22")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="Box8" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=617584260]
+transform = Transform3D(0.66111714, 0.12598833, 2.4032702, 3.821741, -0.6315671, -0.0030653328, 3.4729424, 0.67101395, -0.45411885, -8.025656, 3.583899, -5.263593)
+material_override = ExtResource("38_hit22")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="Box3" type="MeshInstance3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=2077241364]
+transform = Transform3D(4.990195, 0.0018629158, -5.285155e-07, -2.1201512e-07, -3.681551e-09, -12.424359, -0.02595437, 0.35817888, -1.2495526e-07, -7.85849, 0.83817863, -3.1620674)
+material_override = ExtResource("38_hit22")
+mesh = SubResource("BoxMesh_bf7t1")
+skeleton = NodePath("../../..")
+
+[node name="A" type="Node3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=1946183052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15286255, 2.6650276, 2.1004295)
+
+[node name="B" type="Node3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=602322775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8050842, 2.6650276, 2.23666)
+
+[node name="C" type="Node3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=492665497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0578308, 2.6650276, -2.814354)
+
+[node name="D" type="Node3D" parent="===ENVIROMENT===/==CRIMINAL_1==" unique_id=712664419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.949585, 2.6650276, 2.259056)
+
 [node name="==PICKUPS==" type="Node3D" parent="===ENVIROMENT===" unique_id=1837588539]
 
 [node name="=OBSTACLES=" type="Node3D" parent="===ENVIROMENT===" unique_id=1236552633]
@@ -1760,7 +1840,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 visible = false
 script = ExtResource("22_m4706")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_hit22")
+modifier_stack = SubResource("Resource_rdd5d")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1790,7 +1870,7 @@ shape = SubResource("Resource_rddwe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 visible = false
 script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_uvpi8")
+modifier_stack = SubResource("Resource_r6t30")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"

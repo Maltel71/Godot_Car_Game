@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_yetop")
 package_name = "Package_03"
+security_params = Array[int]([0])
 metadata/_custom_type_script = "uid://bb56idq2f7xix"

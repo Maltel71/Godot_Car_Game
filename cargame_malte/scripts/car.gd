@@ -44,6 +44,10 @@ var assigned_delivery_id: String = ""
 @export var explosion_audio_player: AudioStreamPlayer3D
 @export var explosion_sound: AudioStream
 
+@export_group("Explosive")
+@export var broken_package_scene: PackedScene
+@export var package_spawn_point: Node3D
+
 
 var _flip_timer: float = 0.0
 var driver_in_car: bool = false
@@ -181,17 +185,26 @@ func _sync_lights():
 		light.visible = engine_on
 		
 func _on_body_collision(_body):
-		if not HasPackage:
-			return
-		var manager = get_node("/root/ScoreAndTimeManager")
-		var pkg = manager.current_package
-		if not pkg or not PackageVariation.SecurityParam.EXPLOSIVE in pkg.security_params:
-			return
-		if linear_velocity.length() < hard_bump_threshold:
-			return
-		manager.bump_count += 1
-		if manager.bump_count >= manager.MAX_BUMPS:
+	if not HasPackage:
+		return
+	var manager = get_node("/root/ScoreAndTimeManager")
+	var pkg = manager.current_package
+	if not pkg:
+		return
+	if linear_velocity.length() < hard_bump_threshold:
+		return
+
+	var is_explosive = PackageVariation.SecurityParam.EXPLOSIVE in pkg.security_params
+	var is_fragile = PackageVariation.SecurityParam.FRAGILE in pkg.security_params
+	if not is_explosive and not is_fragile:
+		return
+
+	manager.bump_count += 1
+	if manager.bump_count >= manager.MAX_BUMPS:
+		if is_explosive:
 			_explode()
+		elif is_fragile:
+			_break_package()
 
 func _explode():
 	if explosion_particles:
@@ -199,6 +212,20 @@ func _explode():
 	if explosion_audio_player and explosion_sound:
 		explosion_audio_player.stream = explosion_sound
 		explosion_audio_player.play()
+	HasPackage = false
+	assigned_delivery_id = ""
+	var manager = get_node("/root/ScoreAndTimeManager")
+	manager.current_package = null
+	manager.bump_count = 0
+	manager.is_delivering = false
+	manager.set_target_delivery("")
+	manager.set_target_delivery_node(null)
+	
+func _break_package():
+	if broken_package_scene and package_spawn_point:
+		var broken = broken_package_scene.instantiate()
+		get_tree().current_scene.add_child(broken)
+		broken.global_transform = package_spawn_point.global_transform
 	HasPackage = false
 	assigned_delivery_id = ""
 	var manager = get_node("/root/ScoreAndTimeManager")

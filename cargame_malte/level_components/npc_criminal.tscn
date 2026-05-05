@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://b6k5cxdew0dtw"]
+
+[ext_resource type="Script" uid="uid://c6idrgedyvbwh" path="res://scripts/npc_criminal.gd" id="1_11niy"]
+[ext_resource type="AudioStream" uid="uid://b8lq66ueecr47" path="res://audio/sfx/jump/jump.wav" id="2_if8l5"]
+[ext_resource type="PackedScene" uid="uid://bg1kk5x1q5v50" path="res://level_components/money_pickup.tscn" id="3_hej0j"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="3_sp5y7"]
+[ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="4_hej0j"]
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="5_a37x2"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="6_rjn6g"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="7_7rk5o"]
+[ext_resource type="Script" uid="uid://bq4ou6xgw4pe8" path="res://scripts/interact_label.gd" id="8_if8l5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2vm4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l2vm4"]
+radius = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vei3r"]
+render_priority = 0
+shader = ExtResource("5_a37x2")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("6_rjn6g")
+
+[sub_resource type="Curve" id="Curve_b1xyy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8ly2q"]
+texture_mode = 1
+curve = SubResource("Curve_b1xyy")
+
+[sub_resource type="Gradient" id="Gradient_hpnii"]
+offsets = PackedFloat32Array(0.13207547, 0.3773585, 0.988391)
+colors = PackedColorArray(1, 1, 1, 1, 0.8436799, 0.74537903, 1.540184e-06, 1, 0.80964303, 0.70970565, 0.053554945, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kgg1w"]
+gradient = SubResource("Gradient_hpnii")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_ioo5m"]
+_data = [Vector2(0, 0), 0.0, 0.328478, 0, 0, Vector2(0.5636363, 0.1685394), 0.0, 0.0, 0, 0, Vector2(0.98636353, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3bgbm"]
+curve = SubResource("Curve_ioo5m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yyp5c"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 0, 0)
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_3bgbm")
+color_ramp = SubResource("GradientTexture1D_kgg1w")
+alpha_curve = SubResource("CurveTexture_8ly2q")
+
+[node name="NPC_Criminal" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("package_mesh", "coin_spawn_particles")]
+script = ExtResource("1_11niy")
+package_mesh = NodePath("PackageMesh")
+sell_sound = ExtResource("2_if8l5")
+money_scene = ExtResource("3_hej0j")
+spawn_height_offset = 3.0
+coin_spawn_particles = NodePath("ParticlePuff")
+
+[node name="InteractLabel_E" type="Label3D" parent="." unique_id=365503091]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 2.5283513, 0)
+text = "(E)
+Sell Package"
+font_size = 64
+script = ExtResource("8_if8l5")
+show_distance = 4.7
+use_place_package = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1955745349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_l2vm4")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1099626848]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=2010793040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.78550935)
+shape = SubResource("SphereShape3D_l2vm4")
+
+[node name="lowpolyhamster_01" parent="." unique_id=975115071 instance=ExtResource("3_sp5y7")]
+transform = Transform3D(-1.255, 0, -1.09715586e-07, 0, 1.255, 0, 1.09715586e-07, 0, -1.255, 0, 0, 0)
+
+[node name="PackageMesh" parent="." unique_id=1826512157 instance=ExtResource("4_hej0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80688083, -1.1028403)
+
+[node name="ParticlePuff" type="GPUParticles3D" parent="." unique_id=264203773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035966396, 2.1765385, -0.010548592)
+material_override = SubResource("ShaderMaterial_vei3r")
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.87
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_yyp5c")
+draw_pass_1 = ExtResource("7_7rk5o")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1710876029]

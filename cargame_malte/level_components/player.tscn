@@ -16,7 +16,7 @@ radius = 0.6
 
 [node name="Player" type="CharacterBody3D" unique_id=882193193 node_paths=PackedStringArray("player_camera", "package_mesh", "flashlight")]
 script = ExtResource("1_hfcel")
-package_pickup_distance = 3.0
+package_pickup_distance = 3.5
 player_camera = NodePath("camera_mount/SpringArm3D/Camera3D")
 package_mesh = NodePath("visuals/PackageMesh")
 flashlight = NodePath("visuals/Flashlight")

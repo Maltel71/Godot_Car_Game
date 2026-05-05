@@ -18,6 +18,8 @@ var has_special_badge: bool = false
 @export var debug_start_star_xp: int = 0
 @export var debug_start_maxed: bool = true
 
+@export var criminal_xp_penalty: int = 30
+
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
 var is_delivering: bool = false
@@ -83,6 +85,21 @@ func complete_delivery_with_star_xp() -> int:
 		very_bad_payout: -10
 	}.get(payout, 0)
 	star_xp = max(0, star_xp + xp_delta)
+	return payout
+	
+
+
+func sell_to_criminal() -> int:
+	var payout = 0
+	if current_package:
+		payout = current_package.black_market_value
+	is_delivering = false
+	target_delivery = ""
+	target_delivery_node = null
+	current_package = null
+	bump_count = 0
+	star_xp = max(0, star_xp - criminal_xp_penalty)
+	level_score += payout
 	return payout
 
 func get_star_rating() -> int:

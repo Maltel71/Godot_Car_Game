@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://c2ig5eppuljgt" path="res://audio/sfx/Footsteps_U/wood_001.mp3" id="5_ftogp"]
 [ext_resource type="AudioStream" uid="uid://d3xekf1n6wys2" path="res://audio/sfx/laser_shoot/laserShoot (1).wav" id="6_28qo3"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
+[ext_resource type="PackedScene" uid="uid://b0k3dmvnwnamc" path="res://level_components/broken_package_scene.tscn" id="7_q5df7"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="9_3jha3"]
@@ -195,7 +196,7 @@ alpha_curve = SubResource("CurveTexture_7y3ot")
 hue_variation_min = -1.0
 hue_variation_max = -1.0
 
-[node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player", "engine_toggle_audio_player", "exhaust_particles_idle", "explosion_particles", "explosion_audio_player") groups=["car"]]
+[node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player", "engine_toggle_audio_player", "exhaust_particles_idle", "explosion_particles", "explosion_audio_player", "package_spawn_point") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
 contact_monitor = true
@@ -217,6 +218,8 @@ exhaust_particles_idle = NodePath("===PartSyst===/vfx_Exhaust_idle")
 explosion_particles = NodePath("vfx_stylized_explotion2")
 explosion_audio_player = NodePath("AudioStreamPlayer3D_Explotion")
 explosion_sound = ExtResource("6_28qo3")
+broken_package_scene = ExtResource("7_q5df7")
+package_spawn_point = NodePath("PackageSpawnPoint")
 
 [node name="CarMain02" parent="." unique_id=1858086224 instance=ExtResource("2_xhmyn")]
 
@@ -491,20 +494,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4144078, 84.99061)
 visible = false
 mesh = SubResource("PlaneMesh_8sd2q")
 
-[node name="InteractLabel_E2" type="Label3D" parent="." unique_id=1332532675]
+[node name="InteractLabel_Placepackage" type="Label3D" parent="." unique_id=1332532675]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.48716736, -2.1502419)
 text = "(E)
 Place Package"
 font_size = 64
 script = ExtResource("34_ftogp")
 show_distance = 3.3
-require_package = true
+use_place_package = true
 
-[node name="InteractLabel_E3" type="Label3D" parent="." unique_id=1983937431]
+[node name="InteractLabel_EnterCar" type="Label3D" parent="." unique_id=1983937431]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 1.4336708, 0.1393578)
 text = "(F)
 Enter Car"
 font_size = 64
+script = ExtResource("34_ftogp")
+use_enter_car = true
 
 [node name="vfx_stylized_explotion2" type="GPUParticles3D" parent="." unique_id=402952200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5165659, -2.2063427)
@@ -520,3 +525,5 @@ draw_pass_1 = ExtResource("11_i00a5")
 
 [node name="AudioStreamPlayer3D_Explotion" type="AudioStreamPlayer3D" parent="." unique_id=888128376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23547769, -2.1505392)
+
+[node name="PackageSpawnPoint" type="Node3D" parent="." unique_id=1988051474]
