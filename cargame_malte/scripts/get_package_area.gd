@@ -25,6 +25,7 @@ func play_pickup_sound(character) -> bool:
 	manager.set_target_delivery_node(target)
 	var distance = global_position.distance_to(target.global_position)
 	manager.start_delivery(distance)
+	manager.current_package = picked
 
 	if pickup_sound:
 		audio_player.stream = pickup_sound

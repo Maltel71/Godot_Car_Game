@@ -16,6 +16,7 @@ var has_special_badge: bool = false
 @export var very_bad_payout: int = 2
 
 @export var debug_start_star_xp: int = 0
+@export var debug_start_maxed: bool = true
 
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
@@ -30,6 +31,9 @@ var bump_count: int = 0
 
 func _ready():
 	star_xp = debug_start_star_xp
+	if debug_start_maxed:
+		star_xp = STAR_THRESHOLDS[-1]
+		has_special_badge = true
 
 func _process(delta):
 	if is_delivering:

@@ -8,7 +8,12 @@ extends CanvasLayer
 @onready var star_xp_label  = $Control_Debug/StarXPMeter
 @onready var radio_label    = $Control_Debug/RadioLabel
 @onready var phase_label    = $Control_Debug/PhaseLabel
+
 @onready var panel_delivery = $Panel_Delivery
+@onready var panel_parameter = $Panel_Delivery/Panel_Parameter
+@onready var special_type    = $Panel_Delivery/Panel_Parameter/SpecialType
+@onready var special_status  = $Panel_Delivery/Panel_Parameter/SpecialStatus
+
 @onready var height_label   = $Panel_Car/CurrentHeightLabel
 @onready var panel_car           = $Panel_Car
 @onready var control_speedometer = $Control_Speedometer
@@ -77,6 +82,7 @@ func _process(_delta):
 	delivery_label.text = "Deliver to: %s" % manager.get_target_delivery()
 
 	panel_delivery.visible = manager.is_delivering
+	_update_special_panel()
 
 	if manager.is_delivering:
 		timer_label.text  = "%ds" % int(manager.delivery_timer)
@@ -166,3 +172,28 @@ func _update_key_hud(car: VehicleBody3D):
 		key_sprite.rotation_degrees = lerp(key_sprite.rotation_degrees, target_angle, 0.15)
 	else:
 		key_sprite.visible = false
+		
+func _update_special_panel():
+	var pkg = manager.current_package
+	if not manager.is_delivering or not pkg or pkg.security_params.is_empty():
+		panel_parameter.visible = false
+		return
+	panel_parameter.visible = true
+	special_type.text   = "Special: \"%s\"" % _param_name(pkg.security_params[0])
+	special_status.text = "Status: \"%s\"" % _special_status(pkg.security_params[0])
+
+func _param_name(p: int) -> String:
+	match p:
+		PackageVariation.SecurityParam.FRAGILE:           return "Fragile"
+		PackageVariation.SecurityParam.EXPLOSIVE:         return "Explosive"
+		PackageVariation.SecurityParam.AFRAID_OF_HEIGHTS: return "Afraid of heights"
+		PackageVariation.SecurityParam.TOP_SECRET:        return "Top secret"
+		PackageVariation.SecurityParam.FRESH:             return "Fresh"
+		PackageVariation.SecurityParam.KEEP_DRY:          return "Keep dry"
+	return ""
+
+func _special_status(param: int) -> String:
+	if param == PackageVariation.SecurityParam.EXPLOSIVE:
+		var left = manager.MAX_BUMPS - manager.bump_count
+		return "BOOM!" if left <= 0 else "%d bumps left" % left
+	return "All good"

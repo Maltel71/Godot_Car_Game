@@ -39,7 +39,7 @@ var assigned_delivery_id: String = ""
 @export var exhaust_particles_idle: GPUParticles3D
 
 @export_group("Explosive")
-@export var hard_bump_threshold: float = 10.0
+@export var hard_bump_threshold: float = 7.00
 @export var explosion_particles: GPUParticles3D
 @export var explosion_audio_player: AudioStreamPlayer3D
 @export var explosion_sound: AudioStream

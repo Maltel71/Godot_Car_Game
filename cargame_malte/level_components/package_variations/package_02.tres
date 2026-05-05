@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_tx7ba")
 package_name = "Package_02"
-security_params = Array[int]([0])
+security_params = Array[int]([1])
 metadata/_custom_type_script = "uid://bb56idq2f7xix"
