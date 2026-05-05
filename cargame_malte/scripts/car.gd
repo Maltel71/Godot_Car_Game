@@ -38,6 +38,12 @@ var assigned_delivery_id: String = ""
 @export var engine_stop_sound: AudioStream
 @export var exhaust_particles_idle: GPUParticles3D
 
+@export_group("Explosive")
+@export var hard_bump_threshold: float = 10.0
+@export var explosion_particles: GPUParticles3D
+@export var explosion_audio_player: AudioStreamPlayer3D
+@export var explosion_sound: AudioStream
+
 
 var _flip_timer: float = 0.0
 var driver_in_car: bool = false
@@ -57,6 +63,7 @@ func _ready():
 	if exhaust_particles_idle:
 		exhaust_particles_idle.emitting = engine_on
 	_sync_lights()
+	body_entered.connect(_on_body_collision)
 
 func _physics_process(delta):
 	$CamArm.position = position
@@ -172,3 +179,31 @@ func _sync_lights():
 		if light.is_in_group("headlight"):
 			continue
 		light.visible = engine_on
+		
+func _on_body_collision(_body):
+		if not HasPackage:
+			return
+		var manager = get_node("/root/ScoreAndTimeManager")
+		var pkg = manager.current_package
+		if not pkg or not PackageVariation.SecurityParam.EXPLOSIVE in pkg.security_params:
+			return
+		if linear_velocity.length() < hard_bump_threshold:
+			return
+		manager.bump_count += 1
+		if manager.bump_count >= manager.MAX_BUMPS:
+			_explode()
+
+func _explode():
+	if explosion_particles:
+		explosion_particles.restart()
+	if explosion_audio_player and explosion_sound:
+		explosion_audio_player.stream = explosion_sound
+		explosion_audio_player.play()
+	HasPackage = false
+	assigned_delivery_id = ""
+	var manager = get_node("/root/ScoreAndTimeManager")
+	manager.current_package = null
+	manager.bump_count = 0
+	manager.is_delivering = false
+	manager.set_target_delivery("")
+	manager.set_target_delivery_node(null)

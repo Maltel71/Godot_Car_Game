@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dei8veamqyj77" path="res://audio/sfx/Footsteps_U/snow_001.mp3" id="4_i13nd"]
 [ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/car/CarWindows02.fbx" id="5_coc8s"]
 [ext_resource type="AudioStream" uid="uid://c2ig5eppuljgt" path="res://audio/sfx/Footsteps_U/wood_001.mp3" id="5_ftogp"]
+[ext_resource type="AudioStream" uid="uid://d3xekf1n6wys2" path="res://audio/sfx/laser_shoot/laserShoot (1).wav" id="6_28qo3"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/car/Wheel02.fbx" id="6_wdy7j"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
@@ -33,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://dxv8h1u1erl7j" path="res://audio/music/radiostation_3/HumlorUrFas.mp3" id="28_s0e8v"]
 [ext_resource type="AudioStream" uid="uid://btcdsvq51lb4d" path="res://audio/music/radiostation_3/Nästan Själv.mp3" id="29_wrhr8"]
 [ext_resource type="AudioStream" uid="uid://4cyrjilpsy6d" path="res://audio/sfx/click/click (2).wav" id="30_8sd2q"]
+[ext_resource type="Script" uid="uid://bq4ou6xgw4pe8" path="res://scripts/interact_label.gd" id="34_ftogp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
 size = Vector3(2.29102, 1.0693359, 6.8826)
@@ -162,6 +164,7 @@ engine_toggle_audio_player = NodePath("CarSFXManager/CarToggle")
 engine_start_sound = ExtResource("4_i13nd")
 engine_stop_sound = ExtResource("5_ftogp")
 exhaust_particles_idle = NodePath("===PartSyst===/vfx_Exhaust_idle")
+explosion_sound = ExtResource("6_28qo3")
 
 [node name="CarMain02" parent="." unique_id=1858086224 instance=ExtResource("2_xhmyn")]
 
@@ -435,3 +438,18 @@ bus = &"music"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4144078, 84.99061)
 visible = false
 mesh = SubResource("PlaneMesh_8sd2q")
+
+[node name="InteractLabel_E2" type="Label3D" parent="." unique_id=1332532675]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.48716736, -2.1502419)
+text = "(E)
+Place Package"
+font_size = 64
+script = ExtResource("34_ftogp")
+show_distance = 3.3
+require_package = true
+
+[node name="InteractLabel_E3" type="Label3D" parent="." unique_id=1983937431]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 1.4336708, 0.1393578)
+text = "(F)
+Enter Car"
+font_size = 64

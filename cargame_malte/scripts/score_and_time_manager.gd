@@ -24,6 +24,10 @@ var is_delivering: bool = false
 var star_xp: int = 0
 const STAR_THRESHOLDS = [0, 100, 200, 300, 500]
 
+const MAX_BUMPS := 3
+var current_package: PackageVariation = null
+var bump_count: int = 0
+
 func _ready():
 	star_xp = debug_start_star_xp
 
@@ -50,10 +54,13 @@ func start_delivery(distance: float):
 	base_delivery_time = distance / reference_speed
 	delivery_timer = 0.0
 	is_delivering = true
+	bump_count = 0
 
 func complete_delivery() -> int:
 	is_delivering = false
 	target_delivery_node = null
+	current_package = null
+	bump_count = 0
 	if delivery_timer <= base_delivery_time * very_good_multiplier:
 		return very_good_payout
 	elif delivery_timer <= base_delivery_time * good_multiplier:
@@ -95,3 +102,5 @@ func reset():
 	is_delivering = false
 	star_xp = 0
 	has_special_badge = false
+	current_package = null
+	bump_count = 0

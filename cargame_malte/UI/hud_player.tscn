@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b5ba4b3xq3jg" path="res://textures/ui/ui_speedometer_needle_t_v1.png" id="7_hvg1e"]
 [ext_resource type="Texture2D" uid="uid://udhf0nb56k4v" path="res://textures/ui/ui_carkeyhole_bg_t_v1.png" id="9_c0f76"]
 [ext_resource type="Texture2D" uid="uid://br5w4dxe0x8hy" path="res://textures/ui/ui_carkey_t_v1.png" id="10_6prc6"]
-[ext_resource type="Texture2D" uid="uid://3ckrat70q8lj" path="res://particlesyst/T_MarbleNoise5_tiled.png" id="11_6prc6"]
+[ext_resource type="Texture2D" uid="uid://1htq1vvtpj48" path="res://textures/ui_badge_sec_t_v1.png" id="11_6prc6"]
 
 [node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow", "key_sprite", "security_badge_visual")]
 script = ExtResource("1_i1glq")
@@ -53,19 +53,30 @@ layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "DeliveryArea_01"
 
-[node name="Panel_parameter" type="Panel" parent="Panel_Delivery" unique_id=1699994849]
+[node name="Panel_Parameter" type="Panel" parent="Panel_Delivery" unique_id=1699994849]
 layout_mode = 0
+offset_left = 496.0
 offset_top = 105.0
-offset_right = 670.0
-offset_bottom = 211.0
+offset_right = 1073.0
+offset_bottom = 229.0
 
-[node name="ParameterLabel" type="Label" parent="Panel_Delivery/Panel_parameter" unique_id=1090582519]
+[node name="SpecialType" type="Label" parent="Panel_Delivery/Panel_Parameter" unique_id=1090582519]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 19.0
-offset_right = 457.0
-offset_bottom = 102.0
-scale = Vector2(0.74928504, 0.74928504)
+offset_left = 24.0
+offset_top = 61.999992
+offset_right = 790.0
+offset_bottom = 145.0
+scale = Vector2(0.54930687, 0.54930687)
+theme = ExtResource("3_8fwp6")
+text = "Status: \"All good\""
+
+[node name="SpecialStatus" type="Label" parent="Panel_Delivery/Panel_Parameter" unique_id=1468097279]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 790.0
+offset_bottom = 97.0
+scale = Vector2(0.54930687, 0.54930687)
 theme = ExtResource("3_8fwp6")
 text = "Special: \"Afraid of heights\""
 
@@ -179,10 +190,10 @@ texture = ExtResource("7_hvg1e")
 [node name="Control_Debug" type="Control" parent="." unique_id=196858165]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 889.00006
-offset_top = -267.0
-offset_right = 929.00006
-offset_bottom = -227.0
+offset_left = 932.00006
+offset_top = -126.0
+offset_right = 972.00006
+offset_bottom = -86.0
 scale = Vector2(0.61211336, 0.61211336)
 
 [node name="RadioLabel" type="Label" parent="Control_Debug" unique_id=196560312]
@@ -200,6 +211,7 @@ offset_left = 1042.2905
 offset_top = 692.6821
 offset_right = 1419.2905
 offset_bottom = 775.6821
+scale = Vector2(1, 0.9943642)
 theme = ExtResource("3_8fwp6")
 text = "starxpmeter:"
 
@@ -261,9 +273,10 @@ pivot_offset = Vector2(62.145508, 61.674683)
 texture = ExtResource("10_6prc6")
 
 [node name="SecurityBadgeVisual" type="TextureRect" parent="." unique_id=1743063709]
-offset_left = 335.0
-offset_top = 8.0
-offset_right = 847.0
-offset_bottom = 520.0
-scale = Vector2(0.1679297, 0.27260476)
+modulate = Color(0.6202419, 0.78991175, 0.8304334, 1)
+offset_left = -15.0
+offset_top = 156.00002
+offset_right = 497.0
+offset_bottom = 668.0
+scale = Vector2(0.27211568, 0.27260476)
 texture = ExtResource("11_6prc6")

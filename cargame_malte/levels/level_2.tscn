@@ -611,15 +611,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.54565, 20.042086, -36.98
 gravity_scale = 1.8
 starts_with_driver = true
 
-[node name="InteractLabel_E2" type="Label3D" parent="Car_01" unique_id=1471719917]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.48716736, -2.1502419)
-text = "(E)
-Place Package"
-font_size = 64
-script = ExtResource("48_jyp08")
-show_distance = 3.3
-require_package = true
-
 [node name="WiggleTest" parent="Car_01" unique_id=1888891987 instance=ExtResource("4_h351q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
 visible = false
