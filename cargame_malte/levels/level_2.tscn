@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/hud_player.tscn" id="20_h351q"]
 [ext_resource type="PackedScene" uid="uid://cmola6wlrukwt" path="res://level_components/npc_autoshop.tscn" id="20_nomkf"]
 [ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="21_dpc8t"]
-[ext_resource type="Resource" uid="uid://bleqwgp3mhmvm" path="res://level_components/package_variations/package_02.tres" id="21_nfgrx"]
+[ext_resource type="Resource" uid="uid://cq2pr7octewaj" path="res://level_components/package_variations/package_afraidofheights.tres" id="21_hit22"]
 [ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="21_s67ts"]
 [ext_resource type="Material" uid="uid://jpaqr4j2b6tg" path="res://materials/blue_mat.tres" id="21_wsmxb"]
 [ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="22_m4706"]
@@ -890,7 +890,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.6606, 19.52204, -2.81357
 
 [node name="GetPackageArea" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=1336415522 instance=ExtResource("24_he6wg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6588745, -0.12089348, 0.989933)
-available_packages = Array[ExtResource("17_4s8mp")]([ExtResource("21_nfgrx")])
+available_packages = Array[ExtResource("17_4s8mp")]([ExtResource("21_hit22")])
 special_office = true
 
 [node name="NPC_Giver" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=882193193 node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("26_00pa0")]

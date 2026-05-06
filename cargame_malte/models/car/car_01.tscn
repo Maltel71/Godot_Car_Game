@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b0k3dmvnwnamc" path="res://level_components/broken_package_scene.tscn" id="7_q5df7"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="7_xhmyn"]
 [ext_resource type="PackedScene" uid="uid://bbnpkv87eeaia" path="res://level_components/thruster1.tscn" id="8_45u5b"]
+[ext_resource type="PackedScene" uid="uid://dq8wi2xwr73m1" path="res://menus/package_animal.tscn" id="8_qlw42"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="9_3jha3"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="10_b751l"]
 [ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="11_i00a5"]
@@ -196,7 +197,7 @@ alpha_curve = SubResource("CurveTexture_7y3ot")
 hue_variation_min = -1.0
 hue_variation_max = -1.0
 
-[node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player", "engine_toggle_audio_player", "exhaust_particles_idle", "explosion_particles", "explosion_audio_player", "package_spawn_point") groups=["car"]]
+[node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player", "engine_toggle_audio_player", "exhaust_particles_idle", "explosion_particles", "explosion_audio_player", "package_spawn_point", "height_raycast", "animal_spawn_point") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
 contact_monitor = true
@@ -220,6 +221,11 @@ explosion_audio_player = NodePath("AudioStreamPlayer3D_Explotion")
 explosion_sound = ExtResource("6_28qo3")
 broken_package_scene = ExtResource("7_q5df7")
 package_spawn_point = NodePath("PackageSpawnPoint")
+height_raycast = NodePath("RayCast3D_Height")
+max_height_tolerance = 2.0
+height_critical_time = 2.0
+animal_scene = ExtResource("8_qlw42")
+animal_spawn_point = NodePath("AnimalSpawnPoint")
 
 [node name="CarMain02" parent="." unique_id=1858086224 instance=ExtResource("2_xhmyn")]
 
@@ -527,3 +533,11 @@ draw_pass_1 = ExtResource("11_i00a5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23547769, -2.1505392)
 
 [node name="PackageSpawnPoint" type="Node3D" parent="." unique_id=1988051474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41896987, -2.1122289)
+
+[node name="AnimalSpawnPoint" type="Node3D" parent="." unique_id=1909810602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8053249, -2.1389766)
+
+[node name="RayCast3D_Height" type="RayCast3D" parent="." unique_id=466235841]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37469256, -0.119893074)
+target_position = Vector3(0, 50, 0)

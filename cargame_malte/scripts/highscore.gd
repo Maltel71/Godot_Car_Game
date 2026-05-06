@@ -196,4 +196,9 @@ func _special_status(param: int) -> String:
 	if param == PackageVariation.SecurityParam.EXPLOSIVE:
 		var left = manager.MAX_BUMPS - manager.bump_count
 		return "BOOM!" if left <= 0 else "%d bumps left" % left
+	if param == PackageVariation.SecurityParam.AFRAID_OF_HEIGHTS:
+		var car = _get_active_car()
+		if car and car._is_height_critical:
+			return "FREAKING OUT! %.1fs" % (car.height_critical_time - car._height_critical_timer)
+		return "All good"
 	return "All good"

@@ -48,6 +48,15 @@ var assigned_delivery_id: String = ""
 @export var broken_package_scene: PackedScene
 @export var package_spawn_point: Node3D
 
+@export_group("Afraid of Heights")
+@export var height_raycast: RayCast3D
+@export var max_height_tolerance: float = 8.0
+@export var height_critical_time: float = 3.0
+@export var animal_scene: PackedScene
+@export var animal_spawn_point: Node3D
+var _height_critical_timer: float = 0.0
+var _is_height_critical: bool = false
+
 
 var _flip_timer: float = 0.0
 var driver_in_car: bool = false
@@ -90,6 +99,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("enter_exit") and not _doors_locked:
 			_exit_car()
 			return
+			
+		_check_afraid_of_heights(delta)
+		
 	else:
 		# Parked: hold handbrake
 		engine_force = 0
@@ -234,3 +246,38 @@ func _break_package():
 	manager.is_delivering = false
 	manager.set_target_delivery("")
 	manager.set_target_delivery_node(null)
+	
+func _check_afraid_of_heights(delta):
+	if not HasPackage or not height_raycast:
+		_height_critical_timer = 0.0
+		_is_height_critical = false
+		return
+	var manager = get_node("/root/ScoreAndTimeManager")
+	var pkg = manager.current_package
+	if not pkg or PackageVariation.SecurityParam.AFRAID_OF_HEIGHTS not in pkg.security_params:
+		_height_critical_timer = 0.0
+		_is_height_critical = false
+		return
+
+	height_raycast.force_raycast_update()
+	var height := 0.0
+	if height_raycast.is_colliding():
+		height = global_position.distance_to(height_raycast.get_collision_point())
+	else:
+		height = max_height_tolerance + 1.0  # no ground = too high
+
+	if height > max_height_tolerance:
+		_height_critical_timer += delta
+		_is_height_critical = true
+		if _height_critical_timer >= height_critical_time:
+			_animal_freakout()
+	else:
+		_height_critical_timer = 0.0
+		_is_height_critical = false
+
+func _animal_freakout():
+	_break_package()
+	if animal_scene and animal_spawn_point:
+		var animal = animal_scene.instantiate()
+		get_tree().current_scene.add_child(animal)
+		animal.global_position = animal_spawn_point.global_position

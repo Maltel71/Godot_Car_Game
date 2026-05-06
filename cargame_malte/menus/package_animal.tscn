@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dq8wi2xwr73m1"]
+
+[ext_resource type="Script" uid="uid://bytpmgvhuujwl" path="res://scripts/animal_freakout.gd" id="1_fqtde"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="1_fvrpp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fqtde"]
+height = 1.0
+
+[node name="Package_Animal" type="CharacterBody3D" unique_id=1973404174]
+script = ExtResource("1_fqtde")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=564071711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_fqtde")
+
+[node name="lowpolyhamster_01" parent="." unique_id=975115071 instance=ExtResource("1_fvrpp")]
+transform = Transform3D(0.3671149, 0, 0, 0, 0.61254185, 0, 0, 0, 1, 0, 0, 0)
