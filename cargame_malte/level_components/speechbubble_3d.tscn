@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bifubj27y0tro"]
+
+[ext_resource type="Texture2D" uid="uid://1htq1vvtpj48" path="res://textures/ui_badge_sec_t_v1.png" id="1_33e26"]
+[ext_resource type="Script" uid="uid://bju4kavuxgld0" path="res://scripts/speechbubble_3d.gd" id="2_jaxaf"]
+
+[node name="Speeechbubble_3D" type="Sprite3D" unique_id=1720848214]
+billboard = 1
+texture = ExtResource("1_33e26")
+script = ExtResource("2_jaxaf")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=279543311]
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewport" unique_id=840760259]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport/PanelContainer" unique_id=389311079]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SubViewport/PanelContainer/MarginContainer" unique_id=595354891]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9999998, 0.23700202, 0.073391, 1)
+text = "I Would like that"
