@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_45ngr"]
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_4idrt"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_3ychi"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_0gj18"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickup_thrusters_01.tscn" id="7_0gj18"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_kkvnt"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_ha0pa"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_ts5xo"]
