@@ -8,10 +8,15 @@ height = 1.0
 
 [node name="Package_Animal" type="CharacterBody3D" unique_id=1973404174]
 script = ExtResource("1_fqtde")
+run_speed = 10.0
+gravity_scale = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=564071711]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("CapsuleShape3D_fqtde")
 
 [node name="lowpolyhamster_01" parent="." unique_id=975115071 instance=ExtResource("1_fvrpp")]
-transform = Transform3D(0.3671149, 0, 0, 0, 0.61254185, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(-0.3671149, 0, -1.061426e-07, 0, 0.2841016, 0, 3.2094203e-08, 0, -1.2141298, 0, 0, 0)
+
+[node name="lowpolyhamster_02" parent="lowpolyhamster_01" unique_id=1040379739 instance=ExtResource("1_fvrpp")]
+transform = Transform3D(0.12958416, 0, 0, 0, 0.29143974, 0, 0, 0, 0.82363516, -1.2924595e-15, 0.34412095, -0.72475326)
