@@ -265,19 +265,26 @@ draw_pass_1 = ExtResource("9_apskw")
 metadata/_edit_lock_ = true
 
 [node name="===Thrusters===" type="Node3D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_ismq5")]
-transform = Transform3D(-4.371139e-08, 0, -1, -0.9659258, 0.25881907, 3.7252903e-08, 0.25881907, 0.9659258, -1.4901161e-08, 1.3862259, -0.21461034, -2.1589038)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, -4.751654e-09, 1, 0, -3.9840245e-08, 1.3862259, -1.2147083, 0.9587523)
 thrust_force = 2000.0
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
-metadata/_edit_lock_ = true
 
 [node name="Thruster_R" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_ismq5")]
-transform = Transform3D(-3.5326156e-08, -3.1294107e-08, 1, 0.96592575, 0.2588191, 4.2221956e-08, -0.2588191, 0.96592575, 2.1084706e-08, -1.386, -0.215, -2.159)
+transform = Transform3D(-3.532616e-08, -3.1294107e-08, 1, -5.9604645e-08, 0.99999994, 3.1294107e-08, -0.99999994, -5.9604645e-08, -3.5326156e-08, -1.3859999, -1.2149019, 0.9591038)
 thrust_force = 2000.0
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
-metadata/_edit_lock_ = true
+
+[node name="Thruster_L2" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_ismq5")]
+transform = Transform3D(-4.301967e-08, 0, -1, 0.035857897, 0.9999126, -6.2000565e-09, 0.9835219, -0.03645548, -3.9640668e-08, 1.3862259, -0.89704233, -1.177767)
+thrust_force = 2000.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
+
+[node name="Thruster_R2" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_ismq5")]
+transform = Transform3D(-3.4767137e-08, -3.1276052e-08, 1, -0.03585791, 0.9987593, 2.998624e-08, -0.9835218, -0.03641345, -3.6442884e-08, -1.3859999, -0.89722306, -1.1774144)
+thrust_force = 2000.0
+puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
 
 [node name="vfx_Exhaust_SmokePuff_L" type="GPUParticles3D" parent="===Thrusters==="]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1.3800956, -0.45450124, -2.8872514)
