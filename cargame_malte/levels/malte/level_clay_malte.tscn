@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dj445fvglwlav"]
+[gd_scene load_steps=55 format=3 uid="uid://dj445fvglwlav"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_5tf2s"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_x0var"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_kjfvy"]
 [ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_spuaq"]
 [ext_resource type="Terrain3DAssets" uid="uid://dkpy75qn2hnt" path="res://terrain_data/terraindata_clay_malte/level2_terrain_assets.tres" id="9_vdoxf"]
-[ext_resource type="Script" uid="uid://bd5wtka1ofdi0" path="res://scripts/roadlock.gd" id="10_fsbow"]
+[ext_resource type="Script" path="res://scripts/roadlock.gd" id="10_fsbow"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="11_6nfsc"]
 [ext_resource type="Material" uid="uid://cllsapoox4hsr" path="res://materials/roadtexture_Clay.tres" id="12_p2vi1"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="13_db6sc"]
@@ -41,7 +41,9 @@ tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
 fog_density = 0.0005
-volumetric_fog_density = 0.001
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0001
+volumetric_fog_length = 438.48
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -511,6 +513,16 @@ stack = Array[ExtResource("18_db6sc")]([SubResource("Resource_p2vi1"), SubResour
 script = ExtResource("25_7yxr2")
 radius = 1000.0
 
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_iut5r"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_5g8mm"]
+density = 0.2
+density_texture = SubResource("NoiseTexture3D_iut5r")
+
+[sub_resource type="FogMaterial" id="FogMaterial_brawk"]
+density = 0.152
+density_texture = SubResource("NoiseTexture3D_iut5r")
+
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_5tf2s")
 level_start_time = 900.0
@@ -713,6 +725,96 @@ thruster_duration = 30.0
 [node name="Pickup_Time_01" parent="===ENVIROMENT===" instance=ExtResource("8_spuaq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.7495, 21.782722, 12.781953)
 
+[node name="Ella_Wheel2" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -287.86993, 99.01306, 1969.0463)
+
+[node name="Ella_Wheel3" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, -1535.2594, 342.85352, 1969.0463)
+
+[node name="Ella_Wheel10" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, 1323.7881, 49.890076, 1009.518)
+
+[node name="Ella_Wheel11" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(2455.7998, 0, 0, 0, -1852.403, 1612.314, 0, -1612.314, -1852.403, 1640.0846, -55.614197, -413.64752)
+
+[node name="Ella_Wheel16" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(3401.0325, 0, 0, 0, -2565.3892, 2232.8904, 0, -2232.8904, -2565.3892, -3916.3835, -149.44647, -312.35846)
+
+[node name="Ella_Wheel17" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(3401.0325, 0, 0, 0, -2565.3892, 2232.8904, 0, -2232.8904, -2565.3892, -4255.7773, -166.77386, 2691.8262)
+
+[node name="Ella_Wheel18" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(2770.696, -1971.8687, -44.694702, -1873.1582, -2606.5093, -1124.4585, 617.69135, 940.67114, -3209.457, 3018.2317, 107.30951, 1971.4634)
+
+[node name="Ella_Wheel19" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(2770.696, -1971.8687, -44.694702, -1873.1582, -2606.5093, -1124.4585, 617.69135, 940.67114, -3209.457, -761.1682, -76.62225, -2264.3362)
+
+[node name="Ella_Wheel12" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(2455.7998, 0, 0, 0, -1852.403, 1612.314, 0, -1612.314, -1852.403, -949.0272, 418.88916, 2695.0833)
+
+[node name="Ella_Wheel13" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(-36.691643, 831.75793, -2310.365, 2123.964, 1170.2628, 387.57684, 1232.2274, -1992.3899, -736.8527, 1113.2628, 259.65674, 2695.0833)
+
+[node name="Ella_Wheel14" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(-417.1292, 76.68111, -1694.3536, 1146.7063, 1298.3846, -223.54428, 1249.7112, -1165.7733, -360.42288, 1499.7823, 1100.1945, 2542.224)
+
+[node name="Ella_Wheel15" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(-338.26343, -579.9913, -419.06763, 215.45857, 707.02954, -350.73273, 2164.704, -161.00375, -30.575459, 330.12213, 668.4458, 3580.978)
+
+[node name="Ella_Wheel8" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(377.5453, 576.8665, 407.55948, 507.50635, 99.85143, -611.463, -491.24023, 546.51154, -318.47806, -1936.007, 95.28488, 1622.3784)
+
+[node name="Ella_Wheel9" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(-145.14575, -771.39075, 159.08844, -200.33931, 192.60487, 751.12415, -761.7197, 96.33171, -227.86707, -990.78796, 83.43106, 1772.6926)
+
+[node name="Ella_Wheel4" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, -2520.4326, 342.85352, -1752.82)
+
+[node name="Ella_Wheel5" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, -2520.4326, -90.11987, -1752.82)
+
+[node name="Ella_Wheel6" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(494.2986, 95.71689, -864.00653, 787.72784, 371.019, 491.76193, 367.63272, -923.6792, 107.9953, -2021.0957, -90.11987, -1752.82)
+
+[node name="Ella_Wheel7" parent="===ENVIROMENT===" instance=ExtResource("27_db6sc")]
+transform = Transform3D(731.7954, -168.71495, -59.20443, -152.00356, -718.3733, 168.31262, -94.15312, -151.55678, -731.888, -2381.9663, 117.59897, -1244.9833)
+
+[node name="Node3D" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(13.338335, 0, 0, 0, 13.338335, 0, 0, 0, 13.338335, -313.69437, 22.533808, 135.28616)
+
+[node name="Node3D2" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(-5.204209, 2.5027556, -12.023461, 10.585517, -5.706859, -5.76973, -6.226896, -11.793183, 0.24041449, -351.87048, 21.471638, 131.98495)
+
+[node name="Node3D3" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(-5.204209, 2.5027556, -12.023461, 10.585517, -5.706859, -5.76973, -6.226896, -11.793183, 0.24041449, -348.96603, 28.927458, 134.53531)
+
+[node name="Node3D5" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(-8.369291, -4.924445, -5.2055016, -7.165335, 5.6693225, 6.157044, -0.07336473, 8.0623255, -7.5090604, -344.1304, 33.767036, 134.89253)
+
+[node name="Node3D6" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(-9.493245, -6.753246, -7.150218, -9.83524, 6.5185404, 6.9014707, 0.00012601167, 9.937604, -9.386036, -337.3848, 36.865765, 134.55621)
+
+[node name="Node3D7" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(3.251723, -11.377251, -14.030702, -18.007187, -3.169879, -1.6029034, -1.4295851, 14.049424, -11.723746, -331.08023, 39.292885, 135.83041)
+
+[node name="Node3D10" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(3.251723, -11.377251, -14.030702, -18.007187, -3.169879, -1.6029034, -1.4295851, 14.049424, -11.723746, -300.0159, 24.058533, 134.74603)
+
+[node name="Node3D11" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(10.474519, 2.4903727, -6.580394, 7.003574, -4.8199315, 9.324012, -0.6733769, -11.392338, -5.383328, -310.29443, 19.470888, 123.88178)
+
+[node name="Node3D12" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(-4.0709133, 0.64423066, 5.7610555, 2.0936627, 6.727932, 0.72708255, -5.4056787, 2.1206212, -4.056934, -352.60406, 20.263676, 118.739624)
+
+[node name="Node3D13" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(-4.0709133, 0.64423066, 5.7610555, 2.0936627, 6.727932, 0.72708255, -5.4056787, 2.1206212, -4.056934, -352.60406, 20.263676, 118.739624)
+
+[node name="Node3D8" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(3.1811213, 10.185947, 2.742155, 10.392277, -2.534982, -2.6394851, -1.8092782, 3.348556, -10.339543, -322.55, 37.777927, 134.70352)
+
+[node name="Node3D9" parent="===ENVIROMENT===" instance=ExtResource("28_mojwa")]
+transform = Transform3D(8.109145, 9.668901, -0.1489512, 8.304208, -7.0625515, -6.3583384, -4.9547834, 3.9875786, -10.900338, -316.61432, 29.89975, 135.36845)
+
 [node name="ProtonScatter" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.44226, 0, 144.56252)
 script = ExtResource("16_6nfsc")
@@ -759,92 +861,20 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 3.390640
 script = ExtResource("24_t0l6q")
 shape = SubResource("Resource_kani3")
 
-[node name="Ella_Wheel2" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -287.86993, 99.01306, 1969.0463)
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -466.7559, -42.965755, 283.51193)
+size = Vector3(250, 100, 250)
+shape = 2
+material = SubResource("FogMaterial_5g8mm")
 
-[node name="Ella_Wheel3" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, -1535.2594, 342.85352, 1969.0463)
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -273.96515, -0.67409897, 180.45508)
+size = Vector3(250, 64.72266, 250)
+shape = 2
+material = SubResource("FogMaterial_brawk")
 
-[node name="Ella_Wheel10" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, 1323.7881, 49.890076, 1009.518)
-
-[node name="Ella_Wheel11" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(2455.7998, 0, 0, 0, -1852.403, 1612.314, 0, -1612.314, -1852.403, 1640.0846, -55.614197, -413.64752)
-
-[node name="Ella_Wheel16" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(3401.0325, 0, 0, 0, -2565.3892, 2232.8904, 0, -2232.8904, -2565.3892, -3916.3835, -149.44647, -312.35846)
-
-[node name="Ella_Wheel17" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(3401.0325, 0, 0, 0, -2565.3892, 2232.8904, 0, -2232.8904, -2565.3892, -4255.7773, -166.77386, 2691.8262)
-
-[node name="Ella_Wheel18" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(2770.696, -1971.8687, -44.694702, -1873.1582, -2606.5093, -1124.4585, 617.69135, 940.67114, -3209.457, 3018.2317, 107.30951, 1971.4634)
-
-[node name="Ella_Wheel19" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(2770.696, -1971.8687, -44.694702, -1873.1582, -2606.5093, -1124.4585, 617.69135, 940.67114, -3209.457, -761.1682, -76.62225, -2264.3362)
-
-[node name="Ella_Wheel12" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(2455.7998, 0, 0, 0, -1852.403, 1612.314, 0, -1612.314, -1852.403, -949.0272, 418.88916, 2695.0833)
-
-[node name="Ella_Wheel13" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(-36.691643, 831.75793, -2310.365, 2123.964, 1170.2628, 387.57684, 1232.2274, -1992.3899, -736.8527, 1113.2628, 259.65674, 2695.0833)
-
-[node name="Ella_Wheel14" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(-417.1292, 76.68111, -1694.3536, 1146.7063, 1298.3846, -223.54428, 1249.7112, -1165.7733, -360.42288, 1499.7823, 1100.1945, 2542.224)
-
-[node name="Ella_Wheel15" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(-338.26343, -579.9913, -419.06763, 215.45857, 707.02954, -350.73273, 2164.704, -161.00375, -30.575459, 330.12213, 668.4458, 3580.978)
-
-[node name="Ella_Wheel8" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(377.5453, 576.8665, 407.55948, 507.50635, 99.85143, -611.463, -491.24023, 546.51154, -318.47806, -1936.007, 95.28488, 1622.3784)
-
-[node name="Ella_Wheel9" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(-145.14575, -771.39075, 159.08844, -200.33931, 192.60487, 751.12415, -761.7197, 96.33171, -227.86707, -990.78796, 83.43106, 1772.6926)
-
-[node name="Ella_Wheel4" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, -2520.4326, 342.85352, -1752.82)
-
-[node name="Ella_Wheel5" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(999.99994, 0, 0, 0, -754.2971, 656.5331, 0, -656.5331, -754.2971, -2520.4326, -90.11987, -1752.82)
-
-[node name="Ella_Wheel6" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(494.2986, 95.71689, -864.00653, 787.72784, 371.019, 491.76193, 367.63272, -923.6792, 107.9953, -2021.0957, -90.11987, -1752.82)
-
-[node name="Ella_Wheel7" parent="." instance=ExtResource("27_db6sc")]
-transform = Transform3D(731.7954, -168.71495, -59.20443, -152.00356, -718.3733, 168.31262, -94.15312, -151.55678, -731.888, -2381.9663, 117.59897, -1244.9833)
-
-[node name="Node3D" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(13.338335, 0, 0, 0, 13.338335, 0, 0, 0, 13.338335, -313.69437, 22.533808, 135.28616)
-
-[node name="Node3D2" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(-5.204209, 2.5027556, -12.023461, 10.585517, -5.706859, -5.76973, -6.226896, -11.793183, 0.24041449, -351.87048, 21.471638, 131.98495)
-
-[node name="Node3D3" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(-5.204209, 2.5027556, -12.023461, 10.585517, -5.706859, -5.76973, -6.226896, -11.793183, 0.24041449, -348.96603, 28.927458, 134.53531)
-
-[node name="Node3D5" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(-8.369291, -4.924445, -5.2055016, -7.165335, 5.6693225, 6.157044, -0.07336473, 8.0623255, -7.5090604, -344.1304, 33.767036, 134.89253)
-
-[node name="Node3D6" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(-9.493245, -6.753246, -7.150218, -9.83524, 6.5185404, 6.9014707, 0.00012601167, 9.937604, -9.386036, -337.3848, 36.865765, 134.55621)
-
-[node name="Node3D7" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(3.251723, -11.377251, -14.030702, -18.007187, -3.169879, -1.6029034, -1.4295851, 14.049424, -11.723746, -331.08023, 39.292885, 135.83041)
-
-[node name="Node3D10" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(3.251723, -11.377251, -14.030702, -18.007187, -3.169879, -1.6029034, -1.4295851, 14.049424, -11.723746, -300.0159, 24.058533, 134.74603)
-
-[node name="Node3D11" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(10.474519, 2.4903727, -6.580394, 7.003574, -4.8199315, 9.324012, -0.6733769, -11.392338, -5.383328, -310.29443, 19.470888, 123.88178)
-
-[node name="Node3D12" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(-4.0709133, 0.64423066, 5.7610555, 2.0936627, 6.727932, 0.72708255, -5.4056787, 2.1206212, -4.056934, -352.60406, 20.263676, 118.739624)
-
-[node name="Node3D13" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(-4.0709133, 0.64423066, 5.7610555, 2.0936627, 6.727932, 0.72708255, -5.4056787, 2.1206212, -4.056934, -352.60406, 20.263676, 118.739624)
-
-[node name="Node3D8" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(3.1811213, 10.185947, 2.742155, 10.392277, -2.534982, -2.6394851, -1.8092782, 3.348556, -10.339543, -322.55, 37.777927, 134.70352)
-
-[node name="Node3D9" parent="." instance=ExtResource("28_mojwa")]
-transform = Transform3D(8.109145, 9.668901, -0.1489512, 8.304208, -7.0625515, -6.3583384, -4.9547834, 3.9875786, -10.900338, -316.61432, 29.89975, 135.36845)
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.85682553, 0.5156064, 0, -0.5156064, 0.85682553, 62.920135, 26.249043, 524.2942)
+size = Vector3(448.75195, 64.72266, 250)
+shape = 2
+material = SubResource("FogMaterial_brawk")
