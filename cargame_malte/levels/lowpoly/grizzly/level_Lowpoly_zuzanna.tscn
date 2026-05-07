@@ -50,7 +50,10 @@ sky = SubResource("Sky_s8dg4")
 ambient_light_color = Color(0.0013917488, 0.69182473, 0.6978787, 1)
 tonemap_mode = 2
 glow_enabled = true
-fog_density = 0.0005
+fog_enabled = true
+fog_light_color = Color(0.20051634, 0.22125834, 0.25353256, 1)
+fog_density = 0.0071
+fog_height_density = 16.0
 
 [sub_resource type="Gradient" id="Gradient_dvodd"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -565,6 +568,8 @@ environment = SubResource("Environment_ex07k")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660236, -0.43301606, 0.25000077, -0.18759574, 0.7448641, 0.64030105, -0.4634772, 0.5076166, -0.72630167, 0, 0, 0)
+light_color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+light_energy = 0.0
 shadow_enabled = true
 directional_shadow_max_distance = 847.1
 
@@ -843,5 +848,20 @@ shape = SubResource("Resource_u4nte")
 [node name="Pig" parent="." instance=ExtResource("34_1002s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.62714, 20.756096, -29.517824)
 
+[node name="Pig3" parent="." instance=ExtResource("34_1002s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.98547, 26.72452, 0.43834496)
+
 [node name="Pig2" parent="." instance=ExtResource("35_rtups")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -341.53488, 22.103817, 7.2526703)
+move_speed = 15.0
+turn_speed = 10.0
+
+[node name="Pig4" parent="." instance=ExtResource("35_rtups")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -312.78113, 22.103817, 7.2526703)
+move_speed = 15.0
+turn_speed = 10.0
+
+[node name="Pig5" parent="." instance=ExtResource("35_rtups")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.63516, 76.548874, 7.2526703)
+move_speed = 15.0
+turn_speed = 10.0
