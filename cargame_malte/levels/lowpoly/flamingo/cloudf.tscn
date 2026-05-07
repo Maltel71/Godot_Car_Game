@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://daos535tqt608"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dewwx"]
+radius = 100.0
+height = 100.0
+
+[node name="cloudf" type="MeshInstance3D"]
+transform = Transform3D(0.41507775, 0, 0, 0, 0.69225574, 0, 0, 0, 0.45410103, 0, 0, 0)
+mesh = SubResource("SphereMesh_dewwx")
+
+[node name="cloudf2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8670766, 0, 0, 0, 0.86707664, 0, 0, 0, 0.8670766, -30.236937, 39.144653, 100.82053)
+mesh = SubResource("SphereMesh_dewwx")
+skeleton = NodePath("../..")
+
+[node name="cloudf4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.2374713, 0, 0, 0, 1.2374713, 0, 0, 0, 1.2374713, 30.596403, 48.56328, -73.17022)
+mesh = SubResource("SphereMesh_dewwx")
+skeleton = NodePath("../..")
+
+[node name="cloudf3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.81298345, 0, 0, 0, 0.8129835, 0, 0, 0, 0.81298345, -115.875786, 58.411377, 15.559661)
+mesh = SubResource("SphereMesh_dewwx")
+skeleton = NodePath("../..")
