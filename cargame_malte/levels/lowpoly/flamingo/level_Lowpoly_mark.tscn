@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://4p40qhpa2npt"]
+[gd_scene load_steps=62 format=3 uid="uid://4p40qhpa2npt"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_1q445"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_dueim"]
@@ -477,49 +477,73 @@ id = 4
 albedo_color = Color(0.26698524, 0.5715374, 0.20833543, 1)
 albedo_texture = ExtResource("18_6uapk")
 
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_k3wl8"]
+name = "white_1024px_t"
+id = 5
+albedo_color = Color(0.88253117, 0.5467183, 0.6105041, 1)
+albedo_texture = ExtResource("17_10mro")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_vxdtp"]
+name = "white_1024px_t"
+id = 6
+albedo_color = Color(8.4228816e-07, 0.50241077, 0.2217997, 1)
+albedo_texture = ExtResource("17_10mro")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_3bipl"]
+name = "white_1024px_t"
+id = 7
+albedo_color = Color(0.25197327, 0.9843523, 0.8891018, 1)
+albedo_texture = ExtResource("17_10mro")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xqtfx"]
+name = "white_1024px_t"
+id = 8
+albedo_color = Color(0.7060005, 0.7236931, 0.7365803, 1)
+albedo_texture = ExtResource("17_10mro")
+
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_dueim"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
-texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_cj8b0"), SubResource("Terrain3DTextureAsset_275g5")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_cj8b0"), SubResource("Terrain3DTextureAsset_275g5"), SubResource("Terrain3DTextureAsset_k3wl8"), SubResource("Terrain3DTextureAsset_vxdtp"), SubResource("Terrain3DTextureAsset_3bipl"), SubResource("Terrain3DTextureAsset_xqtfx")])
 
-[sub_resource type="Curve3D" id="Curve3D_vxdtp"]
+[sub_resource type="Curve3D" id="Curve3D_k3wl8"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="Resource" id="Resource_k3wl8"]
+[sub_resource type="Resource" id="Resource_vxdtp"]
 script = ExtResource("24_3bipl")
 amount = 2000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_vxdtp"]
+[sub_resource type="Resource" id="Resource_3bipl"]
 script = ExtResource("25_xqtfx")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 
-[sub_resource type="Resource" id="Resource_3bipl"]
+[sub_resource type="Resource" id="Resource_xqtfx"]
 script = ExtResource("26_r2571")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_xqtfx"]
+[sub_resource type="Resource" id="Resource_r2571"]
 script = ExtResource("27_lslk3")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_r2571"]
+[sub_resource type="Resource" id="Resource_lslk3"]
 script = ExtResource("28_0yi6e")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_lslk3"]
+[sub_resource type="Resource" id="Resource_0yi6e"]
 script = ExtResource("22_k3wl8")
-stack = Array[ExtResource("23_vxdtp")]([SubResource("Resource_k3wl8"), SubResource("Resource_vxdtp"), SubResource("Resource_3bipl"), SubResource("Resource_xqtfx"), SubResource("Resource_r2571")])
+stack = Array[ExtResource("23_vxdtp")]([SubResource("Resource_vxdtp"), SubResource("Resource_3bipl"), SubResource("Resource_xqtfx"), SubResource("Resource_r2571"), SubResource("Resource_lslk3")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_01brl")
@@ -557,7 +581,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_vxdtp")
+curve = SubResource("Curve3D_k3wl8")
 script = ExtResource("17_0yi6e")
 lock_road = true
 metadata/_edit_lock_ = true
@@ -755,7 +779,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.23645, 20.954678, -22.54
 [node name="ProtonScatter" type="Node3D" parent="."]
 script = ExtResource("21_0k075")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_lslk3")
+modifier_stack = SubResource("Resource_0yi6e")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -776,7 +800,26 @@ shape = SubResource("Resource_g8bsm")
 [node name="DangerArea2" parent="." instance=ExtResource("20_cxjp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322.8486, 20.977787, -21.735931)
 
+[node name="DangerArea3" parent="." instance=ExtResource("20_cxjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333.68787, 20.977787, -3.2947483)
+
+[node name="DangerArea4" parent="." instance=ExtResource("20_cxjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333.68787, 20.977787, 87.48523)
+
+[node name="DangerArea5" parent="." instance=ExtResource("20_cxjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -333.68787, 20.977787, -3.2947483)
+
+[node name="DangerArea6" parent="." instance=ExtResource("20_cxjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -342.1142, 22.237526, 18.578684)
+
+[node name="DangerArea7" parent="." instance=ExtResource("20_cxjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.64853, 20.977787, 14.061193)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("32_k3wl8")
 volume_db = -12.702
 autoplay = true
+
+[node name="Pickup_Thrusters_01" parent="." instance=ExtResource("7_vcg8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.58966, 21.415956, -19.039814)
+thruster_duration = 9.223372e+18
