@@ -57,6 +57,12 @@ var assigned_delivery_id: String = ""
 var _height_critical_timer: float = 0.0
 var _is_height_critical: bool = false
 
+@export_group("Top Secret")
+@export var top_secret_critical_time: float = 2.0
+var _top_secret_timer: float = 0.0
+var _is_top_secret_critical: bool = false
+var _is_being_seen: bool = false
+
 
 var _flip_timer: float = 0.0
 var driver_in_car: bool = false
@@ -101,6 +107,7 @@ func _physics_process(delta):
 			return
 			
 		_check_afraid_of_heights(delta)
+		_check_top_secret(delta)
 		
 	else:
 		# Parked: hold handbrake
@@ -274,6 +281,32 @@ func _check_afraid_of_heights(delta):
 	else:
 		_height_critical_timer = 0.0
 		_is_height_critical = false
+		
+func _check_top_secret(delta):
+	var manager = get_node("/root/ScoreAndTimeManager")
+	var pkg = manager.current_package
+	if not HasPackage or not pkg or PackageVariation.SecurityParam.TOP_SECRET not in pkg.security_params:
+		_top_secret_timer = 0.0
+		_is_top_secret_critical = false
+		_is_being_seen = false
+		return
+	if manager.delivery_failed:
+		return
+
+	_is_being_seen = false
+	for cam in get_tree().get_nodes_in_group("road_security_cameras"):
+		if cam.sees_target:
+			_is_being_seen = true
+			break
+
+	if _is_being_seen:
+		_top_secret_timer += delta
+		_is_top_secret_critical = true
+		if _top_secret_timer >= top_secret_critical_time:
+			manager.fail_delivery()
+	else:
+		_top_secret_timer = 0.0
+		_is_top_secret_critical = false
 
 func _animal_freakout():
 	_break_package()

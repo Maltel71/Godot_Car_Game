@@ -24,6 +24,13 @@ func _ready():
 	for wp in waypoints:
 		wp.body_entered.connect(_on_waypoint_reached)
 
+func _can_accept(body) -> bool:
+	if not (body is CharacterBody3D and "HasPackage" in body and body.HasPackage):
+		return false
+	if not ("assigned_delivery_id" in body and body.assigned_delivery_id == linked_area.name):
+		return false
+	return not get_node("/root/ScoreAndTimeManager").delivery_failed
+
 func _physics_process(delta):
 	if package_mesh:
 		package_mesh.visible = has_package
@@ -32,8 +39,7 @@ func _physics_process(delta):
 	if not going_out and not returning and not car:
 		var bodies = linked_area.get_overlapping_bodies()
 		for body in bodies:
-			if body is CharacterBody3D and "HasPackage" in body and body.HasPackage \
-			and "assigned_delivery_id" in body and body.assigned_delivery_id == linked_area.name:
+			if _can_accept(body):
 				car = body
 				going_out = true
 				returning = false
@@ -96,7 +102,7 @@ func _on_waypoint_reached(body):
 		waypoint_index += 1
 
 func _on_area_body_entered(body):
-	if body is CharacterBody3D and "HasPackage" in body and body.HasPackage and "assigned_delivery_id" in body and body.assigned_delivery_id == linked_area.name:
+	if _can_accept(body):
 		car = body
 		going_out = true
 		returning = false
@@ -110,7 +116,7 @@ func _on_area_body_exited(body):
 		waypoint_index = clamp(waypoint_index, 0, waypoints.size() - 1)
 
 func _on_body_entered(body):
-	if body is CharacterBody3D and "HasPackage" in body and body.HasPackage and "assigned_delivery_id" in body and body.assigned_delivery_id == linked_area.name:
+	if _can_accept(body):
 		body.HasPackage = false
 		body.assigned_delivery_id = ""
 		linked_area.play_delivery_sound()

@@ -23,6 +23,7 @@ var has_special_badge: bool = false
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
 var is_delivering: bool = false
+var delivery_failed: bool = false
 
 var star_xp: int = 0
 const STAR_THRESHOLDS = [0, 100, 200, 300, 500]
@@ -61,6 +62,7 @@ func start_delivery(distance: float):
 	delivery_timer = 0.0
 	is_delivering = true
 	bump_count = 0
+	delivery_failed = false
 
 func complete_delivery() -> int:
 	is_delivering = false
@@ -98,6 +100,7 @@ func sell_to_criminal() -> int:
 	target_delivery_node = null
 	current_package = null
 	bump_count = 0
+	delivery_failed = false
 	star_xp = max(0, star_xp - criminal_xp_penalty)
 	level_score += payout
 	return payout
@@ -125,3 +128,15 @@ func reset():
 	has_special_badge = false
 	current_package = null
 	bump_count = 0
+	delivery_failed = false
+	
+func fail_delivery():
+	delivery_failed = true
+
+func dump_package():
+	is_delivering = false
+	target_delivery = ""
+	target_delivery_node = null
+	current_package = null
+	bump_count = 0
+	delivery_failed = false
