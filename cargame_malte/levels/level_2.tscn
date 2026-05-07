@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://dum00rp3akon0" path="res://level_components/delivery_area_arrow.tscn" id="20_dpc8t"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/hud_player.tscn" id="20_h351q"]
 [ext_resource type="PackedScene" uid="uid://cmola6wlrukwt" path="res://level_components/npc_autoshop.tscn" id="20_nomkf"]
+[ext_resource type="Resource" uid="uid://d2h6ywrkoobih" path="res://level_components/package_variations/package_topsecret.tres" id="21_4wafr"]
 [ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="21_dpc8t"]
-[ext_resource type="Resource" uid="uid://cq2pr7octewaj" path="res://level_components/package_variations/package_afraidofheights.tres" id="21_hit22"]
 [ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="21_s67ts"]
 [ext_resource type="Material" uid="uid://jpaqr4j2b6tg" path="res://materials/blue_mat.tres" id="21_wsmxb"]
 [ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="22_m4706"]
@@ -58,6 +58,8 @@
 [ext_resource type="PackedScene" uid="uid://br4xbd73oojxj" path="res://level_components/npc_police_admin.tscn" id="53_m0g18"]
 [ext_resource type="PackedScene" uid="uid://b0k3dmvnwnamc" path="res://level_components/broken_package_scene.tscn" id="54_df2rw"]
 [ext_resource type="PackedScene" uid="uid://bifubj27y0tro" path="res://level_components/speechbubble_3d.tscn" id="58_hit22"]
+[ext_resource type="PackedScene" uid="uid://jb25iymvk6qb" path="res://level_components/road_security_camera.tscn" id="59_w87fk"]
+[ext_resource type="PackedScene" uid="uid://bfchsuc0khyhk" path="res://level_components/dump_area_01.tscn" id="60_w87fk"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
@@ -477,32 +479,32 @@ radius = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ghfw4"]
 
-[sub_resource type="Resource" id="Resource_4wafr"]
+[sub_resource type="Resource" id="Resource_w87fk"]
 script = ExtResource("25_6dcgf")
 amount = 200
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_w87fk"]
+[sub_resource type="Resource" id="Resource_s5is7"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_s5is7"]
+[sub_resource type="Resource" id="Resource_rdd5d"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_rdd5d"]
+[sub_resource type="Resource" id="Resource_pmt47"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_pmt47"]
+[sub_resource type="Resource" id="Resource_uvpi8"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -510,9 +512,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_uvpi8"]
+[sub_resource type="Resource" id="Resource_26l26"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_4wafr"), SubResource("Resource_w87fk"), SubResource("Resource_s5is7"), SubResource("Resource_rdd5d"), SubResource("Resource_pmt47")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_w87fk"), SubResource("Resource_s5is7"), SubResource("Resource_rdd5d"), SubResource("Resource_pmt47"), SubResource("Resource_uvpi8")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("31_s67ts")
@@ -535,32 +537,32 @@ script = ExtResource("34_6dcgf")
 curve = SubResource("Curve3D_nomkf")
 metadata/_custom_type_script = "uid://djha0k1o3sp7w"
 
-[sub_resource type="Resource" id="Resource_26l26"]
+[sub_resource type="Resource" id="Resource_cqcr4"]
 script = ExtResource("25_6dcgf")
 amount = 300
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_cqcr4"]
+[sub_resource type="Resource" id="Resource_trqat"]
 script = ExtResource("29_4xp61")
 terrain_node = NodePath("../Terrain3D")
 align_with_collision_normal = true
 max_slope = 10.0
 
-[sub_resource type="Resource" id="Resource_trqat"]
+[sub_resource type="Resource" id="Resource_r6t30"]
 script = ExtResource("26_ubuva")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(2, 2, 2)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_r6t30"]
+[sub_resource type="Resource" id="Resource_umlkt"]
 script = ExtResource("27_0nm7o")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_umlkt"]
+[sub_resource type="Resource" id="Resource_643hv"]
 script = ExtResource("28_pjs8f")
 ray_length = 5.0
 ray_offset = 5.0
@@ -568,9 +570,9 @@ remove_points_on_miss = false
 align_with_collision_normal = true
 max_slope = 20.0
 
-[sub_resource type="Resource" id="Resource_643hv"]
+[sub_resource type="Resource" id="Resource_js1ip"]
 script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_26l26"), SubResource("Resource_cqcr4"), SubResource("Resource_trqat"), SubResource("Resource_r6t30"), SubResource("Resource_umlkt")])
+stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_cqcr4"), SubResource("Resource_trqat"), SubResource("Resource_r6t30"), SubResource("Resource_umlkt"), SubResource("Resource_643hv")])
 
 [sub_resource type="Resource" id="Resource_ghfw4"]
 script = ExtResource("31_s67ts")
@@ -890,7 +892,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.6606, 19.52204, -2.81357
 
 [node name="GetPackageArea" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=1336415522 instance=ExtResource("24_he6wg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6588745, -0.12089348, 0.989933)
-available_packages = Array[ExtResource("17_4s8mp")]([ExtResource("21_hit22")])
+available_packages = Array[ExtResource("17_4s8mp")]([ExtResource("21_4wafr")])
 special_office = true
 
 [node name="NPC_Giver" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=882193193 node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("26_00pa0")]
@@ -1841,7 +1843,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
 visible = false
 script = ExtResource("22_m4706")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_uvpi8")
+modifier_stack = SubResource("Resource_26l26")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1871,7 +1873,7 @@ shape = SubResource("Resource_rddwe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
 visible = false
 script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_643hv")
+modifier_stack = SubResource("Resource_js1ip")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -1913,6 +1915,12 @@ text = "Hi, how are you?"
 
 [node name="Node3D" parent="." unique_id=1720848214 instance=ExtResource("58_hit22")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -354.95145, 27.209156, -59.59005)
+
+[node name="road_security_camera" parent="." unique_id=744327808 instance=ExtResource("59_w87fk")]
+transform = Transform3D(1, 0, 0, 0, 0.8188416, 0.57401955, 0, -0.57401955, 0.8188416, -353.15582, 23.201468, 29.134815)
+
+[node name="DumpArea_01" parent="." unique_id=384211543 instance=ExtResource("60_w87fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.6065, 21.10858, 16.645565)
 
 [editable path="Car_01/WiggleTest"]
 [editable path="Car_01/WiggleTest2"]

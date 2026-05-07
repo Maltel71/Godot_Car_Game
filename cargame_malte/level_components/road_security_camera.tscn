@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://jb25iymvk6qb"]
+
+[ext_resource type="Script" uid="uid://dem6yl0u4wley" path="res://scripts/road_security_camera.gd" id="1_088lh"]
+[ext_resource type="Material" uid="uid://bothkoxdi56ld" path="res://materials/transp_ph_mat.tres" id="2_8dast"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xwqhp"]
+top_radius = 10.0
+bottom_radius = 0.0
+height = 20.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8dast"]
+height = 20.0
+radius = 1.715
+
+[node name="road_security_camera" type="Node3D" unique_id=744327808]
+script = ExtResource("1_088lh")
+
+[node name="RayCast" type="RayCast3D" parent="." unique_id=1577772911]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=97123906]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -10)
+visible = false
+material_override = ExtResource("2_8dast")
+mesh = SubResource("CylinderMesh_xwqhp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1576973455]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_8dast")
