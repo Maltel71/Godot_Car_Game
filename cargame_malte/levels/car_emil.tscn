@@ -285,12 +285,12 @@ metadata/_edit_lock_ = true
 
 [node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_m8klr")]
 transform = Transform3D(-4.371139e-08, 0, -1, -0.99934995, 0.036050722, 3.9643048e-08, 0.036050722, 0.99934995, -6.1848366e-09, 1.3862259, -0.21462601, -2.1588614)
-thrust_force = 5000.0
+thrust_force = 500.0
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_L")
 
 [node name="Thruster_R" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_m8klr")]
 transform = Transform3D(-3.532616e-08, -3.1294107e-08, 1, 0.99934995, 0.036050767, 3.6431366e-08, -0.036050767, 0.99934995, 3.0000233e-08, -1.3859999, -0.21498428, -2.1590424)
-thrust_force = 5000.0
+thrust_force = 500.0
 puff_effect = NodePath("../vfx_Exhaust_SmokePuff_R")
 
 [node name="vfx_Exhaust_SmokePuff_L" type="GPUParticles3D" parent="===Thrusters==="]
