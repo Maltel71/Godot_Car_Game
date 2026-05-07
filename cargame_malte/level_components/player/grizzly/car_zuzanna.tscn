@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://bt8hodm31vo4p"]
 
-[ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_cfw6q"]
+[ext_resource type="Script" uid="uid://cicfhbakj4t56" path="res://scripts/zuz_car.gd" id="1_hqng3"]
 [ext_resource type="PackedScene" uid="uid://cnkqe8uywvh8c" path="res://models/ZUZZUZUZU_Models/MYBIODADHATESME (CAR).glb" id="2_ygvuk"]
 [ext_resource type="Script" uid="uid://drpduiury1jss" path="res://scripts/carlight.gd" id="3_cfw6q"]
 [ext_resource type="PackedScene" uid="uid://c7f8uyqri8rqk" path="res://models/ZUZZUZUZU_Models/MYBIODADHATESME (TIRE).glb" id="3_hqng3"]
@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://23eimtomyv2b" path="res://audio/sfx/car/sfx_car_engine_driving.wav" id="13_ww85e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhmyn"]
-size = Vector3(2.29102, 1.40625, 6.8826)
+size = Vector3(2.29102, 1.40625, 6.5400467)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhmyn"]
 radius = 0.978364
@@ -151,9 +151,10 @@ hue_variation_max = -1.0
 
 [node name="Car_zuz" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles", "explosion_particles")]
 mass = 240.0
+gravity_scale = 1.8
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
-script = ExtResource("1_cfw6q")
+script = ExtResource("1_hqng3")
 exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
 explosion_particles = NodePath("vfx_stylized_explotion")
 
@@ -162,16 +163,6 @@ metadata/_edit_lock_ = true
 
 [node name="MYBIODADHATESME (CAR)" parent="===Body===" instance=ExtResource("2_ygvuk")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.35499346, -1.3359585, -0.1177268)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="===Body===/MYBIODADHATESME (CAR)"]
-transform = Transform3D(-0.064250596, -0.01728761, -0.9977841, 0.010520728, 0.9997827, -0.017999703, 0.9978784, -0.011653907, -0.06405475, 4.36688, 0.8946798, 0.5088747)
-light_color = Color(1, 0.7, 0, 1)
-light_energy = 16.055
-light_size = 1.125
-shadow_enabled = true
-spot_range = 22.353888
-spot_angle = 24.255009
-script = ExtResource("3_cfw6q")
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
@@ -242,15 +233,13 @@ metadata/_edit_lock_ = true
 transform = Transform3D(0.441584, 0, 0, 0, 1, 0, 0, 0, 0.180584, 0, 0.887635, 0.19532)
 
 [node name="CollisionShape_01" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.186504, 0.0198936)
-visible = false
+transform = Transform3D(0.918173, 0, 0, 0, 0.918173, 0, 0, 0, 0.918173, 0, -0.186504, -0.08535458)
 shape = SubResource("BoxShape3D_xhmyn")
 debug_color = Color(0.607608, 0.363727, 1, 0.42)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape_02" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.918173, 0, 0, 0, -4.01346e-08, -0.918173, 0, 0.918173, -4.01346e-08, 0, 0.14752, 0.0198936)
-visible = false
 shape = SubResource("CapsuleShape3D_xhmyn")
 debug_color = Color(0, 0.643137, 0.290196, 1)
 metadata/_edit_lock_ = true
@@ -334,3 +323,17 @@ fixed_fps = 60
 trail_lifetime = 1.4
 process_material = SubResource("ParticleProcessMaterial_g23rl")
 draw_pass_1 = ExtResource("9_3eum2")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9711801, 0.238347, 0, -0.238347, -0.9711801, -0.8766304, -0.08143002, 4.3872185)
+light_color = Color(0.91270477, 0.92327976, 0.8288565, 1)
+light_energy = 30.0
+spot_range = 50.0
+script = ExtResource("3_cfw6q")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.9711801, 0.238347, 0, -0.238347, -0.9711801, 0.93031585, -0.08143002, 4.3872185)
+light_color = Color(0.91270477, 0.92327976, 0.8288565, 1)
+light_energy = 20.0
+spot_range = 50.0
+script = ExtResource("3_cfw6q")

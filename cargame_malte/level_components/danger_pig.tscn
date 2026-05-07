@@ -1,0 +1,120 @@
+[gd_scene load_steps=19 format=3 uid="uid://d072bjufu56xn"]
+
+[ext_resource type="Script" uid="uid://b1o0w0y07o7or" path="res://scripts/danger_pig.gd" id="1_anh0y"]
+[ext_resource type="PackedScene" uid="uid://cfvucout1106s" path="res://models/ZUZZUZUZU_Models/weird_russian_pig_thing.glb" id="3_6gqfl"]
+[ext_resource type="Material" uid="uid://in4rs1irvh11" path="res://addons/dangerarea/black_mat.tres" id="3_nwcfl"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="4_6gqfl"]
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="4_fecto"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="5_7clst"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://vfx/Cloud_v2.obj" id="6_4kc2c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fecto"]
+size = Vector3(1.3291016, 2.7875671, 3.0560303)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d3xfc"]
+radius = 0.43066406
+height = 2.354248
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqrl8"]
+render_priority = 0
+shader = ExtResource("4_fecto")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("5_7clst")
+
+[sub_resource type="Curve" id="Curve_kr2xr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7y3ot"]
+texture_mode = 1
+curve = SubResource("Curve_kr2xr")
+
+[sub_resource type="Gradient" id="Gradient_wtchg"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.462394, 0.023716867, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x0lqn"]
+gradient = SubResource("Gradient_wtchg")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_5h3nx"]
+_data = [Vector2(0, 0.15730345), 0.0, 0.328478, 0, 0, Vector2(0.99593484, 0.32584274), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mv3wq"]
+curve = SubResource("Curve_5h3nx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ayva6"]
+lifetime_randomness = 0.3
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 1, 0)
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_mv3wq")
+color_ramp = SubResource("GradientTexture1D_x0lqn")
+alpha_curve = SubResource("CurveTexture_7y3ot")
+hue_variation_min = -1.0
+hue_variation_max = -1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_62d0r"]
+radius = 29.340761
+
+[node name="Danger_Pig" type="CharacterBody3D" node_paths=PackedStringArray("attack_area")]
+script = ExtResource("1_anh0y")
+move_speed = 5.0
+turn_speed = 6.0
+chase_speed = 15.0
+attack_area = NodePath("Area3D")
+
+[node name="Mesh_(Model)" parent="." instance=ExtResource("3_6gqfl")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Cube_003" parent="Mesh_(Model)" index="0"]
+surface_material_override/0 = ExtResource("3_nwcfl")
+surface_material_override/1 = ExtResource("3_nwcfl")
+surface_material_override/3 = ExtResource("3_nwcfl")
+
+[node name="DangerArea" parent="Mesh_(Model)" instance=ExtResource("4_6gqfl")]
+transform = Transform3D(-0.35698256, -0.93411106, -8.742278e-08, -0.93411106, 0.35698256, 0, 3.120841e-08, 8.1662584e-08, -1, -0.65856105, 1.2958534, -0.005411029)
+
+[node name="DangerArea2" parent="Mesh_(Model)" instance=ExtResource("4_6gqfl")]
+transform = Transform3D(0.35698253, 0.934111, -1.9841977e-09, -0.93411106, 0.35698256, 7.1967006e-09, -1.4060824e-09, 7.74439e-09, 0.99999994, 0.7306771, 1.2958534, -0.0054111504)
+
+[node name="CollisionShape3D" parent="Mesh_(Model)/DangerArea2/Area3D" index="0"]
+transform = Transform3D(0.9659259, 0.258819, -2.2125082e-08, -0.2588188, 0.9659259, 1.0759024e-08, 2.415571e-08, -4.668408e-09, 0.99998766, -0.61481035, -0.24745452, 0.30377167)
+shape = SubResource("BoxShape3D_fecto")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1737047, 0)
+shape = SubResource("CapsuleShape3D_d3xfc")
+
+[node name="vfx_stylized_blood" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_uqrl8")
+emitting = false
+amount = 20
+lifetime = 0.18000000000000002
+one_shot = true
+explosiveness = 0.93
+fixed_fps = 60
+trail_lifetime = 1.4
+process_material = SubResource("ParticleProcessMaterial_ayva6")
+draw_pass_1 = ExtResource("6_4kc2c")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4738328, -0.1390171)
+shape = SubResource("SphereShape3D_62d0r")
+
+[editable path="Mesh_(Model)"]
+[editable path="Mesh_(Model)/DangerArea"]
+[editable path="Mesh_(Model)/DangerArea/Mesh"]
+[editable path="Mesh_(Model)/DangerArea2"]
+[editable path="Mesh_(Model)/DangerArea2/Mesh"]
