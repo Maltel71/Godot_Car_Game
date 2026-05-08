@@ -51,6 +51,7 @@ pickup_sound = ExtResource("2_jtl2q")
 pickup_volume = -5.0
 
 [node name="env_prop_coin1_mesh_01_v1" parent="." instance=ExtResource("1_s3swh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25741494, 0, 0.38623834)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_b1f2t")
