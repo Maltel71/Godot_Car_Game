@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_gu82x"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_8v3q2"]
-[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://UI/menus/esc_menu.tscn" id="3_wnonw"]
-[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://UI/hud/hud.tscn" id="4_de0s0"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_tr0n2"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_61g3j"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_r8bvv"]
+[ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_wnonw"]
+[ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_de0s0"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://pickups/pickup_points_01.tscn" id="6_tr0n2"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://pickups/pickup_thrusters_01.tscn" id="7_61g3j"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://pickups/pickup_time_01.tscn" id="8_r8bvv"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_c2lpc"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_cxrki"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_wnm7q"]
@@ -30,7 +30,7 @@
 [ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="28_mg4jm"]
 [ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="29_7g1cq"]
 [ext_resource type="Script" uid="uid://djha0k1o3sp7w" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="30_c2lpc"]
-[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="31_cxrki"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://dangerarea/danger_area.tscn" id="31_cxrki"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)

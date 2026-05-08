@@ -1,12 +1,12 @@
-[gd_scene load_steps=66 format=3 uid="uid://bypo0ul2qiw5v"]
+[gd_scene format=3 uid="uid://bypo0ul2qiw5v"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_of6yn"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_fmnqc"]
 [ext_resource type="PackedScene" uid="uid://bhkqs47dwaq13" path="res://ui/menus/esc_menu.tscn" id="3_dcri6"]
 [ext_resource type="PackedScene" uid="uid://dc8t82quf5ro6" path="res://ui/hud/hud.tscn" id="4_r53c6"]
-[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_p8dds"]
-[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_b3ybk"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_81xca"]
+[ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://pickups/pickup_points_01.tscn" id="6_p8dds"]
+[ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://pickups/pickup_thrusters_01.tscn" id="7_b3ybk"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://pickups/pickup_time_01.tscn" id="8_81xca"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_626r5"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_87ewu"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_u5gqh"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bd5wtka1ofdi0" path="res://scripts/roadlock.gd" id="17_quxxs"]
 [ext_resource type="Script" uid="uid://d0qtenhgr2mgf" path="res://addons/road-generator/nodes/road_manager.gd" id="18_bmq3r"]
 [ext_resource type="Material" uid="uid://bj07jrdixn6r1" path="res://materials/roadtexture1.tres" id="19_v8c85"]
-[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="20_4n5ia"]
+[ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://dangerarea/danger_area.tscn" id="20_4n5ia"]
 [ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="20_irhyw"]
 [ext_resource type="Script" uid="uid://dsywv0yxsgdqp" path="res://addons/road-generator/nodes/road_container.gd" id="20_tmwt3"]
 [ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="21_4n5ia"]
@@ -570,68 +570,68 @@ size = Vector3(80, 100, 80)
 [sub_resource type="PlaneMesh" id="PlaneMesh_ms2jv"]
 size = Vector2(400, 400)
 
-[node name="Level2" type="Node3D"]
+[node name="Level2" type="Node3D" unique_id=402123376]
 script = ExtResource("1_of6yn")
 level_start_time = 30.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=171388485]
 environment = SubResource("Environment_ex07k")
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=855155197]
 transform = Transform3D(-0.8660236, -0.43301606, 0.25000077, -0.18759574, 0.7448641, 0.64030105, -0.4634772, 0.5076166, -0.72630167, 0, 0, 0)
 shadow_enabled = true
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." unique_id=1042004160]
 script = ExtResource("2_fmnqc")
 
-[node name="EscMenu" parent="." instance=ExtResource("3_dcri6")]
+[node name="EscMenu" parent="." unique_id=542894969 instance=ExtResource("3_dcri6")]
 
-[node name="Highscore" parent="." groups=["highscore_ui"] instance=ExtResource("4_r53c6")]
+[node name="Highscore" parent="." unique_id=1202468542 groups=["highscore_ui"] instance=ExtResource("4_r53c6")]
 
-[node name="===ENVIROMENT===" type="Node3D" parent="."]
+[node name="===ENVIROMENT===" type="Node3D" parent="." unique_id=412029960]
 
-[node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT==="]
+[node name="=PICKUPS=" type="Node3D" parent="===ENVIROMENT===" unique_id=959989257]
 visible = false
 
-[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("6_p8dds")]
+[node name="Pickup_Points_01" parent="===ENVIROMENT===/=PICKUPS=" unique_id=139928973 instance=ExtResource("6_p8dds")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.17368, 20.957392, -10.8444195)
 
-[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("7_b3ybk")]
+[node name="Pickup_Thrusters_01" parent="===ENVIROMENT===/=PICKUPS=" unique_id=1347099741 instance=ExtResource("7_b3ybk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.98242, 20.9314, 1.887085)
 
-[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" instance=ExtResource("8_81xca")]
+[node name="Pickup_Time_01" parent="===ENVIROMENT===/=PICKUPS=" unique_id=1088156844 instance=ExtResource("8_81xca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -327.57208, 21.337513, 15.415552)
 
-[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT==="]
+[node name="=PHYSICS_OBJ=" type="Node3D" parent="===ENVIROMENT===" unique_id=346141613]
 
-[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT==="]
+[node name="=LIGHTS=" type="Node3D" parent="===ENVIROMENT===" unique_id=2097049571]
 
-[node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT==="]
+[node name="Terrain3D" type="Terrain3D" parent="===ENVIROMENT===" unique_id=1113123002]
 data_directory = "res://terrain_data/lowpoly/bison/terraindata_lowpoly_bruno"
 material = SubResource("Terrain3DMaterial_jpeac")
 assets = SubResource("Terrain3DAssets_pe65i")
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
+[node name="Path3D" type="Path3D" parent="===ENVIROMENT===" unique_id=1277926681]
 curve = SubResource("Curve3D_ms2jv")
 script = ExtResource("17_quxxs")
 lock_road = true
 
-[node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D"]
+[node name="RoadManager" type="Node3D" parent="===ENVIROMENT===/Path3D" unique_id=2005740255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.597, 0, 93.2312)
 script = ExtResource("18_bmq3r")
 material_resource = ExtResource("19_v8c85")
 metadata/_custom_type_script = "uid://d0qtenhgr2mgf"
 
-[node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager"]
+[node name="Road_001" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager" unique_id=427761461]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.8069, 0)
 script = ExtResource("20_tmwt3")
 material_resource = ExtResource("19_v8c85")
 density = 0.03
 use_lowpoly_preview = true
 
-[node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1883814393]
 transform = Transform3D(-0.999211, -0.011218602, 0.038102377, -0.0112213, 0.999937, 0.00014308815, -0.038101584, -0.00028458284, -0.99927396, -374.162, 1.8966904, -84.5118)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -643,7 +643,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_003")
 next_pt_init = NodePath("../RP_012")
 
-[node name="RP_003" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_003" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=660601566]
 transform = Transform3D(-0.999211, -0.010928133, 0.038186613, -0.0112213, 0.999909, -0.0074712564, -0.038101487, -0.007893859, -0.999243, -378.813, 1.878582, 37.387695)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -655,7 +655,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_005")
 next_pt_init = NodePath("../RP_002")
 
-[node name="RP_005" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_005" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1583080163]
 transform = Transform3D(-0.9923255, 0, -0.12365336, 0, 1, 0, 0.12365336, 0, -0.9923255, -352.82355, 7.6950226, 205.42087)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -667,7 +667,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_006")
 next_pt_init = NodePath("../RP_003")
 
-[node name="RP_006" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_006" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=491249561]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.3529, 1.9846306, 364.1078)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -679,7 +679,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_007")
 next_pt_init = NodePath("../RP_005")
 
-[node name="RP_007" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_007" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=497609953]
 transform = Transform3D(0.9496232, -0.0931603, -0.29922855, 0.109721884, 0.993197, 0.038992897, 0.2935605, -0.06986041, 0.9533845, -196.38084, 3.0981636, 257.9855)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -691,7 +691,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_008")
 next_pt_init = NodePath("../RP_006")
 
-[node name="RP_008" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_008" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=340967901]
 transform = Transform3D(0.9975049, 0.010031506, -0.06988615, -0.0079033375, 0.9994986, 0.030662453, 0.07015871, -0.030033598, 0.99708396, -130.32391, 75.51553, 108.74963)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -703,7 +703,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_009")
 next_pt_init = NodePath("../RP_007")
 
-[node name="RP_009" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_009" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=120831026]
 transform = Transform3D(0.9974719, -0.02866073, -0.06501949, 0.026409399, 0.99903, -0.035224773, 0.065966, 0.0334186, 0.99726194, -125.15282, 28.108372, 32.29042)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -715,7 +715,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_010")
 next_pt_init = NodePath("../RP_008")
 
-[node name="RP_010" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_010" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=232318313]
 transform = Transform3D(0.9225326, 0.0032202585, -0.385906, -0.003490652, 0.99999374, 0, 0.38590375, 0.0013470632, 0.92253804, -67.6452, 1.7474709, -67.1144)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -727,7 +727,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_011")
 next_pt_init = NodePath("../RP_009")
 
-[node name="RP_011" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_011" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1871276636]
 transform = Transform3D(0.8151249, -0.04814977, 0.5772805, 0.030939503, 0.99873596, 0.03961564, -0.578458, -0.014430925, 0.8155846, -163.82983, 2.1070251, -203.64684)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -739,7 +739,7 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_012")
 next_pt_init = NodePath("../RP_010")
 
-[node name="RP_012" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+[node name="RP_012" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001" unique_id=1733585619]
 transform = Transform3D(-0.14922377, 0.009649862, 0.9887565, 0.06453234, 0.9979153, 0, -0.9866959, 0.06380671, -0.1495354, -310.5929, 1.775837, -213.19476)
 script = ExtResource("21_toqat")
 traffic_dir = Array[int]([2, 2, 1, 1])
@@ -751,51 +751,51 @@ gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_002")
 next_pt_init = NodePath("../RP_011")
 
-[node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_iei5f")]
+[node name="GoalTrigger" parent="===ENVIROMENT===" unique_id=396545984 instance=ExtResource("22_iei5f")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -72.32146)
 metadata/_edit_lock_ = true
 
-[node name="Car_Default" parent="===ENVIROMENT===" instance=ExtResource("22_jpeac")]
+[node name="Car_Default" parent="===ENVIROMENT===" unique_id=4616520 instance=ExtResource("22_jpeac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -325.97992, 22.297077, -17.672756)
 
-[node name="DangerArea" parent="===ENVIROMENT===" instance=ExtResource("20_4n5ia")]
+[node name="DangerArea" parent="===ENVIROMENT===" unique_id=1450663528 instance=ExtResource("20_4n5ia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -330.04132, 20.935724, 2.91854)
 
-[node name="ProtonScatter" type="Node3D" parent="."]
+[node name="ProtonScatter" type="Node3D" parent="." unique_id=1023616677]
 script = ExtResource("20_irhyw")
 modifier_stack = SubResource("Resource_m23dg")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
 
-[node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter" unique_id=1041864671]
 script = ExtResource("28_y2oq3")
 path = "uid://dl1mgv7h1thox"
 
-[node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter" unique_id=470715143]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -234.88318, 0, 131.88828)
 script = ExtResource("29_m23dg")
 shape = SubResource("Resource_g8bsm")
 
-[node name="neg" type="Node3D" parent="ProtonScatter"]
+[node name="neg" type="Node3D" parent="ProtonScatter" unique_id=272184621]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -155.16272, 0, 76.174164)
 script = ExtResource("29_m23dg")
 negative = true
 shape = SubResource("Resource_8wwgy")
 
-[node name="neg2" type="Node3D" parent="ProtonScatter"]
+[node name="neg2" type="Node3D" parent="ProtonScatter" unique_id=1142822475]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -298.06128, 0, -55.888496)
 script = ExtResource("29_m23dg")
 negative = true
 shape = SubResource("Resource_w31ro")
 
-[node name="neg3" type="Node3D" parent="ProtonScatter"]
+[node name="neg3" type="Node3D" parent="ProtonScatter" unique_id=1611937532]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -121.89796, 0, -108.21127)
 script = ExtResource("29_m23dg")
 negative = true
 shape = SubResource("Resource_ru5qg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=157611391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -196.46014, 0, 117.83031)
 material_override = ExtResource("32_ucwhj")
 mesh = SubResource("PlaneMesh_ms2jv")
