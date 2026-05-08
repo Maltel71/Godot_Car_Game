@@ -2,27 +2,54 @@
 
 [ext_resource type="Script" uid="uid://dem6yl0u4wley" path="res://scripts/road_security_camera.gd" id="1_088lh"]
 [ext_resource type="Material" uid="uid://bothkoxdi56ld" path="res://materials/transp_ph_mat.tres" id="2_8dast"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="3_xwqhp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f1ftd"]
+size = Vector3(0.3, 0.3, 0.5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mktcr"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8dast"]
+data = PackedVector3Array(0, -1, 0, 0.3827, 1, -0.92389995, 0, 1, -1, 0, -1, 0, 0.7071, 1, -0.7071, 0.3827, 1, -0.92389995, 0, -1, 0, 0.92389995, 1, -0.3827, 0.7071, 1, -0.7071, 0, -1, 0, 1, 1, 0, 0.92389995, 1, -0.3827, 0, -1, 0, 0.92389995, 1, 0.3827, 1, 1, 0, 0, -1, 0, 0.7071, 1, 0.7071, 0.92389995, 1, 0.3827, 0, -1, 0, 0.3827, 1, 0.92389995, 0.7071, 1, 0.7071, 0, -1, 0, 0, 1, 1, 0.3827, 1, 0.92389995, 0, -1, 0, -0.3827, 1, 0.92389995, 0, 1, 1, 0, -1, 0, -0.7071, 1, 0.7071, -0.3827, 1, 0.92389995, 0, -1, 0, -0.92389995, 1, 0.3827, -0.7071, 1, 0.7071, 0, -1, 0, -1, 1, 0, -0.92389995, 1, 0.3827, 0, -1, 0, -0.92389995, 1, -0.3827, -1, 1, 0, 0, -1, 0, -0.7071, 1, -0.7071, -0.92389995, 1, -0.3827, -0.3827, 1, 0.92389995, -0.92389995, 1, 0.3827, 0, 1, 1, -0.3827, 1, 0.92389995, -0.7071, 1, 0.7071, -0.92389995, 1, 0.3827, 0, 1, 1, -0.92389995, 1, 0.3827, -1, 1, 0, 0, 1, 1, -1, 1, 0, 0.3827, 1, 0.92389995, 0.3827, 1, 0.92389995, -1, 1, 0, -0.92389995, 1, -0.3827, 0.3827, 1, 0.92389995, -0.92389995, 1, -0.3827, 0.7071, 1, 0.7071, 0.7071, 1, 0.7071, -0.92389995, 1, -0.3827, -0.7071, 1, -0.7071, 0.7071, 1, 0.7071, -0.7071, 1, -0.7071, 0.92389995, 1, 0.3827, 0.92389995, 1, 0.3827, -0.7071, 1, -0.7071, -0.3827, 1, -0.92389995, 0.92389995, 1, 0.3827, -0.3827, 1, -0.92389995, 1, 1, 0, 1, 1, 0, -0.3827, 1, -0.92389995, 0, 1, -1, 1, 1, 0, 0, 1, -1, 0.92389995, 1, -0.3827, 0.3827, 1, -0.92389995, 0.92389995, 1, -0.3827, 0, 1, -1, 0.3827, 1, -0.92389995, 0.7071, 1, -0.7071, 0.92389995, 1, -0.3827, 0, -1, 0, -0.3827, 1, -0.92389995, -0.7071, 1, -0.7071, 0, -1, 0, 0, 1, -1, -0.3827, 1, -0.92389995)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_xwqhp"]
-top_radius = 10.0
+top_radius = 7.5
 bottom_radius = 0.0
 height = 20.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_8dast"]
-height = 20.0
-radius = 1.715
-
-[node name="road_security_camera" type="Node3D" unique_id=744327808]
+[node name="road_security_camera" type="Node3D" unique_id=744327808 node_paths=PackedStringArray("pivot")]
 script = ExtResource("1_088lh")
+pivot = NodePath("Pivot")
+rotate_duration = 2.0
+pause_duration = 2.5
 
-[node name="RayCast" type="RayCast3D" parent="." unique_id=1577772911]
+[node name="Pivot" type="Node3D" parent="." unique_id=2102847883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06582588, 0.31333122)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=97123906]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -10)
-visible = false
+[node name="camera" type="MeshInstance3D" parent="Pivot" unique_id=1878931751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.021064281, -0.24489841)
+mesh = SubResource("BoxMesh_f1ftd")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/camera" unique_id=1227017611]
+transform = Transform3D(0.195, 0, 0, 0, -8.52372e-09, -0.195, 0, 0.195, -8.52372e-09, 0, 4.83393e-09, -0.11058745)
+material_override = ExtResource("3_xwqhp")
+mesh = SubResource("CylinderMesh_mktcr")
+
+[node name="Area3D" type="Area3D" parent="Pivot" unique_id=124894372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06582588, -0.31333122)
+
+[node name="CollisionCone" type="CollisionShape3D" parent="Pivot/Area3D" unique_id=41800017]
+transform = Transform3D(7.4, 0, 0, 0, -3.2346426e-07, 7.4, 0, -7.4, -3.2346426e-07, 0, 0, -7.394)
+shape = SubResource("ConcavePolygonShape3D_8dast")
+
+[node name="ref cone" type="MeshInstance3D" parent="Pivot" unique_id=97123906]
+transform = Transform3D(1, 0, 0, 0, -3.2706538e-08, 1, 0, -0.7482384, -4.371139e-08, 0, 0.06582588, -7.793331)
 material_override = ExtResource("2_8dast")
 mesh = SubResource("CylinderMesh_xwqhp")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1576973455]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-shape = SubResource("CylinderShape3D_8dast")
+[node name="stick" type="MeshInstance3D" parent="." unique_id=1915745768]
+transform = Transform3D(0.6519159, 0, 0, 0, 1.796354, 0.15030532, 0, -1.6083839, 0.16787134, 0, -0.2926982, 0.51744866)
+material_override = ExtResource("3_xwqhp")
+mesh = SubResource("BoxMesh_f1ftd")
