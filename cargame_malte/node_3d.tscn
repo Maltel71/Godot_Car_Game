@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsfn0qewtbsco"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4xowi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a202f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xowi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.54538345, 0, 0, 0, -4.119567, 0, 0, 0, 0.5404238, 0, 1.4151773, 0)
+mesh = SubResource("BoxMesh_4xowi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(-0.14396374, -0.96759707, 0, -0.9893746, 0.14079495, 0, 0, 0, 1.2823828, 0.5734379, 3.4664485, 0)
+mesh = SubResource("CylinderMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.4484951, 0, 0, 0, 1.48313, 0, 0, 0, 1.4484951, 0, 0, 0)
+visible = false
+shape = SubResource("BoxShape3D_4xowi")
+debug_color = Color(1, 0.91754335, 0.8020003, 1)

@@ -1,0 +1,97 @@
+[gd_scene load_steps=17 format=3 uid="uid://cwhg1nulvtdrl"]
+
+[ext_resource type="PackedScene" uid="uid://cfvucout1106s" path="res://models/ZUZZUZUZU_Models/weird_russian_pig_thing.glb" id="1_7jdxw"]
+[ext_resource type="Script" uid="uid://cxqqjkyp0hpb7" path="res://scripts/pig.gd" id="1_hf4vs"]
+[ext_resource type="AudioStream" uid="uid://bf65jj4hxa28c" path="res://audio/sfx/hit_hurt/hitHurt.wav" id="2_rq7om"]
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="3_ehv4d"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="4_rq7om"]
+[ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://vfx/Cloud_v2.obj" id="5_ofu3w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d3xfc"]
+radius = 0.43066406
+height = 2.354248
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqrl8"]
+render_priority = 0
+shader = ExtResource("3_ehv4d")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("4_rq7om")
+
+[sub_resource type="Curve" id="Curve_kr2xr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7y3ot"]
+texture_mode = 1
+curve = SubResource("Curve_kr2xr")
+
+[sub_resource type="Gradient" id="Gradient_wtchg"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.462394, 0.023716867, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x0lqn"]
+gradient = SubResource("Gradient_wtchg")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_5h3nx"]
+_data = [Vector2(0, 0.15730345), 0.0, 0.328478, 0, 0, Vector2(0.99593484, 0.32584274), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mv3wq"]
+curve = SubResource("Curve_5h3nx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ayva6"]
+lifetime_randomness = 0.3
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 1, 0)
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_mv3wq")
+color_ramp = SubResource("GradientTexture1D_x0lqn")
+alpha_curve = SubResource("CurveTexture_7y3ot")
+hue_variation_min = -1.0
+hue_variation_max = -1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_62d0r"]
+radius = 1.2954087
+
+[node name="Pig" type="CharacterBody3D" node_paths=PackedStringArray("hit_area", "hit_particles")]
+script = ExtResource("1_hf4vs")
+move_speed = 6.0
+wiggle_speed = 20.0
+hit_area = NodePath("Area3D")
+hit_particles = NodePath("vfx_stylized_blood")
+hit_sound = ExtResource("2_rq7om")
+hit_sound_volume_db = 1.0
+
+[node name="Mesh_(Model)" parent="." instance=ExtResource("1_7jdxw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1737047, 0)
+shape = SubResource("CapsuleShape3D_d3xfc")
+
+[node name="vfx_stylized_blood" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_uqrl8")
+emitting = false
+amount = 20
+lifetime = 0.18000000000000002
+one_shot = true
+explosiveness = 0.93
+fixed_fps = 60
+trail_lifetime = 1.4
+process_material = SubResource("ParticleProcessMaterial_ayva6")
+draw_pass_1 = ExtResource("5_ofu3w")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4738328, -0.1390171)
+shape = SubResource("SphereShape3D_62d0r")
