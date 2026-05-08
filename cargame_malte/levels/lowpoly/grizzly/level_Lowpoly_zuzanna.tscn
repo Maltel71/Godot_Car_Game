@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dg8so0xf8mnwr"]
+[gd_scene format=3 uid="uid://dg8so0xf8mnwr"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_1sxkn"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_7xf2f"]
