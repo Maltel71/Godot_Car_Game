@@ -1,10 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://bvpb7r0sxfao0"]
+[gd_scene load_steps=33 format=3 uid="uid://bvpb7r0sxfao0"]
 
 [ext_resource type="Script" uid="uid://c5ak538okqckp" path="res://scripts/car.gd" id="1_ch74o"]
-[ext_resource type="PackedScene" uid="uid://bwstbwhrnp6bi" path="res://models/lowpoly_stylized/malte/car/CarMain02.fbx" id="2_v4838"]
-[ext_resource type="PackedScene" uid="uid://cp3bm0su1ptd1" path="res://models/lowpoly_stylized/malte/car/SteeringWheel.fbx" id="3_iu64e"]
-[ext_resource type="PackedScene" uid="uid://30dm6jmdgvj0" path="res://models/lowpoly_stylized/malte/car/CarWindows02.fbx" id="4_1tdql"]
 [ext_resource type="PackedScene" uid="uid://cq7yv5qtpqc10" path="res://models/lowpoly_stylized/malte/car/Wheel02.fbx" id="5_1amfe"]
+[ext_resource type="PackedScene" uid="uid://52mkjoarn3c2" path="res://models/lowpoly_stylized/elias_models/Elias_carbody.glb" id="5_iu64e"]
+[ext_resource type="PackedScene" uid="uid://p3jc3ukejron" path="res://models/lowpoly_stylized/elias_models/Elias_tire.glb" id="6_1tdql"]
 [ext_resource type="Script" uid="uid://drvokxdo1lwjg" path="res://scripts/cam.gd" id="6_c27eu"]
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://vfx/vfx_smoke_shader.tres" id="7_b5mdm"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://vfx/T_Noise_001R.png" id="8_tgswd"]
@@ -101,24 +100,71 @@ scale_curve = SubResource("CurveTexture_mffl1")
 color_ramp = SubResource("GradientTexture1D_ovmv7")
 alpha_curve = SubResource("CurveTexture_wnk4v")
 
-[node name="Car_Default" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iu64e"]
+render_priority = 0
+shader = ExtResource("7_b5mdm")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("8_tgswd")
+
+[sub_resource type="Curve" id="Curve_1tdql"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7y3ot"]
+texture_mode = 1
+curve = SubResource("Curve_1tdql")
+
+[sub_resource type="Gradient" id="Gradient_1amfe"]
+offsets = PackedFloat32Array(0.13207547, 0.3773585, 0.988391)
+colors = PackedColorArray(0.99999994, 0.7726111, 0.12258693, 1, 0.7442253, 0.06303743, 1.92523e-07, 1, 0.8091658, 0.6744181, 0.6291941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x0lqn"]
+gradient = SubResource("Gradient_1amfe")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_c27eu"]
+_data = [Vector2(0, 0.15730345), 0.0, 0.328478, 0, 0, Vector2(0.99593484, 0.32584274), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_mv3wq"]
+curve = SubResource("Curve_c27eu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b5mdm"]
+lifetime_randomness = 0.3
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, 1, 0)
+scale_min = 2.0
+scale_max = 15.0
+scale_curve = SubResource("CurveTexture_mv3wq")
+color_ramp = SubResource("GradientTexture1D_x0lqn")
+alpha_curve = SubResource("CurveTexture_7y3ot")
+hue_variation_min = -1.0
+hue_variation_max = -1.0
+
+[node name="Car_Elias" type="VehicleBody3D" node_paths=PackedStringArray("exhaust_particles", "explosion_particles")]
 mass = 240.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, 0, 0.2)
 script = ExtResource("1_ch74o")
 exhaust_particles = NodePath("===ParticelSystems===/vfx_Exhaust_Driving")
+explosion_particles = NodePath("vfx_stylized_explotion")
 
 [node name="===Body===" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Body_Mesh" parent="===Body===" instance=ExtResource("2_v4838")]
-metadata/_edit_lock_ = true
+[node name="Elias_carbody" parent="===Body===" instance=ExtResource("5_iu64e")]
 
-[node name="SteeringWheel_Mesh" parent="===Body===" instance=ExtResource("3_iu64e")]
-metadata/_edit_lock_ = true
-
-[node name="Windows_Mesh" parent="===Body===" instance=ExtResource("4_1tdql")]
-metadata/_edit_lock_ = true
+[node name="Elias_tire" parent="===Body===" instance=ExtResource("6_1tdql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.280557)
+visible = false
 
 [node name="wheel_front_left" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21, -1, 1.75)
@@ -225,7 +271,6 @@ draw_pass_1 = ExtResource("9_e4bv0")
 metadata/_edit_lock_ = true
 
 [node name="===Thrusters===" type="Node3D" parent="."]
-visible = false
 metadata/_edit_lock_ = true
 
 [node name="Thruster_L" parent="===Thrusters===" node_paths=PackedStringArray("puff_effect") groups=["thrusters"] instance=ExtResource("10_ptm0x")]
@@ -271,3 +316,14 @@ metadata/_edit_lock_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="===Car_SFX_Manager==="]
 bus = &"sfx"
+
+[node name="vfx_stylized_explotion" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_iu64e")
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 0.93
+fixed_fps = 60
+trail_lifetime = 1.4
+process_material = SubResource("ParticleProcessMaterial_b5mdm")
+draw_pass_1 = ExtResource("9_e4bv0")
