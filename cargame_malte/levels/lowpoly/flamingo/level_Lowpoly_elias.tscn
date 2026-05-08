@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://k5c27q3vdtld"]
+[gd_scene format=3 uid="uid://k5c27q3vdtld"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_ex38a"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_dkn1a"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqai0u6p38b8" path="res://level_components/player/car_default.tscn" id="5_tqevo"]
 [ext_resource type="PackedScene" uid="uid://i7731chqwv0j" path="res://level_components/pickups/pickup_points_01.tscn" id="6_dyc4y"]
 [ext_resource type="PackedScene" uid="uid://b6dgu6illgldr" path="res://level_components/pickups/pickup_thrusters_01.tscn" id="7_fy3pj"]
-[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://pickup_time_01.tscn" id="8_ywqy7"]
+[ext_resource type="PackedScene" uid="uid://dh3if1v1pfxhv" path="res://level_components/pickups/pickup_time_01.tscn" id="8_ywqy7"]
 [ext_resource type="PackedScene" uid="uid://cv3pvux6mm38t" path="res://models/lowpoly_stylized/malte/_scene_prefabs/enviroment/grass2.tscn" id="9_it5fo"]
 [ext_resource type="PackedScene" uid="uid://dqjietrchryqf" path="res://models/lowpoly_stylized/malte/enviroment/env_rock1_mesh_01_v1.glb" id="10_p1wnj"]
 [ext_resource type="PackedScene" uid="uid://cnytve32g6tc3" path="res://models/lowpoly_stylized/malte/enviroment/env_tree1_mesh_01_v1.glb" id="11_d606u"]
