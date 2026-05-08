@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6dgu6illgldr"]
 
-[ext_resource type="Script" uid="uid://s6qoe463bo71" path="res://scripts/pickup_thrusters.gd" id="1_7gam7"]
+[ext_resource type="Script" uid="uid://s6qoe463bo71" path="res://models/lowpoly_stylized/malte/pickup_thrusters.gd" id="1_7gam7"]
 [ext_resource type="AudioStream" uid="uid://wbx6x2nsbgmt" path="res://audio/sfx/pickup/pickupCoin (2).wav" id="2_eiwu8"]
 [ext_resource type="PackedScene" uid="uid://dvstrfj7fo66e" path="res://models/lowpoly_stylized/malte/uppgrade_thruster1_v1.glb" id="3_eiwu8"]
 
