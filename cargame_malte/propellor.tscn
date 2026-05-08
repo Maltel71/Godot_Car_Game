@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgw3eyxftgm5q"]
+
+[ext_resource type="Material" uid="uid://7bfo3qeh1oed" path="res://materials/black_metal_samuel.tres" id="1_bqrmn"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_b1ygx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4e6tp"]
+
+[node name="propellor" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="propellor rod" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.48000002, 0, 0, 0, 2.1120002, 0, 0, 0, 0.48000002, 0, 0, 0)
+material_override = ExtResource("1_bqrmn")
+mesh = SubResource("CylinderMesh_b1ygx")
+
+[node name="propellor flap" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(8.266747, 0, 0, 0, 0.113015674, 0, 0, 0, 0.48000002, 0, 2.05723, 0)
+material_override = ExtResource("1_bqrmn")
+mesh = SubResource("BoxMesh_4e6tp")
+
+[node name="propellor flap 2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.17298175, 0, 0.47989488, 0, 0.113015674, 0, -8.264937, 0, 0.010044005, 0, 2.05723, 0)
+material_override = ExtResource("1_bqrmn")
+mesh = SubResource("BoxMesh_4e6tp")
