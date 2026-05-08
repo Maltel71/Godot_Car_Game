@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddndprpjs2c31"]
+
+[ext_resource type="PackedScene" uid="uid://dp2lmayyj2vfr" path="res://models/clay/ella/Ella_Wheel.glb" id="1_j6aoj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j6aoj"]
+radius = 0.3737515
+
+[node name="Clay_Grass_01" type="StaticBody3D"]
+transform = Transform3D(3.5356073, 0, 0, 0, 3.5356073, 0, 0, 0, 3.5356073, 0, 0, 0)
+
+[node name="Ella_Wheel2" parent="." instance=ExtResource("1_j6aoj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3467122, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28283685, 0)
+shape = SubResource("SphereShape3D_j6aoj")

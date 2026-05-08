@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccejoofdsrfml"]
+
+[ext_resource type="PackedScene" uid="uid://bkd5h1kbj05aj" path="res://models/clay/malte/Malte_Tree1.glb" id="1_p4c2h"]
+[ext_resource type="Material" uid="uid://dm75tiottqmkt" path="res://addons/dangerarea/ella_mat.tres" id="2_ppjn1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p4c2h"]
+radius = 0.095
+height = 1.126709
+
+[node name="Clay_Tree_01" type="StaticBody3D"]
+transform = Transform3D(3.5356073, 0, 0, 0, 3.5356073, 0, 0, 0, 3.5356073, 0, 0, 0)
+
+[node name="Malte_Tree12" parent="." instance=ExtResource("1_p4c2h")]
+transform = Transform3D(3.6032894, 0.35349613, 0, -0.35340843, 3.6023953, 0.08062526, 0.007871848, -0.08024007, 3.6196892, -0.048496783, -0.14541855, -0.00042626268)
+
+[node name="Malte_Tree1" parent="Malte_Tree12" index="0"]
+surface_material_override/0 = ExtResource("2_ppjn1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366831, 0)
+shape = SubResource("CapsuleShape3D_p4c2h")
+
+[editable path="Malte_Tree12"]

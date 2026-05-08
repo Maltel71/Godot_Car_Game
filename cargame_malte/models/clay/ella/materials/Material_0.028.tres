@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://5u03r6m2qy0s" path="res://models/clay/ella/Ella_Car_8f1844aa2f7807c426437e311aa4b66b.jpg" id="1_c10rw"]
 [ext_resource type="Texture2D" uid="uid://22tclnlcv88r" path="res://models/clay/ella/Ella_Car_694415d293fb435add41499d6b5e2dfb.jpg" id="2_2veut"]
-[ext_resource type="Texture2D" uid="uid://f0o27v5cwdlk" path="res://models/clay/ella/Ella_Car_799395ca539effa235685ac30bf36600.jpg" id="3_71xlw"]
+[ext_resource type="Texture2D" uid="uid://f0o27v5cwdlk" path="res://Ella_Car_799395ca539effa235685ac30bf36600.jpg" id="3_71xlw"]
 
 [resource]
 resource_name = "Material_0.028"
