@@ -63,7 +63,6 @@ var _top_secret_timer: float = 0.0
 var _is_top_secret_critical: bool = false
 var _is_being_seen: bool = false
 
-
 var _flip_timer: float = 0.0
 var driver_in_car: bool = false
 var current_player: Node3D = null

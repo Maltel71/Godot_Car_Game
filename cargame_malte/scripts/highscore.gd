@@ -208,4 +208,8 @@ func _special_status(param: int) -> String:
 		if car and car._is_height_critical:
 			return "FREAKING OUT! %.1fs" % (car.height_critical_time - car._height_critical_timer)
 		return "All good"
+	if param == PackageVariation.SecurityParam.FRESH:
+		if manager.delivery_failed:
+			return "Spoiled!"
+		return "%.1fs until spoiled" % max(0.0, manager.fresh_spoil_time - manager.fresh_timer)
 	return "All good"

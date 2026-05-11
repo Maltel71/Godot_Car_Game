@@ -541,3 +541,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8053249, -2.1389766)
 [node name="RayCast3D_Height" type="RayCast3D" parent="." unique_id=466235841]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37469256, -0.119893074)
 target_position = Vector3(0, -50, 0)
+
+[node name="GPUParticlesCollisionHeightField3D" type="GPUParticlesCollisionHeightField3D" parent="." unique_id=1096385028]
+size = Vector3(50, 50, 50)
+metadata/_edit_lock_ = true

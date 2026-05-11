@@ -20,6 +20,9 @@ var has_special_badge: bool = false
 
 @export var criminal_xp_penalty: int = 30
 
+@export var fresh_spoil_time: float = 60.0
+var fresh_timer: float = 0.0
+
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
 var is_delivering: bool = false
@@ -41,6 +44,12 @@ func _ready():
 func _process(delta):
 	if is_delivering:
 		delivery_timer += delta
+		if current_package and PackageVariation.SecurityParam.FRESH in current_package.security_params and not delivery_failed:
+			fresh_timer += delta
+			if fresh_timer >= fresh_spoil_time:
+				fail_delivery()
+		
+		
 
 func add_score(points: int):
 	level_score += points
