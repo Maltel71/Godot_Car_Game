@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://br7nionnym1rs"]
+
+[ext_resource type="Script" uid="uid://cuij4vlplwl7h" path="res://scripts/water_area.gd" id="1_0l6rf"]
+[ext_resource type="Material" uid="uid://iaw3huhvm4xw" path="res://materials/transp_ph_mat_blue.tres" id="2_k46kc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k46kc"]
+size = Vector3(20, 20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dmjj3"]
+size = Vector3(20, 20, 20)
+
+[node name="Water_Area" type="Node3D" unique_id=1164177762]
+script = ExtResource("1_0l6rf")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=35910789]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Area3D" unique_id=79230398]
+shape = SubResource("BoxShape3D_k46kc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=680537670]
+material_override = ExtResource("2_k46kc")
+mesh = SubResource("BoxMesh_dmjj3")

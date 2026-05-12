@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dwbw4kgx78i7p"]
+
+[ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="1_wp632"]
+[ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="2_umap8"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cjmnsp3sw3n4t" path="res://particlesyst/new_ribbon_trail_mesh_01.tres" id="3_wp632"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2j6gv"]
+render_priority = 0
+shader = ExtResource("1_wp632")
+shader_parameter/texture_scale = Vector2(0.5, 0.5)
+shader_parameter/Dissolver_texture = ExtResource("2_umap8")
+
+[sub_resource type="Curve" id="Curve_2btkh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wp632"]
+texture_mode = 1
+curve = SubResource("Curve_2btkh")
+
+[sub_resource type="Gradient" id="Gradient_rebef"]
+offsets = PackedFloat32Array(0, 0.5053435, 0.988391)
+colors = PackedColorArray(0.4198462, 0.9649963, 0.8591809, 1, 0.19157827, 0.7187391, 0.99999994, 1, 1.1551381e-06, 0.8808322, 0.948641, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_umap8"]
+gradient = SubResource("Gradient_rebef")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_e85de"]
+_data = [Vector2(0, 0), 0.0, 0.328478, 0, 0, Vector2(0.5636363, 0.1685394), 0.0, 0.0, 0, 0, Vector2(0.98636353, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0m4sj"]
+curve = SubResource("Curve_e85de")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mutqc"]
+particle_flag_rotate_y = true
+emission_shape = 1
+emission_sphere_radius = 0.8
+angle_min = -108.0
+angle_max = 108.0
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+gravity = Vector3(0, -2, 0)
+scale_max = 1.2
+scale_curve = SubResource("CurveTexture_0m4sj")
+color_ramp = SubResource("GradientTexture1D_umap8")
+alpha_curve = SubResource("CurveTexture_wp632")
+
+[node name="VFXPickupParticles1" type="Node3D" unique_id=1037302497]
+
+[node name="WaterSplash_PartSyst" type="GPUParticles3D" parent="." unique_id=948495692]
+material_override = SubResource("ShaderMaterial_2j6gv")
+emitting = false
+amount = 20
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+fixed_fps = 60
+trail_lifetime = 1.12
+process_material = SubResource("ParticleProcessMaterial_mutqc")
+draw_pass_1 = ExtResource("3_wp632")

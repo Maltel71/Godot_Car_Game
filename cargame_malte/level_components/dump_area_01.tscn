@@ -2,22 +2,39 @@
 
 [ext_resource type="Script" uid="uid://cu7d6oare674v" path="res://scripts/dump_area.gd" id="1_c3v6i"]
 [ext_resource type="Material" uid="uid://byn31jdchg2b6" path="res://materials/darkgreen1_mat.tres" id="1_m2hu2"]
+[ext_resource type="Script" uid="uid://bq4ou6xgw4pe8" path="res://scripts/interact_label.gd" id="3_dopox"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a030b"]
-size = Vector3(2.0612488, 1.8369141, 3.9541016)
+size = Vector3(3.9240375, 1.8369141, 5.5457764)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m2hu2"]
 size = Vector3(2, 2, 4)
 
-[node name="DumpArea_01" type="Node3D" unique_id=384211543]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dopox"]
+size = Vector3(1.9873047, 1.9938965, 3.9482422)
+
+[node name="DumpArea_01" type="StaticBody3D" unique_id=1450054831]
 script = ExtResource("1_c3v6i")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=288561814]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=608271878]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011245728, 0.41845703, -0.0024414063)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.005286455, 0.41845703, -0.013244629)
 shape = SubResource("BoxShape3D_a030b")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=960100960]
 material_override = ExtResource("1_m2hu2")
 mesh = SubResource("BoxMesh_m2hu2")
+
+[node name="InteractLabel_E" type="Label3D" parent="." unique_id=721037735]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.0074501038, 2.0955815, 0.056687117)
+text = "(E)
+To dump
+package"
+font_size = 64
+script = ExtResource("3_dopox")
+show_distance = 4.5
+use_place_package = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=872608422]
+shape = SubResource("BoxShape3D_dopox")

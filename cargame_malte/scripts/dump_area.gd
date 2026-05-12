@@ -1,4 +1,4 @@
-extends Node3D
+extends StaticBody3D
 
 @onready var area: Area3D = $Area3D
 var player_in_range: Node3D = null

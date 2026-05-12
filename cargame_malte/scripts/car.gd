@@ -63,6 +63,8 @@ var _top_secret_timer: float = 0.0
 var _is_top_secret_critical: bool = false
 var _is_being_seen: bool = false
 
+@export_group("Keep Dry")
+
 var _flip_timer: float = 0.0
 var driver_in_car: bool = false
 var current_player: Node3D = null
@@ -107,6 +109,7 @@ func _physics_process(delta):
 			
 		_check_afraid_of_heights(delta)
 		_check_top_secret(delta)
+		_check_keep_dry(delta)
 		
 	else:
 		# Parked: hold handbrake
@@ -313,3 +316,25 @@ func _animal_freakout():
 		var animal = animal_scene.instantiate()
 		get_tree().current_scene.add_child(animal)
 		animal.global_position = animal_spawn_point.global_position
+		
+func _check_keep_dry(delta):
+	var manager = get_node("/root/ScoreAndTimeManager")
+	var pkg = manager.current_package
+	if not HasPackage or not pkg or PackageVariation.SecurityParam.KEEP_DRY not in pkg.security_params:
+		manager.wet_amount = 0.0
+		return
+	if manager.delivery_failed:
+		return
+
+	var in_water = false
+	for w in get_tree().get_nodes_in_group("water_areas"):
+		if w.car_in_water:
+			in_water = true
+			break
+
+	if in_water:
+		manager.wet_amount = min(1.0, manager.wet_amount + delta / manager.wet_fail_time)
+		if manager.wet_amount >= 1.0:
+			manager.fail_delivery()
+	else:
+		manager.wet_amount = max(0.0, manager.wet_amount - delta * manager.wet_dry_rate)

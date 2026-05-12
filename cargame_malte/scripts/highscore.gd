@@ -212,4 +212,11 @@ func _special_status(param: int) -> String:
 		if manager.delivery_failed:
 			return "Spoiled!"
 		return "%.1fs until spoiled" % max(0.0, manager.fresh_spoil_time - manager.fresh_timer)
+	if param == PackageVariation.SecurityParam.KEEP_DRY:
+		if manager.delivery_failed:
+			return "Wet!"
+		var w = manager.wet_amount
+		if w >= 0.66: return "Soggy"
+		if w >= 0.33: return "Damp"
+		return "Dry"
 	return "All good"

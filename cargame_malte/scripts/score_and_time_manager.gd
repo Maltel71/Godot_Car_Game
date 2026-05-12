@@ -23,6 +23,10 @@ var has_special_badge: bool = false
 @export var fresh_spoil_time: float = 60.0
 var fresh_timer: float = 0.0
 
+@export var wet_fail_time: float = 4.0
+@export var wet_dry_rate: float = 0.001
+var wet_amount: float = 0.0
+
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
 var is_delivering: bool = false
@@ -72,6 +76,7 @@ func start_delivery(distance: float):
 	is_delivering = true
 	bump_count = 0
 	delivery_failed = false
+	wet_amount = 0.0
 
 func complete_delivery() -> int:
 	is_delivering = false

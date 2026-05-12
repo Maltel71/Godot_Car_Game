@@ -21,30 +21,17 @@
 [ext_resource type="PackedScene" uid="uid://cmola6wlrukwt" path="res://level_components/npc_autoshop.tscn" id="20_nomkf"]
 [ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="21_dpc8t"]
 [ext_resource type="Material" uid="uid://bx1hc0dhidmnp" path="res://materials/mattest1.tres" id="21_s67ts"]
-[ext_resource type="Resource" uid="uid://bw03wxoihq2aq" path="res://level_components/package_variations/package_fresh.tres" id="21_w87fk"]
+[ext_resource type="Resource" uid="uid://dy55bvxfat518" path="res://level_components/package_variations/package_keepdry.tres" id="21_uvpi8"]
 [ext_resource type="Material" uid="uid://jpaqr4j2b6tg" path="res://materials/blue_mat.tres" id="21_wsmxb"]
-[ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="22_m4706"]
-[ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="23_4xp61"]
 [ext_resource type="PackedScene" uid="uid://wdwk0xgdirqt" path="res://UI/menu_autoshop.tscn" id="23_rddwe"]
-[ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="24_4yoxl"]
 [ext_resource type="Material" uid="uid://byn31jdchg2b6" path="res://materials/darkgreen1_mat.tres" id="24_bf7t1"]
 [ext_resource type="PackedScene" uid="uid://by4lbj6m4rtcc" path="res://level_components/get_package_area.tscn" id="24_he6wg"]
 [ext_resource type="PackedScene" uid="uid://ce1d6xjtdedys" path="res://models/LowpolyHamsterStuff/Package_01.glb" id="25_00pa0"]
-[ext_resource type="Script" uid="uid://bdmddvysq5lr7" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="25_6dcgf"]
 [ext_resource type="PackedScene" uid="uid://cnyvud1uoflv3" path="res://models/LowpolyHamsterStuff/HamsterHouse_01.glb" id="25_he6wg"]
 [ext_resource type="PackedScene" uid="uid://vvt8c25evg6t" path="res://level_components/delivery_area.tscn" id="25_jqt73"]
 [ext_resource type="PackedScene" uid="uid://dh3nmimchv1p3" path="res://level_components/npc_giver.tscn" id="26_00pa0"]
 [ext_resource type="PackedScene" uid="uid://bug70pbbw6rr1" path="res://level_components/chain_link_fence_01.tscn" id="26_ghfw4"]
-[ext_resource type="Script" uid="uid://bmob6pfsj2tqx" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="26_ubuva"]
-[ext_resource type="Script" uid="uid://7bpqtd2p8kjn" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="27_0nm7o"]
 [ext_resource type="PackedScene" uid="uid://bixf6jy6ch7p2" path="res://level_components/npc_receiver.tscn" id="27_amxoe"]
-[ext_resource type="Script" uid="uid://bly43vu2asvh0" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="28_pjs8f"]
-[ext_resource type="Script" uid="uid://g3opjh3m3iww" path="res://addons/proton_scatter/src/modifiers/project_on_terrain3d.gd" id="29_4xp61"]
-[ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="29_bf7t1"]
-[ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="30_ghfw4"]
-[ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="31_s67ts"]
-[ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="33_4yoxl"]
-[ext_resource type="Script" uid="uid://djha0k1o3sp7w" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="34_6dcgf"]
 [ext_resource type="Script" uid="uid://cyen5sn36j50h" path="res://scripts/daynnight.gd" id="35_ubuva"]
 [ext_resource type="PackedScene" uid="uid://b6k5cxdew0dtw" path="res://level_components/npc_criminal.tscn" id="36_1h2df"]
 [ext_resource type="Material" uid="uid://fqf1yv48eafk" path="res://materials/Brown_mat.tres" id="37_af6je"]
@@ -55,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://m5tmgig1qvxh" path="res://level_components/house_door.tscn" id="46_qthv2"]
 [ext_resource type="PackedScene" uid="uid://bdi2oqrkwvuen" path="res://level_components/player_house_interior.tscn" id="47_wnekv"]
 [ext_resource type="Script" uid="uid://bq4ou6xgw4pe8" path="res://scripts/interact_label.gd" id="48_jyp08"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cjmnsp3sw3n4t" path="res://particlesyst/new_ribbon_trail_mesh_01.tres" id="51_nfgrx"]
 [ext_resource type="PackedScene" uid="uid://br4xbd73oojxj" path="res://level_components/npc_police_admin.tscn" id="53_m0g18"]
 [ext_resource type="PackedScene" uid="uid://b0k3dmvnwnamc" path="res://level_components/broken_package_scene.tscn" id="54_df2rw"]
 [ext_resource type="PackedScene" uid="uid://bifubj27y0tro" path="res://level_components/speechbubble_3d.tscn" id="58_hit22"]
@@ -63,6 +51,7 @@
 [ext_resource type="Shader" uid="uid://cuhljiubtrlir" path="res://particlesyst/vfx_smoke_shader.tres" id="61_pmt47"]
 [ext_resource type="Texture2D" uid="uid://b0xijy1btu7u5" path="res://particlesyst/T_Noise_001R.png" id="62_uvpi8"]
 [ext_resource type="ArrayMesh" uid="uid://gfqg5ajnnrga" path="res://particlesyst/Cloud_v2.obj" id="63_26l26"]
+[ext_resource type="PackedScene" uid="uid://br7nionnym1rs" path="res://level_components/water_area.tscn" id="64_uvpi8"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ubuva"]
 ground_color = Color(0.43712926, 0.30232787, 0.49698526, 1)
@@ -482,105 +471,6 @@ radius = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ghfw4"]
 
-[sub_resource type="Resource" id="Resource_cqcr4"]
-script = ExtResource("25_6dcgf")
-amount = 200
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_trqat"]
-script = ExtResource("29_4xp61")
-terrain_node = NodePath("../Terrain3D")
-align_with_collision_normal = true
-max_slope = 10.0
-
-[sub_resource type="Resource" id="Resource_r6t30"]
-script = ExtResource("26_ubuva")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(20, 360, 20)
-scale = Vector3(2, 2, 2)
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_umlkt"]
-script = ExtResource("27_0nm7o")
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-restrict_height = true
-
-[sub_resource type="Resource" id="Resource_643hv"]
-script = ExtResource("28_pjs8f")
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-align_with_collision_normal = true
-max_slope = 20.0
-
-[sub_resource type="Resource" id="Resource_js1ip"]
-script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_cqcr4"), SubResource("Resource_trqat"), SubResource("Resource_r6t30"), SubResource("Resource_umlkt"), SubResource("Resource_643hv")])
-
-[sub_resource type="Resource" id="Resource_g8bsm"]
-script = ExtResource("31_s67ts")
-radius = 1000.0
-
-[sub_resource type="Resource" id="Resource_s67ts"]
-script = ExtResource("33_4yoxl")
-size = Vector3(120.12787, 81.34689, 493.13168)
-metadata/_custom_type_script = "uid://bto17stixsm1"
-
-[sub_resource type="Curve3D" id="Curve3D_nomkf"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 127.07349, -4.5776367e-05, -176.99887, 0, 0, 0, 0, 0, 0, 80.94928, -4.5776367e-05, -164.41954, 0, 0, 0, 0, 0, 0, 69.06885, -4.5776367e-05, -203.55519, 0, 0, 0, 0, 0, 0, 84.44354, -4.5776367e-05, -254.5713, 0, 0, 0, 0, 0, 0, 123.57922, -4.5776367e-05, -283.2242, 0, 0, 0, 0, 0, 0, 168.30566, -4.5776367e-05, -287.41733, 0, 0, 0, 0, 0, 0, 222.11719, -4.5776367e-05, -295.1047, 0, 0, 0, 0, 0, 0, 250.77008, -4.5776367e-05, -318.86563, 0, 0, 0, 0, 0, 0, 293.40002, -4.5776367e-05, -364.9898, 0, 0, 0, 0, 0, 0, 320.6552, -4.5776367e-05, -351.71164, 0, 0, 0, 0, 0, 0, 301.08734, -4.5776367e-05, -311.8771, 0, 0, 0, 0, 0, 0, 298.292, -4.5776367e-05, -257.36673, 0, 0, 0, 0, 0, 0, 329.7403, -4.5776367e-05, -192.37363, 0, 0, 0, 0, 0, 0, 387.74493, -4.5776367e-05, -133.67012, 0, 0, 0, 0, 0, 0, 424.784, -4.5776367e-05, -103.61952, 0, 0, 0, 0, 0, 0, 461.12433, -4.5776367e-05, -112.00571, 0, 0, 0, 0, 0, 0, 496.0669, -4.5776367e-05, -138.56207, 0, 0, 0, 0, 0, 0, 518.43005, -4.5776367e-05, -122.48851, 0, 0, 0, 0, 0, 0, 486.28284, -4.5776367e-05, -88.94366, 0, 0, 0, 0, 0, 0, 456.93115, -4.5776367e-05, -33.73442, 0, 0, 0, 0, 0, 0, 453.4369, -4.5776367e-05, 70.394394, 0, 0, 0, 0, 0, 0, 472.3059, -4.5776367e-05, 208.7669, 0, 0, 0, 0, 0, 0, 424.784, -4.5776367e-05, 282.84512, 0, 0, 0, 0, 0, 0, 438.761, -4.5776367e-05, 384.87738, 0, 0, 0, 0, 0, 0, 432.47137, -4.5776367e-05, 426.10956, 0, 0, 0, 0, 0, 0, 401.722, -4.5776367e-05, 449.17166, 0, 0, 0, 0, 0, 0, 361.8874, -4.5776367e-05, 408.6383, 0, 0, 0, 0, 0, 0, 284.31494, -4.5776367e-05, 400.2521, 0, 0, 0, 0, 0, 0, 250.77008, -4.5776367e-05, 338.75317, 0, 0, 0, 0, 0, 0, 190.66896, -4.5776367e-05, 254.89108, 0, 0, 0, 0, 0, 0, 126.37459, -4.5776367e-05, 220.64734, 0, 0, 0, 0, 0, 0, 171.10107, -4.5776367e-05, 196.18759, 0, 0, 0, 0, 0, 0, 166.2091, -4.5776367e-05, 154.95535, 0, 0, 0, 0, 0, 0, 164.8114, -4.5776367e-05, 74.587494, 0, 0, 0, 0, 0, 0, 203.24823, -4.5776367e-05, 34.054157, 0, 0, 0, 0, 0, 0, 264.74713, -4.5776367e-05, -38.626354, 0, 0, 0, 0, 0, 0, 275.9287, -4.5776367e-05, -111.306885, 0, 0, 0, 0, 0, 0, 252.16779, -4.5776367e-05, -163.02187, 0, 0, 0, 0, 0, 0, 169.70337, -4.5776367e-05, -192.37363, 0, 0, 0, 0, 0, 0, 124.278076, -4.5776367e-05, -176.99887),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 40
-
-[sub_resource type="Resource" id="Resource_rddwe"]
-script = ExtResource("34_6dcgf")
-curve = SubResource("Curve3D_nomkf")
-metadata/_custom_type_script = "uid://djha0k1o3sp7w"
-
-[sub_resource type="Resource" id="Resource_diohl"]
-script = ExtResource("25_6dcgf")
-amount = 300
-restrict_height = true
-reference_frame = 1
-
-[sub_resource type="Resource" id="Resource_hwl1s"]
-script = ExtResource("29_4xp61")
-terrain_node = NodePath("../Terrain3D")
-align_with_collision_normal = true
-max_slope = 10.0
-
-[sub_resource type="Resource" id="Resource_ccryc"]
-script = ExtResource("26_ubuva")
-position = Vector3(0.15, 0.15, 0.15)
-rotation = Vector3(20, 360, 20)
-scale = Vector3(2, 2, 2)
-reference_frame = 2
-
-[sub_resource type="Resource" id="Resource_su2ae"]
-script = ExtResource("27_0nm7o")
-offset_step = 0.2
-consecutive_step_multiplier = 0.75
-restrict_height = true
-
-[sub_resource type="Resource" id="Resource_3ubgy"]
-script = ExtResource("28_pjs8f")
-ray_length = 5.0
-ray_offset = 5.0
-remove_points_on_miss = false
-align_with_collision_normal = true
-max_slope = 20.0
-
-[sub_resource type="Resource" id="Resource_ppdlv"]
-script = ExtResource("23_4xp61")
-stack = Array[ExtResource("24_4yoxl")]([SubResource("Resource_diohl"), SubResource("Resource_hwl1s"), SubResource("Resource_ccryc"), SubResource("Resource_su2ae"), SubResource("Resource_3ubgy")])
-
-[sub_resource type="Resource" id="Resource_ghfw4"]
-script = ExtResource("31_s67ts")
-radius = 1000.0
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ndgrd"]
 fractal_gain = -0.01
 fractal_weighted_strength = 0.33
@@ -634,7 +524,7 @@ direction = Vector3(0, 1, 0)
 spread = 0.0
 initial_velocity_min = 3.0
 initial_velocity_max = 4.0
-gravity = Vector3(0, 1, 0)
+gravity = Vector3(0, -2, 0)
 scale_min = 2.0
 scale_max = 3.0
 scale_curve = SubResource("CurveTexture_77nb8")
@@ -644,51 +534,53 @@ alpha_curve = SubResource("CurveTexture_p3sfv")
 collision_mode = 1
 collision_friction = 0.0
 collision_bounce = 0.0
+sub_emitter_mode = 2
+sub_emitter_amount_at_end = 10
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pmt47"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nfgrx"]
 render_priority = 0
 shader = ExtResource("61_pmt47")
 shader_parameter/texture_scale = Vector2(0.5, 0.5)
 shader_parameter/Dissolver_texture = ExtResource("62_uvpi8")
 
-[sub_resource type="Curve" id="Curve_uvpi8"]
+[sub_resource type="Curve" id="Curve_m0g18"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.376255), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_ri2io"]
+[sub_resource type="CurveTexture" id="CurveTexture_wp632"]
 texture_mode = 1
-curve = SubResource("Curve_uvpi8")
+curve = SubResource("Curve_m0g18")
 
-[sub_resource type="Gradient" id="Gradient_26l26"]
-offsets = PackedFloat32Array(0.13207547, 0.3773585, 0.988391)
-colors = PackedColorArray(1, 1, 1, 1, 0.4198462, 0.9649963, 0.8591809, 1, 0.93276393, 0.75427693, 0.3119415, 1)
+[sub_resource type="Gradient" id="Gradient_df2rw"]
+colors = PackedColorArray(0, 0.28562015, 0.42761156, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_j270m"]
-gradient = SubResource("Gradient_26l26")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_umap8"]
+gradient = SubResource("Gradient_df2rw")
 use_hdr = true
 
-[sub_resource type="Curve" id="Curve_cqcr4"]
-_data = [Vector2(0, 0), 0.0, 0.328478, 0, 0, Vector2(0.5636363, 0.1685394), 0.0, 0.0, 0, 0, Vector2(0.98636353, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_1h2df"]
+_data = [Vector2(0, 0), 0.0, 0.328478, 0, 0, Vector2(0.5636363, 0.1685394), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_pqrxt"]
-curve = SubResource("Curve_cqcr4")
+[sub_resource type="CurveTexture" id="CurveTexture_0m4sj"]
+curve = SubResource("Curve_1h2df")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_trqat"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p36y6"]
 particle_flag_rotate_y = true
 emission_shape = 1
-emission_sphere_radius = 0.2
+emission_sphere_radius = 0.8
 angle_min = -108.0
 angle_max = 108.0
 direction = Vector3(0, 0, 0)
 spread = 180.0
 initial_velocity_min = 3.0
 initial_velocity_max = 4.0
-gravity = Vector3(0, 0, 0)
-scale_max = 1.2
-scale_curve = SubResource("CurveTexture_pqrxt")
-color_ramp = SubResource("GradientTexture1D_j270m")
-alpha_curve = SubResource("CurveTexture_ri2io")
+gravity = Vector3(0, -2, 0)
+scale_min = 4.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_0m4sj")
+color_ramp = SubResource("GradientTexture1D_umap8")
+alpha_curve = SubResource("CurveTexture_wp632")
 
 [node name="Level2" type="Node3D" unique_id=1594088076]
 
@@ -990,7 +882,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -351.6606, 19.52204, -2.81357
 
 [node name="GetPackageArea" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=1336415522 instance=ExtResource("24_he6wg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6588745, -0.12089348, 0.989933)
-available_packages = Array[ExtResource("17_4s8mp")]([ExtResource("21_w87fk")])
+available_packages = Array[ExtResource("17_4s8mp")]([ExtResource("21_uvpi8")])
 special_office = true
 
 [node name="NPC_Giver" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==" unique_id=882193193 node_paths=PackedStringArray("waypoints", "linked_area") instance=ExtResource("26_00pa0")]
@@ -1936,62 +1828,15 @@ transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50
 [node name="Streetlamp3" parent="===ENVIROMENT===" unique_id=30132183 instance=ExtResource("12_amxoe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.87604, 117.872574, -68.092865)
 
-[node name="ProtonScatter_Trees1" type="Node3D" parent="===ENVIROMENT===" unique_id=1059775032]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.916458)
-visible = false
-script = ExtResource("22_m4706")
-keep_static_colliders = true
-modifier_stack = SubResource("Resource_js1ip")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://c17aknedeyxm4"
-
-[node name="ScatterItem" type="Node3D" parent="===ENVIROMENT===/ProtonScatter_Trees1" unique_id=1698203058]
-script = ExtResource("29_bf7t1")
-path = "uid://dl1mgv7h1thox"
-
-[node name="ScatterShape" type="Node3D" parent="===ENVIROMENT===/ProtonScatter_Trees1" unique_id=17225176]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.02155, 0, 73.39328)
-script = ExtResource("30_ghfw4")
-shape = SubResource("Resource_g8bsm")
-
-[node name="ScatterShapeNegative" type="Node3D" parent="===ENVIROMENT===/ProtonScatter_Trees1" unique_id=315772874]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -342.71082, 26.975388, 30.773163)
-script = ExtResource("30_ghfw4")
-negative = true
-shape = SubResource("Resource_s67ts")
-
-[node name="ScatterShapeNegative2" type="Node3D" parent="===ENVIROMENT===/ProtonScatter_Trees1" unique_id=2111326893]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -342.71082, 26.975388, 30.773163)
-script = ExtResource("30_ghfw4")
-negative = true
-shape = SubResource("Resource_rddwe")
-
-[node name="ProtonScatter_Grass1" type="Node3D" parent="===ENVIROMENT===" unique_id=521669149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.639618)
-visible = false
-script = ExtResource("22_m4706")
-modifier_stack = SubResource("Resource_ppdlv")
-Performance/use_chunks = true
-Performance/chunk_dimensions = Vector3(15, 15, 15)
-metadata/_custom_type_script = "uid://c17aknedeyxm4"
-
-[node name="ScatterItem" type="Node3D" parent="===ENVIROMENT===/ProtonScatter_Grass1" unique_id=1488108715]
-script = ExtResource("29_bf7t1")
-source_scale_multiplier = 0.2
-path = "uid://cv3pvux6mm38t"
-
-[node name="ScatterShape" type="Node3D" parent="===ENVIROMENT===/ProtonScatter_Grass1" unique_id=713665119]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -176.02155, 0, 73.39328)
-script = ExtResource("30_ghfw4")
-shape = SubResource("Resource_ghfw4")
-
 [node name="FogVolume" type="FogVolume" parent="===ENVIROMENT===" unique_id=1330823085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -389.40585, 10.107708, -35.186165)
 visible = false
 size = Vector3(114.81, 20, 301.83)
 shape = 2
 material = SubResource("FogMaterial_ndgrd")
+
+[node name="DumpArea_01" parent="===ENVIROMENT===" unique_id=384211543 instance=ExtResource("60_w87fk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.29257, 20.363249, 16.645565)
 
 [node name="RigidBodPackage_Test" type="RigidBody3D" parent="." unique_id=883844870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -319.67218, 20.978338, -39.333508)
@@ -2017,31 +1862,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -354.95145, 27.209156, -59.59
 [node name="road_security_camera" parent="." unique_id=744327808 instance=ExtResource("59_w87fk")]
 transform = Transform3D(1, 0, 0, 0, 0.62599146, 0.7798298, 0, -0.7798298, 0.62599146, -353.15582, 29.43172, 24.76732)
 
-[node name="DumpArea_01" parent="." unique_id=384211543 instance=ExtResource("60_w87fk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.6065, 21.10858, 16.645565)
-
 [node name="vfx_stylized_Water" type="GPUParticles3D" parent="." unique_id=1749707539]
-transform = Transform3D(-0.83439606, -0.5511653, 0, 0.5511653, -0.83439606, 0, 0, 0, 1, -317.32803, 23.873442, -37.645832)
+transform = Transform3D(-4.3711402e-08, 1, 0, -1.0000004, -4.371139e-08, 0, 0, 0, 1.0000001, -383.9406, 25.751255, 32.16686)
 material_override = SubResource("ShaderMaterial_aequv")
 amount = 80
-sub_emitter = NodePath("ParticlePuff")
+sub_emitter = NodePath("WaterSplash_PartSyst")
 lifetime = 3.05
 speed_scale = 2.0
 fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_1ir06")
 draw_pass_1 = ExtResource("63_26l26")
 
-[node name="ParticlePuff" type="GPUParticles3D" parent="vfx_stylized_Water" unique_id=664388417]
-material_override = SubResource("ShaderMaterial_pmt47")
+[node name="WaterSplash_PartSyst" type="GPUParticles3D" parent="vfx_stylized_Water" unique_id=1269494291]
+transform = Transform3D(1, 3.5527137e-15, 0, -3.5527137e-15, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_nfgrx")
 emitting = false
-amount = 20
-lifetime = 0.5
-one_shot = true
-speed_scale = 1.5
-explosiveness = 0.87
+amount = 200
+lifetime = 1.5
+speed_scale = 2.0
 fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_trqat")
-draw_pass_1 = ExtResource("63_26l26")
+trail_lifetime = 1.12
+process_material = SubResource("ParticleProcessMaterial_p36y6")
+draw_pass_1 = ExtResource("51_nfgrx")
+
+[node name="Water_Area2" parent="vfx_stylized_Water" unique_id=1842653593 instance=ExtResource("64_uvpi8")]
+transform = Transform3D(0.077911675, 0.05439208, 0, -0.02087637, 0.202994, 0, 0, 0, 0.063891865, 0.33982086, 2.2952766, -0.011505127)
+visible = false
+
+[node name="Water_Area3" parent="vfx_stylized_Water" unique_id=1164177762 instance=ExtResource("64_uvpi8")]
+transform = Transform3D(0.0698537, 0.10507743, 0, -0.040330052, 0.18199944, 0, 0, 0, 0.063891865, 1.4574801, 4.1718655, -0.011505127)
+visible = false
+
+[node name="Water_Area4" parent="vfx_stylized_Water" unique_id=78438093 instance=ExtResource("64_uvpi8")]
+transform = Transform3D(0.05703531, 0.17832232, 0, -0.057035305, 0.17832233, 0, 0, 0, 0.11628319, 4.4842076, 7.40271, -0.011505127)
+visible = false
+
+[node name="Water_Area" parent="." unique_id=35910789 instance=ExtResource("64_uvpi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -380.4675, 11.112207, 14.466061)
 
 [editable path="Car_01/WiggleTest"]
 [editable path="Car_01/WiggleTest2"]
