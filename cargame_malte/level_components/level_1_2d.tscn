@@ -21,6 +21,26 @@ position = Vector2(1082, 881)
 rotation = -1.5919659
 scale = Vector2(1.3531162, 1.1969306)
 
+[node name="Platform2D_03" parent="." unique_id=618150070 instance=ExtResource("1_n1fvy")]
+position = Vector2(756, 937)
+rotation = -1.5919659
+scale = Vector2(1.3531162, 1.1969306)
+
+[node name="Platform2D_04" parent="." unique_id=1113578813 instance=ExtResource("1_n1fvy")]
+position = Vector2(871.99994, 864)
+rotation = -1.5919659
+scale = Vector2(1.3531162, 1.1969306)
+
+[node name="Platform2D_05" parent="." unique_id=82136421 instance=ExtResource("1_n1fvy")]
+position = Vector2(963, 804.00006)
+rotation = -1.5919659
+scale = Vector2(1.3531162, 1.1969306)
+
+[node name="Platform2D_06" parent="." unique_id=1056145005 instance=ExtResource("1_n1fvy")]
+position = Vector2(1181, 924)
+rotation = -1.5919659
+scale = Vector2(1.3531162, 1.1969306)
+
 [node name="Control" type="Control" parent="." unique_id=1434836853]
 layout_mode = 3
 anchors_preset = 0
