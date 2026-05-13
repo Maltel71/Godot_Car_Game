@@ -197,7 +197,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.457476, 0.913548, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.415587, 0.913548, 0)
 
 [node name="Malte_Sign12" parent="=== Malte ===" instance=ExtResource("34_3tyjg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.050093, 0.913548, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.048473, 0.8830804, -1.9489212)
 
 [node name="Malte_SmallRock12" parent="=== Malte ===" instance=ExtResource("35_dorw1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.773238, 0.913548, 0)

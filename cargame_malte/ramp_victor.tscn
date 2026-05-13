@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2r8v18ysko4h"]
+
+[ext_resource type="PackedScene" uid="uid://b1cvvvyh0y2mr" path="res://models/clay/malte/Malte_Sign1.glb" id="1_ndene"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xoobu"]
+size = Vector3(0.536499, 0.14937256, 0.89086914)
+
+[node name="rampVictor" type="StaticBody3D"]
+
+[node name="Malte_Sign12" parent="." instance=ExtResource("1_ndene")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003967285, 0.0064904764, -0.0045166016)
+shape = SubResource("BoxShape3D_xoobu")
