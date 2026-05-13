@@ -1,0 +1,75 @@
+[orchestration type="OScript" load_steps=8 format=3 uid="uid://ddej35o27bmf0"]
+
+[obj type="OScriptFunction" id="OScriptFunction_aenkq"]
+guid = "FB11B779-0A77-4100-A75C-AA3E30C8FAD4"
+method = {
+"name": &"walk",
+"args": [{
+"name": &"NewParam",
+"usage": 131078
+}]
+}
+user_defined = true
+id = 0
+
+[obj type="OScriptGraph" id="OScriptGraph_orolp"]
+graph_name = &"EventGraph"
+flags = 8
+
+[obj type="OScriptGraph" id="OScriptGraph_ucihr"]
+graph_name = &"walk"
+flags = 22
+nodes = Array[int]([0, 1, 2])
+functions = Array[int]([0])
+
+[obj type="OScriptNodeFunctionEntry" id="OScriptNodeFunctionEntry_nsy5d"]
+function_id = "FB11B779-0A77-4100-A75C-AA3E30C8FAD4"
+id = 0
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"NewParam",
+"dir": 1,
+"flags": 2,
+"usage": 131078
+}])
+
+[obj type="OScriptNodeFunctionResult" id="OScriptNodeFunctionResult_mxk8u"]
+function_id = "FB11B779-0A77-4100-A75C-AA3E30C8FAD4"
+id = 1
+position = Vector2(300, 0)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}])
+
+[obj type="OScriptNodeVariableGet" id="OScriptNodeVariableGet_0trad"]
+variable_name = &"speed"
+id = 2
+position = Vector2(0, -100)
+pin_data = Array[Dictionary]([{
+"pin_name": &"value",
+"type": 3,
+"dir": 1,
+"flags": 2050,
+"label": "speed",
+"usage": 4102
+}])
+
+[obj type="OScriptVariable" id="OScriptVariable_kik58"]
+name = "speed"
+category = "Default"
+classification = "type:float"
+type = 3
+default_value = 0.0
+
+[resource]
+base_type = &"Node"
+brief_description = "Empty template suitable for all Objects"
+variables = Array[OScriptVariable]([SubResource("OScriptVariable_kik58")])
+functions = Array[OScriptFunction]([SubResource("OScriptFunction_aenkq")])
+connections = Array[int]([0, 0, 1, 0])
+nodes = Array[OScriptNode]([SubResource("OScriptNodeFunctionEntry_nsy5d"), SubResource("OScriptNodeFunctionResult_mxk8u"), SubResource("OScriptNodeVariableGet_0trad")])
+graphs = Array[OScriptGraph]([SubResource("OScriptGraph_orolp"), SubResource("OScriptGraph_ucihr")])

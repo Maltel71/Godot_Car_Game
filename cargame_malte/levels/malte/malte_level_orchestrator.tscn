@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dw7lfhfggmw7m"]
+
+[ext_resource type="Texture2D" uid="uid://df4g74u8qqjqe" path="res://textures/icon.svg" id="1_n8y1h"]
+[ext_resource type="Script" uid="uid://ddej35o27bmf0" path="res://player_controller.torch" id="1_yyqrp"]
+
+[node name="Node2D" type="Node2D" unique_id=433852203]
+script = ExtResource("1_yyqrp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=675622379]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_n8y1h")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=450495453]
+position = Vector2(960, 543)
