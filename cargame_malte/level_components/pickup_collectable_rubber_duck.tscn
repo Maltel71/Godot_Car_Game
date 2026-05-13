@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bkbds7qfnribx"]
+
+[ext_resource type="Script" uid="uid://c2h4lo28smqvm" path="res://scripts/pickup_collectable.gd" id="1_8wjuo"]
+[ext_resource type="PackedScene" uid="uid://deukhofdmb23y" path="res://models/LowpolyHamsterStuff/lowpolyhamster_01.glb" id="1_35ulq"]
+[ext_resource type="Material" uid="uid://3xh46ps3beyb" path="res://materials/dark_blue_mat.tres" id="2_8wjuo"]
+[ext_resource type="Script" uid="uid://bq4ou6xgw4pe8" path="res://scripts/interact_label.gd" id="4_m57ip"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m57ip"]
+radius = 2.2670524
+
+[node name="Pickup_Collectable_RubberDuck" type="Node3D" unique_id=1064092033]
+script = ExtResource("1_8wjuo")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1945432455]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2130639071]
+shape = SubResource("SphereShape3D_m57ip")
+
+[node name="Mesh_Stuffed_duck1" parent="." unique_id=1040379739 instance=ExtResource("1_35ulq")]
+transform = Transform3D(0.41449356, 0, 0, 0, 0.41449356, 0, 0, 0, 0.41449356, 0, 0, 0)
+
+[node name="Cube" parent="Mesh_Stuffed_duck1" index="0" unique_id=104348917]
+surface_material_override/0 = ExtResource("2_8wjuo")
+surface_material_override/1 = ExtResource("2_8wjuo")
+
+[node name="InteractLabel_E" type="Label3D" parent="." unique_id=512090530]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 1.3463278, 0)
+text = "(E)
+Collect!"
+font_size = 64
+script = ExtResource("4_m57ip")
+show_distance = 3.0
+use_proximity = true
+
+[editable path="Mesh_Stuffed_duck1"]
