@@ -16,6 +16,11 @@ position = Vector2(957, 540)
 position = Vector2(914.99994, 954)
 scale = Vector2(18.026337, 1.1130145)
 
+[node name="Platform2D_02" parent="." unique_id=362096135 instance=ExtResource("1_n1fvy")]
+position = Vector2(1082, 881)
+rotation = -1.5919659
+scale = Vector2(1.3531162, 1.1969306)
+
 [node name="Control" type="Control" parent="." unique_id=1434836853]
 layout_mode = 3
 anchors_preset = 0

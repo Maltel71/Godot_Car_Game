@@ -18,7 +18,7 @@ func host_game():
 		multiplayer.peer_connected.connect(add_player)
 	add_player(1) # 1 is always the Host ID
 
-func join_game(ip_address: String = "127.0.0.1"):
+func join_game(ip_address: String = "192.168.1.3"):
 	# Replace with the Host's actual local IP address
 	var peer = ENetMultiplayerPeer.new()
 	peer.create_client(ip_address, PORT)
