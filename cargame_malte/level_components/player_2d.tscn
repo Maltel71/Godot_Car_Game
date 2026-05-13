@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyva0c7ue4olx"]
+[gd_scene load_steps=4 format=3 uid="uid://dyva0c7ue4olx"]
 
 [ext_resource type="Texture2D" uid="uid://df4g74u8qqjqe" path="res://textures/icon.svg" id="1_dhox4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_578ud"]
 radius = 23.0
 height = 94.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dhox4"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Player_2D" type="CharacterBody2D"]
 
@@ -16,3 +21,6 @@ shape = SubResource("CapsuleShape2D_578ud")
 position = Vector2(0, -43)
 scale = Vector2(0.2586271, 0.6774052)
 texture = ExtResource("1_dhox4")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_dhox4")

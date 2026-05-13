@@ -1,16 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://u3birtn53ss3"]
+[gd_scene load_steps=5 format=3 uid="uid://u3birtn53ss3"]
 
+[ext_resource type="Script" uid="uid://cwpmbl7whj2i5" path="res://scripts/networkmanager.gd" id="1_adfuv"]
 [ext_resource type="PackedScene" uid="uid://bxwnpvpihoo6j" path="res://level_components/platform_2d_01.tscn" id="1_n1fvy"]
 [ext_resource type="PackedScene" uid="uid://dyva0c7ue4olx" path="res://level_components/player_2d.tscn" id="2_1n515"]
+[ext_resource type="Texture2D" uid="uid://b2aovgtvxjeq6" path="res://textures/ui_t/grabber_v2.png" id="4_1d8ht"]
 
 [node name="Level1_2D" type="Node2D"]
+script = ExtResource("1_adfuv")
+player_scene = ExtResource("2_1n515")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(957, 540)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_1n515")]
-position = Vector2(792, 628)
-
 [node name="Platform2D_01" parent="." instance=ExtResource("1_n1fvy")]
 position = Vector2(914.99994, 954)
 scale = Vector2(18.026337, 1.1130145)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Host" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+text = "Host"
+icon = ExtResource("4_1d8ht")
+
+[node name="Join" type="Button" parent="Control/GridContainer"]
+layout_mode = 2
+text = "Join"
+icon = ExtResource("4_1d8ht")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://dyva0c7ue4olx")
+spawn_path = NodePath("../SpawnPoint")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(754, 455)
+
+[connection signal="pressed" from="Control/GridContainer/Host" to="." method="host_game"]
+[connection signal="pressed" from="Control/GridContainer/Join" to="." method="join_game"]
