@@ -44,8 +44,10 @@ scale = Vector2(1.3531162, 1.1969306)
 [node name="Control" type="Control" parent="." unique_id=1434836853]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 41.0
+offset_top = 38.0
+offset_right = 81.0
+offset_bottom = 78.0
 
 [node name="GridContainer" type="GridContainer" parent="Control" unique_id=301363855]
 layout_mode = 0
@@ -61,6 +63,9 @@ icon = ExtResource("4_1d8ht")
 layout_mode = 2
 text = "Join"
 icon = ExtResource("4_1d8ht")
+
+[node name="IPField" type="LineEdit" parent="Control/GridContainer" unique_id=477720796]
+layout_mode = 2
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=802708160]
 _spawnable_scenes = PackedStringArray("uid://dyva0c7ue4olx")
