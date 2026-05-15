@@ -3,6 +3,9 @@ extends Node2D
 const PORT = 7000
 @export var player_scene: PackedScene
 
+enum ConnectMode { LOCAL, REMOTE }
+@export var connect_mode: ConnectMode = ConnectMode.LOCAL
+
 func _ready():
 	# Connection feedback — tells us what's actually happening
 	multiplayer.connected_to_server.connect(_on_connected)
@@ -16,10 +19,12 @@ func _on_host_pressed():
 	host_game()
 
 func _on_join_pressed():
-	var ip = $Control/GridContainer/IPField.text.strip_edges()
-	if ip.is_empty():
-		print("Enter the host's Tailscale IP first")
-		return
+	var ip = "127.0.0.1"
+	if connect_mode == ConnectMode.REMOTE:
+		ip = $Control/GridContainer/IPField.text.strip_edges()
+		if ip.is_empty():
+			print("Enter the host's IP first")
+			return
 	print("Attempting to join ", ip, ":", PORT)
 	join_game(ip)
 

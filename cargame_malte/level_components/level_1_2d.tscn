@@ -12,31 +12,33 @@ player_scene = ExtResource("2_1n515")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1308769917]
 position = Vector2(957, 540)
 
-[node name="Platform2D_01" parent="." unique_id=291355704 instance=ExtResource("1_n1fvy")]
+[node name="==PLATFORMS==" type="Node2D" parent="." unique_id=2100175262]
+
+[node name="Platform2D_01" parent="==PLATFORMS==" unique_id=291355704 instance=ExtResource("1_n1fvy")]
 position = Vector2(914.99994, 954)
 scale = Vector2(18.026337, 1.1130145)
 
-[node name="Platform2D_02" parent="." unique_id=362096135 instance=ExtResource("1_n1fvy")]
+[node name="Platform2D_02" parent="==PLATFORMS==" unique_id=362096135 instance=ExtResource("1_n1fvy")]
 position = Vector2(1082, 881)
 rotation = -1.5919659
 scale = Vector2(1.3531162, 1.1969306)
 
-[node name="Platform2D_03" parent="." unique_id=618150070 instance=ExtResource("1_n1fvy")]
+[node name="Platform2D_03" parent="==PLATFORMS==" unique_id=618150070 instance=ExtResource("1_n1fvy")]
 position = Vector2(756, 937)
 rotation = -1.5919659
 scale = Vector2(1.3531162, 1.1969306)
 
-[node name="Platform2D_04" parent="." unique_id=1113578813 instance=ExtResource("1_n1fvy")]
+[node name="Platform2D_04" parent="==PLATFORMS==" unique_id=1113578813 instance=ExtResource("1_n1fvy")]
 position = Vector2(871.99994, 864)
 rotation = -1.5919659
 scale = Vector2(1.3531162, 1.1969306)
 
-[node name="Platform2D_05" parent="." unique_id=82136421 instance=ExtResource("1_n1fvy")]
+[node name="Platform2D_05" parent="==PLATFORMS==" unique_id=82136421 instance=ExtResource("1_n1fvy")]
 position = Vector2(963, 804.00006)
 rotation = -1.5919659
 scale = Vector2(1.3531162, 1.1969306)
 
-[node name="Platform2D_06" parent="." unique_id=1056145005 instance=ExtResource("1_n1fvy")]
+[node name="Platform2D_06" parent="==PLATFORMS==" unique_id=1056145005 instance=ExtResource("1_n1fvy")]
 position = Vector2(1181, 924)
 rotation = -1.5919659
 scale = Vector2(1.3531162, 1.1969306)
@@ -74,5 +76,5 @@ spawn_path = NodePath("../SpawnPoint")
 [node name="SpawnPoint" type="Node2D" parent="." unique_id=34918792]
 position = Vector2(754, 455)
 
-[connection signal="pressed" from="Control/GridContainer/Host" to="." method="host_game"]
-[connection signal="pressed" from="Control/GridContainer/Join" to="." method="join_game"]
+[connection signal="pressed" from="Control/GridContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Control/GridContainer/Join" to="." method="_on_join_pressed"]
