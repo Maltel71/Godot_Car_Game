@@ -27,6 +27,13 @@ var fresh_timer: float = 0.0
 @export var wet_dry_rate: float = 0.001
 var wet_amount: float = 0.0
 
+@export var top_secret_critical_time: float = 2.0
+var top_secret_timer: float = 0.0
+var is_top_secret_critical: bool = false
+var is_being_seen: bool = false
+
+
+
 var delivery_timer: float = 0.0
 var base_delivery_time: float = 0.0
 var is_delivering: bool = false
