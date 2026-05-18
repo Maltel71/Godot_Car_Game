@@ -767,10 +767,23 @@ transform = Transform3D(1.405, 0, 0, 0, 1.405, 0, 0, 0, 1.405, 0, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="Mesh_Stuffed_duck1" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=" unique_id=1040379739 instance=ExtResource("54_1h2df")]
-transform = Transform3D(0.3763225, 0, -0.173742, 0, 0.41449356, 0, 0.173742, 0, 0.3763225, -1.1065979, 0.119522095, -5.7356567)
+transform = Transform3D(0.020052819, 0, -0.41400823, 0, 0.41449356, 0, 0.41400823, 0, 0.020052819, 5.0482683, 0.28035355, -0.4462887)
 
 [node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck1" index="0" unique_id=104348917]
-transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 18.755072, 0.3435397, 5.4824476)
+surface_material_override/0 = ExtResource("21_dpc8t")
+surface_material_override/1 = ExtResource("21_dpc8t")
+
+[node name="Mesh_Stuffed_duck2" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=" unique_id=114001943 instance=ExtResource("54_1h2df")]
+transform = Transform3D(-0.27143508, 0, -0.31325373, 0, 0.41449356, 0, 0.31325373, 0, -0.27143508, 5.022098, 0.26931763, 0.74132466)
+
+[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck2" index="0" unique_id=104348917]
+surface_material_override/0 = ExtResource("21_dpc8t")
+surface_material_override/1 = ExtResource("21_dpc8t")
+
+[node name="Mesh_Stuffed_duck3" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=" unique_id=195422024 instance=ExtResource("54_1h2df")]
+transform = Transform3D(0.16186896, 0, -0.38158008, 0, 0.41449356, 0, 0.38158008, 0, 0.16186896, 5.2580566, 1.234024, -0.07485198)
+
+[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck3" index="0" unique_id=104348917]
 surface_material_override/0 = ExtResource("21_dpc8t")
 surface_material_override/1 = ExtResource("21_dpc8t")
 
@@ -1953,10 +1966,22 @@ transform = Transform3D(-0.09094545, 0, 0.99585587, 0, 1, 0, -0.99585587, 0, -0.
 house_item = NodePath("../===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck1")
 pickup_sound = ExtResource("54_p36y6")
 
+[node name="Pickup_Collectable_RubberDuck2" parent="." unique_id=104440245 node_paths=PackedStringArray("house_item") instance=ExtResource("53_df2rw")]
+transform = Transform3D(0.7249658, 0, 0.6887849, 0, 1, 0, -0.6887849, 0, 0.7249658, -371.1959, 18.003468, -36.567585)
+house_item = NodePath("../===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck2")
+pickup_sound = ExtResource("54_p36y6")
+
+[node name="Pickup_Collectable_RubberDuck3" parent="." unique_id=1035277318 node_paths=PackedStringArray("house_item") instance=ExtResource("53_df2rw")]
+transform = Transform3D(-0.6051273, 0, 0.79612875, 0, 1, 0, -0.79612875, 0, -0.6051273, -374.66205, 18.003468, -33.776897)
+house_item = NodePath("../===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck3")
+pickup_sound = ExtResource("54_p36y6")
+
 [editable path="Car_01/WiggleTest"]
 [editable path="Car_01/WiggleTest2"]
 [editable path="Car_01/WiggleTest3"]
 [editable path="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck1"]
+[editable path="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck2"]
+[editable path="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck3"]
 [editable path="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=/HamsterHouse_02"]
 [editable path="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=/Streetlamp"]
 [editable path="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=/Package_09"]
