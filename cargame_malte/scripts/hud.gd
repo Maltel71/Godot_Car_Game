@@ -199,9 +199,8 @@ func _special_status(param: int) -> String:
 	if param == PackageVariation.SecurityParam.TOP_SECRET:
 		if manager.delivery_failed:
 			return "You have been spotted!"
-		var car = _get_active_car()
-		if car and car._is_being_seen:
-			return "Watch out! %.1fs" % (car.top_secret_critical_time - car._top_secret_timer)
+		if manager.is_being_seen:
+			return "Watch out! %.1fs" % (manager.top_secret_critical_time - manager.top_secret_timer)
 		return "All good"
 	if param == PackageVariation.SecurityParam.AFRAID_OF_HEIGHTS:
 		var car = _get_active_car()

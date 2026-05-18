@@ -26,7 +26,7 @@ buses/default_bus_layout="uid://cgklgqqpy586s"
 [autoload]
 
 MusicManager="*res://scripts/music_manager.gd"
-ScoreAndTimeManager="*res://scripts/score_and_time_manager.gd"
+ScoreAndTimeManager="*res://scripts/game_state.gd"
 PackageManager="*uid://cr0n7m1o0eoak"
 
 [display]

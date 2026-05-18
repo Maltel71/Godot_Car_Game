@@ -1,6 +1,6 @@
 extends Node3D
 
-var car_in_water: bool = false
+var _bodies: Array[Node] = []
 
 func _ready():
 	add_to_group("water_areas")
@@ -9,9 +9,14 @@ func _ready():
 	area.body_exited.connect(_on_exited)
 
 func _on_entered(body):
-	if body is VehicleBody3D:
-		car_in_water = true
+	if (body is VehicleBody3D or body.is_in_group("player")) and body not in _bodies:
+		_bodies.append(body)
 
 func _on_exited(body):
-	if body is VehicleBody3D:
-		car_in_water = false
+	_bodies.erase(body)
+
+func has_carrier() -> bool:
+	for b in _bodies:
+		if is_instance_valid(b) and "HasPackage" in b and b.HasPackage:
+			return true
+	return false

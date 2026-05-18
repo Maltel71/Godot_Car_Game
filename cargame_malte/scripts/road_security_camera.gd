@@ -7,7 +7,7 @@ extends Node3D
 @export var pause_duration: float = 1.0
 
 var sees_target: bool = false
-var car_in_cone: VehicleBody3D = null
+var target_in_cone: Node3D = null
 
 func _ready():
 	add_to_group("road_security_cameras")
@@ -24,16 +24,16 @@ func _start_swivel():
 	tween.tween_interval(pause_duration)
 
 func _on_body_entered(body):
-	if body is VehicleBody3D:
-		car_in_cone = body
+	if body is VehicleBody3D or body.is_in_group("player"):
+		target_in_cone = body
 
 func _on_body_exited(body):
-	if body == car_in_cone:
-		car_in_cone = null
+	if body == target_in_cone:
+		target_in_cone = null
 		sees_target = false
 
 func _physics_process(_delta):
-	if not car_in_cone or not car_in_cone.HasPackage:
+	if not target_in_cone or not target_in_cone.HasPackage:
 		sees_target = false
 		return
 	var manager = get_node("/root/ScoreAndTimeManager")
@@ -41,20 +41,20 @@ func _physics_process(_delta):
 	if not pkg or PackageVariation.SecurityParam.TOP_SECRET not in pkg.security_params:
 		sees_target = false
 		return
-	sees_target = not line_of_sight_raycast or _check_line_of_sight(car_in_cone)
-	
-func _check_line_of_sight(car: VehicleBody3D) -> bool:
+	sees_target = not line_of_sight_raycast or _check_line_of_sight(target_in_cone)
+
+func _check_line_of_sight(target: Node3D) -> bool:
 	var offsets: Array[Vector3] = [Vector3.ZERO]
-	var x = car.global_transform.basis.x
-	var y = car.global_transform.basis.y
+	var x = target.global_transform.basis.x
+	var y = target.global_transform.basis.y
 	for i in 9:
 		var angle = i * TAU / 9.0
 		offsets.append(x * cos(angle) + y * sin(angle))
 
 	for offset in offsets:
-		var target = car.global_position + offset
-		line_of_sight_raycast.target_position = line_of_sight_raycast.to_local(target)
+		var t = target.global_position + offset
+		line_of_sight_raycast.target_position = line_of_sight_raycast.to_local(t)
 		line_of_sight_raycast.force_raycast_update()
-		if not line_of_sight_raycast.is_colliding() or line_of_sight_raycast.get_collider() == car:
+		if not line_of_sight_raycast.is_colliding() or line_of_sight_raycast.get_collider() == target:
 			return true
 	return false

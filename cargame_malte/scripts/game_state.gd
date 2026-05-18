@@ -59,6 +59,54 @@ func _process(delta):
 			fresh_timer += delta
 			if fresh_timer >= fresh_spoil_time:
 				fail_delivery()
+		_check_top_secret(delta)
+		_check_keep_dry(delta)
+
+func _check_top_secret(delta):
+	var pkg = current_package
+	if not pkg or PackageVariation.SecurityParam.TOP_SECRET not in pkg.security_params:
+		top_secret_timer = 0.0
+		is_top_secret_critical = false
+		is_being_seen = false
+		return
+	if delivery_failed:
+		return
+
+	is_being_seen = false
+	for cam in get_tree().get_nodes_in_group("road_security_cameras"):
+		if cam.sees_target:
+			is_being_seen = true
+			break
+
+	if is_being_seen:
+		top_secret_timer += delta
+		is_top_secret_critical = true
+		if top_secret_timer >= top_secret_critical_time:
+			fail_delivery()
+	else:
+		top_secret_timer = 0.0
+		is_top_secret_critical = false
+
+func _check_keep_dry(delta):
+	var pkg = current_package
+	if not pkg or PackageVariation.SecurityParam.KEEP_DRY not in pkg.security_params:
+		wet_amount = 0.0
+		return
+	if delivery_failed:
+		return
+
+	var in_water = false
+	for w in get_tree().get_nodes_in_group("water_areas"):
+		if w.has_carrier():
+			in_water = true
+			break
+
+	if in_water:
+		wet_amount = min(1.0, wet_amount + delta / wet_fail_time)
+		if wet_amount >= 1.0:
+			fail_delivery()
+	else:
+		wet_amount = max(0.0, wet_amount - delta * wet_dry_rate)
 		
 		
 

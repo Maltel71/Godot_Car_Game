@@ -57,14 +57,6 @@ var assigned_delivery_id: String = ""
 var _height_critical_timer: float = 0.0
 var _is_height_critical: bool = false
 
-@export_group("Top Secret")
-@export var top_secret_critical_time: float = 2.0
-var _top_secret_timer: float = 0.0
-var _is_top_secret_critical: bool = false
-var _is_being_seen: bool = false
-
-@export_group("Keep Dry")
-
 var _flip_timer: float = 0.0
 var driver_in_car: bool = false
 var current_player: Node3D = null
@@ -106,11 +98,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("enter_exit") and not _doors_locked:
 			_exit_car()
 			return
-			
+
 		_check_afraid_of_heights(delta)
-		_check_top_secret(delta)
-		_check_keep_dry(delta)
-		
+
 	else:
 		# Parked: hold handbrake
 		engine_force = 0
@@ -204,7 +194,7 @@ func _sync_lights():
 		if light.is_in_group("headlight"):
 			continue
 		light.visible = engine_on
-		
+
 func _on_body_collision(_body):
 	if not HasPackage:
 		return
@@ -241,7 +231,7 @@ func _explode():
 	manager.is_delivering = false
 	manager.set_target_delivery("")
 	manager.set_target_delivery_node(null)
-	
+
 func _break_package():
 	if broken_package_scene and package_spawn_point:
 		var broken = broken_package_scene.instantiate()
@@ -255,7 +245,7 @@ func _break_package():
 	manager.is_delivering = false
 	manager.set_target_delivery("")
 	manager.set_target_delivery_node(null)
-	
+
 func _check_afraid_of_heights(delta):
 	if not HasPackage or not height_raycast:
 		_height_critical_timer = 0.0
@@ -283,32 +273,6 @@ func _check_afraid_of_heights(delta):
 	else:
 		_height_critical_timer = 0.0
 		_is_height_critical = false
-		
-func _check_top_secret(delta):
-	var manager = get_node("/root/ScoreAndTimeManager")
-	var pkg = manager.current_package
-	if not HasPackage or not pkg or PackageVariation.SecurityParam.TOP_SECRET not in pkg.security_params:
-		_top_secret_timer = 0.0
-		_is_top_secret_critical = false
-		_is_being_seen = false
-		return
-	if manager.delivery_failed:
-		return
-
-	_is_being_seen = false
-	for cam in get_tree().get_nodes_in_group("road_security_cameras"):
-		if cam.sees_target:
-			_is_being_seen = true
-			break
-
-	if _is_being_seen:
-		_top_secret_timer += delta
-		_is_top_secret_critical = true
-		if _top_secret_timer >= top_secret_critical_time:
-			manager.fail_delivery()
-	else:
-		_top_secret_timer = 0.0
-		_is_top_secret_critical = false
 
 func _animal_freakout():
 	_break_package()
@@ -316,25 +280,3 @@ func _animal_freakout():
 		var animal = animal_scene.instantiate()
 		get_tree().current_scene.add_child(animal)
 		animal.global_position = animal_spawn_point.global_position
-		
-func _check_keep_dry(delta):
-	var manager = get_node("/root/ScoreAndTimeManager")
-	var pkg = manager.current_package
-	if not HasPackage or not pkg or PackageVariation.SecurityParam.KEEP_DRY not in pkg.security_params:
-		manager.wet_amount = 0.0
-		return
-	if manager.delivery_failed:
-		return
-
-	var in_water = false
-	for w in get_tree().get_nodes_in_group("water_areas"):
-		if w.car_in_water:
-			in_water = true
-			break
-
-	if in_water:
-		manager.wet_amount = min(1.0, manager.wet_amount + delta / manager.wet_fail_time)
-		if manager.wet_amount >= 1.0:
-			manager.fail_delivery()
-	else:
-		manager.wet_amount = max(0.0, manager.wet_amount - delta * manager.wet_dry_rate)
