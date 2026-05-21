@@ -617,7 +617,7 @@ starts_with_driver = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0166016, 1.67071, -0.142145)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest/Armature/Skeleton3D" index="1" unique_id=2104506610]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1888891987, 1088390257) index="1" unique_id=2104506610]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -649,7 +649,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, 0.353553, 0, -0.353553, 0.353553, 0, 0, 0, 0.5, 0.753754, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest2/Armature/Skeleton3D" index="1" unique_id=416319181]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest2/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1757339708, 1088390257) index="1" unique_id=416319181]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -681,7 +681,7 @@ settings/0/exclude_collision_count = 0
 transform = Transform3D(0.353553, -0.353553, 0, 0.353553, 0.353553, 0, 0, 0, 0.5, -0.848877, 0.333931, -2.17196)
 visible = false
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest3/Armature/Skeleton3D" index="1" unique_id=2107444651]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Car_01/WiggleTest3/Armature/Skeleton3D" parent_id_path=PackedInt32Array(1655613105, 1088390257) index="1" unique_id=2107444651]
 setting_count = 1
 settings/0/root_bone_name = "Bone"
 settings/0/root_bone = 0
@@ -769,21 +769,21 @@ metadata/_edit_lock_ = true
 [node name="Mesh_Stuffed_duck1" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=" unique_id=1040379739 instance=ExtResource("54_1h2df")]
 transform = Transform3D(0.020052819, 0, -0.41400823, 0, 0.41449356, 0, 0.41400823, 0, 0.020052819, 5.0482683, 0.28035355, -0.4462887)
 
-[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck1" index="0" unique_id=104348917]
+[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck1" index="0" unique_id=1724629286]
 surface_material_override/0 = ExtResource("21_dpc8t")
 surface_material_override/1 = ExtResource("21_dpc8t")
 
 [node name="Mesh_Stuffed_duck2" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=" unique_id=114001943 instance=ExtResource("54_1h2df")]
 transform = Transform3D(-0.27143508, 0, -0.31325373, 0, 0.41449356, 0, 0.31325373, 0, -0.27143508, 5.022098, 0.26931763, 0.74132466)
 
-[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck2" index="0" unique_id=104348917]
+[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck2" index="0" unique_id=1724629286]
 surface_material_override/0 = ExtResource("21_dpc8t")
 surface_material_override/1 = ExtResource("21_dpc8t")
 
 [node name="Mesh_Stuffed_duck3" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=" unique_id=195422024 instance=ExtResource("54_1h2df")]
 transform = Transform3D(0.16186896, 0, -0.38158008, 0, 0.41449356, 0, 0.38158008, 0, 0.16186896, 5.2580566, 1.234024, -0.07485198)
 
-[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck3" index="0" unique_id=104348917]
+[node name="Cube" parent="===ENVIROMENT===/==HOME==/=HOME_INTERIOR=/Mesh_Stuffed_duck3" index="0" unique_id=1724629286]
 surface_material_override/0 = ExtResource("21_dpc8t")
 surface_material_override/1 = ExtResource("21_dpc8t")
 
@@ -956,7 +956,7 @@ linked_area = NodePath("../GetPackageArea")
 [node name="HamsterHouse_02" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=" unique_id=1627041071 instance=ExtResource("25_he6wg")]
 transform = Transform3D(-1.829199e-07, 0, 1.705, 0, 1.705, 0, -1.705, 0, -1.829199e-07, -1.5339661, -1.2906113, 0.47280693)
 
-[node name="Cylinder" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=/HamsterHouse_02" index="0" unique_id=654903292]
+[node name="Cylinder" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=/HamsterHouse_02" index="0" unique_id=1321483838]
 surface_material_override/0 = ExtResource("21_wsmxb")
 
 [node name="HamsterHouse_03" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=" unique_id=372181278 instance=ExtResource("25_he6wg")]
@@ -1000,7 +1000,7 @@ transform = Transform3D(5.282077, 0, -1.338631, 0, 5.4490614, 0, 1.338631, 0, 5.
 [node name="Package_09" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=" unique_id=1313974825 instance=ExtResource("25_00pa0")]
 transform = Transform3D(5.4215016, 0, 0.54735005, 0, 5.4490614, 0, -0.54735005, 0, 5.4215016, -5.2987976, 4.097124, 0.31132126)
 
-[node name="Cube_001" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=/Package_09" index="0" unique_id=2046300552]
+[node name="Cube_001" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=/Package_09" index="0" unique_id=1607962064]
 surface_material_override/0 = ExtResource("24_bf7t1")
 
 [node name="Package_06" parent="===ENVIROMENT===/==SPECIAL_POSTOFFICE==/=HOUSE=" unique_id=937072621 instance=ExtResource("25_00pa0")]

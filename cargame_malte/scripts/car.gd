@@ -226,6 +226,7 @@ func _explode():
 	HasPackage = false
 	assigned_delivery_id = ""
 	var manager = get_node("/root/ScoreAndTimeManager")
+	manager.fail_delivery()
 	manager.current_package = null
 	manager.bump_count = 0
 	manager.is_delivering = false
@@ -240,6 +241,7 @@ func _break_package():
 	HasPackage = false
 	assigned_delivery_id = ""
 	var manager = get_node("/root/ScoreAndTimeManager")
+	manager.fail_delivery()
 	manager.current_package = null
 	manager.bump_count = 0
 	manager.is_delivering = false

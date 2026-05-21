@@ -34,16 +34,23 @@ extends CanvasLayer
 
 @export var security_badge_visual: TextureRect
 
+@export var special_failed_label: Label
+@export var special_failed_show_time: float = 3.0
+
 var manager
 var daynight: Node3D
 var _arrow_visible: bool = false
 var _smoothed_screen_pos: Vector2 = Vector2.ZERO
+var _failed_timer: float = 0.0
+var _was_failed: bool = false
 
 func _ready():
 	manager = get_node("/root/ScoreAndTimeManager")
 	daynight = get_tree().get_first_node_in_group("daynight")
 	if delivery_arrow:
 		delivery_arrow.hide()
+	if special_failed_label:
+		special_failed_label.visible = false
 
 func _get_active_car() -> VehicleBody3D:
 	for c in get_tree().get_nodes_in_group("car"):
@@ -59,7 +66,7 @@ func _get_car_radio(car: VehicleBody3D) -> Node:
 			return r
 	return null
 
-func _process(_delta):
+func _process(delta):
 	if not manager:
 		return
 
@@ -105,6 +112,19 @@ func _process(_delta):
 
 	_update_key_hud(car)
 	_update_arrow()
+	_update_failed_label(delta)
+
+func _update_failed_label(delta: float):
+	if not special_failed_label:
+		return
+	if manager.delivery_failed and not _was_failed:
+		_failed_timer = special_failed_show_time
+	_was_failed = manager.delivery_failed
+	if _failed_timer > 0.0:
+		_failed_timer -= delta
+		special_failed_label.visible = true
+	else:
+		special_failed_label.visible = false
 
 func _update_arrow():
 	if not delivery_arrow:
