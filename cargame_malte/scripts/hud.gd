@@ -36,6 +36,10 @@ extends CanvasLayer
 
 @export var special_failed_label: Label
 @export var special_failed_show_time: float = 3.0
+@export var dump_package_label: Label
+
+@export var starxp_debug_label: Label
+@export var starxp_debug_show_time: float = 2.0
 
 var manager
 var daynight: Node3D
@@ -51,6 +55,10 @@ func _ready():
 		delivery_arrow.hide()
 	if special_failed_label:
 		special_failed_label.visible = false
+	if dump_package_label:
+		dump_package_label.visible = false
+	if starxp_debug_label:
+		starxp_debug_label.visible = false
 
 func _get_active_car() -> VehicleBody3D:
 	for c in get_tree().get_nodes_in_group("car"):
@@ -88,7 +96,7 @@ func _process(delta):
 	money_label.text    = "Money: %d" % manager.get_score()
 	delivery_label.text = "Deliver to: %s" % manager.get_target_delivery()
 
-	panel_delivery.visible = manager.is_delivering
+	panel_delivery.visible = manager.is_delivering and not manager.delivery_failed
 	_update_special_panel()
 
 	if manager.is_delivering:
@@ -112,19 +120,36 @@ func _process(delta):
 
 	_update_key_hud(car)
 	_update_arrow()
-	_update_failed_label(delta)
+	_update_failure_labels(delta)
+	_update_starxp_debug()
 
-func _update_failed_label(delta: float):
-	if not special_failed_label:
-		return
+func _update_failure_labels(delta: float):
 	if manager.delivery_failed and not _was_failed:
 		_failed_timer = special_failed_show_time
 	_was_failed = manager.delivery_failed
+
 	if _failed_timer > 0.0:
 		_failed_timer -= delta
-		special_failed_label.visible = true
+
+	var showing_failed = _failed_timer > 0.0
+	var needs_dump = manager.delivery_failed and manager.current_package != null and not showing_failed
+
+	if special_failed_label:
+		special_failed_label.visible = showing_failed
+	if dump_package_label:
+		dump_package_label.visible = needs_dump
+
+func _update_starxp_debug():
+	if not starxp_debug_label:
+		return
+	var now = Time.get_ticks_msec() / 1000.0
+	var elapsed = now - manager.last_xp_delta_time
+	if elapsed < starxp_debug_show_time:
+		var d = manager.last_xp_delta
+		starxp_debug_label.text = "%s%d XP" % ["+" if d > 0 else "", d]
+		starxp_debug_label.visible = true
 	else:
-		special_failed_label.visible = false
+		starxp_debug_label.visible = false
 
 func _update_arrow():
 	if not delivery_arrow:

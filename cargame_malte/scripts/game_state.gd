@@ -19,6 +19,7 @@ var has_special_badge: bool = false
 @export var debug_start_maxed: bool = true
 
 @export var criminal_xp_penalty: int = 30
+@export var special_fail_xp_penalty: int = 40
 
 @export var fresh_spoil_time: float = 60.0
 var fresh_timer: float = 0.0
@@ -41,6 +42,9 @@ var delivery_failed: bool = false
 
 var star_xp: int = 0
 const STAR_THRESHOLDS = [0, 100, 200, 300, 500]
+
+var last_xp_delta: int = 0
+var last_xp_delta_time: float = -999.0
 
 const MAX_BUMPS := 3
 var current_package: PackageVariation = null
@@ -155,7 +159,7 @@ func complete_delivery_with_star_xp() -> int:
 		bad_payout: -2,
 		very_bad_payout: -10
 	}.get(payout, 0)
-	star_xp = max(0, star_xp + xp_delta)
+	_change_star_xp(xp_delta)
 	return payout
 	
 
@@ -170,7 +174,7 @@ func sell_to_criminal() -> int:
 	current_package = null
 	bump_count = 0
 	delivery_failed = false
-	star_xp = max(0, star_xp - criminal_xp_penalty)
+	_change_star_xp(-criminal_xp_penalty)
 	level_score += payout
 	return payout
 
@@ -187,6 +191,13 @@ func get_star_xp_progress() -> String:
 		return "%d/MAX" % star_xp
 	return "%d/%d" % [star_xp, STAR_THRESHOLDS[rating]]
 
+func _change_star_xp(delta: int):
+	if delta == 0:
+		return
+	star_xp = max(0, star_xp + delta)
+	last_xp_delta = delta
+	last_xp_delta_time = Time.get_ticks_msec() / 1000.0
+
 func reset():
 	level_score = 0
 	target_delivery = ""
@@ -200,7 +211,10 @@ func reset():
 	delivery_failed = false
 	
 func fail_delivery():
+	if delivery_failed:
+		return
 	delivery_failed = true
+	_change_star_xp(-special_fail_xp_penalty)
 
 func dump_package():
 	is_delivering = false

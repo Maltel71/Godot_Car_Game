@@ -12,12 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://br5w4dxe0x8hy" path="res://textures/ui/ui_carkey_t_v1.png" id="10_6prc6"]
 [ext_resource type="Texture2D" uid="uid://1htq1vvtpj48" path="res://textures/ui_badge_sec_t_v1.png" id="11_6prc6"]
 
-[node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow", "key_sprite", "security_badge_visual", "special_failed_label")]
+[node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow", "key_sprite", "security_badge_visual", "special_failed_label", "dump_package_label", "starxp_debug_label")]
 script = ExtResource("1_i1glq")
 delivery_arrow = NodePath("DeliveryArrow")
 key_sprite = NodePath("Control_CarKey/Key")
 security_badge_visual = NodePath("SecurityBadgeVisual")
 special_failed_label = NodePath("SpecialDeliveryFailed")
+dump_package_label = NodePath("DumpPackageText")
+starxp_debug_label = NodePath("StarXPMeter_DebugLabel")
 
 [node name="Panel_Delivery" type="Panel" parent="." unique_id=1360305700]
 anchors_preset = 5
@@ -294,8 +296,16 @@ text = "Special Delivery Failed."
 
 [node name="DumpPackageText" type="Label" parent="." unique_id=443888586]
 offset_left = 653.0
-offset_top = 280.0
+offset_top = 115.0
 offset_right = 1206.0
-offset_bottom = 390.0
+offset_bottom = 225.0
 theme_override_font_sizes/font_size = 60
 text = "Dump The Package"
+
+[node name="StarXPMeter_DebugLabel" type="Label" parent="." unique_id=532958253]
+offset_left = 339.0
+offset_top = 92.0
+offset_right = 467.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 40
+text = "StarXP"
