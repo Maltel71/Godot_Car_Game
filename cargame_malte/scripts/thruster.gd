@@ -22,7 +22,7 @@ func _ready():
 	set_physics_process(false)
 		
 func activate_powerup(duration: float):
-	visible = true
+	visible = false
 	powerup_active = true
 	powerup_timer = duration
 	set_physics_process(true)
@@ -51,7 +51,7 @@ func _physics_process(delta):
 		parent_body.apply_force(thrust_direction * thrust_force, global_position - parent_body.global_position)
 		
 		if particle_effect:
-			particle_effect.emitting = true
+			particle_effect.emitting = false
 	else:
 		if particle_effect:
 			particle_effect.emitting = false

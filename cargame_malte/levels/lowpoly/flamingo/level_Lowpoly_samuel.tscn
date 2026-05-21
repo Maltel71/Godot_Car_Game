@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="23_6oima"]
 [ext_resource type="Script" uid="uid://c17aknedeyxm4" path="res://addons/proton_scatter/src/scatter.gd" id="23_28eml"]
 [ext_resource type="AudioStream" uid="uid://b6mdqctbyw2yi" path="res://audio/sfx/pickup/pickupCoin.wav" id="23_jnho2"]
-[ext_resource type="PackedScene" uid="uid://eldibgvcuw65" path="res://models/lowpoly_stylized/malte/_scene_prefabs/CarGame/halfpipe1.tscn" id="24_ertsf"]
 [ext_resource type="Script" uid="uid://hnql1sjgr3he" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="24_tsard"]
 [ext_resource type="Script" uid="uid://dibilec54thc4" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="25_bqrl6"]
 [ext_resource type="Script" uid="uid://bdmddvysq5lr7" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="26_1d1dy"]
@@ -33,6 +32,7 @@
 [ext_resource type="Script" uid="uid://xana12bi32p0" path="res://addons/proton_scatter/src/scatter_item.gd" id="31_deifn"]
 [ext_resource type="Script" uid="uid://2bgrj7ahhucn" path="res://addons/proton_scatter/src/scatter_shape.gd" id="32_df53m"]
 [ext_resource type="Script" uid="uid://cork4n8hr8xa4" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="33_1vrni"]
+[ext_resource type="PackedScene" uid="uid://mfpgos0xuoq7" path="res://level_components/samuels stuff/box.tscn" id="33_28eml"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6oima"]
 sky_top_color = Color(0.63542026, 0.39170253, 0.020616807, 1)
@@ -490,38 +490,38 @@ normal_texture = ExtResource("18_815rw")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo"), SubResource("Terrain3DTextureAsset_46pvi"), SubResource("Terrain3DTextureAsset_qk8pd"), SubResource("Terrain3DTextureAsset_i31v0")])
 
-[sub_resource type="Resource" id="Resource_28eml"]
+[sub_resource type="Resource" id="Resource_tsard"]
 script = ExtResource("26_1d1dy")
 amount = 600
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_tsard"]
+[sub_resource type="Resource" id="Resource_bqrl6"]
 script = ExtResource("27_741vo")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 
-[sub_resource type="Resource" id="Resource_bqrl6"]
+[sub_resource type="Resource" id="Resource_1d1dy"]
 script = ExtResource("28_b27k6")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_1d1dy"]
+[sub_resource type="Resource" id="Resource_741vo"]
 script = ExtResource("29_jlsmr")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_741vo"]
+[sub_resource type="Resource" id="Resource_b27k6"]
 script = ExtResource("30_yyru5")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_b27k6"]
+[sub_resource type="Resource" id="Resource_jlsmr"]
 script = ExtResource("24_tsard")
-stack = Array[ExtResource("25_bqrl6")]([SubResource("Resource_28eml"), SubResource("Resource_tsard"), SubResource("Resource_bqrl6"), SubResource("Resource_1d1dy"), SubResource("Resource_741vo")])
+stack = Array[ExtResource("25_bqrl6")]([SubResource("Resource_tsard"), SubResource("Resource_bqrl6"), SubResource("Resource_1d1dy"), SubResource("Resource_741vo"), SubResource("Resource_b27k6")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("33_1vrni")
@@ -556,6 +556,7 @@ gravity_scale = 1.8
 data_directory = "res://terrain_data/lowpoly/flamingo/terraindata_lowpoly_samuel"
 material = SubResource("Terrain3DMaterial_vdcri")
 assets = SubResource("Terrain3DAssets_jnho2")
+collision_mode = 3
 top_level = true
 metadata/_edit_lock_ = true
 
@@ -582,12 +583,6 @@ pickup_volume = 10.107
 [node name="GoalTrigger" parent="===ENVIROMENT===" instance=ExtResource("22_1vrni")]
 transform = Transform3D(3.4474308, 0, -1.2731234, 0, 3.6749997, 0, 1.2731234, 0, 3.4474308, -317.81888, 20.416477, -184.6169)
 
-[node name="Halfpipe1" parent="===ENVIROMENT===" instance=ExtResource("24_ertsf")]
-transform = Transform3D(-0.9954369, 0, -0.17803332, 0, 1, 0, 0.19484587, 0, -0.9095442, -304.19485, 20.028162, 4.309784)
-
-[node name="Halfpipe1" parent="===ENVIROMENT===/Halfpipe1" instance=ExtResource("24_ertsf")]
-transform = Transform3D(1.0128574, -0.029682875, 0.04157787, 0.043549206, -0.06265879, -0.9241252, 0.03287281, 0.99759126, -0.05680722, -0.10513306, 7.544361, -11.825821)
-
 [node name="ramp1" parent="===ENVIROMENT===" instance=ExtResource("22_vdcri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -371.212, 19.975893, 2.873903)
 
@@ -600,6 +595,9 @@ transform = Transform3D(-0.99951214, 0, -0.031236421, 0, 1, 0, 0.031236421, 0, -
 [node name="ramp1" parent="===ENVIROMENT===/ramp1/ramp2" instance=ExtResource("22_vdcri")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.823944, 0.025520325, 0.044564962)
 
+[node name="box" parent="===ENVIROMENT===" instance=ExtResource("33_28eml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -287.33463, 35.950512, -38.234787)
+
 [node name="DangerArea" parent="." instance=ExtResource("23_6oima")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.7591, 20.056444, 10.193245)
 
@@ -607,7 +605,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -328.7591, 20.056444, 10.1932
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -222.77356, 0, 108.20433)
 script = ExtResource("23_28eml")
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_b27k6")
+modifier_stack = SubResource("Resource_jlsmr")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
