@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dod2cw4rwvv5k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1j6c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lcbht"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_s1j6c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23827434, 0.78921866, -0.3611257)
+mesh = SubResource("BoxMesh_lcbht")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.091055214, 0, 0, 0, 1, 0, 0, 0, 0.21268438, -0.59346867, -0.03994423, -0.24706626)
+mesh = SubResource("BoxMesh_lcbht")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.091055214, 0, 0, 0, 1, 0, 0, 0, 0.21268438, 0.023495734, -0.049406886, -0.33037877)
+mesh = SubResource("BoxMesh_lcbht")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.091055214, 0, 0, 0, 1, 0, 0, 0, 0.21268438, 0.023495734, -0.049406886, -0.33037877)
+mesh = SubResource("BoxMesh_lcbht")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(0.087025456, -0.24250138, 0.03542762, 0.023472248, 0.96313834, -0.016355515, -0.012910267, 0.11643654, 0.2090742, 0.29299313, 0.403499, -0.38803482)
+mesh = SubResource("BoxMesh_lcbht")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(-0.06927986, 0.6287662, 0.034130298, -0.049164508, -0.7505846, 0.08101166, 0.032775033, 0.20316395, 0.19366692, -0.91237116, 1.0144136, -0.44882005)
+mesh = SubResource("BoxMesh_lcbht")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(-0.012878146, 0.00032810867, -0.1241354, -0.0055617057, -0.12552689, 0.027535597, -0.016935654, 0.0409738, 0.08535183, -0.0038234293, 1.0263906, 0.16133747)
+mesh = SubResource("BoxMesh_lcbht")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(-0.012878146, 0.00032810867, -0.1241354, -0.0055617057, -0.12552689, 0.027535597, -0.016935654, 0.0409738, 0.08535183, -0.45201275, 0.9774485, 0.10778698)
+mesh = SubResource("BoxMesh_lcbht")

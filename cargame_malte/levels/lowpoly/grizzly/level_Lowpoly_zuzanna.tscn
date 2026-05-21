@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dg8so0xf8mnwr"]
+[gd_scene load_steps=72 format=3 uid="uid://dg8so0xf8mnwr"]
 
 [ext_resource type="Script" uid="uid://0b3u38hntwa1" path="res://scripts/level.gd" id="1_1sxkn"]
 [ext_resource type="Script" uid="uid://mjn1sm7enu0m" path="res://scripts/game_manager.gd.gd" id="2_7xf2f"]
@@ -34,7 +34,10 @@
 [ext_resource type="PackedScene" uid="uid://1y6cmyyhhp8u" path="res://addons/dangerarea/danger_area.tscn" id="32_fbo12"]
 [ext_resource type="Script" uid="uid://bto17stixsm1" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="33_qyfgv"]
 [ext_resource type="PackedScene" uid="uid://cwhg1nulvtdrl" path="res://level_components/pig.tscn" id="34_1002s"]
+[ext_resource type="PackedScene" uid="uid://b2isdkkp5m8pk" path="res://platform_1.tzuzu.tscn" id="34_vh8hk"]
 [ext_resource type="PackedScene" uid="uid://d072bjufu56xn" path="res://level_components/danger_pig.tscn" id="35_rtups"]
+[ext_resource type="PackedScene" uid="uid://dod2cw4rwvv5k" path="res://cubethingwave.tscn" id="37_lgf5k"]
+[ext_resource type="Script" uid="uid://db3nbnh20r4ph" path="res://cubethingwave.gd" id="38_hbkji"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q04gf"]
 sky_top_color = Color(0.29907525, 0.64950365, 0.8775901, 1)
@@ -477,46 +480,46 @@ normal_texture = ExtResource("17_m4h8a")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_6faey"), SubResource("Terrain3DMeshAsset_pj4lr"), SubResource("Terrain3DMeshAsset_00xh1")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_nc7oo")])
 
-[sub_resource type="Curve3D" id="Curve3D_rtups"]
+[sub_resource type="Curve3D" id="Curve3D_vh8hk"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.199317, 0.166546, 1.92104, 0, 0, 0, 0, 0, 0, 15.2849, -4.95658, 11.7464, 0, 0, 0, 0, 0, 0, 17.2275, -4.38937, 13.1419),
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
 
-[sub_resource type="Resource" id="Resource_vh8hk"]
+[sub_resource type="Resource" id="Resource_lgf5k"]
 script = ExtResource("24_qyfgv")
 amount = 4000
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_lgf5k"]
+[sub_resource type="Resource" id="Resource_hbkji"]
 script = ExtResource("25_fbo12")
 terrain_node = NodePath("../===ENVIROMENT===/Terrain3D")
 max_slope = 40.0
 
-[sub_resource type="Resource" id="Resource_hbkji"]
+[sub_resource type="Resource" id="Resource_lidjq"]
 script = ExtResource("25_1002s")
 position = Vector3(0.15, 0.15, 0.15)
 rotation = Vector3(20, 360, 20)
 scale = Vector3(0.5, 0.5, 0.5)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_lidjq"]
+[sub_resource type="Resource" id="Resource_m32bo"]
 script = ExtResource("26_rtups")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_m32bo"]
+[sub_resource type="Resource" id="Resource_d26fc"]
 script = ExtResource("27_vh8hk")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_d26fc"]
+[sub_resource type="Resource" id="Resource_6of71"]
 script = ExtResource("22_np5rb")
-stack = Array[ExtResource("23_fbo12")]([SubResource("Resource_vh8hk"), SubResource("Resource_lgf5k"), SubResource("Resource_hbkji"), SubResource("Resource_lidjq"), SubResource("Resource_m32bo")])
+stack = Array[ExtResource("23_fbo12")]([SubResource("Resource_lgf5k"), SubResource("Resource_hbkji"), SubResource("Resource_lidjq"), SubResource("Resource_m32bo"), SubResource("Resource_d26fc")])
 
 [sub_resource type="Resource" id="Resource_g8bsm"]
 script = ExtResource("30_l462s")
@@ -558,6 +561,86 @@ size = Vector3(58.814423, 64.77, 145.22581)
 [sub_resource type="Resource" id="Resource_u4nte"]
 script = ExtResource("33_qyfgv")
 size = Vector3(58.814423, 64.77, 145.22581)
+
+[sub_resource type="Animation" id="Animation_l462s"]
+resource_name = "weeeeeeeeee"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.035487734, 0, 0, -0.29333335, 0, 0.0016666651, 0, 0, -0.29500002, 0, 0.9250001, 0),
+"times": PackedFloat32Array(0.027073586, 2, 2.01)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.32882106, 0, 0, 0),
+"times": PackedFloat32Array(0.027073586, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2),
+"points": PackedFloat32Array(-19.137535, 0, 0, 0.035487734, 3.1895893, 6.2831855, -0.29333335, -1.0412812, 0.0016666651, 0.005916365, 6.2831855, -0.29500002, -0.23869038, 0.9250001, 0.748436),
+"times": PackedFloat32Array(0.027073586, 2, 2.01)
+}
+
+[sub_resource type="Animation" id="Animation_5jfwt"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ppaaw"]
+_data = {
+&"RESET": SubResource("Animation_5jfwt"),
+&"weeeeeeeeee": SubResource("Animation_l462s")
+}
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_1sxkn")
@@ -613,7 +696,7 @@ metadata/_edit_lock_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.4019, 20.933817, 38.34136)
 
 [node name="Path3D" type="Path3D" parent="===ENVIROMENT==="]
-curve = SubResource("Curve3D_rtups")
+curve = SubResource("Curve3D_vh8hk")
 script = ExtResource("17_hbkji")
 lock_road = true
 
@@ -629,19 +712,6 @@ script = ExtResource("20_ppaaw")
 material_resource = ExtResource("19_5jfwt")
 density = 0.03
 use_lowpoly_preview = true
-metadata/_edit_lock_ = true
-
-[node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
-transform = Transform3D(-0.999211, -0.011218602, 0.038102377, -0.0112213, 0.999937, 0.00014308815, -0.038101584, -0.00028458284, -0.99927396, -374.162, 1.8966904, -84.5118)
-script = ExtResource("21_pqfow")
-traffic_dir = Array[int]([2, 2, 1, 1])
-lanes = Array[int]([2, 4, 4, 2])
-prior_mag = 68.6143
-next_mag = 82.4723
-lane_width = 7.0
-gutter_profile = Vector2(35, -30)
-prior_pt_init = NodePath("../RP_003")
-next_pt_init = NodePath("../RP_012")
 metadata/_edit_lock_ = true
 
 [node name="RP_003" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
@@ -681,6 +751,19 @@ lane_width = 7.0
 gutter_profile = Vector2(35, -30)
 prior_pt_init = NodePath("../RP_007")
 next_pt_init = NodePath("../RP_005")
+metadata/_edit_lock_ = true
+
+[node name="RP_002" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
+transform = Transform3D(-0.999211, -0.011218602, 0.038102377, -0.0112213, 0.999937, 0.00014308815, -0.038101584, -0.00028458284, -0.99927396, -374.162, 1.8966904, -84.5118)
+script = ExtResource("21_pqfow")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 68.6143
+next_mag = 82.4723
+lane_width = 7.0
+gutter_profile = Vector2(35, -30)
+prior_pt_init = NodePath("../RP_003")
+next_pt_init = NodePath("../RP_012")
 metadata/_edit_lock_ = true
 
 [node name="RP_007" type="Node3D" parent="===ENVIROMENT===/Path3D/RoadManager/Road_001"]
@@ -772,7 +855,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.46265, 177.95792, 131.79
 script = ExtResource("21_88iyn")
 render_mode = 1
 keep_static_colliders = true
-modifier_stack = SubResource("Resource_d26fc")
+modifier_stack = SubResource("Resource_6of71")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://c17aknedeyxm4"
@@ -788,62 +871,102 @@ path = "uid://cv3pvux6mm38t"
 
 [node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.762146, -156.64407, -3.1472168)
+visible = false
 script = ExtResource("29_hbkji")
 shape = SubResource("Resource_g8bsm")
 
 [node name="ScatterShape_neg" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -136.92558, -153.74352, -90.253975)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_l462s")
 
 [node name="ScatterShape_neg2" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(0.9819752, 0, 0.18900971, 0, 1, 0, -0.18900971, 0, 0.9819752, -130.29031, -153.74352, 97.829605)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_5jfwt")
 
 [node name="ScatterShape_neg3" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(0.77519816, 0, 0.6317181, 0, 1, 0, -0.6317181, 0, 0.77519816, -84.870056, -153.74352, 225.37964)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_ppaaw")
 
 [node name="ScatterShape_neg4" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(-0.8481128, 0, 0.5298157, 0, 1, 0, -0.5298157, 0, -0.8481128, 33.584602, -153.74352, 232.02869)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_pqfow")
 
 [node name="ScatterShape_neg5" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(-0.98019177, 0, 0.19805089, 0, 1, 0, -0.19805089, 0, -0.98019177, 97.913536, -153.74352, 107.40442)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_m6bbk")
 
 [node name="ScatterShape_neg6" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(-0.98019177, 0, 0.19805089, 0, 1, 0, -0.19805089, 0, -0.98019177, 120.96969, -153.74352, -20.29103)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_54lku")
 
 [node name="ScatterShape_neg7" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(-0.80760926, 0, -0.589718, 0, 1, 0, 0.589718, 0, -0.80760926, 139.97635, -153.74352, -154.09776)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_ih31r")
 
 [node name="ScatterShape_neg8" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(-0.0058817565, 0, -0.9999827, 0, 1, 0, 0.9999827, 0, -0.0058817565, 40.671097, -153.74352, -241.59395)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_t140q")
 
 [node name="ScatterShape_neg9" type="Node3D" parent="ProtonScatter"]
 transform = Transform3D(0.5609714, 0, -0.82783526, 0, 1, 0, 0.82783526, 0, 0.5609714, -88.38631, -153.74352, -233.77228)
+visible = false
 script = ExtResource("29_hbkji")
 negative = true
 shape = SubResource("Resource_u4nte")
+
+[node name="platform1" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.529687, -0.005695902, 0.12560156, 0.092115626, 0.41659653, 0.74676436, -0.12145889, -0.037159014, 8.35286, -139.08734, -156.86919, -66.38938)
+
+[node name="platform2" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.517544, -0.0056453017, 0.13811044, 0.08319076, 0.4092726, 1.4665043, -0.12744391, -0.06584137, 9.10401, -138.49371, -155.76447, -57.35206)
+
+[node name="platform6" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.517544, -0.0056453017, 0.13811043, 0.09196707, 0.41289565, 0.8211358, -0.121263005, -0.03682891, 9.184735, -139.08734, -156.86919, -66.38938)
+visible = false
+
+[node name="platform3" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.517544, -0.0056453026, 0.13983774, 0.06810072, 0.399083, 2.5272663, -0.13610642, -0.11212531, 8.98815, -138.2333, -153.7836, -48.408417)
+
+[node name="platform7" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.516619, 0.004141275, 0.22012392, -0.13345096, 0.3872059, 3.3323526, -0.13874595, -0.14807335, 8.720115, -138.62302, -150.8691, -39.82972)
+
+[node name="platform8" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.5014634, 0.0038427897, 0.6330085, -0.32163942, 0.35561028, 4.783215, -0.4015234, -0.21306773, 7.9945974, -138.15088, -146.8254, -31.592072)
+
+[node name="platform9" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(6.7189283, -1.5315989e-05, 1.6917168, -0.28808674, -0.0014173358, 12.7831545, -0.35963744, 0.000849212, 21.365582, -136.77106, -138.13916, -16.82824)
+
+[node name="platform4" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.517544, -0.0056453017, 0.13983771, 0.09196707, 0.41289565, 0.83140534, -0.121263005, -0.03682891, 9.299604, -139.08734, -156.86919, -66.38938)
+visible = false
+
+[node name="platform5" parent="ProtonScatter" instance=ExtResource("34_vh8hk")]
+transform = Transform3D(7.517544, -0.0056453017, 0.13983771, 0.09196707, 0.41289565, 0.83140534, -0.121263005, -0.03682891, 9.299604, -139.08734, -156.86919, -66.38938)
+visible = false
 
 [node name="Pig" parent="." instance=ExtResource("34_1002s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.62714, 20.756096, -29.517824)
@@ -852,16 +975,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -320.62714, 20.756096, -29.51
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -329.98547, 26.72452, 0.43834496)
 
 [node name="Pig2" parent="." instance=ExtResource("35_rtups")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -341.53488, 22.103817, 7.2526703)
-move_speed = 15.0
-turn_speed = 10.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -310.25494, -9.871243, -24.837154)
+move_speed = 0.05
+turn_speed = 0.0
+chase_speed = 0.0
+chase_turn_speed = 0.0
 
 [node name="Pig4" parent="." instance=ExtResource("35_rtups")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -312.78113, 22.103817, 7.2526703)
-move_speed = 15.0
-turn_speed = 10.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.5012, -9.871243, -24.837154)
+move_speed = 0.05
+turn_speed = 0.0
+chase_speed = 0.0
+chase_turn_speed = 0.0
 
 [node name="Pig5" parent="." instance=ExtResource("35_rtups")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -324.63516, 76.548874, 7.2526703)
-move_speed = 15.0
-turn_speed = 10.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -293.35522, 44.573814, -24.837154)
+move_speed = 0.05
+turn_speed = 0.0
+chase_speed = 0.0
+chase_turn_speed = 0.0
+
+[node name="amazingcubegyu" parent="." instance=ExtResource("37_lgf5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.8413, 26.249071, -39.436024)
+script = ExtResource("38_hbkji")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="amazingcubegyu"]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="amazingcubegyu"]
+libraries = {
+&"": SubResource("AnimationLibrary_ppaaw")
+}
+autoplay = "weeeeeeeeee"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -326.9431, 28.64373, -39.297268)
+offset = Vector2(0.12, 0)
+billboard = 1
+text = "expect to see me under your bed as your family
+ is being baked in the oven like a thanksgiving turkey.
+"
+font_size = 150

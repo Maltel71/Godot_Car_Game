@@ -84,8 +84,16 @@ surface_material_override/3 = ExtResource("3_nwcfl")
 [node name="DangerArea" parent="Mesh_(Model)" instance=ExtResource("4_6gqfl")]
 transform = Transform3D(-0.35698256, -0.93411106, -8.742278e-08, -0.93411106, 0.35698256, 0, 3.120841e-08, 8.1662584e-08, -1, -0.65856105, 1.2958534, -0.005411029)
 
+[node name="Area3D" parent="Mesh_(Model)/DangerArea" index="1"]
+collision_layer = 2
+collision_mask = 2
+
 [node name="DangerArea2" parent="Mesh_(Model)" instance=ExtResource("4_6gqfl")]
 transform = Transform3D(0.35698253, 0.934111, -1.9841977e-09, -0.93411106, 0.35698256, 7.1967006e-09, -1.4060824e-09, 7.74439e-09, 0.99999994, 0.7306771, 1.2958534, -0.0054111504)
+
+[node name="Area3D" parent="Mesh_(Model)/DangerArea2" index="1"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" parent="Mesh_(Model)/DangerArea2/Area3D" index="0"]
 transform = Transform3D(0.9659259, 0.258819, -2.2125082e-08, -0.2588188, 0.9659259, 1.0759024e-08, 2.415571e-08, -4.668408e-09, 0.99998766, -0.61481035, -0.24745452, 0.30377167)
