@@ -283,6 +283,7 @@ scale = Vector2(0.27211568, 0.27260476)
 texture = ExtResource("11_6prc6")
 
 [node name="SpecialDeliveryFailed" type="Label" parent="." unique_id=1843831296]
+visible = false
 offset_left = 605.0
 offset_top = 280.0
 offset_right = 1264.0
@@ -290,3 +291,11 @@ offset_bottom = 390.0
 theme_override_colors/font_color = Color(0.9839863, 0.25378954, 0.08897001, 1)
 theme_override_font_sizes/font_size = 60
 text = "Special Delivery Failed."
+
+[node name="DumpPackageText" type="Label" parent="." unique_id=443888586]
+offset_left = 653.0
+offset_top = 280.0
+offset_right = 1206.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 60
+text = "Dump The Package"
