@@ -41,7 +41,9 @@ func _find_nearest_car(max_dist: float) -> VehicleBody3D:
 	var nearest: VehicleBody3D = null
 	var best := max_dist
 	for c in get_tree().get_nodes_in_group("car"):
-		var d := global_position.distance_to(c.global_position)
+		var point = c.get_node_or_null(package_interaction_node_path)
+		var pos = point.global_position if point else c.global_position
+		var d := global_position.distance_to(pos)
 		if d < best:
 			best = d
 			nearest = c
@@ -65,7 +67,7 @@ func _physics_process(delta):
 			flashlight.rotation.x = camera_mount.rotation.x + flashlight_pitch_offset
 
 	# Track the nearest car for interaction
-	car_ref = _find_nearest_car(enter_distance)
+	car_ref = _find_nearest_car(max(enter_distance, package_pickup_distance))
 
 	# Get package interaction point or fallback to car center
 	var interaction_point = car_ref.get_node_or_null(package_interaction_node_path) if car_ref else null
