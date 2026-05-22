@@ -200,6 +200,7 @@ hue_variation_max = -1.0
 [node name="Car_01" type="VehicleBody3D" unique_id=2065331023 node_paths=PackedStringArray("exhaust_particles", "car_camera", "driver_mesh", "handbrake_audio_player", "engine_toggle_audio_player", "exhaust_particles_idle", "explosion_particles", "explosion_audio_player", "package_spawn_point", "height_raycast", "animal_spawn_point") groups=["car"]]
 mass = 240.0
 center_of_mass_mode = 1
+continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_bkrhx")
