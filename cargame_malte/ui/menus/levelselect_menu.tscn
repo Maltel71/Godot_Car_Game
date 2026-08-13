@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3qwun56sgiys"]
+[gd_scene format=3 uid="uid://b3qwun56sgiys"]
 
 [ext_resource type="Script" uid="uid://bb87ohfxofi36" path="res://scripts/level_select_menu.gd" id="1_fu0dp"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://ui/ui_themes/ui_theme_fresh1.tres" id="2_e0ag4"]
@@ -6,106 +6,181 @@
 
 [sub_resource type="Theme" id="Theme_1egug"]
 
-[node name="LevelSelectMenu" type="Control"]
+[node name="LevelSelectMenu" type="Control" unique_id=1214625858]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_fu0dp")
-level_scenes = Array[String](["res://levels/malte/level_clay_malte.tscn", "", "", "", ""])
+level_scenes = Array[String](["res://levels/malte/level_clay_malte.tscn", "res://levels/clay/anthelope/level_clay_aaron.tscn", "res://levels/clay/anthelope/level_clay_alfred.tscn", "res://levels/clay/anthelope/level_clay_idris.tscn", "res://levels/clay/anthelope/level_clay_sebastian.tscn", "res://levels/clay/anthelope/level_clay_victor.tscn", "res://levels/clay/eagle/level_clay_aindreas.tscn", "res://levels/clay/eagle/level_clay_ella.tscn", "res://levels/clay/eagle/level_clay_felix.tscn", "res://levels/clay/eagle/level_clay_henry.tscn", "res://levels/clay/eagle/level_clay_nicolas.tscn", "res://levels/lowpoly/bison/level_Lowpoly_august.tscn", "res://levels/lowpoly/bison/level_Lowpoly_barin.tscn", "res://levels/lowpoly/bison/level_Lowpoly_bruno.tscn", "res://levels/lowpoly/bison/level_Lowpoly_eugen.tscn", "res://levels/lowpoly/bison/level_Lowpoly_hektor.tscn", "res://levels/lowpoly/cheetah/level_Lowpoly_karol.tscn", "res://levels/lowpoly/flamingo/level_Lowpoly_elias.tscn", "res://levels/lowpoly/flamingo/level_Lowpoly_ellis.tscn", "res://levels/lowpoly/flamingo/level_Lowpoly_mark.tscn", "res://levels/lowpoly/flamingo/level_Lowpoly_samuel.tscn", "res://levels/lowpoly/flamingo/level_Lowpoly_sofia.tscn", "res://levels/lowpoly/grizzly/level_Lowpoly_daniel.tscn", "res://levels/lowpoly/grizzly/level_Lowpoly_emil.tscn", "res://levels/lowpoly/grizzly/level_Lowpoly_zuzanna.tscn"])
 hover_sound = ExtResource("2_medlx")
 hover_volume = -10.0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=58456389]
 z_index = 10
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme = ExtResource("2_e0ag4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1882340596]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -356.5
-offset_top = 192.0
+offset_top = 104.0
 offset_right = 356.5
-offset_bottom = 505.0
+offset_bottom = 417.0
 grow_horizontal = 2
 
-[node name="Header" type="Label" parent="Panel/VBoxContainer"]
+[node name="Header" type="Label" parent="Panel/VBoxContainer" unique_id=140088005]
 layout_mode = 2
 text = "Level Select"
 horizontal_alignment = 1
 
-[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer" unique_id=536383141]
 z_index = 1
 layout_mode = 2
 text = "Main Menu"
 
-[node name="GridContainer" type="GridContainer" parent="Panel"]
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=1966911025]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -353.148
-offset_top = 545.0
-offset_right = 471.85254
-offset_bottom = 1059.0
+offset_left = -267.0
+offset_top = 406.0
+offset_right = 558.0
+offset_bottom = 1296.0
 grow_horizontal = 2
-scale = Vector2(0.855, 0.855)
+scale = Vector2(0.66282964, 0.66282964)
 theme = ExtResource("2_e0ag4")
 columns = 5
 
-[node name="Level_1" type="Button" parent="Panel/GridContainer"]
+[node name="Level_1" type="Button" parent="Panel/GridContainer" unique_id=142279164]
 layout_mode = 2
 theme = SubResource("Theme_1egug")
 text = "Level
 1
 "
 
-[node name="Level_2" type="Button" parent="Panel/GridContainer"]
+[node name="Level_2" type="Button" parent="Panel/GridContainer" unique_id=93614188]
 layout_mode = 2
 text = "Level 
 2"
 
-[node name="Level_3" type="Button" parent="Panel/GridContainer"]
+[node name="Level_3" type="Button" parent="Panel/GridContainer" unique_id=1303130775]
 layout_mode = 2
 text = "Level
 3"
 
-[node name="Level_4" type="Button" parent="Panel/GridContainer"]
+[node name="Level_4" type="Button" parent="Panel/GridContainer" unique_id=650798243]
 layout_mode = 2
 text = "Level
 4"
 
-[node name="Level_5" type="Button" parent="Panel/GridContainer"]
+[node name="Level_5" type="Button" parent="Panel/GridContainer" unique_id=606146936]
 layout_mode = 2
 text = "Level
 5"
 
-[node name="Level_6" type="Button" parent="Panel/GridContainer"]
+[node name="Level_6" type="Button" parent="Panel/GridContainer" unique_id=1820169975]
 layout_mode = 2
 text = "Level
 6"
 
-[node name="Level_7" type="Button" parent="Panel/GridContainer"]
+[node name="Level_7" type="Button" parent="Panel/GridContainer" unique_id=211707111]
 layout_mode = 2
 text = "Level
 7"
 
-[node name="Level_8" type="Button" parent="Panel/GridContainer"]
+[node name="Level_8" type="Button" parent="Panel/GridContainer" unique_id=1314487860]
 layout_mode = 2
 text = "Level
 8"
 
-[node name="Level_9" type="Button" parent="Panel/GridContainer"]
+[node name="Level_9" type="Button" parent="Panel/GridContainer" unique_id=775045894]
 layout_mode = 2
 text = "Level
 9"
 
-[node name="Level_10" type="Button" parent="Panel/GridContainer"]
+[node name="Level_10" type="Button" parent="Panel/GridContainer" unique_id=1149757256]
 layout_mode = 2
 text = "Level
 10"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Level_11" type="Button" parent="Panel/GridContainer" unique_id=45865806]
+layout_mode = 2
+text = "Level
+11"
+
+[node name="Level_12" type="Button" parent="Panel/GridContainer" unique_id=258583606]
+layout_mode = 2
+text = "Level
+12"
+
+[node name="Level_13" type="Button" parent="Panel/GridContainer" unique_id=664719918]
+layout_mode = 2
+text = "Level
+13"
+
+[node name="Level_14" type="Button" parent="Panel/GridContainer" unique_id=2054578060]
+layout_mode = 2
+text = "Level
+14"
+
+[node name="Level_15" type="Button" parent="Panel/GridContainer" unique_id=961895168]
+layout_mode = 2
+text = "Level
+15"
+
+[node name="Level_16" type="Button" parent="Panel/GridContainer" unique_id=667406026]
+layout_mode = 2
+text = "Level
+16"
+
+[node name="Level_17" type="Button" parent="Panel/GridContainer" unique_id=605493062]
+layout_mode = 2
+text = "Level
+17"
+
+[node name="Level_18" type="Button" parent="Panel/GridContainer" unique_id=916256001]
+layout_mode = 2
+text = "Level
+18"
+
+[node name="Level_19" type="Button" parent="Panel/GridContainer" unique_id=1635300053]
+layout_mode = 2
+text = "Level
+19"
+
+[node name="Level_20" type="Button" parent="Panel/GridContainer" unique_id=1562912909]
+layout_mode = 2
+text = "Level
+20"
+
+[node name="Level_21" type="Button" parent="Panel/GridContainer" unique_id=1679971609]
+layout_mode = 2
+text = "Level
+21"
+
+[node name="Level_22" type="Button" parent="Panel/GridContainer" unique_id=1865028300]
+layout_mode = 2
+text = "Level
+22"
+
+[node name="Level_23" type="Button" parent="Panel/GridContainer" unique_id=1941999111]
+layout_mode = 2
+text = "Level
+23"
+
+[node name="Level_24" type="Button" parent="Panel/GridContainer" unique_id=1515097269]
+layout_mode = 2
+text = "Level
+24"
+
+[node name="Level_25" type="Button" parent="Panel/GridContainer" unique_id=1218225028]
+layout_mode = 2
+text = "Level
+25"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=699282626]

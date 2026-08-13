@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc8t82quf5ro6"]
+[gd_scene format=3 uid="uid://dc8t82quf5ro6"]
 
 [ext_resource type="Script" uid="uid://1bmqsl4a2qq7" path="res://scripts/hud.gd" id="1_i1glq"]
 [ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://ui/ui_themes/ui_theme_fresh1.tres" id="2_eki7a"]
 [ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://ui/ui_themes/ui_theme_subtext.tres" id="3_8fwp6"]
 
-[node name="Highscore" type="CanvasLayer"]
+[node name="Highscore" type="CanvasLayer" unique_id=817596274]
 script = ExtResource("1_i1glq")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=745740025]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -17,42 +17,33 @@ offset_bottom = 99.0
 grow_horizontal = 2
 theme = ExtResource("2_eki7a")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1202430862]
 layout_mode = 0
 offset_left = 25.5
 offset_right = 1054.0
 offset_bottom = 84.0
 theme_override_constants/separation = 224
 
-[node name="TimerLabel" type="Label" parent="Panel/HBoxContainer"]
+[node name="TimerLabel" type="Label" parent="Panel/HBoxContainer" unique_id=1473854252]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Timer: 00:00:00"
 
-[node name="ScoreLabel" type="Label" parent="Panel/HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="Panel/HBoxContainer" unique_id=201399288]
 layout_mode = 2
 theme = ExtResource("3_8fwp6")
 text = "Score:1000"
 
-[node name="Controlls" type="Label" parent="Panel"]
+[node name="Controlls" type="Label" parent="Panel" unique_id=1640631585]
 layout_mode = 0
-offset_left = -371.00003
-offset_top = 786.00006
-offset_right = 2494.0
-offset_bottom = 1791.0001
+offset_left = -397.0
+offset_top = 832.00006
+offset_right = 2469.0
+offset_bottom = 1837.0
 scale = Vector2(0.22425914, 0.22425914)
-text = "Controlls:
-WASD: Drive
+text = "WASD: Drive
+R: Flip car
 ENTER: Restart
 ESC: menu
 Q, E: Roll (while in air)
 SPACE: Activate Thrusters (if you have the pickup)"
-
-[node name="Explanation" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 784.0001
-offset_top = 964.00006
-offset_right = 3649.0
-offset_bottom = 1969.0
-scale = Vector2(0.3842579, 0.3842579)
-text = "Det här är inte ett färdigt spel. "
